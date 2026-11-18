@@ -3805,7 +3805,7 @@ async function openDetail(type, id) {
     if (om && om.imdbRating && om.imdbRating !== 'N/A') { o.imdbRating = om.imdbRating; const el = $('#d-rating'); if (el) el.textContent = 'IMDb ' + om.imdbRating + ' ★'; }
   }).catch(() => {});
   if (type === 'tv') loadDetailEpisodes(d, token);
-  loadDownloadBox(imdbId, token);
+  loadDownloadBox(imdbId, token, d.title || d.name || '', (d.release_date || d.first_air_date || '').slice(0, 4));
 }
 /* Detail sheet built from the local FN catalog entry (used when the
    worker cannot be reached from this origin). Same tabs and choices;
@@ -3873,25 +3873,37 @@ function normTitle(s) { return String(s || '').toLowerCase().replace(/[^a-z0-9\u
 async function findImdbByTitle(title, year) {
   const needle = normTitle(title);
   if (!needle) return '';
-  for (let part = 1; part <= 3; part++) {
+  let fallback = ''; /* exact title match whose record carries no year */
+  /* BOTH archives, every part: the new archive (16 parts) first, then the
+     old one (3 parts). Previously this only searched new parts 1-3, so
+     most titles were never found when the worker could not supply an
+     IMDb id (worker blocked without VPN) and the box stayed empty. */
+  const archives = [{ parts: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], which: undefined }, { parts: [1, 2, 3], which: 'old' }];
+  for (const arc of archives) {
+  for (const part of arc.parts) {
     let doc;
-    try { doc = await loadDlPart(part); } catch (e) { continue; }
+    try { doc = await loadDlPart(part, arc.which); } catch (e) { continue; }
     const heads = doc.querySelectorAll('h3');
     for (let i = 0; i < heads.length; i++) {
-      const ht = normTitle(heads[i].textContent.replace(/^\s*\d+\.\s*/, '').replace(/\s+start_year\s*$/i, ''));
+      const ht = normTitle(heads[i].textContent.replace(/^\s*\d+\.\s*/, '').replace(/\s+start_year\s*$/i, '').replace(/\s+\d{4}\s*$/, ''));
       if (ht !== needle) continue;
       let n = heads[i].nextElementSibling, imdb = '', hasYear = !year;
       while (n && n.tagName !== 'H3') {
         const t = n.textContent || '';
         const m = t.match(/imdb code:\s*(tt\d+)/i); if (m) imdb = m[1].toLowerCase();
-        if (year && t.indexOf('/' + year + '/') > -1) hasYear = true;
+        /* the year lives only in the download URLs (href attributes),
+           never in the visible text — check both, or no title ever matches */
+        const hrefs = n.querySelectorAll ? Array.prototype.map.call(n.querySelectorAll('a'), a => a.getAttribute('href') || '').join(' ') : '';
+        if (year && (t.indexOf('/' + year + '/') > -1 || hrefs.indexOf('/' + year + '/') > -1)) hasYear = true;
         n = n.nextElementSibling;
       }
       if (imdb && hasYear) return imdb;
       if (imdb && !year) return imdb;
+      if (imdb && !fallback) fallback = imdb; /* year-less record: keep as fallback */
     }
   }
-  return '';
+  }
+  return fallback;
 }
 function openLightbox(src) {
   const lb = $('#ov-lightbox'); if (!lb || !src) return;
@@ -4283,8 +4295,15 @@ function admDownload(url) {
   copyText(url);
   toast('لینک کپی شد — آن را در ADM پیست کنید تا دانلود شروع شود');
 }
-async function loadDownloadBox(imdbId, token) {
+async function loadDownloadBox(imdbId, token, fbTitle, fbYear) {
   const body = $('#d-dl-body'); if (!body) return;
+  if (!imdbId && fbTitle) {
+    /* the worker (TMDB external_ids) is blocked without VPN, so no IMDb
+       id arrived — search the download archive itself by title+year */
+    body.innerHTML = '<div class="state"><div class="spin"></div>در حال جستجوی این عنوان در آرشیو دانلود Family Night…</div>';
+    try { imdbId = await findImdbByTitle(fbTitle, fbYear); } catch (e) { imdbId = ''; }
+    if (token !== detailToken) return;
+  }
   if (!imdbId) { body.innerHTML = '<div class="state"><b>فعلاً لینک دانلود رایگانی برای این اثر نیست.</b><br>از «پخش آنلاین» می‌توانید همین حالا تماشا کنید.</div>'; return; }
   try {
     if (token !== detailToken) return;
