@@ -564,6 +564,7 @@ box-shadow:0 0 26px rgba(229,169,60,.28),inset 0 0 14px rgba(0,0,0,.65);animatio
 .dl-card .acts a,.dl-card .acts button{padding:.35rem .85rem;border-radius:99px;font-size:.78rem;font-weight:700;background:rgba(255,255,255,.06);border:1px solid var(--line);min-height:2.3rem;display:inline-flex;align-items:center;gap:.3rem}
 .dl-card .acts a.main{background:linear-gradient(135deg,#f59e0b,#d97706);color:#140e00;border:none}
 .dl-card .acts button.adm{border-color:rgba(89,224,255,.45);color:var(--cyan2)}
+.dl-card .acts button.adm img{width:1.05rem;height:1.05rem;vertical-align:-.2rem;margin-inline-end:.15rem}
 .dl-card .acts a:hover,.dl-card .acts button:hover{border-color:var(--gold)}
 /* AI assistant */
 .aibox{background:var(--surface);border:1px solid var(--line);border-radius:1.1rem;overflow:hidden}
@@ -1228,6 +1229,7 @@ html.tg .bottomnav{display:flex}
 .fpo-btn{min-height:4.4rem;border-radius:.9rem;background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--pearl2);font-size:.8rem;font-weight:700;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.35rem;padding:.5rem .2rem;line-height:1.6}
 .fpo-btn:active{background:var(--gold-soft);border-color:var(--gold);color:var(--gold2)}
 .fpo-btn svg{width:1.9rem;height:1.9rem}
+.fpo-btn img{width:1.9rem;height:1.9rem;border-radius:.45rem}
 /* ---- built-in player ---- */
 #ov-fnplayer{position:fixed;inset:0;z-index:400;background:#000;display:none;overflow:hidden}
 #ov-fnplayer.on{display:block}
@@ -4357,7 +4359,7 @@ function dlRowHtml(x) {
     + '<span class="specs"><span class="l1">' + esc(x.quality) + '</span><span class="l2">' + pills + '</span></span>'
     + '<span class="acts">'
     + '<a class="main" href="' + esc(x.url) + '" target="_blank" rel="noopener" download><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4.5-4.5M12 15 7.5 10.5"/><path d="M4 19h16"/></svg> دانلود</a>'
-    + '<button class="adm" data-dl-adm="' + esc(x.url) + '">دانلود با ADM</button>'
+    + '<button class="adm" data-dl-adm="' + esc(x.url) + '"><img src="data:image/png;base64,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" alt="">دانلود با ADM</button>'
     + '<button data-dl-copy="' + esc(x.url) + '">کپی لینک</button>'
     + '<button data-dl-play="' + esc(x.url) + '">پخش با پلیر</button>'
     + '</span></div>';
@@ -4481,6 +4483,9 @@ function openInPlayer(url) {
    play link get the list; everything else falls back to the existing
    external-servers player (openPlayer) untouched. */
 var FN_PLAY = { parts: {}, ctx: null, entry: null, key: '', part: 0, sel: null, seasonKey: '' };
+/* real brand icons (v8.2): MX Player + VLC, 96px PNGs from the apps' Google Play pages */
+var FN_PLAY_ICONS = { mx: 'data:image/png;base64,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', vlc: 'data:image/png;base64,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' };
+function fnPlayExtOf(p) { var m = String((p.play_url || '').split('?')[0]).match(/\.([a-z0-9]+)$/i); return m ? m[1].toLowerCase() : ''; }
 function fnPlayFa(n) { try { return (typeof awFa === 'function' ? awFa(String(n)) : String(n)); } catch (e) { return String(n); } }
 function fnPlayHash(s) { var h = 5381, i; for (i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) >>> 0; return h.toString(36); }
 function fnPlayResOf(p) { var m = ((p.quality || '') + ' ' + (p.play_url || '')).match(/\b(2160p|1440p|1080p|720p|576p|480p|360p)\b/i); return m ? m[1].toLowerCase() : ''; }
@@ -4507,13 +4512,14 @@ function fnPlaySpecs(p) {
   return bits.join(' · ');
 }
 function fnPlaySizeFa(p) {
-  var m = String(p.size_text || '').match(/([\d.]+)\s*(GB|MB)/i); if (!m) return '';
-  return fnPlayFa(m[1]) + (m[2].toUpperCase() === 'GB' ? ' گیگابایت' : ' مگابایت');
+  var m = String(p.size_text || '').match(/([\d.]+)\s*(GB|MB|KB)/i); if (!m) return '';
+  var u = m[2].toUpperCase();
+  return fnPlayFa(m[1]) + (u === 'GB' ? ' گیگابایت' : u === 'MB' ? ' مگابایت' : ' کیلوبایت');
 }
 var FN_ORD = ['اول', 'دوم', 'سوم', 'چهارم', 'پنجم', 'ششم', 'هفتم', 'هشتم', 'نهم', 'دهم', 'یازدهم', 'دوازدهم', 'سیزدهم', 'چهاردهم', 'پانزدهم', 'شانزدهم', 'هفدهم', 'هجدهم', 'نوزدهم', 'بیستم', 'بیست و یکم', 'بیست و دوم', 'بیست و سوم', 'بیست و چهارم', 'بیست و پنجم', 'بیست و ششم', 'بیست و هفتم', 'بیست و هشتم', 'بیست و نهم', 'سی‌ام'];
 function fnPlayOrd(n) { n = +n || 0; return (n >= 1 && n <= FN_ORD.length) ? FN_ORD[n - 1] : fnPlayFa(n); }
 function fnPlayResRank(r) { try { return resRank(r); } catch (e) { return ({ '2160p': 6, '1440p': 5, '1080p': 4, '720p': 3, '576p': 2, '480p': 1, '360p': 0 })[r] != null ? ({ '2160p': 6, '1440p': 5, '1080p': 4, '720p': 3, '576p': 2, '480p': 1, '360p': 0 })[r] : -1; } }
-function fnPlaySizeMB(p) { try { return sizeToMB(p.size_text || ''); } catch (e) { var m = String(p.size_text || '').match(/([\d.]+)\s*(GB|MB)/i); return m ? (m[2].toUpperCase() === 'GB' ? parseFloat(m[1]) * 1024 : parseFloat(m[1])) : 0; } }
+function fnPlaySizeMB(p) { try { return sizeToMB(p.size_text || ''); } catch (e) { var m = String(p.size_text || '').match(/([\d.]+)\s*(GB|MB|KB)/i); if (!m) return 0; var u = m[2].toUpperCase(); return u === 'GB' ? parseFloat(m[1]) * 1024 : u === 'MB' ? parseFloat(m[1]) : parseFloat(m[1]) / 1024; } }
 function fnPlaySort(a, b) {
   var d = fnPlayResRank(fnPlayResOf(b)) - fnPlayResRank(fnPlayResOf(a)); if (d) return d;
   var sp = { 'BluRay': 4, 'WEB-DL': 3, 'WEBRip': 2, 'HDTV': 1 };
@@ -4591,13 +4597,86 @@ function fnPlayMarkSeen(p) { try { localStorage.setItem(fnPlaySeenKey(p), '1'); 
 function fnPlayCardHtml(p, titleLine) {
   var ctx = FN_PLAY.ctx;
   var poster = ctx.poster ? IMG(ctx.poster, 'w185') : '';
-  var specs = fnPlaySpecs(p), size = fnPlaySizeFa(p);
-  var sub = (specs ? esc(specs) : '') + (specs && size ? ' · ' : '') + (size ? '<span class="sz">' + esc(size) + '</span>' : '');
+  var sub = fnPlaySubHtml(p);
   var seen = fnPlayIsSeen(p);
   return '<button class="pl-card" data-pl-idx="' + (FN_PLAY.rows.indexOf(p)) + '">'
     + '<span class="pl-poster">' + (poster ? '<img src="' + esc(poster) + '" alt="" loading="lazy" onerror="this.style.display=\'none\';var n=this.parentNode.querySelector(\'.pl-noimg\');if(n)n.style.display=\'grid\'">' + '<span class="pl-noimg" style="display:none">Family Night</span>' : '<span class="pl-noimg">Family Night</span>')
     + (seen ? '<span class="pl-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span>' : '')
     + '</span><span class="pl-body"><span class="pl-title">' + esc(titleLine) + '</span><br><span class="pl-sub">' + (sub || '&nbsp;') + '</span></span></button>';
+}
+function fnPlaySubHtml(p) {
+  var specs = fnPlaySpecs(p), size = fnPlaySizeFa(p);
+  return (specs ? esc(specs) : '') + (specs && size ? ' · ' : '') + (size ? '<span class="sz">' + esc(size) + '</span>' : '');
+}
+/* ---------- lazy size lookup (v8.2) ----------
+   Most play entries have no size (the CDN blocks HEAD from the build
+   VM), so after the list renders, the viewer's own device probes the
+   file size: HEAD first (cheap, no body), then a 1-byte Range GET.
+   The Range GET is aborted right after the headers arrive, so no
+   media is downloaded. Found sizes are cached in localStorage and
+   painted into the row in place; the popup reads p.size_text too,
+   so a reopened popup shows it. */
+function fnPlaySizeCacheKey(p) { return 'fnplay:size:' + fnPlayHash(p.play_url || ''); }
+function fnPlaySizeBytesFmt(n) {
+  if (!n || n <= 0) return '';
+  if (n >= 1e9) return (n / 1e9).toFixed(2) + ' GB';
+  if (n >= 1e6) return Math.round(n / 1e6) + ' MB';
+  return Math.round(n / 1e3) + ' KB';
+}
+function fnPlayProbeSize(url) {
+  function head() {
+    var ctl = new AbortController();
+    var to = setTimeout(function () { ctl.abort(); }, 8000);
+    return fetch(url, { method: 'HEAD', signal: ctl.signal }).then(function (r) {
+      clearTimeout(to);
+      if (r.ok) { var n = parseInt(r.headers.get('Content-Length') || '0', 10); return n > 0 ? n : 0; }
+      return 0;
+    }).catch(function () { clearTimeout(to); return 0; });
+  }
+  function range() {
+    var ctl = new AbortController();
+    var to = setTimeout(function () { ctl.abort(); }, 8000);
+    return fetch(url, { headers: { Range: 'bytes=0-0' }, signal: ctl.signal }).then(function (r) {
+      var n = 0, cr = r.headers.get('Content-Range') || '', m = cr.match(/\/(\d+)$/);
+      if (m) n = parseInt(m[1], 10);
+      if (!n && r.ok) { var cl = parseInt(r.headers.get('Content-Length') || '0', 10); n = cl > 0 ? cl : 0; }
+      clearTimeout(to); try { ctl.abort(); } catch (e) {}
+      return n;
+    }).catch(function () { clearTimeout(to); return 0; });
+  }
+  return head().then(function (n) { return n > 0 ? n : range(); });
+}
+var FN_SIZE_TRIED = {};
+function fnPlayPaintSize(i, p) {
+  if (!FN_PLAY.rows || FN_PLAY.rows[i] !== p) return;
+  var card = document.querySelector('[data-pl-idx="' + i + '"]');
+  if (!card) return;
+  var sub = card.querySelector('.pl-sub');
+  if (sub) sub.innerHTML = fnPlaySubHtml(p) || '&nbsp;';
+}
+function fnPlayLazySizes() {
+  var rows = FN_PLAY.rows || [], todo = [];
+  rows.forEach(function (p, i) {
+    if (p.size_text) return;
+    try { var s = localStorage.getItem(fnPlaySizeCacheKey(p)); if (s) { p.size_text = s; fnPlayPaintSize(i, p); return; } } catch (e) {}
+    if (FN_SIZE_TRIED[p.play_url]) return;
+    todo.push({ p: p, i: i });
+  });
+  var CONC = 4, at = 0;
+  function next() {
+    if (at >= todo.length) return;
+    var t = todo[at++];
+    FN_SIZE_TRIED[t.p.play_url] = 1;
+    fnPlayProbeSize(t.p.play_url).then(function (n) {
+      if (n > 0) {
+        t.p.size_text = fnPlaySizeBytesFmt(n);
+        try { localStorage.setItem(fnPlaySizeCacheKey(t.p), t.p.size_text); } catch (e) {}
+        fnPlayPaintSize(t.i, t.p);
+      }
+      next();
+    });
+  }
+  for (var k = 0; k < CONC; k++) next();
 }
 function fnPlayRenderList() {
   var entry = FN_PLAY.entry, ctx = FN_PLAY.ctx;
@@ -4637,6 +4716,7 @@ function fnPlayRenderList() {
   body.querySelectorAll('[data-pl-idx]').forEach(function (b) {
     b.onclick = function () { fnPlayOpenOpt(FN_PLAY.rows[+b.dataset.plIdx]); };
   });
+  fnPlayLazySizes();
 }
 /* ---------- per-quality option popup ---------- */
 function fnPlayEnsureOptDom() {
@@ -4646,8 +4726,8 @@ function fnPlayEnsureOptDom() {
   d.innerHTML = '<div class="fpo-box"><div class="fpo-head"><div style="min-width:0;flex:1"><h3 id="fpo-title"></h3><p id="fpo-sub"></p></div><button class="fpo-x" id="fpo-x" aria-label="بستن"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>'
     + '<button class="fpo-fn" id="fpo-fn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg><span>پخش با فمیلی نایت<small>پلیر داخلی سایت</small></span></button>'
     + '<div class="fpo-row">'
-    + '<button class="fpo-btn" id="fpo-mx"><svg viewBox="0 0 48 48"><rect x="2" y="2" width="44" height="44" rx="9" fill="#ff7a1a"/><text x="24" y="31" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" font-family="Arial, sans-serif">MX</text></svg>پخش با MX</button>'
-    + '<button class="fpo-btn" id="fpo-vlc"><svg viewBox="0 0 48 48"><path d="M24 4l4 8 8 3-3 8-9 21-9-21-3-8 8-3z" fill="#ff7a1a"/><path d="M24 4l4 8h-8z" fill="#fff"/><path d="M15 23l9 21 9-21-4-2H19z" fill="#fff" opacity=".85"/><path d="M24 12l2.5 5h-5z" fill="#ff7a1a"/></svg>پخش با VLC</button>'
+    + '<button class="fpo-btn" id="fpo-mx"><img src="' + FN_PLAY_ICONS.mx + '" alt="MX Player">پخش با MX</button>'
+    + '<button class="fpo-btn" id="fpo-vlc"><img src="' + FN_PLAY_ICONS.vlc + '" alt="VLC">پخش با VLC</button>'
     + '<button class="fpo-btn" id="fpo-copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>کپی لینک پخش</button>'
     + '</div></div>';
   document.body.appendChild(d);
@@ -4714,7 +4794,7 @@ function fnPlayerEnsureDom() {
     + '</div>'
     + '<div class="fnp-bottom" id="fnp-bottom"><div class="fnp-times"><span id="fnp-cur">۰۰:۰۰</span><span id="fnp-dur">۰۰:۰۰</span></div><input type="range" class="fnp-seek" id="fnp-seek" min="0" max="100" step="0.1" value="0" dir="ltr"></div>'
     + '<div class="fnp-load" id="fnp-load"><div class="spin"></div><p>در حال پخش، کمی منتظر بمانید</p></div>'
-    + '<div class="fnp-err" id="fnp-err"><b id="fnp-err-title">پخش در مرورگر ممکن نشد</b><p id="fnp-err-txt">این نسخه با فرمت MKV است و مرورگرها آن را پخش نمی‌کنند. با MX Player یا VLC همان لینک مستقیم پخش می‌شود.</p><div class="row"><button class="btn btn-gold" id="fnp-err-retry">تلاش دوباره</button><button class="btn btn-gold" id="fnp-err-mx">پخش با MX</button><button class="btn btn-gold" id="fnp-err-vlc">پخش با VLC</button><button class="btn btn-ghost" id="fnp-err-copy">کپی لینک پخش</button></div></div>'
+    + '<div class="fnp-err" id="fnp-err"><b id="fnp-err-title">پخش ممکن نشد</b><p id="fnp-err-txt">در حال بررسی علت…</p><div class="row"><button class="btn btn-gold" id="fnp-err-retry">تلاش دوباره</button><button class="btn btn-gold" id="fnp-err-mx">پخش با MX</button><button class="btn btn-gold" id="fnp-err-vlc">پخش با VLC</button><button class="btn btn-ghost" id="fnp-err-copy">کپی لینک پخش</button></div></div>'
     + '<div class="fnp-menu" id="fnp-submenu"><h4>زیرنویس <button id="fnp-submenu-x" aria-label="بستن">×</button></h4><div id="fnp-sub-list"></div></div>'
     + '<div class="fnp-menu" id="fnp-setmenu"><h4>تنظیمات زیرنویس <button id="fnp-setmenu-x" aria-label="بستن">×</button></h4><div id="fnp-set-body"></div></div>'
     + '<div class="fnp-resume" id="fnp-resume"><div class="box"><h3>ادامه می‌دهید؟</h3><p id="fnp-resume-txt"></p><button class="btn btn-gold" id="fnp-resume-yes">ادامه پخش</button><button class="btn btn-ghost" id="fnp-resume-no">پخش از ابتدا</button></div></div>'
@@ -4968,28 +5048,41 @@ function fnPlayerWire(d) {
       $('#fnp-err-title').textContent = 'دریافت فایل ممکن نشد';
       $('#fnp-err-txt').textContent = 'سرور یا اتصال اینترنت فایل را تحویل نداد. دوباره تلاش کنید، یا با MX Player یا VLC همان لینک را پخش کنید.';
     }
-    function showFmt() {
+    function showCodec() {
+      var ext = fnPlayExtOf(FNP.p);
       $('#fnp-err-title').textContent = 'پخش در مرورگر ممکن نشد';
-      $('#fnp-err-txt').textContent = 'این نسخه با فرمت MKV است و مرورگرها آن را پخش نمی‌کنند. با MX Player یا VLC همان لینک مستقیم پخش می‌شود.';
+      if (ext === 'mkv') $('#fnp-err-txt').textContent = 'این نسخه با فرمت MKV است و مرورگرها آن را پخش نمی‌کنند. با MX Player یا VLC همان لینک مستقیم پخش می‌شود.';
+      else if (ext === 'mp4') $('#fnp-err-txt').textContent = 'این فایل MP4 است، ولی مرورگر کدک صدا یا تصویر آن را پشتیبانی نمی‌کند. با MX Player یا VLC همان لینک مستقیم پخش می‌شود.';
+      else $('#fnp-err-txt').textContent = 'مرورگر فرمت یا کدک این نسخه را پشتیبانی نمی‌کند. با MX Player یا VLC همان لینک مستقیم پخش می‌شود.';
+    }
+    function showChecking() {
+      $('#fnp-err-title').textContent = 'پخش ممکن نشد';
+      $('#fnp-err-txt').textContent = 'در حال بررسی علت…';
     }
     /* MEDIA_ERR_NETWORK (2) = the file could not be fetched at all.
-       DECODE (3) / SRC_NOT_SUPPORTED (4) usually mean the browser
-       cannot play this container/codec (MKV / x265) — but a server
-       that answers with an error page looks the same to the video
-       element, so probe the URL: if the server itself refuses the
-       file, say so instead of blaming the format. */
+       DECODE (3) / SRC_NOT_SUPPORTED (4) mean the browser cannot play
+       this file — but a server that answers with an error page looks
+       the same to the video element, so probe the URL from this
+       device (HEAD, then a 1-byte Range GET): if the server delivers
+       the file, the cause is the format/codec, named by the file's
+       real extension; if it refuses, say so instead of blaming the
+       format. The reason is only shown after the probe answers, so a
+       fast screenshot never shows a guessed cause. */
     var code = (v.error && v.error.code) || 0;
     if (code === 2) { showNet(); }
     else {
-      showFmt();
+      showChecking();
       try {
-        var ctl = new AbortController();
-        var to = setTimeout(function () { ctl.abort(); }, 6000);
-        fetch(FNP.p.play_url, { method: 'HEAD', signal: ctl.signal }).then(function (r) {
-          clearTimeout(to);
-          if (!r.ok) showNet();
-        }).catch(function () { clearTimeout(to); showNet(); });
-      } catch (e) {}
+        fnPlayProbeSize(FNP.p.play_url).then(function (n) {
+          if (n > 0) {
+            if (n >= 1000) {
+              FNP.p.size_text = fnPlaySizeBytesFmt(n);
+              try { localStorage.setItem(fnPlaySizeCacheKey(FNP.p), FNP.p.size_text); } catch (e) {}
+            }
+            showCodec();
+          } else showNet();
+        });
+      } catch (e) { showCodec(); }
     }
     $('#fnp-err').classList.add('on');
   });
