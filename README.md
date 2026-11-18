@@ -301,6 +301,54 @@ Nothing else in the site was changed.
   `play.js` itself this round — a module refresh had wiped the
   index.html-only DS patch, so it now lives in the module source.
 
+## v8.7 — Instant local-first search (2026-11-18)
+- The search tab used to wipe its results to a spinner on every keystroke
+  and wait for 6 TMDB calls through the worker proxy (20–30s on a slow
+  connection) before showing anything — and the only local fallback
+  searched the home-rail item cache, so archive titles were invisible
+  (Benny's Video, an old-archive-only film, returned «no results»).
+  Now every keystroke (debounce 200ms) renders archive matches
+  **instantly** from a local title index, and the TMDB search runs in
+  the background, merging its sections in below the local rows without
+  ever wiping them. A small «در حال جستجو…» note stands in the TMDB
+  section while it is pending; if TMDB fails, the local rows stay.
+- New file `download-data/search-index.json` (907 KB, 17,352 titles:
+  10,874 new-archive + 6,478 old-archive-only after dedupe by IMDb,
+  16,790 movies + 562 series, 2,244 with a known TMDB id). Built by
+  `~/workspace/search-index/build_search_index.py` from the new play
+  index (parts 0–15 + the post-rescue-merge part 16, so Anora is in)
+  and the old play index (parts 1–3); entries are
+  `[title, year, type, imdb, tmdb, part, old]`. The index loads lazily
+  on first search use (never on page load) and is cached in memory for
+  the session. Titles are HTML-unescaped and year-stripped at build
+  time; the brief's Benny's Video IMDb id was wrong (tt0103763) — the
+  archive carries tt0103793.
+- Tapping a local result opens the TMDB detail when its id is known
+  (or resolvable with one `/find` lookup by IMDb id); otherwise it goes
+  straight to the play list, which resolves from the IMDb id alone —
+  so playback still works even without a TMDB detail. No id is ever
+  invented.
+- The same local-first treatment now covers every other search box on
+  the page: archive (movies/series) pages, the watch-party picker, the
+  taste picker (`#pers-q`), the compare picker and the list search —
+  each renders local rows instantly and merges TMDB after, deduped by
+  TMDB id or title+year. Already-local boxes needed no change: TV
+  channels, the download-archive list, the directors browse (already
+  local-first) and the TV dropdown filters.
+- The shared helpers live in their own `FN-LOCAL-SEARCH v1` script
+  block (`~/workspace/play-module/local_search.js`, applied by
+  `patch_v87.py`), OUTSIDE the play-module block, so module refreshes
+  never wipe them.
+- Tests: `test87.py` 13/13 PASS (Benny's Video renders in ~18–32ms with
+  TMDB aborted; Joker local rows instant; delayed TMDB merges without
+  wiping or duplicating; tmdb-key tap opens the detail; old-only tap
+  resolves via /find to TMDB 1987; archive search local; zero page
+  errors); `run_test.py` 32/32, `test84.py` 14/14, `test86.py` 8/8,
+  `ds_movies_test.py` 14/14 and `integration_test.py` 15/15 still PASS.
+  All 16 script blocks pass `node --check`. Known limit: old-archive
+  series are not in the index yet (only old movies were built into a
+  play index), so series search still relies on TMDB for old titles.
+
 ## To publish
 Upload this whole folder to the `family-night-site` repo root (browser upload —
 GitHub connector pushes return 403). The site reads the archive from its own
