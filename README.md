@@ -187,6 +187,31 @@ Nothing else in the site was changed.
   `~/workspace/family-night-app/workflow/android-release.yml` (goes to the
   repo root as `.github/workflows/android-release.yml`).
 
+## v8.2 — Lazy sizes, real icons, truthful error message (2026-11-18)
+- Play-list rows now show each file's size: after the list renders, the
+  viewer's own device probes the size (HEAD, then a 1-byte Range GET;
+  the CDN blocks HEAD from the build VM but answers Iranian IPs), up to
+  4 at a time, and paints it into the row in place; found sizes are
+  cached in localStorage, so a reopened list/popup shows them at once.
+  KB sizes are now formatted too (previously dropped by the size
+  formatter).
+- The popup's MX and VLC buttons now show the REAL brand icons (96px
+  PNGs from the apps' Google Play pages, base64-embedded), not
+  hand-drawn SVGs; the download box's «دانلود با ADM» button now shows
+  the real ADM icon (48px). The ADM button itself already existed.
+- The player error panel no longer blames MKV for every failure: it
+  first shows a neutral «در حال بررسی علت…», then probes the URL from
+  the device. If the server delivers the file, the cause is the
+  format/codec, named by the file's real extension (MKV message for
+  .mkv; «این فایل MP4 است، ولی مرورگر کدک صدا یا تصویر آن را پشتیبانی
+  نمی‌کند» for .mp4 — this was the Gardener 720p case on the user's
+  phone); if the server refuses, it says the file could not be fetched.
+  The v8.1 FamilyNightApp bridge hook is now part of the play-module
+  source (play.js), so future module refreshes keep it.
+- Tests: new `test82.py` 13/13 PASS (lazy size, real icons, mp4/mkv/
+  404 error messages); `run_test.py` 32/32 and `integration_test.py`
+  15/15 still PASS. All 14 script blocks pass `node --check`.
+
 ## To publish
 Upload this whole folder to the `family-night-site` repo root (browser upload —
 GitHub connector pushes return 403). The site reads the archive from its own
