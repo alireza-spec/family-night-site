@@ -1187,6 +1187,106 @@ html.tg .mtop{display:flex}
 html.tg main{margin-inline-start:0;padding-top:0;padding-bottom:6.2rem}
 html.tg .bottomnav{display:flex}
 @media(min-width:900px){html.tg .wrap{padding:0 1rem}html.tg .rail-head{padding:0 1rem}html.tg .rail-track{padding-inline:1rem}}
+/* ================= Family Night playback (v8) =================
+   Play list (like the reference app, Family Night theme), the
+   per-quality option popup, and the built-in fullscreen player. */
+#ov-playlist{background:var(--bg)}
+#ov-playlist .pl-sheet{max-width:720px;margin:0 auto;padding:0 0 4rem}
+.pl-head{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:.7rem;padding:.85rem 1rem;background:linear-gradient(var(--bg) 82%,transparent);border-bottom:1px solid var(--line)}
+.pl-head .pl-back{flex:none;width:2.5rem;height:2.5rem;border-radius:99px;border:1px solid var(--line);background:rgba(255,255,255,.05);display:grid;place-items:center;color:var(--pearl2)}
+.pl-head .pl-back:active{background:var(--gold-soft);color:var(--gold2)}
+.pl-head h2{margin:0;font-size:1.05rem;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pl-head p{margin:0;color:var(--pearl);font-size:.8rem}
+.pl-season{padding:.9rem 1rem 0;display:flex;align-items:center;gap:.6rem}
+.pl-season label{color:var(--pearl);font-size:.85rem;font-weight:700;white-space:nowrap}
+.pl-season .sel{flex:1;max-width:22rem}
+.pl-list{padding:.9rem 1rem 0;display:grid;gap:.7rem}
+.pl-card{position:relative;display:flex;gap:.8rem;align-items:center;background:rgba(255,255,255,.045);border:1px solid var(--line);border-radius:1rem;padding:.65rem .8rem;text-align:right;width:100%;color:var(--text)}
+.pl-card:active{background:var(--gold-soft);border-color:var(--gold)}
+.pl-poster{position:relative;flex:none;width:3.4rem;height:4.9rem;border-radius:.6rem;overflow:hidden;background:#111}
+.pl-poster img{width:100%;height:100%;object-fit:cover;display:block}
+.pl-poster .pl-noimg{width:100%;height:100%;display:grid;place-items:center;color:var(--pearl);font-size:.7rem;text-align:center;padding:.3rem}
+.pl-poster .pl-check{position:absolute;inset:0;display:grid;place-items:center;background:rgba(5,7,13,.45);color:#fff}
+.pl-poster .pl-check svg{width:2rem;height:2rem;filter:drop-shadow(0 1px 4px rgba(0,0,0,.8))}
+.pl-body{flex:1;min-width:0}
+.pl-title{font-weight:800;font-size:.98rem;line-height:1.9;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pl-sub{color:var(--pearl);font-size:.8rem;line-height:1.9}
+.pl-sub .sz{color:var(--gold2);font-weight:700}
+.pl-count{padding:.4rem 1rem 0;color:var(--pearl);font-size:.8rem}
+.pl-empty{padding:3rem 1rem;text-align:center;color:var(--pearl);line-height:2}
+/* ---- per-quality option popup ---- */
+#fn-play-opt{position:fixed;inset:0;z-index:320;background:rgba(3,4,8,.88);display:none;align-items:center;justify-content:center;padding:1rem}
+#fn-play-opt.on{display:flex}
+.fpo-box{width:100%;max-width:26rem;background:#10141f;border:1px solid rgba(229,169,60,.35);border-radius:1.1rem;padding:1rem 1rem 1.1rem;box-shadow:0 1.2rem 3rem rgba(0,0,0,.6)}
+.fpo-head{display:flex;align-items:flex-start;gap:.6rem;margin-bottom:.9rem}
+.fpo-head h3{margin:0;flex:1;font-size:1rem;line-height:1.9}
+.fpo-head p{margin:0;color:var(--pearl);font-size:.82rem;line-height:1.9}
+.fpo-x{flex:none;width:2.3rem;height:2.3rem;border-radius:.6rem;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--pearl2);display:grid;place-items:center}
+.fpo-fn{width:100%;min-height:3.4rem;border-radius:.9rem;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#231700;font-weight:800;font-size:1rem;display:flex;align-items:center;justify-content:center;gap:.6rem}
+.fpo-fn small{display:block;font-size:.72rem;font-weight:600;opacity:.75}
+.fpo-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-top:.6rem}
+.fpo-btn{min-height:4.4rem;border-radius:.9rem;background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--pearl2);font-size:.8rem;font-weight:700;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.35rem;padding:.5rem .2rem;line-height:1.6}
+.fpo-btn:active{background:var(--gold-soft);border-color:var(--gold);color:var(--gold2)}
+.fpo-btn svg{width:1.9rem;height:1.9rem}
+/* ---- built-in player ---- */
+#ov-fnplayer{position:fixed;inset:0;z-index:400;background:#000;display:none;overflow:hidden}
+#ov-fnplayer.on{display:block}
+.fnp-stage{position:absolute;inset:0;background:#000;overflow:hidden}
+.fnp-stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000}
+.fnp-stage video.fit-cover{object-fit:cover}
+.fnp-stage video.fit-fill{object-fit:fill}
+.fnp-stage video.fit-none{object-fit:none}
+.fnp-rot{transform:rotate(90deg)}
+.fnp-sub{position:absolute;left:0;right:0;bottom:14%;text-align:center;pointer-events:none;padding:0 8%;z-index:6}
+.fnp-sub span{display:inline-block;background:rgba(0,0,0,.55);border-radius:.4rem;padding:.1rem .7rem;line-height:1.9;font-weight:700}
+.fnp-top{position:absolute;top:0;left:0;right:0;z-index:10;display:flex;align-items:center;gap:.35rem;padding:.55rem .6rem;background:linear-gradient(rgba(0,0,0,.75),transparent)}
+.fnp-top .tt{flex:1;min-width:0;margin-inline-start:.3rem}
+.fnp-top .tt b{display:block;font-size:.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fnp-top .tt span{color:#cbd5e1;font-size:.75rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+.fnp-tbtn{flex:none;min-width:2.5rem;height:2.5rem;padding:0 .45rem;border-radius:.65rem;background:rgba(255,255,255,.12);color:#fff;display:inline-flex;align-items:center;justify-content:center;gap:.25rem;font-size:.78rem;font-weight:700}
+.fnp-tbtn.on{background:var(--gold);color:#231700}
+.fnp-tbtn svg{width:1.25rem;height:1.25rem}
+.fnp-center{position:absolute;inset:0;z-index:5;display:flex;align-items:center;justify-content:center;gap:3.2rem;pointer-events:none}
+.fnp-cbtn{pointer-events:auto;width:4.2rem;height:4.2rem;border-radius:99px;background:rgba(0,0,0,.45);color:#fff;display:grid;place-items:center;border:1px solid rgba(255,255,255,.25)}
+.fnp-cbtn svg{width:2rem;height:2rem}
+.fnp-cbtn.main{width:5rem;height:5rem;background:rgba(229,169,60,.92);color:#231700;border-color:transparent}
+.fnp-cbtn.main svg{width:2.4rem;height:2.4rem}
+.fnp-bottom{position:absolute;left:0;right:0;bottom:0;z-index:10;padding:.4rem .8rem .8rem;background:linear-gradient(transparent,rgba(0,0,0,.8))}
+.fnp-times{display:flex;justify-content:space-between;color:#e2e8f0;font-size:.78rem;font-family:var(--display);padding:0 .2rem .3rem}
+.fnp-seek{-webkit-appearance:none;appearance:none;width:100%;height:.45rem;border-radius:99px;background:rgba(255,255,255,.28);outline:none;direction:ltr}
+.fnp-seek::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:1.15rem;height:1.15rem;border-radius:99px;background:var(--gold2);border:2px solid #fff;box-shadow:0 0 0 3px rgba(229,169,60,.35)}
+.fnp-seek::-moz-range-thumb{width:1.05rem;height:1.05rem;border-radius:99px;background:var(--gold2);border:2px solid #fff}
+.fnp-load{position:absolute;inset:0;z-index:8;display:none;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;background:rgba(0,0,0,.55);color:#fff}
+.fnp-load.on{display:flex}
+.fnp-load p{margin:0;color:#e2e8f0;font-size:.92rem}
+.fnp-err{position:absolute;inset:0;z-index:9;display:none;flex-direction:column;align-items:center;justify-content:center;gap:.7rem;padding:1.5rem;text-align:center;background:rgba(0,0,0,.82);color:#fff}
+.fnp-err.on{display:flex}
+.fnp-err b{font-size:1.05rem}
+.fnp-err p{margin:0;color:#cbd5e1;font-size:.88rem;line-height:2;max-width:26rem}
+.fnp-err .row{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+.fnp-menu{position:absolute;left:0;right:0;bottom:0;z-index:20;background:#10141f;border-top:1px solid rgba(229,169,60,.35);border-radius:1.1rem 1.1rem 0 0;padding:.9rem 1rem 1.4rem;display:none;max-height:75%;overflow-y:auto}
+.fnp-menu.on{display:block}
+.fnp-menu h4{margin:.2rem 0 .7rem;font-size:1rem;display:flex;align-items:center;justify-content:space-between}
+.fnp-menu h4 button{color:var(--pearl);font-size:1.3rem;line-height:1}
+.fnp-opt{display:flex;align-items:center;gap:.6rem;width:100%;text-align:right;padding:.7rem .6rem;border-radius:.7rem;color:var(--pearl2);font-weight:600;border:1px solid transparent}
+.fnp-opt.on{background:var(--gold-soft);border-color:var(--gold);color:var(--gold2)}
+.fnp-opt .ck{margin-inline-start:auto;color:var(--gold2);font-weight:800}
+.fnp-sync{display:flex;align-items:center;gap:.7rem;padding:.6rem 0}
+.fnp-sync button{flex:none;width:2.8rem;height:2.8rem;border-radius:.7rem;background:rgba(255,255,255,.08);border:1px solid var(--line);color:#fff;font-size:1.3rem;font-weight:800}
+.fnp-sync b{flex:1;text-align:center;font-family:var(--display);font-size:1rem}
+.fnp-swatches{display:flex;gap:.6rem;padding:.4rem 0 .8rem}
+.fnp-sw{width:2.4rem;height:2.4rem;border-radius:99px;border:2px solid transparent}
+.fnp-sw.on{border-color:#fff;box-shadow:0 0 0 2px var(--gold)}
+.fnp-resume{position:absolute;inset:0;z-index:30;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.72);padding:1rem}
+.fnp-resume.on{display:flex}
+.fnp-resume .box{width:100%;max-width:24rem;background:#10141f;border:1px solid rgba(229,169,60,.4);border-radius:1.1rem;padding:1.2rem;text-align:center}
+.fnp-resume h3{margin:.1rem 0 .4rem}
+.fnp-resume p{margin:0 0 1rem;color:var(--pearl);line-height:1.9}
+.fnp-resume .btn{width:100%;min-height:3rem;margin-top:.5rem}
+.fnp-hide-ui .fnp-top,.fnp-hide-ui .fnp-center,.fnp-hide-ui .fnp-bottom{opacity:0;pointer-events:none}
+.fnp-top,.fnp-center,.fnp-bottom{transition:opacity .25s ease}
+.fnp-tap{position:absolute;inset:0;z-index:4}
+
 </style>
 </head>
 <body>
@@ -2462,7 +2562,7 @@ function paintHeroText(at) {
     + '<div class="hero-cta"><button class="btn btn-gold" data-hero-play><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg> پخش آنلاین</button>'
     + '<button class="btn btn-glass" data-hero-detail>جزئیات و دانلود</button>'
     + '<button class="btn btn-glass" data-wl="' + wlKey(type, h.id) + '">' + wlBtnInner(inWl(type, h.id)) + '</button></div>';
-  box.querySelector('[data-hero-play]').onclick = () => openPlayer({ id: h.id, type, item: h });
+  box.querySelector('[data-hero-play]').onclick = () => openPlayListOrPlayer({ id: h.id, type, item: h });
   box.querySelector('[data-hero-detail]').onclick = () => openDetail(type, h.id);
   box.querySelector('[data-wl]').onclick = () => toggleWl(h);
   /* the whole hero is clickable: a tap anywhere (outside the action
@@ -3686,7 +3786,7 @@ function wireDetailSheet(o, itemForWl) {
   const heart = sheet.querySelector('[data-favheart]'); if (heart) heart.onclick = () => toggleFav(itemForWl);
   const shrBtn = $('#d-share'); if (shrBtn) shrBtn.onclick = () => shareTitle(o);
   const cmpBtn = $('#d-compare'); if (cmpBtn) cmpBtn.onclick = () => toggleCompare(itemForWl, o);
-  $('#d-play').onclick = () => openPlayer({ id: o.id, type: o.type, item: itemForWl, imdbId: o.imdbId || '' });
+  $('#d-play').onclick = () => openPlayListOrPlayer({ id: o.id, type: o.type, item: itemForWl, imdbId: o.imdbId || '', title: o.title, year: o.year, poster: o.poster });
   $('#d-party').onclick = () => { go('party'); wpStartWithTitle({ id: o.id, type: o.type, title: o.title, imdbId: o.imdbId || '' }); };
   sheet.addEventListener('click', e => {
     const yt = e.target.closest('[data-yt]'); if (yt) { openTrailer(yt.dataset.yt); return; }
@@ -4371,6 +4471,573 @@ function openInPlayer(url) {
   if (navigator.share) { navigator.share({ url }).catch(() => {}); return; }
   copyText(url);
 }
+</script>
+
+<script>
+'use strict';
+/* ================= Family Night playback (v8) =================
+   Play list (new-archive titles only) + per-quality option popup +
+   built-in fullscreen player. Only titles with at least one joined
+   play link get the list; everything else falls back to the existing
+   external-servers player (openPlayer) untouched. */
+var FN_PLAY = { parts: {}, ctx: null, entry: null, key: '', part: 0, sel: null, seasonKey: '' };
+function fnPlayFa(n) { try { return (typeof awFa === 'function' ? awFa(String(n)) : String(n)); } catch (e) { return String(n); } }
+function fnPlayHash(s) { var h = 5381, i; for (i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) >>> 0; return h.toString(36); }
+function fnPlayResOf(p) { var m = ((p.quality || '') + ' ' + (p.play_url || '')).match(/\b(2160p|1440p|1080p|720p|576p|480p|360p)\b/i); return m ? m[1].toLowerCase() : ''; }
+function fnPlayResFa(p) { var r = fnPlayResOf(p).replace('p', ''); return r ? fnPlayFa(r) : ''; }
+function fnPlaySourceOf(p) { var m = ((p.quality || '') + ' ' + (p.play_url || '')).match(/\b(BluRay|WEB-DL|WEBRip|HDTV|HDRip|DVDRip|BDRip|CAM|HDTS)\b/i); return m ? m[1] : ''; }
+function fnPlayIsCam(p) { return /CAM|HDTS/i.test((p.quality || '') + ' ' + (p.play_url || '')); }
+function fnPlayGroupRank(g) { return g === 'SoftSub' ? 0 : g === 'Dubbed' ? 1 : g === 'NoSub' ? 2 : 3; }
+function fnPlayVersionLabel(p) {
+  if (fnPlayIsCam(p)) return 'کیفیت پرده';
+  if (p.group === 'Dubbed') return 'دوبله فارسی';
+  if (p.group === 'NoSub') return 'بدون زیرنویس';
+  return 'زیرنویس فارسی (هاردساب)';
+}
+function fnPlayGroupShort(g) { return g === 'SoftSub' ? 'زیرنویس' : g === 'Dubbed' ? 'دوبله' : g === 'NoSub' ? 'بدون زیرنویس' : 'زیرنویس'; }
+function fnPlaySpecs(p) {
+  var hay = (p.quality || '') + ' ' + (p.play_url || ''), bits = [];
+  var src = fnPlaySourceOf(p); if (src) bits.push(src);
+  if (/x265|HEVC/i.test(hay)) bits.push('x265'); else if (/x264/i.test(hay)) bits.push('x264');
+  if (/10bit/i.test(hay)) bits.push('10bit');
+  if (/HDR(?![a-z]*ip)/i.test(hay)) bits.push('HDR');
+  if (p.encoder && p.encoder !== 'unknown') bits.push('انکودر: ' + p.encoder);
+  else { var em = ''; try { em = (decodeURIComponent((p.play_url || '').split('/').pop() || '').split('?')[0].match(/(?:^|[.\-_])(MkvCage|Pahe|PSA|ShAaNiG|GalaxyRG|YTS|YIFY|RARBG|F2M|Film2Media|SPARKS|AMZN|NF|DonyayeSerial)(?:[.\-_]|$)/i) || [])[1] || ''; } catch (e) { em = ''; } if (em) bits.push('انکودر: ' + em); }
+  var m = (p.play_url || '').split('?')[0].match(/\.([a-z0-9]+)$/i); if (m) bits.push(m[1].toUpperCase());
+  return bits.join(' · ');
+}
+function fnPlaySizeFa(p) {
+  var m = String(p.size_text || '').match(/([\d.]+)\s*(GB|MB)/i); if (!m) return '';
+  return fnPlayFa(m[1]) + (m[2].toUpperCase() === 'GB' ? ' گیگابایت' : ' مگابایت');
+}
+var FN_ORD = ['اول', 'دوم', 'سوم', 'چهارم', 'پنجم', 'ششم', 'هفتم', 'هشتم', 'نهم', 'دهم', 'یازدهم', 'دوازدهم', 'سیزدهم', 'چهاردهم', 'پانزدهم', 'شانزدهم', 'هفدهم', 'هجدهم', 'نوزدهم', 'بیستم', 'بیست و یکم', 'بیست و دوم', 'بیست و سوم', 'بیست و چهارم', 'بیست و پنجم', 'بیست و ششم', 'بیست و هفتم', 'بیست و هشتم', 'بیست و نهم', 'سی‌ام'];
+function fnPlayOrd(n) { n = +n || 0; return (n >= 1 && n <= FN_ORD.length) ? FN_ORD[n - 1] : fnPlayFa(n); }
+function fnPlayResRank(r) { try { return resRank(r); } catch (e) { return ({ '2160p': 6, '1440p': 5, '1080p': 4, '720p': 3, '576p': 2, '480p': 1, '360p': 0 })[r] != null ? ({ '2160p': 6, '1440p': 5, '1080p': 4, '720p': 3, '576p': 2, '480p': 1, '360p': 0 })[r] : -1; } }
+function fnPlaySizeMB(p) { try { return sizeToMB(p.size_text || ''); } catch (e) { var m = String(p.size_text || '').match(/([\d.]+)\s*(GB|MB)/i); return m ? (m[2].toUpperCase() === 'GB' ? parseFloat(m[1]) * 1024 : parseFloat(m[1])) : 0; } }
+function fnPlaySort(a, b) {
+  var d = fnPlayResRank(fnPlayResOf(b)) - fnPlayResRank(fnPlayResOf(a)); if (d) return d;
+  var sp = { 'BluRay': 4, 'WEB-DL': 3, 'WEBRip': 2, 'HDTV': 1 };
+  d = (sp[fnPlaySourceOf(b)] || 0) - (sp[fnPlaySourceOf(a)] || 0); if (d) return d;
+  d = fnPlaySizeMB(b) - fnPlaySizeMB(a); if (d) return d;
+  return String(a.quality || '').localeCompare(String(b.quality || ''));
+}
+function fnPlayJoined(entry) { return (entry.play || []).filter(function (p) { return !!p.play_url; }); }
+/* ---------- resolve a title to its play-index entry ---------- */
+async function fnPlayFetchPart(part) {
+  if (FN_PLAY.parts[part]) return FN_PLAY.parts[part];
+  var r = await fetch(DL_BASE + 'play-index-part-' + part + '.json');
+  if (!r.ok) throw new Error('play part');
+  var j = await r.json(); FN_PLAY.parts[part] = j; return j;
+}
+async function fnPlayResolve(ctx) {
+  var part = 0, key = '';
+  if (ctx.imdbId) {
+    try { var idx = await getDlIndex(); part = idx[ctx.imdbId] || 0; } catch (e) { part = 0; }
+    if (part) key = ctx.imdbId;
+  }
+  if (!key && ctx.tmdbKey) {
+    try { var ti = await getTitleIndex(); var hit = ti[ctx.tmdbKey]; if (hit && hit.part && hit.num) { part = hit.part; key = 'n:' + hit.num; } } catch (e) {}
+  }
+  if (!key && ctx.title) {
+    try { var im = await findImdbByTitle(ctx.title, ctx.year); if (im) { var ix2 = await getDlIndex(); part = ix2[im] || 0; if (part) key = im; } } catch (e) {}
+  }
+  if (!key || !part) return null;
+  try {
+    var data = await fnPlayFetchPart(part);
+    var entry = data[key];
+    if (!entry || !fnPlayJoined(entry).length) return null;
+    return { entry: entry, key: key, part: part };
+  } catch (e) { return null; }
+}
+function fnPlayCtx(o) {
+  var it = o.item || {};
+  return {
+    id: o.id, type: o.type, item: it,
+    imdbId: o.imdbId || it.imdb_id || '',
+    tmdbKey: (o.type === 'tv' ? 'tv:' : 'movie:') + o.id,
+    title: o.title || it.title || it.name || '',
+    year: o.year || String((it.release_date || it.first_air_date || '').slice(0, 4) || ''),
+    poster: o.poster || it.poster_path || ''
+  };
+}
+/* ---------- entry point: پخش آنلاین ---------- */
+async function openPlayListOrPlayer(o) {
+  var ctx = fnPlayCtx(o);
+  FN_PLAY.ctx = ctx; FN_PLAY.entry = null; FN_PLAY.sel = null;
+  fnPlayEnsureListDom();
+  $('#pl-title').textContent = ctx.title || 'پخش آنلاین';
+  $('#pl-sub').textContent = ctx.type === 'tv' ? 'سریال · پخش آنلاین' : 'فیلم · پخش آنلاین';
+  $('#pl-season').style.display = 'none'; $('#pl-season').innerHTML = '';
+  $('#pl-body').innerHTML = '<div class="state"><div class="spin"></div>در حال دریافت نسخه‌های قابل پخش…</div>';
+  openOverlay('#ov-playlist');
+  var res = null;
+  try { res = await fnPlayResolve(ctx); } catch (e) { res = null; }
+  if (!res) { closeOverlay('#ov-playlist'); openPlayer({ id: ctx.id, type: ctx.type, item: ctx.item, imdbId: ctx.imdbId }); return; }
+  FN_PLAY.entry = res.entry; FN_PLAY.key = res.key; FN_PLAY.part = res.part;
+  fnPlayRenderList();
+}
+function fnPlayEnsureListDom() {
+  if ($('#ov-playlist')) return;
+  var d = document.createElement('div');
+  d.className = 'overlay'; d.id = 'ov-playlist'; d.setAttribute('role', 'dialog'); d.setAttribute('aria-modal', 'true');
+  d.innerHTML = '<div class="pl-sheet"><div class="pl-head"><button class="pl-back" id="pl-back" aria-label="بازگشت"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><div style="min-width:0"><h2 id="pl-title">پخش آنلاین</h2><p id="pl-sub"></p></div></div><div class="pl-season" id="pl-season" style="display:none"></div><div id="pl-body"></div></div>';
+  document.body.appendChild(d);
+  d.querySelector('#pl-back').onclick = function () { closeOverlay('#ov-playlist'); };
+}
+/* ---------- play list rendering ---------- */
+function fnPlaySeenKey(p) { return 'fnplay:seen:' + fnPlayHash(p.play_url || ''); }
+function fnPlayIsSeen(p) { try { return !!localStorage.getItem(fnPlaySeenKey(p)); } catch (e) { return false; } }
+function fnPlayMarkSeen(p) { try { localStorage.setItem(fnPlaySeenKey(p), '1'); } catch (e) {} }
+function fnPlayCardHtml(p, titleLine) {
+  var ctx = FN_PLAY.ctx;
+  var poster = ctx.poster ? IMG(ctx.poster, 'w185') : '';
+  var specs = fnPlaySpecs(p), size = fnPlaySizeFa(p);
+  var sub = (specs ? esc(specs) : '') + (specs && size ? ' · ' : '') + (size ? '<span class="sz">' + esc(size) + '</span>' : '');
+  var seen = fnPlayIsSeen(p);
+  return '<button class="pl-card" data-pl-idx="' + (FN_PLAY.rows.indexOf(p)) + '">'
+    + '<span class="pl-poster">' + (poster ? '<img src="' + esc(poster) + '" alt="" loading="lazy" onerror="this.style.display=\'none\';var n=this.parentNode.querySelector(\'.pl-noimg\');if(n)n.style.display=\'grid\'">' + '<span class="pl-noimg" style="display:none">Family Night</span>' : '<span class="pl-noimg">Family Night</span>')
+    + (seen ? '<span class="pl-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></span>' : '')
+    + '</span><span class="pl-body"><span class="pl-title">' + esc(titleLine) + '</span><br><span class="pl-sub">' + (sub || '&nbsp;') + '</span></span></button>';
+}
+function fnPlayRenderList() {
+  var entry = FN_PLAY.entry, ctx = FN_PLAY.ctx;
+  var body = $('#pl-body'), seasonBox = $('#pl-season');
+  var joined = fnPlayJoined(entry);
+  if (ctx.type === 'tv') {
+    var opts = [], seen = {};
+    joined.forEach(function (p) {
+      var k = (p.season || 0) + '|' + (p.group || 'NoSub');
+      if (!seen[k]) { seen[k] = 1; opts.push({ season: p.season || 0, group: p.group || 'NoSub' }); }
+    });
+    opts.sort(function (a, b) { return (a.season - b.season) || (fnPlayGroupRank(a.group) - fnPlayGroupRank(b.group)); });
+    if (!opts.length) { body.innerHTML = '<div class="pl-empty">نسخه‌ای برای پخش این سریال پیدا نشد.</div>'; return; }
+    if (!FN_PLAY.seasonKey) FN_PLAY.seasonKey = opts[0].season + '|' + opts[0].group;
+    var cur = opts.filter(function (o) { return (o.season + '|' + o.group) === FN_PLAY.seasonKey; })[0] || opts[0];
+    FN_PLAY.seasonKey = cur.season + '|' + cur.group;
+    seasonBox.style.display = '';
+    seasonBox.innerHTML = '<label for="pl-season-sel">فصل</label><select class="sel" id="pl-season-sel">'
+      + opts.map(function (o) { return '<option value="' + o.season + '|' + o.group + '"' + ((o.season + '|' + o.group) === FN_PLAY.seasonKey ? ' selected' : '') + '>فصل ' + fnPlayOrd(o.season) + ' ' + fnPlayGroupShort(o.group) + '</option>'; }).join('') + '</select>';
+    seasonBox.querySelector('#pl-season-sel').onchange = function (e) { FN_PLAY.seasonKey = e.target.value; fnPlayRenderList(); };
+    var rows = joined.filter(function (p) { return (p.season || 0) === cur.season && (p.group || 'NoSub') === cur.group; });
+    rows.sort(function (a, b) { return ((a.episode || 0) - (b.episode || 0)) || fnPlaySort(a, b); });
+    FN_PLAY.rows = rows;
+    body.innerHTML = '<div class="pl-count">' + fnPlayFa(rows.length) + ' نسخه · فصل ' + fnPlayOrd(cur.season) + ' ' + fnPlayGroupShort(cur.group) + '</div>'
+      + '<div class="pl-list">' + rows.map(function (p) {
+        return fnPlayCardHtml(p, 'قسمت ' + fnPlayOrd(p.episode || 0) + ' ' + fnPlayResFa(p) + ' ' + fnPlayVersionLabel(p));
+      }).join('') + '</div>';
+  } else {
+    seasonBox.style.display = 'none'; seasonBox.innerHTML = '';
+    var rows = joined.slice().sort(fnPlaySort);
+    FN_PLAY.rows = rows;
+    body.innerHTML = '<div class="pl-count">' + fnPlayFa(rows.length) + ' نسخه قابل پخش</div>'
+      + '<div class="pl-list">' + rows.map(function (p) {
+        return fnPlayCardHtml(p, 'کیفیت ' + (fnPlayResFa(p) || '—') + ' ' + fnPlayVersionLabel(p));
+      }).join('') + '</div>';
+  }
+  body.querySelectorAll('[data-pl-idx]').forEach(function (b) {
+    b.onclick = function () { fnPlayOpenOpt(FN_PLAY.rows[+b.dataset.plIdx]); };
+  });
+}
+/* ---------- per-quality option popup ---------- */
+function fnPlayEnsureOptDom() {
+  if ($('#fn-play-opt')) return;
+  var d = document.createElement('div');
+  d.id = 'fn-play-opt'; d.setAttribute('role', 'dialog'); d.setAttribute('aria-modal', 'true');
+  d.innerHTML = '<div class="fpo-box"><div class="fpo-head"><div style="min-width:0;flex:1"><h3 id="fpo-title"></h3><p id="fpo-sub"></p></div><button class="fpo-x" id="fpo-x" aria-label="بستن"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>'
+    + '<button class="fpo-fn" id="fpo-fn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg><span>پخش با فمیلی نایت<small>پلیر داخلی سایت</small></span></button>'
+    + '<div class="fpo-row">'
+    + '<button class="fpo-btn" id="fpo-mx"><svg viewBox="0 0 48 48"><rect x="2" y="2" width="44" height="44" rx="9" fill="#ff7a1a"/><text x="24" y="31" text-anchor="middle" font-size="17" font-weight="800" fill="#fff" font-family="Arial, sans-serif">MX</text></svg>پخش با MX</button>'
+    + '<button class="fpo-btn" id="fpo-vlc"><svg viewBox="0 0 48 48"><path d="M24 4l4 8 8 3-3 8-9 21-9-21-3-8 8-3z" fill="#ff7a1a"/><path d="M24 4l4 8h-8z" fill="#fff"/><path d="M15 23l9 21 9-21-4-2H19z" fill="#fff" opacity=".85"/><path d="M24 12l2.5 5h-5z" fill="#ff7a1a"/></svg>پخش با VLC</button>'
+    + '<button class="fpo-btn" id="fpo-copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>کپی لینک پخش</button>'
+    + '</div></div>';
+  document.body.appendChild(d);
+  d.querySelector('#fpo-x').onclick = function () { d.classList.remove('on'); };
+  d.addEventListener('click', function (e) { if (e.target === d) d.classList.remove('on'); });
+}
+function fnPlayIntent(url, pkg, title) {
+  var m = String(url || '').match(/^(https?):\/\/(.+)$/i); if (!m) return null;
+  return 'intent://' + m[2] + '#Intent;scheme=' + m[1] + ';package=' + pkg + ';type=video/*;S.title=' + encodeURIComponent(title || 'Family Night') + ';end';
+}
+function fnPlayOpenOpt(p) {
+  FN_PLAY.sel = p;
+  fnPlayEnsureOptDom();
+  var ctx = FN_PLAY.ctx, entry = FN_PLAY.entry;
+  var se = (ctx.type === 'tv' && p.season) ? ' · فصل ' + fnPlayOrd(p.season) + ' · قسمت ' + fnPlayOrd(p.episode || 0) : '';
+  $('#fpo-title').textContent = (entry.title || ctx.title || 'پخش آنلاین') + se;
+  $('#fpo-sub').textContent = 'کیفیت ' + (fnPlayResFa(p) || '—') + ' ' + fnPlayVersionLabel(p) + (fnPlaySpecs(p) ? ' · ' + fnPlaySpecs(p) : '') + (fnPlaySizeFa(p) ? ' · ' + fnPlaySizeFa(p) : '');
+  var url = p.play_url;
+  $('#fpo-fn').onclick = function () { $('#fn-play-opt').classList.remove('on'); fnPlayerOpen(p); };
+  $('#fpo-mx').onclick = function () {
+    if (/Android/i.test(navigator.userAgent || '')) { window.open(fnPlayIntent(url, 'com.mxtech.videoplayer.ad', $('#fpo-title').textContent), '_self'); }
+    else { copyText(url); toast('لینک کپی شد — آن را در MX Player باز کنید'); }
+  };
+  $('#fpo-vlc').onclick = function () { openInPlayer(url); };
+  $('#fpo-copy').onclick = function () { copyText(url); };
+  $('#fn-play-opt').classList.add('on');
+}
+/* ================= built-in player ================= */
+var FNP = { v: null, p: null, key: '', hash: '', dur: 0, subCues: [], subOn: false, subOff: 0, subColor: '#ffffff', subSize: 1, aspect: 0, rotated: false, uiTimer: null, lastSave: 0, marked: false, started: false, lastTap: 0, lastTapX: 0, singleTimer: null, tapX0: 0, tapT0: 0 };
+var FNP_ASPECTS = [['متناسب با صفحه', ''], ['برش', 'fit-cover'], ['کشیده', 'fit-fill'], ['اندازه واقعی', 'fit-none']];
+var FNP_SUB_SIZES = [[0.85, 'کوچک'], [1, 'معمولی'], [1.25, 'بزرگ'], [1.5, 'خیلی بزرگ']];
+var FNP_SUB_COLORS = [['#ffffff', 'سفید'], ['#ffe600', 'زرد'], ['#00e5ff', 'آبی'], ['#7cfc00', 'سبز'], ['#ff7eb6', 'صورتی']];
+function fnPlayerEnsureDom() {
+  if ($('#ov-fnplayer')) return;
+  var d = document.createElement('div');
+  d.id = 'ov-fnplayer'; d.setAttribute('role', 'dialog'); d.setAttribute('aria-modal', 'true');
+  d.innerHTML = '<div class="fnp-stage" id="fnp-stage">'
+    + '<video id="fnp-video" playsinline preload="metadata"></video>'
+    + '<div class="fnp-sub" id="fnp-sub"><span id="fnp-sub-text"></span></div>'
+    + '<div class="fnp-tap" id="fnp-tap"></div>'
+    + '<div class="fnp-center" id="fnp-center">'
+    + '<button class="fnp-cbtn" id="fnp-back10" aria-label="۱۰ ثانیه عقب"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 17l-5-5 5-5M18 17l-5-5 5-5"/></svg></button>'
+    + '<button class="fnp-cbtn main" id="fnp-playpause" aria-label="پخش / توقف"><svg id="fnp-pp-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></button>'
+    + '<button class="fnp-cbtn" id="fnp-fwd10" aria-label="۱۰ ثانیه جلو"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 17l5-5-5-5M6 17l5-5-5-5"/></svg></button>'
+    + '</div>'
+    + '<div class="fnp-top" id="fnp-top">'
+    + '<button class="fnp-tbtn" id="fnp-close" aria-label="خروج"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button>'
+    + '<div class="tt"><b id="fnp-title"></b><span id="fnp-meta"></span></div>'
+    + '<button class="fnp-tbtn" id="fnp-subsize" aria-label="اندازه زیرنویس"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10.5 10.5a2.5 2.5 0 1 1 3.5 2.3"/></svg></button>'
+    + '<button class="fnp-tbtn" id="fnp-subbtn" aria-label="زیرنویس"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 12h4M7 15.5h7M14 12h3"/></svg></button>'
+    + '<button class="fnp-tbtn" id="fnp-setbtn" aria-label="تنظیمات"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M19 12a7 7 0 0 0-.14-1.4l2-1.55-2-3.46-2.36.95a7 7 0 0 0-2.42-1.4L13.7 2.6h-3.4l-.38 2.54a7 7 0 0 0-2.42 1.4l-2.36-.95-2 3.46 2 1.55A7 7 0 0 0 5 12c0 .48.05.94.14 1.4l-2 1.55 2 3.46 2.36-.95a7 7 0 0 0 2.42 1.4l.38 2.54h3.4l.38-2.54a7 7 0 0 0 2.42-1.4l2.36.95 2-3.46-2-1.55c.09-.46.14-.92.14-1.4z"/></svg></button>'
+    + '<button class="fnp-tbtn" id="fnp-rotate" aria-label="چرخش تصویر"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="14" height="18" rx="2" transform="rotate(90 14 12)"/><path d="M12 8v6M9 11l3 3 3-3"/></svg></button>'
+    + '<button class="fnp-tbtn" id="fnp-aspect" aria-label="اندازه تصویر"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 9v6M17 9v6"/></svg></button>'
+    + '</div>'
+    + '<div class="fnp-bottom" id="fnp-bottom"><div class="fnp-times"><span id="fnp-cur">۰۰:۰۰</span><span id="fnp-dur">۰۰:۰۰</span></div><input type="range" class="fnp-seek" id="fnp-seek" min="0" max="100" step="0.1" value="0" dir="ltr"></div>'
+    + '<div class="fnp-load" id="fnp-load"><div class="spin"></div><p>در حال پخش، کمی منتظر بمانید</p></div>'
+    + '<div class="fnp-err" id="fnp-err"><b id="fnp-err-title">پخش در مرورگر ممکن نشد</b><p id="fnp-err-txt">این نسخه با فرمت MKV است و مرورگرها آن را پخش نمی‌کنند. با MX Player یا VLC همان لینک مستقیم پخش می‌شود.</p><div class="row"><button class="btn btn-gold" id="fnp-err-retry">تلاش دوباره</button><button class="btn btn-gold" id="fnp-err-mx">پخش با MX</button><button class="btn btn-gold" id="fnp-err-vlc">پخش با VLC</button><button class="btn btn-ghost" id="fnp-err-copy">کپی لینک پخش</button></div></div>'
+    + '<div class="fnp-menu" id="fnp-submenu"><h4>زیرنویس <button id="fnp-submenu-x" aria-label="بستن">×</button></h4><div id="fnp-sub-list"></div></div>'
+    + '<div class="fnp-menu" id="fnp-setmenu"><h4>تنظیمات زیرنویس <button id="fnp-setmenu-x" aria-label="بستن">×</button></h4><div id="fnp-set-body"></div></div>'
+    + '<div class="fnp-resume" id="fnp-resume"><div class="box"><h3>ادامه می‌دهید؟</h3><p id="fnp-resume-txt"></p><button class="btn btn-gold" id="fnp-resume-yes">ادامه پخش</button><button class="btn btn-ghost" id="fnp-resume-no">پخش از ابتدا</button></div></div>'
+    + '</div>';
+  document.body.appendChild(d);
+  fnPlayerWire(d);
+}
+function fnPlayerFmt(t) {
+  t = Math.max(0, Math.floor(t || 0));
+  var h = Math.floor(t / 3600), m = Math.floor((t % 3600) / 60), s = t % 60;
+  var out = (h ? fnPlayFa(h) + ':' : '') + fnPlayFa(String(m).padStart(2, '0')) + ':' + fnPlayFa(String(s).padStart(2, '0'));
+  return out;
+}
+function fnPlayerLoadPrefs() {
+  try {
+    FNP.subColor = localStorage.getItem('fnplay:subcolor') || '#ffffff';
+    var sz = parseFloat(localStorage.getItem('fnplay:subsize') || '1'); FNP.subSize = FNP_SUB_SIZES.some(function (x) { return x[0] === sz; }) ? sz : 1;
+  } catch (e) {}
+}
+function fnPlayerPosKey() { return 'fnplay:pos:' + FNP.hash; }
+function fnPlayerSubKey() { return 'fnplay:sub:' + FNP.hash; }
+function fnPlayerOffKey() { return 'fnplay:suboff:' + FNP.hash; }
+function fnPlayerGetSavedPos() {
+  try { var j = JSON.parse(localStorage.getItem(fnPlayerPosKey()) || 'null'); return (j && +j.t > 15 && +j.dur > 30 && +j.t < +j.dur - 15) ? j : null; } catch (e) { return null; }
+}
+function fnPlayerSavePos() {
+  var v = FNP.v; if (!v || !FNP.started) return;
+  try {
+    if (v.duration && v.currentTime > 10 && v.currentTime < v.duration - 10) localStorage.setItem(fnPlayerPosKey(), JSON.stringify({ t: Math.floor(v.currentTime), dur: Math.floor(v.duration), at: Date.now() }));
+    else if (v.duration && v.currentTime >= v.duration - 10) localStorage.removeItem(fnPlayerPosKey());
+  } catch (e) {}
+}
+function fnPlayerShowUi() {
+  var st = $('#fnp-stage'); if (!st) return;
+  st.classList.remove('fnp-hide-ui');
+  clearTimeout(FNP.uiTimer);
+  FNP.uiTimer = setTimeout(function () { if (FNP.v && !FNP.v.paused) st.classList.add('fnp-hide-ui'); }, 3500);
+}
+function fnPlayerSetPP() {
+  var v = FNP.v; if (!v) return;
+  $('#fnp-pp-ic').innerHTML = v.paused ? '<path d="M7 4.5v15l13-7.5z"/>' : '<path d="M6 4h4v16H6zM14 4h4v16h-4z"/>';
+}
+function fnPlayerSeekBy(d) { var v = FNP.v; if (!v) return; try { v.currentTime = Math.min(Math.max(0, (v.currentTime || 0) + d), (v.duration || 0)); } catch (e) {} fnPlayerShowUi(); }
+function fnPlayerToggle() { var v = FNP.v; if (!v) return; if (v.paused) v.play().catch(function () {}); else v.pause(); }
+function fnPlayerPaintSeek() {
+  var v = FNP.v, sk = $('#fnp-seek'); if (!v || !sk) return;
+  var dur = v.duration || 0, cur = v.currentTime || 0;
+  if (dur) { sk.max = dur; sk.value = cur; }
+  var pct = dur ? (cur / dur * 100) : 0;
+  sk.style.background = 'linear-gradient(to right, var(--gold2) ' + pct + '%, rgba(255,255,255,.28) ' + pct + '%)';
+  $('#fnp-cur').textContent = fnPlayerFmt(cur);
+  $('#fnp-dur').textContent = fnPlayerFmt(dur);
+}
+/* ---------- subtitles: parse + render + upload + sync ---------- */
+function fnPlayerParseSubs(text) {
+  var cues = [], t = String(text || '').replace(/^\uFEFF/, '').replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+  var blocks = t.split(/\n\s*\n/);
+  function ts(s) { var m = String(s || '').trim().match(/(?:(\d+):)?(\d{2}):(\d{2})[,.](\d{1,3})/); if (!m) return null; return (+(m[1] || 0)) * 3600 + (+m[2]) * 60 + (+m[3]) + (+('' + m[4]).padEnd(3, '0')) / 1000; }
+  blocks.forEach(function (b) {
+    var lines = b.split('\n').filter(function (x) { return x.trim() !== ''; });
+    var ti = -1, i;
+    for (i = 0; i < lines.length; i++) { if (lines[i].indexOf('-->') > -1) { ti = i; break; } }
+    if (ti < 0) return;
+    var parts = lines[ti].split('-->');
+    var s0 = ts(parts[0]), s1 = ts(parts[1]); if (s0 == null || s1 == null || s1 <= s0) return;
+    var txt = lines.slice(ti + 1).join('\n').replace(/<[^>]+>/g, '').trim();
+    if (txt) cues.push({ start: s0, end: s1, text: txt });
+  });
+  cues.sort(function (a, b) { return a.start - b.start; });
+  return cues;
+}
+function fnPlayerRenderSub() {
+  var el = $('#fnp-sub-text'), box = $('#fnp-sub'); if (!el || !box) return;
+  var v = FNP.v; if (!v) { el.textContent = ''; return; }
+  if (!FNP.subOn || !FNP.subCues.length) { el.textContent = ''; box.style.display = 'none'; return; }
+  var t = (v.currentTime || 0) + (FNP.subOff || 0) / 1000, cue = null, i;
+  for (i = 0; i < FNP.subCues.length; i++) { var c = FNP.subCues[i]; if (t >= c.start && t < c.end) { cue = c; break; } if (c.start > t) break; }
+  if (!cue) { el.textContent = ''; box.style.display = 'none'; return; }
+  box.style.display = '';
+  el.textContent = cue.text;
+  el.style.color = FNP.subColor;
+  el.style.fontSize = (1.05 * FNP.subSize) + 'rem';
+}
+function fnPlayerLoadUploaded() {
+  try {
+    var raw = localStorage.getItem(fnPlayerSubKey());
+    FNP.subCues = raw ? fnPlayerParseSubs(raw) : [];
+    FNP.subOff = parseInt(localStorage.getItem(fnPlayerOffKey()) || '0', 10) || 0;
+  } catch (e) { FNP.subCues = []; FNP.subOff = 0; }
+  FNP.subOn = FNP.subCues.length > 0;
+}
+function fnPlayerUploadSub(file) {
+  if (!file) return;
+  if (!/\.(srt|vtt)$/i.test(file.name || '')) { toast('فقط فایل زیرنویس srt یا vtt قابل قبول است'); return; }
+  var rd = new FileReader();
+  rd.onload = function () {
+    var cues = fnPlayerParseSubs(String(rd.result || ''));
+    if (!cues.length) { toast('در این فایل زیرنویسی پیدا نشد'); return; }
+    FNP.subCues = cues; FNP.subOn = true; FNP.subOff = 0;
+    try { localStorage.setItem(fnPlayerSubKey(), String(rd.result || '').slice(0, 400000)); localStorage.setItem(fnPlayerOffKey(), '0'); } catch (e) {}
+    fnPlayerRenderSub(); fnPlayerPaintSubMenu(); fnPlayerPaintSetMenu();
+    toast('زیرنویس اضافه شد');
+  };
+  rd.readAsText(file);
+}
+function fnPlayerPaintSubMenu() {
+  var list = $('#fnp-sub-list'); if (!list) return;
+  var p = FNP.p, rows = [];
+  var hard = p && p.group === 'SoftSub';
+  if (hard) rows.push('<button class="fnp-opt on" data-subpick="hard">زیرنویس فارسی (هاردساب)<span class="ck">چسبیده به فیلم</span></button>');
+  else if (p && p.group === 'Dubbed') rows.push('<button class="fnp-opt" data-subpick="none">دوبله فارسی<span class="ck">بدون زیرنویس</span></button>');
+  else rows.push('<button class="fnp-opt" data-subpick="none">بدون زیرنویس</button>');
+  if (FNP.subCues.length) rows.push('<button class="fnp-opt' + (FNP.subOn ? ' on' : '') + '" data-subpick="up">زیرنویس آپلودشده<span class="ck">' + (FNP.subOn ? 'فعال' : 'خاموش') + '</span></button>');
+  rows.push('<button class="fnp-opt" data-subpick="off">خاموش کردن زیرنویس آپلودشده</button>');
+  rows.push('<button class="fnp-opt" data-subpick="upload">آپلود زیرنویس (.srt / .vtt)</button>');
+  list.innerHTML = rows.join('');
+  list.querySelectorAll('[data-subpick]').forEach(function (b) {
+    b.onclick = function () {
+      var k = b.dataset.subpick;
+      if (k === 'up') { FNP.subOn = true; fnPlayerRenderSub(); toast('زیرنویس آپلودشده فعال شد'); }
+      else if (k === 'off') { FNP.subOn = false; fnPlayerRenderSub(); toast('زیرنویس خاموش شد'); }
+      else if (k === 'upload') { var inp = document.createElement('input'); inp.type = 'file'; inp.accept = '.srt,.vtt'; inp.onchange = function () { fnPlayerUploadSub(inp.files && inp.files[0]); }; inp.click(); return; }
+      else if (k === 'hard') { toast('این زیرنویس به فیلم چسبیده و قابل تغییر نیست'); }
+      fnPlayerPaintSubMenu();
+    };
+  });
+}
+function fnPlayerPaintSetMenu() {
+  var body = $('#fnp-set-body'); if (!body) return;
+  var hasUp = FNP.subCues.length > 0;
+  body.innerHTML = '<p style="margin:.1rem 0 .4rem;color:var(--pearl);font-size:.85rem">رنگ زیرنویس</p><div class="fnp-swatches">'
+    + FNP_SUB_COLORS.map(function (c) { return '<button class="fnp-sw' + (FNP.subColor === c[0] ? ' on' : '') + '" data-color="' + c[0] + '" title="' + c[1] + '" style="background:' + c[0] + '"></button>'; }).join('') + '</div>'
+    + '<p style="margin:.4rem 0;color:var(--pearl);font-size:.85rem">اندازه زیرنویس</p><div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.6rem">'
+    + FNP_SUB_SIZES.map(function (s) { return '<button class="chip' + (FNP.subSize === s[0] ? ' on' : '') + '" data-subsize="' + s[0] + '">' + s[1] + '</button>'; }).join('') + '</div>'
+    + '<p style="margin:.4rem 0;color:var(--pearl);font-size:.85rem">هماهنگ‌سازی زیرنویس آپلودشده (میلی‌ثانیه)</p>'
+    + '<div class="fnp-sync"><button id="fnp-sync-minus" aria-label="عقب">−</button><b id="fnp-sync-val">' + (FNP.subOff > 0 ? '+' : '') + fnPlayFa(FNP.subOff) + ' ms</b><button id="fnp-sync-plus" aria-label="جلو">+</button></div>'
+    + '<p style="margin:.2rem 0 .6rem;color:var(--pearl);font-size:.8rem;line-height:1.9">' + (hasUp ? 'با + زیرنویس جلوتر و با − عقب‌تر نمایش داده می‌شود. با هر بار زدن ۱۰۰ میلی‌ثانیه جابه‌جا می‌شود.' : 'برای هماهنگی، اول یک زیرنویس آپلود کنید.') + '</p>'
+    + '<button class="btn btn-gold" id="fnp-set-upload" style="width:100%">آپلود زیرنویس (.srt / .vtt)</button>';
+  body.querySelectorAll('[data-color]').forEach(function (b) {
+    b.onclick = function () { FNP.subColor = b.dataset.color; try { localStorage.setItem('fnplay:subcolor', FNP.subColor); } catch (e) {} fnPlayerRenderSub(); fnPlayerPaintSetMenu(); };
+  });
+  body.querySelectorAll('[data-subsize]').forEach(function (b) {
+    b.onclick = function () { FNP.subSize = parseFloat(b.dataset.subsize); try { localStorage.setItem('fnplay:subsize', String(FNP.subSize)); } catch (e) {} fnPlayerRenderSub(); fnPlayerPaintSetMenu(); };
+  });
+  var minus = body.querySelector('#fnp-sync-minus'), plus = body.querySelector('#fnp-sync-plus');
+  function bump(d) {
+    if (!FNP.subCues.length) { toast('اول یک زیرنویس آپلود کنید'); return; }
+    FNP.subOff += d;
+    try { localStorage.setItem(fnPlayerOffKey(), String(FNP.subOff)); } catch (e) {}
+    fnPlayerRenderSub(); fnPlayerPaintSetMenu();
+  }
+  if (minus) minus.onclick = function () { bump(-100); };
+  if (plus) plus.onclick = function () { bump(100); };
+  var up = body.querySelector('#fnp-set-upload');
+  if (up) up.onclick = function () { var inp = document.createElement('input'); inp.type = 'file'; inp.accept = '.srt,.vtt'; inp.onchange = function () { fnPlayerUploadSub(inp.files && inp.files[0]); }; inp.click(); };
+}
+function fnPlayerCycleAspect() {
+  FNP.aspect = (FNP.aspect + 1) % FNP_ASPECTS.length;
+  var v = FNP.v; if (!v) return;
+  v.classList.remove('fit-cover', 'fit-fill', 'fit-none');
+  var cls = FNP_ASPECTS[FNP.aspect][1]; if (cls) v.classList.add(cls);
+  toast('اندازه تصویر: ' + FNP_ASPECTS[FNP.aspect][0]);
+}
+function fnPlayerToggleRotate() {
+  var v = FNP.v, st = $('#fnp-stage'); if (!v || !st) return;
+  FNP.rotated = !FNP.rotated;
+  if (FNP.rotated) {
+    var s = st.clientHeight / Math.max(1, st.clientWidth);
+    v.style.transform = 'rotate(90deg) scale(' + s.toFixed(3) + ')';
+    toast('تصویر عمودی شد');
+  } else { v.style.transform = ''; toast('تصویر افقی شد'); }
+}
+function fnPlayerWire(d) {
+  var v = d.querySelector('#fnp-video');
+  FNP.v = v;
+  d.querySelector('#fnp-close').onclick = fnPlayerClose;
+  d.querySelector('#fnp-playpause').onclick = function () { fnPlayerToggle(); };
+  d.querySelector('#fnp-back10').onclick = function () { fnPlayerSeekBy(-10); };
+  d.querySelector('#fnp-fwd10').onclick = function () { fnPlayerSeekBy(10); };
+  d.querySelector('#fnp-aspect').onclick = fnPlayerCycleAspect;
+  d.querySelector('#fnp-rotate').onclick = fnPlayerToggleRotate;
+  d.querySelector('#fnp-subsize').onclick = function () {
+    var i = FNP_SUB_SIZES.findIndex(function (x) { return x[0] === FNP.subSize; });
+    var nx = FNP_SUB_SIZES[(i + 1) % FNP_SUB_SIZES.length];
+    FNP.subSize = nx[0];
+    try { localStorage.setItem('fnplay:subsize', String(FNP.subSize)); } catch (e) {}
+    fnPlayerRenderSub(); toast('اندازه زیرنویس: ' + nx[1]);
+  };
+  d.querySelector('#fnp-subbtn').onclick = function () { fnPlayerPaintSubMenu(); $('#fnp-setmenu').classList.remove('on'); $('#fnp-submenu').classList.add('on'); fnPlayerShowUi(); };
+  d.querySelector('#fnp-setbtn').onclick = function () { fnPlayerPaintSetMenu(); $('#fnp-submenu').classList.remove('on'); $('#fnp-setmenu').classList.add('on'); fnPlayerShowUi(); };
+  d.querySelector('#fnp-submenu-x').onclick = function () { $('#fnp-submenu').classList.remove('on'); };
+  d.querySelector('#fnp-setmenu-x').onclick = function () { $('#fnp-setmenu').classList.remove('on'); };
+  d.querySelector('#fnp-err-retry').onclick = function () { $('#fnp-err').classList.remove('on'); $('#fnp-load').classList.add('on'); try { v.load(); v.play().catch(function () {}); } catch (e) {} };
+  d.querySelector('#fnp-err-mx').onclick = function () { if (FNP.p) window.open(fnPlayIntent(FNP.p.play_url, 'com.mxtech.videoplayer.ad', (FNP.ctx && FNP.ctx.title) || 'Family Night'), '_self'); };
+  d.querySelector('#fnp-err-vlc').onclick = function () { if (FNP.p) openInPlayer(FNP.p.play_url); };
+  d.querySelector('#fnp-err-copy').onclick = function () { if (FNP.p) copyText(FNP.p.play_url); };
+  d.querySelector('#fnp-resume-yes').onclick = function () {
+    $('#fnp-resume').classList.remove('on');
+    var sv = fnPlayerGetSavedPos(); if (sv) { try { v.currentTime = sv.t; } catch (e) {} }
+    v.play().catch(function () {});
+  };
+  d.querySelector('#fnp-resume-no').onclick = function () {
+    $('#fnp-resume').classList.remove('on');
+    try { localStorage.removeItem(fnPlayerPosKey()); } catch (e) {}
+    try { v.currentTime = 0; } catch (e) {}
+    v.play().catch(function () {});
+  };
+  var sk = d.querySelector('#fnp-seek');
+  sk.addEventListener('input', function () { try { v.currentTime = parseFloat(sk.value) || 0; } catch (e) {} fnPlayerPaintSeek(); fnPlayerShowUi(); });
+  sk.addEventListener('change', function () { fnPlayerShowUi(); });
+  /* tap zones: single tap toggles the chrome, double-tap on the left /
+     right third seeks ∓10s, double-tap in the middle toggles play */
+  var tap = d.querySelector('#fnp-tap');
+  tap.addEventListener('pointerdown', function (e) { FNP.tapX0 = e.clientX; FNP.tapT0 = Date.now(); });
+  tap.addEventListener('pointerup', function (e) {
+    if (Date.now() - FNP.tapT0 > 350 || Math.abs(e.clientX - FNP.tapX0) > 14) return;
+    var now = Date.now(), w = tap.clientWidth || 1, x = e.clientX;
+    if (now - FNP.lastTap < 350) {
+      clearTimeout(FNP.singleTimer); FNP.lastTap = 0;
+      if (x < w / 3) fnPlayerSeekBy(-10); else if (x > w * 2 / 3) fnPlayerSeekBy(10); else fnPlayerToggle();
+      return;
+    }
+    FNP.lastTap = now; FNP.lastTapX = x;
+    clearTimeout(FNP.singleTimer);
+    FNP.singleTimer = setTimeout(function () {
+      var st = $('#fnp-stage'); if (!st) return;
+      if (st.classList.contains('fnp-hide-ui')) fnPlayerShowUi(); else { st.classList.add('fnp-hide-ui'); clearTimeout(FNP.uiTimer); }
+    }, 350);
+  });
+  ['pointermove', 'touchstart'].forEach(function (ev) { d.querySelector('#fnp-stage').addEventListener(ev, fnPlayerShowUi, { passive: true }); });
+  v.addEventListener('loadedmetadata', function () { FNP.dur = v.duration || 0; fnPlayerPaintSeek(); });
+  v.addEventListener('timeupdate', function () {
+    fnPlayerPaintSeek(); fnPlayerRenderSub();
+    var now = Date.now(); if (now - FNP.lastSave > 5000) { FNP.lastSave = now; fnPlayerSavePos(); }
+  });
+  v.addEventListener('play', function () { fnPlayerSetPP(); fnPlayerShowUi(); });
+  v.addEventListener('pause', function () { fnPlayerSetPP(); fnPlayerSavePos(); fnPlayerShowUi(); });
+  v.addEventListener('playing', function () {
+    $('#fnp-load').classList.remove('on');
+    fnPlayerSetPP(); fnPlayerShowUi();
+    if (!FNP.marked && FNP.p) { FNP.marked = true; fnPlayMarkSeen(FNP.p); }
+    FNP.started = true;
+  });
+  v.addEventListener('waiting', function () { if (!v.paused) $('#fnp-load').classList.add('on'); });
+  v.addEventListener('canplay', function () { $('#fnp-load').classList.remove('on'); });
+  v.addEventListener('ended', function () { try { localStorage.removeItem(fnPlayerPosKey()); } catch (e) {} fnPlayerSetPP(); fnPlayerShowUi(); });
+  v.addEventListener('error', function () {
+    if (!FNP.p) return;
+    $('#fnp-load').classList.remove('on');
+    function showNet() {
+      $('#fnp-err-title').textContent = 'دریافت فایل ممکن نشد';
+      $('#fnp-err-txt').textContent = 'سرور یا اتصال اینترنت فایل را تحویل نداد. دوباره تلاش کنید، یا با MX Player یا VLC همان لینک را پخش کنید.';
+    }
+    function showFmt() {
+      $('#fnp-err-title').textContent = 'پخش در مرورگر ممکن نشد';
+      $('#fnp-err-txt').textContent = 'این نسخه با فرمت MKV است و مرورگرها آن را پخش نمی‌کنند. با MX Player یا VLC همان لینک مستقیم پخش می‌شود.';
+    }
+    /* MEDIA_ERR_NETWORK (2) = the file could not be fetched at all.
+       DECODE (3) / SRC_NOT_SUPPORTED (4) usually mean the browser
+       cannot play this container/codec (MKV / x265) — but a server
+       that answers with an error page looks the same to the video
+       element, so probe the URL: if the server itself refuses the
+       file, say so instead of blaming the format. */
+    var code = (v.error && v.error.code) || 0;
+    if (code === 2) { showNet(); }
+    else {
+      showFmt();
+      try {
+        var ctl = new AbortController();
+        var to = setTimeout(function () { ctl.abort(); }, 6000);
+        fetch(FNP.p.play_url, { method: 'HEAD', signal: ctl.signal }).then(function (r) {
+          clearTimeout(to);
+          if (!r.ok) showNet();
+        }).catch(function () { clearTimeout(to); showNet(); });
+      } catch (e) {}
+    }
+    $('#fnp-err').classList.add('on');
+  });
+  document.addEventListener('keydown', function (e) {
+    if (!d.classList.contains('on')) return;
+    if (e.key === ' ') { e.preventDefault(); fnPlayerToggle(); }
+    else if (e.key === 'ArrowLeft') fnPlayerSeekBy(-10);
+    else if (e.key === 'ArrowRight') fnPlayerSeekBy(10);
+    else if (e.key === 'Escape') fnPlayerClose();
+  });
+}
+function fnPlayerOpen(p) {
+  fnPlayerEnsureDom();
+  var ctx = FN_PLAY.ctx, entry = FN_PLAY.entry;
+  FNP.p = p; FNP.ctx = ctx; FNP.entry = entry;
+  FNP.hash = fnPlayHash(p.play_url || '');
+  FNP.key = FN_PLAY.key;
+  FNP.marked = false; FNP.started = false; FNP.aspect = 0; FNP.rotated = false; FNP.lastSave = 0; FNP.dur = 0;
+  fnPlayerLoadPrefs();
+  fnPlayerLoadUploaded();
+  var v = FNP.v;
+  v.classList.remove('fit-cover', 'fit-fill', 'fit-none'); v.style.transform = '';
+  $('#fnp-err').classList.remove('on');
+  $('#fnp-submenu').classList.remove('on'); $('#fnp-setmenu').classList.remove('on');
+  $('#fnp-resume').classList.remove('on');
+  var se = (ctx.type === 'tv' && p.season) ? 'فصل ' + fnPlayOrd(p.season) + ' · قسمت ' + fnPlayOrd(p.episode || 0) : 'فیلم';
+  $('#fnp-title').textContent = (entry.title || ctx.title || 'پخش آنلاین');
+  $('#fnp-meta').textContent = se + ' · کیفیت ' + (fnPlayResFa(p) || '—') + ' ' + fnPlayVersionLabel(p);
+  $('#fnp-sub-text').textContent = '';
+  document.body.style.overflow = 'hidden';
+  $('#ov-fnplayer').classList.add('on');
+  try { fnEnterFs($('#ov-fnplayer')); } catch (e) {}
+  $('#fnp-load').classList.add('on');
+  v.src = p.play_url;
+  v.load();
+  fnPlayerSetPP();
+  fnPlayerShowUi();
+  var sv = fnPlayerGetSavedPos();
+  if (sv) {
+    $('#fnp-resume-txt').textContent = 'آخرین بار تا ' + fnPlayerFmt(sv.t) + ' از ' + fnPlayerFmt(sv.dur) + ' دیده‌اید.';
+    $('#fnp-resume-yes').textContent = 'ادامه از ' + fnPlayerFmt(sv.t);
+    $('#fnp-resume').classList.add('on');
+  } else {
+    v.play().catch(function () { /* autoplay may need a tap; the center button stays available */ });
+  }
+}
+function fnPlayerClose() {
+  var v = FNP.v;
+  if (v) { try { v.pause(); } catch (e) {} fnPlayerSavePos(); }
+  try { if (document.fullscreenElement) document.exitFullscreen().catch(function () {}); } catch (e) {}
+  try { fnExitTheater(); } catch (e) {}
+  var el = $('#ov-fnplayer'); if (el) el.classList.remove('on');
+  if (v) { try { v.removeAttribute('src'); v.load(); } catch (e) {} }
+  document.body.style.overflow = document.querySelector('.overlay.on') ? 'hidden' : '';
+  if (FNP.p && FN_PLAY.entry) fnPlayRenderList();
+  FNP.p = null; FNP.started = false;
+}
+
 </script>
 
 <script>
