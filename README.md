@@ -212,6 +212,28 @@ Nothing else in the site was changed.
   404 error messages); `run_test.py` 32/32 and `integration_test.py`
   15/15 still PASS. All 14 script blocks pass `node --check`.
 
+## v8.3 — Watch party plays internally by default (2026-11-18)
+- A room («تماشا با دوستان») now shows the internal play list by default
+  for new-archive titles, exactly like solo playback (same rows, season
+  dropdown, sizes, encoder): tapping a version syncs it into the shared
+  room source (`playUrl` + quality/group/encoder/size + season/episode),
+  so every member gets the same version and the internal player opens
+  for them too (once per version; a member who closes it is not
+  re-opened). The external-server iframe is only a local mode switch
+  («سرور خارجی» / «پخش داخلی») and never changes the shared source.
+  Titles with no play data keep the old external iframe untouched;
+  solo playback is untouched. The patch is purely additive
+  (`WP-INTERNAL-PLAY v1`, in `~/workspace/play-module/watchparty_patch.py`).
+- Tests: `watchparty_test.py` 29/29 PASS on the v8.2 file (Gardener room
+  list 4 rows, pick syncs the mp4, fresh member auto-opens the same
+  version, mode switch works both ways, Anora → external iframe,
+  Secret Level series syncs S1E1); `integration_test.py` 15/15 still
+  PASS (no solo regression). All 15 script blocks pass `node --check`.
+- Caveats: a member who did not tap may get the player opened paused
+  (browser autoplay policy — they tap play); the native Android app
+  does not know `playUrl` yet, so in-app rooms still use the external
+  server until the app is updated.
+
 ## To publish
 Upload this whole folder to the `family-night-site` repo root (browser upload —
 GitHub connector pushes return 403). The site reads the archive from its own
