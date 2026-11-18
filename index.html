@@ -1211,8 +1211,11 @@ html.tg .bottomnav{display:flex}
 .pl-poster .pl-check svg{width:2rem;height:2rem;filter:drop-shadow(0 1px 4px rgba(0,0,0,.8))}
 .pl-body{flex:1;min-width:0}
 .pl-title{font-weight:800;font-size:.98rem;line-height:1.9;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.pl-sub{color:var(--pearl);font-size:.8rem;line-height:1.9}
+.pl-sub{display:block;color:var(--pearl);font-size:.8rem;line-height:1.9}
 .pl-sub .sz{color:var(--gold2);font-weight:700}
+.pl-sub .pl-specs{display:block;direction:ltr;text-align:right;unicode-bidi:isolate}
+.pl-sub .pl-size{display:block}
+.fpo-head p .sz{color:var(--gold2);font-weight:700}
 .pl-count{padding:.4rem 1rem 0;color:var(--pearl);font-size:.8rem}
 .pl-empty{padding:3rem 1rem;text-align:center;color:var(--pearl);line-height:2}
 /* ---- per-quality option popup ---- */
@@ -4492,8 +4495,10 @@ function openInPlayer(url) {
    Play list (new-archive titles only) + per-quality option popup +
    built-in fullscreen player. Only titles with at least one joined
    play link get the list; everything else falls back to the existing
-   external-servers player (openPlayer) untouched. */
-var FN_PLAY = { parts: {}, ctx: null, entry: null, key: '', part: 0, sel: null, seasonKey: '' };
+   external-servers player (openPlayer) untouched.
+   v8.4: prefetch on detail open, 6s resolve cap, year in headers,
+   two-line bidi-safe row/popup subtitles. */
+var FN_PLAY = { parts: {}, ctx: null, entry: null, key: '', part: 0, sel: null, seasonKey: '', prefetch: null };
 /* real brand icons (v8.2): MX Player + VLC, 96px PNGs from the apps' Google Play pages */
 var FN_PLAY_ICONS = { mx: 'data:image/png;base64,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', vlc: 'data:image/png;base64,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' };
 function fnPlayExtOf(p) { var m = String((p.play_url || '').split('?')[0]).match(/\.([a-z0-9]+)$/i); return m ? m[1].toLowerCase() : ''; }
@@ -4517,8 +4522,8 @@ function fnPlaySpecs(p) {
   if (/x265|HEVC/i.test(hay)) bits.push('x265'); else if (/x264/i.test(hay)) bits.push('x264');
   if (/10bit/i.test(hay)) bits.push('10bit');
   if (/HDR(?![a-z]*ip)/i.test(hay)) bits.push('HDR');
-  if (p.encoder && p.encoder !== 'unknown') bits.push('انکودر: ' + p.encoder);
-  else { var em = ''; try { em = (decodeURIComponent((p.play_url || '').split('/').pop() || '').split('?')[0].match(/(?:^|[.\-_])(MkvCage|Pahe|PSA|ShAaNiG|GalaxyRG|YTS|YIFY|RARBG|F2M|Film2Media|SPARKS|AMZN|NF|DonyayeSerial)(?:[.\-_]|$)/i) || [])[1] || ''; } catch (e) { em = ''; } if (em) bits.push('انکودر: ' + em); }
+  if (p.encoder && p.encoder !== 'unknown') bits.push(p.encoder);
+  else { var em = ''; try { em = (decodeURIComponent((p.play_url || '').split('/').pop() || '').split('?')[0].match(/(?:^|[.\-_])(MkvCage|Pahe|PSA|ShAaNiG|GalaxyRG|YTS|YIFY|RARBG|F2M|Film2Media|SPARKS|AMZN|NF|DonyayeSerial)(?:[.\-_]|$)/i) || [])[1] || ''; } catch (e) { em = ''; } if (em) bits.push(em); }
   var m = (p.play_url || '').split('?')[0].match(/\.([a-z0-9]+)$/i); if (m) bits.push(m[1].toUpperCase());
   return bits.join(' · ');
 }
@@ -4542,9 +4547,14 @@ function fnPlayJoined(entry) { return (entry.play || []).filter(function (p) { r
 /* ---------- resolve a title to its play-index entry ---------- */
 async function fnPlayFetchPart(part) {
   if (FN_PLAY.parts[part]) return FN_PLAY.parts[part];
-  var r = await fetch(DL_BASE + 'play-index-part-' + part + '.json');
-  if (!r.ok) throw new Error('play part');
-  var j = await r.json(); FN_PLAY.parts[part] = j; return j;
+  /* v8.4: 8s cap — a stalled part fetch must never hang the list */
+  var ctl = new AbortController();
+  var to = setTimeout(function () { ctl.abort(); }, 8000);
+  try {
+    var r = await fetch(DL_BASE + 'play-index-part-' + part + '.json', { signal: ctl.signal });
+    if (!r.ok) throw new Error('play part');
+    var j = await r.json(); FN_PLAY.parts[part] = j; return j;
+  } finally { clearTimeout(to); }
 }
 async function fnPlayResolve(ctx) {
   var part = 0, key = '';
@@ -4577,18 +4587,58 @@ function fnPlayCtx(o) {
     poster: o.poster || it.poster_path || ''
   };
 }
+function fnPlayTimeout(ms) { return new Promise(function (res) { setTimeout(function () { res(null); }, ms); }); }
+/* ---------- prefetch (v8.4) ----------
+   As soon as a detail sheet opens, resolve its play data in the
+   background (no UI): by the time the user taps «پخش آنلاین» the
+   list is already known and opens at once. A null result is cached
+   too — it means "no internal play data", so the tap falls back to
+   the external player immediately instead of spinning. */
+function fnPlayPrefetchDetail(type, id) {
+  try {
+    if (typeof curDetail === 'undefined' || !curDetail || !curDetail.data) return;
+    if (curDetail.type !== type || curDetail.id !== id) return;
+    var d = curDetail.data, en = d._en || {};
+    var og = '';
+    try { if (typeof origOf === 'function') og = origOf(d) || origOf(en) || ''; } catch (e) {}
+    /* the archive titles are English: prefer the English title (then
+       the original title) for the title search, never the Persian one */
+    var ctx = fnPlayCtx({
+      id: id, type: type, item: d,
+      imdbId: (d.external_ids && d.external_ids.imdb_id) || d.imdb_id || '',
+      title: (en.title || en.name) || og || d.title || d.name || '',
+      year: String(((d.release_date || d.first_air_date) || '').slice(0, 4) || ''),
+      poster: d.poster_path || ''
+    });
+    var key = ctx.tmdbKey;
+    fnPlayResolve(ctx).then(function (res) {
+      FN_PLAY.prefetch = { key: key, res: res || null, at: Date.now() };
+    }).catch(function () {
+      FN_PLAY.prefetch = { key: key, res: null, at: Date.now() };
+    });
+  } catch (e) {}
+}
 /* ---------- entry point: پخش آنلاین ---------- */
 async function openPlayListOrPlayer(o) {
   var ctx = fnPlayCtx(o);
   FN_PLAY.ctx = ctx; FN_PLAY.entry = null; FN_PLAY.sel = null;
   fnPlayEnsureListDom();
-  $('#pl-title').textContent = ctx.title || 'پخش آنلاین';
+  /* v8.4: release year next to the title for movies */
+  $('#pl-title').textContent = (ctx.title || 'پخش آنلاین') + ((ctx.type !== 'tv' && ctx.year) ? ' (' + fnPlayFa(ctx.year) + ')' : '');
   $('#pl-sub').textContent = ctx.type === 'tv' ? 'سریال · پخش آنلاین' : 'فیلم · پخش آنلاین';
   $('#pl-season').style.display = 'none'; $('#pl-season').innerHTML = '';
   $('#pl-body').innerHTML = '<div class="state"><div class="spin"></div>در حال دریافت نسخه‌های قابل پخش…</div>';
   openOverlay('#ov-playlist');
   var res = null;
-  try { res = await fnPlayResolve(ctx); } catch (e) { res = null; }
+  var pre = FN_PLAY.prefetch;
+  if (pre && pre.key === ctx.tmdbKey && (Date.now() - pre.at) < 300000) {
+    res = pre.res; /* prefetched while the detail was open — instant */
+  } else {
+    /* v8.4: 6s cap — a slow resolve (e.g. the 19-part title scan for a
+       title that is not in the archive) must never spin forever; on
+       timeout the external player opens at once */
+    try { res = await Promise.race([fnPlayResolve(ctx), fnPlayTimeout(6000)]); } catch (e) { res = null; }
+  }
   if (!res) { closeOverlay('#ov-playlist'); openPlayer({ id: ctx.id, type: ctx.type, item: ctx.item, imdbId: ctx.imdbId }); return; }
   FN_PLAY.entry = res.entry; FN_PLAY.key = res.key; FN_PLAY.part = res.part;
   fnPlayRenderList();
@@ -4617,7 +4667,14 @@ function fnPlayCardHtml(p, titleLine) {
 }
 function fnPlaySubHtml(p) {
   var specs = fnPlaySpecs(p), size = fnPlaySizeFa(p);
-  return (specs ? esc(specs) : '') + (specs && size ? ' · ' : '') + (size ? '<span class="sz">' + esc(size) + '</span>' : '');
+  /* v8.4: two lines — specs are pure Latin (dir=ltr), size is pure
+     Persian on its own line. One mixed RTL/LTR line scrambled the
+     order (the size landed mid-line, encoder/source swapped); a '|'
+     or '·' separator cannot fix that — both are bidi-neutral. */
+  var out = '';
+  if (specs) out += '<span class="pl-specs" dir="ltr">' + esc(specs) + '</span>';
+  if (size) out += '<span class="pl-size"><span class="sz">' + esc(size) + '</span></span>';
+  return out;
 }
 /* ---------- lazy size lookup (v8.2) ----------
    Most play entries have no size (the CDN blocks HEAD from the build
@@ -4754,8 +4811,11 @@ function fnPlayOpenOpt(p) {
   fnPlayEnsureOptDom();
   var ctx = FN_PLAY.ctx, entry = FN_PLAY.entry;
   var se = (ctx.type === 'tv' && p.season) ? ' · فصل ' + fnPlayOrd(p.season) + ' · قسمت ' + fnPlayOrd(p.episode || 0) : '';
-  $('#fpo-title').textContent = (entry.title || ctx.title || 'پخش آنلاین') + se;
-  $('#fpo-sub').textContent = 'کیفیت ' + (fnPlayResFa(p) || '—') + ' ' + fnPlayVersionLabel(p) + (fnPlaySpecs(p) ? ' · ' + fnPlaySpecs(p) : '') + (fnPlaySizeFa(p) ? ' · ' + fnPlaySizeFa(p) : '');
+  $('#fpo-title').textContent = (entry.title || ctx.title || 'پخش آنلاین') + ((ctx.type !== 'tv' && entry.year) ? ' (' + fnPlayFa(entry.year) + ')' : '') + se;
+  /* v8.4: same two-line bidi fix as the list rows — Persian line first
+     (quality + version + size), Latin specs on their own LTR line */
+  var fpoSpecs = fnPlaySpecs(p), fpoSize = fnPlaySizeFa(p);
+  $('#fpo-sub').innerHTML = esc('کیفیت ' + (fnPlayResFa(p) || '—') + ' ' + fnPlayVersionLabel(p)) + (fpoSize ? ' · <span class="sz">' + esc(fpoSize) + '</span>' : '') + (fpoSpecs ? '<br><span dir="ltr">' + esc(fpoSpecs) + '</span>' : '');
   var url = p.play_url;
   $('#fpo-fn').onclick = function () {
     $('#fn-play-opt').classList.remove('on');
@@ -5151,6 +5211,24 @@ function fnPlayerClose() {
   if (FNP.p && FN_PLAY.entry) fnPlayRenderList();
   FNP.p = null; FNP.started = false;
 }
+
+/* ---------- v8.4: prefetch hook ----------
+   openDetail is the single funnel for every detail open (cards, hero,
+   search, recommendations). Wrap it so the play data starts loading
+   the moment the detail opens. The site itself reassigns openDetail
+   once (back-stack wrapper); wrapping whatever it currently is works
+   in either order, and the _fnPlayPrefetch flag keeps it idempotent. */
+try {
+  if (typeof openDetail === 'function' && !openDetail._fnPlayPrefetch) {
+    var _fnPlayOpenDetail = openDetail;
+    openDetail = async function (type, id) {
+      var r = await _fnPlayOpenDetail(type, id);
+      try { fnPlayPrefetchDetail(type, id); } catch (e) {}
+      return r;
+    };
+    openDetail._fnPlayPrefetch = true;
+  }
+} catch (e) {}
 
 </script>
 
