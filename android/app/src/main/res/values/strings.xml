@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Family Night</string>
+    <string name="player_error_title">پخش ممکن نشد</string>
+    <string name="player_error_body">دریافت این فایل ممکن نشد یا فرمت آن پخش نمی‌شود. دوباره تلاش کنید یا لینک را کپی کنید.</string>
+    <string name="retry">تلاش دوباره</string>
+    <string name="copy_link">کپی لینک</string>
+    <string name="link_copied">لینک کپی شد</string>
+    <string name="resume_title">ادامه پخش؟</string>
+    <string name="resume_message">از دقیقه %1$s ادامه بدهیم یا از ابتدا پخش شود؟</string>
+    <string name="resume_continue">ادامه پخش</string>
+    <string name="resume_restart">پخش از ابتدا</string>
+</resources>

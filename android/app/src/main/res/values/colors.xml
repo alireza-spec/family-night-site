@@ -1,0 +1,8 @@
+<resources>
+    <!-- Site theme colours: dark navy background, gold accent. -->
+    <color name="launcher_bg">#0b0e1a</color>
+    <color name="gold">#e5a93c</color>
+    <color name="gold2">#fabc4d</color>
+    <color name="bg_dark">#0b0e1a</color>
+    <color name="pearl">#f2ead8</color>
+</resources>
