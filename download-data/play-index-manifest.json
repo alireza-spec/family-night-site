@@ -1,0 +1,117 @@
+{
+  "name": "play-index",
+  "generated": "2026-11-18",
+  "description": "Zivarnet play links for Family Night online playback (movies and series): per-page video mp4 + all ?playit= entries joined to their direct download URL. Split by download-archive part because the single file (118 MB) exceeds GitHub 100 MB single-file limit.",
+  "lookup": "Find a title part via download-index.json (IMDb code -> part) or download-title-index.json (tmdb key -> part), then fetch play-index-part-<part>.json. Part 0 holds the 69 titles with no download-archive record.",
+  "groups": "SoftSub = hardsub (burned-in Persian subtitles) grouped under SoftSub per archive convention; Dubbed = Persian-dubbed; NoSub = no subtitles. Unjoined entries have play_url null and group null.",
+  "total_entries": 10845,
+  "total_play_entries": 198556,
+  "joined": 191204,
+  "unjoined": 7352,
+  "mp4_sized": 1122,
+  "mp4_total": 10761,
+  "parts": [
+    {
+      "part": 0,
+      "file": "play-index-part-0.json",
+      "entries": 69,
+      "bytes": 20317
+    },
+    {
+      "part": 1,
+      "file": "play-index-part-1.json",
+      "entries": 2192,
+      "bytes": 8083303
+    },
+    {
+      "part": 10,
+      "file": "play-index-part-10.json",
+      "entries": 129,
+      "bytes": 7650073
+    },
+    {
+      "part": 11,
+      "file": "play-index-part-11.json",
+      "entries": 174,
+      "bytes": 8568574
+    },
+    {
+      "part": 12,
+      "file": "play-index-part-12.json",
+      "entries": 107,
+      "bytes": 7619297
+    },
+    {
+      "part": 13,
+      "file": "play-index-part-13.json",
+      "entries": 86,
+      "bytes": 7778233
+    },
+    {
+      "part": 14,
+      "file": "play-index-part-14.json",
+      "entries": 108,
+      "bytes": 7675914
+    },
+    {
+      "part": 15,
+      "file": "play-index-part-15.json",
+      "entries": 226,
+      "bytes": 6913186
+    },
+    {
+      "part": 16,
+      "file": "play-index-part-16.json",
+      "entries": 182,
+      "bytes": 320434
+    },
+    {
+      "part": 2,
+      "file": "play-index-part-2.json",
+      "entries": 2316,
+      "bytes": 8068682
+    },
+    {
+      "part": 3,
+      "file": "play-index-part-3.json",
+      "entries": 2979,
+      "bytes": 7235765
+    },
+    {
+      "part": 4,
+      "file": "play-index-part-4.json",
+      "entries": 1590,
+      "bytes": 8086735
+    },
+    {
+      "part": 5,
+      "file": "play-index-part-5.json",
+      "entries": 126,
+      "bytes": 6757886
+    },
+    {
+      "part": 6,
+      "file": "play-index-part-6.json",
+      "entries": 132,
+      "bytes": 6410952
+    },
+    {
+      "part": 7,
+      "file": "play-index-part-7.json",
+      "entries": 131,
+      "bytes": 7111029
+    },
+    {
+      "part": 8,
+      "file": "play-index-part-8.json",
+      "entries": 133,
+      "bytes": 7584010
+    },
+    {
+      "part": 9,
+      "file": "play-index-part-9.json",
+      "entries": 165,
+      "bytes": 7591297
+    }
+  ]
+}
