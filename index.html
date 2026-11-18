@@ -4666,7 +4666,17 @@ function fnPlayOpenOpt(p) {
   $('#fpo-title').textContent = (entry.title || ctx.title || 'پخش آنلاین') + se;
   $('#fpo-sub').textContent = 'کیفیت ' + (fnPlayResFa(p) || '—') + ' ' + fnPlayVersionLabel(p) + (fnPlaySpecs(p) ? ' · ' + fnPlaySpecs(p) : '') + (fnPlaySizeFa(p) ? ' · ' + fnPlaySizeFa(p) : '');
   var url = p.play_url;
-  $('#fpo-fn').onclick = function () { $('#fn-play-opt').classList.remove('on'); fnPlayerOpen(p); };
+  $('#fpo-fn').onclick = function () {
+    $('#fn-play-opt').classList.remove('on');
+    /* v8.1 — inside the Family Night Android app, hand the direct link to
+       the native ExoPlayer through the FamilyNightApp bridge; in a normal
+       browser the bridge does not exist and the in-browser player opens. */
+    if (window.FamilyNightApp && typeof window.FamilyNightApp.play === 'function') {
+      window.FamilyNightApp.play(url, $('#fpo-title').textContent || 'Family Night');
+      return;
+    }
+    fnPlayerOpen(p);
+  };
   $('#fpo-mx').onclick = function () {
     if (/Android/i.test(navigator.userAgent || '')) { window.open(fnPlayIntent(url, 'com.mxtech.videoplayer.ad', $('#fpo-title').textContent), '_self'); }
     else { copyText(url); toast('لینک کپی شد — آن را در MX Player باز کنید'); }
