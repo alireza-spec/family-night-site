@@ -1673,7 +1673,8 @@ html.tg .bottomnav{display:flex}
      to the FN app. Nothing in those backends is modified. */
 const FN_API = 'https://family-night-api.alirezadoe8.workers.dev';
 const SNAP_HOME = 'https://cdn.jsdelivr.net/gh/alireza-spec/FN@main/snapshot/home.json';
-const DL_BASE = 'https://alireza-spec.github.io/FN/download-data/';
+const DL_BASE = 'https://alireza-spec.github.io/family-night-site/download-data/';
+const OLD_DL_BASE = 'https://alireza-spec.github.io/FN/download-data/'; /* fallback: old FN archive, used only when a title is NOT in the new Zivarnet archive */
 const TV_PROXY = 'https://iran-tv-proxy-v3.alirezadoe8.workers.dev/proxy?url=';
 const IMG = (p, s) => p ? 'https://image.tmdb.org/t/p/' + (s || 'w500') + p : '';
 
@@ -4082,39 +4083,121 @@ function paintFrame() {
 
 /* ================= downloads — FN archive (same logic as the app) ================= */
 let fnDlIndex = null, fnDlIndexPromise = null; const fnDlParts = {};
+let oldDlIndex = null, oldDlIndexPromise = null; const oldDlParts = {};
+function getOldDlIndex() {
+  if (oldDlIndex) return Promise.resolve(oldDlIndex);
+  if (!oldDlIndexPromise) oldDlIndexPromise = fetch(OLD_DL_BASE + 'download-index.json').then(r => { if (!r.ok) throw new Error('old index'); return r.json(); }).then(x => { oldDlIndex = x || {}; return oldDlIndex; });
+  return oldDlIndexPromise;
+}
 function getDlIndex() {
   if (fnDlIndex) return Promise.resolve(fnDlIndex);
   if (!fnDlIndexPromise) fnDlIndexPromise = fetch(DL_BASE + 'download-index.json').then(r => { if (!r.ok) throw new Error('index'); return r.json(); }).then(x => { fnDlIndex = x || {}; return fnDlIndex; });
   return fnDlIndexPromise;
 }
-function loadDlPart(part) {
-  if (fnDlParts[part]) return Promise.resolve(fnDlParts[part]);
-  const n = Number(part); if (n !== 1 && n !== 2 && n !== 3) return Promise.reject(new Error('archive part'));
-  return fetch(DL_BASE + 'archive-part-' + n + '.html').then(r => { if (!r.ok) throw new Error('archive'); return r.text(); })
-    .then(t => { const d = new DOMParser().parseFromString(t, 'text/html'); fnDlParts[n] = d; return d; });
+function loadDlPart(part, which) {
+  const isOld = which === 'old';
+  const cache = isOld ? oldDlParts : fnDlParts;
+  const base = isOld ? OLD_DL_BASE : DL_BASE;
+  const maxPart = isOld ? 3 : 16;
+  if (cache[part]) return Promise.resolve(cache[part]);
+  const n = Number(part); if (!(n >= 1 && n <= maxPart)) return Promise.reject(new Error('archive part'));
+  return fetch(base + 'archive-part-' + n + '.html').then(r => { if (!r.ok) throw new Error('archive'); return r.text(); })
+    .then(t => { const d = new DOMParser().parseFromString(t, 'text/html'); cache[n] = d; return d; });
 }
-function recordFromArchive(doc, imdb) {
-  const code = Array.prototype.find.call(doc.querySelectorAll('p'), p => { const x = (p.textContent || '').toLowerCase(); return x.indexOf('imdb code:') > -1 && x.indexOf(imdb) > -1; });
-  if (!code) return null;
-  let head = code.previousElementSibling; while (head && head.tagName !== 'H3') head = head.previousElementSibling;
+/* Merge two download records for the SAME title: every link from b whose
+   URL is not already in a is appended to a's groups (dedupe by href). */
+function dlRecHasLinks(rec) { return !!(rec && (rec.groups.softsub.length || rec.groups.dubbed.length || rec.groups.nosub.length)); }
+function mergeDlRecs(a, b) {
+  if (!b) return a;
+  const seen = new Set();
+  ['softsub', 'dubbed', 'nosub'].forEach(k => a.groups[k].forEach(x => seen.add((x.href || '').toLowerCase())));
+  ['softsub', 'dubbed', 'nosub'].forEach(k => b.groups[k].forEach(x => { const h = (x.href || '').toLowerCase(); if (h && !seen.has(h)) { seen.add(h); a.groups[k].push(x); } }));
+  return a;
+}
+/* Resolve one title's download record: BOTH archives are read and their
+   links MERGED — a title with 2 qualities in the new archive and 4 in the
+   old one shows all 6. Returns { rec, src } with src 'new', 'old' or
+   'both' (or null when neither archive has it). */
+async function resolveDlRecord(imdbId, num) {
+  if (imdbId) {
+    let main = null, extra = null;
+    try {
+      const index = await getDlIndex();
+      const part = index[imdbId];
+      if (part) {
+        const rec = recordFromArchive(await loadDlPart(part), imdbId);
+        if (dlRecHasLinks(rec)) main = rec;
+      }
+    } catch (e) {}
+    try {
+      const oindex = await getOldDlIndex();
+      const opart = oindex[imdbId];
+      if (opart) {
+        const rec = recordFromArchive(await loadDlPart(opart, 'old'), imdbId);
+        if (dlRecHasLinks(rec)) extra = rec;
+      }
+    } catch (e) {}
+    if (main && extra) return { rec: mergeDlRecs(main, extra), src: 'both' };
+    if (main) return { rec: main, src: 'new' };
+    if (extra) return { rec: extra, src: 'old' };
+    return null;
+  }
+  if (num) {
+    /* num alone does not say which part holds it — callers that know the
+       part must pass it via resolveDlRecordByPart; this branch stays as a
+       last resort and tries every part (slow, only for no-IMDb titles). */
+    for (let pn = 1; pn <= 16; pn++) {
+      try {
+        const rec = recordFromArchive(await loadDlPart(pn), '', num);
+        if (rec && (rec.groups.softsub.length || rec.groups.dubbed.length || rec.groups.nosub.length)) return { rec, src: 'new' };
+      } catch (e) {}
+    }
+  }
+  return null;
+}
+async function resolveDlRecordByPart(imdbId, num, part, which) {
+  const base = which === 'old' ? 'old' : 'new';
+  const rec = recordFromArchive(await loadDlPart(part, base), imdbId || '', num);
+  if (rec && (rec.groups.softsub.length || rec.groups.dubbed.length || rec.groups.nosub.length)) return { rec, src: base };
+  return null;
+}
+function recordFromArchive(doc, imdb, num) {
+  /* Titles with no IMDb code are found by their H3 number instead
+     (num = the continuous 1..10876 number in the archive). */
+  let code = null, head = null;
+  if (imdb) {
+    code = Array.prototype.find.call(doc.querySelectorAll('p'), p => { const x = (p.textContent || '').toLowerCase(); return x.indexOf('imdb code:') > -1 && x.indexOf(imdb) > -1; });
+    if (!code) return null;
+    head = code.previousElementSibling; while (head && head.tagName !== 'H3') head = head.previousElementSibling;
+  } else if (num) {
+    head = Array.prototype.find.call(doc.querySelectorAll('h3'), h => new RegExp('^\\s*' + num + '\\.').test(h.textContent || ''));
+    if (!head) return null;
+    code = head;
+  } else return null;
   const title = head ? head.textContent.replace(/^\s*\d+\.\s*/, '').replace(/\s+start_year\s*$/i, '').trim() : '';
   let rate = '', votes = '';
-  let cat = '', season = ''; const groups = { softsub: [], dubbed: [] }; let n = code.nextElementSibling;
+  let cat = '', season = ''; const groups = { softsub: [], dubbed: [], nosub: [] }; let n = code.nextElementSibling;
   while (n && n.tagName !== 'H3') {
     const txt = (n.textContent || '').trim(), low = txt.toLowerCase();
     if (/imdb rates:/i.test(txt)) rate = (txt.match(/[\d.]+/) || [])[0] || '';
     else if (/imdb votes:/i.test(txt)) votes = txt.replace(/.*?:/i, '').trim();
     else if (/soft\s*sub/.test(low)) cat = 'softsub';
     else if (/dubbed/.test(low)) cat = 'dubbed';
+    else if (/nosub/.test(low)) cat = 'nosub';
     else if (/^season\s*\d+/i.test(txt)) season = txt.match(/\d+/)[0];
     else if (cat) Array.prototype.forEach.call(n.querySelectorAll('a'), a => {
       const q = (a.textContent || '').trim(), href = a.getAttribute('href') || '';
       if (!href || !q) return;
+      /* Zivarnet archive has no <p>Season N</p> markers — season/episode
+         live in the label / file name as S01E02 */
+      const se = (q + ' ' + href).match(/S(\d+)E(\d+)/i);
+      const epSeason = se ? String(parseInt(se[1], 10)) : season;
+      const epNum = se ? parseInt(se[2], 10) : 0;
       /* size = the text right after this link, up to the next link */
       let size = '', sib = a.nextSibling;
       while (sib && !(sib.nodeType === 1 && sib.tagName === 'A')) { size += sib.textContent || ''; sib = sib.nextSibling; }
       size = (size.match(/(?:\d+(?:\.\d+)?\s*(?:GB|MB))/i) || [])[0] || '';
-      groups[cat].push({ quality: q, url: href, size, season });
+      groups[cat].push({ quality: q, url: href, size, season: epSeason, episode: epNum });
     });
     n = n.nextElementSibling;
   }
@@ -4133,7 +4216,7 @@ function parseDlSpecs(x) {
   if (/x265|HEVC/i.test(hay)) codecBits.push('x265 HEVC'); else if (/x264|AVC/i.test(hay)) codecBits.push('x264');
   if (/10bit/i.test(hay)) codecBits.push('10bit');
   if (/HDR/i.test(hay) && !/HDRip/i.test(hay)) codecBits.push('HDR');
-  const enc = (fn.match(/(?:^|[.\-_])(MkvCage|Pahe|PSA|ShAaNiG|GalaxyRG|YTS|RARBG|F2M|SPARKS|AMZN|NF|DonyayeSerial)(?:[.\-_]|$)/i) || [])[1] || '';
+  const enc = (fn.match(/(?:^|[.\-_])(MkvCage|Pahe|PSA|ShAaNiG|GalaxyRG|YTS|YIFY|RARBG|F2M|Film2Media|SPARKS|AMZN|NF|DonyayeSerial)(?:[.\-_]|$)/i) || [])[1] || '';
   const ext = (fn.match(/\.(mkv|mp4|avi)$/i) || [])[1] || '';
   return { res, source, codec: codecBits.join(' · '), enc, ext: ext ? ext.toUpperCase() : '', fn };
 }
@@ -4158,9 +4241,10 @@ function dlRowHtml(x) {
     + '<button data-dl-play="' + esc(x.url) + '">پخش با پلیر</button>'
     + '</span></div>';
 }
+function sizeSortMB(x) { return x.size ? sizeToMB(x.size) : Infinity; }
 function dlGroupHtml(label, links) {
   if (!links.length) return '';
-  const sorted = links.slice().sort((a, b) => resRank(parseDlSpecs(b).res) - resRank(parseDlSpecs(a).res) || sizeToMB(b.size) - sizeToMB(a.size));
+  const sorted = links.slice().sort((a, b) => sizeSortMB(a) - sizeSortMB(b) || resRank(parseDlSpecs(a).res) - resRank(parseDlSpecs(b).res) || String(a.quality || '').localeCompare(String(b.quality || '')));
   const bySeason = {};
   sorted.forEach(x => { const k = x.season || ''; (bySeason[k] = bySeason[k] || []).push(x); });
   const allUrls = sorted.map(x => x.url).join('\n');
@@ -4203,20 +4287,20 @@ async function loadDownloadBox(imdbId, token) {
   const body = $('#d-dl-body'); if (!body) return;
   if (!imdbId) { body.innerHTML = '<div class="state"><b>فعلاً لینک دانلود رایگانی برای این اثر نیست.</b><br>از «پخش آنلاین» می‌توانید همین حالا تماشا کنید.</div>'; return; }
   try {
-    const index = await getDlIndex();
     if (token !== detailToken) return;
-    const part = index[imdbId];
-    if (!part) { body.innerHTML = '<div class="state"><b>فعلاً لینک دانلود رایگانی برای این اثر نیست.</b><br>از «پخش آنلاین» می‌توانید همین حالا تماشا کنید.</div>'; return; }
-    const rec = recordFromArchive(await loadDlPart(part), imdbId);
+    const resolved = await resolveDlRecord(imdbId, 0);
     if (token !== detailToken) return;
-    if (!rec || (!rec.groups.softsub.length && !rec.groups.dubbed.length)) { body.innerHTML = '<div class="state"><b>فعلاً لینک دانلود رایگانی برای این اثر نیست.</b><br>از «پخش آنلاین» می‌توانید همین حالا تماشا کنید.</div>'; return; }
-    const all = rec.groups.softsub.concat(rec.groups.dubbed);
+    if (!resolved) { body.innerHTML = '<div class="state"><b>فعلاً لینک دانلود رایگانی برای این اثر نیست.</b><br>از «پخش آنلاین» می‌توانید همین حالا تماشا کنید.</div>'; return; }
+    const rec = resolved.rec;
+    const srcNote = resolved.src === 'old' ? ' <span style="color:var(--gold2)">(از آرشیو قبلی)</span>' : resolved.src === 'both' ? ' <span style="color:var(--gold2)">(آرشیو جدید + قبلی)</span>' : '';
+    if (!rec || (!rec.groups.softsub.length && !rec.groups.dubbed.length && !rec.groups.nosub.length)) { body.innerHTML = '<div class="state"><b>فعلاً لینک دانلود رایگانی برای این اثر نیست.</b><br>از «پخش آنلاین» می‌توانید همین حالا تماشا کنید.</div>'; return; }
+    const all = rec.groups.softsub.concat(rec.groups.dubbed, rec.groups.nosub);
     const totalMB = all.reduce((s, x) => s + sizeToMB(x.size), 0);
     const ress = [...new Set(all.map(x => parseDlSpecs(x).res).filter(Boolean))].sort((a, b) => resRank(b) - resRank(a));
     const has265 = all.some(x => /x265/.test(parseDlSpecs(x).codec));
     body.innerHTML =
       '<div class="dlbox-head"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4.5-4.5M12 15 7.5 10.5"/><path d="M4 19h16"/></svg></span>'
-      + '<div><b>' + esc(rec.title || 'آرشیو دانلود Family Night') + '</b><p>کیفیت‌ها و انکودهای موجود با حجم و مشخصات کامل — دانلود مستقیم با مرورگر، ارسال به ADM یا کپی لینک.'
+      + '<div><b>' + esc(rec.title || 'آرشیو دانلود Family Night') + srcNote + '</b><p>کیفیت‌ها و انکودهای موجود با حجم و مشخصات کامل — دانلود مستقیم با مرورگر، ارسال به ADM یا کپی لینک.'
       + (rec.rate ? ' امتیاز IMDb این اثر: <b class="num" style="color:var(--gold2)">' + esc(rec.rate) + ' ★</b>' : '') + '</p></div>'
       + '<span class="tot"><b>' + all.length + '</b><span>لینک دانلود</span></span>'
       + (totalMB ? '<span class="tot"><b>' + fmtTotalMB(totalMB) + '</b><span>حجم مجموع نسخه‌ها</span></span>' : '')
@@ -4225,7 +4309,8 @@ async function loadDownloadBox(imdbId, token) {
       + ress.map(r => '<button class="chip" data-dlfilter="' + r + '">' + r + '</button>').join('')
       + (has265 ? '<button class="chip" data-dlfilter="x265">فقط x265 / HEVC</button>' : '') + '</div>'
       + dlGroupHtml('زیرنویس فارسی چسبیده (SoftSub)', rec.groups.softsub)
-      + dlGroupHtml('دوبله فارسی (Dubbed)', rec.groups.dubbed);
+      + dlGroupHtml('دوبله فارسی (Dubbed)', rec.groups.dubbed)
+      + dlGroupHtml('بدون زیرنویس فارسی (NoSub)', rec.groups.nosub);
     wireDlButtons(body);
   } catch (e) {
     if (token === detailToken) body.innerHTML = '<div class="state">دریافت لینک‌های دانلود از آرشیو ممکن نشد؛ اتصال را بررسی و دوباره تلاش کنید.</div>';
@@ -5332,7 +5417,7 @@ go = function (view, preset) {
 };
 
 /* ---- download archive browser: every title in the FN GitHub archive
-   that actually has download links (17k+ records across 3 parts) ---- */
+   that actually has download links (10,876 records across 16 parts, Zivarnet archive) ---- */
 let dlaEntries = null, dlaShown = 120, dlaLoading = false;
 async function initDlArchive() {
   /* re-entering the section: the entries and every resolved
@@ -5343,20 +5428,45 @@ async function initDlArchive() {
   if (dlaEntries || dlaLoading) { if (dlaEntries) renderDlaList(); return; }
   dlaLoading = true;
   const body = $('#dla-body');
-  const parts = [1, 2, 3];
   const entries = [];
-  for (const n of parts) {
+  const entryByImdb = new Map();
+  /* NEW archive first (16 parts), then OLD archive (3 parts): a title
+     already in the new archive is NOT skipped in the old one — its old
+     links are MERGED into the same entry (deduped by URL), so a title
+     with 2 qualities in one archive and 4 in the other shows all 6. */
+  const archives = [{ base: DL_BASE, parts: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], src: 'new' }, { base: OLD_DL_BASE, parts: [1, 2, 3], src: 'old' }];
+  for (const arc of archives) {
+  for (const n of arc.parts) {
     if (currentView !== 'dlarchive' && dlaEntries) break;
-    body.innerHTML = '<div class="state"><div class="spin"></div>در حال بارگذاری آرشیو دانلود Family Night…<br>بخش ' + n + ' از ۳ — عنوان‌ها و لینک‌های واقعی آرشیو خوانده می‌شوند.</div>';
+    body.innerHTML = '<div class="state"><div class="spin"></div>در حال بارگذاری آرشیو دانلود Family Night…<br>آرشیو ' + (arc.src === 'new' ? 'جدید' : 'قبلی') + ' — بخش ' + n + ' از ' + arc.parts.length + ' — عنوان‌ها و لینک‌های واقعی آرشیو خوانده می‌شوند.</div>';
     try {
-      const t = await (await fetch(DL_BASE + 'archive-part-' + n + '.html')).text();
+      const t = await (await fetch(arc.base + 'archive-part-' + n + '.html')).text();
       const chunks = t.split(/<h3>/i).slice(1);
       chunks.forEach(ch => {
+        const numRaw = (ch.split(/<\/h3>/i)[0] || '').match(/(\d+)\./);
         const title = (ch.split(/<\/h3>/i)[0] || '').replace(/<[^>]+>/g, '').replace(/^\s*\d+\.\s*/, '').replace(/\s+start_year\s*$/i, '').trim();
         const im = ch.match(/IMDb Code:<\/b>\s*(tt\d+)/i);
-        if (!title || !im) return;
+        if (!title) return;
+        /* 2,884 archive titles carry no IMDb code — they are still listed
+           and downloadable, keyed by their H3 number instead of an IMDb id */
+        const imdbNoCode = im ? im[1].toLowerCase() : '';
+        const numNoCode = numRaw ? parseInt(numRaw[1], 10) : 0;
+        const hrefs = [...ch.matchAll(/<a\s+href=["']([^"']+)["']/gi)].map(m => m[1].toLowerCase());
+        if (imdbNoCode && arc.src === 'old' && entryByImdb.has(imdbNoCode)) {
+          /* same title exists in the new archive: merge the old links in */
+          const ex = entryByImdb.get(imdbNoCode);
+          const fresh = hrefs.filter(h => !ex._hrefs.has(h));
+          fresh.forEach(h => ex._hrefs.add(h));
+          if (fresh.length) {
+            ex.links += fresh.length; ex.hasOld = true; ex.oldPart = n;
+            if (/<b>SoftSub<\/b>/i.test(ch)) ex.soft = true;
+            if (/<b>Dubbed<\/b>/i.test(ch)) ex.dub = true;
+            if (/<b>NoSub<\/b>/i.test(ch)) ex.nosub = true;
+          }
+          return;
+        }
         const rate = (ch.match(/IMDb Rates:<\/b>\s*([\d.]+)/i) || [])[1] || '';
-        const links = (ch.match(/<a\s+href=/gi) || []).length;
+        const links = hrefs.length;
         if (!links) return;
         /* real per-record fields the archive itself carries: title
            type, IMDb vote count, and the release year (in the
@@ -5375,11 +5485,14 @@ async function initDlArchive() {
         else if (/movie|film/.test(typeRaw)) type = 'movie';
         else type = (/\/series\d*\//i.test(ch) || /<p>season\s*\d+/i.test(ch) || /\bS\d{2}E\d{2}\b/.test(ch)) ? 'tv' : 'movie';
         const votes = parseInt(((ch.match(/IMDb Votes:<\/b>\s*([\d,]+)/i) || [])[1] || '0').replace(/,/g, ''), 10) || 0;
-        const ym = ch.match(/\/(?:movies?|series|tv)\/(\d{4})\//i) || ch.match(/\.(\d{4})\.(?:\d{3,4}p|bluray|web|hdtv|x26|softsub|dubbed)/i);
+        const ym = ch.match(/\/pnot\/(?:Movie|Series)\/(\d{4})\//i) || ch.match(/\/(?:movies?|series|tv)\/(\d{4})\//i) || ch.match(/\.(\d{4})\.(?:\d{3,4}p|bluray|web|hdtv|x26|softsub|dubbed)/i);
         const year = ym ? +ym[1] : 0;
-        entries.push({ title, imdb: im[1].toLowerCase(), rate, votes, year, type, links, soft: /<b>SoftSub<\/b>/i.test(ch), dub: /<b>Dubbed<\/b>/i.test(ch), nosub: /<b>NoSub<\/b>/i.test(ch), part: n });
+        const ent = { title, imdb: imdbNoCode, num: numNoCode, rate, votes, year, type, links, soft: /<b>SoftSub<\/b>/i.test(ch), dub: /<b>Dubbed<\/b>/i.test(ch), nosub: /<b>NoSub<\/b>/i.test(ch), part: n, src: arc.src, _hrefs: new Set(hrefs) };
+        if (imdbNoCode) entryByImdb.set(imdbNoCode, ent);
+        entries.push(ent);
       });
     } catch (e) {}
+  }
   }
   dlaEntries = entries;
   dlaLoading = false;
@@ -5467,6 +5580,7 @@ function dlaEnrichQueue() {
     while (idx < dlaEntries.length && !dlaEnrichFailed) {
       const e = dlaEntries[idx++];
       if (e.cc !== undefined) continue;   /* already resolved (cache) — counted above */
+      if (!e.imdb) { e.cc = ''; dlaEnrichDone++; continue; }   /* no IMDb id — nothing to resolve via OMDb */
       try {
         const om = await fnApiJson(FN_API + '/v1/omdb?i=' + encodeURIComponent(e.imdb));
         const country = om && om.Country ? String(om.Country).split(',')[0].trim() : '';
@@ -5585,7 +5699,7 @@ function renderDlaList() {
     + '<span>' + esc(dlaStatus(e)) + '</span>'
     + '<span class="dla-meta">' + (e.type === 'tv' ? 'سریال' : 'فیلم') + (e.year ? ' · ' + e.year : '') + (e.cc ? ' · ' + esc(dlaCountryName(e.cc)) : '') + (e.votes ? ' · ' + e.votes.toLocaleString('fa-IR') + ' رأی' : '') + '</span></span>'
     + (e.rate ? '<span class="rt">★ ' + esc(e.rate) + '</span>' : '')
-    + '<span class="acts"><button class="btn btn-gold btn-sm" type="button" data-dla-view="' + i + '">مشاهده</button><button class="btn btn-gold btn-sm" type="button" data-dla-dl="' + i + '">دانلود</button></span></div>').join('')
+    + '<span class="acts">' + (e.imdb ? '<button class="btn btn-gold btn-sm" type="button" data-dla-view="' + i + '">مشاهده</button>' : '') + '<button class="btn btn-gold btn-sm" type="button" data-dla-dl="' + i + '">دانلود</button></span></div>').join('')
     + (list.length > dlaShown ? '<button class="btn btn-glass loadmore" id="dla-more">نمایش بیشتر</button>' : '');
   body.querySelectorAll('[data-dla]').forEach(row => {
     row.onclick = e => {
@@ -5641,11 +5755,12 @@ async function openArchiveEntry(entry) {
   openOverlay('#ov-detail');
   sheet.innerHTML = '<button class="xbtn" data-close-detail aria-label="بستن" style="position:fixed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button>'
     + '<div class="sheet-body" style="margin-top:0;padding-top:4.5rem"><h1 style="font-size:1.5rem;font-weight:900;margin:0 0 .4rem">' + esc(entry.title) + '</h1>'
-    + '<div class="detail-meta">' + (entry.rate ? '<span class="star" style="color:#f5c518">IMDb ' + esc(entry.rate) + ' ★</span>' : '') + '<span class="ltr num">' + esc(entry.imdb) + '</span></div>'
-    + '<div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.2rem"><button class="btn btn-gold" id="dla-info">مشاهده اطلاعات کامل و پخش</button></div>'
+    + '<div class="detail-meta">' + (entry.rate ? '<span class="star" style="color:#f5c518">IMDb ' + esc(entry.rate) + ' ★</span>' : '') + (entry.imdb ? '<span class="ltr num">' + esc(entry.imdb) + '</span>' : '<span>بدون کد IMDb</span>') + '</div>'
+    + (entry.imdb ? '<div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.2rem"><button class="btn btn-gold" id="dla-info">مشاهده اطلاعات کامل و پخش</button></div>' : '')
     + '<div class="sec"><h2>جعبه دانلود</h2><div id="d-dl-body"><div class="state"><div class="spin"></div>در حال دریافت لینک‌ها از آرشیو…</div></div></div></div>';
   sheet.querySelector('[data-close-detail]').onclick = () => closeOverlay('#ov-detail');
-  $('#dla-info').onclick = async () => {
+  const dlaInfoBtn = $('#dla-info');
+  if (dlaInfoBtn) dlaInfoBtn.onclick = async () => {
     try {
       const f = await tmdb('find/' + entry.imdb, { external_source: 'imdb_id' });
       const mvHit = ((f && f.movie_results) || [])[0] || null;
@@ -5657,17 +5772,22 @@ async function openArchiveEntry(entry) {
   };
   const tokenSnapshot = detailToken;
   try {
-    const rec = recordFromArchive(await loadDlPart(entry.part), entry.imdb);
+    const resolved = await resolveDlRecordByPart(entry.imdb, entry.num, entry.part, entry.src || 'new');
+    let rec = resolved ? resolved.rec : null;
+    if (rec && entry.hasOld) { /* same title also has links in the old archive — merge them in */
+      try { const o = await resolveDlRecordByPart(entry.imdb, entry.num, entry.oldPart, 'old'); if (o) mergeDlRecs(rec, o.rec); } catch (e) {}
+    }
     const body = $('#d-dl-body'); if (!body) return;
-    if (!rec || (!rec.groups.softsub.length && !rec.groups.dubbed.length)) { body.innerHTML = '<div class="state">لینکی برای این عنوان پیدا نشد.</div>'; return; }
-    const all = rec.groups.softsub.concat(rec.groups.dubbed);
+    if (!rec || (!rec.groups.softsub.length && !rec.groups.dubbed.length && !rec.groups.nosub.length)) { body.innerHTML = '<div class="state">لینکی برای این عنوان پیدا نشد.</div>'; return; }
+    const all = rec.groups.softsub.concat(rec.groups.dubbed, rec.groups.nosub);
     const totalMB = all.reduce((s, x) => s + sizeToMB(x.size), 0);
     body.innerHTML = '<div class="dlbox-head"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4.5-4.5M12 15 7.5 10.5"/><path d="M4 19h16"/></svg></span>'
       + '<div><b>' + esc(rec.title || entry.title) + '</b><p>کیفیت‌ها و انکودهای موجود با حجم و مشخصات کامل — دانلود مستقیم، ADM یا کپی لینک.</p></div>'
       + '<span class="tot"><b>' + all.length + '</b><span>لینک دانلود</span></span>'
       + (totalMB ? '<span class="tot"><b>' + fmtTotalMB(totalMB) + '</b><span>حجم مجموع</span></span>' : '') + '</div>'
       + dlGroupHtml('زیرنویس فارسی چسبیده (SoftSub)', rec.groups.softsub)
-      + dlGroupHtml('دوبله فارسی (Dubbed)', rec.groups.dubbed);
+      + dlGroupHtml('دوبله فارسی (Dubbed)', rec.groups.dubbed)
+      + dlGroupHtml('بدون زیرنویس فارسی (NoSub)', rec.groups.nosub);
     wireDlButtons(body);
     void tokenSnapshot;
   } catch (e) {
