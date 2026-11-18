@@ -286,6 +286,21 @@ Nothing else in the site was changed.
   script blocks pass `node --check`. Series are NOT in this index —
   their old links are folder URLs, not files (later phase).
 
+## v8.6 — Encoder names abbreviated: F2M / DS (2026-11-18)
+- Wherever an encoder is shown — play-list rows, option popup, watch-party
+  rows, download-box «انکودر:» pill — `Film2Media` now reads **F2M** and
+  `DonyayeSerial` reads **DS**. Display only: the stored data keeps the
+  full names, and nothing else changed (same rows, order, sizes, links).
+  All other encoders (YIFY, Pahe, PSA, …) are untouched. The player
+  header shows no encoder, and the Android app loads the site in a
+  WebView, so no app change was needed.
+- Tests: `test86.py` 8/8 PASS (rows + download box, YIFY unchanged);
+  `run_test.py` 32/32, `test84.py` 14/14, `ds_movies_test.py` 14/14 and
+  `integration_test.py` 15/15 still PASS. All 15 script blocks pass
+  `node --check`. Note: the DS-OLD-MOVIES fallback was folded into
+  `play.js` itself this round — a module refresh had wiped the
+  index.html-only DS patch, so it now lives in the module source.
+
 ## To publish
 Upload this whole folder to the `family-night-site` repo root (browser upload —
 GitHub connector pushes return 403). The site reads the archive from its own
