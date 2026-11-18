@@ -966,6 +966,14 @@ body.fn-theater-on .bottomnav,body.fn-theater-on header.top{display:none!importa
 .fn-mini-bar{position:absolute;top:0;inset-inline:0;z-index:3;display:flex;align-items:center;gap:.35rem;padding:.28rem .45rem;background:linear-gradient(180deg,rgba(0,0,0,.78),transparent);color:#fff}
 .fn-mini-title{flex:1;min-width:0;font-size:.72rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .fn-mini-bar button{flex:none;display:inline-flex;align-items:center;gap:.3rem;background:rgba(10,10,14,.8);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:99px;padding:.18rem .6rem;font-size:.7rem;font-weight:700;min-height:1.9rem;cursor:pointer;font-family:inherit}
+/* floating TV mini player v2: the screenbox itself floats — the
+   <video> never leaves its parent, because detaching a playing
+   MSE/hls.js video destroys its video surface in Telegram's
+   WebView (both the big player and the small window go black
+   while the audio keeps playing) */
+#tv-screenbox.fn-mini-float{position:fixed;bottom:calc(5.3rem + var(--tg-sab,env(safe-area-inset-bottom,0px)));inset-inline-end:.65rem;width:min(15.5rem,62vw);aspect-ratio:16/9;z-index:940;border:1px solid rgba(255,255,255,.22);border-radius:.8rem;box-shadow:0 18px 44px rgba(0,0,0,.65);touch-action:none}
+#tv-screenbox.fn-mini-float .tv-idle{display:none}
+.fn-mini-ph{display:grid;place-items:center;aspect-ratio:16/9;background:#0b0b10;border:1px dashed rgba(255,255,255,.25);border-radius:var(--r-lg);color:#c9ccd6;font-size:.82rem;text-align:center;padding:1rem;cursor:pointer}
 /* the online player's floating window: its stage is an embed frame,
    so the stage itself shrinks into the corner and the overlay turns
    transparent + click-through — the page underneath stays usable */
@@ -3390,16 +3398,39 @@ window.addEventListener('orientationchange', () => setTimeout(fnTheaterRefit, 80
    to the button itself. */
 function fnDraggable(el, handle, onTap) {
   let pid = null, sx = 0, sy = 0, ox = 0, oy = 0, moved = false;
+  let pid2 = null, pinchD0 = 0, pinchW0 = 0, lastX = 0, lastY = 0;
   handle.addEventListener('pointerdown', e => {
-    if (pid !== null) return;
+    /* only engage while the element is actually floating — the
+       screenbox and the player stage are plain page content
+       otherwise, and a drag there must not yank them out of flow */
+    if (!el.classList.contains('fn-mini-float') && !el.classList.contains('fn-float')) return;
     if (e.target && e.target.closest && e.target.closest('button')) return;
-    pid = e.pointerId; moved = false;
-    const r = el.getBoundingClientRect();
-    sx = e.clientX; sy = e.clientY; ox = r.left; oy = r.top;
-    try { handle.setPointerCapture(pid); } catch (err) {}
+    if (pid === null) {
+      pid = e.pointerId; moved = false;
+      lastX = sx = e.clientX; lastY = sy = e.clientY;
+      const r = el.getBoundingClientRect();
+      ox = r.left; oy = r.top;
+      try { handle.setPointerCapture(pid); } catch (err) {}
+    } else if (pid2 === null && e.pointerId !== pid) {
+      pid2 = e.pointerId;
+      pinchD0 = Math.hypot(lastX - e.clientX, lastY - e.clientY);
+      pinchW0 = el.getBoundingClientRect().width;
+      try { handle.setPointerCapture(pid2); } catch (err) {}
+    }
   });
   handle.addEventListener('pointermove', e => {
+    if (e.pointerId === pid2 && pid !== null) {
+      /* two-finger pinch: scale the window width by the finger
+         distance ratio, clamped; height follows via aspect-ratio */
+      if (!pinchD0) return;
+      const d = Math.hypot(lastX - e.clientX, lastY - e.clientY);
+      const w = Math.max(160, Math.min(window.innerWidth * 0.92, pinchW0 * d / pinchD0));
+      el.style.width = w + 'px';
+      moved = true;
+      return;
+    }
     if (e.pointerId !== pid) return;
+    lastX = e.clientX; lastY = e.clientY;
     const dx = e.clientX - sx, dy = e.clientY - sy;
     if (!moved && Math.abs(dx) + Math.abs(dy) < 8) return;
     if (!moved) {
@@ -3413,6 +3444,7 @@ function fnDraggable(el, handle, onTap) {
     el.style.top = Math.max(4, Math.min(window.innerHeight - h - 4, oy + dy)) + 'px';
   });
   const end = e => {
+    if (e.pointerId === pid2) { pid2 = null; pinchD0 = 0; return; }
     if (e.pointerId !== pid) return;
     pid = null;
     if (!moved && onTap) onTap();
@@ -3422,14 +3454,18 @@ function fnDraggable(el, handle, onTap) {
 }
 
 /* ---------- floating mini player (PiP fallback) ----------
-   The playing <video> itself moves into #fn-mini, a small
-   draggable corner window, so live TV keeps playing while the
-   reader browses other sections; tapping the window or its
-   «بازگرداندن» button puts the video back into its player,
-   untouched (same element, same stream, same HLS session). While
-   the mini player is on, the page carries .fn-mini-on and the
-   exit guard leaves navigation alone — continuing playback across
-   sections is exactly what the reader asked for here. */
+   The SCREENBOX floats, not the <video>: in Telegram's WebView
+   native PiP is refused, and moving a playing MSE/hls.js <video>
+   out of its parent destroys its video surface — the picture goes
+   black in both the big player and the small window while audio
+   keeps playing. Floating #tv-screenbox itself (position:fixed)
+   leaves the video exactly where it is, so the picture never
+   stops; a placeholder holds the layout spot and tapping it (or
+   the window, or «بازگرداندن») puts the screenbox back. The
+   window is draggable and pinch-resizable (fnDraggable); while it
+   is on, the page carries .fn-mini-on and the exit guard leaves
+   navigation alone — continuing playback across sections is
+   exactly what the reader asked for here. */
 let fnMiniState = null;
 const FN_MINI_PP_PAUSE = '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
 const FN_MINI_PP_PLAY = '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg>';
@@ -3456,36 +3492,70 @@ function fnMiniBox() {
 }
 function fnMiniSyncPp() {
   if (!fnMiniState) return;
-  const b = document.querySelector('#fn-mini .fn-mini-pp');
+  const b = document.querySelector('#tv-screenbox .fn-mini-pp');
   if (b) b.innerHTML = fnMiniState.video.paused ? FN_MINI_PP_PLAY : FN_MINI_PP_PAUSE;
 }
 function fnMiniEnter(video, title) {
   if (!video || !video.parentNode) return;
   if (fnMiniState) fnMiniExit();
-  const box = fnMiniBox();
+  const box = $('#tv-screenbox');
+  if (!box || !box.contains(video)) return;
+  /* float the screenbox itself — the <video> never leaves its
+     parent, so the MSE surface stays alive and the picture keeps
+     playing in the small window */
   box.style.left = ''; box.style.top = ''; box.style.right = ''; box.style.bottom = ''; box.style.setProperty('inset-inline-end', '');
-  fnMiniState = { video, parent: video.parentNode, next: video.nextSibling, controls: video.controls };
+  box.style.width = '';
+  fnMiniState = { video, screenbox: box, ph: null, bar: null, controls: video.controls };
   video.controls = false;
-  box.querySelector('.fn-mini-title').textContent = title || '';
-  box.querySelector('.fn-mini-body').appendChild(video);
-  box.classList.add('on');
+  /* placeholder where the screenbox stood, so the layout does not
+     jump; tapping it brings the player back */
+  const ph = document.createElement('div');
+  ph.className = 'fn-mini-ph';
+  ph.textContent = 'پخش در پنجره شناور ادامه دارد — برای بازگشت ضربه بزنید';
+  ph.addEventListener('click', () => fnMiniExit());
+  box.parentNode.insertBefore(ph, box);
+  fnMiniState.ph = ph;
+  /* mini bar inside the floating screenbox (title + play/pause +
+     restore), reusing the #fn-mini bar styles and markup */
+  const bar = document.createElement('div');
+  bar.className = 'fn-mini-bar';
+  bar.innerHTML = '<span class="fn-mini-title"></span>'
+    + '<button type="button" class="fn-mini-pp" aria-label="پخش یا توقف"></button>'
+    + '<button type="button" class="fn-mini-rs">بازگرداندن</button>';
+  bar.querySelector('.fn-mini-title').textContent = title || '';
+  bar.querySelector('.fn-mini-rs').addEventListener('click', e => { e.stopPropagation(); fnMiniExit(); });
+  bar.querySelector('.fn-mini-pp').addEventListener('click', e => {
+    e.stopPropagation();
+    const v = fnMiniState && fnMiniState.video;
+    if (!v) return;
+    if (v.paused) { const p = v.play(); if (p && p.catch) p.catch(() => {}); } else v.pause();
+    fnMiniSyncPp();
+  });
+  box.appendChild(bar);
+  fnMiniState.bar = bar;
+  box.classList.add('fn-mini-float');
   document.body.classList.add('fn-mini-on');
   video.addEventListener('play', fnMiniSyncPp);
   video.addEventListener('pause', fnMiniSyncPp);
   fnMiniSyncPp();
+  if (!box.__fnDragBound) { fnDraggable(box, box, () => fnMiniExit()); box.__fnDragBound = true; }
 }
 function fnMiniExit() {
   if (!fnMiniState) return;
   const s = fnMiniState;
   fnMiniState = null;
-  const box = $('#fn-mini');
-  if (box) box.classList.remove('on');
-  document.body.classList.remove('fn-mini-on');
-  if (s.parent && document.contains(s.parent)) {
-    if (s.next && s.next.parentNode === s.parent) s.parent.insertBefore(s.video, s.next);
-    else s.parent.appendChild(s.video);
+  const box = s.screenbox || $('#tv-screenbox');
+  if (box) {
+    box.classList.remove('fn-mini-float');
+    box.style.left = ''; box.style.top = ''; box.style.right = ''; box.style.bottom = ''; box.style.setProperty('inset-inline-end', '');
+    box.style.width = '';
+    if (s.bar && s.bar.parentNode === box) box.removeChild(s.bar);
   }
+  if (s.ph && s.ph.parentNode) s.ph.parentNode.removeChild(s.ph);
+  document.body.classList.remove('fn-mini-on');
   s.video.controls = s.controls;
+  s.video.removeEventListener('play', fnMiniSyncPp);
+  s.video.removeEventListener('pause', fnMiniSyncPp);
 }
 
 /* ---------- the online player's picture-in-picture ----------
