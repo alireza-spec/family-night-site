@@ -1,0 +1,13 @@
+# Gradle / Android Studio
+*.iml
+.gradle/
+/local.properties
+/.idea/
+build/
+app/build/
+
+# Release signing keystore — NEVER commit. CI decodes it from the
+# KEYSTORE_BASE64 GitHub secret into app/keystore.p12 at build time.
+app/keystore.p12
+*.jks
+*.keystore
