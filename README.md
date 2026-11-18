@@ -259,6 +259,33 @@ Nothing else in the site was changed.
   `integration_test.py` 15/15 still PASS. All 15 script blocks pass
   `node --check`.
 
+## v8.5 — Old-archive (Donyaye Serial) movies are playable too (2026-11-18)
+- Movies from the OLD archive now get the same internal play list, popup
+  and player as new-archive titles. When a title has no new-archive play
+  data, the resolver falls back to the old play index (IMDb path via the
+  old download-index, then title path via a dedicated titles lookup —
+  the old index's own `title:` keys proved stale and are not used).
+  Titles in neither archive still go to the external player untouched.
+- New index (`download-data/play-index-old-part-{1,2,3}.json` +
+  `play-index-old-titles.json`): **10,561 old movie titles, 20,902 play
+  entries** (18,271 MKV / 2,631 MP4; SoftSub 10,450 / Dubbed 5,603 /
+  NoSub 4,849; archive sizes on 81%, the rest lazy-probed on the phone).
+  **6,501 titles are newly playable only via this index**; 4,060 were
+  already playable via the new archive.
+- Old play URLs are the direct download file URLs themselves (the old
+  archive has no playit tokens). Old hosts are Iran-only
+  (aparatchi/varzeshha 503 from outside Iran; Moviezland answers 200) —
+  the phone is the decider for those links, as with the new archive.
+- Parser rules: resolution and encoder come from the FILENAME only
+  (page labels lie); encoder is never guessed from a title word
+  (`...Dubbed.Unknown...` stays `unknown`); sizes come from the
+  archive's own size text, never invented.
+- Tests: `ds_movies_test.py` 14/14 PASS (Pulp Fiction 4 rows, Benny's
+  Video 3 rows, no-IMDb David via the title path, neither-archive
+  title still falls back); `verify_ds_movies.py` 0 failures; all 15
+  script blocks pass `node --check`. Series are NOT in this index —
+  their old links are folder URLs, not files (later phase).
+
 ## To publish
 Upload this whole folder to the `family-night-site` repo root (browser upload —
 GitHub connector pushes return 403). The site reads the archive from its own

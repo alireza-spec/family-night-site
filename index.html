@@ -4556,6 +4556,25 @@ async function fnPlayFetchPart(part) {
     var j = await r.json(); FN_PLAY.parts[part] = j; return j;
   } finally { clearTimeout(to); }
 }
+/* ---------- old-archive (Donyaye Serial) MOVIES play-index (DS-OLD-MOVIES v1) ----------
+   Same entry shape as the new play-index; the fallback in fnPlayResolve()
+   below returns these entries unchanged, so the same list/popup/player
+   renders them. Old part files live next to the new ones in download-data/
+   (play-index-old-part-{1,2,3}.json + play-index-old-titles.json). */
+async function fnPlayOldFetchPart(part) {
+  if (!FN_PLAY.oldParts) FN_PLAY.oldParts = {};
+  if (FN_PLAY.oldParts[part]) return FN_PLAY.oldParts[part];
+  var r = await fetch(DL_BASE + 'play-index-old-part-' + part + '.json');
+  if (!r.ok) throw new Error('old play part');
+  var j = await r.json(); FN_PLAY.oldParts[part] = j; return j;
+}
+var fnPlayOldTitles = null, fnPlayOldTitlesPromise = null;
+function fnPlayOldFetchTitles() {
+  if (fnPlayOldTitles) return Promise.resolve(fnPlayOldTitles);
+  if (!fnPlayOldTitlesPromise) fnPlayOldTitlesPromise = fetch(DL_BASE + 'play-index-old-titles.json').then(function (r) { if (!r.ok) throw new Error('old titles'); return r.json(); }).then(function (x) { fnPlayOldTitles = x || {}; return fnPlayOldTitles; });
+  return fnPlayOldTitlesPromise;
+}
+function fnPlayNormTitle(t) { return String(t || '').toLowerCase().replace(/[^a-z0-9]/g, ''); }
 async function fnPlayResolve(ctx) {
   var part = 0, key = '';
   if (ctx.imdbId) {
@@ -4567,6 +4586,34 @@ async function fnPlayResolve(ctx) {
   }
   if (!key && ctx.title) {
     try { var im = await findImdbByTitle(ctx.title, ctx.year); if (im) { var ix2 = await getDlIndex(); part = ix2[im] || 0; if (part) key = im; } } catch (e) {}
+  }
+  /* ---- old-archive (Donyaye Serial) MOVIES fallback (DS-OLD-MOVIES v1) ----
+     Only reached when the new archive has no play data for this title.
+     IMDb path reuses the existing old download-index (IMDb -> old part 1-3);
+     title path uses the build's own titles lookup (the old index's title:
+     keys are stale and cannot be trusted). */
+  if (!key && ctx.imdbId) {
+    try {
+      var oix = await getOldDlIndex();
+      var opart = oix[ctx.imdbId] || 0;
+      if (opart) {
+        var odata = await fnPlayOldFetchPart(opart);
+        var oentry = odata[ctx.imdbId];
+        if (oentry && fnPlayJoined(oentry).length) return { entry: oentry, key: ctx.imdbId, part: opart, old: true };
+      }
+    } catch (e) {}
+  }
+  if (!key && ctx.title) {
+    try {
+      var ot = await fnPlayOldFetchTitles();
+      var nt = fnPlayNormTitle(ctx.title);
+      var ohit = (nt && ctx.year ? ot[nt + '|' + ctx.year] : null) || (nt ? ot[nt] : null);
+      if (ohit && ohit.part && ohit.key) {
+        var odata2 = await fnPlayOldFetchPart(ohit.part);
+        var oentry2 = odata2[ohit.key];
+        if (oentry2 && fnPlayJoined(oentry2).length) return { entry: oentry2, key: ohit.key, part: ohit.part, old: true };
+      }
+    } catch (e) {}
   }
   if (!key || !part) return null;
   try {
