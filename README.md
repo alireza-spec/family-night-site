@@ -234,6 +234,31 @@ Nothing else in the site was changed.
   does not know `playUrl` yet, so in-app rooms still use the external
   server until the app is updated.
 
+## v8.4 — Prefetch, no more stuck loading, year in headers, readable subtitles (2026-11-18)
+- Stuck loading fixed: for a title with no internal play data (e.g. Anora,
+  not in the archive yet) the resolver used to churn through all 19 archive
+  parts before falling back to the external player — the spinner spun
+  forever. The resolve is now capped at 6 s (part fetches at 8 s) and then
+  falls back at once.
+- Prefetch: opening a title's detail sheet starts resolving its play data
+  in the background (hooked on `openDetail`, the single funnel for cards,
+  hero, search and recommendations); tapping «پخش آنلاین» then uses the
+  cached result — the list opens instantly (0.06–0.19 s in tests). A null
+  result is cached too, so a no-play title falls back immediately.
+- Year in the headers: the play-list header and the option popup now show
+  the release year next to the title for movies (e.g. «آنورا (۲۰۲۴)») —
+  series headers unchanged.
+- Readable subtitles: the row/popup subtitle was one mixed Persian+English
+  line, so bidi reordering scrambled it (the size landed mid-line). It is
+  now two lines — Latin specs (`BluRay · MKV · Film2Media`) on their own
+  `dir=ltr` line, Persian size (`۱.۰۲ گیگابایت`) on its own line. A `|`
+  separator cannot fix this (`|` and `·` are both bidi-neutral), so the
+  two-line layout is the fix; the redundant «انکودر:» label is dropped.
+- Tests: `test84.py` 14/14 PASS (year, two-line subtitles, prefetch cache
+  hit with 0 resolve calls, 6.05 s fallback cap); `run_test.py` 32/32 and
+  `integration_test.py` 15/15 still PASS. All 15 script blocks pass
+  `node --check`.
+
 ## To publish
 Upload this whole folder to the `family-night-site` repo root (browser upload —
 GitHub connector pushes return 403). The site reads the archive from its own
