@@ -3805,7 +3805,7 @@ async function openDetail(type, id) {
     if (om && om.imdbRating && om.imdbRating !== 'N/A') { o.imdbRating = om.imdbRating; const el = $('#d-rating'); if (el) el.textContent = 'IMDb ' + om.imdbRating + ' ★'; }
   }).catch(() => {});
   if (type === 'tv') loadDetailEpisodes(d, token);
-  loadDownloadBox(imdbId, token, d.title || d.name || '', (d.release_date || d.first_air_date || '').slice(0, 4));
+  loadDownloadBox(imdbId, token, d.title || d.name || '', (d.release_date || d.first_air_date || '').slice(0, 4), (type === 'tv' ? 'tv:' : 'movie:') + id);
 }
 /* Detail sheet built from the local FN catalog entry (used when the
    worker cannot be reached from this origin). Same tabs and choices;
@@ -3862,12 +3862,12 @@ async function hydrateLocalDetail(type, id, token, item, o) {
   let imdbId = '';
   try { const ex = await tmdb(type + '/' + id + '/external_ids', {}); imdbId = (ex && ex.imdb_id) || ''; } catch (e) {}
   if (!alive()) return;
-  if (imdbId) { loadDownloadBox(imdbId, token); return; }
+  if (imdbId) { loadDownloadBox(imdbId, token, '', '', (type === 'tv' ? 'tv:' : 'movie:') + id); return; }
   const body = $('#d-dl-body'); if (body) body.innerHTML = '<div class="state"><div class="spin"></div>در حال جستجوی این عنوان در آرشیو دانلود Family Night…</div>';
-  const found = await findImdbByTitle(origOf(item) || titleOf(item), yearOf(item)).catch(() => '');
   if (!alive()) return;
-  if (found) loadDownloadBox(found, token);
-  else if (body) body.innerHTML = '<div class="state"><b>فعلاً لینک دانلود رایگانی برای این اثر نیست.</b><br>از «پخش آنلاین» می‌توانید همین حالا تماشا کنید.</div>';
+  /* loadDownloadBox runs the whole fallback chain itself: archive title
+     search, then the TMDB title index, then the "no link" message */
+  loadDownloadBox('', token, origOf(item) || titleOf(item), yearOf(item), (type === 'tv' ? 'tv:' : 'movie:') + id);
 }
 function normTitle(s) { return String(s || '').toLowerCase().replace(/[^a-z0-9\u0600-\u06FF]+/g, ' ').trim(); }
 async function findImdbByTitle(title, year) {
@@ -4106,6 +4106,15 @@ function getDlIndex() {
   if (!fnDlIndexPromise) fnDlIndexPromise = fetch(DL_BASE + 'download-index.json').then(r => { if (!r.ok) throw new Error('index'); return r.json(); }).then(x => { fnDlIndex = x || {}; return fnDlIndex; });
   return fnDlIndexPromise;
 }
+let titleDlIndex = null, titleDlIndexPromise = null;
+function getTitleIndex() {
+  /* download-title-index.json: TMDB title+year match for the 2,273 archive
+     titles that have no IMDb code (download-title-index.json, keyed
+     "movie:<tmdbId>" / "tv:<tmdbId>" -> {part, num, title, year, imdb_id}) */
+  if (titleDlIndex) return Promise.resolve(titleDlIndex);
+  if (!titleDlIndexPromise) titleDlIndexPromise = fetch(DL_BASE + 'download-title-index.json').then(r => { if (!r.ok) throw new Error('title index'); return r.json(); }).then(x => { titleDlIndex = x || {}; return titleDlIndex; });
+  return titleDlIndexPromise;
+}
 function loadDlPart(part, which) {
   const isOld = which === 'old';
   const cache = isOld ? oldDlParts : fnDlParts;
@@ -4295,7 +4304,7 @@ function admDownload(url) {
   copyText(url);
   toast('لینک کپی شد — آن را در ADM پیست کنید تا دانلود شروع شود');
 }
-async function loadDownloadBox(imdbId, token, fbTitle, fbYear) {
+async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey) {
   const body = $('#d-dl-body'); if (!body) return;
   if (!imdbId && fbTitle) {
     /* the worker (TMDB external_ids) is blocked without VPN, so no IMDb
@@ -4304,12 +4313,25 @@ async function loadDownloadBox(imdbId, token, fbTitle, fbYear) {
     try { imdbId = await findImdbByTitle(fbTitle, fbYear); } catch (e) { imdbId = ''; }
     if (token !== detailToken) return;
   }
-  if (!imdbId) { body.innerHTML = '<div class="state"><b>فعلاً لینک دانلود رایگانی برای این اثر نیست.</b><br>از «پخش آنلاین» می‌توانید همین حالا تماشا کنید.</div>'; return; }
+  /* Fallback chain for the download box: IMDb index first, then the
+     TMDB title index (archive titles with no IMDb code, matched by the
+     title-match job). tmdbKey is "movie:<id>" or "tv:<id>". */
+  let resolved = null;
   try {
     if (token !== detailToken) return;
-    const resolved = await resolveDlRecord(imdbId, 0);
+    if (imdbId) resolved = await resolveDlRecord(imdbId, 0);
+    if (!resolved && tmdbKey) {
+      const ti = await getTitleIndex();
+      const hit = ti[tmdbKey];
+      if (hit && hit.part && hit.num) resolved = await resolveDlRecordByPart('', hit.num, hit.part, 'new');
+    }
     if (token !== detailToken) return;
     if (!resolved) { body.innerHTML = '<div class="state"><b>فعلاً لینک دانلود رایگانی برای این اثر نیست.</b><br>از «پخش آنلاین» می‌توانید همین حالا تماشا کنید.</div>'; return; }
+  } catch (e) {
+    if (token === detailToken) body.innerHTML = '<div class="state">دریافت لینک‌های دانلود از آرشیو ممکن نشد؛ اتصال را بررسی و دوباره تلاش کنید.</div>';
+    return;
+  }
+  try {
     const rec = resolved.rec;
     const srcNote = resolved.src === 'old' ? ' <span style="color:var(--gold2)">(از آرشیو قبلی)</span>' : resolved.src === 'both' ? ' <span style="color:var(--gold2)">(آرشیو جدید + قبلی)</span>' : '';
     if (!rec || (!rec.groups.softsub.length && !rec.groups.dubbed.length && !rec.groups.nosub.length)) { body.innerHTML = '<div class="state"><b>فعلاً لینک دانلود رایگانی برای این اثر نیست.</b><br>از «پخش آنلاین» می‌توانید همین حالا تماشا کنید.</div>'; return; }
