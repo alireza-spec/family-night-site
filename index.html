@@ -7206,12 +7206,12 @@ function coFetch(kind, page) {
   const ids = [e.cid].concat(e.extra || []).filter(Boolean);
   if (kind === 'movie') {
     if (!ids.length) return Promise.resolve({ results: [], total_pages: 1 });
-    return tmdb('discover/movie', { sort_by: 'popularity.desc', with_companies: ids.join(','), page });
+    return tmdb('discover/movie', { sort_by: 'popularity.desc', with_companies: ids.join('|'), page });
   }
   if (e.net && e.nid) {
     return tmdb('discover/tv', { sort_by: 'popularity.desc', with_networks: e.nid, page }).then(d => {
       if (page === 1 && (!d.results || d.results.length < 8) && ids.length) {
-        return tmdb('discover/tv', { sort_by: 'popularity.desc', with_companies: ids.join(','), page }).then(d2 => {
+        return tmdb('discover/tv', { sort_by: 'popularity.desc', with_companies: ids.join('|'), page }).then(d2 => {
           const seen = new Set((d.results || []).map(x => x.id));
           (d2.results || []).forEach(x => { if (!seen.has(x.id)) (d.results = d.results || []).push(x); });
           return d;
@@ -7221,7 +7221,7 @@ function coFetch(kind, page) {
     });
   }
   if (!ids.length) return Promise.resolve({ results: [], total_pages: 1 });
-  return tmdb('discover/tv', { sort_by: 'popularity.desc', with_companies: ids.join(','), page });
+  return tmdb('discover/tv', { sort_by: 'popularity.desc', with_companies: ids.join('|'), page });
 }
 async function loadCoWorks(append) {
   const st = sxCo; if (!st || st.loading) return;
