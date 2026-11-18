@@ -1290,6 +1290,17 @@ html.tg .bottomnav{display:flex}
 .fnp-tap{position:absolute;inset:0;z-index:4}
 
 </style>
+<style id="wp-internal-css">
+/* Watch Party - internal playback (WP-INTERNAL-PLAY v1): list + now-playing card inside #wp-screen */
+#wp-screen .wp-plist{position:absolute;inset:0;overflow-y:auto;background:#0b0e1a;padding:.1rem 0 1rem}
+#wp-screen .wp-plist .pl-count{padding-top:.55rem}
+#wp-screen .wp-plist .pl-season{padding-top:.55rem}
+#wp-screen .wp-now{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.55rem;background:#0b0e1a;padding:1rem;text-align:center}
+#wp-screen .wp-now .wp-now-t{font-size:1.05rem;font-weight:800}
+#wp-screen .wp-now .wp-now-s{color:var(--pearl);font-size:.88rem;line-height:1.8}
+#wp-screen .wp-now .wp-now-row{display:flex;gap:.55rem;flex-wrap:wrap;justify-content:center;margin-top:.35rem}
+#wp-screen .wp-now .wp-now-note{color:var(--pearl);font-size:.78rem}
+</style>
 </head>
 <body>
 
@@ -10442,6 +10453,233 @@ sxSearchPage = async function (seq, append) {
   document.addEventListener('touchcancel', function () { gly = null; glx = null; }, { passive: true });
 })();
 </script>
+<script>
+'use strict';
+/* ================= Watch Party - internal playback (WP-INTERNAL-PLAY v1) =================
+   For room sources (kind 'app') whose title is in the NEW archive (play-index),
+   the room screen shows the SAME internal play list as the solo «پخش آنلاین»
+   flow - softsub / dubbed / qualities - as the DEFAULT, with the
+   external-server iframe only as an option (mode switch in the #wp-servers
+   bar). The version a member picks is written into the SHARED room source
+   (playUrl + quality/group/encoder/size + season/episode) via wpSetSource(),
+   so every member's poll renders the same version in their own internal
+   player. Titles with no play data keep the old external-server iframe
+   untouched. Solo playback is untouched.
+   Live chain this overrides: upgraded wpPoll (1600ms) -> guarded
+   paintWpScreen (local-stop wrapper) -> original paintWpScreen (iframe).
+   The override captures the guarded original and delegates to it for the
+   external view and for every non-'app' source. */
+(function () {
+  if (typeof paintWpScreen !== 'function' || typeof wpSourceKeyOf !== 'function') return;
+  if (typeof fnPlayResolve !== 'function' || typeof fnPlayCardHtml !== 'function' || typeof fnPlayerOpen !== 'function') return;
+
+  /* 1. the room-source key must change when the chosen version changes,
+     otherwise no member's poll ever repaints on a pick. */
+  wpSourceKeyOf = function (s) {
+    return s ? [s.kind, s.id, s.type, s.season, s.episode, s.url || '', s.playUrl || ''].join('|') : '';
+  };
+
+  /* 2. per-device room state (never synced to Firebase). */
+  wp.wpRoomView = 'internal';  /* 'internal' | 'external' | 'playing' - local view for the current source */
+  wp.wpRoomKey = '';           /* source key the view above belongs to */
+  wp.wpRoomHasPlay = false;    /* current source resolved to play data */
+  wp.wpRoomSrc = null;         /* last source painted (for the mode chips) */
+  wp.wpRoomSeasonKey = '';     /* tv season|group selection in the room list */
+  wp.wpResolveSeq = 0;         /* guards stale async resolves */
+  wp.wpAutoKey = '';           /* source key already auto-opened in the player */
+
+  /* 3. the #wp-servers bar carries the internal/external mode switch.
+     In internal/playing view it shows only «سرور خارجی»; in external view
+     it shows the server chips plus «پخش داخلی». */
+  var _paintWpServers = paintWpServers;
+  paintWpServers = function (src) {
+    var bar = document.querySelector('#wp-servers'); if (!bar) return;
+    if (src && src.kind === 'app' && wp.wpRoomHasPlay && wp.wpRoomView !== 'external') {
+      bar.innerHTML = '';
+      var chip = document.createElement('button');
+      chip.className = 'chip'; chip.type = 'button'; chip.textContent = 'سرور خارجی';
+      chip.onclick = function () { wp.wpRoomView = 'external'; if (wp.wpRoomSrc) paintWpScreen(wp.wpRoomSrc, true); };
+      bar.appendChild(chip);
+      return;
+    }
+    _paintWpServers(src);
+    if (src && src.kind === 'app' && wp.wpRoomHasPlay && wp.wpRoomView === 'external') {
+      var chip2 = document.createElement('button');
+      chip2.className = 'chip'; chip2.type = 'button'; chip2.textContent = 'پخش داخلی';
+      chip2.onclick = function () { wp.wpRoomView = (wp.wpRoomSrc && wp.wpRoomSrc.playUrl) ? 'playing' : 'internal'; if (wp.wpRoomSrc) paintWpScreen(wp.wpRoomSrc, true); };
+      bar.insertBefore(chip2, bar.firstChild);
+    }
+  };
+
+  /* ctx for fnPlayResolve, from a room source (best-effort poster/imdb from the TMDB item cache). */
+  function wpRoomCtx(src) {
+    var id = +(src.tmdbId || src.id || 0), it = null;
+    try { it = (typeof itemCache !== 'undefined' && itemCache.get) ? itemCache.get(wlKey(src.type, id)) : null; } catch (e) { it = null; }
+    return {
+      id: id, type: src.type, item: it || {},
+      imdbId: src.imdbId || (it && it.imdb_id) || '',
+      tmdbKey: (src.type === 'tv' ? 'tv:' : 'movie:') + id,
+      title: src.title || (it ? (it.title || it.name || '') : ''),
+      year: '', poster: (it && (it.poster_path || it.poster)) || ''
+    };
+  }
+  /* open the internal player for a room version (sets the shared FN_PLAY globals first). */
+  function wpOpenRoomPlayer(src, p, entry) {
+    /* fnPlayerClose() calls fnPlayRenderList(), which needs the solo list DOM;
+       make sure it exists even though the room never opens the solo overlay. */
+    if (typeof fnPlayEnsureListDom === 'function') fnPlayEnsureListDom();
+    FN_PLAY.ctx = wpRoomCtx(src);
+    FN_PLAY.entry = entry || { title: src.title || '' };
+    FN_PLAY.key = '';
+    FN_PLAY.rows = [p];
+    try { wp.wpAutoKey = wpSourceKeyOf(src); } catch (e) {}
+    fnPlayerOpen(p);
+  }
+  /* a version is chosen for the whole room: now-playing card + auto-open once per key. */
+  function wpPaintPlaying(scr, src) {
+    var p = { play_url: src.playUrl, quality: src.playQuality || '', group: src.playGroup || '', encoder: src.playEncoder || '', size_text: src.playSize || '', season: src.season || 0, episode: src.episode || 0 };
+    var label = 'کیفیت ' + (fnPlayResFa(p) || '—') + ' ' + fnPlayVersionLabel(p);
+    var specs = fnPlaySpecs(p), size = fnPlaySizeFa(p);
+    var se = (src.type === 'tv' && src.season) ? 'فصل ' + fnPlayOrd(src.season) + ' · قسمت ' + fnPlayOrd(src.episode || 0) : 'فیلم';
+    scr.innerHTML = '<div class="wp-now">'
+      + '<div class="wp-now-t">' + esc(src.title || '') + '</div>'
+      + '<div class="wp-now-s">' + esc(se) + ' · ' + esc(label) + '<br>' + esc(specs) + (specs && size ? ' · ' : '') + esc(size) + '</div>'
+      + '<div class="wp-now-row">'
+      + '<button class="btn btn-gold" type="button" id="wp-now-play">پخش</button>'
+      + '<button class="btn btn-glass" type="button" id="wp-now-change">تغییر نسخه</button>'
+      + '<button class="btn btn-glass" type="button" id="wp-now-ext">سرور خارجی</button>'
+      + '</div>'
+      + '<div class="wp-now-row">'
+      + '<button class="btn btn-glass btn-sm" type="button" id="wp-now-mx">پخش با MX</button>'
+      + '<button class="btn btn-glass btn-sm" type="button" id="wp-now-vlc">پخش با VLC</button>'
+      + '<button class="btn btn-glass btn-sm" type="button" id="wp-now-copy">کپی لینک پخش</button>'
+      + '</div>'
+      + '<div class="wp-now-note">این نسخه برای همه اعضای روم انتخاب شده است</div>'
+      + '</div>';
+    var bPlay = scr.querySelector('#wp-now-play');
+    if (bPlay) bPlay.onclick = function () { try { wpOpenRoomPlayer(src, p, null); } catch (e) {} };
+    var bChg = scr.querySelector('#wp-now-change');
+    if (bChg) bChg.onclick = function () {
+      /* back to the list, defaulting to the chosen version's season/group */
+      if (src.type === 'tv') wp.wpRoomSeasonKey = (src.season || 1) + '|' + (src.playGroup || 'NoSub');
+      wp.wpRoomView = 'internal'; paintWpScreen(src, true);
+    };
+    var bExt = scr.querySelector('#wp-now-ext');
+    if (bExt) bExt.onclick = function () { wp.wpRoomView = 'external'; paintWpScreen(src, true); };
+    var bMx = scr.querySelector('#wp-now-mx');
+    if (bMx) bMx.onclick = function () {
+      try {
+        if (/Android/i.test(navigator.userAgent || '')) window.open(fnPlayIntent(p.play_url, 'com.mxtech.videoplayer.ad', src.title || 'Family Night'), '_self');
+        else { copyText(p.play_url); toast('لینک کپی شد — آن را در MX Player باز کنید'); }
+      } catch (e) {}
+    };
+    var bVlc = scr.querySelector('#wp-now-vlc');
+    if (bVlc) bVlc.onclick = function () { try { openInPlayer(p.play_url); } catch (e) {} };
+    var bCp = scr.querySelector('#wp-now-copy');
+    if (bCp) bCp.onclick = function () { try { copyText(p.play_url); } catch (e) {} };
+    /* auto-open the internal player once per source key, only while the
+       party view is open (a member who closed it is not yanked back). */
+    var key = wpSourceKeyOf(src);
+    if (wp.wpAutoKey !== key) {
+      var onParty = true;
+      try { onParty = (typeof currentView === 'undefined' || currentView === 'party'); } catch (e) { onParty = true; }
+      if (onParty) { try { wpOpenRoomPlayer(src, p, null); } catch (e) {} }
+    }
+  }
+  /* the internal list, rendered inside #wp-screen (same rows/helpers as the solo list). */
+  function wpPaintList(scr, src, res) {
+    var entry = res.entry, ctx = wpRoomCtx(src);
+    if (typeof fnPlayEnsureListDom === 'function') fnPlayEnsureListDom();
+    FN_PLAY.ctx = ctx; FN_PLAY.entry = entry; FN_PLAY.key = res.key; FN_PLAY.part = res.part;
+    var joined = fnPlayJoined(entry);
+    var rows = [], html = '<div class="wp-plist"><div class="pl-count">' + esc(src.title || entry.title || '') + ' — ' + fnPlayFa(joined.length) + ' نسخه قابل پخش</div>';
+    if (ctx.type === 'tv') {
+      var opts = [], seen = {};
+      joined.forEach(function (q) { var k = (q.season || 0) + '|' + (q.group || 'NoSub'); if (!seen[k]) { seen[k] = 1; opts.push({ season: q.season || 0, group: q.group || 'NoSub' }); } });
+      opts.sort(function (a, b) { return (a.season - b.season) || (fnPlayGroupRank(a.group) - fnPlayGroupRank(b.group)); });
+      if (!opts.length) return false;
+      if (!wp.wpRoomSeasonKey) wp.wpRoomSeasonKey = opts[0].season + '|' + opts[0].group;
+      var cur = opts.filter(function (o) { return (o.season + '|' + o.group) === wp.wpRoomSeasonKey; })[0] || opts[0];
+      wp.wpRoomSeasonKey = cur.season + '|' + cur.group;
+      html += '<div class="pl-season"><label for="wp-pl-season-sel">فصل</label><select class="sel" id="wp-pl-season-sel">'
+        + opts.map(function (o) { return '<option value="' + o.season + '|' + o.group + '"' + ((o.season + '|' + o.group) === wp.wpRoomSeasonKey ? ' selected' : '') + '>فصل ' + fnPlayOrd(o.season) + ' ' + fnPlayGroupShort(o.group) + '</option>'; }).join('') + '</select></div>';
+      rows = joined.filter(function (q) { return (q.season || 0) === cur.season && (q.group || 'NoSub') === cur.group; });
+      rows.sort(function (a, b) { return ((a.episode || 0) - (b.episode || 0)) || fnPlaySort(a, b); });
+      FN_PLAY.rows = rows;
+      html += '<div class="pl-list">' + rows.map(function (q) {
+        return fnPlayCardHtml(q, 'قسمت ' + fnPlayOrd(q.episode || 0) + ' ' + fnPlayResFa(q) + ' ' + fnPlayVersionLabel(q));
+      }).join('') + '</div></div>';
+    } else {
+      rows = joined.slice().sort(fnPlaySort);
+      FN_PLAY.rows = rows;
+      html += '<div class="pl-list">' + rows.map(function (q) {
+        return fnPlayCardHtml(q, 'کیفیت ' + (fnPlayResFa(q) || '—') + ' ' + fnPlayVersionLabel(q));
+      }).join('') + '</div></div>';
+    }
+    scr.innerHTML = html;
+    var sel = scr.querySelector('#wp-pl-season-sel');
+    if (sel) sel.onchange = function (e) { wp.wpRoomSeasonKey = e.target.value; wpPaintList(scr, src, res); };
+    scr.querySelectorAll('[data-pl-idx]').forEach(function (b) {
+      b.onclick = function () { wpPickVersion(src, res, FN_PLAY.rows[+b.dataset.plIdx]); };
+    });
+    return true;
+  }
+  /* a member picked a quality: sync the version to the whole room, then play it here. */
+  function wpPickVersion(src, res, p) {
+    if (!p || !p.play_url) return;
+    var ns = {
+      kind: 'app', id: src.id, tmdbId: src.tmdbId, imdbId: src.imdbId || '',
+      type: src.type, title: src.title || (res.entry && res.entry.title) || '',
+      season: (src.type === 'tv' && p.season) ? p.season : (src.season || 1),
+      episode: (src.type === 'tv' && p.episode) ? p.episode : (src.episode || 1),
+      server: 0, updatedAt: Date.now(),
+      playUrl: p.play_url, playQuality: p.quality || '', playGroup: p.group || '',
+      playEncoder: p.encoder || '', playSize: p.size_text || ''
+    };
+    wpSetSource(ns);
+    try { wpOpenRoomPlayer(ns, p, res.entry); } catch (e) {}
+  }
+
+  var _wpPaintOrig = paintWpScreen;
+  paintWpScreen = function (src, force) {
+    var scr = document.querySelector('#wp-screen'); if (!scr) return;
+    if (!src || src.kind !== 'app') { wp.wpRoomSrc = null; wp.wpRoomHasPlay = false; return _wpPaintOrig(src, force); }
+    wp.wpRoomSrc = src;
+    var key = wpSourceKeyOf(src);
+    if (wp.wpRoomKey !== key) { wp.wpRoomKey = key; wp.wpRoomView = src.playUrl ? 'playing' : 'internal'; wp.wpRoomSeasonKey = ''; }
+    /* a version is chosen for the room: now-playing card (+ auto-open once). */
+    if (src.playUrl && wp.wpRoomView === 'playing') {
+      wp.wpRoomHasPlay = true;
+      paintWpServers(src);
+      wpPaintPlaying(scr, src);
+      return;
+    }
+    /* local external view: the old iframe, untouched. */
+    if (wp.wpRoomView === 'external') { paintWpServers(src); return _wpPaintOrig(src, force); }
+    /* default: internal list — resolve the title against the new archive. */
+    wp.wpRoomView = 'internal';
+    var mySeq = ++wp.wpResolveSeq;
+    if (typeof wpDestroyHls === 'function') wpDestroyHls();
+    scr.innerHTML = '<div class="state" style="padding-top:12%"><div class="spin"></div>در حال دریافت نسخه‌های قابل پخش…</div>';
+    paintWpServers(null);
+    var ctx = wpRoomCtx(src);
+    fnPlayResolve(ctx).then(function (res) {
+      if (mySeq !== wp.wpResolveSeq) return; /* a newer paint superseded this resolve */
+      if (wp.wpRoomKey !== key || wp.wpRoomView !== 'internal') return; /* source/view moved on */
+      if (!document.querySelector('#wp-screen')) return;
+      if (!res) { wp.wpRoomHasPlay = false; wp.wpRoomView = 'external'; _wpPaintOrig(src, force); return; }
+      wp.wpRoomHasPlay = true;
+      wpPaintList(scr, src, res);
+      paintWpServers(src);
+    }).catch(function () {
+      if (mySeq !== wp.wpResolveSeq) return;
+      if (wp.wpRoomKey !== key || wp.wpRoomView !== 'internal') return;
+      wp.wpRoomHasPlay = false; wp.wpRoomView = 'external'; _wpPaintOrig(src, force);
+    });
+  };
+})();
+</script>
+
 <script>
 'use strict';
 /* ================= Telegram Mini App layer =================
