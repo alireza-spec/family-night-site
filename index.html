@@ -2640,7 +2640,8 @@ const histClearEl = $('#hist-clear'); if (histClearEl) histClearEl.onclick = () 
 $('#search-form').addEventListener('submit', e => { e.preventDefault(); toggleHistPanel(false); doSearch($('#search-input').value); });
 $('#headsearch').addEventListener('submit', e => { e.preventDefault(); go('search'); $('#search-input').value = $('#headsearch-input').value; doSearch($('#headsearch-input').value); setTimeout(() => $('#search-input').focus(), 60); });
 let searchDeb = null;
-$('#search-input').addEventListener('input', e => { clearTimeout(searchDeb); searchDeb = setTimeout(() => doSearch(e.target.value), 450); });
+/* v8.7 FN-LOCAL-SEARCH: 200ms — local rows render instantly per keystroke, TMDB merges in the background */
+$('#search-input').addEventListener('input', e => { clearTimeout(searchDeb); searchDeb = setTimeout(() => doSearch(e.target.value), 200); });
 $('#genre-chips').innerHTML = [28, 35, 27, 16, 878, 18, 10749, 53, 9648, 99].map(id => '<button class="chip" data-gchip="' + id + '">' + GENRES_FA[id] + '</button>').join('');
 $$('#genre-chips [data-gchip]').forEach(b => b.onclick = () => openArchive({ title: 'ژانر: ' + GENRES_FA[b.dataset.gchip], type: 'movie', genre: b.dataset.gchip }));
 
@@ -2808,6 +2809,14 @@ async function loadArchSearchPage() {
   const q = arch.query, type = arch.type, page = arch.searchPage || 1, my = archSearchSeq;
   arch.loading = true;
   const grid = $('#arch-grid');
+  if (page === 1) {
+    /* v8.7 FN-LOCAL-SEARCH: local archive matches first, instantly. */
+    fnLocalSearchEnsure();
+    const loc = fnLocalSearch(q, type);
+    grid.innerHTML = loc.length
+      ? '<div class="sec" id="sx-local-sec" style="grid-column:1/-1"><h2>در فهرست Family Night</h2><div class="grid">' + loc.map(fnLocalCardHtml).join('') + '</div></div>'
+      : '';
+  }
   if (page === 1 && !grid.querySelector('.card')) grid.innerHTML = Array.from({ length: 12 }, () => '<div class="skel" style="aspect-ratio:2/3"></div>').join('');
   try {
     const d = await fnTypedSearch(type === 'tv' ? 'search/tv' : 'search/movie', q, page);
@@ -2817,9 +2826,10 @@ async function loadArchSearchPage() {
        the movies page (or the reverse) */
     let items = (d.results || []).map(x => Object.assign({}, x, { media_type: type })).filter(x => x.media_type === type);
     const seen = new Set([...grid.querySelectorAll('[data-open]')].map(el => el.dataset.open));
-    items = items.filter(x => { const k = type + ':' + x.id; if (seen.has(k)) return false; seen.add(k); return true; });
+    const seenTitles = new Set([...grid.querySelectorAll('[data-ls]')].map(el => el.dataset.lsTitle + '|' + el.dataset.lsYear));
+    items = items.filter(x => { const k = type + ':' + x.id; if (seen.has(k)) return false; seen.add(k); const tk = fnLocalNormTitle(origOf(x) || titleOf(x)) + '|' + String(yearOf(x) || ''); if (seenTitles.has(tk)) return false; return true; });
     cacheItems(items);
-    if (page === 1) grid.innerHTML = '';
+    if (page === 1 && !grid.querySelector('[data-ls]')) grid.innerHTML = '';
     grid.insertAdjacentHTML('beforeend', items.map(x => cardHtml(x)).join(''));
     if (!grid.querySelector('.card')) grid.innerHTML = '<div class="state" style="grid-column:1/-1">برای «' + esc(q) + '» ' + (type === 'tv' ? 'سریالی' : 'فیلمی') + ' پیدا نشد.</div>';
     arch.searchPage = page + 1;
@@ -6084,13 +6094,25 @@ function paintWpPicker() {
     const my = ++seq;
     if (clearBtn) clearBtn.style.display = q ? '' : 'none';
     if (q.length < 2) { res.innerHTML = '<div class="state" style="grid-column:1/-1">' + (q ? 'برای جستجو حداقل دو حرف بنویسید…' : 'نام فیلم یا سریال را بنویسید — نتایج به‌صورت زنده نمایش داده می‌شوند.') + '</div>'; return; }
-    res.innerHTML = '<div class="state" style="grid-column:1/-1"><div class="spin"></div></div>';
+    /* v8.7 FN-LOCAL-SEARCH: local archive matches first, instantly. */
+    fnLocalSearchEnsure();
+    const loc = fnLocalSearch(q, 'all');
+    res.innerHTML = loc.length ? loc.map(fnLocalCardHtml).join('') : '<div class="state" style="grid-column:1/-1"><div class="spin"></div></div>';
     try {
       const d = await fnMultiSearch(q, 1);
       if (my !== seq) return; /* a newer keystroke already replaced this search */
       const items = (d.results || []).filter(x => x.media_type === 'movie' || x.media_type === 'tv');
       cacheItems(items);
-      res.innerHTML = items.length ? items.map(x => cardHtml(x)).join('') : '<div class="state" style="grid-column:1/-1">نتیجه‌ای پیدا نشد.</div>';
+      /* v8.7 FN-LOCAL-SEARCH: TMDB merges after the local rows, deduped
+         by TMDB id or title+year. */
+      const seenIds = new Set([...res.querySelectorAll('[data-ls]')].map(el => el.dataset.lsTmdb).filter(Boolean));
+      const seenTitles = new Set([...res.querySelectorAll('[data-ls]')].map(el => el.dataset.lsTitle + '|' + el.dataset.lsYear));
+      const fresh = items.filter(x => {
+        if (seenIds.has(String(x.id))) return false;
+        return !seenTitles.has(fnLocalNormTitle(origOf(x) || titleOf(x)) + '|' + String(yearOf(x) || ''));
+      });
+      if (fresh.length) res.insertAdjacentHTML('beforeend', fresh.map(x => cardHtml(x)).join(''));
+      else if (!res.querySelector('[data-ls]') && !res.querySelector('.card')) res.innerHTML = '<div class="state" style="grid-column:1/-1">نتیجه‌ای پیدا نشد.</div>';
       res.querySelectorAll('[data-open]').forEach(c => {
         c.onclick = ev => {
           ev.stopPropagation();
@@ -6101,13 +6123,28 @@ function paintWpPicker() {
           toast('در روم در حال پخش است');
         };
       });
-    } catch (err) { if (my === seq) res.innerHTML = '<div class="state" style="grid-column:1/-1">جستجو انجام نشد.</div>'; }
+    } catch (err) { if (my === seq && !res.querySelector('[data-ls]')) res.innerHTML = '<div class="state" style="grid-column:1/-1">جستجو انجام نشد.</div>'; }
   };
   /* LIVE search: results refresh as the user types — no need to
      press «جستجو» (the button still works and searches at once) */
   input.addEventListener('input', () => { clearTimeout(deb); deb = setTimeout(runSearch, 300); });
   if (clearBtn) clearBtn.onclick = () => { input.value = ''; clearTimeout(deb); runSearch(); input.focus(); };
   $('#wp-pick-form').addEventListener('submit', e => { e.preventDefault(); clearTimeout(deb); runSearch(); });
+  /* v8.7 FN-LOCAL-SEARCH: tapping a local row picks it for the room
+     (TMDB id when known, otherwise one /find lookup by IMDb id; the
+     room resolves play data from the IMDb id even without a TMDB id). */
+  res.addEventListener('click', ev => {
+    const el = ev.target && ev.target.closest ? ev.target.closest('[data-ls]') : null;
+    if (!el) return;
+    ev.stopPropagation();
+    const e = FN_LSEARCH.idx && FN_LSEARCH.idx[+el.dataset.ls];
+    if (!e) return;
+    fnLocalResolveTmdb(e).then(id => {
+      wpSetSource({ kind: 'app', id: id || 0, tmdbId: id || 0, imdbId: e.imdb || '', type: e.type, title: e.t, season: 1, episode: 1, server: 0, updatedAt: Date.now() });
+      box.style.display = 'none';
+      toast('در روم در حال پخش است');
+    });
+  });
   input.focus();
 }
 /* ---------- share the room: one tidy, ready-to-send invite -------
@@ -7565,14 +7602,19 @@ async function sxSearchMain(q) {
   if (!store.searches.includes(q)) { store.searches.unshift(q); store.searches = store.searches.slice(0, 10); fnSaveState(); renderRecentSearches(); }
   const seq = ++searchSeq;
   sxSearchState = { q, type: searchType, page: 1, total: 1, loading: false };
-  res.innerHTML = '<div class="state"><div class="spin"></div>در حال جستجو…</div>';
+  /* v8.7 FN-LOCAL-SEARCH: local archive matches render instantly (no
+     spinner wipe); the TMDB search runs in the background and merges
+     its sections in when it arrives, never wiping the local rows. */
+  fnLocalSearchEnsure();
+  fnLocalRenderSearch(res, q, searchType, seq);
   try { await sxSearchPage(seq, false); }
   catch (e) {
     if (seq !== searchSeq) return;
-    const local = (sxSearchState.type === 'all' || sxSearchState.type === 'movie' || sxSearchState.type === 'tv')
-      ? localSearch(q).filter(x => sxSearchState.type === 'all' || (x.media_type || x.type || 'movie') === sxSearchState.type) : [];
-    if (local.length) { cacheItems(local); res.innerHTML = '<div class="sec"><h2>نتایج در فهرست Family Night</h2><div class="grid">' + local.map(x => cardHtml(x)).join('') + '</div></div>'; }
-    else {
+    /* TMDB failed: the local rows already stand — only mark the online
+       part as failed. The retry panel appears only when nothing at all
+       was found locally or online. */
+    fnLocalTmdbNote(res, 'fail');
+    if (!res.querySelector('#sx-local-sec [data-ls], #sx-local-sec .card') && !res.querySelector('#sx-tmdb-sec .card')) {
       res.innerHTML = '<div class="state"><b>جستجو انجام نشد.</b><br>اتصال را بررسی کنید و دوباره تلاش کنید.<br><button class="btn btn-gold" id="search-retry" style="margin-top:1rem">تلاش مجدد</button></div>';
       const rb = $('#search-retry'); if (rb) rb.onclick = () => doSearch(q);
     }
@@ -7620,18 +7662,21 @@ async function sxSearchPage(seq, append) {
         const collSeen = new Set(), colls = [];
         [coll, collEn].forEach(d => ((d && d.results) || []).forEach(c => { if (!collSeen.has(c.id) && (c.poster_path || c.backdrop_path)) { collSeen.add(c.id); colls.push(c); } }));
         if (colls.length) html += '<div class="sec"><h2>کالکشن‌ها</h2><div class="hscroll">' + colls.map(sxCollCard).join('') + '</div></div>';
-        res.innerHTML = html || '<div class="state">برای «' + esc(st.q) + '» نتیجه‌ای پیدا نشد.</div>';
+        /* v8.7 FN-LOCAL-SEARCH: TMDB sections land in their own container
+           below the local rows — never wiping them. */
+        fnLocalTmdbRender(res, html, st.q);
       } else {
         const old = $('#search-more'); if (old) old.remove();
+        const tc = res.querySelector('#sx-tmdb-sec');
         const g = $('#sx-all-grid');
         if (items.length) {
           if (g) g.insertAdjacentHTML('beforeend', items.map(x => cardHtml(x)).join(''));
-          else res.insertAdjacentHTML('afterbegin', '<div class="sec"><h2>فیلم و سریال</h2><div class="grid" id="sx-all-grid">' + items.map(x => cardHtml(x)).join('') + '</div></div>');
+          else (tc || res).insertAdjacentHTML('beforeend', '<div class="sec"><h2>فیلم و سریال</h2><div class="grid" id="sx-all-grid">' + items.map(x => cardHtml(x)).join('') + '</div></div>');
         }
         if (people.length) {
           const pc = $('#sx-all-people');
           if (pc) pc.insertAdjacentHTML('beforeend', people.map(sxPersonCard).join(''));
-          else res.insertAdjacentHTML('beforeend', '<div class="sec"><h2>بازیگران و کارگردان‌ها</h2><div class="cast" id="sx-all-people">' + people.map(sxPersonCard).join('') + '</div></div>');
+          else (tc || res).insertAdjacentHTML('beforeend', '<div class="sec"><h2>بازیگران و کارگردان‌ها</h2><div class="cast" id="sx-all-people">' + people.map(sxPersonCard).join('') + '</div></div>');
         }
       }
       if (st.page < st.total && (items.length || people.length)) {
@@ -7653,7 +7698,9 @@ async function sxSearchPage(seq, append) {
       else if (st.type === 'company') { wrapCls = 'compgrid'; inner = list.map(sxCompCardTmdb).join(''); }
       else { wrapCls = 'collgrid'; list = list.filter(c => c.poster_path || c.backdrop_path); inner = list.map(sxCollCard).join(''); }
       if (!append) {
-        res.innerHTML = list.length ? '<div class="sec"><div class="' + wrapCls + '" id="sx-sgrid">' + inner + '</div></div>' : '<div class="state">برای «' + esc(st.q) + '» نتیجه‌ای پیدا نشد.</div>';
+        /* v8.7 FN-LOCAL-SEARCH: see the 'all' branch — TMDB lands in its
+           own container below the local rows, never wiping them. */
+        fnLocalTmdbRender(res, list.length ? '<div class="sec"><div class="' + wrapCls + '" id="sx-sgrid">' + inner + '</div></div>' : '', st.q);
       } else {
         const g = $('#sx-sgrid'); if (g && inner) g.insertAdjacentHTML('beforeend', inner);
         const old = $('#search-more'); if (old) old.remove();
@@ -7695,6 +7742,268 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Enter' && e.target.closest && e.target.matches && e.target.matches('[data-person],[data-co-cur],[data-co-tmdb],[data-coll]')) e.target.click();
 });
 
+</script>
+<script>
+'use strict';
+/* ================= FN-LOCAL-SEARCH v1 =================
+   Instant local-first search (v8.7). The search tab used to wipe its
+   results to a spinner on every keystroke and wait for 6 TMDB calls
+   through the worker proxy (20-30s on a slow connection) before
+   showing anything — and the only local fallback searched the
+   home-rail item cache, so archive titles were invisible.
+   Now: a compact archive title index (download-data/search-index.json,
+   ~17k titles from both archives) loads lazily on first search use;
+   every keystroke renders local matches INSTANTLY, and the TMDB
+   search keeps running in the background, merging its sections in
+   below the local rows without ever wiping them. The same helpers
+   back the archive pages, the watch-party picker, the taste picker,
+   the compare picker and the list search.
+   This block lives OUTSIDE the play-module script block, so module
+   refreshes (update_patch.py) never touch it. */
+var FN_LSEARCH = { idx: null, loading: false, loaded: false, findCache: {}, lastRender: null };
+
+function fnLocalNormTitle(s) {
+  return String(s || '').toLowerCase().replace(/[''′`]/g, '').replace(/[^a-z0-9\u0600-\u06FF]+/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+/* word-prefix match: every query word must start a title word, in
+   order, starting at word s. Returns 2 (title starts with the query),
+   1 (query starts at a later word), or 0 (no match). */
+function fnLocalMatchWords(tw, qw) {
+  for (var s = 0; s < tw.length; s++) {
+    if (tw[s].indexOf(qw[0]) !== 0) continue;
+    var ok = true;
+    for (var j = 1; j < qw.length; j++) {
+      if (s + j >= tw.length || tw[s + j].indexOf(qw[j]) !== 0) { ok = false; break; }
+    }
+    if (ok) return s === 0 ? 2 : 1;
+  }
+  return 0;
+}
+
+function fnLocalSearchEnsure() {
+  if (FN_LSEARCH.loaded || FN_LSEARCH.loading) return;
+  FN_LSEARCH.loading = true;
+  var url = (typeof DL_BASE !== 'undefined' ? DL_BASE : '') + 'search-index.json';
+  var ctl = null;
+  try { ctl = new AbortController(); setTimeout(function () { try { ctl.abort(); } catch (e) {} }, 8000); } catch (e) { ctl = null; }
+  fetch(url, ctl ? { signal: ctl.signal } : {})
+    .then(function (r) { if (!r.ok) throw new Error('idx ' + r.status); return r.json(); })
+    .then(function (arr) {
+      FN_LSEARCH.idx = (arr || []).map(function (e, i) {
+        return { t: e[0], y: e[1], type: e[2], imdb: e[3], tmdb: e[4], part: e[5], old: e[6], i: i, w: fnLocalNormTitle(e[0]).split(' ').filter(Boolean) };
+      });
+      FN_LSEARCH.loaded = true; FN_LSEARCH.loading = false;
+      /* the index arrived after a search already rendered from the
+         home-rail fallback: re-render the local rows for the query
+         still on screen, if it is still the current one. */
+      try {
+        var lr = FN_LSEARCH.lastRender;
+        if (lr && lr.res && document.body.contains(lr.res) && lr.seq === searchSeq) fnLocalRenderSearch(lr.res, lr.q, lr.type, lr.seq);
+      } catch (e) {}
+    })
+    .catch(function () { FN_LSEARCH.loading = false; });
+}
+
+/* local matches for a query: title-start first, then contains;
+   year desc as tiebreak; capped at 40. type: 'all' | 'movie' | 'tv'. */
+function fnLocalSearch(q, type) {
+  var qw = fnLocalNormTitle(q).split(' ').filter(Boolean);
+  if (!qw.length || qw.join('').length < 2 || !FN_LSEARCH.idx) return [];
+  var starts = [], contains = [];
+  for (var i = 0; i < FN_LSEARCH.idx.length; i++) {
+    var e = FN_LSEARCH.idx[i];
+    if (type && type !== 'all' && e.type !== type) continue;
+    var r = fnLocalMatchWords(e.w, qw);
+    if (r === 2) starts.push(e);
+    else if (r === 1) contains.push(e);
+  }
+  var byYear = function (a, b) { return (b.y || 0) - (a.y || 0); };
+  starts.sort(byYear); contains.sort(byYear);
+  return starts.concat(contains).slice(0, 40);
+}
+
+function fnLocalCardHtml(e) {
+  var yr = e.y ? '<span class="yr">' + e.y + '</span>' : '';
+  return '<article class="card" data-ls="' + e.i + '" data-ls-tmdb="' + (e.tmdb || '') + '" data-ls-title="' + esc(fnLocalNormTitle(e.t)) + '" data-ls-year="' + (e.y || '') + '" tabindex="0" role="button" aria-label="' + esc(e.t) + ' — مشاهده جزئیات">'
+    + '<div class="poster"><div class="noimg">' + esc(e.t) + '</div><span class="typ">' + (e.type === 'tv' ? 'سریال' : 'فیلم') + '</span></div>'
+    + '<h3>' + esc(e.t) + ' ' + yr + '</h3>'
+    + '<div class="sub"><span>در فهرست Family Night</span></div></article>';
+}
+
+function fnLocalPickCardHtml(e) {
+  var yr = e.y ? '<span>' + e.y + '</span>' : '';
+  return '<article class="card pickcard" data-ls-pick="' + e.i + '" data-ls-tmdb="' + (e.tmdb || '') + '" data-ls-title="' + esc(fnLocalNormTitle(e.t)) + '" data-ls-year="' + (e.y || '') + '"><div class="poster"><div class="noimg">' + esc(e.t) + '</div><span class="tick">✓</span></div><h3>' + esc(e.t) + '</h3><div class="sub">' + yr + '<span>' + (e.type === 'tv' ? 'سریال' : 'فیلم') + '</span></div></article>';
+}
+
+function fnLocalCmpRowHtml(e) {
+  var yr = e.y ? ' · ' + e.y : '';
+  return '<button class="cmp-pick-row" data-ls-cmp="' + e.i + '" data-ls-tmdb="' + (e.tmdb || '') + '" data-ls-title="' + esc(fnLocalNormTitle(e.t)) + '" data-ls-year="' + (e.y || '') + '" type="button"><span class="inf"><b>' + esc(e.t) + '</b><span>' + (e.type === 'tv' ? 'سریال' : 'فیلم') + yr + '</span></span></button>';
+}
+
+function fnLocalLsRowHtml(lid, e, L) {
+  var has = false;
+  try { has = !!(L && e.tmdb && L.items.has(e.type + ':' + e.tmdb)); } catch (err) { has = false; }
+  var yr = e.y ? ' · ' + e.y : '';
+  return '<div class="cmp-pick-row" data-ls-row="' + e.i + '" data-ls-tmdb="' + (e.tmdb || '') + '" data-ls-title="' + esc(fnLocalNormTitle(e.t)) + '" data-ls-year="' + (e.y || '') + '"><span class="inf"><b>' + esc(e.t) + '</b><span>' + (e.type === 'tv' ? 'سریال' : 'فیلم') + yr + '</span></span><button class="btn ' + (has ? 'btn-ghost' : 'btn-gold') + ' btn-sm" data-ls-addbtn="' + lid + ':' + e.i + '" type="button">' + (has ? 'حذف از لیست' : 'افزودن') + '</button></div>';
+}
+
+/* IMDb -> TMDB id via the worker's /find endpoint (one call, cached).
+   Returns a Promise<number> (0 when unknown). */
+function fnLocalResolveTmdb(e) {
+  if (e.tmdb) return Promise.resolve(e.tmdb);
+  if (!e.imdb) return Promise.resolve(0);
+  if (FN_LSEARCH.findCache[e.imdb] !== undefined) return Promise.resolve(FN_LSEARCH.findCache[e.imdb]);
+  return tmdb('find/' + e.imdb, { external_source: 'imdb_id' }).then(function (d) {
+    var list = (e.type === 'tv' ? (d && d.tv_results) : (d && d.movie_results)) || [];
+    var id = (list[0] && list[0].id) || 0;
+    FN_LSEARCH.findCache[e.imdb] = id;
+    return id;
+  }).catch(function () { FN_LSEARCH.findCache[e.imdb] = 0; return 0; });
+}
+
+/* tap on a local grid card (search tab / archive pages): TMDB detail
+   when its id is known (or resolvable via /find); otherwise straight
+   to the play list — fnPlayResolve works from the IMDb id alone. */
+function fnLocalOpen(e) {
+  if (!e) return;
+  if (e.tmdb) { openDetail(e.type, e.tmdb); return; }
+  if (e.imdb) {
+    fnLocalResolveTmdb(e).then(function (id) {
+      if (id) openDetail(e.type, id);
+      else fnLocalOpenPlayer(e);
+    });
+    return;
+  }
+  fnLocalOpenPlayer(e);
+}
+
+function fnLocalOpenPlayer(e) {
+  try {
+    openPlayListOrPlayer({ id: 0, type: e.type, item: {}, imdbId: e.imdb || '', title: e.t, year: String(e.y || ''), poster: '' });
+  } catch (err) { toast('پخش این اثر ممکن نشد'); }
+}
+
+/* tap on a local taste-picker card: resolve to a real TMDB item, then
+   select it exactly like a TMDB card. */
+function fnLocalPersPick(el) {
+  var e = FN_LSEARCH.idx && FN_LSEARCH.idx[+(el.dataset.lsPick || el.dataset.ls)];
+  if (!e) return;
+  fnLocalResolveTmdb(e).then(function (id) {
+    if (!id) { toast('جزئیات این اثر در دسترس نیست'); return; }
+    tmdb(e.type + '/' + id, {}).then(function (it) {
+      if (!it) { toast('جزئیات این اثر در دسترس نیست'); return; }
+      var item = Object.assign({}, it, { media_type: e.type });
+      cacheItems([item]);
+      el.dataset.pick = e.type + ':' + id;
+      persToggle(el);
+    }).catch(function () { toast('جزئیات این اثر در دسترس نیست'); });
+  });
+}
+
+/* tap on a local compare-picker row. */
+function fnLocalCmpPick(el) {
+  var e = FN_LSEARCH.idx && FN_LSEARCH.idx[+(el.dataset.lsCmp || el.dataset.ls)];
+  if (!e) return;
+  fnLocalResolveTmdb(e).then(function (id) {
+    if (id) cmpRun(e.type, id);
+    else toast('جزئیات این اثر در دسترس نیست');
+  });
+}
+
+/* "افزودن" on a local list-search row: resolve to a real TMDB item,
+   then add it to the list exactly like a TMDB row. */
+function fnLocalLsAdd(b) {
+  var parts = (b.dataset.lsAddbtn || '').split(':');
+  var L = store.lists.find(function (x) { return x.id === +parts[0]; });
+  var e = FN_LSEARCH.idx && FN_LSEARCH.idx[+parts[1]];
+  if (!L || !e) return;
+  fnLocalResolveTmdb(e).then(function (id) {
+    if (!id) { toast('افزودن این اثر ممکن نشد'); return; }
+    tmdb(e.type + '/' + id, {}).then(function (it) {
+      if (!it) { toast('افزودن این اثر ممکن نشد'); return; }
+      var item = Object.assign({}, it, { media_type: e.type });
+      cacheItems([item]);
+      var k2 = e.type + ':' + id;
+      if (L.items.has(k2)) { L.items.delete(k2); toast('از لیست «' + L.name + '» حذف شد'); }
+      else { L.items.set(k2, item); toast('به لیست «' + L.name + '» اضافه شد'); }
+      fnSaveState();
+      renderListsView();
+    }).catch(function () { toast('افزودن این اثر ممکن نشد'); });
+  });
+}
+
+/* render the local section of the search tab instantly. While the
+   index is still loading, the home-rail cache stands in. The TMDB
+   container (if already rendered for this query) is kept untouched. */
+function fnLocalRenderSearch(res, q, type, seq) {
+  FN_LSEARCH.lastRender = { res: res, q: q, type: type, seq: seq };
+  var loc = [];
+  try { loc = fnLocalSearch(q, type); } catch (e) { loc = []; }
+  var html = '';
+  if (loc.length) {
+    html = '<div class="sec" id="sx-local-sec"><h2>در فهرست Family Night</h2><div class="grid">' + loc.map(fnLocalCardHtml).join('') + '</div></div>';
+  } else if (!FN_LSEARCH.idx) {
+    var fb = [];
+    try { fb = localSearch(q).filter(function (x) { return type === 'all' || (x.media_type || x.type || 'movie') === type; }); } catch (e) { fb = []; }
+    if (fb.length) {
+      try { cacheItems(fb); } catch (e) {}
+      html = '<div class="sec" id="sx-local-sec"><h2>در فهرست Family Night</h2><div class="grid">' + fb.map(function (x) { return cardHtml(x); }).join('') + '</div></div>';
+    }
+  }
+  var tmdbSec = res.querySelector('#sx-tmdb-sec');
+  if (tmdbSec && tmdbSec.dataset.q !== q) { tmdbSec.remove(); tmdbSec = null; }
+  var localSec = res.querySelector('#sx-local-sec');
+  if (localSec) localSec.remove();
+  if (html) res.insertAdjacentHTML('afterbegin', html);
+  if (!tmdbSec) res.insertAdjacentHTML('beforeend', '<div id="sx-tmdb-sec" data-q="' + esc(q) + '"><div class="state" style="padding:1.2rem 0"><div class="spin"></div>در حال جستجو…</div></div>');
+}
+
+/* TMDB sections land in their own container below the local rows —
+   never wiping them. The empty state shows only when the local rows
+   are empty too. */
+function fnLocalTmdbRender(res, html, q) {
+  var sec = res.querySelector('#sx-tmdb-sec');
+  if (sec && sec.dataset.q !== q) { sec.remove(); sec = null; }
+  if (!sec) {
+    res.insertAdjacentHTML('beforeend', '<div id="sx-tmdb-sec" data-q="' + esc(q) + '"></div>');
+    sec = res.querySelector('#sx-tmdb-sec');
+  }
+  if (html) { sec.innerHTML = html; return; }
+  var hasLocal = !!res.querySelector('#sx-local-sec [data-ls], #sx-local-sec .card');
+  sec.innerHTML = hasLocal ? '' : '<div class="state">برای «' + esc(q) + '» نتیجه‌ای پیدا نشد.</div>';
+}
+
+/* TMDB failed after the local rows already stand: mark the online
+   part as failed instead of wiping anything. */
+function fnLocalTmdbNote(res, kind) {
+  var sec = res && res.querySelector('#sx-tmdb-sec');
+  if (!sec) return;
+  if (kind === 'fail' && !sec.querySelector('.card, [data-ls]')) {
+    sec.innerHTML = '<div class="state" style="padding:1rem 0">جستجوی آنلاین ممکن نشد؛ نتایج فهرست بالا باقی است.</div>';
+  }
+}
+
+/* delegated tap for local grid cards (search tab + archive pages).
+   The watch-party picker handles its own [data-ls] taps. */
+document.addEventListener('click', function (ev) {
+  var el = ev.target && ev.target.closest ? ev.target.closest('[data-ls]') : null;
+  if (!el) return;
+  if (el.closest('#wp-pick-results')) return;
+  var e = FN_LSEARCH.idx && FN_LSEARCH.idx[+el.dataset.ls];
+  if (e) fnLocalOpen(e);
+});
+document.addEventListener('keydown', function (ev) {
+  if (ev.key !== 'Enter') return;
+  var el = ev.target && ev.target.closest ? ev.target.closest('[data-ls]') : null;
+  if (el) { ev.preventDefault(); el.click(); }
+});
+
+/* lazy load: first focus of either search box starts the index fetch. */
+['search-input', 'headsearch-input'].forEach(function (id) {
+  var el = document.getElementById(id);
+  if (el) el.addEventListener('focus', fnLocalSearchEnsure, { once: true });
+});
 </script>
 <script>
 'use strict';
@@ -8252,7 +8561,12 @@ async function persSearch(q) {
   const seq = ++persState.seq;
   const wrap = $('#pers-gridwrap'); if (!wrap) return;
   if (!q) { persLoadDefault(); return; }
-  wrap.innerHTML = '<div class="state"><div class="spin"></div>در حال جستجوی زنده در TMDB…</div>';
+  /* v8.7 FN-LOCAL-SEARCH: local archive matches first, instantly;
+     TMDB merges into #pers-tmdb-sec below, never wiping the local rows. */
+  fnLocalSearchEnsure();
+  const loc = fnLocalSearch(q, 'all');
+  wrap.innerHTML = (loc.length ? '<div id="pers-local-sec"><div class="grid">' + loc.map(fnLocalPickCardHtml).join('') + '</div></div>' : '') + '<div id="pers-tmdb-sec"><div class="state"><div class="spin"></div>در حال جستجوی زنده در TMDB…</div></div>';
+  wrap.querySelectorAll('[data-ls-pick]').forEach(el => el.onclick = () => fnLocalPersPick(el));
   const mw = $('#pers-morewrap'); if (mw) mw.innerHTML = '';
   try {
     const d = await fnMultiSearch(q, 1);
@@ -8262,7 +8576,11 @@ async function persSearch(q) {
     cacheItems(persState.items);
     persRenderGrid();
   } catch (e) {
-    if (seq === persState.seq && document.body.contains(wrap)) wrap.innerHTML = '<div class="state">جستجو ممکن نشد؛ اتصال را بررسی کنید و دوباره تلاش کنید.</div>';
+    if (seq === persState.seq && document.body.contains(wrap)) {
+      const ts = wrap.querySelector('#pers-tmdb-sec');
+      if (ts) ts.innerHTML = '<div class="state">جستجو ممکن نشد؛ اتصال را بررسی کنید و دوباره تلاش کنید.</div>';
+      else if (!wrap.querySelector('[data-ls-pick]')) wrap.innerHTML = '<div class="state">جستجو ممکن نشد؛ اتصال را بررسی کنید و دوباره تلاش کنید.</div>';
+    }
   }
 }
 async function persMore() {
@@ -8297,9 +8615,15 @@ function persCardHtml(x) {
 function persRenderGrid() {
   const wrap = $('#pers-gridwrap'); if (!wrap) return;
   const items = persFiltered();
-  wrap.innerHTML = items.length
+  /* v8.7 FN-LOCAL-SEARCH: TMDB renders into #pers-tmdb-sec when the
+     local section stands, so the local rows are never wiped; the empty
+     state shows only when there are no local rows either. */
+  const host = wrap.querySelector('#pers-tmdb-sec') || wrap;
+  const noLocal = !wrap.querySelector('[data-ls-pick]');
+  const phtml = items.length
     ? '<div class="grid">' + items.map(persCardHtml).join('') + '</div>'
-    : '<div class="state">' + (persState.q ? 'برای «' + esc(persState.q) + '» با این فیلتر اثری پیدا نشد — فیلتر را عوض کنید یا عبارت دیگری جستجو کنید.' : 'اثری برای نمایش نیست.') + '</div>';
+    : (noLocal ? '<div class="state">' + (persState.q ? 'برای «' + esc(persState.q) + '» با این فیلتر اثری پیدا نشد — فیلتر را عوض کنید یا عبارت دیگری جستجو کنید.' : 'اثری برای نمایش نیست.') + '</div>' : '');
+  if (host === wrap) wrap.innerHTML = phtml; else host.innerHTML = phtml;
   wrap.querySelectorAll('[data-pick]').forEach(el => el.onclick = () => persToggle(el));
   const mw = $('#pers-morewrap');
   if (mw) {
@@ -8788,7 +9112,12 @@ async function lsSearch(lid, q) {
   const box = document.querySelector('[data-lsres="' + lid + '"]'); if (!box) return;
   q = (q || '').trim();
   if (!q) { box.innerHTML = ''; return; }
-  box.innerHTML = '<div class="state" style="padding:1rem"><div class="spin"></div>در حال جستجو…</div>';
+  /* v8.7 FN-LOCAL-SEARCH: local archive matches first, instantly. */
+  fnLocalSearchEnsure();
+  const L0 = store.lists.find(x => x.id === lid);
+  const loc = fnLocalSearch(q, 'all');
+  box.innerHTML = loc.length ? loc.map(function (e) { return fnLocalLsRowHtml(lid, e, L0); }).join('') : '<div class="state" style="padding:1rem"><div class="spin"></div>در حال جستجو…</div>';
+  box.querySelectorAll('[data-ls-addbtn]').forEach(function (b) { b.onclick = function () { fnLocalLsAdd(b); }; });
   try {
     /* tri-lingual (Persian / English / original) and NOT capped:
        two full pages of both TMDB indexes, merged */
@@ -8797,10 +9126,20 @@ async function lsSearch(lid, q) {
     cacheItems(items);
     if (!document.body.contains(box)) return;
     const L = store.lists.find(x => x.id === lid); if (!L) return;
-    box.innerHTML = items.length ? items.map(x => {
+    /* v8.7 FN-LOCAL-SEARCH: TMDB merges after the local rows, deduped
+       by TMDB id or title+year. */
+    const seenIds = new Set([...box.querySelectorAll('[data-ls-row]')].map(el => el.dataset.lsTmdb).filter(Boolean));
+    const seenTitles = new Set([...box.querySelectorAll('[data-ls-row]')].map(el => el.dataset.lsTitle + '|' + el.dataset.lsYear));
+    const fresh = items.filter(function (x) {
+      if (seenIds.has(String(x.id))) return false;
+      return !seenTitles.has(fnLocalNormTitle(origOf(x) || titleOf(x)) + '|' + String(yearOf(x) || ''));
+    });
+    const rows = fresh.map(x => {
       const t = titleOf(x), ot = origOf(x), yr = yearOf(x), has = L.items.has(favKey(x.media_type, x.id));
       return '<div class="cmp-pick-row">' + (x.poster_path ? '<img loading="lazy" src="' + IMG(x.poster_path, 'w92') + '" alt="">' : '') + '<span class="inf"><b>' + esc(t) + '</b><span>' + (ot && ot !== t ? esc(ot) + ' · ' : '') + (x.media_type === 'tv' ? 'سریال' : 'فیلم') + (yr ? ' · ' + yr : '') + (x.vote_average ? ' · ★ ' + Number(x.vote_average).toFixed(1) : '') + '</span></span><button class="btn ' + (has ? 'btn-ghost' : 'btn-gold') + ' btn-sm" data-lsadd="' + lid + ':' + x.media_type + ':' + x.id + '" type="button">' + (has ? 'حذف از لیست' : 'افزودن') + '</button></div>';
-    }).join('') : '<div class="state" style="padding:1rem">برای «' + esc(q) + '» اثری پیدا نشد.</div>';
+    });
+    if (rows.length) { if (box.querySelector('[data-ls-row]')) box.insertAdjacentHTML('beforeend', rows.join('')); else box.innerHTML = rows.join(''); }
+    else if (!box.querySelector('[data-ls-row]')) box.innerHTML = '<div class="state" style="padding:1rem">برای «' + esc(q) + '» اثری پیدا نشد.</div>';
     box.querySelectorAll('[data-lsadd]').forEach(b => b.onclick = () => {
       const parts = b.dataset.lsadd.split(':');
       const L2 = store.lists.find(x => x.id === +parts[0]); if (!L2) return;
@@ -8810,7 +9149,7 @@ async function lsSearch(lid, q) {
       fnSaveState();
       renderListsView();
     });
-  } catch (e) { if (document.body.contains(box)) box.innerHTML = '<div class="state" style="padding:1rem">جستجو انجام نشد؛ دوباره تلاش کنید.</div>'; }
+  } catch (e) { if (document.body.contains(box) && !box.querySelector('[data-ls-row]')) box.innerHTML = '<div class="state" style="padding:1rem">جستجو انجام نشد؛ دوباره تلاش کنید.</div>'; }
 }
 /* ---------- add-to-list picker ---------- */
 function openListPicker(item) {
@@ -9247,18 +9586,32 @@ async function cmpSearch(q) {
   q = (q || '').trim();
   const box = $('#cmp-results'); if (!box) return;
   if (!q) { box.innerHTML = '<div class="state" style="padding:1.4rem">نام فیلم یا سریال دوم را بنویسید تا نتایج نمایش داده شود.</div>'; return; }
-  box.innerHTML = '<div class="state" style="padding:1.4rem"><div class="spin"></div>در حال جستجو…</div>';
+  /* v8.7 FN-LOCAL-SEARCH: local archive matches first, instantly. */
+  fnLocalSearchEnsure();
+  const loc = fnLocalSearch(q, 'all').filter(function (e) { return !(cmpFirst && e.type === cmpFirst.o.type && fnLocalNormTitle(e.t) === fnLocalNormTitle(cmpFirst.o.title) && String(e.y || '') === String(cmpFirst.o.year || '')); });
+  box.innerHTML = loc.length ? loc.map(fnLocalCmpRowHtml).join('') : '<div class="state" style="padding:1.4rem"><div class="spin"></div>در حال جستجو…</div>';
+  box.querySelectorAll('[data-ls-cmp]').forEach(function (b) { b.onclick = function () { fnLocalCmpPick(b); }; });
   try {
     const d = await fnMultiSearch(q, 2);
     const items = (d.results || []).filter(x => (x.media_type === 'movie' || x.media_type === 'tv') && !(cmpFirst && x.id === cmpFirst.o.id && x.media_type === cmpFirst.o.type));
     cacheItems(items);
     if (!document.body.contains(box)) return;
-    box.innerHTML = items.length ? items.map(x => {
+    /* v8.7 FN-LOCAL-SEARCH: TMDB merges after the local rows, deduped
+       by TMDB id or title+year. */
+    const seenIds = new Set([...box.querySelectorAll('[data-ls-cmp]')].map(el => el.dataset.lsTmdb).filter(Boolean));
+    const seenTitles = new Set([...box.querySelectorAll('[data-ls-cmp]')].map(el => el.dataset.lsTitle + '|' + el.dataset.lsYear));
+    const fresh = items.filter(function (x) {
+      if (seenIds.has(String(x.id))) return false;
+      return !seenTitles.has(fnLocalNormTitle(origOf(x) || titleOf(x)) + '|' + String(yearOf(x) || ''));
+    });
+    const rows = fresh.map(x => {
       const t = titleOf(x), ot = origOf(x), yr = yearOf(x);
       return '<button class="cmp-pick-row" data-cmp-pick="' + x.media_type + ':' + x.id + '" type="button">' + (x.poster_path ? '<img loading="lazy" src="' + IMG(x.poster_path, 'w92') + '" alt="">' : '') + '<span class="inf"><b>' + esc(t) + '</b><span>' + (ot && ot !== t ? esc(ot) + ' · ' : '') + (x.media_type === 'tv' ? 'سریال' : 'فیلم') + (yr ? ' · ' + yr : '') + (x.vote_average ? ' · ★ ' + Number(x.vote_average).toFixed(1) : '') + '</span></span></button>';
-    }).join('') : '<div class="state" style="padding:1.4rem">برای «' + esc(q) + '» اثری پیدا نشد.</div>';
+    });
+    if (rows.length) { if (box.querySelector('[data-ls-cmp]')) box.insertAdjacentHTML('beforeend', rows.join('')); else box.innerHTML = rows.join(''); }
+    else if (!box.querySelector('[data-ls-cmp]')) box.innerHTML = '<div class="state" style="padding:1.4rem">برای «' + esc(q) + '» اثری پیدا نشد.</div>';
     box.querySelectorAll('[data-cmp-pick]').forEach(b => b.onclick = () => { const parts = b.dataset.cmpPick.split(':'); cmpRun(parts[0], +parts[1]); });
-  } catch (e) { if (document.body.contains(box)) box.innerHTML = '<div class="state" style="padding:1.4rem">جستجو انجام نشد؛ دوباره تلاش کنید.</div>'; }
+  } catch (e) { if (document.body.contains(box) && !box.querySelector('[data-ls-cmp]')) box.innerHTML = '<div class="state" style="padding:1.4rem">جستجو انجام نشد؛ دوباره تلاش کنید.</div>'; }
 }
 function cmpFactsFrom(d, item, o) {
   const f = { title: o.title || '', orig: o.orig || '', type: o.type, year: o.year || '', vote: o.vote || 0, votes: 0, popularity: 0, poster: o.poster || (item && item.poster_path) || '', overview: o.overview || '', genres: (o.genres || []).join('، '), runtime: o.runtime || '', seasons: '', countries: '', directors: '', cast: '', status: '', budget: 0, revenue: 0 };
