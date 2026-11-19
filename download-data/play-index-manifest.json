@@ -1,117 +1,117 @@
 {
-  "name": "Family Night play index (Zivarnet archive)",
-  "generated": "2026-11-19",
-  "description": "Split by download-archive part because the single play-index.json (118 MB) exceeds GitHub's 100 MB single-file limit.",
-  "lookup": "Find the part via download-index.json (IMDb -> part) or download-title-index.json (tmdb -> part), then fetch play-index-part-<part>.json. Part 0 holds the 69 titles with no download-archive record.",
-  "groups": "SoftSub = hardsub files grouped under SoftSub per the archive convention; Dubbed = dubbed; NoSub = no subtitle. Unjoined entries have play_url null and group null.",
-  "total_entries": 10984,
-  "total_play_entries": 203141,
-  "joined": 195792,
-  "unjoined": 7349,
-  "mp4_sized": 1122,
-  "mp4_total": 10703,
-  "parts": [
-    {
-      "part": 0,
-      "file": "play-index-part-0.json",
-      "entries": 69,
-      "bytes": 20317
-    },
-    {
-      "part": 1,
-      "file": "play-index-part-1.json",
-      "entries": 2192,
-      "bytes": 8098654
-    },
-    {
-      "part": 2,
-      "file": "play-index-part-2.json",
-      "entries": 2316,
-      "bytes": 8068682
-    },
-    {
-      "part": 3,
-      "file": "play-index-part-3.json",
-      "entries": 2979,
-      "bytes": 7235765
-    },
-    {
-      "part": 4,
-      "file": "play-index-part-4.json",
-      "entries": 1590,
-      "bytes": 8086735
-    },
-    {
-      "part": 5,
-      "file": "play-index-part-5.json",
-      "entries": 126,
-      "bytes": 6757886
-    },
-    {
-      "part": 6,
-      "file": "play-index-part-6.json",
-      "entries": 132,
-      "bytes": 6410952
-    },
-    {
-      "part": 7,
-      "file": "play-index-part-7.json",
-      "entries": 131,
-      "bytes": 7111029
-    },
-    {
-      "part": 8,
-      "file": "play-index-part-8.json",
-      "entries": 133,
-      "bytes": 7584010
-    },
-    {
-      "part": 9,
-      "file": "play-index-part-9.json",
-      "entries": 165,
-      "bytes": 7591297
-    },
-    {
-      "part": 10,
-      "file": "play-index-part-10.json",
-      "entries": 129,
-      "bytes": 7650073
-    },
-    {
-      "part": 11,
-      "file": "play-index-part-11.json",
-      "entries": 174,
-      "bytes": 8568574
-    },
-    {
-      "part": 12,
-      "file": "play-index-part-12.json",
-      "entries": 107,
-      "bytes": 7619297
-    },
-    {
-      "part": 13,
-      "file": "play-index-part-13.json",
-      "entries": 86,
-      "bytes": 7778233
-    },
-    {
-      "part": 14,
-      "file": "play-index-part-14.json",
-      "entries": 108,
-      "bytes": 7675914
-    },
-    {
-      "part": 15,
-      "file": "play-index-part-15.json",
-      "entries": 226,
-      "bytes": 6913186
-    },
-    {
-      "part": 16,
-      "file": "play-index-part-16.json",
-      "entries": 321,
-      "bytes": 2926573
-    }
-  ]
+ "description": "Split by download-archive part because the single play-index.json (118 MB) exceeds GitHub's 100 MB single-file limit.",
+ "generated": "2026-11-19",
+ "groups": "SoftSub = hardsub files grouped under SoftSub per the archive convention; Dubbed = dubbed; NoSub = no subtitle. Unjoined entries have play_url null and group null.",
+ "joined": 195866,
+ "lookup": "Find the part via download-index.json (IMDb -> part) or download-title-index.json (tmdb -> part), then fetch play-index-part-<part>.json. Part 0 holds the 69 titles with no download-archive record.",
+ "mp4_sized": 1122,
+ "mp4_total": 10703,
+ "name": "Family Night play index (Zivarnet archive)",
+ "parts": [
+  {
+   "bytes": 20317,
+   "entries": 69,
+   "file": "play-index-part-0.json",
+   "part": 0
+  },
+  {
+   "bytes": 8098654,
+   "entries": 2192,
+   "file": "play-index-part-1.json",
+   "part": 1
+  },
+  {
+   "bytes": 8068682,
+   "entries": 2316,
+   "file": "play-index-part-2.json",
+   "part": 2
+  },
+  {
+   "bytes": 7235765,
+   "entries": 2979,
+   "file": "play-index-part-3.json",
+   "part": 3
+  },
+  {
+   "bytes": 8086735,
+   "entries": 1590,
+   "file": "play-index-part-4.json",
+   "part": 4
+  },
+  {
+   "bytes": 6757886,
+   "entries": 126,
+   "file": "play-index-part-5.json",
+   "part": 5
+  },
+  {
+   "bytes": 6410952,
+   "entries": 132,
+   "file": "play-index-part-6.json",
+   "part": 6
+  },
+  {
+   "bytes": 7111029,
+   "entries": 131,
+   "file": "play-index-part-7.json",
+   "part": 7
+  },
+  {
+   "bytes": 7584010,
+   "entries": 133,
+   "file": "play-index-part-8.json",
+   "part": 8
+  },
+  {
+   "bytes": 7591297,
+   "entries": 165,
+   "file": "play-index-part-9.json",
+   "part": 9
+  },
+  {
+   "bytes": 7650073,
+   "entries": 129,
+   "file": "play-index-part-10.json",
+   "part": 10
+  },
+  {
+   "bytes": 8568574,
+   "entries": 174,
+   "file": "play-index-part-11.json",
+   "part": 11
+  },
+  {
+   "bytes": 7619297,
+   "entries": 107,
+   "file": "play-index-part-12.json",
+   "part": 12
+  },
+  {
+   "bytes": 7778233,
+   "entries": 86,
+   "file": "play-index-part-13.json",
+   "part": 13
+  },
+  {
+   "bytes": 7675914,
+   "entries": 108,
+   "file": "play-index-part-14.json",
+   "part": 14
+  },
+  {
+   "bytes": 6913186,
+   "entries": 226,
+   "file": "play-index-part-15.json",
+   "part": 15
+  },
+  {
+   "bytes": 3385397,
+   "entries": 342,
+   "file": "play-index-part-16.json",
+   "part": 16
+  }
+ ],
+ "total_entries": 11005,
+ "total_play_entries": 203215,
+ "unjoined": 7349
 }
