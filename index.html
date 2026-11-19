@@ -2791,6 +2791,49 @@ async function fnFillHomeRail(fetchPage, keep) {
   }
   return out;
 }
+/* ---------- FN-HERO-LIVE v1: the hero is LIVE trending, not the stale snapshot ----------
+   The snapshot hero (snap.hero + snap.rows.trending_now) is only the first
+   paint / fallback — it never knows about the archive and only changes
+   when the snapshot workflow rebuilds. The live hero is rebuilt here from
+   the TMDB trending endpoint (the same proxy path the trending rail uses),
+   with the SAME rule as the trending rail: RELEASED + last-3-months +
+   notable (being in the trending/week response IS the trending signal),
+   newest-first. ARCHIVE-FIRST: works WITH a download link (avail d==1,
+   fnDlIconHas) come first, in newest-first order — so when a very popular
+   work's download link is added, it enters the hero at the top. The rest
+   follow in the same order, so the hero is always 20 when enough trending
+   works pass the date filter. If the live fetch fails/empty, the snapshot
+   hero stays (fail-open). The fetch re-runs on every home load (no long
+   cache — fnApiJson only caches within the session, and loadHome re-runs
+   the fetch each time it is called), so a newly-added popular download
+   work appears in the hero on the next visit. */
+async function fnHeroLiveItems(today, g3s, dtFn) {
+  var out = [], seen = {};
+  for (var page = 1; page <= 3; page++) {
+    var batch;
+    try {
+      const [_tm, _tt] = await Promise.all([tmdb('trending/movie/week', { page: page }), tmdb('trending/tv/week', { page: page })]);
+      batch = [].concat((_tm.results || []).map(x => Object.assign({}, x, { media_type: 'movie' })))
+        .concat((_tt.results || []).map(x => Object.assign({}, x, { media_type: 'tv' })));
+    } catch (e) { break; }
+    if (!batch || !batch.length) break;
+    for (var i = 0; i < batch.length; i++) {
+      var x = batch[i];
+      if (!x || x.id == null) continue;
+      var k = (x.media_type || 'movie') + ':' + x.id;
+      if (seen[k]) continue;
+      seen[k] = 1;
+      var dt = dtFn(x);
+      if (!dt || dt > today || dt < g3s) continue;
+      if (!x.backdrop_path && !x.poster_path) continue;
+      out.push(x);
+    }
+  }
+  out.sort((a, b) => dtFn(b).localeCompare(dtFn(a)));
+  var dl = [], rest = [];
+  out.forEach(x => { (fnDlIconHas(x) ? dl : rest).push(x); });
+  return dl.concat(rest).slice(0, 20);
+}
 /* FN-EDITORS-PICK-RAIL: «پیشنهاد سردبیر» home rail — the curator list
    is a resolved static list (FN_CURATOR_DATA, 482 movies). Shuffle it
    on EVERY home load (Fisher-Yates) so the rail is different each
@@ -2858,6 +2901,22 @@ async function loadHome() {
     _live.sort((a, b) => _dt(b).localeCompare(_dt(a)));
     if (_live.length) rows.trending_now = _live.slice(0, 20); else _trendFallback();
   } catch (e) { _trendFallback(); }
+  /* FN-HERO-LIVE v1: rebuild the hero from the LIVE trending data —
+     the snapshot hero above is only the first paint / fallback. Same
+     rule as the trending rail (released + last-3-months + notable,
+     newest-first), ARCHIVE-FIRST: works with a download link (d==1)
+     come first, so a newly-added popular download work enters the hero
+     at the top. Re-runs on every home load, so the hero never goes
+     stale again. If the live list is empty, the snapshot hero stays. */
+  try {
+    const _heroLive = await fnHeroLiveItems(_today, _g3s, _dt);
+    if (_heroLive.length) {
+      heroItems = _heroLive;
+      heroIdx = 0;
+      cacheItems(heroItems);
+      renderHero();
+    }
+  } catch (e) { /* keep the snapshot hero */ }
   /* FN-EDITORS-PICK-RAIL: «پیشنهاد سردبیر» sits directly under the
      trending row (user order). Shuffled on every home load, archive
      works only, 20 items. The rail's «مشاهده همه» opens the existing
@@ -2958,14 +3017,19 @@ function renderHero() {
   /* paint the text of EVERY slide up front (title, year, IMDb score,
      overview) so the corner info is always there, on every slide */
   heroItems.forEach((_, i) => paintHeroText(i));
-  /* swipe support on touch devices */
-  let tx0 = null;
-  el.addEventListener('touchstart', e => { tx0 = e.touches[0].clientX; }, { passive: true });
-  el.addEventListener('touchend', e => {
-    if (tx0 == null) return;
-    const dx = e.changedTouches[0].clientX - tx0; tx0 = null;
-    if (Math.abs(dx) > 48) setHero(heroIdx + (dx < 0 ? -1 : 1));
-  }, { passive: true });
+  /* swipe support on touch devices — bound ONCE: renderHero runs again
+     when the live hero replaces the snapshot hero, and re-adding the
+     listeners would make one swipe step two slides. */
+  if (!el._heroTouchBound) {
+    el._heroTouchBound = true;
+    let tx0 = null;
+    el.addEventListener('touchstart', e => { tx0 = e.touches[0].clientX; }, { passive: true });
+    el.addEventListener('touchend', e => {
+      if (tx0 == null) return;
+      const dx = e.changedTouches[0].clientX - tx0; tx0 = null;
+      if (Math.abs(dx) > 48) setHero(heroIdx + (dx < 0 ? -1 : 1));
+    }, { passive: true });
+  }
   $('#hero-prev').onclick = () => setHero(heroIdx - 1);
   $('#hero-next').onclick = () => setHero(heroIdx + 1);
   $$('#hero [data-hero-dot]').forEach(b => b.onclick = () => setHero(+b.dataset.heroDot));
@@ -2983,6 +3047,7 @@ function paintHeroText(at) {
     h._faLoaded = true;
     tmdb(type + '/' + h.id, {}, 'fa-IR').then(d => {
       if (!d) return;
+      if (heroItems[ix] !== h) return; /* FN-HERO-LIVE: the hero was rebuilt from live data — this detail belongs to the old snapshot slide, never swap its backdrop/text into the new slide */
       if (d.title || d.name) h._faTitle = d.title || d.name;
       if (d.overview) h._faOverview = d.overview;
       /* trending snapshot rows ship no backdrop/overview: adopt the
