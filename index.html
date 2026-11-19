@@ -592,25 +592,23 @@ box-shadow:0 0 26px rgba(229,169,60,.28),inset 0 0 14px rgba(0,0,0,.65);animatio
 .fn-dl-qchip{background:var(--gold);color:#231700;font-family:var(--display);font-weight:800;font-size:.78rem;border-radius:99px;padding:.1rem .6rem}
 .fn-dl-size{color:var(--gold2);font-family:var(--display);font-weight:700;font-size:.82rem}
 .fn-dl-grp{color:var(--pearl2);font-size:.78rem}
+.fn-dl-kebab{display:flex;flex-direction:column;gap:3px;align-items:center;justify-content:center;flex:none;padding:.2rem}
+.fn-dl-kebab i{width:4px;height:4px;border-radius:50%;background:var(--pearl)}
 .fn-dl-seasons{display:flex;gap:.45rem;flex-wrap:wrap;margin-bottom:.8rem}
 .fn-dl-season{padding:.4rem 1rem;border-radius:99px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--pearl2);font-size:.82rem;font-weight:700;min-height:2.3rem;cursor:pointer;font-family:inherit}
 .fn-dl-season.on{background:var(--gold);border-color:var(--gold);color:#231700}
-.fn-dl-eps{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:1rem}
-.fn-dl-eps[hidden]{display:none}
-.fn-dl-ep{background:var(--surface);border:1px solid var(--line);border-radius:1rem;overflow:hidden;cursor:pointer}
-.fn-dl-ep.sel{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
-.fn-dl-epposter{display:block;height:5.2rem;overflow:hidden;background:var(--surface3)}
-.fn-dl-epposter img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
-.fn-dl-epposter .fn-dl-initial{font-size:1.4rem}
-.fn-dl-epline{display:flex;align-items:center;gap:.4rem;padding:.5rem .7rem 0}
-.fn-dl-epline b{font-size:.9rem}
-.fn-dl-epline .fn-dl-size{margin-inline-start:auto}
-.fn-dl-epgrp{display:block;padding:.1rem .7rem .5rem;font-size:.72rem;color:var(--pearl2)}
-.fn-dl-epacts{display:flex;gap:.4rem;padding:0 .7rem .6rem}
-.fn-dl-epbtn{width:2rem;height:2rem;border-radius:50%;border:1px solid var(--gold);background:transparent;display:grid;place-items:center;cursor:pointer;padding:0}
-.fn-dl-epbtn svg{width:1rem;height:1rem;fill:var(--gold)}
-.fn-dl-epbtn img{width:1.25rem;height:1.25rem}
+.fn-dl-eplist{background:var(--surface);border:1px solid var(--line);border-radius:1rem;overflow:hidden;margin-bottom:1rem}
+.fn-dl-eplist[hidden]{display:none}
+.fn-dl-eprow{padding:.6rem .9rem;cursor:pointer;border-top:1px solid rgba(255,255,255,.05)}
+.fn-dl-eprow:first-child{border-top:none}
+.fn-dl-eprow.sel{background:rgba(229,169,60,.09)}
+.fn-dl-eprow.sel .fn-dl-eprow-top b{color:var(--gold2)}
+.fn-dl-eprow-top{display:flex;align-items:center;gap:.4rem}
+.fn-dl-eprow-top b{font-size:.92rem}
+.fn-dl-eprow-top .fn-dl-size{margin-inline-start:auto}
+.fn-dl-eprow-sub{display:block;font-size:.75rem;color:var(--pearl2);margin-top:.15rem}
 .fn-dl-sheet{background:var(--surface2);border:1px solid var(--line);border-radius:1.1rem;padding:.7rem .9rem 1rem}
+.fn-dl-sheet[hidden]{display:none}
 .fn-dl-grip{display:block;width:2.4rem;height:.28rem;border-radius:99px;background:var(--pearl);opacity:.5;margin:0 auto .6rem}
 .fn-dl-sum{font-weight:800;font-size:.95rem;text-align:center;line-height:1.7}
 .fn-dl-sub{font-size:.75rem;color:var(--pearl2);text-align:center;line-height:1.7;margin-bottom:.6rem}
@@ -624,6 +622,18 @@ box-shadow:0 0 26px rgba(229,169,60,.28),inset 0 0 14px rgba(0,0,0,.65);animatio
 .fn-dl-act img{width:1.6rem;height:1.6rem}
 .fn-dl-act.play svg{fill:var(--gold)}
 .fn-dl-act.sel{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold);color:var(--gold2)}
+.fn-dl-hero{display:flex;align-items:center;justify-content:center;gap:.6rem;width:100%;background:linear-gradient(135deg,#f59e0b,#d97706);color:#140e00;border:none;border-radius:99px;min-height:3.2rem;font-size:.95rem;font-weight:800;cursor:pointer;font-family:inherit;margin-bottom:.4rem}
+.fn-dl-hero-ic{width:2rem;height:2rem;border-radius:50%;background:#fff;display:grid;place-items:center;flex:none}
+.fn-dl-hero-ic img{width:1.4rem;height:1.4rem}
+.fn-dl-hero.sel{box-shadow:0 0 0 2px var(--gold2)}
+.fn-dl-rows{display:flex;flex-direction:column}
+.fn-dl-actrow{display:flex;align-items:center;gap:.5rem;width:100%;background:transparent;border:none;border-top:1px solid rgba(255,255,255,.06);padding:.7rem .2rem;color:var(--pearl2);font-size:.88rem;font-weight:700;cursor:pointer;font-family:inherit;min-height:2.8rem}
+.fn-dl-actrow:first-child{border-top:none}
+.fn-dl-actrow span{flex:1;text-align:right}
+.fn-dl-actrow svg{width:1.3rem;height:1.3rem;fill:currentColor;flex:none}
+.fn-dl-actrow img{width:1.4rem;height:1.4rem;flex:none}
+.fn-dl-actrow.play svg{fill:var(--gold)}
+.fn-dl-actrow.sel{color:var(--gold2)}
 
 /* AI assistant */
 .aibox{background:var(--surface);border:1px solid var(--line);border-radius:1.1rem;overflow:hidden}
@@ -4666,16 +4676,18 @@ function sizeToMB(s) { const m = String(s || '').match(/([\d.]+)\s*(GB|MB)/i); i
 function fmtTotalMB(mb) { return mb >= 1024 ? (mb / 1024).toFixed(2) + ' GB' : Math.round(mb) + ' MB'; }
 function resRank(r) { return ({ '2160p': 6, '1440p': 5, '1080p': 4, '720p': 3, '576p': 2, '480p': 1, '360p': 0 })[r] != null ? ({ '2160p': 6, '1440p': 5, '1080p': 4, '720p': 3, '576p': 2, '480p': 1, '360p': 0 })[r] : -1; }
 /* ---------- download box: visual tiles (title-d) ----------
-   Replaces the old row list (dlRowHtml / dlGroupHtml / wireDlButtons).
-   Film: one tile per link, size largest -> smallest, the work's cover
-   + big title on every tile, gold quality chip + size + group.
-   Series: season chips + a 2-col grid of episode tiles (cover on top,
-   quick play + ADM), action sheet with quality chips per episode.
-   Selection: NO permanent gold outline anywhere — the tile the user
-   taps turns gold (selected quality / episode tile, and the tapped
-   action tile). Icons: real ADM logo (same asset as the old ADM
-   button) + real Chrome logo, both inline base64; copy/play are
-   inline SVG. */
+   Film (title-d): poster header card + one tile per link, size
+   largest -> smallest, big title + gold quality chip + size + group
+   on every tile, kebab at the end; action sheet is a 2x2 grid.
+   Series (8jj-d, corrected): poster header card + season chips +
+   ONE card of plain episode rows (no icons, no per-row buttons on
+   the rows at all) — clicking a row shows the bottom sheet, which is
+   a gold ADM hero button + full-width rows (copy / browser / play).
+   The sheet stays hidden until the user taps a row.
+   Selection: NO permanent gold outline anywhere — the tile/row/action
+   the user taps turns gold. Icons: real ADM logo (same asset as the
+   old ADM button) + real Chrome logo, both inline base64; copy/play
+   are inline SVG. */
 var FN_DL_ADM_ICON = 'data:image/png;base64,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';
 var FN_DL_CHROME_ICON = 'data:image/png;base64,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';
 var FN_DL_COPY_SVG = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>';
@@ -4717,7 +4729,7 @@ function dlTilesHtml(rec, opts) {
     + (totalMB ? '<span class="fn-dl-tot"><b>' + fmtTotalMB(totalMB) + '</b><span>حجم مجموع</span></span>' : '')
     + '<button class="fn-dl-copyall" data-dl-copyall>کپی همه لینک‌ها</button>'
     + '</div>';
-  var ctx = { title: title, links: [], eps: {}, firstEp: '', allUrls: allUrls, sel: null, epLinks: null, epKey: '' };
+  var ctx = { title: title, isSeries: isSeries, links: [], eps: {}, firstEp: '', allUrls: allUrls, sel: null, epLinks: null, epKey: '' };
   if (isSeries) {
     out += dlSeriesHtml(groups, o.poster || '', title, ctx);
   } else {
@@ -4730,19 +4742,12 @@ function dlTilesHtml(rec, opts) {
         + '<span class="fn-dl-tinfo"><b>' + esc(title) + '</b>'
         + '<span class="fn-dl-tline"><span class="fn-dl-qchip">' + esc(r.sp.res || '—') + '</span>'
         + '<span class="fn-dl-size">' + esc(r.x.size || '') + '</span>'
-        + '<span class="fn-dl-grp">' + esc(r.label) + '</span></span></span></div>';
+        + '<span class="fn-dl-grp">' + esc(r.label) + '</span></span></span>'
+        + '<span class="fn-dl-kebab"><i></i><i></i><i></i></span></div>';
     });
     out += '</div>';
   }
-  out += '<div class="fn-dl-sheet"><span class="fn-dl-grip"></span>'
-    + '<div class="fn-dl-sum"></div><div class="fn-dl-sub"></div>'
-    + '<div class="fn-dl-qchips" hidden></div>'
-    + '<div class="fn-dl-grid">'
-    + '<button class="fn-dl-act" data-dl-act="copy">' + FN_DL_COPY_SVG + '<span>کپی لینک</span></button>'
-    + '<button class="fn-dl-act" data-dl-act="adm"><img src="' + FN_DL_ADM_ICON + '" alt="ADM"><span>دانلود با ADM</span></button>'
-    + '<button class="fn-dl-act" data-dl-act="browser"><img src="' + FN_DL_CHROME_ICON + '" alt="Chrome"><span>دانلود با مرورگر</span></button>'
-    + '<button class="fn-dl-act play" data-dl-act="play">' + FN_DL_PLAY_SVG + '<span>پخش آنلاین</span></button>'
-    + '</div></div>';
+  out += dlSheetHtml(isSeries);
   return { html: out, ctx: ctx };
 }
 function dlSeriesHtml(groups, posterUrl, title, ctx) {
@@ -4770,34 +4775,56 @@ function dlSeriesHtml(groups, posterUrl, title, ctx) {
       .map(function (k) { return eps[k]; })
       .sort(function (a, b) { return (parseInt(a.episode, 10) || 0) - (parseInt(b.episode, 10) || 0); });
     if (si === 0 && list.length) ctx.firstEp = s + '|' + list[0].episode;
-    out += '<div class="fn-dl-eps" data-dl-eps="' + esc(s) + '"' + (si === 0 ? '' : ' hidden') + '>';
+    out += '<div class="fn-dl-eplist" data-dl-eps="' + esc(s) + '"' + (si === 0 ? '' : ' hidden') + '>';
     list.forEach(function (ep) {
       ep.links.sort(dlSortLinksDesc);
       var top = ep.links[0];
-      out += '<div class="fn-dl-ep" data-dl-ep="' + esc(s + '|' + ep.episode) + '">'
-        + '<span class="fn-dl-epposter">' + dlPosterHtml(posterUrl, title) + '</span>'
-        + '<span class="fn-dl-epline"><b>قسمت ' + esc(ep.episode) + '</b><span class="fn-dl-size">' + esc(top.x.size || '') + '</span></span>'
-        + '<span class="fn-dl-epgrp">' + esc(top.label) + '</span>'
-        + '<span class="fn-dl-epacts">'
-        + '<button class="fn-dl-epbtn" data-dl-epplay="' + esc(s + '|' + ep.episode) + '" aria-label="پخش">' + FN_DL_PLAY_SVG + '</button>'
-        + '<button class="fn-dl-epbtn" data-dl-epadm="' + esc(s + '|' + ep.episode) + '" aria-label="ADM"><img src="' + FN_DL_ADM_ICON + '" alt="ADM"></button>'
-        + '</span></div>';
+      out += '<div class="fn-dl-eprow" data-dl-ep="' + esc(s + '|' + ep.episode) + '">'
+        + '<span class="fn-dl-eprow-top"><b>قسمت ' + esc(ep.episode) + '</b><span class="fn-dl-size">' + esc(top.x.size || '') + '</span></span>'
+        + '<span class="fn-dl-eprow-sub">' + esc([top.sp.res, top.sp.source, top.label].filter(Boolean).join(' • ')) + '</span>'
+        + '</div>';
     });
     out += '</div>';
   });
   return out;
 }
+function dlSheetHtml(isSeries) {
+  var inner = '<span class="fn-dl-grip"></span><div class="fn-dl-sum"></div><div class="fn-dl-sub"></div><div class="fn-dl-qchips" hidden></div>';
+  if (isSeries) {
+    inner += '<button class="fn-dl-hero" data-dl-act="adm"><span class="fn-dl-hero-ic"><img src="' + FN_DL_ADM_ICON + '" alt="ADM"></span><span>دانلود با ADM</span></button>'
+      + '<div class="fn-dl-rows">'
+      + '<button class="fn-dl-actrow" data-dl-act="copy"><span>کپی لینک</span>' + FN_DL_COPY_SVG + '</button>'
+      + '<button class="fn-dl-actrow" data-dl-act="browser"><span>دانلود با مرورگر</span><img src="' + FN_DL_CHROME_ICON + '" alt="Chrome"></button>'
+      + '<button class="fn-dl-actrow play" data-dl-act="play"><span>پخش آنلاین</span>' + FN_DL_PLAY_SVG + '</button>'
+      + '</div>';
+  } else {
+    inner += '<div class="fn-dl-grid">'
+      + '<button class="fn-dl-act" data-dl-act="copy">' + FN_DL_COPY_SVG + '<span>کپی لینک</span></button>'
+      + '<button class="fn-dl-act" data-dl-act="adm"><img src="' + FN_DL_ADM_ICON + '" alt="ADM"><span>دانلود با ADM</span></button>'
+      + '<button class="fn-dl-act" data-dl-act="browser"><img src="' + FN_DL_CHROME_ICON + '" alt="Chrome"><span>دانلود با مرورگر</span></button>'
+      + '<button class="fn-dl-act play" data-dl-act="play">' + FN_DL_PLAY_SVG + '<span>پخش آنلاین</span></button>'
+      + '</div>';
+  }
+  /* the series sheet stays hidden until the user taps an episode row */
+  return '<div class="fn-dl-sheet"' + (isSeries ? ' hidden' : '') + '>' + inner + '</div>';
+}
 function wireDlTiles(root, ctx) {
   if (!root || !ctx || root._fnDlWired) return;
   root._fnDlWired = true;
+  function showSheet() {
+    var sh = root.querySelector('.fn-dl-sheet');
+    if (sh) sh.hidden = false;
+  }
   function markAction(act) {
-    root.querySelectorAll('.fn-dl-act').forEach(function (b) { b.classList.toggle('sel', !!act && b.dataset.dlAct === act); });
+    root.querySelectorAll('[data-dl-act]').forEach(function (b) { b.classList.toggle('sel', !!act && b.dataset.dlAct === act); });
   }
   function updateSheet() {
     var s = ctx.sel; if (!s) return;
     var sum = root.querySelector('.fn-dl-sum'), sub = root.querySelector('.fn-dl-sub'), chips = root.querySelector('.fn-dl-qchips');
-    if (sum) sum.textContent = ctx.title + ' • ' + (s.res || '—') + (s.size ? ' • ' + s.size : '');
-    if (sub) sub.textContent = [s.group, s.source, s.codec, s.enc, s.ext].filter(Boolean).join(' • ');
+    if (sum) sum.textContent = ctx.isSeries
+      ? (s.epLabel || '') + (s.size ? ' • ' + s.size : '')
+      : ctx.title + ' • ' + (s.res || '—') + (s.size ? ' • ' + s.size : '');
+    if (sub) sub.textContent = (ctx.isSeries ? [s.res, s.source, s.group, s.codec, s.enc, s.ext] : [s.group, s.source, s.codec, s.enc, s.ext]).filter(Boolean).join(' • ');
     if (chips) {
       if (ctx.epLinks && ctx.epLinks.length > 1) {
         var resList = [];
@@ -4812,7 +4839,7 @@ function wireDlTiles(root, ctx) {
             b.onclick = function () {
               var cand = ctx.epLinks.filter(function (l) { return l.sp.res === b.dataset.dlQ; });
               cand.sort(dlSortLinksDesc);
-              if (cand.length) { ctx.sel = dlLinkSel(cand[0]); updateSheet(); }
+              if (cand.length) { ctx.sel = dlLinkSel(cand[0]); ctx.sel.epLabel = s.epLabel; updateSheet(); }
             };
           });
           return;
@@ -4834,40 +4861,23 @@ function wireDlTiles(root, ctx) {
     ctx.epKey = key;
     ctx.epLinks = ep.links.slice().sort(dlSortLinksDesc);
     ctx.sel = dlLinkSel(ctx.epLinks[0]);
-    root.querySelectorAll('.fn-dl-ep').forEach(function (t) { t.classList.toggle('sel', t.dataset.dlEp === key); });
+    ctx.sel.epLabel = 'قسمت ' + ep.episode;
+    root.querySelectorAll('.fn-dl-eprow').forEach(function (t) { t.classList.toggle('sel', t.dataset.dlEp === key); });
     markAction(null);
     updateSheet();
-  }
-  function epTopLink(key) {
-    var ep = ctx.eps[key];
-    if (!ep || !ep.links.length) return null;
-    return ep.links.slice().sort(dlSortLinksDesc)[0].x.url;
+    showSheet();
   }
   root.querySelectorAll('.fn-dl-tile').forEach(function (t) {
     t.onclick = function () { selectFilm(+t.dataset.dlI); };
   });
-  root.querySelectorAll('.fn-dl-ep').forEach(function (t) {
+  root.querySelectorAll('.fn-dl-eprow').forEach(function (t) {
     t.onclick = function () { selectEp(t.dataset.dlEp); };
-  });
-  root.querySelectorAll('[data-dl-epplay]').forEach(function (b) {
-    b.onclick = function (ev) {
-      ev.stopPropagation();
-      var u = epTopLink(b.dataset.dlEpplay);
-      if (u) { markAction('play'); openInPlayer(u); }
-    };
-  });
-  root.querySelectorAll('[data-dl-epadm]').forEach(function (b) {
-    b.onclick = function (ev) {
-      ev.stopPropagation();
-      var u = epTopLink(b.dataset.dlEpadm);
-      if (u) { markAction('adm'); admDownload(u); }
-    };
   });
   root.querySelectorAll('[data-dl-season]').forEach(function (b) {
     b.onclick = function () {
       root.querySelectorAll('[data-dl-season]').forEach(function (x) { x.classList.toggle('on', x === b); });
-      root.querySelectorAll('.fn-dl-eps').forEach(function (g) { g.hidden = g.dataset.dlEps !== b.dataset.dlSeason; });
-      var first = root.querySelector('.fn-dl-eps[data-dl-eps="' + b.dataset.dlSeason + '"] .fn-dl-ep');
+      root.querySelectorAll('.fn-dl-eplist').forEach(function (g) { g.hidden = g.dataset.dlEps !== b.dataset.dlSeason; });
+      var first = root.querySelector('.fn-dl-eplist[data-dl-eps="' + b.dataset.dlSeason + '"] .fn-dl-eprow');
       if (first) selectEp(first.dataset.dlEp);
     };
   });
@@ -4883,9 +4893,8 @@ function wireDlTiles(root, ctx) {
   });
   var ca = root.querySelector('[data-dl-copyall]');
   if (ca) ca.onclick = function () { copyText(ctx.allUrls.join('\n')); };
-  /* the sheet needs a current selection on open: first (largest) tile */
+  /* film: the sheet needs a current selection on open (first tile) */
   if (ctx.links.length) selectFilm(0);
-  else if (ctx.firstEp) selectEp(ctx.firstEp);
 }
 
 function admDownload(url) {
