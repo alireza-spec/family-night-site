@@ -6238,15 +6238,20 @@ function admDownload(url) {
 }
 /* FN-EXT-DL-TEST v1 — EXPERIMENT, one title only: Bride of Frankenstein
    1935 (TMDB movie 229). When the archive has NO download links for
-   this title, the download box offers the external vidsrc download
-   (verified 2026-11-20: the direct file https://dl.braflix.dev/
-   download/movie/229?quality=480p — HTTP 206, video/mp4, 208582270 B
-   = 198.9 MB, real MP4; the trendingpie landing page
-   https://media.trendingpie.com/?id=229 is the verified fallback).
+   this title, the download box offers the external download page
+   (trendingpie landing https://media.trendingpie.com/?id=229,
+   verified 2026-11-20: HTTP 200, lists Server 1 dl.vidsrc.party/
+   movie/229 + Server 2 vidvault.to/movie/229).
+   v2 switch 2026-11-20: the button used to open the DIRECT file
+   https://dl.braflix.dev/download/movie/229?quality=480p (probed
+   HTTP 206 from the VM) — the user's phone test 02:35 got HTTP 429
+   (server busy), so the button now opens the landing page instead;
+   on it the user can retry Server 1 after a minute and try Server 2
+   (its own page sends Referer vidvault.to, so it should serve).
    The button opens in a new tab; it is NOT an archive link (no
    download icon, no avail-index entry). If the phone test works, roll
    out to all zero-link titles; until then NO other title shows it. */
-var FN_EXT_DL_TEST = { key: 'movie:229', url: 'https://dl.braflix.dev/download/movie/229?quality=480p', label: 'دانلود 480p MP4 · حدود ۱۹۸٫۹ مگابایت' };
+var FN_EXT_DL_TEST = { key: 'movie:229', url: 'https://media.trendingpie.com/?id=229', label: 'صفحه‌ی دانلود (سرور ۱ و ۲)' };
 function fnExtDlTestHtml(tmdbKey) {
   if (tmdbKey !== FN_EXT_DL_TEST.key) return '';
   return '<div class="fn-ext-dl" data-ext-dl-test>'
