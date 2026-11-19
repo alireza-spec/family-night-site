@@ -596,11 +596,15 @@ box-shadow:0 0 26px rgba(229,169,60,.28),inset 0 0 14px rgba(0,0,0,.65);animatio
 .fn-dl-tinfo>b{display:block;font-size:.88rem;font-family:var(--display);line-height:1.5}
 .fn-dl-tline{display:flex;gap:.45rem;align-items:center;flex-wrap:wrap;margin-top:.15rem}
 .fn-dl-qchip{background:var(--gold);color:#231700;font-family:var(--display);font-weight:800;font-size:.68rem;border-radius:99px;padding:.05rem .5rem}
-.fn-dl-size{color:var(--gold2);font-family:var(--display);font-weight:700;font-size:.82rem}
-.fn-dl-grp{color:var(--pearl2);font-size:.78rem}
-.fn-dl-kebab{display:flex;flex-direction:column;gap:3px;align-items:center;justify-content:center;flex:none;padding:.2rem}
-.fn-dl-kebab i{width:4px;height:4px;border-radius:50%;background:var(--pearl)}
-/* drawer chevron next to the kebab — flips when this tile's sheet is open */
+/* row 2 version label (زیرنویس فارسی / دوبله فارسی / بدون زیرنویس) —
+   plain muted text in front of the quality bubbles, not a chip */
+.fn-dl-ver{color:var(--pearl2);font-size:.8rem;white-space:nowrap}
+/* row 3: the sizes of the shown qualities, in the same order as the
+   bubbles — "890 - 510 - 380 مگابایت". One text run, RTL, so the
+   first (highest) quality sits at the right and the numbers never
+   mix up with the Persian unit. */
+.fn-dl-tline2{display:block;font-size:.82rem;color:var(--pearl2);margin-top:.1rem;direction:rtl;text-align:right}
+/* drawer chevron — the only icon on a tile; flips when its sheet is open */
 .fn-dl-chev{display:grid;place-items:center;flex:none;color:var(--pearl)}
 .fn-dl-chev svg{width:1.1rem;height:1.1rem;transition:transform .2s}
 .fn-dl-tile.sel .fn-dl-chev,.fn-dl-eptile.sel .fn-dl-chev{color:var(--gold2)}
@@ -609,7 +613,7 @@ box-shadow:0 0 26px rgba(229,169,60,.28),inset 0 0 14px rgba(0,0,0,.65);animatio
 .fn-dl-season{padding:.4rem 1rem;border-radius:99px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--pearl2);font-size:.82rem;font-weight:700;min-height:2.3rem;cursor:pointer;font-family:inherit}
 .fn-dl-season.on{background:var(--gold);border-color:var(--gold);color:#231700}
 /* series episode tiles (v6): the same tile language as the film box —
-   thumb + line 1 + line 2 + kebab + chevron — but the thumb is the
+   thumb + line 1 + line 2 + chevron — but the thumb is the
    episode's own 16:9 still (filled in by loadEpMeta; the series
    poster is the placeholder until it arrives) */
 .fn-dl-eplist{display:flex;flex-direction:column;gap:.6rem;margin-bottom:1rem}
@@ -625,6 +629,8 @@ box-shadow:0 0 26px rgba(229,169,60,.28),inset 0 0 14px rgba(0,0,0,.65);animatio
 .fn-dl-eptile.fn-dl-rate-yellow{background:rgba(234,179,8,.13);box-shadow:0 0 14px rgba(234,179,8,.22)}
 .fn-dl-eptile.fn-dl-rate-red{background:rgba(239,68,68,.13);box-shadow:0 0 14px rgba(239,68,68,.24)}
 .fn-dl-rate{color:var(--gold);font-weight:800;white-space:nowrap}
+/* the rating sits on line 1, right after the episode name */
+.fn-dl-tinfo>b .fn-dl-rate{margin-inline-start:.35rem}
 .fn-dl-eptile .fn-dl-thumb{width:4.6rem;height:2.6rem;border-radius:.5rem}
 .fn-dl-sheet{background:var(--surface2);border:1px solid var(--line);border-radius:1.1rem;padding:.7rem .9rem 1rem}
 .fn-dl-sheet[hidden]{display:none}
@@ -4714,13 +4720,15 @@ function fmtTotalMB(mb) { return mb >= 1024 ? (mb / 1024).toFixed(2) + ' GB' : M
 function resRank(r) { return ({ '2160p': 6, '1440p': 5, '1080p': 4, '720p': 3, '576p': 2, '480p': 1, '360p': 0 })[r] != null ? ({ '2160p': 6, '1440p': 5, '1080p': 4, '720p': 3, '576p': 2, '480p': 1, '360p': 0 })[r] : -1; }
 /* ---------- download box: visual tiles (title-d) ----------
    Film (title-d): poster header card + one tile per link, size
-   largest -> smallest, big title + gold quality chip + size + group
-   on every tile, kebab + drawer chevron at the end.
-   Series (v6): the SAME tile language as the film box — one tile
-   per episode, with THIS episode's own still (16:9) as the thumb,
-   line 1 «قسمت N (اسم قسمت به فارسی)», line 2 exactly like the
-   film tiles (gold quality chip + Persian size + group), kebab +
-   chevron. The stills + Persian names come from the SAME source as
+   largest -> smallest. Each tile: line 1 the title, line 2 its OWN
+   version + quality chip, line 3 its OWN size — chevron only, no
+   kebab. Series (v6): the SAME tile language as the film box — one
+   tile per episode, with THIS episode's own still (16:9) as the
+   thumb, line 1 «قسمت N (اسم قسمت به فارسی)» + the TMDB rating
+   (★ 9.3, gold, on line 1), line 2 the version + up to 3 quality
+   bubbles (the three most important), line 3 the sizes of those
+   qualities in the same order ("890 - 510 - 380 مگابایت"). The
+   stills + Persian names + ratings come from the SAME source as
    the detail page's episode list (TMDB season, fa-IR merged with
    en-US) via loadEpMeta, per season, in place; until they arrive
    the tile shows the series poster + «قسمت N». A name TMDB has no
@@ -4728,10 +4736,11 @@ function resRank(r) { return ({ '2160p': 6, '1440p': 5, '1080p': 4, '720p': 3, '
    own sweep (the parens sit outside the translated span).
    ACCORDION: one action sheet, moved in the DOM to sit right under
    the tile the user tapped — tapping another one moves it there
-   (the old one closes). The sheet starts CLOSED in both modes;
-   tapping the SAME tile again closes it (toggle). Film sheet:
-   2x2 action grid. Series sheet: gold COPY hero button + full-width
-   rows (ADM / browser / play).
+   (the old one closes). The sheet starts CLOSED in both modes and
+   NEVER auto-opens: not on open, not on season switch — only the
+   user tapping a tile opens it; tapping the SAME tile again closes
+   it (toggle). Film sheet: 2x2 action grid. Series sheet: gold COPY
+   hero button + full-width rows (ADM / browser / play).
    SWAP (v5): کپی لینک and دانلود با ADM swapped in both modes —
    copy is the universal first action (ADM is optional / not on
    desktop); icons move with their buttons, functions follow the
@@ -4824,6 +4833,31 @@ function dlRateClass(r) {
   if (r >= 6) return 'yellow';
   return 'red';
 }
+/* split a size string ("1.02 GB", "850.40 MB") into its number and
+   its Persian unit — null when there is no size at all */
+function dlSizeParts(s) {
+  var m = String(s || '').trim().match(/^([\d.,]+)\s*(GB|MB|KB|TB|B)?$/i);
+  if (!m) return null;
+  var u = (m[2] || '').toUpperCase();
+  return { num: m[1], unit: u === 'GB' ? 'گیگابایت' : u === 'MB' ? 'مگابایت' : u === 'KB' ? 'کیلوبایت' : u === 'TB' ? 'ترابایت' : u === 'B' ? 'بایت' : '' };
+}
+/* join per-quality sizes into one row, in the same order as the
+   quality bubbles: "890 - 510 - 380 مگابایت" /
+   "1.2 گیگابایت - 750 - 570 مگابایت". A size's unit is written only
+   when the NEXT size's unit differs, or it is the last one — so a
+   row of same-unit sizes carries the unit once, at the end, and a
+   mixed row keeps each unit where it changes. A missing size is
+   shown as — so the sizes stay lined up with the bubbles. */
+function dlSizesRow(parts) {
+  var out = [];
+  parts.forEach(function (p, i) {
+    if (!p) { out.push('—'); return; }
+    var next = parts[i + 1];
+    var showUnit = !next || !next.unit || next.unit !== p.unit;
+    out.push(p.num + (showUnit && p.unit ? ' ' + p.unit : ''));
+  });
+  return out.join(' - ');
+}
 /* opts: { poster, title, meta, year, tmdbId } — meta is plain text
    (year • kind • source); the year is read from opts.year, or from
    the first segment of meta when 4-digit. tmdbId is the TMDB tv id
@@ -4872,13 +4906,14 @@ function dlTilesHtml(rec, opts) {
        all-qualities bubbles live on the SERIES episode tiles only. */
     out += '<div class="fn-dl-sec"><span>لینک‌های دانلود</span><span class="fn-dl-cnt">' + rows.length + ' لینک</span></div><div class="fn-dl-tiles">';
     rows.forEach(function (r, i) {
+      /* film: one tile per link — row 1 the title, row 2 the tile's
+         OWN version + quality, row 3 its OWN size, nothing else */
       out += '<div class="fn-dl-tile" data-dl-i="' + i + '">'
         + '<span class="fn-dl-thumb">' + dlPosterHtml(o.poster || '', title) + '</span>'
         + '<span class="fn-dl-tinfo"><b>' + esc(title) + '</b>'
-        + '<span class="fn-dl-tline"><span class="fn-dl-qchip">' + esc(r.sp.res || '—') + '</span>'
-        + '<span class="fn-dl-size">' + esc(faSize(r.x.size)) + '</span>'
-        + '<span class="fn-dl-grp">' + esc(r.label) + '</span></span></span>'
-        + '<span class="fn-dl-kebab"><i></i><i></i><i></i></span>'
+        + '<span class="fn-dl-tline"><span class="fn-dl-ver">' + esc(r.label) + '</span><span class="fn-dl-qchip">' + esc(r.sp.res || '—') + '</span></span>'
+        + (r.x.size ? '<span class="fn-dl-tline2" dir="rtl">' + esc(faSize(r.x.size)) + '</span>' : '')
+        + '</span>'
         + '<span class="fn-dl-chev">' + FN_DL_CHEV_SVG + '</span></div>';
     });
     out += '</div>';
@@ -4916,26 +4951,40 @@ function dlSeriesHtml(groups, posterUrl, title, ctx) {
     list.forEach(function (ep) {
       ep.links.sort(dlSortLinksDesc);
       var top = ep.links[0];
-      /* every episode tile shows ALL the qualities this episode has
-         (small gold bubbles), so the user sees at a glance what is
-         available — same as the film tiles */
+      /* every episode tile shows this episode's qualities as small
+         gold bubbles (top 3 — see the cap below), so the user sees
+         at a glance what is available */
       var epRes = [];
       ep.links.forEach(function (l) { if (l.sp.res && epRes.indexOf(l.sp.res) < 0) epRes.push(l.sp.res); });
       epRes.sort(function (a, b) { return resRank(b) - resRank(a); });
+      /* at most 3 bubbles — the three most important qualities. An
+         episode with many encodes shows 1080/720/480 (or its top 3);
+         the sizes row below lists exactly those three, in the same
+         order, so the two rows always line up. The sheet still offers
+         every quality — only the tile is capped. */
+      epRes = epRes.slice(0, 3);
       var epChips = epRes.length
         ? epRes.map(function (q) { return '<span class="fn-dl-qchip">' + esc(q) + '</span>'; }).join('')
         : '<span class="fn-dl-qchip">—</span>';
-      /* same tile language as the film box: thumb + line 1 + line 2 +
-         kebab + chevron. The thumb starts as the series poster and is
-         swapped for this episode's own still by loadEpMeta; line 1
-         starts as «قسمت N» and gains the Persian name the same way. */
+      /* sizes row: the largest link of each shown quality, in the
+         same order as the bubbles — "890 - 510 - 380 مگابایت" /
+         "1.2 گیگابایت - 750 - 570 مگابایت". Omitted entirely when no
+         size is recorded for any shown quality. */
+      var epSizeParts = epRes.map(function (q) {
+        var l = null;
+        for (var i = 0; i < ep.links.length; i++) { if (ep.links[i].sp.res === q) { l = ep.links[i]; break; } }
+        return l ? dlSizeParts(l.x.size) : null;
+      });
+      var epSizes = epSizeParts.some(function (p) { return !!p; }) ? dlSizesRow(epSizeParts) : '';
+      /* tile rows: 1 = episode number + name, 2 = version + quality
+         bubbles, 3 = the sizes of those qualities. The chevron alone
+         opens/closes the drawer — no kebab. */
       out += '<div class="fn-dl-eptile" data-dl-ep="' + esc(s + '|' + ep.episode) + '">'
         + '<span class="fn-dl-thumb">' + dlPosterHtml(posterUrl, title) + '</span>'
         + '<span class="fn-dl-tinfo"><b>قسمت ' + esc(ep.episode) + '</b>'
-        + '<span class="fn-dl-tline">' + epChips
-        + '<span class="fn-dl-size">' + esc(faSize(top.x.size)) + '</span>'
-        + '<span class="fn-dl-grp">' + esc(top.label) + '</span></span></span>'
-        + '<span class="fn-dl-kebab"><i></i><i></i><i></i></span>'
+        + '<span class="fn-dl-tline"><span class="fn-dl-ver">' + esc(top.label) + '</span>' + epChips + '</span>'
+        + (epSizes ? '<span class="fn-dl-tline2" dir="rtl">' + esc(epSizes) + '</span>' : '')
+        + '</span>'
         + '<span class="fn-dl-chev">' + FN_DL_CHEV_SVG + '</span></div>';
     });
     out += '</div>';
@@ -5077,10 +5126,14 @@ function wireDlTiles(root, ctx) {
           var cls = dlRateClass(rating);
           if (cls) tile.classList.add('fn-dl-rate-' + cls);
           tile.dataset.rate = rating.toFixed(1);
-          var line = tile.querySelector('.fn-dl-tline');
-          if (line) {
-            var rb = line.querySelector('.fn-dl-rate');
-            if (!rb) { rb = document.createElement('span'); rb.className = 'fn-dl-rate'; line.appendChild(rb); }
+          /* the rating lives on line 1, next to the episode name —
+             rows 2 and 3 stay exactly as laid out (version + bubbles,
+             then sizes). The name is set just above, so appending the
+             badge here survives it. */
+          var b2 = tile.querySelector('.fn-dl-tinfo > b');
+          if (b2) {
+            var rb = b2.querySelector('.fn-dl-rate');
+            if (!rb) { rb = document.createElement('span'); rb.className = 'fn-dl-rate'; b2.appendChild(rb); }
             rb.textContent = '★ ' + rating.toFixed(1);
           }
         }
@@ -5219,8 +5272,10 @@ function wireDlTiles(root, ctx) {
       loadEpMeta(b.dataset.dlSeason);
       var caBox = root.querySelector('.fn-dl-cabox');
       if (caBox && !caBox.hidden) refreshCaBox();
-      var first = root.querySelector('.fn-dl-eplist[data-dl-eps="' + b.dataset.dlSeason + '"] .fn-dl-eptile');
-      if (first) selectEp(first.dataset.dlEp);
+      /* NO auto-open, ever: switching seasons only closes any open
+         sheet. The sheet opens when the user taps an episode — never
+         by itself, not on open and not on season switch. */
+      closeSheet();
     };
   });
   root.querySelectorAll('[data-dl-act]').forEach(function (b) {
