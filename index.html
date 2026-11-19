@@ -12087,7 +12087,12 @@ async function renderProfileEditor() {
     let nPeople = 0, nChars = 0;
     grid.querySelectorAll('[data-pfav]').forEach(b => {
       const okCat = cat === 'all' || b.dataset.pfcat === cat;
-      const okQ = !q || (b.title || '').toLowerCase().indexOf(q.toLowerCase()) !== -1;
+      const okQ = !q || (b.title || '').toLowerCase().indexOf(q.toLowerCase()) !== -1
+        || ((b.dataset.pfname2 || '').toLowerCase().indexOf(q.toLowerCase()) !== -1)
+        || (b.dataset.pfq === q); /* FN-PF-LIVESEARCH-FA v1: a live tile is
+        searchable by BOTH its names (title + data-pfname2) and stays visible
+        for the exact query that found it (data-pfq); the category chip still
+        decides okCat, so pfq never overrides the chip */
       const show = okCat && okQ;
       b.style.display = show ? '' : 'none';
       if (show) { if (b.dataset.pfcat === 'people') nPeople++; else nChars++; }
@@ -12128,24 +12133,49 @@ async function renderProfileEditor() {
       const cur = (pfAvSearch && pfAvSearch.value || '').trim();
       if (cur !== q) return; /* the query moved on */
       pfClearLive();
-      const seen = new Set(), out = [];
-      const all = ((en && en.results) || []).concat((fa && fa.results) || []);
-      for (const p of all) {
-        if (!p || !p.profile_path || seen.has(p.id)) continue;
-        seen.add(p.id); out.push(p);
+      /* FN-PF-LIVESEARCH-FA v1: merge en-US + fa-IR by TMDB id, keeping BOTH
+         names. v1 kept the FIRST record (en-US, English name) and set b.title
+         to it; pfAvFilter then hid the tile for a Persian query because
+         "James Franco" does not contain "جیمز فرانکو" — the proxy returns
+         the person in both languages, so the tile was built and immediately
+         hidden. A person with no profile photo in either record gets NO tile. */
+      const merged = new Map();
+      const addRes = (list, lang) => {
+        for (const p of (list || [])) {
+          if (!p || !p.id) continue;
+          let m = merged.get(p.id);
+          if (!m) { m = { img: null, enName: '', faName: '' }; merged.set(p.id, m); }
+          if (p.profile_path && !m.img) m.img = p.profile_path;
+          if (lang === 'fa') { if (p.name) m.faName = p.name; } else if (p.name) m.enName = p.name;
+        }
+      };
+      addRes(en && en.results, 'en');
+      addRes(fa && fa.results, 'fa');
+      const out = [];
+      for (const m of merged.values()) {
+        if (!m.img) continue; /* no profile photo -> no tile, never a placeholder */
+        out.push(m);
         if (out.length >= 12) break;
       }
       if (!out.length) { pfAvFilter(); return; }
       const charsHead = grid.querySelector('[data-pfhead="chars"]');
-      out.forEach(p => {
+      const isFaQ = /[\u0600-\u06FF\uFB50-\uFDFF\uFE70-\uFEFF]/.test(q);
+      out.forEach(m => {
         const b = document.createElement('button');
         b.type = 'button';
-        b.dataset.pfav = IMG(p.profile_path, 'w185');
+        b.dataset.pfav = IMG(m.img, 'w185');
         b.dataset.pfcat = 'people';
         b.dataset.pflive = '1';
-        b.title = p.name || '';
+        /* title in the query's language when TMDB gave us one, else the other
+           name; the other name stays searchable via data-pfname2, and data-pfq
+           keeps the tile visible for the exact query that found it */
+        const mainName = (isFaQ && m.faName) ? m.faName : (m.enName || m.faName);
+        const altName = (mainName === m.faName) ? m.enName : m.faName;
+        b.title = mainName || '';
+        if (altName && altName !== mainName) b.dataset.pfname2 = altName;
+        b.dataset.pfq = q;
         const img = document.createElement('img');
-        img.loading = 'lazy'; img.src = IMG(p.profile_path, 'w185'); img.alt = p.name || '';
+        img.loading = 'lazy'; img.src = IMG(m.img, 'w185'); img.alt = mainName || '';
         img.onerror = () => b.remove();
         b.appendChild(img);
         if (charsHead) grid.insertBefore(b, charsHead); else grid.appendChild(b);
