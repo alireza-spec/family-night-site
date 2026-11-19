@@ -595,6 +595,10 @@ box-shadow:0 0 26px rgba(229,169,60,.28),inset 0 0 14px rgba(0,0,0,.65);animatio
 .fn-dl-tot b{font-family:var(--display);font-size:1.05rem;color:var(--gold2);display:block}
 .fn-dl-tot span{font-size:.7rem;color:var(--pearl)}
 .fn-dl-copyall{flex:none;font-size:.75rem;font-weight:800;padding:.4rem .9rem;border-radius:99px;border:1px solid var(--gold);background:var(--gold);color:#231700;min-height:2.2rem;cursor:pointer;font-family:inherit}
+/* FN-EXT-DL-TEST v1 — experimental external-download section (one title only) */
+.fn-ext-dl{margin-top:1.1rem;text-align:center}
+.fn-ext-dl-note{color:var(--pearl);font-size:.85rem;line-height:1.9;margin:.3rem 0 .8rem}
+.fn-ext-dl-btn{display:inline-block;font-size:.85rem;font-weight:800;padding:.55rem 1.3rem;border-radius:99px;border:1px solid var(--gold);background:var(--gold);color:#231700;min-height:2.4rem;line-height:1.5;text-decoration:none;cursor:pointer;font-family:inherit}
 .fn-dl-cabox{background:var(--surface2);border:1px solid rgba(229,169,60,.4);border-radius:1rem;padding:.8rem .9rem;margin-bottom:.9rem;text-align:center}
 .fn-dl-cabox[hidden]{display:none}
 .fn-dl-ca-title{font-size:.88rem;font-weight:800;color:var(--gold2);line-height:1.8;margin-bottom:.6rem}
@@ -6227,6 +6231,25 @@ function admDownload(url) {
   copyText(url);
   toast('لینک کپی شد — آن را در ADM پیست کنید تا دانلود شروع شود');
 }
+/* FN-EXT-DL-TEST v1 — EXPERIMENT, one title only: Bride of Frankenstein
+   1935 (TMDB movie 229). When the archive has NO download links for
+   this title, the download box offers the external vidsrc download
+   (verified 2026-11-20: the direct file https://dl.braflix.dev/
+   download/movie/229?quality=480p — HTTP 206, video/mp4, 208582270 B
+   = 198.9 MB, real MP4; the trendingpie landing page
+   https://media.trendingpie.com/?id=229 is the verified fallback).
+   The button opens in a new tab; it is NOT an archive link (no
+   download icon, no avail-index entry). If the phone test works, roll
+   out to all zero-link titles; until then NO other title shows it. */
+var FN_EXT_DL_TEST = { key: 'movie:229', url: 'https://dl.braflix.dev/download/movie/229?quality=480p', label: 'دانلود 480p MP4 · حدود ۱۹۸٫۹ مگابایت' };
+function fnExtDlTestHtml(tmdbKey) {
+  if (tmdbKey !== FN_EXT_DL_TEST.key) return '';
+  return '<div class="fn-ext-dl" data-ext-dl-test>'
+    + '<div class="fn-dl-sec"><span>دانلود از سرور خارجی</span><span class="fn-dl-cnt">آزمایشی</span></div>'
+    + '<p class="fn-ext-dl-note">این اثر در آرشیو ما لینک دانلود ندارد؛ دانلود از سرور خارجی (بدون زیرنویس فارسی) در تب جدید باز می‌شود.</p>'
+    + '<a class="fn-ext-dl-btn" href="' + FN_EXT_DL_TEST.url + '" target="_blank" rel="noopener">' + FN_EXT_DL_TEST.label + '</a>'
+    + '</div>';
+}
 async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUrl) {
   const body = $('#d-dl-body'); if (!body) return;
   if (!imdbId && fbTitle) {
@@ -6253,7 +6276,7 @@ async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUr
     }
     if (!resolved) resolved = await fnDlTitleFallback(imdbId, tmdbKey, fbTitle, fbYear);
     if (token !== detailToken) return;
-    if (!resolved) { body.innerHTML = '<div class="state"><b>فعلاً لینک دانلود رایگانی برای این اثر نیست.</b><br>از «پخش آنلاین» می‌توانید همین حالا تماشا کنید.</div>'; return; }
+    if (!resolved) { body.innerHTML = '<div class="state"><b>فعلاً لینک دانلود رایگانی برای این اثر نیست.</b><br>از «پخش آنلاین» می‌توانید همین حالا تماشا کنید.</div>' + fnExtDlTestHtml(tmdbKey); return; }
   } catch (e) {
     if (token === detailToken) body.innerHTML = '<div class="state">دریافت لینک‌های دانلود از آرشیو ممکن نشد؛ اتصال را بررسی و دوباره تلاش کنید.</div>';
     return;
@@ -6261,7 +6284,7 @@ async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUr
   try {
     const rec = resolved.rec;
     const srcNote = resolved.src === 'old' ? ' <span style="color:var(--gold2)">(از آرشیو قبلی)</span>' : resolved.src === 'both' ? ' <span style="color:var(--gold2)">(آرشیو جدید + قبلی)</span>' : '';
-    if (!rec || (!rec.groups.softsub.length && !rec.groups.dubbed.length && !rec.groups.nosub.length)) { body.innerHTML = '<div class="state"><b>فعلاً لینک دانلود رایگانی برای این اثر نیست.</b><br>از «پخش آنلاین» می‌توانید همین حالا تماشا کنید.</div>'; return; }
+    if (!rec || (!rec.groups.softsub.length && !rec.groups.dubbed.length && !rec.groups.nosub.length)) { body.innerHTML = '<div class="state"><b>فعلاً لینک دانلود رایگانی برای این اثر نیست.</b><br>از «پخش آنلاین» می‌توانید همین حالا تماشا کنید.</div>' + fnExtDlTestHtml(tmdbKey); return; }
     var srcLabel = resolved.src === 'old' ? 'آرشیو قبلی' : resolved.src === 'both' ? 'آرشیو جدید + قبلی' : '';
     var dlMeta = [fbYear || '', (tmdbKey && tmdbKey.indexOf('tv:') === 0) ? 'سریال' : 'فیلم', srcLabel].filter(Boolean).join(' • ');
     /* FN-DLBOX-TITLE-FA v1 — the header follows the ONE naming rule
