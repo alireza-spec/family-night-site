@@ -1063,6 +1063,7 @@ footer.site .fine{margin:1.6rem 0 0;padding-top:1rem;border-top:1px solid var(--
    the original — never more than one line each, never duplicated */
 .detail-head .fatitle{color:var(--gold2);font-size:1.05rem;font-weight:800;margin-top:.15rem;line-height:1.5}
 .detail-head .entitle{direction:ltr;text-align:right;font-family:var(--display);color:var(--pearl2);font-size:.92rem;letter-spacing:.4px;margin-top:.1rem}
+.hero-in .entitle{font-size:.85rem;letter-spacing:.5px;margin-bottom:.5rem}
 .detail-head .fa-name{color:var(--gold2);font-size:1.05rem;font-weight:800;margin-top:.15rem;line-height:1.5;white-space:normal}
 .detail-head .fa-name.endup{display:none}
 .detail-head.hasfa .fa-name.endup{display:block}
@@ -3015,7 +3016,7 @@ function renderHero() {
     /* hero shows title, original name, IMDb score and year only —
        NO overview/synopsis on the hero (owner's call) */
     return '<div class="hero-slide' + (i === heroIdx ? ' on' : '') + '"><img class="bg" data-hsrc="' + IMG(h.backdrop_path || h.poster_path, window.innerWidth < 900 ? 'w780' : 'w1280') + '" alt="">'
-    + '<div class="hero-shade"></div><div class="hero-in" data-hero-text><h1>' + esc(titleOf(h)) + '</h1>' + (origOf(h) && !sameName(origOf(h), titleOf(h)) ? '<div class="orig">' + esc(origOf(h).toUpperCase()) + '</div>' : '') + '<div class="meta">' + (h.vote_average ? '<span class="star">★ IMDb <span class="num">' + Number(h.vote_average).toFixed(1) + '</span></span>' : '') + (yearOf(h) ? '<span>سال <span class="num">' + esc(yearOf(h)) + '</span></span>' : '') + '</div>' + '</div></div>';
+    + '<div class="hero-shade"></div><div class="hero-in" data-hero-text><h1>' + esc(titleOf(h)) + '</h1>'  + '<div class="meta">' + (h.vote_average ? '<span class="star">★ IMDb <span class="num">' + Number(h.vote_average).toFixed(1) + '</span></span>' : '') + (yearOf(h) ? '<span>سال <span class="num">' + esc(yearOf(h)) + '</span></span>' : '') + '</div>' + '</div></div>';
   }).join('')
     + '<button class="hero-nav" style="inset-inline-start:1.2rem" id="hero-prev" aria-label="قبلی"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m9 5 7 7-7 7"/></svg></button>'
     + '<button class="hero-nav" style="inset-inline-end:1.2rem" id="hero-next" aria-label="بعدی"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m15 5-7 7 7 7"/></svg></button>'
@@ -3068,11 +3069,32 @@ function paintHeroText(at) {
       paintHeroText(ix);
     }).catch(() => {});
   }
+  /* FN-HERO-EN-LINE: the Hero also shows the correct English title in
+     small text under the Persian headline (owner's rule: Persian +
+     small English, nothing else). The trending payload is fa-IR and
+     carries no English title, so fetch the en-US detail lazily for
+     the active slide + neighbours — the same window as the fa-IR
+     fetch. Accept it only when it is Latin-script: TMDB en-US falls
+     back to the original name when no English title exists, and a
+     non-Latin fallback is NOT an English title — it is never shown
+     (the slide then has no English line, and the missing title is
+     reported, never faked). */
+  if (!h._enLoaded && Math.abs(ix - heroIdx) <= 1) {
+    h._enLoaded = true;
+    tmdb(type + '/' + h.id, {}, 'en-US').then(d => {
+      if (!d) return;
+      if (heroItems[ix] !== h) return;
+      const t = d.title || d.name || '';
+      const isLat = typeof isLatinTitle === 'function' ? isLatinTitle(t) : (/[A-Za-z]/.test(t) && !/[؀-ۿ]/.test(t));
+      if (t && isLat) h._enTitle = t;
+      paintHeroText(ix);
+    }).catch(() => {});
+  }
   /* the fa-IR title falls back to the ORIGINAL name when no Persian
      title exists — for a non-Latin-script original (Japanese,
      Korean…) that must never headline the hero: the snapshot's
-     English title leads instead and the original stays on its own
-     secondary line below */
+     English title leads instead (the original line itself is gone
+     from the Hero — nothing but Persian + English may appear here) */
   let faTitle = h._faTitle || titleOf(h);
   if (nonLatinScript(faTitle)) { const enT = titleOf(h); if (enT && !nonLatinScript(enT)) faTitle = enT; }
   /* FN-HERO-PERSIAN-NAME: the Hero headline must be Persian, whatever
@@ -3098,12 +3120,18 @@ function paintHeroText(at) {
       paintHeroText(ix);
     }).catch(() => { h._faTrLoading = false; });
   }
+  /* FN-HERO-EN-LINE: the correct English title for the small second
+     line — the lazy en-US detail title first (h._enTitle, TMDB en-US),
+     else the Latin-script list title / Latin-script original via
+     fnNameParts (covers English works immediately, before the fetch
+     lands). '' when neither exists: no English title is ever faked. */
+  const enTitle = (h._enTitle || (typeof fnNameParts === 'function' ? fnNameParts(h).en : '')) || '';
   const genreNames = (h.genre_ids || []).map(g => GENRES_FA[g]).filter(Boolean).slice(0, 3);
   box.innerHTML =
     '<div class="badges"><span class="badge gold">' + (type === 'tv' ? 'سریال' : 'فیلم') + ' · ترند روز</span>'
     + '<span class="badge indigo">' + (ix + 1) + ' از ' + heroItems.length + '</span></div>'
     + '<h1>' + esc(faTitle) + '</h1>'
-    + (origOf(h) && !sameName(origOf(h), faTitle) ? '<div class="orig">' + esc(origOf(h).toUpperCase()) + '</div>' : '')
+    + (enTitle && !sameName(enTitle, faTitle) ? '<div class="entitle">' + esc(enTitle) + '</div>' : '')
     + '<div class="meta">'
     + (h.vote_average ? '<span class="star" style="font-size:1.05rem">★ IMDb <span class="num">' + Number(h.vote_average).toFixed(1) + '</span></span>' : '')
     + (yearOf(h) ? '<span>سال <span class="num">' + esc(yearOf(h)) + '</span></span>' : '')
