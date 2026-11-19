@@ -4957,8 +4957,7 @@ async function openDetail(type, id) {
   $('#d-panel-cast').innerHTML = castPanelHtml(credits);
   $('#d-panel-gallery').innerHTML = galleryPanelHtml(images, { backdrop: d.backdrop_path, poster: d.poster_path });
   /* no trailer panel anymore: the top «تریلر» button plays the best of
-     o.videos directly; the soundtrack shortcut moves under the info tab */
-  $('#d-panel-info').insertAdjacentHTML('beforeend', '<div class="sec"><a class="btn btn-glass btn-sm" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=' + encodeURIComponent((orig || title) + ' ' + year + ' official soundtrack') + '">موسیقی متن این اثر در یوتیوب</a></div>');
+     o.videos directly */
   wireAi(aiContext(o, (directors ? 'کارگردان: ' + directors + '\n' : '') + (topCast ? 'بازیگران اصلی: ' + topCast : '')));
   /* موضوعات (keywords): the complete TMDB keyword list of this title,
      as small Persian bubbles under the specs — a keyword with no
@@ -5132,7 +5131,15 @@ async function loadDetailEpisodes(d, token) {
       }).join('')
         : '<div class="state">قسمتی برای این فصل ثبت نشده است.</div>';
       fnSweepTrTxt(epsBox);
-      epsBox.querySelectorAll('[data-ep]').forEach(b => b.onclick = () => openPlayer({ id: d.id, type: 'tv', item: itemCache.get(wlKey('tv', d.id)), season: n, episode: +b.dataset.ep }));
+      /* FN-EP-PLAY-FIRST v1: an episode's play button tries the site's
+         own online playback first (archive play links for THIS
+         season+episode); only when the episode has none does it fall
+         back to the external-server player. Fail-open: if the play
+         module did not load, openPlayer runs directly. */
+      epsBox.querySelectorAll('[data-ep]').forEach(b => b.onclick = () => {
+        var ep = { id: d.id, type: 'tv', item: itemCache.get(wlKey('tv', d.id)), imdbId: (d.external_ids && d.external_ids.imdb_id) || d.imdb_id || '', season: n, episode: +b.dataset.ep };
+        if (typeof fnPlayOpenEpisode === 'function') fnPlayOpenEpisode(ep); else openPlayer(ep);
+      });
     } catch (e) { if (token === detailToken) epsBox.innerHTML = '<div class="state">بارگذاری قسمت‌ها انجام نشد.</div>'; }
   };
   box.querySelectorAll('[data-season]').forEach(b => b.onclick = () => loadSeason(+b.dataset.season));
@@ -6483,7 +6490,9 @@ function fnPlayCtx(o) {
     tmdbKey: (o.type === 'tv' ? 'tv:' : 'movie:') + o.id,
     title: o.title || it.title || it.name || '',
     year: o.year || String((it.release_date || it.first_air_date || '').slice(0, 4) || ''),
-    poster: o.poster || it.poster_path || ''
+    poster: o.poster || it.poster_path || '',
+    season: o.season || 0,
+    episode: o.episode || 0
   };
 }
 function fnPlayTimeout(ms) { return new Promise(function (res) { setTimeout(function () { res(null); }, ms); }); }
@@ -6539,6 +6548,15 @@ async function openPlayListOrPlayer(o) {
     try { res = await Promise.race([fnPlayResolve(ctx), fnPlayTimeout(6000)]); } catch (e) { res = null; }
   }
   if (!res) {
+    /* FN-EP-PLAY-FIRST v1: opened from a specific episode and the
+       title has no internal play rows at all — fall back to the
+       external player for this episode (the NOPLAY empty state is
+       for the «پخش آنلاین» button, not for an episode tap). */
+    if (ctx.type === 'tv' && ctx.season && ctx.episode) {
+      closeOverlay('#ov-playlist');
+      openPlayer({ id: ctx.id, type: ctx.type, item: ctx.item, imdbId: ctx.imdbId, season: ctx.season, episode: ctx.episode });
+      return;
+    }
     /* FN-PLAY-NOPLAY v1: no internal play rows. If the title IS in the
        download archive (a download-only title), show a clear empty
        state here — "no online play for this work, use download" —
@@ -6561,8 +6579,56 @@ async function openPlayListOrPlayer(o) {
     }
     closeOverlay('#ov-playlist'); openPlayer({ id: ctx.id, type: ctx.type, item: ctx.item, imdbId: ctx.imdbId }); return;
   }
+  /* FN-EP-PLAY-FIRST v1: the title HAS internal play rows, but not
+     for this episode — fall back to the external player for it. */
+  if (ctx.type === 'tv' && ctx.season && ctx.episode) {
+    var hasEpRows = false;
+    try {
+      var jr = fnPlayJoined(res.entry);
+      for (var k = 0; k < jr.length; k++) {
+        if ((jr[k].season || 0) === ctx.season && (jr[k].episode || 0) === ctx.episode) { hasEpRows = true; break; }
+      }
+    } catch (e) { hasEpRows = false; }
+    if (!hasEpRows) {
+      closeOverlay('#ov-playlist');
+      openPlayer({ id: ctx.id, type: ctx.type, item: ctx.item, imdbId: ctx.imdbId, season: ctx.season, episode: ctx.episode });
+      return;
+    }
+  }
   FN_PLAY.entry = res.entry; FN_PLAY.key = res.key; FN_PLAY.part = res.part;
   fnPlayRenderList();
+}
+/* ---------- episode play priority (FN-EP-PLAY-FIRST v1) ----------
+   An episode's play button (detail page, Episodes section) opens the
+   site's own online playback FIRST when the archive has play links
+   for THAT season+episode; only when the episode has no play rows
+   does it fall back to the external-server player (openPlayer),
+   exactly as before. The prefetch made when the detail opened is
+   reused, so the check is instant in the common case; without a
+   fresh prefetch the list opens with its spinner and decides there
+   (openPlayListOrPlayer checks the episode after resolving). */
+async function fnPlayOpenEpisode(o) {
+  var ctx = fnPlayCtx(o);
+  ctx.season = o.season || 1; ctx.episode = o.episode || 1;
+  var pre = FN_PLAY.prefetch;
+  if (pre && pre.key === ctx.tmdbKey && (Date.now() - pre.at) < 300000) {
+    var hasEp = false;
+    if (pre.res && pre.res.entry) {
+      try {
+        var rows = fnPlayJoined(pre.res.entry);
+        for (var i = 0; i < rows.length; i++) {
+          if ((rows[i].season || 0) === ctx.season && (rows[i].episode || 0) === ctx.episode) { hasEp = true; break; }
+        }
+      } catch (e) { hasEp = false; }
+    }
+    if (hasEp) {
+      openPlayListOrPlayer({ id: o.id, type: o.type, item: o.item, imdbId: o.imdbId || '', title: o.title, year: o.year, poster: o.poster, season: ctx.season, episode: ctx.episode });
+    } else {
+      openPlayer({ id: o.id, type: o.type, item: o.item, imdbId: o.imdbId || '', season: ctx.season, episode: ctx.episode });
+    }
+    return;
+  }
+  openPlayListOrPlayer({ id: o.id, type: o.type, item: o.item, imdbId: o.imdbId || '', title: o.title, year: o.year, poster: o.poster, season: ctx.season, episode: ctx.episode });
 }
 function fnPlayEnsureListDom() {
   if ($('#ov-playlist')) return;
@@ -6679,6 +6745,22 @@ function fnPlayRenderList() {
     });
     opts.sort(function (a, b) { return (a.season - b.season) || (fnPlayGroupRank(a.group) - fnPlayGroupRank(b.group)); });
     if (!opts.length) { body.innerHTML = '<div class="pl-empty">نسخه‌ای برای پخش این سریال پیدا نشد.</div>'; return; }
+    /* FN-EP-PLAY-FIRST v1: opened from a specific episode — position
+       the list at that episode's season and the first group that has
+       a row for it (SoftSub first by group rank), so the tapped
+       episode's rows are the ones shown. */
+    if (ctx.season && ctx.episode) {
+      var epOpt = null;
+      for (var ei = 0; ei < opts.length; ei++) {
+        if (opts[ei].season !== ctx.season) continue;
+        var hasEp2 = false;
+        for (var ej = 0; ej < joined.length; ej++) {
+          if ((joined[ej].season || 0) === ctx.season && (joined[ej].episode || 0) === ctx.episode && (joined[ej].group || 'NoSub') === opts[ei].group) { hasEp2 = true; break; }
+        }
+        if (hasEp2) { epOpt = opts[ei]; break; }
+      }
+      if (epOpt) FN_PLAY.seasonKey = epOpt.season + '|' + epOpt.group;
+    }
     if (!FN_PLAY.seasonKey) FN_PLAY.seasonKey = opts[0].season + '|' + opts[0].group;
     var cur = opts.filter(function (o) { return (o.season + '|' + o.group) === FN_PLAY.seasonKey; })[0] || opts[0];
     FN_PLAY.seasonKey = cur.season + '|' + cur.group;
@@ -6724,6 +6806,15 @@ function fnPlayRenderList() {
   body.querySelectorAll('[data-pl-idx]').forEach(function (b) {
     b.onclick = function () { fnPlayOpenOpt(FN_PLAY.rows[+b.dataset.plIdx]); };
   });
+  /* FN-EP-PLAY-FIRST v1: scroll the tapped episode's first card into
+     view so the list opens at the episode, not at the season's start. */
+  if (ctx.type === 'tv' && ctx.season && ctx.episode && FN_PLAY.rows) {
+    try {
+      var ei2 = -1;
+      for (var ek = 0; ek < FN_PLAY.rows.length; ek++) { if ((FN_PLAY.rows[ek].episode || 0) === ctx.episode) { ei2 = ek; break; } }
+      if (ei2 >= 0) { var ec = body.querySelector('[data-pl-idx="' + ei2 + '"]'); if (ec && ec.scrollIntoView) ec.scrollIntoView({ block: 'nearest' }); }
+    } catch (e) {}
+  }
   /* FN-DL-VERSIONS v1 — film version chips (films only; the tv branch
      above renders the season <select> instead, so no chip exists
      there). Tapping a chip shows only that version's group. */
