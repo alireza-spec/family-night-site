@@ -593,9 +593,9 @@ box-shadow:0 0 26px rgba(229,169,60,.28),inset 0 0 14px rgba(0,0,0,.65);animatio
 .fn-dl-thumb img{width:100%;height:100%;object-fit:cover;display:block}
 .fn-dl-thumb .fn-dl-initial{font-size:1.2rem}
 .fn-dl-tinfo{flex:1;min-width:0}
-.fn-dl-tinfo>b{display:block;font-size:1.05rem;font-family:var(--display);line-height:1.5}
+.fn-dl-tinfo>b{display:block;font-size:.88rem;font-family:var(--display);line-height:1.5}
 .fn-dl-tline{display:flex;gap:.45rem;align-items:center;flex-wrap:wrap;margin-top:.15rem}
-.fn-dl-qchip{background:var(--gold);color:#231700;font-family:var(--display);font-weight:800;font-size:.78rem;border-radius:99px;padding:.1rem .6rem}
+.fn-dl-qchip{background:var(--gold);color:#231700;font-family:var(--display);font-weight:800;font-size:.68rem;border-radius:99px;padding:.05rem .5rem}
 .fn-dl-size{color:var(--gold2);font-family:var(--display);font-weight:700;font-size:.82rem}
 .fn-dl-grp{color:var(--pearl2);font-size:.78rem}
 .fn-dl-kebab{display:flex;flex-direction:column;gap:3px;align-items:center;justify-content:center;flex:none;padding:.2rem}
@@ -4749,6 +4749,10 @@ function resRank(r) { return ({ '2160p': 6, '1440p': 5, '1080p': 4, '720p': 3, '
    jumped). The .dlmodal rules in the CSS carry the same
    overscroll-behavior / touch-action / -webkit-overflow-scrolling
    the detail sheet overlay already has.
+   TILE TYPE (v7): line 1 (the title / episode name) is a touch
+   smaller (.88rem), and every tile shows ALL the qualities that
+   film / episode has as small gold bubbles — not just the top one —
+   so the user sees at a glance what is available.
    Sizes display with Persian units (مگابایت / گیگابایت, digits stay
    English). Selection: NO permanent gold outline anywhere — the
    tile/action the user taps turns gold. Icons: real ADM logo
@@ -4832,12 +4836,20 @@ function dlTilesHtml(rec, opts) {
   } else {
     var rows = all.slice().sort(dlSortLinksDesc);
     ctx.links = rows;
+    /* every tile shows ALL the qualities this film has (small gold
+       bubbles), so the user sees at a glance what is available */
+    var filmRes = [];
+    rows.forEach(function (r) { if (r.sp.res && filmRes.indexOf(r.sp.res) < 0) filmRes.push(r.sp.res); });
+    filmRes.sort(function (a, b) { return resRank(b) - resRank(a); });
+    var filmChips = filmRes.length
+      ? filmRes.map(function (q) { return '<span class="fn-dl-qchip">' + esc(q) + '</span>'; }).join('')
+      : '<span class="fn-dl-qchip">—</span>';
     out += '<div class="fn-dl-sec"><span>لینک‌های دانلود</span><span class="fn-dl-cnt">' + rows.length + ' لینک</span></div><div class="fn-dl-tiles">';
     rows.forEach(function (r, i) {
       out += '<div class="fn-dl-tile" data-dl-i="' + i + '">'
         + '<span class="fn-dl-thumb">' + dlPosterHtml(o.poster || '', title) + '</span>'
         + '<span class="fn-dl-tinfo"><b>' + esc(title) + '</b>'
-        + '<span class="fn-dl-tline"><span class="fn-dl-qchip">' + esc(r.sp.res || '—') + '</span>'
+        + '<span class="fn-dl-tline">' + filmChips
         + '<span class="fn-dl-size">' + esc(faSize(r.x.size)) + '</span>'
         + '<span class="fn-dl-grp">' + esc(r.label) + '</span></span></span>'
         + '<span class="fn-dl-kebab"><i></i><i></i><i></i></span>'
@@ -4878,6 +4890,15 @@ function dlSeriesHtml(groups, posterUrl, title, ctx) {
     list.forEach(function (ep) {
       ep.links.sort(dlSortLinksDesc);
       var top = ep.links[0];
+      /* every episode tile shows ALL the qualities this episode has
+         (small gold bubbles), so the user sees at a glance what is
+         available — same as the film tiles */
+      var epRes = [];
+      ep.links.forEach(function (l) { if (l.sp.res && epRes.indexOf(l.sp.res) < 0) epRes.push(l.sp.res); });
+      epRes.sort(function (a, b) { return resRank(b) - resRank(a); });
+      var epChips = epRes.length
+        ? epRes.map(function (q) { return '<span class="fn-dl-qchip">' + esc(q) + '</span>'; }).join('')
+        : '<span class="fn-dl-qchip">—</span>';
       /* same tile language as the film box: thumb + line 1 + line 2 +
          kebab + chevron. The thumb starts as the series poster and is
          swapped for this episode's own still by loadEpMeta; line 1
@@ -4885,7 +4906,7 @@ function dlSeriesHtml(groups, posterUrl, title, ctx) {
       out += '<div class="fn-dl-eptile" data-dl-ep="' + esc(s + '|' + ep.episode) + '">'
         + '<span class="fn-dl-thumb">' + dlPosterHtml(posterUrl, title) + '</span>'
         + '<span class="fn-dl-tinfo"><b>قسمت ' + esc(ep.episode) + '</b>'
-        + '<span class="fn-dl-tline"><span class="fn-dl-qchip">' + esc(top.sp.res || '—') + '</span>'
+        + '<span class="fn-dl-tline">' + epChips
         + '<span class="fn-dl-size">' + esc(faSize(top.x.size)) + '</span>'
         + '<span class="fn-dl-grp">' + esc(top.label) + '</span></span></span>'
         + '<span class="fn-dl-kebab"><i></i><i></i><i></i></span>'
