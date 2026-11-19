@@ -192,6 +192,7 @@ main{padding-bottom:6.2rem;min-height:100vh}
 .card .sub .fa-name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 .card .sub .fa-name.endup{display:none}
 .card.hasfa .sub .fa-name.endup{display:block}
+.card .sub .ls-badge{flex:none;font-size:.6rem;color:var(--pearl);opacity:.75;white-space:nowrap}
 .card.wide{width:15.5rem}
 .card.wide .poster{aspect-ratio:16/9}
 @media(min-width:900px){.card.wide{width:18rem}}
@@ -1019,6 +1020,9 @@ footer.site .fine{margin:1.6rem 0 0;padding-top:1rem;border-top:1px solid var(--
    the original — never more than one line each, never duplicated */
 .detail-head .fatitle{color:var(--gold2);font-size:1.05rem;font-weight:800;margin-top:.15rem;line-height:1.5}
 .detail-head .entitle{direction:ltr;text-align:right;font-family:var(--display);color:var(--pearl2);font-size:.92rem;letter-spacing:.4px;margin-top:.1rem}
+.detail-head .fa-name{color:var(--gold2);font-size:1.05rem;font-weight:800;margin-top:.15rem;line-height:1.5;white-space:normal}
+.detail-head .fa-name.endup{display:none}
+.detail-head.hasfa .fa-name.endup{display:block}
 .detail-head .orig .orig-lab{font-family:var(--font);letter-spacing:0;color:var(--pearl2);font-size:.72rem}
 /* collection panel on the title page: a brighter, clearly separate
    frame ABOVE «آثار مشابه» holding every part of the collection the
@@ -2147,6 +2151,36 @@ document.addEventListener('click', e => {
 /* ---------- cards ---------- */
 function titleOf(x){ return x.title || x.name || ''; }
 function origOf(x){ return x.original_title || x.original_name || ''; }
+/* ---------- ONE naming rule for every card + detail head ----------
+   fnNameParts(x) returns {en, fa, orig} for a work, from whatever the
+   item carries — the rule is the same everywhere, so the names cannot
+   drift apart again:
+   - en: the REAL English title — the en-US payload (_en) first, then
+     the list title when it is Latin-script, then a Latin-script
+     original (an English-language original IS the English title).
+     '' when no English name is known yet (resolved later via
+     resolveEnName — never invented).
+   - fa: the Persian title — the list title when it is Persian-script.
+     '' when there is none yet (auto-translated from en by
+     scanFaTitles through the existing Google-Translate-first chain).
+   - orig: the original-language title — only when it is written in a
+     non-Latin script and differs from both en and fa. It NEVER
+     appears on a card; it shows only on the detail/info page. */
+function fnNameParts(x) {
+  x = x || {};
+  const enSrc = (x._en && (x._en.title || x._en.name)) || '';
+  const t = titleOf(x), o = origOf(x);
+  const isFa = s => /[؀-ۿ]/.test(s || '');
+  const isLat = s => typeof isLatinTitle === 'function' ? isLatinTitle(s) : (/[A-Za-z]/.test(s || '') && !isFa(s));
+  let en = '';
+  if (enSrc && isLat(enSrc)) en = enSrc;
+  else if (t && isLat(t)) en = t;
+  else if (o && isLat(o)) en = o;
+  let fa = '';
+  if (t && isFa(t)) fa = t;
+  const orig = (o && nonLatinScript(o) && !sameName(o, en) && !sameName(o, fa)) ? o : '';
+  return { en: en, fa: fa, orig: orig };
+}
 /* true when a name is written in a non-Latin script (Japanese,
    Korean, Chinese, Thai, Hebrew, Cyrillic, Greek…): such an
    original name must never headline a card, the hero or a title
@@ -2175,42 +2209,27 @@ function cardHtml(x, wide) {
   const img = poster ? '<img loading="lazy" decoding="async" src="' + IMG(poster, wide ? 'w780' : 'w342') + '" alt="' + esc(t) + '">' : '<div class="noimg">' + esc(t) + '</div>';
   const rate = x.vote_average ? '<span class="rate">★ ' + Number(x.vote_average).toFixed(1) + '</span>' : '';
   const typ = '<span class="typ">' + (type === 'tv' ? 'سریال' : 'فیلم') + '</span>';
-  /* Name order under the poster: the FIRST line (h3) is the
-     original name + year; the SECOND line (.sub), smaller and
-     fainter, is the Persian name. The Persian line's source text
-     is the raw title: already-Persian titles show at once, while a
-     still-Latin one stays hidden (class endup) until scanFaTitles
-     auto-translates that span in place and the card gets .hasfa —
-     so the Persian line never duplicates the original line above
-     it (a Persian original with no separate Persian name keeps the
-     second line hidden too). No quick buttons on cards: a tap on
-     the card opens the title page. */
-  /* a non-Latin-script original (Japanese, Korean, Chinese…) never
-     headlines the card: when the item also carries a Persian name,
-     the Persian name leads and the original drops to the faint
-     line; when it carries an English name (en-US-sourced lists),
-     the English name leads the same way and the Persian line is
-     translated from it. When neither exists yet, the original
-     stays for now and scanEnNames swaps the English name in as
-     soon as it resolves. Latin-script originals keep the standing
-     order: original first, Persian second. */
-  let origName = o || t;
-  let faSrc = t || o;
-  let subOrig = '';
-  if (o && t && !sameName(t, o) && nonLatinScript(o) && !nonLatinScript(t)) {
-    origName = t;
-    subOrig = o;
-    if (/[؀-ۿ]/.test(t)) faSrc = '';
-  }
-  const origLatin = !!origName && /[A-Za-z]/.test(origName) && !/[؀-ۿ]/.test(origName);
-  const faLatin = !!faSrc && /[A-Za-z]/.test(faSrc) && !/[؀-ۿ]/.test(faSrc);
-  const faHtml = faSrc ? '<span class="fa-name' + ((faLatin || sameName(faSrc, origName)) ? ' endup' : '') + '">' + esc(faSrc) + '</span>' : '';
-  const subOrigHtml = subOrig ? '<span class="en">' + esc(subOrig) + '</span>' : '';
+  /* Name order under the poster — ONE rule for every card: line 1
+     (h3) is the ENGLISH name, line 2 (.sub .fa-name) is the PERSIAN
+     name. The original-language name NEVER appears on a card (it
+     shows only on the detail/info page). When no English name is
+     known yet the Persian name headlines temporarily (data-need-en)
+     and scanEnNames swaps the real English title in as soon as it
+     resolves; when no Persian name exists yet, the English name
+     sits in the second line hidden (endup) until scanFaTitles
+     auto-translates it in place and the card gets .hasfa. */
+  const np = fnNameParts(x);
+  const headName = np.en || np.fa || np.orig || t || o;
+  const needEn = !np.en;
+  const faSrc = np.fa || np.en || np.orig || '';
+  const headLatin = !!headName && /[A-Za-z]/.test(headName) && !/[؀-ۿ]/.test(headName);
+  const faIsPersian = !!faSrc && /[؀-ۿ]/.test(faSrc);
+  const faHtml = faSrc ? '<span class="fa-name' + ((!faIsPersian || sameName(faSrc, headName)) ? ' endup' : '') + '">' + esc(faSrc) + '</span>' : '';
   const yr = yearOf(x);
   const yrHtml = yr ? '<span class="yr">' + esc(yr) + '</span>' : '';
-  return '<article class="card' + (wide ? ' wide' : '') + '" data-open="' + type + ':' + x.id + '" tabindex="0" role="button" aria-label="' + esc(t) + ' — مشاهده جزئیات">'
+  return '<article class="card' + (wide ? ' wide' : '') + '"' + (needEn ? ' data-need-en="1"' : '') + ' data-open="' + type + ':' + x.id + '" tabindex="0" role="button" aria-label="' + esc(t) + ' — مشاهده جزئیات">'
     + '<div class="poster">' + img + rate + typ + (fnDlIconHas(x) ? fnDlBadgeHtml() : '')
-    + '</div><h3 class="origline" dir="' + (origLatin ? 'ltr' : 'rtl') + '"><span class="oname' + (origLatin ? ' ltr' : '') + '">' + esc(origName) + '</span>' + yrHtml + '</h3><div class="sub">' + faHtml + subOrigHtml + '</div></article>';
+    + '</div><h3 class="origline" dir="' + (headLatin ? 'ltr' : 'rtl') + '"><span class="oname' + (headLatin ? ' ltr' : '') + '">' + esc(headName) + '</span>' + yrHtml + '</h3><div class="sub">' + faHtml + '</div></article>';
 }
 const itemCache = new Map();
 function cacheItems(list){ (list || []).forEach(x => { if (x && x.id) itemCache.set(wlKey(x.media_type || x.type || 'movie', x.id), x); }); }
@@ -2258,7 +2277,12 @@ function scanEnNames() {
     const nameEl = card.querySelector('h3 .oname') || (card.classList.contains('pickcard') ? card.querySelector('h3') : null);
     if (!nameEl || nameEl.dataset.enDone) return;
     const cur = (nameEl.textContent || '').trim();
-    if (!cur || !nonLatinScript(cur)) return;
+    /* a card needs its real English title when its headline is a
+       non-Latin original OR when it was rendered with a Persian
+       headline and no English name yet (data-need-en) — in both
+       cases the English title is resolved from TMDB en-US and
+       swapped into the headline */
+    if (!cur || (!nonLatinScript(cur) && !card.dataset.needEn)) return;
     nameEl.dataset.enDone = '1';
     jobs.push({ card, nameEl, key, cur });
   });
@@ -2278,8 +2302,24 @@ function scanEnNames() {
       const sub = j.card.querySelector('.sub');
       if (!sub) return;
       const fa = sub.querySelector('.fa-name');
-      if (fa) { fa.textContent = en; fa.classList.add('endup'); delete fa.dataset.faDone; }
-      if (!sub.querySelector('.en')) sub.insertAdjacentHTML('beforeend', '<span class="en">' + esc(j.cur) + '</span>');
+      if (j.card.dataset.open) {
+        if (fa) {
+          const curFa = (fa.textContent || '').trim();
+          /* a REAL Persian name already on the line stays exactly as
+             it is (and is shown, now that the headline is English);
+             any other text there was only a translation source or a
+             placeholder original, so it is re-seeded with the
+             English title for scanFaTitles to translate in place.
+             The original name is NEVER added to the card. */
+          if (/[؀-ۿ]/.test(curFa)) fa.classList.remove('endup');
+          else { fa.textContent = en; fa.classList.add('endup'); delete fa.dataset.faDone; }
+        } else {
+          const faNew = document.createElement('span');
+          faNew.className = 'fa-name endup'; faNew.textContent = en;
+          sub.insertBefore(faNew, sub.firstChild);
+        }
+      }
+      try { delete j.card.dataset.needEn; } catch (e) {}
       fnDedupeNames();
     }).catch(() => { delete j.nameEl.dataset.enDone; });
   });
@@ -2301,11 +2341,11 @@ function fnDedupeNames() {
   if (head) {
     const h1 = head.querySelector('h1');
     const h1t = h1 ? (h1.textContent || '').trim() : '';
-    /* true while the headline is a Latin title whose Persian
-       rendering scanFaTitles is still retrying: a duplicate-looking
-       English line is NOT dropped yet, because the settled stack
-       (Persian headline + English line) needs it */
-    const h1Pending = !!h1 && typeof isLatinTitle === 'function' && isLatinTitle(h1t) && +(h1.dataset.faTries || 0) < 3;
+    /* the detail headline is the English title now and is never
+       translated in place (the Persian name lives on its own second
+       line), so there is no "headline still turning Persian" window
+       anymore: a duplicate English/original line is dropped at once */
+    const h1Pending = false;
     const enEl = head.querySelector('.entitle');
     if (enEl && h1t && sameName(enEl.textContent, h1t) && !h1Pending) enEl.remove();
     const origEl = head.querySelector('.orig');
@@ -2329,7 +2369,11 @@ function fnDedupeNames() {
     const fa = card.querySelector('.sub .fa-name');
     /* only a settled Persian rendering is compared — a still-Latin
        .fa-name is a translation in flight (and hidden by .endup) */
-    if (fa && /[؀-ۿ]/.test(fa.textContent || '') && sameName(fa.textContent, main)) fa.style.display = 'none';
+    /* a settled Persian line that duplicates the headline is hidden;
+       when the headline later becomes the English title (scanEnNames
+       swap) the line is shown again — the inline display is cleared,
+       never left stuck */
+    if (fa && /[؀-ۿ]/.test(fa.textContent || '')) fa.style.display = sameName(fa.textContent, main) ? 'none' : '';
     const en = card.querySelector('.sub .en');
     if (en) {
       const et = (en.textContent || '').trim();
@@ -2337,18 +2381,17 @@ function fnDedupeNames() {
     }
   });
 }
-/* ---------- the detail head always carries the REAL English
-   title of a non-English-language work ---------- When the merged
-   detail payload brought no English title line (the en-US fetch
-   failed, or the sheet was built from the local catalog), the
-   English title is resolved from TMDB en-US — the same resolver
-   the cards use — and inserted as the second line. Only the real
-   TMDB en-US title is ever inserted, never an invented or
-   AI-translated one. When the headline is still the non-Latin
-   original, the English name takes the headline first (so the
-   Persian rendering can follow it in place) and the original
-   drops to its own third line, exactly like the cards. */
-function fnEnsureDetailEnLine(type, id, alive) {
+/* ---------- the detail headline is the REAL English title ----------
+   When the merged detail payload brought no English title (the en-US
+   fetch failed, or the sheet was built from the local catalog), the
+   English title is resolved from TMDB en-US — the same resolver the
+   cards use — and takes the HEADLINE. The text it replaces moves to
+   its own line: a Persian headline becomes the Persian line, a
+   non-Latin original becomes the original line. Only the real TMDB
+   en-US title is ever used, never an invented or AI-translated one,
+   and the English title is never printed twice (no separate .entitle
+   is added here — it already IS the headline). */
+function fnEnsureDetailEnHead(type, id, alive) {
   const sheet = document.getElementById('detail-sheet');
   if (!sheet || sheet.querySelector('.detail-head .entitle')) return;
   resolveEnName(type, id).then(en => {
@@ -2363,22 +2406,28 @@ function fnEnsureDetailEnLine(type, id, alive) {
     const origPre = box.querySelector('.orig');
     const origTxt0 = origPre ? (origPre.textContent || '').replace(/^نام اصلی:\s*/, '').trim() : '';
     if (sameName(en, cur0) || (origTxt0 && sameName(en, origTxt0))) return;
-    const enDiv = document.createElement('div');
-    enDiv.className = 'entitle'; enDiv.setAttribute('dir', 'ltr'); enDiv.textContent = en;
-    const origEl = box.querySelector('.orig');
-    if (origEl) box.insertBefore(enDiv, origEl); else box.insertBefore(enDiv, h1.nextSibling);
-    const cur = (h1.textContent || '').trim();
-    if (cur && nonLatinScript(cur) && !sameName(cur, en)) {
-      h1.textContent = en;
-      delete h1.dataset.faDone;
-      if (typeof scanFaTitles === 'function') scanFaTitles();
+    const isFaH1 = /[؀-ۿ]/.test(cur0);
+    h1.textContent = en; h1.setAttribute('dir', 'ltr');
+    if (isFaH1) {
+      /* the Persian headline becomes the Persian line (visible at
+         once — it is a real Persian name, not a translation source) */
+      let fa = box.querySelector('.fa-name');
+      if (!fa) { fa = document.createElement('div'); fa.className = 'fa-name'; fa.setAttribute('dir', 'rtl'); box.insertBefore(fa, h1.nextSibling); }
+      fa.textContent = cur0; fa.classList.remove('endup'); fa.removeAttribute('data-fa-done');
+    } else if (nonLatinScript(cur0)) {
       if (!box.querySelector('.orig')) {
         const oDiv = document.createElement('div');
         oDiv.className = 'orig';
-        oDiv.innerHTML = '<span class="orig-lab">نام اصلی: </span>' + esc(cur);
-        box.insertBefore(oDiv, enDiv.nextSibling);
+        oDiv.innerHTML = '<span class="orig-lab">نام اصلی: </span>' + esc(cur0);
+        box.insertBefore(oDiv, h1.nextSibling);
       }
+      /* the Persian line, if it was seeded with the non-Latin text,
+         is re-seeded with the English title so it auto-translates */
+      const fa = box.querySelector('.fa-name');
+      if (fa && !/[؀-ۿ]/.test(fa.textContent || '')) { fa.textContent = en; fa.classList.add('endup'); delete fa.dataset.faDone; }
     }
+    delete h1.dataset.faDone;
+    if (typeof scanFaTitles === 'function') scanFaTitles();
     fnDedupeNames();
   }).catch(() => {});
 }
@@ -4288,28 +4337,22 @@ function wireAi(ctx) {
 function buildDetailSheet(o) {
   const genres = o.genres || [];
   const genreObjs = o.genreObjs || [];
-  /* tidy name stack under the heading: the headline is the Persian
-     title — a non-Persian headline is replaced by its Persian
-     rendering IN PLACE (scanFaTitles), so there is no separate
-     Persian line stacked under it (that pairing is what used to
-     print the Persian name twice and crowd the English title
-     out). The second line is the work's REAL English title from
-     TMDB en-US, the third its original name — each only when it
+  /* tidy name stack under the heading — ONE rule, same as the cards:
+     the headline (h1) is the ENGLISH name, the second line is the
+     PERSIAN name, the third its original name — each only when it
      adds something the lines above don't already say (compared
-     normalized), so a non-English work always shows Persian +
-     real English, never the same name twice, and never an
-     invented English title. */
+     normalized), so a non-English work always shows English +
+     Persian + original, never the same name twice, and never an
+     invented English title. The Persian line is the real Persian
+     title when the payload has one (o.faTitle); otherwise it holds
+     the English title hidden (endup) until scanFaTitles
+     auto-translates it in place and the head gets .hasfa. */
   const nameLines = [];
-  /* the English line NEVER repeats the headline: when the headline
-     still IS the English title (its Persian rendering arrives in
-     place through scanFaTitles), printing it again underneath was
-     the doubled-English stack. Once the headline turns Persian,
-     scanFaTitles inserts this same real English title as the
-     second line — so the settled stack is always Persian main,
-     real English second, original third, each exactly once. */
-  const enLine = o.enTitle && !sameName(o.enTitle, o.title) ? o.enTitle : '';
+  if (o.faTitle && !sameName(o.faTitle, o.title)) nameLines.push('<div class="fa-name" dir="rtl">' + esc(o.faTitle) + '</div>');
+  else if (o.title && typeof isLatinTitle === 'function' && isLatinTitle(o.title)) nameLines.push('<div class="fa-name endup" dir="rtl">' + esc(o.title) + '</div>');
+  const enLine = o.enTitle && !sameName(o.enTitle, o.title) && !nonLatinScript(o.enTitle) ? o.enTitle : '';
   if (enLine) nameLines.push('<div class="entitle" dir="ltr">' + esc(enLine) + '</div>');
-  if (o.orig && !sameName(o.orig, o.title) && !sameName(o.orig, enLine)) nameLines.push('<div class="orig">' + (enLine ? '<span class="orig-lab">نام اصلی: </span>' : '') + esc(o.orig) + '</div>');
+  if (o.orig && !sameName(o.orig, o.title) && !sameName(o.orig, enLine) && !sameName(o.orig, o.faTitle || '')) nameLines.push('<div class="orig">' + (enLine ? '<span class="orig-lab">نام اصلی: </span>' : '') + esc(o.orig) + '</div>');
   return '<div class="sheet-hero">' + (o.backdrop ? '<img class="bg" src="' + IMG(o.backdrop, 'w1280') + '" alt="">' : '') + '<div class="shade"></div>'
     + '<button class="xbtn" data-close-detail aria-label="بستن"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>'
     + '<div class="sheet-body"><div class="detail-head"><div class="poster">' + (o.poster ? '<img src="' + IMG(o.poster, 'w342') + '" alt="' + esc(o.title) + '">' : '') + '</div>'
@@ -4422,6 +4465,12 @@ async function openDetail(type, id) {
   openOverlay('#ov-detail');
   sheet.innerHTML = '<button class="xbtn" data-close-detail aria-label="بستن" style="position:fixed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button><div class="state" style="padding-top:6rem"><div class="spin"></div>در حال دریافت جزئیات…</div>';
   sheet.querySelector('[data-close-detail]').onclick = () => closeOverlay('#ov-detail');
+  /* preload: the download + play loaders share two small indexes
+     (download-index, title-index) — warming them now, in parallel
+     with the detail fetch, means both loaders hit the cache when
+     they start below instead of fetching them sequentially */
+  try { if (typeof getDlIndex === 'function') getDlIndex().catch(function () {}); } catch (e) {}
+  try { if (typeof getTitleIndex === 'function') getTitleIndex().catch(function () {}); } catch (e) {}
   let d;
   try { d = await tmdbDetail(type, id); } catch (e) {
     if (token === detailToken) {
@@ -4467,21 +4516,33 @@ async function openDetail(type, id) {
   const itemForWl = itemCache.get(wlKey(type, id)) || { id, media_type: type, title: d.title, name: d.name, poster_path: d.poster_path, backdrop_path: d.backdrop_path, vote_average: d.vote_average, release_date: d.release_date, first_air_date: d.first_air_date, overview: d.overview, genre_ids: (d.genres || []).map(g => g.id) };
   itemCache.set(wlKey(type, id), itemForWl);
   const enTitle = (en && (en.title || en.name)) || '';
-  /* a non-Latin-script original (Japanese, Korean, Chinese…) never
-     headlines the title page: when the merged title is that original
-     because no Persian title exists, the English title headlines
-     instead and the original drops to the secondary line below it */
-  if (enTitle && enTitle !== title && nonLatinScript(title) && !nonLatinScript(enTitle)) title = enTitle;
-  const needFaTitle = !/[؀-ۿ]/.test(title) && !!(enTitle || orig);
-  const o = { type, id, title, orig, year, vote: d.vote_average, runtime, genres, genreObjs, cert, poster: d.poster_path, backdrop: d.backdrop_path, overview: d.overview || '', imdbId, videos: videosU, enTitle, needFaTitle };
+  /* ONE naming rule: the headline is the ENGLISH title. When TMDB
+     en-US supplied a real Latin-script English title it headlines,
+     whatever the merged (fa-first) title is; otherwise the merged
+     title stays (it is already English, or Persian when no English
+     title is known — fnEnsureDetailEnHead resolves the real English
+     title and swaps it in below). The Persian title is the merged
+     title when it is Persian-script — it goes on its own second
+     line (o.faTitle, rendered by buildDetailSheet). */
+  const mergedTitle = title;
+  if (enTitle && !nonLatinScript(enTitle) && !sameName(enTitle, mergedTitle)) title = enTitle;
+  const faTitle = (/[؀-ۿ]/.test(mergedTitle) && !sameName(mergedTitle, title)) ? mergedTitle : '';
+  const o = { type, id, title, orig, year, vote: d.vote_average, runtime, genres, genreObjs, cert, poster: d.poster_path, backdrop: d.backdrop_path, overview: d.overview || '', imdbId, videos: videosU, enTitle, faTitle };
   sheet.innerHTML = buildDetailSheet(o);
   wireDetailSheet(o, itemForWl);
+  /* preload (both sections, in parallel, right now — not after the
+     panels finish): the download box starts resolving its record
+     and the play module starts resolving its play links, so tapping
+     «دانلود رایگان» or «پخش آنلاین» finds the data already there.
+     Both loaders are fail-open (a failed preload changes nothing —
+     the tap path loads on demand exactly as before). */
+  loadDownloadBox(imdbId, token, d.title || d.name || '', (d.release_date || d.first_air_date || '').slice(0, 4), (type === 'tv' ? 'tv:' : 'movie:') + id, IMG(d.poster_path, 'w342'));
+  try { if (typeof fnPlayPrefetchDetail === 'function') fnPlayPrefetchDetail(type, id); } catch (e) {}
   /* a non-English-language work whose merged payload brought no
-     English title line gets its REAL English title resolved from
-     TMDB en-US and inserted as the second line (never an invented
-     translation); the Persian headline itself arrives in place
-     through scanFaTitles, like every other headline */
-  if (d.original_language && d.original_language !== 'en' && !sheet.querySelector('.detail-head .entitle')) fnEnsureDetailEnLine(type, id, () => token === detailToken);
+     English title gets its REAL English title resolved from TMDB
+     en-US and put on the headline (never an invented translation);
+     the Persian name stays on its own second line */
+  if (d.original_language && d.original_language !== 'en' && !sheet.querySelector('.detail-head .entitle')) fnEnsureDetailEnHead(type, id, () => token === detailToken);
   /* complete gallery: fetch the dedicated images endpoint (ALL
      backdrops / posters / logos in every language) and swap it in */
   tmdb(type + '/' + id + '/images', { include_image_language: 'en,null,fa' }).then(im => {
@@ -4523,7 +4584,6 @@ async function openDetail(type, id) {
     if (om && om.imdbRating && om.imdbRating !== 'N/A') { o.imdbRating = om.imdbRating; const el = $('#d-rating'); if (el) el.textContent = 'IMDb ' + om.imdbRating + ' ★'; }
   }).catch(() => {});
   if (type === 'tv') loadDetailEpisodes(d, token);
-  loadDownloadBox(imdbId, token, d.title || d.name || '', (d.release_date || d.first_air_date || '').slice(0, 4), (type === 'tv' ? 'tv:' : 'movie:') + id, IMG(d.poster_path, 'w342'));
 }
 /* Detail sheet built from the local FN catalog entry (used when the
    worker cannot be reached from this origin). Same tabs and choices;
@@ -4534,12 +4594,16 @@ function renderLocalDetail(type, id, item, token) {
   const sheet = $('#detail-sheet');
   if (token !== detailToken) return;
   curDetail = { type, id, data: item };
-  const title = titleOf(item);
-  const orig = origOf(item);
+  /* same ONE naming rule as the full detail path, from the one
+     helper — the headline is the English name, the Persian name (when
+     the catalog item carries one) goes on its own second line */
+  const np = fnNameParts(item);
+  const title = np.en || np.fa || np.orig || titleOf(item);
+  const orig = np.orig || origOf(item);
   const year = yearOf(item);
   const genres = (item.genre_ids || []).map(g => GENRES_FA[g]).filter(Boolean);
   const itemForWl = itemCache.get(wlKey(type, id)) || item;
-  const o = { type, id, title, orig, year, vote: item.vote_average, runtime: '', genres, poster: item.poster_path, backdrop: item.backdrop_path || item.poster_path, overview: item.overview || '', imdbId: '', videos: [] };
+  const o = { type, id, title, orig, year, vote: item.vote_average, runtime: '', genres, poster: item.poster_path, backdrop: item.backdrop_path || item.poster_path, overview: item.overview || '', imdbId: '', videos: [], enTitle: np.en || '', faTitle: (np.fa && !sameName(np.fa, title)) ? np.fa : '' };
   sheet.innerHTML = buildDetailSheet(o);
   wireDetailSheet(o, itemForWl);
   $('#d-panel-info').innerHTML =
@@ -4576,10 +4640,15 @@ async function hydrateLocalDetail(type, id, token, item, o) {
      download archive itself by title (its records carry the IMDb code). */
   /* a non-English-language work gets its REAL English title line
      resolved from TMDB en-US, exactly like the full detail path */
-  if (item.original_language && item.original_language !== 'en') fnEnsureDetailEnLine(type, id, alive);
+  if (item.original_language && item.original_language !== 'en') fnEnsureDetailEnHead(type, id, alive);
   let imdbId = '';
   try { const ex = await tmdb(type + '/' + id + '/external_ids', {}); imdbId = (ex && ex.imdb_id) || ''; } catch (e) {}
   if (!alive()) return;
+  /* preload the play links too (the download box loads right below):
+     hand the resolved IMDb id to the prefetch through curDetail so
+     its resolve uses the same identifier the tap path will use */
+  if (imdbId && curDetail && curDetail.data) { try { curDetail.data.imdb_id = imdbId; } catch (e) {} }
+  try { if (typeof fnPlayPrefetchDetail === 'function') fnPlayPrefetchDetail(type, id); } catch (e) {}
   if (imdbId) { loadDownloadBox(imdbId, token, '', '', (type === 'tv' ? 'tv:' : 'movie:') + id, IMG(item.poster_path, 'w342')); return; }
   const body = $('#d-dl-body'); if (body) body.innerHTML = '<div class="state"><div class="spin"></div>در حال جستجوی این عنوان در آرشیو دانلود Family Night…</div>';
   if (!alive()) return;
@@ -9232,12 +9301,19 @@ function fnLocalDedupTmdbDom(lr) {
   });
 }
 
+/* local/archive card — same ONE naming rule as TMDB cards: line 1
+   is the English name (the archive title), line 2 is the Persian
+   name, auto-translated in place by scanFaTitles from the English
+   name (the .fa-name span starts hidden until the Persian rendering
+   arrives, exactly like a TMDB card). The small «در فهرست» mark
+   stays, after the Persian name, so an archive card is still
+   recognisable. */
 function fnLocalCardHtml(e) {
   var yr = e.y ? '<span class="yr">' + e.y + '</span>' : '';
   return '<article class="card" data-ls="' + e.i + '" data-ls-tmdb="' + (e.tmdb || '') + '" data-ls-title="' + esc(fnLocalNormTitle(e.t)) + '" data-ls-year="' + (e.y || '') + '" tabindex="0" role="button" aria-label="' + esc(e.t) + ' — مشاهده جزئیات">'
     + '<div class="poster"><div class="noimg">' + esc(e.t) + '</div><span class="typ">' + (e.type === 'tv' ? 'سریال' : 'فیلم') + '</span>' + (fnDlIconHas(e) ? fnDlBadgeHtml() : '') + '</div>'
     + '<h3>' + esc(e.t) + ' ' + yr + '</h3>'
-    + '<div class="sub"><span>در فهرست Family Night</span></div></article>';
+    + '<div class="sub"><span class="fa-name endup">' + esc(e.t) + '</span><span class="ls-badge">در فهرست</span></div></article>';
 }
 
 /* Local search cards are text-only by design (instant, no API call) —
@@ -10863,7 +10939,7 @@ function scanFaTitles() {
      and name stacks that settled get their final dedupe pass */
   fnSweepTrTxt(document);
   fnDedupeNames();
-  const els = $$('.card .fa-name:not([data-fa-done]), .pickcard h3:not([data-fa-done]), .dla-row .inf b:not([data-fa-done]), #detail-sheet .detail-head h1:not([data-fa-done]), .hero-in h1:not([data-fa-done])');
+  const els = $$('.card .fa-name:not([data-fa-done]), .pickcard h3:not([data-fa-done]), .dla-row .inf b:not([data-fa-done]), #detail-sheet .detail-head .fa-name:not([data-fa-done]), .hero-in h1:not([data-fa-done])');
   const jobs = [];
   els.forEach(el => {
     el.dataset.faDone = '1';
@@ -10886,24 +10962,15 @@ function scanFaTitles() {
       const v = map.get(j.t);
       if (v && document.body.contains(j.el)) {
         j.el.textContent = v; j.el.title = j.t;
-        /* the Persian name is in: reveal the card's English-name line */
+        /* the Persian name is in: reveal the card's Persian line (and
+           the detail head's Persian line, which uses the same .hasfa
+           reveal). The detail headline itself stays English — the
+           Persian name lives on its own second line now, so no
+           English second line is ever inserted here anymore. */
         const card = j.el.closest && j.el.closest('.card');
         if (card) card.classList.add('hasfa');
-        /* detail headline: the headline just turned Persian, so its
-           real English title (the text it showed until now — TMDB's
-           own, never invented) takes the second line, unless a line
-           already shows it. That keeps the settled stack at Persian
-           main + real English + original, each exactly once. */
         const head = j.el.closest && j.el.closest('#detail-sheet .detail-head');
-        if (head && !head.querySelector('.entitle')) {
-          const og = head.querySelector('.orig');
-          const ogTxt = og ? (og.textContent || '').replace(/^نام اصلی:\s*/, '').trim() : '';
-          if (!sameName(j.t, ogTxt)) {
-            const enDiv = document.createElement('div');
-            enDiv.className = 'entitle'; enDiv.setAttribute('dir', 'ltr'); enDiv.textContent = j.t;
-            if (og && og.parentNode) og.parentNode.insertBefore(enDiv, og); else j.el.parentNode.insertBefore(enDiv, j.el.nextSibling);
-          }
-        }
+        if (head) head.classList.add('hasfa');
       } else if (document.body.contains(j.el) && uniq.indexOf(j.t) > -1) {
         /* no Persian name came back this pass — un-mark the element
            (bounded retries) so the next pass tries again instead of
