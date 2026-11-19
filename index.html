@@ -169,6 +169,8 @@ main{padding-bottom:6.2rem;min-height:100vh}
 .card .poster .noimg{width:100%;height:100%;display:grid;place-items:center;color:var(--pearl);font-size:.8rem;padding:.6rem;text-align:center}
 .card .rate{position:absolute;top:.45rem;inset-inline-start:.45rem;background:rgba(5,7,13,.72);border:1px solid rgba(229,169,60,.5);color:var(--gold2);font-size:.7rem;font-weight:800;padding:.08rem .45rem;border-radius:99px;backdrop-filter:blur(6px);font-family:var(--display)}
 .card .typ{position:absolute;top:.45rem;inset-inline-end:.45rem;background:rgba(5,7,13,.72);color:#fff;font-size:.66rem;font-weight:700;padding:.12rem .5rem;border-radius:99px;backdrop-filter:blur(6px)}
+.card .dlbadge{position:absolute;bottom:.45rem;left:.45rem;width:17px;height:17px;box-sizing:border-box;border-radius:5px;border:1px solid rgba(229,169,60,.65);overflow:hidden;background:#101014;box-shadow:0 2px 8px rgba(0,0,0,.5);z-index:2}
+.card .dlbadge img{width:100%;height:100%;display:block;object-fit:cover}
 .card .quick{position:absolute;inset:auto .45rem .45rem;display:flex;gap:.4rem;opacity:0;transform:translateY(6px);transition:.25s}
 .card:hover .quick{opacity:1;transform:none}
 @media(hover:none){.card .quick{opacity:1;transform:none}}
@@ -2207,7 +2209,7 @@ function cardHtml(x, wide) {
   const yr = yearOf(x);
   const yrHtml = yr ? '<span class="yr">' + esc(yr) + '</span>' : '';
   return '<article class="card' + (wide ? ' wide' : '') + '" data-open="' + type + ':' + x.id + '" tabindex="0" role="button" aria-label="' + esc(t) + ' — مشاهده جزئیات">'
-    + '<div class="poster">' + img + rate + typ
+    + '<div class="poster">' + img + rate + typ + (fnDlIconHas(x) ? fnDlBadgeHtml() : '')
     + '</div><h3 class="origline" dir="' + (origLatin ? 'ltr' : 'rtl') + '"><span class="oname' + (origLatin ? ' ltr' : '') + '">' + esc(origName) + '</span>' + yrHtml + '</h3><div class="sub">' + faHtml + subOrigHtml + '</div></article>';
 }
 const itemCache = new Map();
@@ -2619,6 +2621,7 @@ function localSearch(q) {
   }).sort((a, b) => (b.vote_average || 0) - (a.vote_average || 0)).slice(0, 40);
 }
 async function loadHome() {
+  fnAvailEnsure(); /* FN-DL-ICON v1: load the avail-index early so home cards get their download badge */
   let snap;
   try {
     const r = await fetch(SNAP_HOME);
@@ -2862,7 +2865,7 @@ function fnAvailEnsure() {
   try { ctl = new AbortController(); setTimeout(function () { try { ctl.abort(); } catch (e) {} }, 5000); } catch (e) { ctl = null; }
   FN_AVAIL.loading = fetch(url, ctl ? { signal: ctl.signal } : {})
     .then(function (r) { if (!r.ok) throw new Error('avail ' + r.status); return r.json(); })
-    .then(function (j) { FN_AVAIL.idx = j || null; FN_AVAIL.loaded = true; return FN_AVAIL.idx; })
+    .then(function (j) { FN_AVAIL.idx = j || null; FN_AVAIL.loaded = true; try { fnDlIconApply(); } catch (e) {} return FN_AVAIL.idx; })
     .catch(function () { FN_AVAIL.failed = true; FN_AVAIL.loading = null; return null; });
   return FN_AVAIL.loading;
 }
@@ -2873,6 +2876,47 @@ function fnAvailQualifies(x) {
   var im = x.imdb_id || x.imdb || '';
   if (im && idx.imdb) { var m = idx.imdb[String(im)]; if (m) return !!(m[0] || m[1]); }
   return false;
+}
+/* ---------- download badge (FN-DL-ICON v1) ----------
+   The badge on a card means exactly one thing: the title has a DOWNLOAD
+   row in the archive. The ONLY source of truth is the live avail-index:
+   d==1 shows the badge, anything else (d==0, no entry, index not loaded)
+   shows nothing. No guessing, no fallback. The lookup mirrors
+   fnAvailQualifies (tmdb first, then imdb) but tests d alone, not d||p. */
+var FN_DL_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAIAAAC1JZyVAAAFg0lEQVR42n1XS6ssVxld69u7uqqrc07n5kYnGkGNEAcJGQgOFORmIKITR0pmChLzT5wYFH+FAwMOhAhKSExG1xd4J0kGOlAQMffenHtPd1d31d7LwX5U9dFY9Ktqv77H+ta3mtsnnwYAQBIJkAAQBQKCAABE+VKaICg9zY+QJqbHaYezlfB5nkRAym/S0nZlWrkIgsgDzDMhwMopkiJJkJDqOX6xBSE559Zt73xjTOcm2zCvKIaWBzqzQxqncTjuQwhk9RW+LleMq7bbbC4cTSphkXJwchAEQDlw9agzS5z37ap9vHs0jsfiKy2fQTjvN/0lwRCjAEGSAEhIPwBJkKAajnyTrhwyxUjYE5utcyUjhFVn121vZipJZjaenK2tYWOyIznJ/ErJSJ5HZ+zaPtunBAGBMO8bKDLfFujMCBMJZ6xPg5gAqXQAMy4pJg+99yzR8hk9LEhlmc9qf/ZwnPBwCCnYAjadrXx24AyLUEIjSRYPfYlZ3lZ5kmY3QCOGk77w6eblO/1plIC24c/f2r3/j7FbUVGsGEGtnxJTCKAvhUlBlqpmGTAYICOOI579lP/hdy6wEyBs7A8fnO797dS3DICgJfaY0RiLsfAJLfWyxV2pZgkkNU4ar8LjgwBeTHGcRICqeOeihkhVlhBAr2rAx16sReEdnQmQd5lTSmjFG+ekj5jGZP8V1gKI+QBFxOKkztmKi225qFapmkYQNBU88SZ/WFlJg2Mu2GqwOGdbC5qtxAVR1RhfPdXNQMX0yxmdoTGrRZPXGpzBORIIEQta1qKW8/YeJGcUVF9zrYSAj66j97i6jruDmDIuALo+xAePYxSmCRe9eZe7x1luMiUuGbqyNAHBiHHC7a377p31YQjDqBc/vxqnXMhTwNde6C5761bsW/vNH4cPr2LjbRFWFkYCefMYCZU14Bwe7eJLL7bfuLMOVwHSblBqJcMJr37rCUHu0v/67f0vfrf3rjIsM6fOrCXXdX1qeeu2n0EKEDBimvj6O/tnP+G++Jnm4XX0rkCH3A3qW/fLt/Y/eO0+AecSg8yoi9LxOKSzXNuuE/90bZf6whKq3tHIX909PP/Z1fOfW+0Pco4ApoCnLu23fzq9+rMHK8fGMypTWTVT0PE0pM2N5Bm5nDerIDkPQq/85P47fzneurRx0hRw68LevXd65acfmuQ9Y6HcZXEtzbXFrnZWEWUgRqwajFP83o//ffe903Zj297uvnf6/mv3x0lNwxCzhMgBnXvS3DVc1/XJr7ZdW0lODbHLPYZdY8cRb/z+8PUvrT/a6eUf3T8M2nQWIWdYyKClCtLxODD1hMvt7XTMk5dPGW2RRpDYD3F/khESnLPrQ3jmk57E3/8VNmuGKJCS+oZ9x1iARgFgULi6epjI2n8MXYrE4aivvtB988vr40mpQTnDaRSANseKgtrG3rh7ePfecd0ySjdUlwRCS7LRkmONNk7huWeab39lfb2LZgu2ApPEoBAiLjb213+Ob/552HS5PAXOQjF956CB2+0tM1d7XppynKJ3rGhE4fwldCVMAZ03IRZtJRIh6urRgyRmc9ZVnAGlRWdoGyMoxSJflORoghFT0smuYchgm5EsRSlxIC1zWNQ4nUjWLFZhBsLRyCQhSIqGJH5JGBMIxKUMEghO05TXQ1Z4DofhEKIMrCIw2TUrudzbUUQhBEQQYhXuaYS0qHgY9lUYWa4gMoTpenclwcySrK//D2a7EzhApkEyExzLIGlmgB7vHoUw0Yob2+1tZN2EKHnvu65vXINZaZemO3dx/U+dTjBC0zgOw36aJjNWvcPL7W0WnGY5nO1kBRYX/wf0/+WJFGNqFlxK1lI3KrsVJ1LzyCg8q6jZowSz6mqywJwtO0/6/A90LTeLu3vkugAAAABJRU5ErkJggg==';
+function fnDlBadgeHtml() { return '<span class="dlbadge" aria-hidden="true"><img src="' + FN_DL_ICON + '" alt=""></span>'; }
+function fnDlIconHas(x) {
+  var idx = FN_AVAIL.idx; if (!idx || !x) return false;
+  var tid = x.id != null ? x.id : (x.tmdb != null && x.tmdb !== '' ? x.tmdb : null);
+  var t = idx.tmdb && tid != null ? idx.tmdb[String(tid)] : null;
+  if (t) return t[0] === 1;
+  var im = x.imdb_id || x.imdb || '';
+  if (im && idx.imdb) { var m = idx.imdb[String(im)]; if (m) return m[0] === 1; }
+  return false;
+}
+function fnDlIconApply() {
+  if (!FN_AVAIL.loaded || !FN_AVAIL.idx) return;
+  var cards = document.querySelectorAll('.card');
+  for (var i = 0; i < cards.length; i++) {
+    var c = cards[i];
+    if (c.querySelector('.dlbadge')) continue;
+    var poster = c.querySelector('.poster');
+    if (!poster) continue;
+    var has = false;
+    var op = c.getAttribute('data-open');
+    if (op) {
+      var parts = op.split(':');
+      if (parts.length === 2 && parts[1]) has = fnDlIconHas({ id: parts[1] });
+    } else if (c.hasAttribute('data-ls')) {
+      var tm = c.getAttribute('data-ls-tmdb') || '';
+      if (tm) has = fnDlIconHas({ id: tm });
+      else if (typeof FN_LSEARCH !== 'undefined' && FN_LSEARCH.idx) {
+        var e = FN_LSEARCH.idx[+c.getAttribute('data-ls')];
+        if (e) has = fnDlIconHas(e);
+      }
+    }
+    if (has) poster.insertAdjacentHTML('beforeend', fnDlBadgeHtml());
+  }
 }
 function fnAvailFirst50(items, state, isFinal) {
   var list = items || [];
@@ -8829,7 +8873,7 @@ function fnLocalDedupTmdbDom(lr) {
 function fnLocalCardHtml(e) {
   var yr = e.y ? '<span class="yr">' + e.y + '</span>' : '';
   return '<article class="card" data-ls="' + e.i + '" data-ls-tmdb="' + (e.tmdb || '') + '" data-ls-title="' + esc(fnLocalNormTitle(e.t)) + '" data-ls-year="' + (e.y || '') + '" tabindex="0" role="button" aria-label="' + esc(e.t) + ' — مشاهده جزئیات">'
-    + '<div class="poster"><div class="noimg">' + esc(e.t) + '</div><span class="typ">' + (e.type === 'tv' ? 'سریال' : 'فیلم') + '</span></div>'
+    + '<div class="poster"><div class="noimg">' + esc(e.t) + '</div><span class="typ">' + (e.type === 'tv' ? 'سریال' : 'فیلم') + '</span>' + (fnDlIconHas(e) ? fnDlBadgeHtml() : '') + '</div>'
     + '<h3>' + esc(e.t) + ' ' + yr + '</h3>'
     + '<div class="sub"><span>در فهرست Family Night</span></div></article>';
 }
