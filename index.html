@@ -566,6 +566,65 @@ box-shadow:0 0 26px rgba(229,169,60,.28),inset 0 0 14px rgba(0,0,0,.65);animatio
 .dl-card .acts button.adm{border-color:rgba(89,224,255,.45);color:var(--cyan2)}
 .dl-card .acts button.adm img{width:1.05rem;height:1.05rem;vertical-align:-.2rem;margin-inline-end:.15rem}
 .dl-card .acts a:hover,.dl-card .acts button:hover{border-color:var(--gold)}
+/* ---------- download box: visual tiles (title-d) ---------- */
+.fn-dl-head{display:flex;gap:.8rem;align-items:center;background:linear-gradient(135deg,rgba(229,169,60,.16),rgba(229,169,60,.04));border:1px solid rgba(229,169,60,.35);border-radius:1.1rem;padding:.8rem 1rem;margin-bottom:.9rem;flex-wrap:wrap}
+.fn-dl-poster{width:3.4rem;height:5.1rem;border-radius:.6rem;overflow:hidden;flex:none;background:var(--surface3);display:grid;place-items:center}
+.fn-dl-poster img{width:100%;height:100%;object-fit:cover;display:block}
+.fn-dl-initial{font-family:var(--display);font-size:1.6rem;font-weight:800;color:var(--gold2)}
+.fn-dl-hinfo{flex:1;min-width:9rem}
+.fn-dl-hinfo b{display:block;font-size:1rem;line-height:1.6}
+.fn-dl-hinfo span{display:block;font-size:.78rem;color:var(--pearl2);line-height:1.7}
+.fn-dl-tot{text-align:center;flex:none}
+.fn-dl-tot b{font-family:var(--display);font-size:1.05rem;color:var(--gold2);display:block}
+.fn-dl-tot span{font-size:.7rem;color:var(--pearl)}
+.fn-dl-copyall{flex:none;font-size:.75rem;padding:.4rem .9rem;border-radius:99px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--pearl2);min-height:2.2rem;cursor:pointer;font-family:inherit}
+.fn-dl-sec{display:flex;align-items:center;gap:.5rem;margin:.2rem 0 .6rem;font-size:.95rem;font-weight:800;color:var(--gold2)}
+.fn-dl-sec .fn-dl-cnt{margin-inline-start:auto;font-size:.75rem;color:var(--pearl);font-weight:600}
+.fn-dl-tiles{display:flex;flex-direction:column;gap:.6rem;margin-bottom:1rem}
+.fn-dl-tile{display:flex;gap:.8rem;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:1rem;padding:.55rem .8rem;cursor:pointer}
+.fn-dl-tile.sel{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
+.fn-dl-thumb{width:2.6rem;height:3.9rem;border-radius:.5rem;overflow:hidden;flex:none;background:var(--surface3);display:grid;place-items:center}
+.fn-dl-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.fn-dl-thumb .fn-dl-initial{font-size:1.2rem}
+.fn-dl-tinfo{flex:1;min-width:0}
+.fn-dl-tinfo>b{display:block;font-size:1.05rem;font-family:var(--display);line-height:1.5}
+.fn-dl-tline{display:flex;gap:.45rem;align-items:center;flex-wrap:wrap;margin-top:.15rem}
+.fn-dl-qchip{background:var(--gold);color:#231700;font-family:var(--display);font-weight:800;font-size:.78rem;border-radius:99px;padding:.1rem .6rem}
+.fn-dl-size{color:var(--gold2);font-family:var(--display);font-weight:700;font-size:.82rem}
+.fn-dl-grp{color:var(--pearl2);font-size:.78rem}
+.fn-dl-seasons{display:flex;gap:.45rem;flex-wrap:wrap;margin-bottom:.8rem}
+.fn-dl-season{padding:.4rem 1rem;border-radius:99px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--pearl2);font-size:.82rem;font-weight:700;min-height:2.3rem;cursor:pointer;font-family:inherit}
+.fn-dl-season.on{background:var(--gold);border-color:var(--gold);color:#231700}
+.fn-dl-eps{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:1rem}
+.fn-dl-eps[hidden]{display:none}
+.fn-dl-ep{background:var(--surface);border:1px solid var(--line);border-radius:1rem;overflow:hidden;cursor:pointer}
+.fn-dl-ep.sel{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
+.fn-dl-epposter{display:block;height:5.2rem;overflow:hidden;background:var(--surface3)}
+.fn-dl-epposter img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.fn-dl-epposter .fn-dl-initial{font-size:1.4rem}
+.fn-dl-epline{display:flex;align-items:center;gap:.4rem;padding:.5rem .7rem 0}
+.fn-dl-epline b{font-size:.9rem}
+.fn-dl-epline .fn-dl-size{margin-inline-start:auto}
+.fn-dl-epgrp{display:block;padding:.1rem .7rem .5rem;font-size:.72rem;color:var(--pearl2)}
+.fn-dl-epacts{display:flex;gap:.4rem;padding:0 .7rem .6rem}
+.fn-dl-epbtn{width:2rem;height:2rem;border-radius:50%;border:1px solid var(--gold);background:transparent;display:grid;place-items:center;cursor:pointer;padding:0}
+.fn-dl-epbtn svg{width:1rem;height:1rem;fill:var(--gold)}
+.fn-dl-epbtn img{width:1.25rem;height:1.25rem}
+.fn-dl-sheet{background:var(--surface2);border:1px solid var(--line);border-radius:1.1rem;padding:.7rem .9rem 1rem}
+.fn-dl-grip{display:block;width:2.4rem;height:.28rem;border-radius:99px;background:var(--pearl);opacity:.5;margin:0 auto .6rem}
+.fn-dl-sum{font-weight:800;font-size:.95rem;text-align:center;line-height:1.7}
+.fn-dl-sub{font-size:.75rem;color:var(--pearl2);text-align:center;line-height:1.7;margin-bottom:.6rem}
+.fn-dl-qchips{display:flex;gap:.4rem;justify-content:center;flex-wrap:wrap;margin-bottom:.7rem}
+.fn-dl-qchips[hidden]{display:none}
+.fn-dl-qchipbtn{padding:.3rem .9rem;border-radius:99px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--pearl2);font-family:var(--display);font-weight:700;font-size:.8rem;min-height:2.1rem;cursor:pointer}
+.fn-dl-qchipbtn.on{background:var(--gold);border-color:var(--gold);color:#231700}
+.fn-dl-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.fn-dl-act{display:flex;flex-direction:column;align-items:center;gap:.35rem;background:var(--surface);border:1px solid var(--line);border-radius:.9rem;padding:.8rem .4rem .65rem;color:var(--pearl2);font-size:.8rem;font-weight:700;cursor:pointer;font-family:inherit;min-height:4.6rem}
+.fn-dl-act svg{width:1.5rem;height:1.5rem;fill:currentColor}
+.fn-dl-act img{width:1.6rem;height:1.6rem}
+.fn-dl-act.play svg{fill:var(--gold)}
+.fn-dl-act.sel{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold);color:var(--gold2)}
+
 /* AI assistant */
 .aibox{background:var(--surface);border:1px solid var(--line);border-radius:1.1rem;overflow:hidden}
 .aibox .ai-head{display:flex;align-items:center;gap:.6rem;padding:.8rem 1rem;background:linear-gradient(135deg,rgba(99,102,241,.22),rgba(99,102,241,.05));border-bottom:1px solid var(--line)}
@@ -4166,7 +4225,7 @@ async function openDetail(type, id) {
     if (om && om.imdbRating && om.imdbRating !== 'N/A') { o.imdbRating = om.imdbRating; const el = $('#d-rating'); if (el) el.textContent = 'IMDb ' + om.imdbRating + ' ★'; }
   }).catch(() => {});
   if (type === 'tv') loadDetailEpisodes(d, token);
-  loadDownloadBox(imdbId, token, d.title || d.name || '', (d.release_date || d.first_air_date || '').slice(0, 4), (type === 'tv' ? 'tv:' : 'movie:') + id);
+  loadDownloadBox(imdbId, token, d.title || d.name || '', (d.release_date || d.first_air_date || '').slice(0, 4), (type === 'tv' ? 'tv:' : 'movie:') + id, IMG(d.poster_path, 'w342'));
 }
 /* Detail sheet built from the local FN catalog entry (used when the
    worker cannot be reached from this origin). Same tabs and choices;
@@ -4223,12 +4282,12 @@ async function hydrateLocalDetail(type, id, token, item, o) {
   let imdbId = '';
   try { const ex = await tmdb(type + '/' + id + '/external_ids', {}); imdbId = (ex && ex.imdb_id) || ''; } catch (e) {}
   if (!alive()) return;
-  if (imdbId) { loadDownloadBox(imdbId, token, '', '', (type === 'tv' ? 'tv:' : 'movie:') + id); return; }
+  if (imdbId) { loadDownloadBox(imdbId, token, '', '', (type === 'tv' ? 'tv:' : 'movie:') + id, IMG(item.poster_path, 'w342')); return; }
   const body = $('#d-dl-body'); if (body) body.innerHTML = '<div class="state"><div class="spin"></div>در حال جستجوی این عنوان در آرشیو دانلود Family Night…</div>';
   if (!alive()) return;
   /* loadDownloadBox runs the whole fallback chain itself: archive title
      search, then the TMDB title index, then the "no link" message */
-  loadDownloadBox('', token, origOf(item) || titleOf(item), yearOf(item), (type === 'tv' ? 'tv:' : 'movie:') + id);
+  loadDownloadBox('', token, origOf(item) || titleOf(item), yearOf(item), (type === 'tv' ? 'tv:' : 'movie:') + id, IMG(item.poster_path, 'w342'));
 }
 function normTitle(s) { return String(s || '').toLowerCase().replace(/[^a-z0-9\u0600-\u06FF]+/g, ' ').trim(); }
 async function findImdbByTitle(title, year) {
@@ -4606,52 +4665,229 @@ function parseDlSpecs(x) {
 function sizeToMB(s) { const m = String(s || '').match(/([\d.]+)\s*(GB|MB)/i); if (!m) return 0; return m[2].toUpperCase() === 'GB' ? parseFloat(m[1]) * 1024 : parseFloat(m[1]); }
 function fmtTotalMB(mb) { return mb >= 1024 ? (mb / 1024).toFixed(2) + ' GB' : Math.round(mb) + ' MB'; }
 function resRank(r) { return ({ '2160p': 6, '1440p': 5, '1080p': 4, '720p': 3, '576p': 2, '480p': 1, '360p': 0 })[r] != null ? ({ '2160p': 6, '1440p': 5, '1080p': 4, '720p': 3, '576p': 2, '480p': 1, '360p': 0 })[r] : -1; }
-function dlRowHtml(x) {
-  const sp = parseDlSpecs(x);
-  const pills = []
-    .concat(sp.source ? ['<span class="spec-pill">' + esc(sp.source) + '</span>'] : [])
-    .concat(sp.codec ? ['<span class="spec-pill">' + esc(sp.codec) + '</span>'] : [])
-    .concat(sp.enc ? ['<span class="spec-pill">انکودر: ' + esc(sp.enc) + '</span>'] : [])
-    .concat(sp.ext ? ['<span class="spec-pill">' + esc(sp.ext) + '</span>'] : [])
-    .concat(x.size ? ['<span class="spec-pill size">' + esc(x.size) + '</span>'] : []).join('');
-  return '<div class="dl-card" data-res="' + esc(sp.res) + '" data-codec="' + esc(sp.codec) + '">'
-    + '<span class="res">' + esc(sp.res || '—') + '<small>' + esc(sp.source || 'کیفیت') + '</small></span>'
-    + '<span class="specs"><span class="l1">' + esc(x.quality) + '</span><span class="l2">' + pills + '</span></span>'
-    + '<span class="acts">'
-    + '<a class="main" href="' + esc(x.url) + '" target="_blank" rel="noopener" download><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4.5-4.5M12 15 7.5 10.5"/><path d="M4 19h16"/></svg> دانلود</a>'
-    + '<button class="adm" data-dl-adm="' + esc(x.url) + '"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAIoklEQVR42u1ZbYycVRV+zr33na+dbrtFQmilxUQtlMQEBf+0ODvyEfmItJTdmBLQxthCwIhKsE1r3k6tYvxjIigpRFLUIHZowX7hR9vZSWrByIaqtdigUIQilo/dmc68M/O+957jj9ltu9vZ2ba7lJL0JPfP3L1vzsdzznnOWeCcfLBCk/ER34dCd0ad0qO+Iudy4HMRmKjncznwqmezcxIJnW1UHTumtpHQSjjeoVW97gprry8cGP7G6epgxroQgJDJ6L4Wd90A+gD8ekaFgH7miLLJ8+MPs4uQ0O194pwgOcVDcKR2F4AD6M4o5IqTbwABgmLRtnvc09ejsawfRFSrlSPbCKxt980hsUrBEFFtMiBkWnmeANm/4MrzYjbRw3Aj7hVINBRFkMar9w1uyANVCCuQNgBA1N4AEQAEA2H1vhgA3yfkcmI4Oasrph9m0aMNRIwIb4cRLvhfZRuAKtHkVLNJhZAj2FIUWRYZDS7RBCLIAHtaPugqNHYOMBNArSAmBCIZH+tnRBQ+5HLOgLM2B86o+AWD7u5md2zVNbvhmml3thqQy1rkxro7yyOw/+1upR59YjFMrBO2LhCi4yq2IJYiDqpbcNesQ5DhAngWGCCkCAAOVy9WJHgQ6a7pCGvA8VxQGEikoRvVVx1wCHkoYCQ1UADgA0r85gH6lPhQ1o3f6o2KlABKsUywE8t7qAxYBKUQ1QF79ASlEJUBC6GwLYRyAOeOYq3JDF/6ImqQtjxcytN1QAAvT1IYmxip1yAyAPiEEBAptKEqRgB66fr5n5iehG0wk4XSrs5OoD/ehmpDAD3toL70ravnv/PEIZ5ZmS0AhHCGaZEhQP6tZLEWzw9t1CARQ5pAjomH8mkUQMg2p4WpsQbvCTXkkn2i+mY6xIX0yYKJSMj3ofrDg4qUHHPLKEeNa4D4vgKw5pX+Hdd0Gm9eKYpYUzOMAkBx87RUTJH2LKBPaxxRYXMSWxvgkbsFEmsm7dEIEojsuJ22yeFzOd5307zF2rkXY0pNi5gZREoJUEsC9SRBW0DUSLeIgsQTQJAaq820rj/CAnE8Y+Vvr/1YjabEf/nu6x7rJCCNIc8rGApR5SmoIdUWlAQA0tOjKZ93B26ct3CqZzZVrbVMZLQDqmnCllsMqmmCsa0jITRGhNob4kSaZguUBjXxKiAYhDjC07H+nTVcNrOU13jv6sbSi3dhg2j00olllPJ5J5mMmbPtT08PRvbBabGYAYt1Bpg6KMjssGAFWAOwApweeU6riBJppWCUgtHkSMNCwcEggiLGM4P3YNDOgKYQFvokyFyx6KSnR8+ZWf/2YBj1pz1j4MTVE8Dsg4J5fRZRrJkPJCPP6ZV+QAQiAhEQBASGRlwF2F76Kg7Wr4CnjoDbKD/CAAIEc+cKPdIfhRHfFjFXPKVADKklgU+9yLjsr4xaqmnEJK51CAAYGh2qhD9Xb8BfKjfDU6Vjyisi+KIwAAVfjp1We6FCJmOyxaI9cP28O7oS3uPlKLLDkxkJsGWRh0MziRN1kKjJKfoMjQRV8Fo4F4+/+z00536GAIx4h6Ja+Sq7bPbuk15sSSZjqFi0L98477GuuLdkIIwsiIyxQDkN+d3iOJXjArITX04OV5yAp+DRt3+EkjsfmhoQqGYnjqWURPU7WPRzYGvgsYOLSQzOC9+48EDrMlssug09PTpF9XvKoX0ppbUBC4dG+MKKoit3Rn9rGARGE0MgE8MQgyDYOHAvBu0MGKoPKQ8ApBDWQCLrtdh/aiX/0Jb26Y70y07k62NOZDRU7Wdu7Q8i5sWOJdSKOAFFlZgczj5U/ZxhfCeWNkpGscNThU5SVfD78pfxSv2zbZKWFBQ1LxLpGIIj+53gPqxutqaW0pvPu0ImY+Zs37M3cPLNTs8zioisc7cT9Zd++IVdD1VL4a9SnZ4Rhj1l5UVLhyrhheA6PFdZBE+V21QcAYQZ2mNwVFcu/BKWzQyQz6u2nTpbLNpCJmMu2b77ZwON6Nmacz/55NY9f3jha5/xfPFVUK8trVejvfEObUTEnbzyhIQO6D/hpdg2eCc01SDjJxMjkTbSCO6Nls36O/yCQW+vG5fzdxeLTgCKp+yi8lv1+3xAXfFIfwQAP+59vsYNudVFPKA9RdIkMxhntSjGCGouGT018C1ESDLBtTdAxKKjy6Ay+CQvm70OvhjksnbC6/UNG3p0b2/erXo6e4OXNtuiBluI6DbfFRC5WEIbrx5cu+KNP17rdfH9XBqwQ/NAixfMiKcUovAVF/cux7/Oq2A1ZJh9qVNonCSjFOvtzTu/kDFrFxa2h0G0MjnFGJGxk1oELjnFmFrFfXfFTbt3ZOJP+q5c2otE2qAlBEWgjIDFEdvbcPtHyrgMI+ZidQotU6gFRc9li84vZMz3b+77QVAKn0p1eoblxKRmgU11eiYYDDc+sGDn2p4Nfqy4ZEmdw8ZiuCiA9gCR0QOBQ8dULWGw3C696Hn4YkaTOT0ZnbRv/WsC+EpNf3V7JFgQS+gLXMSOhucKERdPGhPW3X5dczd1z/2K/endOZdDweD+yw/Tjd94k1KdC2Eb7qhTmR3SXUYqA9t42UX3NHFP9n3ZzBFBsBrI9RYrlu0idnJEe4qGyZr2FLGTI9KIbs31FitYPfQml7XwxfDSj65HZfAX6OgyELHNDpxQaFTe5JpagubQxSdNJU5/wZYxuWzRrtiUvSXV6W1s1KwFgHjSmKAaLXrg5sKm4b85DuaEfF6hflVCR+iHic9BWIsQS3qola9xd168s9Uc8D5uCTMGAFY+071mbeE6WVu4TlZu/vya4+9alDMNAN66Q5/Wjx2u6980hNa9vrrJLuWM765oWNFVm7O7Vm3OFo5TntruRwGoda+tUD//755jv8mZ/++PDHWl5Vvndy3fOr/r+N/ah89v8vyH9qWPwuucTDASJ+X5Ex+e8/yHRv4Pdkxbb9FEcCwAAAAASUVORK5CYII=" alt="">دانلود با ADM</button>'
-    + '<button data-dl-copy="' + esc(x.url) + '">کپی لینک</button>'
-    + '<button data-dl-play="' + esc(x.url) + '">پخش با پلیر</button>'
-    + '</span></div>';
+/* ---------- download box: visual tiles (title-d) ----------
+   Replaces the old row list (dlRowHtml / dlGroupHtml / wireDlButtons).
+   Film: one tile per link, size largest -> smallest, the work's cover
+   + big title on every tile, gold quality chip + size + group.
+   Series: season chips + a 2-col grid of episode tiles (cover on top,
+   quick play + ADM), action sheet with quality chips per episode.
+   Selection: NO permanent gold outline anywhere — the tile the user
+   taps turns gold (selected quality / episode tile, and the tapped
+   action tile). Icons: real ADM logo (same asset as the old ADM
+   button) + real Chrome logo, both inline base64; copy/play are
+   inline SVG. */
+var FN_DL_ADM_ICON = 'data:image/png;base64,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';
+var FN_DL_CHROME_ICON = 'data:image/png;base64,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';
+var FN_DL_COPY_SVG = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>';
+var FN_DL_PLAY_SVG = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+function dlPosterHtml(posterUrl, title) {
+  if (posterUrl) return '<img loading="lazy" decoding="async" src="' + esc(posterUrl) + '" alt="">';
+  var ch = (String(title || 'F').trim().charAt(0) || 'F');
+  return '<span class="fn-dl-initial">' + esc(ch) + '</span>';
 }
-function sizeSortMB(x) { return x.size ? sizeToMB(x.size) : Infinity; }
-function dlGroupHtml(label, links) {
-  if (!links.length) return '';
-  const sorted = links.slice().sort((a, b) => sizeSortMB(a) - sizeSortMB(b) || resRank(parseDlSpecs(a).res) - resRank(parseDlSpecs(b).res) || String(a.quality || '').localeCompare(String(b.quality || '')));
-  const bySeason = {};
-  sorted.forEach(x => { const k = x.season || ''; (bySeason[k] = bySeason[k] || []).push(x); });
-  const allUrls = sorted.map(x => x.url).join('\n');
-  let out = '<div class="dl-group"><h3>' + label + '<span class="cnt">' + sorted.length + ' لینک</span><button class="copyall" data-dl-copy="' + esc(allUrls) + '">کپی همه لینک‌ها</button></h3>';
-  Object.keys(bySeason).forEach(s => {
-    if (s) out += '<div class="dl-season">فصل ' + esc(s) + '</div>';
-    out += bySeason[s].map(dlRowHtml).join('');
-  });
-  return out + '</div>';
+function dlLinkSel(l) {
+  return { url: l.x.url, res: l.sp.res, size: l.x.size, group: l.label, source: l.sp.source, codec: l.sp.codec, enc: l.sp.enc, ext: l.sp.ext };
 }
-function wireDlButtons(root) {
-  if (!root) return;
-  root.querySelectorAll('[data-dl-copy]').forEach(b => b.onclick = () => copyText(b.dataset.dlCopy));
-  root.querySelectorAll('[data-dl-play]').forEach(b => b.onclick = () => openInPlayer(b.dataset.dlPlay));
-  root.querySelectorAll('[data-dl-adm]').forEach(b => b.onclick = () => admDownload(b.dataset.dlAdm));
-  root.querySelectorAll('[data-dlfilter]').forEach(b => b.onclick = () => {
-    const f = b.dataset.dlfilter;
-    root.querySelectorAll('[data-dlfilter]').forEach(x => x.classList.toggle('on', x === b));
-    root.querySelectorAll('.dl-card').forEach(c => {
-      const show = !f || c.dataset.res === f || (f === 'x265' && /x265/.test(c.dataset.codec || ''));
-      c.style.display = show ? '' : 'none';
+function dlSortLinksDesc(a, b) {
+  return sizeToMB(b.x.size) - sizeToMB(a.x.size)
+    || resRank(parseDlSpecs(b.x).res) - resRank(parseDlSpecs(a.x).res)
+    || String(a.x.quality || '').localeCompare(String(b.x.quality || ''));
+}
+/* opts: { poster, title, meta } — meta is plain text (year • kind • source). */
+function dlTilesHtml(rec, opts) {
+  var o = opts || {};
+  var title = o.title || rec.title || 'Family Night';
+  var groups = [
+    { label: 'زیرنویس فارسی', links: (rec.groups.softsub || []) },
+    { label: 'دوبله فارسی', links: (rec.groups.dubbed || []) },
+    { label: 'بدون زیرنویس', links: (rec.groups.nosub || []) }
+  ];
+  var all = [];
+  groups.forEach(function (g) { g.links.forEach(function (x) { all.push({ x: x, label: g.label, sp: parseDlSpecs(x) }); }); });
+  var isSeries = all.some(function (r) { return r.x.season || r.x.episode; });
+  var totalMB = all.reduce(function (s, r) { return s + sizeToMB(r.x.size); }, 0);
+  var allUrls = all.map(function (r) { return r.x.url; });
+  var out = '<div class="fn-dl-head">'
+    + '<span class="fn-dl-poster">' + dlPosterHtml(o.poster || '', title) + '</span>'
+    + '<span class="fn-dl-hinfo"><b>' + esc(title) + '</b>'
+    + (o.meta ? '<span>' + esc(o.meta) + '</span>' : '')
+    + (rec.rate ? '<span>IMDb ' + esc(rec.rate) + ' ★</span>' : '')
+    + '</span>'
+    + '<span class="fn-dl-tot"><b>' + all.length + '</b><span>لینک دانلود</span></span>'
+    + (totalMB ? '<span class="fn-dl-tot"><b>' + fmtTotalMB(totalMB) + '</b><span>حجم مجموع</span></span>' : '')
+    + '<button class="fn-dl-copyall" data-dl-copyall>کپی همه لینک‌ها</button>'
+    + '</div>';
+  var ctx = { title: title, links: [], eps: {}, firstEp: '', allUrls: allUrls, sel: null, epLinks: null, epKey: '' };
+  if (isSeries) {
+    out += dlSeriesHtml(groups, o.poster || '', title, ctx);
+  } else {
+    var rows = all.slice().sort(dlSortLinksDesc);
+    ctx.links = rows;
+    out += '<div class="fn-dl-sec"><span>لینک‌های دانلود</span><span class="fn-dl-cnt">' + rows.length + ' لینک</span></div><div class="fn-dl-tiles">';
+    rows.forEach(function (r, i) {
+      out += '<div class="fn-dl-tile" data-dl-i="' + i + '">'
+        + '<span class="fn-dl-thumb">' + dlPosterHtml(o.poster || '', title) + '</span>'
+        + '<span class="fn-dl-tinfo"><b>' + esc(title) + '</b>'
+        + '<span class="fn-dl-tline"><span class="fn-dl-qchip">' + esc(r.sp.res || '—') + '</span>'
+        + '<span class="fn-dl-size">' + esc(r.x.size || '') + '</span>'
+        + '<span class="fn-dl-grp">' + esc(r.label) + '</span></span></span></div>';
+    });
+    out += '</div>';
+  }
+  out += '<div class="fn-dl-sheet"><span class="fn-dl-grip"></span>'
+    + '<div class="fn-dl-sum"></div><div class="fn-dl-sub"></div>'
+    + '<div class="fn-dl-qchips" hidden></div>'
+    + '<div class="fn-dl-grid">'
+    + '<button class="fn-dl-act" data-dl-act="copy">' + FN_DL_COPY_SVG + '<span>کپی لینک</span></button>'
+    + '<button class="fn-dl-act" data-dl-act="adm"><img src="' + FN_DL_ADM_ICON + '" alt="ADM"><span>دانلود با ADM</span></button>'
+    + '<button class="fn-dl-act" data-dl-act="browser"><img src="' + FN_DL_CHROME_ICON + '" alt="Chrome"><span>دانلود با مرورگر</span></button>'
+    + '<button class="fn-dl-act play" data-dl-act="play">' + FN_DL_PLAY_SVG + '<span>پخش آنلاین</span></button>'
+    + '</div></div>';
+  return { html: out, ctx: ctx };
+}
+function dlSeriesHtml(groups, posterUrl, title, ctx) {
+  var eps = {};
+  groups.forEach(function (g) {
+    g.links.forEach(function (x) {
+      var s = String(x.season || ''), e = String(x.episode || '');
+      if (!s && !e) return;
+      var k = s + '|' + e;
+      var rec0 = eps[k] || (eps[k] = { season: s, episode: e, links: [] });
+      rec0.links.push({ x: x, label: g.label, sp: parseDlSpecs(x) });
     });
   });
+  var seasons = [];
+  Object.keys(eps).forEach(function (k) { var s = eps[k].season; if (seasons.indexOf(s) < 0) seasons.push(s); });
+  seasons.sort(function (a, b) { return (parseInt(a, 10) || 0) - (parseInt(b, 10) || 0); });
+  ctx.eps = eps;
+  var out = '<div class="fn-dl-sec"><span>قسمت‌ها</span></div><div class="fn-dl-seasons">';
+  seasons.forEach(function (s, i) {
+    out += '<button class="fn-dl-season' + (i === 0 ? ' on' : '') + '" data-dl-season="' + esc(s) + '">فصل ' + esc(s) + '</button>';
+  });
+  out += '</div>';
+  seasons.forEach(function (s, si) {
+    var list = Object.keys(eps).filter(function (k) { return eps[k].season === s; })
+      .map(function (k) { return eps[k]; })
+      .sort(function (a, b) { return (parseInt(a.episode, 10) || 0) - (parseInt(b.episode, 10) || 0); });
+    if (si === 0 && list.length) ctx.firstEp = s + '|' + list[0].episode;
+    out += '<div class="fn-dl-eps" data-dl-eps="' + esc(s) + '"' + (si === 0 ? '' : ' hidden') + '>';
+    list.forEach(function (ep) {
+      ep.links.sort(dlSortLinksDesc);
+      var top = ep.links[0];
+      out += '<div class="fn-dl-ep" data-dl-ep="' + esc(s + '|' + ep.episode) + '">'
+        + '<span class="fn-dl-epposter">' + dlPosterHtml(posterUrl, title) + '</span>'
+        + '<span class="fn-dl-epline"><b>قسمت ' + esc(ep.episode) + '</b><span class="fn-dl-size">' + esc(top.x.size || '') + '</span></span>'
+        + '<span class="fn-dl-epgrp">' + esc(top.label) + '</span>'
+        + '<span class="fn-dl-epacts">'
+        + '<button class="fn-dl-epbtn" data-dl-epplay="' + esc(s + '|' + ep.episode) + '" aria-label="پخش">' + FN_DL_PLAY_SVG + '</button>'
+        + '<button class="fn-dl-epbtn" data-dl-epadm="' + esc(s + '|' + ep.episode) + '" aria-label="ADM"><img src="' + FN_DL_ADM_ICON + '" alt="ADM"></button>'
+        + '</span></div>';
+    });
+    out += '</div>';
+  });
+  return out;
 }
+function wireDlTiles(root, ctx) {
+  if (!root || !ctx || root._fnDlWired) return;
+  root._fnDlWired = true;
+  function markAction(act) {
+    root.querySelectorAll('.fn-dl-act').forEach(function (b) { b.classList.toggle('sel', !!act && b.dataset.dlAct === act); });
+  }
+  function updateSheet() {
+    var s = ctx.sel; if (!s) return;
+    var sum = root.querySelector('.fn-dl-sum'), sub = root.querySelector('.fn-dl-sub'), chips = root.querySelector('.fn-dl-qchips');
+    if (sum) sum.textContent = ctx.title + ' • ' + (s.res || '—') + (s.size ? ' • ' + s.size : '');
+    if (sub) sub.textContent = [s.group, s.source, s.codec, s.enc, s.ext].filter(Boolean).join(' • ');
+    if (chips) {
+      if (ctx.epLinks && ctx.epLinks.length > 1) {
+        var resList = [];
+        ctx.epLinks.forEach(function (l) { if (l.sp.res && resList.indexOf(l.sp.res) < 0) resList.push(l.sp.res); });
+        resList.sort(function (a, b) { return resRank(b) - resRank(a); });
+        if (resList.length > 1) {
+          chips.hidden = false;
+          chips.innerHTML = resList.map(function (r) {
+            return '<button class="fn-dl-qchipbtn' + (r === s.res ? ' on' : '') + '" data-dl-q="' + esc(r) + '">' + esc(r) + '</button>';
+          }).join('');
+          chips.querySelectorAll('[data-dl-q]').forEach(function (b) {
+            b.onclick = function () {
+              var cand = ctx.epLinks.filter(function (l) { return l.sp.res === b.dataset.dlQ; });
+              cand.sort(dlSortLinksDesc);
+              if (cand.length) { ctx.sel = dlLinkSel(cand[0]); updateSheet(); }
+            };
+          });
+          return;
+        }
+      }
+      chips.hidden = true; chips.innerHTML = '';
+    }
+  }
+  function selectFilm(i) {
+    if (!ctx.links[i]) return;
+    ctx.sel = dlLinkSel(ctx.links[i]);
+    ctx.epLinks = null; ctx.epKey = '';
+    root.querySelectorAll('.fn-dl-tile').forEach(function (t) { t.classList.toggle('sel', +t.dataset.dlI === i); });
+    markAction(null);
+    updateSheet();
+  }
+  function selectEp(key) {
+    var ep = ctx.eps[key]; if (!ep || !ep.links.length) return;
+    ctx.epKey = key;
+    ctx.epLinks = ep.links.slice().sort(dlSortLinksDesc);
+    ctx.sel = dlLinkSel(ctx.epLinks[0]);
+    root.querySelectorAll('.fn-dl-ep').forEach(function (t) { t.classList.toggle('sel', t.dataset.dlEp === key); });
+    markAction(null);
+    updateSheet();
+  }
+  function epTopLink(key) {
+    var ep = ctx.eps[key];
+    if (!ep || !ep.links.length) return null;
+    return ep.links.slice().sort(dlSortLinksDesc)[0].x.url;
+  }
+  root.querySelectorAll('.fn-dl-tile').forEach(function (t) {
+    t.onclick = function () { selectFilm(+t.dataset.dlI); };
+  });
+  root.querySelectorAll('.fn-dl-ep').forEach(function (t) {
+    t.onclick = function () { selectEp(t.dataset.dlEp); };
+  });
+  root.querySelectorAll('[data-dl-epplay]').forEach(function (b) {
+    b.onclick = function (ev) {
+      ev.stopPropagation();
+      var u = epTopLink(b.dataset.dlEpplay);
+      if (u) { markAction('play'); openInPlayer(u); }
+    };
+  });
+  root.querySelectorAll('[data-dl-epadm]').forEach(function (b) {
+    b.onclick = function (ev) {
+      ev.stopPropagation();
+      var u = epTopLink(b.dataset.dlEpadm);
+      if (u) { markAction('adm'); admDownload(u); }
+    };
+  });
+  root.querySelectorAll('[data-dl-season]').forEach(function (b) {
+    b.onclick = function () {
+      root.querySelectorAll('[data-dl-season]').forEach(function (x) { x.classList.toggle('on', x === b); });
+      root.querySelectorAll('.fn-dl-eps').forEach(function (g) { g.hidden = g.dataset.dlEps !== b.dataset.dlSeason; });
+      var first = root.querySelector('.fn-dl-eps[data-dl-eps="' + b.dataset.dlSeason + '"] .fn-dl-ep');
+      if (first) selectEp(first.dataset.dlEp);
+    };
+  });
+  root.querySelectorAll('[data-dl-act]').forEach(function (b) {
+    b.onclick = function () {
+      var s = ctx.sel; if (!s) return;
+      markAction(b.dataset.dlAct);
+      if (b.dataset.dlAct === 'copy') copyText(s.url);
+      else if (b.dataset.dlAct === 'adm') admDownload(s.url);
+      else if (b.dataset.dlAct === 'browser') window.open(s.url, '_blank');
+      else if (b.dataset.dlAct === 'play') openInPlayer(s.url);
+    };
+  });
+  var ca = root.querySelector('[data-dl-copyall]');
+  if (ca) ca.onclick = function () { copyText(ctx.allUrls.join('\n')); };
+  /* the sheet needs a current selection on open: first (largest) tile */
+  if (ctx.links.length) selectFilm(0);
+  else if (ctx.firstEp) selectEp(ctx.firstEp);
+}
+
 function admDownload(url) {
   const ua = navigator.userAgent || '';
   if (/Android/i.test(ua)) {
@@ -4666,7 +4902,7 @@ function admDownload(url) {
   copyText(url);
   toast('لینک کپی شد — آن را در ADM پیست کنید تا دانلود شروع شود');
 }
-async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey) {
+async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUrl) {
   const body = $('#d-dl-body'); if (!body) return;
   if (!imdbId && fbTitle) {
     /* the worker (TMDB external_ids) is blocked without VPN, so no IMDb
@@ -4697,24 +4933,11 @@ async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey) {
     const rec = resolved.rec;
     const srcNote = resolved.src === 'old' ? ' <span style="color:var(--gold2)">(از آرشیو قبلی)</span>' : resolved.src === 'both' ? ' <span style="color:var(--gold2)">(آرشیو جدید + قبلی)</span>' : '';
     if (!rec || (!rec.groups.softsub.length && !rec.groups.dubbed.length && !rec.groups.nosub.length)) { body.innerHTML = '<div class="state"><b>فعلاً لینک دانلود رایگانی برای این اثر نیست.</b><br>از «پخش آنلاین» می‌توانید همین حالا تماشا کنید.</div>'; return; }
-    const all = rec.groups.softsub.concat(rec.groups.dubbed, rec.groups.nosub);
-    const totalMB = all.reduce((s, x) => s + sizeToMB(x.size), 0);
-    const ress = [...new Set(all.map(x => parseDlSpecs(x).res).filter(Boolean))].sort((a, b) => resRank(b) - resRank(a));
-    const has265 = all.some(x => /x265/.test(parseDlSpecs(x).codec));
-    body.innerHTML =
-      '<div class="dlbox-head"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4.5-4.5M12 15 7.5 10.5"/><path d="M4 19h16"/></svg></span>'
-      + '<div><b>' + esc(rec.title || 'آرشیو دانلود Family Night') + srcNote + '</b><p>کیفیت‌ها و انکودهای موجود با حجم و مشخصات کامل — دانلود مستقیم با مرورگر، ارسال به ADM یا کپی لینک.'
-      + (rec.rate ? ' امتیاز IMDb این اثر: <b class="num" style="color:var(--gold2)">' + esc(rec.rate) + ' ★</b>' : '') + '</p></div>'
-      + '<span class="tot"><b>' + all.length + '</b><span>لینک دانلود</span></span>'
-      + (totalMB ? '<span class="tot"><b>' + fmtTotalMB(totalMB) + '</b><span>حجم مجموع نسخه‌ها</span></span>' : '')
-      + '</div>'
-      + '<div class="dl-filters"><button class="chip on" data-dlfilter="">همه کیفیت‌ها</button>'
-      + ress.map(r => '<button class="chip" data-dlfilter="' + r + '">' + r + '</button>').join('')
-      + (has265 ? '<button class="chip" data-dlfilter="x265">فقط x265 / HEVC</button>' : '') + '</div>'
-      + dlGroupHtml('زیرنویس فارسی چسبیده (SoftSub)', rec.groups.softsub)
-      + dlGroupHtml('دوبله فارسی (Dubbed)', rec.groups.dubbed)
-      + dlGroupHtml('بدون زیرنویس فارسی (NoSub)', rec.groups.nosub);
-    wireDlButtons(body);
+    var srcLabel = resolved.src === 'old' ? 'آرشیو قبلی' : resolved.src === 'both' ? 'آرشیو جدید + قبلی' : '';
+    var dlMeta = [fbYear || '', (tmdbKey && tmdbKey.indexOf('tv:') === 0) ? 'سریال' : 'فیلم', srcLabel].filter(Boolean).join(' • ');
+    var dlBuilt = dlTilesHtml(rec, { poster: posterUrl || '', title: fbTitle || rec.title, meta: dlMeta });
+    body.innerHTML = dlBuilt.html;
+    wireDlTiles(body, dlBuilt.ctx);
   } catch (e) {
     if (token === detailToken) body.innerHTML = '<div class="state">دریافت لینک‌های دانلود از آرشیو ممکن نشد؛ اتصال را بررسی و دوباره تلاش کنید.</div>';
   }
@@ -5622,10 +5845,35 @@ function tvBaseList() { if (tvLangCode && tvLangList) return tvLangList; return 
    a background prefetch starts while the app is idle, so by the time
    the reader opens تلویزیون زنده the list — and the first logos,
    warmed into the image cache — are already there. */
+/* Local TV logos: every channel logo is mirrored into the repo
+   (download-data/tv-logos/) and mapped in tv-logo-map.json, so the
+   grid never waits on slow remote hosts. The map loads once; a
+   channel whose logo is not in the map keeps its remote URL, and a
+   local logo that fails falls back to the remote original, then to
+   the initial letter. */
+let tvLogoMapP = null, tvLogoMapData = null;
+function tvLogoMap() {
+  if (tvLogoMapData) return Promise.resolve(tvLogoMapData);
+  if (!tvLogoMapP) tvLogoMapP = fetch(DL_BASE + 'tv-logo-map.json').then(r => r.ok ? r.json() : null).then(j => { tvLogoMapData = j || { logos: {}, urls: {} }; return tvLogoMapData; }).catch(() => { tvLogoMapData = { logos: {}, urls: {} }; return tvLogoMapData; });
+  return tvLogoMapP;
+}
+function tvLogoLocal(remote) {
+  if (!remote) return '';
+  const m = tvLogoMapData && tvLogoMapData.logos;
+  const v = m && m[remote];
+  return v ? DL_BASE + v : remote;
+}
+function tvLogoByUrl(url) {
+  if (!url) return '';
+  const m = tvLogoMapData && tvLogoMapData.urls;
+  const v = m && m[url];
+  return v ? DL_BASE + v : '';
+}
 let tvPrefetchP = null;
 function prefetchTv() {
   if (tvPrefetchP) return tvPrefetchP;
   tvPrefetchP = (async () => {
+    await tvLogoMap();
     try {
       const [fas, ir] = await Promise.all([
         fetch('https://iptv-org.github.io/iptv/languages/fas.m3u').then(r => r.text()),
@@ -5634,9 +5882,13 @@ function prefetchTv() {
       const parsed = parseM3u(fas).concat(parseM3u(ir));
       const seen = new Set(FEATURED_TV.map(c => c.url));
       const extra = [];
-      parsed.forEach(c => { if (!seen.has(c.url) && !TV_DEAD_RE.test(c.name)) { seen.add(c.url); extra.push({ name: c.name, url: c.url, logo: c.logo, group: c.group || '', cc: c.cc || '', lang: 'فارسی', cat: 'فارسی‌زبان', tw: c.url.indexOf('telewebion') > -1 ? 1 : 0 }); } });
+      parsed.forEach(c => { if (!seen.has(c.url) && !TV_DEAD_RE.test(c.name)) { seen.add(c.url); const loc = tvLogoLocal(c.logo); extra.push({ name: c.name, url: c.url, logo: loc, logoRemote: loc !== c.logo ? c.logo : '', group: c.group || '', cc: c.cc || '', lang: 'فارسی', cat: 'فارسی‌زبان', tw: c.url.indexOf('telewebion') > -1 ? 1 : 0 }); } });
       tvAll = FEATURED_TV.filter(c => !tvDead(c)).concat(extra);
     } catch (e) { tvAll = FEATURED_TV.filter(c => !tvDead(c)); }
+    /* FEATURED_TV entries carry no logo of their own: resolve them
+       by stream URL (and fill any extra whose playlist logo was
+       empty) from the local map */
+    tvAll.forEach(c => { if (!c.logo && c.url) { const loc = tvLogoByUrl(c.url); if (loc) c.logo = loc; } });
     warmTvLogos();
     return tvAll;
   })();
@@ -5752,8 +6004,9 @@ async function setTvLang(code) {
   if (grid) grid.innerHTML = '<div class="state" style="grid-column:1/-1"><div class="spin"></div>در حال دریافت شبکه‌های این زبان…</div>';
   const cnt = $('#tv-count'); if (cnt) cnt.textContent = '';
   try {
+    await tvLogoMap();
     const t = await (await fetch('https://iptv-org.github.io/iptv/languages/' + code + '.m3u')).text();
-    tvLangCache[code] = parseM3u(t).filter(c => !TV_DEAD_RE.test(c.name)).map(c => ({ name: c.name, url: c.url, logo: c.logo, group: c.group || '', cc: c.cc || '', lang: faName, cat: c.group || 'عمومی', tw: 0 }));
+    tvLangCache[code] = parseM3u(t).filter(c => !TV_DEAD_RE.test(c.name)).map(c => { const loc = tvLogoLocal(c.logo); return { name: c.name, url: c.url, logo: loc, logoRemote: loc !== c.logo ? c.logo : '', group: c.group || '', cc: c.cc || '', lang: faName, cat: c.group || 'عمومی', tw: 0 }; });
   } catch (e) { tvLangCache[code] = []; }
   if (tvLangCode === code) { tvLangList = tvLangCache[code]; renderTvFilters(); paintTvGrid(); }
 }
@@ -5765,8 +6018,9 @@ async function setTvScope(code) {
     const grid = $('#tv-grid');
     if (grid) grid.innerHTML = '<div class="state" style="grid-column:1/-1"><div class="spin"></div>در حال دریافت شبکه‌های این کشور…</div>';
     try {
+      await tvLogoMap();
       const t = await (await fetch('https://iptv-org.github.io/iptv/countries/' + code.toLowerCase() + '.m3u')).text();
-      tvCountryCache[code] = parseM3u(t).filter(c => !TV_DEAD_RE.test(c.name)).map(c => ({ name: c.name, url: c.url, logo: c.logo, group: c.group || '', cc: c.cc || code, lang: TV_LANG[code] || '', cat: c.group || 'عمومی', tw: 0 }));
+      tvCountryCache[code] = parseM3u(t).filter(c => !TV_DEAD_RE.test(c.name)).map(c => { const loc = tvLogoLocal(c.logo); return { name: c.name, url: c.url, logo: loc, logoRemote: loc !== c.logo ? c.logo : '', group: c.group || '', cc: c.cc || code, lang: TV_LANG[code] || '', cat: c.group || 'عمومی', tw: 0 }; });
     } catch (e) { tvCountryCache[code] = []; }
     if (tvScope === code) { renderTvFilters(); paintTvGrid(); }
   }
@@ -5797,15 +6051,16 @@ function paintTvGrid() {
   const cnt = $('#tv-count'); if (cnt) cnt.textContent = list.length ? list.length + ' شبکه' : '';
   const grid = $('#tv-grid');
   grid.innerHTML = list.slice(0, tvShown).map((c, i) =>
-    '<div class="chan" data-chan="' + i + '" role="button" tabindex="0">' + (c.logo ? '<img class="logo"' + (i < 36 ? ' loading="eager" fetchpriority="high"' : ' loading="lazy"') + ' decoding="async" data-ini="' + esc(c.name.trim().slice(0, 1)) + '" src="' + esc(c.logo) + '" alt="">' : '<span class="ini">' + esc(c.name.trim().slice(0, 1)) + '</span>')
+    '<div class="chan" data-chan="' + i + '" role="button" tabindex="0">' + (c.logo ? '<img class="logo"' + (i < 36 ? ' loading="eager" fetchpriority="high"' : ' loading="lazy"') + ' decoding="async" data-ini="' + esc(c.name.trim().slice(0, 1)) + '"' + (c.logoRemote ? ' data-remote="' + esc(c.logoRemote) + '"' : '') + ' src="' + esc(c.logo) + '" alt="">' : '<span class="ini">' + esc(c.name.trim().slice(0, 1)) + '</span>')
     + '<b>' + esc(c.name) + '</b><span style="font-size:.66rem;color:var(--pearl)">' + esc(tvTopicOf(c)) + '</span>' + (c.tw ? '<img class="flag" loading="lazy" src="https://flagofiran.com/files/Flag_of_Iran.svg" alt="" onerror="this.remove()">' : '') + '</div>').join('')
     || '<div class="state" style="grid-column:1/-1">شبکه‌ای با این مشخصات پیدا نشد.</div>';
   /* a logo that fails to load falls back to the channel's initial
      letter instead of leaving an empty slot */
   grid.querySelectorAll('img.logo').forEach(im => {
     const swap = () => { const s = document.createElement('span'); s.className = 'ini'; s.textContent = im.dataset.ini || '؟'; im.replaceWith(s); };
-    if (im.complete && im.naturalWidth === 0 && im.src) swap();
-    else im.addEventListener('error', swap, { once: true });
+    const retryRemote = () => { if (im.dataset.remote && !im.dataset.retried) { im.dataset.retried = '1'; im.src = im.dataset.remote; return true; } return false; };
+    if (im.complete && im.naturalWidth === 0 && im.src) { if (!retryRemote()) swap(); }
+    else im.addEventListener('error', () => { if (!retryRemote()) swap(); });
   });
   grid.querySelectorAll('[data-chan]').forEach(el => { const open = () => playChannel(tvFiltered()[+el.dataset.chan], el); el.onclick = open; el.onkeydown = e => { if (e.key === 'Enter') open(); }; });
   $('#tv-more').style.display = list.length > tvShown ? 'block' : 'none';
@@ -7001,6 +7256,7 @@ async function openArchiveEntry(entry) {
   };
   const tokenSnapshot = detailToken;
   try {
+    var dlPosterP = entry.imdb ? Promise.race([tmdb('find/' + entry.imdb, { external_source: 'imdb_id' }), new Promise(function (res) { setTimeout(function () { res(null); }, 4000); })]).then(function (f) { var hit = f && (((f.movie_results || [])[0]) || ((f.tv_results || [])[0])); return (hit && hit.poster_path) ? IMG(hit.poster_path, 'w342') : ''; }).catch(function () { return ''; }) : Promise.resolve('');
     const resolved = await resolveDlRecordByPart(entry.imdb, entry.num, entry.part, entry.src || 'new');
     let rec = resolved ? resolved.rec : null;
     if (rec && entry.hasOld) { /* same title also has links in the old archive — merge them in */
@@ -7008,16 +7264,10 @@ async function openArchiveEntry(entry) {
     }
     const body = $('#d-dl-body'); if (!body) return;
     if (!rec || (!rec.groups.softsub.length && !rec.groups.dubbed.length && !rec.groups.nosub.length)) { body.innerHTML = '<div class="state">لینکی برای این عنوان پیدا نشد.</div>'; return; }
-    const all = rec.groups.softsub.concat(rec.groups.dubbed, rec.groups.nosub);
-    const totalMB = all.reduce((s, x) => s + sizeToMB(x.size), 0);
-    body.innerHTML = '<div class="dlbox-head"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4.5-4.5M12 15 7.5 10.5"/><path d="M4 19h16"/></svg></span>'
-      + '<div><b>' + esc(rec.title || entry.title) + '</b><p>کیفیت‌ها و انکودهای موجود با حجم و مشخصات کامل — دانلود مستقیم، ADM یا کپی لینک.</p></div>'
-      + '<span class="tot"><b>' + all.length + '</b><span>لینک دانلود</span></span>'
-      + (totalMB ? '<span class="tot"><b>' + fmtTotalMB(totalMB) + '</b><span>حجم مجموع</span></span>' : '') + '</div>'
-      + dlGroupHtml('زیرنویس فارسی چسبیده (SoftSub)', rec.groups.softsub)
-      + dlGroupHtml('دوبله فارسی (Dubbed)', rec.groups.dubbed)
-      + dlGroupHtml('بدون زیرنویس فارسی (NoSub)', rec.groups.nosub);
-    wireDlButtons(body);
+    var posterUrl = await dlPosterP;
+    var dlBuilt = dlTilesHtml(rec, { poster: posterUrl, title: entry.title, meta: (entry.type === 'tv' ? 'سریال' : 'فیلم') });
+    body.innerHTML = dlBuilt.html;
+    wireDlTiles(body, dlBuilt.ctx);
     void tokenSnapshot;
   } catch (e) {
     const body = $('#d-dl-body'); if (body) body.innerHTML = '<div class="state">دریافت لینک‌های دانلود ممکن نشد؛ دوباره تلاش کنید.</div>';
