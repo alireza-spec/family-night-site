@@ -577,7 +577,13 @@ box-shadow:0 0 26px rgba(229,169,60,.28),inset 0 0 14px rgba(0,0,0,.65);animatio
 .fn-dl-tot{text-align:center;flex:none}
 .fn-dl-tot b{font-family:var(--display);font-size:1.05rem;color:var(--gold2);display:block}
 .fn-dl-tot span{font-size:.7rem;color:var(--pearl)}
-.fn-dl-copyall{flex:none;font-size:.75rem;padding:.4rem .9rem;border-radius:99px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--pearl2);min-height:2.2rem;cursor:pointer;font-family:inherit}
+.fn-dl-copyall{flex:none;font-size:.75rem;font-weight:800;padding:.4rem .9rem;border-radius:99px;border:1px solid var(--gold);background:var(--gold);color:#231700;min-height:2.2rem;cursor:pointer;font-family:inherit}
+.fn-dl-cabox{background:var(--surface2);border:1px solid rgba(229,169,60,.4);border-radius:1rem;padding:.8rem .9rem;margin-bottom:.9rem;text-align:center}
+.fn-dl-cabox[hidden]{display:none}
+.fn-dl-ca-title{font-size:.88rem;font-weight:800;color:var(--gold2);line-height:1.8;margin-bottom:.6rem}
+.fn-dl-ca-chips{display:flex;gap:.45rem;justify-content:center;flex-wrap:wrap;margin-bottom:.5rem}
+.fn-dl-ca-chip{background:var(--gold);border:1px solid var(--gold);color:#231700;font-family:var(--display);font-weight:800;font-size:.85rem;border-radius:99px;padding:.35rem 1.1rem;min-height:2.4rem;cursor:pointer}
+.fn-dl-ca-close{background:transparent;border:none;color:var(--pearl);font-size:.78rem;cursor:pointer;font-family:inherit;padding:.2rem .6rem}
 .fn-dl-sec{display:flex;align-items:center;gap:.5rem;margin:.2rem 0 .6rem;font-size:.95rem;font-weight:800;color:var(--gold2)}
 .fn-dl-sec .fn-dl-cnt{margin-inline-start:auto;font-size:.75rem;color:var(--pearl);font-weight:600}
 .fn-dl-tiles{display:flex;flex-direction:column;gap:.6rem;margin-bottom:1rem}
@@ -4688,6 +4694,12 @@ function resRank(r) { return ({ '2160p': 6, '1440p': 5, '1080p': 4, '720p': 3, '
    (the old one closes). Film sheet: 2x2 action grid. Series sheet
    (hidden until a row is tapped): gold ADM hero button + full-width
    rows (copy / browser / play).
+   COPY-ALL: the header button is gold (stands out). Film: copies
+   every link, size largest-first, no questions. Series: opens a
+   chooser under the header asking for the quality (1080p / 720p /
+   480p / ... — with the encode when a quality has more than one);
+   tapping one copies the whole CURRENT season in only that quality,
+   one link per episode, episode order.
    Sizes display with Persian units (مگابایت / گیگابایت, digits stay
    English). Selection: NO permanent gold outline anywhere — the
    tile/row/action the user taps turns gold. Icons: real ADM logo
@@ -4736,8 +4748,12 @@ function dlTilesHtml(rec, opts) {
     + '</span>'
     + '<span class="fn-dl-tot"><b>' + all.length + '</b><span>لینک دانلود</span></span>'
     + (totalMB ? '<span class="fn-dl-tot"><b>' + faSize(fmtTotalMB(totalMB)) + '</b><span>حجم مجموع</span></span>' : '')
-    + '<button class="fn-dl-copyall" data-dl-copyall>کپی همه لینک‌ها</button>'
+    + '<button class="fn-dl-copyall" data-dl-copyall>' + (isSeries ? 'کپی همه قسمت‌ها' : 'کپی همه لینک‌ها') + '</button>'
     + '</div>';
+  /* series copy-all: quality chooser (filled in wireDlTiles) */
+  if (isSeries) {
+    out += '<div class="fn-dl-cabox" hidden><div class="fn-dl-ca-title"></div><div class="fn-dl-ca-chips"></div><button class="fn-dl-ca-close">بستن</button></div>';
+  }
   var ctx = { title: title, isSeries: isSeries, links: [], eps: {}, firstEp: '', allUrls: allUrls, sel: null, epLinks: null, epKey: '' };
   if (isSeries) {
     out += dlSeriesHtml(groups, o.poster || '', title, ctx);
@@ -4774,6 +4790,7 @@ function dlSeriesHtml(groups, posterUrl, title, ctx) {
   Object.keys(eps).forEach(function (k) { var s = eps[k].season; if (seasons.indexOf(s) < 0) seasons.push(s); });
   seasons.sort(function (a, b) { return (parseInt(a, 10) || 0) - (parseInt(b, 10) || 0); });
   ctx.eps = eps;
+  ctx.season = seasons[0] || '';
   var out = '<div class="fn-dl-sec"><span>قسمت‌ها</span></div><div class="fn-dl-seasons">';
   seasons.forEach(function (s, i) {
     out += '<button class="fn-dl-season' + (i === 0 ? ' on' : '') + '" data-dl-season="' + esc(s) + '">فصل ' + esc(s) + '</button>';
@@ -4874,8 +4891,55 @@ function wireDlTiles(root, ctx) {
     placeSheet(root.querySelector('.fn-dl-tile[data-dl-i="' + i + '"]'));
     updateSheet();
   }
-  function selectEp(key) {
-    var ep = ctx.eps[key]; if (!ep || !ep.links.length) return;
+  /* series copy-all: distinct (res, codec) options of one season */
+  function caOptions(season) {
+    var eps = [];
+    Object.keys(ctx.eps).forEach(function (k) { if (ctx.eps[k].season === String(season)) eps.push(ctx.eps[k]); });
+    var byRes = {};
+    eps.forEach(function (ep) {
+      ep.links.forEach(function (l) {
+        var r = l.sp.res || '', c = l.sp.codec || '';
+        (byRes[r] = byRes[r] || {})[c] = true;
+      });
+    });
+    var opts = [];
+    Object.keys(byRes).forEach(function (r) {
+      var codecs = Object.keys(byRes[r]);
+      if (codecs.length > 1) codecs.forEach(function (c) { opts.push({ res: r, codec: c, label: (r || '—') + (c ? ' • ' + c : '') }); });
+      else opts.push({ res: r, codec: codecs[0] || '', label: r || '—' });
+    });
+    opts.sort(function (a, b) { return resRank(b.res) - resRank(a.res) || String(a.codec).localeCompare(String(b.codec)); });
+    return opts;
+  }
+  function seasonEps(season) {
+    var eps = [];
+    Object.keys(ctx.eps).forEach(function (k) { if (ctx.eps[k].season === String(season)) eps.push(ctx.eps[k]); });
+    eps.sort(function (a, b) { return (parseInt(a.episode, 10) || 0) - (parseInt(b.episode, 10) || 0); });
+    return eps;
+  }
+  /* copy the whole season in one quality: largest link per episode */
+  function copySeason(season, res, codec) {
+    var urls = [];
+    seasonEps(season).forEach(function (ep) {
+      var cand = ep.links.filter(function (l) { return (l.sp.res || '') === res && (!codec || (l.sp.codec || '') === codec); });
+      cand.sort(dlSortLinksDesc);
+      if (cand.length) urls.push(cand[0].x.url);
+    });
+    if (urls.length) copyText(urls.join('\n'));
+  }
+  function refreshCaBox() {
+    var box = root.querySelector('.fn-dl-cabox'); if (!box) return;
+    var title = box.querySelector('.fn-dl-ca-title');
+    if (title) title.textContent = 'کپی همه قسمت‌های فصل ' + ctx.season + ' — کیفیت را انتخاب کنید:';
+    var chips = box.querySelector('.fn-dl-ca-chips');
+    chips.innerHTML = caOptions(ctx.season).map(function (o) {
+      return '<button class="fn-dl-ca-chip" data-dl-ca-res="' + esc(o.res) + '" data-dl-ca-codec="' + esc(o.codec) + '">' + esc(o.label) + '</button>';
+    }).join('');
+    chips.querySelectorAll('[data-dl-ca-res]').forEach(function (b) {
+      b.onclick = function () { copySeason(ctx.season, b.dataset.dlCaRes, b.dataset.dlCaCodec); box.hidden = true; };
+    });
+  }
+  function selectEp(key) {    var ep = ctx.eps[key]; if (!ep || !ep.links.length) return;
     ctx.epKey = key;
     ctx.epLinks = ep.links.slice().sort(dlSortLinksDesc);
     ctx.sel = dlLinkSel(ctx.epLinks[0]);
@@ -4894,8 +4958,11 @@ function wireDlTiles(root, ctx) {
   });
   root.querySelectorAll('[data-dl-season]').forEach(function (b) {
     b.onclick = function () {
+      ctx.season = b.dataset.dlSeason;
       root.querySelectorAll('[data-dl-season]').forEach(function (x) { x.classList.toggle('on', x === b); });
       root.querySelectorAll('.fn-dl-eplist').forEach(function (g) { g.hidden = g.dataset.dlEps !== b.dataset.dlSeason; });
+      var caBox = root.querySelector('.fn-dl-cabox');
+      if (caBox && !caBox.hidden) refreshCaBox();
       var first = root.querySelector('.fn-dl-eplist[data-dl-eps="' + b.dataset.dlSeason + '"] .fn-dl-eprow');
       if (first) selectEp(first.dataset.dlEp);
     };
@@ -4911,7 +4978,20 @@ function wireDlTiles(root, ctx) {
     };
   });
   var ca = root.querySelector('[data-dl-copyall]');
-  if (ca) ca.onclick = function () { copyText(ctx.allUrls.join('\n')); };
+  if (ca) ca.onclick = function () {
+    if (ctx.isSeries) {
+      /* series: ask the quality first, copy the whole season in it */
+      var box = root.querySelector('.fn-dl-cabox');
+      if (!box) return;
+      if (box.hidden) { refreshCaBox(); box.hidden = false; }
+      else box.hidden = true;
+    } else {
+      /* film: everything, size largest-first, no questions */
+      copyText(ctx.links.map(function (r) { return r.x.url; }).join('\n'));
+    }
+  };
+  var caClose = root.querySelector('.fn-dl-ca-close');
+  if (caClose) caClose.onclick = function () { var box = root.querySelector('.fn-dl-cabox'); if (box) box.hidden = true; };
   /* film: the sheet needs a current selection on open (first tile) */
   if (ctx.links.length) selectFilm(0);
 }
