@@ -1668,7 +1668,7 @@ html.tg .bottomnav{display:flex}
           <button class="btn btn-glass loadmore" id="tv-more" style="display:none">نمایش شبکه‌های بیشتر</button>
         </div>
       </div>
-      <div class="epg" id="epg-box">
+      <div class="epg" id="epg-box" style="display:none">
         <div class="epg-head">
           <h2>کنداکتور امروز</h2>
           <span class="epg-date" id="epg-date"></span>
@@ -1917,7 +1917,7 @@ const TV_PROXY = 'https://iran-tv-proxy-v3.alirezadoe8.workers.dev/proxy?url=';
 const IMG = (p, s) => p ? 'https://image.tmdb.org/t/p/' + (s || 'w500') + p : '';
 
 const GENRES_FA = {28:'اکشن',12:'ماجراجویی',16:'انیمیشن',35:'کمدی',80:'جنایی',99:'مستند',18:'درام',10751:'خانوادگی',14:'فانتزی',36:'تاریخی',27:'ترسناک',10402:'موسیقی',9648:'معمایی',10749:'عاشقانه',878:'علمی‌تخیلی',10770:'فیلم تلویزیونی',53:'هیجان‌انگیز',10752:'جنگ',37:'وسترن',10759:'اکشن و ماجراجویی',10762:'کودک',10763:'اخبار',10764:'ریالیتی',10765:'علمی‌تخیلی و فانتزی',10766:'سریال روزانه',10767:'تاک‌شو',10768:'جنگ و سیاست'};
-const ROW_LABELS = {trending_now:'ترندهای روز',newM25:'فیلم‌های جدید',updates:'به‌روزرسانی‌های تازه',tm:'برترین فیلم‌های تاریخ',ts:'برترین سریال‌های تاریخ',miniseries:'مینی‌سریال‌های برتر',emmy:'برندگان جایزه امی',oscar:'برندگان اسکار',golden_globe:'برندگان گلدن گلوب',academy_award:'جوایز آکادمی',survival:'بقا و نجات',act:'اکشن',com:'کمدی',hor:'ترسناک',dra:'درام',sci:'علمی‌تخیلی',ani:'انیمیشن',anime:'انیمه',rom:'عاشقانه',fam:'خانوادگی',sports:'ورزشی',war:'جنگ',bio:'زندگینامه',book:'اقتباس از کتاب',docs:'مستند',romcom:'کمدی رمانتیک',parody:'پارودی',christmas_time:'کریسمس',apocalypse:'آخرالزمانی',iran:'سینمای ایران',iran_pre1978:'آثار ایران قدیم (پیش از ۱۹۷۸)',india:'سینمای هند',asia:'سینمای آسیا',a24:'برگزیده‌های A24',marvel:'دنیای مارول',marvelTV:'سریال‌های مارول',dc:'دنیای دی‌سی',adult:'ویژه بزرگسالان',curator:'پیشنهاد سردبیر',fan:'فانتزی',mental:'روان‌شناختی',heartbreak_loss:'غم و فقدان','20s':'دهه ۱۹۲۰','30s':'دهه ۱۹۳۰','40s':'دهه ۱۹۴۰','50s':'دهه ۱۹۵۰','60s':'دهه ۱۹۶۰','70s':'دهه ۱۹۷۰','80s':'دهه ۱۹۸۰','90s':'دهه ۱۹۹۰','00s':'دهه ۲۰۰۰','10s':'دهه ۲۰۱۰'};
+const ROW_LABELS = {trending_now:'ترندهای روز',newM25:'فیلم‌های جدید',updates:'سریال‌های جدید و به‌روز شده',tm:'برترین فیلم‌های تاریخ',ts:'برترین سریال‌های تاریخ',miniseries:'مینی‌سریال‌های برتر',emmy:'برندگان جایزه امی',oscar:'برندگان اسکار',golden_globe:'برندگان گلدن گلوب',academy_award:'جوایز آکادمی',survival:'بقا و نجات',act:'اکشن',com:'کمدی',hor:'ترسناک',dra:'درام',sci:'علمی‌تخیلی',ani:'انیمیشن',anime:'انیمه',rom:'عاشقانه',fam:'خانوادگی',sports:'ورزشی',war:'جنگ',bio:'زندگینامه',book:'اقتباس از کتاب',docs:'مستند',romcom:'کمدی رمانتیک',parody:'پارودی',christmas_time:'کریسمس',apocalypse:'آخرالزمانی',iran:'سینمای ایران',iran_pre1978:'آثار ایران قدیم (پیش از ۱۹۷۸)',india:'سینمای هند',asia:'سینمای آسیا',a24:'برگزیده‌های A24',marvel:'دنیای مارول',marvelTV:'سریال‌های مارول',dc:'دنیای دی‌سی',adult:'ویژه بزرگسالان',curator:'پیشنهاد سردبیر',fan:'فانتزی',mental:'روان‌شناختی',heartbreak_loss:'غم و فقدان','20s':'دهه ۱۹۲۰','30s':'دهه ۱۹۳۰','40s':'دهه ۱۹۴۰','50s':'دهه ۱۹۵۰','60s':'دهه ۱۹۶۰','70s':'دهه ۱۹۷۰','80s':'دهه ۱۹۸۰','90s':'دهه ۱۹۹۰','00s':'دهه ۲۰۰۰','10s':'دهه ۲۰۱۰'};
 const HOME_ORDER = ['trending_now','newM25','updates','tm','ts','miniseries','act','ani','anime','iran','com','oscar','sci','fam','hor','romcom','docs','marvel','dc','war','curator'];
 /* ================= FN-CURATOR-PICKS v2 =================
    «پیشنهاد سردبیر» — the old repo's CURATOR'S PICK list (483 movies,
@@ -2467,12 +2467,12 @@ function collectionStreams(key) {
   if (COUNTRY_ROWS[key]) return [{ type: 'movie', extra: { with_origin_country: COUNTRY_ROWS[key] } }, { type: 'tv', extra: { with_origin_country: COUNTRY_ROWS[key] } }];
   if (key === 'iran_pre1978') return [{ type: 'movie', extra: { with_origin_country: 'IR', 'primary_release_date.lte': '1978-12-31' } }, { type: 'tv', extra: { with_origin_country: 'IR', 'first_air_date.lte': '1978-12-31' } }];
   if (key === 'asia') return ['JP', 'KR'].flatMap(cc => [{ type: 'movie', extra: { with_origin_country: cc } }, { type: 'tv', extra: { with_origin_country: cc } }]);
-  if (key === 'trending_now') { const d3 = new Date(); d3.setMonth(d3.getMonth() - 3); const g3 = d3.toISOString().slice(0, 10); return [{ type: 'movie', extra: { 'primary_release_date.gte': g3 } }, { type: 'tv', extra: { 'first_air_date.gte': g3 } }]; }
+  if (key === 'trending_now') { const d3 = new Date(); d3.setMonth(d3.getMonth() - 3); const g3 = d3.toISOString().slice(0, 10); const _today = new Date().toISOString().slice(0, 10); return [{ type: 'movie', extra: { 'primary_release_date.gte': g3, 'primary_release_date.lte': _today } }, { type: 'tv', extra: { 'first_air_date.gte': g3, 'first_air_date.lte': _today } }]; }
   /* Updates (user rule): a series with a new episode must appear —
      air_date.gte is the EPISODE air date, first_air_date is the series
      premiere (a series with a new episode never appears under it). */
-  if (key === 'updates') { const d3 = new Date(); d3.setMonth(d3.getMonth() - 3); const g3 = d3.toISOString().slice(0, 10); return [{ type: 'movie', extra: { 'primary_release_date.gte': g3 } }, { type: 'tv', extra: { 'air_date.gte': g3 } }]; }
-  if (key === 'newM25') { const y = new Date().getFullYear() - 1; return [{ type: 'movie', extra: { 'primary_release_date.gte': y + '-01-01' } }, { type: 'tv', extra: { 'first_air_date.gte': y + '-01-01' } }]; }
+  if (key === 'updates') { const d3 = new Date(); d3.setMonth(d3.getMonth() - 3); const g3 = d3.toISOString().slice(0, 10); const _today = new Date().toISOString().slice(0, 10); return [{ type: 'tv', extra: { 'air_date.gte': g3, 'air_date.lte': _today, without_genres: '10767,10763,10764' } }]; }
+  if (key === 'newM25') { const y = new Date().getFullYear() - 1; const _today = new Date().toISOString().slice(0, 10); return [{ type: 'movie', extra: { 'primary_release_date.gte': y + '-01-01', 'primary_release_date.lte': _today } }]; }
   if (key === 'tm') return [{ type: 'movie', extra: {} }];
   if (key === 'ts') return [{ type: 'tv', extra: {} }];
   if (key === 'miniseries') return [{ type: 'tv', extra: { with_type: 2 } }];
@@ -2577,7 +2577,15 @@ function openCollectionApi(key, spec) {
 }
 function buildCollFilters() {
   const grow = $('#arch-genre-row'); if (grow) grow.style.display = '';
-  const chips = [['all', 'همه'], ['movie', 'فیلم‌ها'], ['tv', 'سریال‌ها']];
+  /* FN-CATEGORY-FIX: offer only the types this collection actually has —
+     newM25 is movies-only and updates is series-only, so the other
+     type's chip must not appear (picking it would empty the streams
+     and loadArchPage would fall back to a broken 'discover/all'
+     stream). 'همه' always shows the whole spec. */
+  const _specTypes = (collectionStreams(arch.collKey) || []).map(s => s.type);
+  const chips = [['all', 'همه']]
+    .concat(_specTypes.indexOf('movie') > -1 ? [['movie', 'فیلم‌ها']] : [])
+    .concat(_specTypes.indexOf('tv') > -1 ? [['tv', 'سریال‌ها']] : []);
   $('#arch-genres').innerHTML = chips.map(c => '<button class="chip' + (arch.collType === c[0] ? ' on' : '') + '" data-ct="' + c[0] + '">' + c[1] + '</button>').join('');
   $$('#arch-genres [data-ct]').forEach(b => b.onclick = () => {
     arch.collType = b.dataset.ct;
@@ -2627,6 +2635,35 @@ function localSearch(q) {
     return t.includes(needle);
   }).sort((a, b) => (b.vote_average || 0) - (a.vote_average || 0)).slice(0, 40);
 }
+/* ---------- home-rail filler (FN-CATEGORY-FIX) ----------
+   Fill one home rail with up to 20 ARCHIVE works only. fetchPage(page)
+   returns a Promise of TMDB items (already media_type-tagged); keep(x)
+   is the rail's own date/type filter (released-only, etc.). Pages are
+   fetched until 20 qualifying items are collected or 3 pages are
+   exhausted, so a rail never shows a work that is not in the archive
+   (avail-index d||p) and never an unreleased work. If the avail-index
+   failed to load, the rail falls back to unfiltered (fail-open — the
+   page must never come up empty because of the index). */
+async function fnFillHomeRail(fetchPage, keep) {
+  var out = [], seen = {};
+  for (var page = 1; page <= 3 && out.length < 20; page++) {
+    var batch;
+    try { batch = await fetchPage(page); } catch (e) { break; }
+    if (!batch || !batch.length) break;
+    for (var i = 0; i < batch.length; i++) {
+      var x = batch[i];
+      if (!x || x.id == null) continue;
+      var k = (x.media_type || 'movie') + ':' + x.id;
+      if (seen[k]) continue;
+      seen[k] = 1;
+      if (keep && !keep(x)) continue;
+      if (FN_AVAIL.idx && !fnAvailQualifies(x)) continue;
+      out.push(x);
+      if (out.length >= 20) break;
+    }
+  }
+  return out;
+}
 async function loadHome() {
   fnAvailEnsure(); /* FN-DL-ICON v1: load the avail-index early so home cards get their download badge */
   let snap;
@@ -2658,43 +2695,56 @@ async function loadHome() {
      only released + last-3-months + notable, newest-first. Falls back to
      the snapshot row (current year only) if the live fetch fails/empty. */
   const _trendFallback = () => { if (rows.trending_now) { const cy = String(new Date().getFullYear()); rows.trending_now = rows.trending_now.filter(x => String(x.release_date || x.first_air_date || '').slice(0, 4) === cy); } };
+  /* FN-CATEGORY-FIX: the three home rails show ONLY archive works
+     (avail-index d||p) and only RELEASED works, newest /
+     most-recently-updated first. The avail-index is awaited here so
+     the rails filter on first paint; if it failed to load, the rails
+     fall back to unfiltered (never empty). */
+  await fnAvailEnsure();
+  const _today = new Date().toISOString().slice(0, 10);
+  const _g3 = new Date(); _g3.setMonth(_g3.getMonth() - 3);
+  const _g3s = _g3.toISOString().slice(0, 10);
+  const _dt = x => x.media_type === 'tv' ? (x.first_air_date || '') : (x.release_date || '');
   try {
-    const [_tm, _tt] = await Promise.all([tmdb('trending/movie/week', { page: 1 }), tmdb('trending/tv/week', { page: 1 })]);
-    const _today = new Date().toISOString().slice(0, 10);
-    const _g3 = new Date(); _g3.setMonth(_g3.getMonth() - 3);
-    const _g3s = _g3.toISOString().slice(0, 10);
-    const _dt = x => x.media_type === 'tv' ? (x.first_air_date || '') : (x.release_date || '');
-    const _live = [].concat((_tm.results || []).map(x => Object.assign({}, x, { media_type: 'movie' })))
-      .concat((_tt.results || []).map(x => Object.assign({}, x, { media_type: 'tv' })))
-      .filter(x => { const dt = _dt(x); return dt && dt <= _today && dt >= _g3s; })
-      .sort((a, b) => _dt(b).localeCompare(_dt(a))).slice(0, 20);
-    if (_live.length) rows.trending_now = _live; else _trendFallback();
+    const _live = await fnFillHomeRail(async page => {
+      const [_tm, _tt] = await Promise.all([tmdb('trending/movie/week', { page: page }), tmdb('trending/tv/week', { page: page })]);
+      return [].concat((_tm.results || []).map(x => Object.assign({}, x, { media_type: 'movie' })))
+        .concat((_tt.results || []).map(x => Object.assign({}, x, { media_type: 'tv' })));
+    }, x => { const dt = _dt(x); return dt && dt <= _today && dt >= _g3s; });
+    _live.sort((a, b) => _dt(b).localeCompare(_dt(a)));
+    if (_live.length) rows.trending_now = _live.slice(0, 20); else _trendFallback();
   } catch (e) { _trendFallback(); }
   /* newM25 + updates rails: live TMDB discover — the snapshot is stale
-     (generated 03:40Z, ~8h old), so the rails would never update. One
-     parallel round for both rows; falls back to the snapshot rows if
-     the live fetch fails/empty. newM25 = newest-first; updates = most
-     popular among the recently updated (a new episode spikes it). */
+     (generated 03:40Z, ~8h old), so the rails would never update.
+     FN-CATEGORY-FIX: newM25 = MOVIES only, released only, newest
+     first; updates = SERIES only, new episode within 3 months, no
+     talk/news/reality (without_genres 10767/10763/10764), most
+     popular among the recently updated (a new episode spikes it —
+     discover/tv does NOT honour air_date.desc as a sort; verified:
+     it returns the same order as popularity.desc). Both rails show
+     only archive works (fnFillHomeRail, up to 3 pages to fill 20);
+     the snapshot rows are kept only if the live fetch fails/empty.
+     newM25 carries vote_count.gte 40 (the same floor the see-all
+     uses): without it the newest releases are all obscure zero-vote
+     films and NONE of the first 50 pages is in the archive (verified
+     2026-11-19: 1 qualifying in 1000); with the floor 15/20 qualify
+     on page 1 (Heartland, The Christmas Switch, Clayface, …). */
   try {
     const _y = new Date().getFullYear() - 1;
-    const _d3 = new Date(); _d3.setMonth(_d3.getMonth() - 3);
-    const _g3 = _d3.toISOString().slice(0, 10);
-    const [_nm, _nt, _um, _ut] = await Promise.all([
-      tmdb('discover/movie', { 'primary_release_date.gte': _y + '-01-01', sort_by: 'primary_release_date.desc', page: 1 }),
-      tmdb('discover/tv', { 'first_air_date.gte': _y + '-01-01', sort_by: 'first_air_date.desc', page: 1 }),
-      tmdb('discover/movie', { 'primary_release_date.gte': _g3, sort_by: 'primary_release_date.desc', page: 1 }),
-      tmdb('discover/tv', { 'air_date.gte': _g3, sort_by: 'popularity.desc', page: 1 })
-    ]);
-    const _dt = x => x.media_type === 'tv' ? (x.first_air_date || '') : (x.release_date || '');
-    const _nmLive = [].concat((_nm.results || []).map(x => Object.assign({}, x, { media_type: 'movie' })))
-      .concat((_nt.results || []).map(x => Object.assign({}, x, { media_type: 'tv' })))
-      .sort((a, b) => _dt(b).localeCompare(_dt(a))).slice(0, 20);
-    if (_nmLive.length) rows.newM25 = _nmLive;
-    const _upLive = [].concat((_um.results || []).map(x => Object.assign({}, x, { media_type: 'movie' })))
-      .concat((_ut.results || []).map(x => Object.assign({}, x, { media_type: 'tv' })))
-      .sort((a, b) => (b.popularity || 0) - (a.popularity || 0)).slice(0, 20);
-    if (_upLive.length) rows.updates = _upLive;
-  } catch (e) { /* keep the snapshot rows */ }
+    const _nmLive = await fnFillHomeRail(page => tmdb('discover/movie', { 'primary_release_date.gte': _y + '-01-01', 'primary_release_date.lte': _today, 'vote_count.gte': 40, sort_by: 'primary_release_date.desc', page: page }).then(d => (d.results || []).map(x => Object.assign({}, x, { media_type: 'movie' }))), x => { const dt = x.release_date || ''; return dt && dt <= _today; });
+    _nmLive.sort((a, b) => String(b.release_date || '').localeCompare(String(a.release_date || '')));
+    if (_nmLive.length) rows.newM25 = _nmLive.slice(0, 20);
+  } catch (e) { /* keep the snapshot row */ }
+  try {
+    const _upLive = await fnFillHomeRail(page => tmdb('discover/tv', { 'air_date.gte': _g3s, 'air_date.lte': _today, without_genres: '10767,10763,10764', sort_by: 'popularity.desc', page: page }).then(d => (d.results || []).map(x => Object.assign({}, x, { media_type: 'tv' }))), null);
+    _upLive.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
+    if (_upLive.length) rows.updates = _upLive.slice(0, 20);
+  } catch (e) { /* keep the snapshot row */ }
+  /* Snapshot fallback rows (used when a live fetch failed/empty) must
+     also show only archive works — filter them the same way. */
+  if (FN_AVAIL.idx) {
+    ['trending_now', 'newM25', 'updates'].forEach(k => { if (rows[k]) rows[k] = rows[k].filter(x => fnAvailQualifies(x)); });
+  }
   cacheItems(Object.values(rows).flat());
   /* Progressive rails: only the first rows render up front; the rest
      are appended as the reader scrolls near them — the home page
@@ -2989,6 +3039,23 @@ function fnAvailFirst50(items, state, isFinal) {
   return show;
 }
 
+/* ---------- strict archive filter (FN-CATEGORY-FIX) ----------
+   The three home categories (trending_now, newM25, updates) show ONLY
+   works that are in the archive. fnAvailFirst50 REORDERS (qualifying
+   first until 50, the rest held after) — for these three categories
+   the owner wants non-qualifying works DROPPED, not held: the first
+   50 (and the whole listing) must never contain a work with no
+   download/play link. Every other category keeps the v1 reorder.
+   Qualifying = fnAvailQualifies (avail-index d||p — in the archive
+   with a download row or play rows). When the index has not loaded
+   yet, the filter passes items through (fail-open, never an empty
+   page); the caller re-renders once the index arrives. */
+var FN_STRICT_CATS = ['trending_now', 'newM25', 'updates'];
+function fnAvailStrict(items) {
+  if (!FN_AVAIL.idx) return (items || []).slice();
+  return (items || []).filter(function (x) { return fnAvailQualifies(x); });
+}
+
 /* ---------- archive / discover ---------- */
 let arch = { title: 'فیلم‌ها', type: 'movie', genre: '', page: 1, loading: false, done: false, qualCount: 0, availPending: [] };
 function openArchive(p) {
@@ -3105,7 +3172,7 @@ function renderLocalArch() {
      the rest unfiltered after them. The index loads lazily: if it is
      not in hand yet, render as-is now and re-render filtered once it
      arrives (same listing still open). */
-  if (FN_AVAIL.loaded) { arch.qualCount = 0; arch.availPending = []; items = fnAvailFirst50(items, arch, true); }
+  if (FN_AVAIL.loaded) { arch.qualCount = 0; arch.availPending = []; if (arch.localKey && FN_STRICT_CATS.indexOf(arch.localKey) > -1) { items = fnAvailStrict(items); arch.qualCount = items.length; } else items = fnAvailFirst50(items, arch, true); }
   else if (!FN_AVAIL.failed) { var _rlk = arch.localKey; fnAvailEnsure().then(function () { if (arch.mode === 'local' && arch.localKey === _rlk && FN_AVAIL.loaded) renderLocalArch(); }); }
   cacheItems(items);
   grid.innerHTML = items.length ? items.map(x => cardHtml(x)).join('') : '<div class="state" style="grid-column:1/-1">با این فیلترها اثری در این مجموعه پیدا نشد.</div>';
@@ -3300,10 +3367,13 @@ async function loadArchPage() {
     else if (sortUi === 'vote_average.desc') items.sort((a, b) => (b.vote_average || 0) - (a.vote_average || 0));
     else if (sortUi === 'vote_count.desc') items.sort((a, b) => (b.vote_count || 0) - (a.vote_count || 0));
     else if (sortUi === 'random') { for (let i = items.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const tmp = items[i]; items[i] = items[j]; items[j] = tmp; } }
-    /* FN-AVAIL-FILTER v1: keep only qualifying items until 50 are
-       collected; non-qualifying items are held (arch.availPending)
-       and shown right after the 50th qualifying item, in order. */
-    items = fnAvailFirst50(items, arch, false);
+    /* FN-AVAIL-STRICT (category fix): the three home categories show
+       ONLY archive works — non-qualifying items are DROPPED, not held,
+       so the first 50 (and the whole listing) never contain a work
+       without a download/play link. Every other category keeps the v1
+       reorder (qualifying first until 50, the rest held after). */
+    if (arch.collKey && FN_STRICT_CATS.indexOf(arch.collKey) > -1) { items = fnAvailStrict(items); arch.qualCount += items.length; }
+    else items = fnAvailFirst50(items, arch, false);
     cacheItems(items);
     if (!hadCards) grid.innerHTML = '';
     grid.insertAdjacentHTML('beforeend', items.map(x => cardHtml(x)).join(''));
@@ -3344,7 +3414,7 @@ async function loadArchPage() {
          section instead of a dead end */
       const local = (arch.localList && arch.localList.length) ? arch.localList : ((arch.type === 'movie' || arch.type === 'tv') ? localDiscover() : []);
       if (local.length) {
-        if (FN_AVAIL.loaded) { arch.qualCount = 0; arch.availPending = []; local = fnAvailFirst50(local, arch, true); }
+        if (FN_AVAIL.loaded) { arch.qualCount = 0; arch.availPending = []; local = (arch.collKey && FN_STRICT_CATS.indexOf(arch.collKey) > -1) ? fnAvailStrict(local) : fnAvailFirst50(local, arch, true); }
         cacheItems(local);
         grid.innerHTML = local.map(x => cardHtml(x)).join('');
         arch.done = true;
@@ -6683,9 +6753,16 @@ async function loadEpg(force) {
     const j = await r.json();
     epgData = j && Array.isArray(j.channels) ? j.channels : [];
     epgStatus = 'ok';
+    /* NEVER default to the first channel: the conductor shows only the
+       channel the user picked. A stale selection (or none yet) is
+       cleared; if a channel is already playing, follow it instead. */
     if (!epgData.some(c => c && String(c.id) === String(epgChanId))) {
-      const first = epgData.find(c => c && c.programs && c.programs.length) || epgData[0];
-      epgChanId = first ? first.id : null;
+      epgChanId = null;
+      if (typeof tvCurrent !== 'undefined' && tvCurrent && tvCurrent.name) {
+        const norm = s => fnBrandName(s).replace(/[\s\u200c]+/g, '').toLowerCase();
+        const hit = epgData.find(c => norm(c.name) === norm(tvCurrent.name));
+        if (hit) epgChanId = hit.id;
+      }
     }
     /* keep «الان» and the progress bar honest while the page stays open */
     if (!epgTick) epgTick = setInterval(() => { if (epgData) renderEpgBody(); }, 60000);
@@ -6697,8 +6774,33 @@ async function loadEpg(force) {
    «پرسیانا» misspelling — the EPG feed, a shared link — fold it
    to the brand spelling for display and for matching */
 function fnBrandName(s) { return String(s || '').replace(/پرسیانا/g, 'پرشیانا'); }
+/* ---------- EPG selection (FN-EPG-FIX) ----------
+   The conductor shows ONLY the channel the user picked — never a
+   default, never another channel's schedule. */
+function epgSelChan() { return (epgData && epgChanId != null) ? (epgData.find(c => String(c.id) === String(epgChanId)) || null) : null; }
+function epgHasData(ch) {
+  if (!ch) return false;
+  if (ch.now || ch.next) return true;
+  const ps = (ch.programs || []).filter(p => p && p.title);
+  return ps.length > 0;
+}
 function renderEpg() {
   const dateEl = $('#epg-date'); if (dateEl) dateEl.textContent = epgFmtD.format(new Date());
+  const box = $('#epg-box');
+  const body = $('#epg-body');
+  const ch = epgSelChan();
+  /* the conductor shows ONLY after a channel is picked, and ONLY that
+     channel's schedule — no selection, or a channel with no schedule,
+     means the whole box stays hidden (never another channel's data) */
+  let show = !!(ch && (epgHasData(ch) || epgStatus === 'error' || epgStatus === 'loading'));
+  if (ch && !epgHasData(ch) && epgStatus !== 'error' && epgStatus !== 'loading') {
+    /* the picked channel definitively has no schedule: clear the
+       selection (and the body) so no stale channel lingers */
+    epgChanId = null;
+    show = false;
+  }
+  if (box) box.style.display = show ? '' : 'none';
+  if (!show) { if (body) body.innerHTML = ''; return; }
   const dd = $('#epg-dd');
   if (dd) {
     if (epgData && epgData.length) tvDd(dd, epgData.map(c => ({ v: String(c.id), label: fnBrandName(c.name) || String(c.id) })), String(epgChanId), v => { epgChanId = v; renderEpg(); }, epgData.length > 8);
@@ -6708,6 +6810,17 @@ function renderEpg() {
 }
 function renderEpgBody() {
   const body = $('#epg-body'); if (!body) return;
+  const box = $('#epg-box');
+  /* never show another channel's schedule: without a selected channel
+     (or one with no schedule) the whole box stays hidden, the body is
+     cleared and the selection is dropped — no stale data lingers */
+  const ch0 = epgSelChan();
+  if (!ch0 || (!epgHasData(ch0) && epgStatus !== 'error' && epgStatus !== 'loading')) {
+    if (box) box.style.display = 'none';
+    body.innerHTML = '';
+    if (ch0) epgChanId = null;
+    return;
+  }
   if (epgStatus === 'loading' && !epgData) { body.innerHTML = '<div class="epg-state"><div class="spin"></div>در حال دریافت کنداکتور…</div>'; return; }
   if (epgStatus === 'error') {
     body.innerHTML = '<div class="epg-state">دریافت کنداکتور در حال حاضر ممکن نشد.<br><button class="btn btn-glass btn-sm" type="button" id="epg-retry" style="margin-top:.5rem">تلاش دوباره</button></div>';
@@ -6715,7 +6828,7 @@ function renderEpgBody() {
     return;
   }
   if (!epgData || !epgData.length) { body.innerHTML = '<div class="epg-state">برنامه‌ای ثبت نشده است.</div>'; return; }
-  const ch = epgData.find(c => String(c.id) === String(epgChanId)) || epgData[0];
+  const ch = ch0;
   const progs = (ch.programs || []).filter(p => p && p.title).slice().sort((a, b) => new Date(a.start) - new Date(b.start));
   if (!progs.length && !ch.now && !ch.next) { body.innerHTML = '<div class="epg-state">برای این شبکه برنامه‌ای ثبت نشده است.</div>'; return; }
   const nowMs = Date.now();
@@ -6748,7 +6861,10 @@ function epgFollow(name) {
   if (!epgData || !name) return;
   const norm = s => fnBrandName(s).replace(/[\s\u200c]+/g, '').toLowerCase();
   const hit = epgData.find(c => norm(c.name) === norm(name));
-  if (hit && String(hit.id) !== String(epgChanId)) { epgChanId = hit.id; renderEpg(); }
+  /* the playing channel publishes no schedule: clear the selection so
+     the conductor box hides instead of showing the previous channel */
+  if (!hit) { if (epgChanId != null) { epgChanId = null; renderEpg(); } return; }
+  if (String(hit.id) !== String(epgChanId)) { epgChanId = hit.id; renderEpg(); }
 }
 let tvPlayToken = 0, tvPlayTimer = null, tvCurrent = null;
 function playChannel(ch, el) {
