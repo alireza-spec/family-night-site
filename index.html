@@ -1178,6 +1178,9 @@ body.fn-theater-on .bottomnav,body.fn-theater-on header.top{display:none!importa
 .pf-social a svg{width:1.6rem;height:1.6rem;flex:none}
 .pf-social a b{font-size:.82rem;line-height:1.3}
 .pf-social a span{font-size:.68rem;color:var(--pearl);direction:ltr}
+/* FN-PF-SOCIAL-TAP v1: press feedback on the contact tiles — a quick scale-down + a gold-tinted highlight, matching the site established :active press pattern. Touch-safe: only transform/background/border change, the link itself is untouched so the tap still opens. */
+.pf-social a{transition:transform .14s ease,background-color .14s ease,border-color .14s ease}
+.pf-social a:active{transform:scale(.94);background:var(--gold-soft);border-color:rgba(229,169,60,.55)}
 
 /* ---------- watch-party chat upgrades ---------- */
 .chatlog .msg{max-width:92%}
@@ -1815,16 +1818,16 @@ html.tg .bottomnav{display:flex}
       <div class="pf-stats" id="pf-stats" aria-label="آمار فعالیت شما"></div>
       <div class="wp-cards">
         <div class="wp-card">
-          <h2>مهمان Family Night</h2>
-          <p id="pf-store-note">پروفایل، واچ‌لیست، علاقه‌مندی‌ها، لیست‌ها، امتیازها، سابقه تماشا و جستجوهای اخیرتان در همین مرورگر ذخیره می‌شوند و دفعه بعد هم سر جایشان هستند. برای تجربه کامل موبایل، نسخه اپ Family Night را هم می‌توانید باز کنید.</p>
+          <h2>مهمان فمیلی نایت</h2>
+          <p id="pf-store-note">پروفایل، واچ‌لیست، علاقه‌مندی‌ها، لیست‌ها، امتیازها، سابقه تماشا و جستجوهای اخیرتان در همین مرورگر ذخیره می‌شوند و دفعه بعد هم سر جایشان هستند. برای تجربه کامل موبایل، نسخه اپ فمیلی نایت را هم می‌توانید باز کنید.</p>
           <div style="display:flex;gap:.6rem;flex-wrap:wrap">
             <button class="btn btn-gold btn-sm" data-nav="watchlist">واچ‌لیست من (<span id="pf-wl">0</span>)</button>
             <button class="btn btn-glass btn-sm" data-nav="party">تماشا با دوستان</button>
           </div>
         </div>
         <div class="wp-card">
-          <h2>ارتباط با Family Night</h2>
-          <p>برای دانلودها، پیشنهادها و پشتیبانی، کانال‌ها و صفحات رسمی Family Night:</p>
+          <h2>ارتباط با فمیلی نایت</h2>
+          <p>برای دانلودها، پیشنهادها و پشتیبانی، کانال‌ها و صفحات رسمی فمیلی نایت:</p>
           <div class="pf-social">
             <a href="https://t.me/HashtagAlireza" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#26A5E4" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg><b>تلگرام</b><span>@HashtagAlireza</span></a>
             <a href="https://instagram.com/HashtagAlireza" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#E1306C" aria-hidden="true"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg><b>اینستاگرام</b><span>@HashtagAlireza</span></a>
@@ -12027,10 +12030,12 @@ async function renderProfileEditor() {
     ['آدری هپبورن', '/wg3RRHA5jV755dV0ksQ9g0Nc2xE.jpg'], ['مرلین مونرو', '/vcp6rHL2sZWdlJQDEWsEe0jAAe1.jpg'], ['الیزابت تیلور', '/eMUUN7yGSSH4G4dcqnKAZTquZP.jpg'], ['مریل استریپ', '/g5cVxQBAQ3AXt3LhdBXtbbN47Uc.jpg'], ['جولیا رابرتس', '/fQacAdIa1WUNChQ6FgEko13eqOA.jpg'], ['نیکول کیدمن', '/4KSQDodyBtTDMaREYgMdWD1LbH1.jpg'], ['کیت وینسلت', '/surklDlLW6g2D7EqycEQwHXsoD1.jpg'], ['کیت بلانشت', '/1Rd567YFdGfkJjSlhNPR8joYkaX.jpg'], ['آنجلینا جولی', '/bXNxIKcJ5cNNW8QFrBPWcfTSu9x.jpg'], ['شارلیز ترون', '/gd7ShD0yt4bsR2STeQ19KQ6hvXL.jpg'], ['اسکارلت جوهانسون', '/TiJIJGNWk0r1Y4bYuB50clneUd.jpg'], ['ناتالی پورتمن', '/edPU5HxncLWa1YkgRPNkSd68ONG.jpg'], ['آن هاتاوی', '/s6tflSD20MGz04ZR2R1lZvhmC4Y.jpg'], ['اما واتسون', '/mf0OANvWYSzU1d8yggrhyw8IbIz.jpg'], ['جنیفر لارنس', '/6WTY6HjXMGxnHilJRVC3eLnu43F.jpg'], ['هالی بری', '/84HRDZodRCuBSpYGSc3ow8WucI4.jpg'], ['سلما هایک', '/3j8MpAjyopkAc8mbNiDeXyqBmcS.jpg'], ['پنه‌لوپه کروز', '/n5SFgmvJSENQt8poE4qYacUnKOi.jpg'], ['گال گادوت', '/AbXKtWQwuDiwhoQLh34VRglwuBE.jpg'], ['اما استون', '/ak2Y9wOI3wi2pNQU6OWSvVvWPj5.jpg']
   ];
   const PF_CHARS = [
-    ['اسپایدرمن', '/or6XJBVpcEbIkma0V9zshnbEtx4.jpg'], ['بتمن — شوالیه تاریکی', '/qJ2tW6WMUDux911r6m7haRef0WH.jpg'], ['جوکر', '/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg'], ['آیرون‌من', '/78lPtwv72eTNqFW9COBYI0dWDJa.jpg'], ['سوپرمن', '/8GFtkImmK0K1VaUChR0n9O61CFU.jpg'], ['واندر وومن', '/v4ncgZjG2Zu8ZW5al1vIZTsSjqX.jpg'], ['ثور', '/prSfAi1xGrhLQNxVSUFh61xQ4Qy.jpg'], ['ددپول', '/3E53WEZJqP6aM84D8CckXx4pIHw.jpg'], ['وولورین — لوگان', '/fnbjcRDYn6YviCcePDnGdyAkYsB.jpg'], ['مایلز مورالس', '/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg'], ['هری پاتر', '/wuMc08IPKEatf9rnMNXvIDxqP4W.jpg'], ['دارث ویدر — جنگ ستارگان', '/fai0rspsNeJCS69wHNjOdWxcI7P.jpg'], ['جیمز باند', '/d0IVecFQvsGdSbnMAHqiYsNYaJT.jpg'], ['شرلوک هولمز', '/7WTsnHkbA0FaG6R9twfFde0I9hl.jpg'], ['والتر وایت — بریکینگ بد', '/anFx9aTOOYqgS3v7x3R84Kz67ly.jpg'], ['بازی تاج‌وتخت', '/1XS1oqL89opfnbLl8WnZY1O1uJx.jpg'], ['ونزدی', '/9PFonBhy4cQy7Jz20NpMygczOkv.jpg'], ['بازی مرکب', '/1QdXdRYfktUSONkl1oD5gc6Be0s.jpg'], ['سرقت پول', '/reEMJA1uzscCbkpeRJeTT2bjqUp.jpg'], ['باربی', '/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg'],
-    ['ناروتو', '/xppeysfvDKVx775MFuH8Z9BlpMk.jpg'], ['ناروتو شیپودن', '/kV27j3Nz4d5z8u6mN3EJw9RiLg2.jpg'], ['گوکو — دراگون بال', '/oQ5CnVj3TRifXl2bIOri6H6rfNe.jpg'], ['لوفی — وان پیس', '/dB4EDhre2dsC2kxYDavyKWqLQwi.jpg'], ['کیمیاگر تمام‌فلزی', '/5ZFUEOULaVml7pQuXxhpR2SmVUw.jpg'], ['هانتر × هانتر', '/i2EEr2uBvRlAwJ8d8zTG2Y19mIa.jpg'], ['پیکاچو', '/uhWvnFgg3BNlcUz0Re1HfQqIcCD.jpg'], ['پوکمون', '/lP4zwr0F7hWTbAFltfoFTc2AxRG.jpg'], ['ماریو', '/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg'], ['السا — یخ‌زده', '/itAKcobTYGpYT8Phwjd8c9hleTo.jpg'], ['شرک', '/iB64vpL3dIObOtMZgX3RqdVdQDc.jpg'], ['داستان اسباب‌بازی', '/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg'], ['پاندای کونگ‌فوکار', '/wWt4JYXTg5Wr3xBW2phBrMKgp3x.jpg'], ['سیمپسون‌ها', '/tf0CUEynk6GfmrlHIQKQ5mfFP5P.jpg'], ['ریک و مورتی', '/owhkU6KRqdXoUQpjV8uyZGPtX58.jpg'], ['آنگ — آواتار', '/yaGt4GIutpbXHsv48tWceWg6s56.jpg']
+    ['اسپایدرمن', 'profile-avatars/spiderman.jpg'], ['بتمن — شوالیه تاریکی', 'profile-avatars/batman.jpg'], ['جوکر', '/p2z2bURSg7nuMsN9P2s61e2RvNz.jpg'], ['آیرون‌من', 'profile-avatars/ironman.jpg'], ['سوپرمن', '/dgTD7Q9owL3DyX9uYoSX9KZeUUz.jpg'], ['واندر وومن', '/AbXKtWQwuDiwhoQLh34VRglwuBE.jpg'], ['ثور', '/piQGdoIQOF3C1EI5cbYZLAW1gfj.jpg'], ['ددپول', 'profile-avatars/deadpool.jpg'], ['وولورین — لوگان', '/4Xujtewxqt6aU0Y81tsS9gkjizk.jpg'], ['مایلز مورالس', 'profile-avatars/miles.jpg'], ['هری پاتر', '/uUFfo8RANo7tuckB6AZAnESne55.jpg'], ['دارث ویدر — جنگ ستارگان', 'profile-avatars/vader.jpg'], ['جیمز باند', '/iFerDZUmC5Fu26i4qI8xnUVEHc7.jpg'], ['شرلوک هولمز', '/wz3MRiMmoz6b5X3oSzMRC9nLxY1.jpg'], ['والتر وایت — بریکینگ بد', '/7Jahy5LZX2Fo8fGJltMreAI49hC.jpg'], ['بازی تاج‌وتخت', '/iFY6t7Ux9r70WB7Sp0TTVz6eGtm.jpg'], ['ونزدی', '/yiL1tWLHwYrJznkjT2NKmR2YLMs.jpg'], ['بازی مرکب', '/lx8oiTXL9lIx78KOXlrlvNfoz43.jpg'], ['سرقت پول', '/2TGPhdpRC5wjdFEJqnLYiN5kbwg.jpg'], ['باربی', '/euDPyqLnuwaWMHajcU3oZ9uZezR.jpg'],
+    ['ناروتو', 'profile-avatars/naruto.jpg'], ['ناروتو شیپودن', 'profile-avatars/naruto-shippuden.jpg'], ['گوکو — دراگون بال', 'profile-avatars/goku.jpg'], ['لوفی — وان پیس', 'profile-avatars/luffy.jpg'], ['کیمیاگر تمام‌فلزی', 'profile-avatars/fma.jpg'], ['هانتر × هانتر', 'profile-avatars/hxh.jpg'], ['پیکاچو', 'profile-avatars/pikachu.jpg'], ['پوکمون', 'profile-avatars/pokemon.jpg'], ['ماریو', 'profile-avatars/mario.jpg'], ['السا — یخ‌زده', 'profile-avatars/elsa.jpg'], ['شرک', 'profile-avatars/shrek.jpg'], ['داستان اسباب‌بازی', 'profile-avatars/toystory.jpg'], ['پاندای کونگ‌فوکار', 'profile-avatars/po.jpg'], ['سیمپسون‌ها', 'profile-avatars/simpsons.jpg'], ['ریک و مورتی', 'profile-avatars/rick.jpg'], ['آنگ — آواتار', 'profile-avatars/aang.jpg']
   ];
-  const pfTile = (a, cat) => '<button type="button" data-pfav="' + IMG(a[1], 'w185') + '" data-pfcat="' + cat + '" title="' + esc(a[0]) + '"><img loading="lazy" src="' + IMG(a[1], 'w185') + '" alt="' + esc(a[0]) + '" onerror="this.closest(\'button\').remove()"></button>';
+  /* FN-PF-AVATAR-SRC v1: a character image is either a TMDB poster/profile path (starts with '/') or a repo-hosted face crop under download-data/profile-avatars/ (starts with 'profile-avatars/'). */
+  const pfImgSrc = p => p.indexOf('profile-avatars/') === 0 ? DL_BASE + p : IMG(p, 'w185');
+  const pfTile = (a, cat) => '<button type="button" data-pfav="' + pfImgSrc(a[1]) + '" data-pfcat="' + cat + '" title="' + esc(a[0]) + '"><img loading="lazy" src="' + pfImgSrc(a[1]) + '" alt="' + esc(a[0]) + '" onerror="this.closest(\'button\').remove()"></button>';
   const pfHead = (t, cat) => '<span data-pfhead="' + cat + '" style="flex-basis:100%;color:var(--pearl);font-size:.8rem;font-weight:700;margin-top:.35rem">' + t + '</span>';
   grid.innerHTML = pfHead('ستاره‌ها و اسطوره‌های سینما — مرد و زن، از هر دهه', 'people') + PF_PEOPLE.map(a => pfTile(a, 'people')).join('')
     + pfHead('شخصیت‌های معروف فیلم، سریال، انیمه و ابرقهرمانی', 'chars') + PF_CHARS.map(a => pfTile(a, 'chars')).join('');
@@ -12054,7 +12059,7 @@ async function renderProfileEditor() {
     let nPeople = 0, nChars = 0;
     grid.querySelectorAll('[data-pfav]').forEach(b => {
       const okCat = cat === 'all' || b.dataset.pfcat === cat;
-      const okQ = !q || (b.title || '').indexOf(q) !== -1;
+      const okQ = !q || (b.title || '').toLowerCase().indexOf(q.toLowerCase()) !== -1;
       const show = okCat && okQ;
       b.style.display = show ? '' : 'none';
       if (show) { if (b.dataset.pfcat === 'people') nPeople++; else nChars++; }
@@ -12064,6 +12069,67 @@ async function renderProfileEditor() {
     });
   };
   if (pfAvSearch) pfAvSearch.addEventListener('input', pfAvFilter);
+  /* FN-PF-LIVESEARCH v1: the picker must search EVERYONE, not just the 86
+     built-ins. When the typed query has no match (or few matches) among the
+     built-in tiles, query the site TMDB proxy (the same tmdb()/FN_API the
+     site already uses — no new key, no new endpoint) for PEOPLE
+     (search/person, en-US + fa-IR in parallel) and show the person profile
+     photo as a selectable avatar in the SAME grid. Debounced 350ms so no
+     request fires per keystroke; stale responses are ignored (sequence
+     number + query check). A person with no profile photo gets NO tile,
+     never a placeholder. Live tiles are people (data-pfcat="people"), so
+     the category chips keep working: people/all show them, chars hides them.
+     They are wired through the same wireTiles() selection path, so tap ->
+     preview -> save works exactly like a built-in tile. */
+  let pfLiveTimer = 0, pfLiveSeq = 0;
+  const pfClearLive = () => { grid.querySelectorAll('[data-pflive]').forEach(b => b.remove()); };
+  const pfLiveSearch = () => {
+    const q = (pfAvSearch && pfAvSearch.value || '').trim();
+    if (!q) { pfClearLive(); pfAvFilter(); return; }
+    let nBuilt = 0;
+    grid.querySelectorAll('[data-pfav]:not([data-pflive])').forEach(b => {
+      if ((b.title || '').toLowerCase().indexOf(q.toLowerCase()) !== -1) nBuilt++;
+    });
+    if (nBuilt >= 5) { pfClearLive(); pfAvFilter(); return; }
+    const seq = ++pfLiveSeq;
+    Promise.all([
+      tmdb('search/person', { query: q }, 'en-US'),
+      tmdb('search/person', { query: q }, 'fa-IR')
+    ]).then(([en, fa]) => {
+      if (seq !== pfLiveSeq) return; /* a newer search started */
+      const cur = (pfAvSearch && pfAvSearch.value || '').trim();
+      if (cur !== q) return; /* the query moved on */
+      pfClearLive();
+      const seen = new Set(), out = [];
+      const all = ((en && en.results) || []).concat((fa && fa.results) || []);
+      for (const p of all) {
+        if (!p || !p.profile_path || seen.has(p.id)) continue;
+        seen.add(p.id); out.push(p);
+        if (out.length >= 12) break;
+      }
+      if (!out.length) { pfAvFilter(); return; }
+      const charsHead = grid.querySelector('[data-pfhead="chars"]');
+      out.forEach(p => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.dataset.pfav = IMG(p.profile_path, 'w185');
+        b.dataset.pfcat = 'people';
+        b.dataset.pflive = '1';
+        b.title = p.name || '';
+        const img = document.createElement('img');
+        img.loading = 'lazy'; img.src = IMG(p.profile_path, 'w185'); img.alt = p.name || '';
+        img.onerror = () => b.remove();
+        b.appendChild(img);
+        if (charsHead) grid.insertBefore(b, charsHead); else grid.appendChild(b);
+      });
+      wireTiles();
+      pfAvFilter();
+    }).catch(() => { /* fail-open: the built-in 86 stay usable */ });
+  };
+  if (pfAvSearch) pfAvSearch.addEventListener('input', () => {
+    clearTimeout(pfLiveTimer);
+    pfLiveTimer = setTimeout(pfLiveSearch, 350);
+  });
   document.querySelectorAll('.pf-avcat').forEach(c => c.addEventListener('click', () => {
     document.querySelectorAll('.pf-avcat').forEach(x => x.classList.toggle('on', x === c));
     pfAvFilter();
