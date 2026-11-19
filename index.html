@@ -1149,6 +1149,22 @@ body.fn-theater-on .bottomnav,body.fn-theater-on header.top{display:none!importa
 .pf-avatars .pini{width:100%;height:100%;display:grid;place-items:center;font-weight:800;color:#fff;font-size:1.05rem}
 #pf-preview img{width:4.2rem;height:4.2rem;border-radius:50%;object-fit:cover;border:2px solid rgba(229,169,60,.55)}
 #pf-preview .pini{width:4.2rem;height:4.2rem;border-radius:50%;display:grid;place-items:center;background:var(--surface4);color:var(--gold2);font-size:1.5rem;font-weight:800;border:2px solid rgba(229,169,60,.55)}
+/* FN-PF-COLLAPSE v1: the profile photo is a button that opens the avatar picker */
+.pf-preview-btn{padding:0;border:0;background:none;cursor:pointer;flex:none;border-radius:50%}
+.pf-preview-btn:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.pf-avcat.on{border-color:var(--gold);color:var(--gold2)}
+/* FN-PF-STATS v1: one compact horizontal strip, big number + small label */
+.pf-stats{display:flex;gap:.5rem;overflow-x:auto;padding:.15rem .1rem .3rem;margin-bottom:1rem;scrollbar-width:none}
+.pf-stats::-webkit-scrollbar{display:none}
+.pf-stat{flex:none;min-width:4.4rem;background:var(--surface3);border:1px solid var(--line);border-radius:.9rem;padding:.55rem .6rem;text-align:center}
+.pf-stat b{display:block;font-size:1.25rem;line-height:1.2;color:var(--gold2);font-family:var(--display)}
+.pf-stat span{display:block;font-size:.66rem;color:var(--pearl);margin-top:.15rem;white-space:nowrap}
+/* FN-PF-SOCIAL v1: 2x2 grid of brand tiles, icon + name + handle */
+.pf-social{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.pf-social a{display:flex;flex-direction:column;align-items:center;gap:.2rem;padding:.75rem .4rem .65rem;background:var(--surface3);border:1px solid var(--line);border-radius:.9rem;text-decoration:none;color:var(--text)}
+.pf-social a svg{width:1.6rem;height:1.6rem;flex:none}
+.pf-social a b{font-size:.82rem;line-height:1.3}
+.pf-social a span{font-size:.68rem;color:var(--pearl);direction:ltr}
 
 /* ---------- watch-party chat upgrades ---------- */
 .chatlog .msg{max-width:92%}
@@ -1758,19 +1774,31 @@ html.tg .bottomnav{display:flex}
       <div class="pagehead"><h1>پروفایل</h1><p>نام و آواتار خودتان را تنظیم کنید — در سایدبار و بخش «تماشا با دوستان» نمایش داده می‌شود</p></div>
       <div class="wp-card" style="margin-bottom:1rem" id="pf-editor">
         <h2>پروفایل من</h2>
-        <p>اسمتان را بنویسید و یک آواتار انتخاب کنید: از شخصیت‌ها و چهره‌های ترند، یا عکس خودتان از گالری.</p>
+        <p>اسمتان را بنویسید و برای تغییر آواتار روی عکس پروفایل بزنید: از گالری گوشی‌تان یا از آواتارهای آماده.</p>
         <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:1rem">
-          <span id="pf-preview"><span class="pini">؟</span></span>
+          <button type="button" id="pf-preview" class="pf-preview-btn" title="تغییر آواتار"><span class="pini">؟</span></button>
           <div style="flex:1;min-width:12rem">
             <div class="field" style="margin:0"><label>نام نمایشی</label><input id="pf-name" maxlength="30" placeholder="مثلاً: علیرضا" autocomplete="off"></div>
           </div>
         </div>
-        <div class="field"><label>انتخاب آواتار — شخصیت‌ها و چهره‌های شناخته‌شده و ترند</label><div class="pf-avatars" id="pf-avatars"><span style="color:var(--pearl);font-size:.85rem">در حال بارگذاری آواتارها…</span></div></div>
-        <div style="display:flex;gap:.6rem;flex-wrap:wrap">
-          <label class="btn btn-glass btn-sm" style="cursor:pointer">آپلود عکس از گالری<input type="file" id="pf-upload" accept="image/*" hidden></label>
-          <button class="btn btn-gold btn-sm" id="pf-save" type="button">ذخیره پروفایل</button>
+        <div id="pf-avbox" hidden>
+          <div style="display:flex;gap:.6rem;flex-wrap:wrap;align-items:center">
+            <button class="btn btn-glass btn-sm" id="pf-mode-ready" type="button">آواتارهای آماده</button>
+            <label class="btn btn-glass btn-sm" style="cursor:pointer">آپلود عکس از گالری<input type="file" id="pf-upload" accept="image/*" hidden></label>
+            <button class="btn btn-gold btn-sm" id="pf-save" type="button">ذخیره پروفایل</button>
+          </div>
+          <div id="pf-gridwrap" hidden>
+            <div style="display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin:.7rem 0 .2rem">
+              <div class="field" style="flex:1;min-width:9rem;margin:0"><input id="pf-avsearch" type="search" placeholder="جست‌وجوی آواتار…" autocomplete="off"></div>
+              <button class="btn btn-glass btn-sm pf-avcat on" data-pfcat="all" type="button">همه</button>
+              <button class="btn btn-glass btn-sm pf-avcat" data-pfcat="people" type="button">ستاره‌های سینما</button>
+              <button class="btn btn-glass btn-sm pf-avcat" data-pfcat="chars" type="button">شخصیت‌ها</button>
+            </div>
+            <div class="field" style="margin:0"><label>انتخاب آواتار — شخصیت‌ها و چهره‌های شناخته‌شده و ترند</label><div class="pf-avatars" id="pf-avatars"><span style="color:var(--pearl);font-size:.85rem">در حال بارگذاری آواتارها…</span></div></div>
+          </div>
         </div>
       </div>
+      <div class="pf-stats" id="pf-stats" aria-label="آمار فعالیت شما"></div>
       <div class="wp-cards">
         <div class="wp-card">
           <h2>مهمان Family Night</h2>
@@ -1778,17 +1806,16 @@ html.tg .bottomnav{display:flex}
           <div style="display:flex;gap:.6rem;flex-wrap:wrap">
             <button class="btn btn-gold btn-sm" data-nav="watchlist">واچ‌لیست من (<span id="pf-wl">0</span>)</button>
             <button class="btn btn-glass btn-sm" data-nav="party">تماشا با دوستان</button>
-            <a class="btn btn-glass btn-sm" href="https://alireza-spec.github.io/FN/" target="_blank" rel="noopener">باز کردن نسخه اپ</a>
           </div>
         </div>
         <div class="wp-card">
           <h2>ارتباط با Family Night</h2>
           <p>برای دانلودها، پیشنهادها و پشتیبانی، کانال‌ها و صفحات رسمی Family Night:</p>
-          <div style="display:flex;gap:.6rem;flex-wrap:wrap">
-            <a class="btn btn-glass btn-sm" href="https://t.me/HashtagAlireza" target="_blank" rel="noopener">تلگرام</a>
-            <a class="btn btn-glass btn-sm" href="https://instagram.com/HashtagAlireza" target="_blank" rel="noopener">اینستاگرام</a>
-            <a class="btn btn-glass btn-sm" href="https://twitter.com/HashtagAlireza" target="_blank" rel="noopener">توییتر (X)</a>
-            <a class="btn btn-glass btn-sm" href="https://youtube.com/@HashtagAlireza" target="_blank" rel="noopener">یوتیوب</a>
+          <div class="pf-social">
+            <a href="https://t.me/HashtagAlireza" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#26A5E4" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg><b>تلگرام</b><span>@HashtagAlireza</span></a>
+            <a href="https://instagram.com/HashtagAlireza" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#E1306C" aria-hidden="true"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg><b>اینستاگرام</b><span>@HashtagAlireza</span></a>
+            <a href="https://twitter.com/HashtagAlireza" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg><b>توییتر (X)</b><span>@HashtagAlireza</span></a>
+            <a href="https://youtube.com/@HashtagAlireza" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#FF0000" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg><b>یوتیوب</b><span>@HashtagAlireza</span></a>
           </div>
         </div>
       </div>
@@ -11590,6 +11617,23 @@ function syncProfileUI() {
   const pv = $('#pf-preview');
   if (pv) pv.innerHTML = av ? '<img src="' + av + '" alt="">' : '<span class="pini">' + esc(pfInitialOf(nm)) + '</span>';
 }
+/* FN-PF-STATS v1: compact activity stats, read live from the real stored
+   data (the same fn-state-v1 store the guest card describes). Only stats
+   with a real data source are shown — downloads / plays / shares /
+   comparisons have no stored per-user counter, so they are absent,
+   never faked with a 0. A genuine 0 (user really has none) IS shown. */
+function syncProfileStats() {
+  const box = $('#pf-stats'); if (!box) return;
+  const n = v => (typeof v === 'number' && isFinite(v) ? v : 0);
+  const items = [];
+  if (store.watchlist) items.push(['واچ‌لیست', n(store.watchlist.size)]);
+  if (store.favorites) items.push(['علاقه‌مندی‌ها', n(store.favorites.size)]);
+  if (Array.isArray(store.lists)) items.push(['لیست‌ها', store.lists.length]);
+  if (store.ratings) items.push(['امتیازها', n(store.ratings.size)]);
+  if (Array.isArray(store.recent)) items.push(['تماشا شده', store.recent.length]);
+  if (Array.isArray(store.searches)) items.push(['جستجوها', store.searches.length]);
+  box.innerHTML = items.map(([label, v]) => '<div class="pf-stat"><b>' + v + '</b><span>' + label + '</span></div>').join('');
+}
 function gradAvatarDataUrl(c1, c2, letter) {
   try {
     const cv = document.createElement('canvas'); cv.width = cv.height = 128;
@@ -11605,6 +11649,20 @@ function gradAvatarDataUrl(c1, c2, letter) {
 let pfAvatarSel; /* undefined = keep the saved avatar */
 async function renderProfileEditor() {
   syncProfileUI();
+  syncProfileStats();
+  /* FN-PF-COLLAPSE v1: the avatar picker is a collapsible, closed by
+     default. Tapping the profile photo opens the choice row (ready-made
+     avatars / gallery upload / save); «آواتارهای آماده» opens the grid;
+     saving closes the whole box. */
+  const pfAvBox = $('#pf-avbox'), pfGridWrap = $('#pf-gridwrap');
+  const pfAvSet = open => {
+    if (pfAvBox) pfAvBox.hidden = !open;
+    if (!open && pfGridWrap) pfGridWrap.hidden = true;
+  };
+  const pfPvBtn = $('#pf-preview');
+  if (pfPvBtn) pfPvBtn.onclick = () => pfAvSet(pfAvBox ? pfAvBox.hidden : false);
+  const pfModeReady = $('#pf-mode-ready');
+  if (pfModeReady) pfModeReady.onclick = () => { pfAvSet(true); if (pfGridWrap) pfGridWrap.hidden = false; };
   const inp = $('#pf-name');
   if (inp && document.activeElement !== inp) inp.value = store.profile.name || '';
   const sv = $('#pf-save');
@@ -11614,6 +11672,7 @@ async function renderProfileEditor() {
     fnSaveState();
     syncProfileUI();
     toast(store.profile.name ? 'پروفایل ذخیره شد — سلام ' + store.profile.name + '!' : 'پروفایل ذخیره شد');
+    pfAvSet(false);
   };
   const up = $('#pf-upload');
   if (up) up.onchange = () => {
@@ -11653,10 +11712,10 @@ async function renderProfileEditor() {
     ['اسپایدرمن', '/or6XJBVpcEbIkma0V9zshnbEtx4.jpg'], ['بتمن — شوالیه تاریکی', '/qJ2tW6WMUDux911r6m7haRef0WH.jpg'], ['جوکر', '/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg'], ['آیرون‌من', '/78lPtwv72eTNqFW9COBYI0dWDJa.jpg'], ['سوپرمن', '/8GFtkImmK0K1VaUChR0n9O61CFU.jpg'], ['واندر وومن', '/v4ncgZjG2Zu8ZW5al1vIZTsSjqX.jpg'], ['ثور', '/prSfAi1xGrhLQNxVSUFh61xQ4Qy.jpg'], ['ددپول', '/3E53WEZJqP6aM84D8CckXx4pIHw.jpg'], ['وولورین — لوگان', '/fnbjcRDYn6YviCcePDnGdyAkYsB.jpg'], ['مایلز مورالس', '/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg'], ['هری پاتر', '/wuMc08IPKEatf9rnMNXvIDxqP4W.jpg'], ['دارث ویدر — جنگ ستارگان', '/fai0rspsNeJCS69wHNjOdWxcI7P.jpg'], ['جیمز باند', '/d0IVecFQvsGdSbnMAHqiYsNYaJT.jpg'], ['شرلوک هولمز', '/7WTsnHkbA0FaG6R9twfFde0I9hl.jpg'], ['والتر وایت — بریکینگ بد', '/anFx9aTOOYqgS3v7x3R84Kz67ly.jpg'], ['بازی تاج‌وتخت', '/1XS1oqL89opfnbLl8WnZY1O1uJx.jpg'], ['ونزدی', '/9PFonBhy4cQy7Jz20NpMygczOkv.jpg'], ['بازی مرکب', '/1QdXdRYfktUSONkl1oD5gc6Be0s.jpg'], ['سرقت پول', '/reEMJA1uzscCbkpeRJeTT2bjqUp.jpg'], ['باربی', '/iuFNMS8U5cb6xfzi51Dbkovj7vM.jpg'],
     ['ناروتو', '/xppeysfvDKVx775MFuH8Z9BlpMk.jpg'], ['ناروتو شیپودن', '/kV27j3Nz4d5z8u6mN3EJw9RiLg2.jpg'], ['گوکو — دراگون بال', '/oQ5CnVj3TRifXl2bIOri6H6rfNe.jpg'], ['لوفی — وان پیس', '/dB4EDhre2dsC2kxYDavyKWqLQwi.jpg'], ['کیمیاگر تمام‌فلزی', '/5ZFUEOULaVml7pQuXxhpR2SmVUw.jpg'], ['هانتر × هانتر', '/i2EEr2uBvRlAwJ8d8zTG2Y19mIa.jpg'], ['پیکاچو', '/uhWvnFgg3BNlcUz0Re1HfQqIcCD.jpg'], ['پوکمون', '/lP4zwr0F7hWTbAFltfoFTc2AxRG.jpg'], ['ماریو', '/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg'], ['السا — یخ‌زده', '/itAKcobTYGpYT8Phwjd8c9hleTo.jpg'], ['شرک', '/iB64vpL3dIObOtMZgX3RqdVdQDc.jpg'], ['داستان اسباب‌بازی', '/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg'], ['پاندای کونگ‌فوکار', '/wWt4JYXTg5Wr3xBW2phBrMKgp3x.jpg'], ['سیمپسون‌ها', '/tf0CUEynk6GfmrlHIQKQ5mfFP5P.jpg'], ['ریک و مورتی', '/owhkU6KRqdXoUQpjV8uyZGPtX58.jpg'], ['آنگ — آواتار', '/yaGt4GIutpbXHsv48tWceWg6s56.jpg']
   ];
-  const pfTile = a => '<button type="button" data-pfav="' + IMG(a[1], 'w185') + '" title="' + esc(a[0]) + '"><img loading="lazy" src="' + IMG(a[1], 'w185') + '" alt="' + esc(a[0]) + '" onerror="this.closest(\'button\').remove()"></button>';
-  const pfHead = t => '<span style="flex-basis:100%;color:var(--pearl);font-size:.8rem;font-weight:700;margin-top:.35rem">' + t + '</span>';
-  grid.innerHTML = pfHead('ستاره‌ها و اسطوره‌های سینما — مرد و زن، از هر دهه') + PF_PEOPLE.map(pfTile).join('')
-    + pfHead('شخصیت‌های معروف فیلم، سریال، انیمه و ابرقهرمانی') + PF_CHARS.map(pfTile).join('');
+  const pfTile = (a, cat) => '<button type="button" data-pfav="' + IMG(a[1], 'w185') + '" data-pfcat="' + cat + '" title="' + esc(a[0]) + '"><img loading="lazy" src="' + IMG(a[1], 'w185') + '" alt="' + esc(a[0]) + '" onerror="this.closest(\'button\').remove()"></button>';
+  const pfHead = (t, cat) => '<span data-pfhead="' + cat + '" style="flex-basis:100%;color:var(--pearl);font-size:.8rem;font-weight:700;margin-top:.35rem">' + t + '</span>';
+  grid.innerHTML = pfHead('ستاره‌ها و اسطوره‌های سینما — مرد و زن، از هر دهه', 'people') + PF_PEOPLE.map(a => pfTile(a, 'people')).join('')
+    + pfHead('شخصیت‌های معروف فیلم، سریال، انیمه و ابرقهرمانی', 'chars') + PF_CHARS.map(a => pfTile(a, 'chars')).join('');
   const wireTiles = () => grid.querySelectorAll('[data-pfav]').forEach(b => {
     b.classList.toggle('on', !!store.profile.avatar && b.dataset.pfav === store.profile.avatar);
     b.onclick = () => {
@@ -11666,6 +11725,31 @@ async function renderProfileEditor() {
     };
   });
   wireTiles();
+  /* FN-PF-COLLAPSE v1: search + category filter inside the collapsible.
+     The two groups come from the data itself (PF_PEOPLE = cinema stars,
+     PF_CHARS = characters) — no invented categories. */
+  const pfAvSearch = $('#pf-avsearch');
+  const pfAvFilter = () => {
+    const q = (pfAvSearch && pfAvSearch.value || '').trim();
+    const catBtn = document.querySelector('.pf-avcat.on');
+    const cat = catBtn ? catBtn.dataset.pfcat : 'all';
+    let nPeople = 0, nChars = 0;
+    grid.querySelectorAll('[data-pfav]').forEach(b => {
+      const okCat = cat === 'all' || b.dataset.pfcat === cat;
+      const okQ = !q || (b.title || '').indexOf(q) !== -1;
+      const show = okCat && okQ;
+      b.style.display = show ? '' : 'none';
+      if (show) { if (b.dataset.pfcat === 'people') nPeople++; else nChars++; }
+    });
+    grid.querySelectorAll('[data-pfhead]').forEach(h => {
+      h.style.display = ((h.dataset.pfhead === 'people' ? nPeople : nChars) > 0) ? '' : 'none';
+    });
+  };
+  if (pfAvSearch) pfAvSearch.addEventListener('input', pfAvFilter);
+  document.querySelectorAll('.pf-avcat').forEach(c => c.addEventListener('click', () => {
+    document.querySelectorAll('.pf-avcat').forEach(x => x.classList.toggle('on', x === c));
+    pfAvFilter();
+  }));
 }
 const sbProfileEl = $('#sb-profile');
 if (sbProfileEl) sbProfileEl.addEventListener('click', () => go('profile'));
