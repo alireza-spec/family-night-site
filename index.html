@@ -4779,6 +4779,27 @@ function getTitleIndex() {
   if (!titleDlIndexPromise) titleDlIndexPromise = fetch(DL_BASE + 'download-title-index.json').then(r => { if (!r.ok) throw new Error('title index'); return r.json(); }).then(x => { titleDlIndex = x || {}; return titleDlIndex; });
   return titleDlIndexPromise;
 }
+/* Search-index rows for the download-box title fallback (FN-DL-FALLBACK
+   v1): search-index.json rows are [title, year, type, imdb, tmdb, part,
+   old]. Reuses the FN-LOCAL-SEARCH in-memory index when it is already
+   loaded (no second fetch/parse); otherwise fetches it once, lazily —
+   only when the IMDb-code lookup has already failed, so the normal path
+   pays nothing. */
+let fnDlSearchIdx = null, fnDlSearchIdxPromise = null;
+function getDlSearchIndex() {
+  if (fnDlSearchIdx) return Promise.resolve(fnDlSearchIdx);
+  try {
+    if (typeof FN_LSEARCH !== 'undefined' && FN_LSEARCH && FN_LSEARCH.loaded && FN_LSEARCH.idx) {
+      fnDlSearchIdx = FN_LSEARCH.idx;
+      return Promise.resolve(fnDlSearchIdx);
+    }
+  } catch (e) {}
+  if (!fnDlSearchIdxPromise) fnDlSearchIdxPromise = fetch(DL_BASE + 'search-index.json').then(r => { if (!r.ok) throw new Error('search index'); return r.json(); }).then(arr => {
+    fnDlSearchIdx = (arr || []).map(e => ({ t: e[0], y: e[1], type: e[2], imdb: e[3], tmdb: e[4], part: e[5], old: e[6] }));
+    return fnDlSearchIdx;
+  }).catch(e => { fnDlSearchIdxPromise = null; throw e; });
+  return fnDlSearchIdxPromise;
+}
 function loadDlPart(part, which) {
   const isOld = which === 'old';
   const cache = isOld ? oldDlParts : fnDlParts;
@@ -4866,9 +4887,13 @@ function recordFromArchive(doc, imdb, num) {
     const txt = (n.textContent || '').trim(), low = txt.toLowerCase();
     if (/imdb rates:/i.test(txt)) rate = (txt.match(/[\d.]+/) || [])[0] || '';
     else if (/imdb votes:/i.test(txt)) votes = txt.replace(/.*?:/i, '').trim();
-    else if (/soft\s*sub/.test(low)) cat = 'softsub';
-    else if (/dubbed/.test(low)) cat = 'dubbed';
-    else if (/nosub/.test(low)) cat = 'nosub';
+    /* FN-DL-FALLBACK v1: a <p> holding links is a link row, not a group
+       marker — its label may carry the group word ("… SoftSub" /
+       "… Dubbed"). Without the !querySelector('a') guard those links
+       were silently dropped and the box showed empty / partial. */
+    else if (/soft\s*sub/.test(low) && !n.querySelector('a')) cat = 'softsub';
+    else if (/dubbed/.test(low) && !n.querySelector('a')) cat = 'dubbed';
+    else if (/nosub/.test(low) && !n.querySelector('a')) cat = 'nosub';
     else if (/^season\s*\d+/i.test(txt)) season = txt.match(/\d+/)[0];
     else if (cat) Array.prototype.forEach.call(n.querySelectorAll('a'), a => {
       const q = (a.textContent || '').trim(), href = a.getAttribute('href') || '';
@@ -4887,6 +4912,80 @@ function recordFromArchive(doc, imdb, num) {
     n = n.nextElementSibling;
   }
   return { title, rate, votes, groups };
+}
+/* FN-DL-FALLBACK v1 — find an H3 download record by NORMALIZED TITLE
+   inside one archive part. Used ONLY when the IMDb-code lookup found
+   nothing (the record's <b>IMDb Code:</b> field is empty, so the code
+   lookup can never find it, even though the links are there). The H3
+   title is "N. Title start_year" or "N. Title YYYY": the number prefix
+   and the year marker are stripped before comparing. If the H3 carries
+   a REAL year and the work's year is known, the years must agree; a
+   "start_year" placeholder never blocks. If more than one record in the
+   part matches, the match is AMBIGUOUS and nothing is returned — the
+   box must never show another title's links. The found record is
+   parsed by recordFromArchive's own number branch, so the links and
+   sizes are byte-identical to what the IMDb lookup would have shown. */
+function recordFromArchiveByTitle(doc, title, year) {
+  const needle = normTitle(title);
+  if (!needle) return null;
+  const heads = doc.querySelectorAll('h3');
+  let matchNum = null, matches = 0;
+  for (let i = 0; i < heads.length; i++) {
+    const raw = heads[i].textContent || '';
+    const numM = raw.match(/^\s*(\d+)\./);
+    if (!numM) continue;
+    let rest = raw.replace(/^\s*\d+\.\s*/, '');
+    let h3Year = null;
+    const sy = rest.match(/\s+start_year\s*$/i);
+    if (sy) rest = rest.slice(0, sy.index);
+    else { const ym = rest.match(/\s+(\d{4})\s*$/); if (ym) { h3Year = +ym[1]; rest = rest.slice(0, ym.index); } }
+    if (normTitle(rest) !== needle) continue;
+    if (h3Year && year && h3Year !== +year) continue;
+    matchNum = +numM[1]; matches++;
+  }
+  if (matches !== 1) {
+    if (matches > 1) console.info('[fn-dl-fallback] ambiguous title "' + title + '" (' + matches + ' matches in this part) — no record returned');
+    return null;
+  }
+  return recordFromArchive(doc, '', matchNum);
+}
+/* FN-DL-FALLBACK v1 — resolve a title's download record when the
+   IMDb-code lookup failed. The part comes from the search-index row
+   (by TMDB id first, then by IMDb id, then — only if exactly one row
+   matches — by normalized title + year). The part file is fetched
+   through loadDlPart, which reuses the cached document when the
+   failed IMDb lookup already fetched it. Returns {rec, src} like
+   resolveDlRecord, or null. Never throws: any failure means the box
+   shows the same "no link" message as today. */
+async function fnDlTitleFallback(imdbId, tmdbKey, fbTitle, fbYear) {
+  try {
+    const idx = await getDlSearchIndex();
+    if (!idx || !idx.length) return null;
+    let row = null;
+    if (tmdbKey) {
+      const k = String(tmdbKey).split(':');
+      const kType = k[0], kId = +k[1];
+      if (kType && kId) row = idx.find(e => e.type === kType && e.tmdb === kId) || null;
+    }
+    if (!row && imdbId) {
+      const im = String(imdbId).toLowerCase();
+      row = idx.find(e => (e.imdb || '').toLowerCase() === im) || null;
+    }
+    if (!row && fbTitle) {
+      const needle = normTitle(fbTitle);
+      if (needle) {
+        const cands = idx.filter(e => normTitle(e.t) === needle && (!fbYear || !e.y || e.y === +fbYear));
+        if (cands.length === 1) row = cands[0];
+      }
+    }
+    if (!row || !row.part) return null;
+    const which = row.old ? 'old' : 'new';
+    const doc = await loadDlPart(row.part, which === 'old' ? 'old' : undefined);
+    const rec = recordFromArchiveByTitle(doc, row.t, row.y);
+    if (!rec || !dlRecHasLinks(rec)) return null;
+    console.info('[fn-dl-fallback] title fallback hit: "' + row.t + '" (' + row.y + ') part ' + row.part + (row.old ? ' (old archive)' : '') + ' — ' + (rec.groups.softsub.length + rec.groups.dubbed.length + rec.groups.nosub.length) + ' links');
+    return { rec, src: which };
+  } catch (e) { return null; }
 }
 /* quality specs parsed from the real archive label + file name:
    resolution, source (BluRay / WEB-DL …), codec (x264 / x265 HEVC / 10bit),
@@ -5538,7 +5637,10 @@ async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUr
   }
   /* Fallback chain for the download box: IMDb index first, then the
      TMDB title index (archive titles with no IMDb code, matched by the
-     title-match job). tmdbKey is "movie:<id>" or "tv:<id>". */
+     title-match job), then the search-index title fallback (FN-DL-
+     FALLBACK v1 — finds the H3 record by normalized title when the
+     record's IMDb Code field is empty). tmdbKey is "movie:<id>" or
+     "tv:<id>". */
   let resolved = null;
   try {
     if (token !== detailToken) return;
@@ -5548,6 +5650,7 @@ async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUr
       const hit = ti[tmdbKey];
       if (hit && hit.part && hit.num) resolved = await resolveDlRecordByPart('', hit.num, hit.part, 'new');
     }
+    if (!resolved) resolved = await fnDlTitleFallback(imdbId, tmdbKey, fbTitle, fbYear);
     if (token !== detailToken) return;
     if (!resolved) { body.innerHTML = '<div class="state"><b>فعلاً لینک دانلود رایگانی برای این اثر نیست.</b><br>از «پخش آنلاین» می‌توانید همین حالا تماشا کنید.</div>'; return; }
   } catch (e) {
