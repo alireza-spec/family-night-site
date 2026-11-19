@@ -2650,7 +2650,22 @@ async function loadHome() {
   /* Trending rail: the snapshot carries year-only dates and TMDB trending
      is popularity-ordered, so old titles leak in. Keep the current year only
      here; the see-all page applies the true 3-month filter + date sort. */
-  if (rows.trending_now) { const cy = String(new Date().getFullYear()); rows.trending_now = rows.trending_now.filter(x => String(x.release_date || x.first_air_date || '').slice(0, 4) === cy); }
+  /* Trending rail: live TMDB trending (popularity), not the snapshot —
+     only released + last-3-months + notable, newest-first. Falls back to
+     the snapshot row (current year only) if the live fetch fails/empty. */
+  const _trendFallback = () => { if (rows.trending_now) { const cy = String(new Date().getFullYear()); rows.trending_now = rows.trending_now.filter(x => String(x.release_date || x.first_air_date || '').slice(0, 4) === cy); } };
+  try {
+    const [_tm, _tt] = await Promise.all([tmdb('trending/movie/week', { page: 1 }), tmdb('trending/tv/week', { page: 1 })]);
+    const _today = new Date().toISOString().slice(0, 10);
+    const _g3 = new Date(); _g3.setMonth(_g3.getMonth() - 3);
+    const _g3s = _g3.toISOString().slice(0, 10);
+    const _dt = x => x.media_type === 'tv' ? (x.first_air_date || '') : (x.release_date || '');
+    const _live = [].concat((_tm.results || []).map(x => Object.assign({}, x, { media_type: 'movie' })))
+      .concat((_tt.results || []).map(x => Object.assign({}, x, { media_type: 'tv' })))
+      .filter(x => { const dt = _dt(x); return dt && dt <= _today && dt >= _g3s; })
+      .sort((a, b) => _dt(b).localeCompare(_dt(a))).slice(0, 20);
+    if (_live.length) rows.trending_now = _live; else _trendFallback();
+  } catch (e) { _trendFallback(); }
   cacheItems(Object.values(rows).flat());
   /* Progressive rails: only the first rows render up front; the rest
      are appended as the reader scrolls near them — the home page
@@ -3206,12 +3221,20 @@ async function loadArchPage() {
          for TV, made TMDB return wrong/empty results */
       if (certVal && !isTv) { params.certification_country = 'US'; params.certification = certVal; }
       try {
-        let d = await tmdb('discover/' + s.type, params);
+        let d;
+        if (arch.collKey === 'trending_now') {
+          /* Trending = TMDB trending (popularity), not discover: only
+             notable works. Released + 3-month filter and the newest-first
+             sort happen after the streams merge. */
+          d = await tmdb('trending/' + s.type + '/week', { page: s.page });
+        } else {
+          d = await tmdb('discover/' + s.type, params);
+        }
         anyOk = true;
         let items = (d.results || []).map(x => Object.assign({}, x, { media_type: s.type }));
         /* the default vote floor must never empty a whole stream
            (e.g. Iranian series): retry page 1 once without it */
-        if (!items.length && s.page === 1 && +params['vote_count.gte'] > 0) {
+        if (!items.length && s.page === 1 && arch.collKey !== 'trending_now' && +params['vote_count.gte'] > 0) {
           const d2 = await tmdb('discover/' + s.type, Object.assign({}, params, { 'vote_count.gte': 0 }));
           if (d2 && (d2.results || []).length) { d = d2; items = d2.results.map(x => Object.assign({}, x, { media_type: s.type })); }
         }
@@ -3224,6 +3247,17 @@ async function loadArchPage() {
     let items = [].concat(...batches);
     const seen = new Set([...grid.querySelectorAll('[data-open]')].map(el => el.dataset.open));
     items = items.filter(x => { const k = (x.media_type || 'movie') + ':' + x.id; if (seen.has(k)) return false; seen.add(k); return true; });
+    /* Trending (user rule): only RELEASED + last-3-months + notable
+       (the trending endpoint already ranks by popularity). The trending
+       API returns popularity order, so re-sort newest-first here. */
+    if (arch.collKey === 'trending_now') {
+      const _today = new Date().toISOString().slice(0, 10);
+      const _g3 = new Date(); _g3.setMonth(_g3.getMonth() - 3);
+      const _g3s = _g3.toISOString().slice(0, 10);
+      const _dt = x => x.media_type === 'tv' ? (x.first_air_date || '') : (x.release_date || '');
+      items = items.filter(x => { const dt = _dt(x); return dt && dt <= _today && dt >= _g3s; })
+        .sort((a, b) => _dt(b).localeCompare(_dt(a)));
+    }
     /* حروف و اعداد: keep only titles whose original name starts
        with the picked letter (or a digit) */
     if (archLetter) items = items.filter(letterMatch);
