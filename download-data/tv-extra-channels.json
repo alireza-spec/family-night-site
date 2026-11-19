@@ -1,0 +1,479 @@
+[
+ {
+  "name": "316",
+  "url": "https://316hls.wns.live/hls/stream.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "316-TV",
+  "logo": ""
+ },
+ {
+  "name": "4U Family",
+  "url": "https://familyhls.4utv.live/hls/stream.m3u8",
+  "group": "Family",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "4U-Family",
+  "logo": ""
+ },
+ {
+  "name": "Alternative Shorai",
+  "url": "https://hlspackager.akamaized.net/live/DB/ALTERNATIVE_SHORAI_TV/HLS/ALTERNATIVE_SHORAI_TV.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Alternative-Shorai-TV",
+  "logo": ""
+ },
+ {
+  "name": "Ayeneh",
+  "url": "https://spf-ayeneh.cfbanana.workers.dev/?url=https://2nbyjjx7y53k-hls-live.5centscdn.com/cls040318/b0d2763968fd0bdd2dc0d44ba2abf9ce.sdp/playlist.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Ayeneh-TV",
+  "logo": ""
+ },
+ {
+  "name": "Balochistan",
+  "url": "https://blchhls.wns.live/hls/stream.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Balochistan-TV",
+  "logo": ""
+ },
+ {
+  "name": "Channel One",
+  "url": "https://spf-cors-kanalyek.cfbanana.workers.dev/?url=https://livestream.5centscdn.com/channelonehd/0d0dd9d8b4933ea5f0a3a9495707c004.sdp/playlist.m3u8",
+  "group": "News",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Channel-One",
+  "logo": ""
+ },
+ {
+  "name": "DEJ",
+  "url": "https://rdejhls.wns.live/hls/stream.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "DEJ-TV",
+  "logo": ""
+ },
+ {
+  "name": "Derakhte Zendegi",
+  "url": "https://derakhtzhls.wns.live/hls/stream.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Derakhte-Zendegi",
+  "logo": ""
+ },
+ {
+  "name": "GordAfarid",
+  "url": "https://gatvhls.wns.live/hls/stream.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "GordAfarid-TV",
+  "logo": ""
+ },
+ {
+  "name": "Hambastegi",
+  "url": "https://livestream.5centscdn.com/HambastegiTV/7f3e29c26468b5b1036c2fbe536b5c7b.sdp/playlist.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Hambastegi-TV",
+  "logo": ""
+ },
+ {
+  "name": "Iran Aryaee",
+  "url": "https://iranaryai.persiran.org/iranearyaeesd/index.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Iran-Aryaee",
+  "logo": ""
+ },
+ {
+  "name": "Iran Comedy",
+  "url": "https://irnamahls.wns.live/hls/stream.m3u8",
+  "group": "Comedy",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Iran-Comedy",
+  "logo": ""
+ },
+ {
+  "name": "Iran Film",
+  "url": "https://ifilmhls.wns.live/hls/stream.m3u8",
+  "group": "Movies",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Iran-Film",
+  "logo": ""
+ },
+ {
+  "name": "Iran Independent",
+  "url": "https://mediamtx.elitelatrade.com/live/stream/main_stream.m3u8",
+  "group": "News",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Iran-Independent-TV",
+  "logo": ""
+ },
+ {
+  "name": "Iran Israel",
+  "url": "https://streaminglive.co.il:3730/live/raniamranilive.m3u8",
+  "group": "News",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Iran-TV-Israel",
+  "logo": ""
+ },
+ {
+  "name": "Iran Republic",
+  "url": "https://irrephls.wns.live/hls/stream.m3u8",
+  "group": "News",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Iran-Republic-TV",
+  "logo": ""
+ },
+ {
+  "name": "Iran Wire",
+  "url": "https://irwhls.wns.live/hls/stream.m3u8",
+  "group": "News",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Iran-Wire-TV",
+  "logo": ""
+ },
+ {
+  "name": "Israel Pars",
+  "url": "https://live.pars-israel.com/tmp_hls/iptv/index.m3u8",
+  "group": "News",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Israel-Pars-TV",
+  "logo": ""
+ },
+ {
+  "name": "MelliG",
+  "url": "https://mellihls.wns.live/hls/stream.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "MelliG-TV",
+  "logo": ""
+ },
+ {
+  "name": "Nahade Azadi",
+  "url": "https://livestream.5centscdn.com/nahadeazadi/14a66ff6dca989d3a2eb0dc8cdb50892.sdp/chunks.m3u8",
+  "group": "News",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Nahade-Azadi",
+  "logo": ""
+ },
+ {
+  "name": "Novin",
+  "url": "https://stream.novin.live/hls/playlist.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Novin-TV",
+  "logo": ""
+ },
+ {
+  "name": "Omid Javedan",
+  "url": "https://livestream.5centscdn.com/pwocchurchweb1/cebac1e921182acff008ab1222f0c916.sdp/playlist.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Omid-Javedan",
+  "logo": ""
+ },
+ {
+  "name": "Persiana China",
+  "url": "https://chinahls.persiana.live/hls/stream.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Persiana-China",
+  "logo": ""
+ },
+ {
+  "name": "Persiana Podcast",
+  "url": "https://podhls.persiana.live/hls/stream.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Persiana-Podcast",
+  "logo": ""
+ },
+ {
+  "name": "Persiana SetMix",
+  "url": "https://setmixhls.persiana.live/hls/stream.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Persiana-SetMix",
+  "logo": ""
+ },
+ {
+  "name": "Persiana Voyage",
+  "url": "https://voyhls.persiana.live/hls/stream.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Persiana-Voyage",
+  "logo": ""
+ },
+ {
+  "name": "Porchooneh",
+  "url": "https://oldkors-k0y7s.cfbanana.workers.dev/?url=http://porchooneh.com/hls/live1/stream1.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Porchooneh-TV",
+  "logo": ""
+ },
+ {
+  "name": "Project Leon",
+  "url": "https://pleonhls.wns.live/hls/stream.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Project-Leon",
+  "logo": ""
+ },
+ {
+  "name": "Pulse Media",
+  "url": "https://pulsehls.wns.live/hls/stream.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Pulse-Media",
+  "logo": ""
+ },
+ {
+  "name": "Radio Farda",
+  "url": "https://rferl-ingest.akamaized.net/hls/live/2121768/tvmc01/playlist.m3u8",
+  "group": "News",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Radio-Farda-TV",
+  "logo": ""
+ },
+ {
+  "name": "Radio Shemroon",
+  "url": "https://rshemhls.wns.live/hls/stream.m3u8",
+  "group": "Music",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Radio-Shemroon-TV",
+  "logo": ""
+ },
+ {
+  "name": "Ravi",
+  "url": "https://hls.ravitv.com/hls/stream.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Ravi-TV",
+  "logo": ""
+ },
+ {
+  "name": "Romantico",
+  "url": "https://live.livestreamtv.ca/romanticotvshow/playlist.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Romantico-TV",
+  "logo": ""
+ },
+ {
+  "name": "Sun Music",
+  "url": "https://hls.sunmusic.live/hls/stream.m3u8",
+  "group": "Music",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Sun-Music",
+  "logo": ""
+ },
+ {
+  "name": "T2 America",
+  "url": "https://spf-onetv-9i4j.cfbanana.workers.dev/?url=https://ca-rt.onetv.app/T2America/index-0.m3u8",
+  "group": "Entertainment",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "T2-America",
+  "logo": ""
+ },
+ {
+  "name": "T2 International",
+  "url": "https://spf-onetv-9i4j.cfbanana.workers.dev/?url=https://ca-rt.onetv.app/T2International/index-0.m3u8",
+  "group": "Entertainment",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "T2-International",
+  "logo": ""
+ },
+ {
+  "name": "Tasvire Iran",
+  "url": "https://bozztv.com/1gbw5/tintv/tintv/playlist.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Tasvire-Iran",
+  "logo": ""
+ },
+ {
+  "name": "Woman",
+  "url": "https://wmtvhls.wns.live/hls/stream.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Woman-TV",
+  "logo": ""
+ },
+ {
+  "name": "آذربایجان غربی",
+  "url": "https://live-aburayhan1108.telewebion.ir/ek/azarbayjangharbi/live/576p/index.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Azerbaijan-Gharbi",
+  "logo": ""
+ },
+ {
+  "name": "اردبیل",
+  "url": "https://live-aburayhan1110.telewebion.ir/ek/sabalan/live/576p/index.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Ardabil",
+  "logo": ""
+ },
+ {
+  "name": "خراسان شمالی",
+  "url": "https://live-aburayhan1101.telewebion.ir/ek/atrak/live/576p/index.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Khorasan-Shomali",
+  "logo": ""
+ },
+ {
+  "name": "زنجان",
+  "url": "https://live-aburayhan1107.telewebion.ir/ek/eshragh/live/720p/index.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Zanjan",
+  "logo": ""
+ },
+ {
+  "name": "سیستان و بلوچستان",
+  "url": "https://live-aburayhan1104.telewebion.ir/ek/hamoon/live/720p/index.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Sistan-Baluchestan",
+  "logo": ""
+ },
+ {
+  "name": "شبکه الکوثر",
+  "url": "https://live-aburayhan1111.telewebion.ir/ek/kawthar/live/576p/index.m3u8",
+  "group": "Religion",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Alkosar",
+  "logo": ""
+ },
+ {
+  "name": "شبکه امام رضا",
+  "url": "https://live-aburayhan1104.telewebion.ir/ek/razavi/live/720p/index.m3u8",
+  "group": "Religion",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Imam-Reza",
+  "logo": ""
+ },
+ {
+  "name": "شبکه ایرنا",
+  "url": "https://tv.irna.ir/live/stream/index.m3u8",
+  "group": "News",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "IRNA-TV",
+  "logo": ""
+ },
+ {
+  "name": "شبکه لبیک",
+  "url": "https://live-aburayhan1108.telewebion.ir/na/labbayk/live/720p/index.m3u8",
+  "group": "Religion",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Labbayk",
+  "logo": ""
+ },
+ {
+  "name": "قم",
+  "url": "https://live-aburayhan1110.telewebion.ir/ek/noor/live/720p/index.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Qom",
+  "logo": ""
+ },
+ {
+  "name": "لرستان",
+  "url": "https://live-aburayhan1107.telewebion.ir/ek/aflak/live/576p/index.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Lorestan",
+  "logo": ""
+ },
+ {
+  "name": "مرکزی",
+  "url": "https://live-aburayhan1107.telewebion.ir/ek/aftab/live/720p/index.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Markazi",
+  "logo": ""
+ },
+ {
+  "name": "چهارمحال و بختیاری",
+  "url": "https://live-aburayhan1105.telewebion.ir/ek/jahanbin/live/720p/index.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Chahar-Mahal",
+  "logo": ""
+ },
+ {
+  "name": "کرمانشاه",
+  "url": "https://live-aburayhan1102.telewebion.ir/ek/zagros/live/576p/index.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Kermanshah",
+  "logo": ""
+ },
+ {
+  "name": "گلستان",
+  "url": "https://live-aburayhan1109.telewebion.ir/ek/sabz/live/576p/index.m3u8",
+  "group": "General",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "Golestan",
+  "logo": ""
+ }
+]

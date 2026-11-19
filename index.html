@@ -2467,7 +2467,7 @@ function collectionStreams(key) {
   if (COUNTRY_ROWS[key]) return [{ type: 'movie', extra: { with_origin_country: COUNTRY_ROWS[key] } }, { type: 'tv', extra: { with_origin_country: COUNTRY_ROWS[key] } }];
   if (key === 'iran_pre1978') return [{ type: 'movie', extra: { with_origin_country: 'IR', 'primary_release_date.lte': '1978-12-31' } }, { type: 'tv', extra: { with_origin_country: 'IR', 'first_air_date.lte': '1978-12-31' } }];
   if (key === 'asia') return ['JP', 'KR'].flatMap(cc => [{ type: 'movie', extra: { with_origin_country: cc } }, { type: 'tv', extra: { with_origin_country: cc } }]);
-  if (key === 'trending_now' || key === 'updates') return [{ type: 'movie', extra: {} }, { type: 'tv', extra: {} }];
+  if (key === 'trending_now' || key === 'updates') { const d3 = new Date(); d3.setMonth(d3.getMonth() - 3); const g3 = d3.toISOString().slice(0, 10); return [{ type: 'movie', extra: { 'primary_release_date.gte': g3 } }, { type: 'tv', extra: { 'first_air_date.gte': g3 } }]; }
   if (key === 'newM25') { const y = new Date().getFullYear() - 1; return [{ type: 'movie', extra: { 'primary_release_date.gte': y + '-01-01' } }, { type: 'tv', extra: { 'first_air_date.gte': y + '-01-01' } }]; }
   if (key === 'tm') return [{ type: 'movie', extra: {} }];
   if (key === 'ts') return [{ type: 'tv', extra: {} }];
@@ -2587,6 +2587,9 @@ function buildCollFilters() {
   fillArchLetters();
   const sort = $('#arch-sort');
   if (sort) sort.innerHTML = '<option value="popularity.desc">محبوب‌ترین</option><option value="vote_average.desc">بالاترین امتیاز</option><option value="primary_release_date.desc">جدیدترین</option>';
+  /* Trending / updates / newest open newest-first (user rule): the sort
+     dropdown keeps working afterwards (extra never overrides sort_by). */
+  if (sort && arch.collKey && (arch.collKey === 'trending_now' || arch.collKey === 'updates' || arch.collKey === 'newM25')) sort.value = 'primary_release_date.desc';
   const certSel = $('#arch-cert'); if (certSel) certSel.style.display = '';
   const certLab = $('#arch-cert-label'); if (certLab) certLab.style.display = '';
 }
@@ -2644,6 +2647,10 @@ async function loadHome() {
   renderHero();
   buildSidebar();
   const rows = snap.rows || {};
+  /* Trending rail: the snapshot carries year-only dates and TMDB trending
+     is popularity-ordered, so old titles leak in. Keep the current year only
+     here; the see-all page applies the true 3-month filter + date sort. */
+  if (rows.trending_now) { const cy = String(new Date().getFullYear()); rows.trending_now = rows.trending_now.filter(x => String(x.release_date || x.first_air_date || '').slice(0, 4) === cy); }
   cacheItems(Object.values(rows).flat());
   /* Progressive rails: only the first rows render up front; the rest
      are appended as the reader scrolls near them — the home page
@@ -6362,6 +6369,17 @@ function prefetchTv() {
       const seen = new Set(FEATURED_TV.map(c => c.url));
       const extra = [];
       parsed.forEach(c => { if (!seen.has(c.url) && !TV_DEAD_RE.test(c.name)) { seen.add(c.url); const loc = tvLogoLocal(c.logo); extra.push({ name: c.name, url: c.url, logo: loc, logoRemote: loc !== c.logo ? c.logo : '', group: c.group || '', cc: c.cc || '', lang: 'فارسی', cat: 'فارسی‌زبان', tw: c.url.indexOf('telewebion') > -1 ? 1 : 0 }); } });
+      /* ParsaTV extra channels (tv-extra-channels.json): Persian channels
+         missing from the iptv-org playlists + FEATURED_TV. Merged here so
+         they play and filter exactly like the playlist channels. */
+      try {
+        const px = await fetch(DL_BASE + 'tv-extra-channels.json').then(r => r.ok ? r.json() : []);
+        (Array.isArray(px) ? px : []).forEach(c => {
+          if (!c || !c.url || seen.has(c.url) || TV_DEAD_RE.test(c.name || '')) return;
+          seen.add(c.url);
+          extra.push({ name: c.name, url: c.url, logo: c.logo || '', logoRemote: '', group: c.group || '', cc: '', lang: 'فارسی', cat: 'فارسی‌زبان', tw: c.url.indexOf('telewebion') > -1 ? 1 : 0 });
+        });
+      } catch (e) {}
       tvAll = FEATURED_TV.filter(c => !tvDead(c)).concat(extra);
     } catch (e) { tvAll = FEATURED_TV.filter(c => !tvDead(c)); }
     /* FEATURED_TV entries carry no logo of their own: resolve them
@@ -6522,7 +6540,9 @@ function tvFiltered() {
   if (tvTopic !== 'all') list = list.filter(c => tvTopicOf(c) === tvTopic);
   if (tvLang !== 'all') list = list.filter(c => tvLangOf(c) === tvLang);
   if (q) { const qn = fnBrandName(q); list = list.filter(c => fnBrandName(c.name).toLowerCase().includes(qn)); }
-  if (tvSort === 'name') list = list.slice().sort((a, b) => String(a.name).localeCompare(String(b.name), 'fa'));
+  /* Default Persian view = alphabetical (user order): the 'name' sort already
+     does localeCompare 'fa'; the default sort now uses it too for tvScope fa. */
+  if (tvSort === 'name' || (tvSort === 'default' && tvScope === 'fa')) list = list.slice().sort((a, b) => String(a.name).localeCompare(String(b.name), 'fa'));
   return list;
 }
 function paintTvGrid() {
