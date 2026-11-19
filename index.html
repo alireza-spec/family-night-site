@@ -6485,7 +6485,7 @@ async function setTvLang(code) {
   try {
     await tvLogoMap();
     const t = await (await fetch('https://iptv-org.github.io/iptv/languages/' + code + '.m3u')).text();
-    tvLangCache[code] = parseM3u(t).filter(c => !TV_DEAD_RE.test(c.name)).map(c => { const loc = tvLogoLocal(c.logo); return { name: c.name, url: c.url, logo: loc, logoRemote: loc !== c.logo ? c.logo : '', group: c.group || '', cc: c.cc || '', lang: faName, cat: c.group || 'عمومی', tw: 0 }; });
+    tvLangCache[code] = parseM3u(t).filter(c => !TV_DEAD_RE.test(c.name)).map(c => { let loc = tvLogoLocal(c.logo); if (!loc) loc = tvLogoByUrl(c.url); /* TV logos: fill an empty playlist logo from the stream-URL map, like the home prefetch */ return { name: c.name, url: c.url, logo: loc, logoRemote: loc !== c.logo ? c.logo : '', group: c.group || '', cc: c.cc || '', lang: faName, cat: c.group || 'عمومی', tw: 0 }; });
   } catch (e) { tvLangCache[code] = []; }
   if (tvLangCode === code) { tvLangList = tvLangCache[code]; renderTvFilters(); paintTvGrid(); }
 }
@@ -6499,7 +6499,7 @@ async function setTvScope(code) {
     try {
       await tvLogoMap();
       const t = await (await fetch('https://iptv-org.github.io/iptv/countries/' + code.toLowerCase() + '.m3u')).text();
-      tvCountryCache[code] = parseM3u(t).filter(c => !TV_DEAD_RE.test(c.name)).map(c => { const loc = tvLogoLocal(c.logo); return { name: c.name, url: c.url, logo: loc, logoRemote: loc !== c.logo ? c.logo : '', group: c.group || '', cc: c.cc || code, lang: TV_LANG[code] || '', cat: c.group || 'عمومی', tw: 0 }; });
+      tvCountryCache[code] = parseM3u(t).filter(c => !TV_DEAD_RE.test(c.name)).map(c => { let loc = tvLogoLocal(c.logo); if (!loc) loc = tvLogoByUrl(c.url); /* TV logos: fill an empty playlist logo from the stream-URL map, like the home prefetch */ return { name: c.name, url: c.url, logo: loc, logoRemote: loc !== c.logo ? c.logo : '', group: c.group || '', cc: c.cc || code, lang: TV_LANG[code] || '', cat: c.group || 'عمومی', tw: 0 }; });
     } catch (e) { tvCountryCache[code] = []; }
     if (tvScope === code) { renderTvFilters(); paintTvGrid(); }
   }
