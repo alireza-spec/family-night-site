@@ -706,6 +706,32 @@ box-shadow:0 0 26px rgba(229,169,60,.28),inset 0 0 14px rgba(0,0,0,.65);animatio
 .dla-row .rt{font-family:var(--display);color:#f5c518;font-weight:800;flex:none} /* IMDb score: always IMDb yellow, never the theme accent */
 .dla-row .inf .dla-fa{display:block;font-size:.8rem;color:var(--gold2);font-weight:700;line-height:1.6}
 .dla-row .inf .dla-meta{display:block;font-size:.72rem;color:var(--pearl)}
+/* download-archive rows v2 (FN-DLA-REDESIGN): poster on the right,
+   vertical actions (IMDb score + View yellow + Download green),
+   encoder bubbles, disabled filters while loading */
+.dla-row{align-items:stretch}
+.dla-poster{flex:none;width:3.4rem;border-radius:.7rem;overflow:hidden;background:var(--surface3);align-self:stretch;min-height:5rem}
+.dla-poster img{width:100%;height:100%;object-fit:cover;display:block}
+.dla-poster .noimg{width:100%;height:100%;display:grid;place-items:center;color:var(--pearl);font-size:1.15rem;font-weight:800}
+.dla-row .inf{display:flex;flex-direction:column;justify-content:center;gap:.12rem}
+.dla-row .inf b{font-size:.95rem}
+.dla-row .inf .dla-fa{display:inline}
+.dla-sub{display:block;font-size:.8rem;line-height:1.6}
+.dla-sub .dla-fa{color:var(--gold2);font-weight:700}
+.dla-sub .dla-ver{color:var(--pearl);font-size:.75rem}
+.dla-enc{display:flex;flex-wrap:wrap;gap:.3rem;align-items:center;margin-top:.15rem}
+.dla-enc .enc{background:rgba(245,197,24,.14);border:1px solid rgba(245,197,24,.45);color:#f5c518;font-size:.7rem;font-weight:800;border-radius:99px;padding:.06rem .5rem;font-family:var(--display);direction:ltr}
+.dla-enc .seas{background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.5);color:#4ade80;font-size:.7rem;font-weight:800;border-radius:99px;padding:.06rem .55rem;font-family:var(--display)}
+.dla-side{display:flex;flex-direction:column;gap:.4rem;flex:none;align-items:stretch;justify-content:center;min-width:6.4rem}
+.dla-imdb{display:flex;align-items:center;justify-content:center;gap:.35rem;color:#f5c518;font-weight:800;font-size:.92rem;font-family:var(--display);direction:ltr}
+.dla-imdb .imdb-logo{width:2.15rem;height:1.08rem;background-image:url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3C%21DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%0A%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20preserveAspectRatio%3D%22xMidYMid%20meet%22%20viewBox%3D%220%200%20575%20289.83%22%20width%3D%22575%22%20height%3D%22289.83%22%3E%3Cdefs%3E%3Cpath%20d%3D%22M575%2024.91C573.44%2012.15%20563.97%201.98%20551.91%200C499.05%200%2076.18%200%2023.32%200C10.11%202.17%200%2014.16%200%2028.61C0%2051.84%200%20237.64%200%20260.86C0%20276.86%2012.37%20289.83%2027.64%20289.83C79.63%20289.83%20495.6%20289.83%20547.59%20289.83C561.65%20289.83%20573.26%20278.82%20575%20264.57C575%20216.64%20575%2048.87%20575%2024.91Z%22%20id%3D%22d1pwhf9wy2%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22M69.35%2058.24L114.98%2058.24L114.98%20233.89L69.35%20233.89L69.35%2058.24Z%22%20id%3D%22g5jjnq26yS%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22M201.2%20139.15C197.28%20112.38%20195.1%2097.5%20194.67%2094.53C192.76%2080.2%20190.94%2067.73%20189.2%2057.09C185.25%2057.09%20165.54%2057.09%20130.04%2057.09L130.04%20232.74L170.01%20232.74L170.15%20116.76L186.97%20232.74L215.44%20232.74L231.39%20114.18L231.54%20232.74L271.38%20232.74L271.38%2057.09L211.77%2057.09L201.2%20139.15Z%22%20id%3D%22i3Prh1JpXt%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22M346.71%2093.63C347.21%2095.87%20347.47%20100.95%20347.47%20108.89C347.47%20115.7%20347.47%20170.18%20347.47%20176.99C347.47%20188.68%20346.71%20195.84%20345.2%20198.48C343.68%20201.12%20339.64%20202.43%20333.09%20202.43C333.09%20190.9%20333.09%2098.66%20333.09%2087.13C338.06%2087.13%20341.45%2087.66%20343.25%2088.7C345.05%2089.75%20346.21%2091.39%20346.71%2093.63ZM367.32%20230.95C372.75%20229.76%20377.31%20227.66%20381.01%20224.67C384.7%20221.67%20387.29%20217.52%20388.77%20212.21C390.26%20206.91%20391.14%20196.38%20391.14%20180.63C391.14%20174.47%20391.14%20125.12%20391.14%20118.95C391.14%20102.33%20390.49%2091.19%20389.48%2085.53C388.46%2079.86%20385.93%2074.71%20381.88%2070.09C377.82%2065.47%20371.9%2062.15%20364.12%2060.13C356.33%2058.11%20343.63%2057.09%20321.54%2057.09C319.27%2057.09%20307.93%2057.09%20287.5%2057.09L287.5%20232.74L342.78%20232.74C355.52%20232.34%20363.7%20231.75%20367.32%20230.95Z%22%20id%3D%22a4ov9rRGQm%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22M464.76%20204.7C463.92%20206.93%20460.24%20208.06%20457.46%20208.06C454.74%20208.06%20452.93%20206.98%20452.01%20204.81C451.09%20202.65%20450.64%20197.72%20450.64%20190C450.64%20185.36%20450.64%20148.22%20450.64%20143.58C450.64%20135.58%20451.04%20130.59%20451.85%20128.6C452.65%20126.63%20454.41%20125.63%20457.13%20125.63C459.91%20125.63%20463.64%20126.76%20464.6%20129.03C465.55%20131.3%20466.03%20136.15%20466.03%20143.58C466.03%20146.58%20466.03%20161.58%20466.03%20188.59C465.74%20197.84%20465.32%20203.21%20464.76%20204.7ZM406.68%20231.21L447.76%20231.21C449.47%20224.5%20450.41%20220.77%20450.6%20220.02C454.32%20224.52%20458.41%20227.9%20462.9%20230.14C467.37%20232.39%20474.06%20233.51%20479.24%20233.51C486.45%20233.51%20492.67%20231.62%20497.92%20227.83C503.16%20224.05%20506.5%20219.57%20507.92%20214.42C509.34%20209.26%20510.05%20201.42%20510.05%20190.88C510.05%20185.95%20510.05%20146.53%20510.05%20141.6C510.05%20131%20509.81%20124.08%20509.34%20120.83C508.87%20117.58%20507.47%20114.27%20505.14%20110.88C502.81%20107.49%20499.42%20104.86%20494.98%20102.98C490.54%20101.1%20485.3%20100.16%20479.26%20100.16C474.01%20100.16%20467.29%20101.21%20462.81%20103.28C458.34%20105.35%20454.28%20108.49%20450.64%20112.7C450.64%20108.89%20450.64%2089.85%20450.64%2055.56L406.68%2055.56L406.68%20231.21Z%22%20id%3D%22fk968BpsX%22%3E%3C%2Fpath%3E%3C%2Fdefs%3E%3Cg%3E%3Cg%3E%3Cg%3E%3Cuse%20xlink%3Ahref%3D%22%23d1pwhf9wy2%22%20opacity%3D%221%22%20fill%3D%22%23f6c700%22%20fill-opacity%3D%221%22%3E%3C%2Fuse%3E%3Cg%3E%3Cuse%20xlink%3Ahref%3D%22%23d1pwhf9wy2%22%20opacity%3D%221%22%20fill-opacity%3D%220%22%20stroke%3D%22%23000000%22%20stroke-width%3D%221%22%20stroke-opacity%3D%220%22%3E%3C%2Fuse%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%3E%3Cuse%20xlink%3Ahref%3D%22%23g5jjnq26yS%22%20opacity%3D%221%22%20fill%3D%22%23000000%22%20fill-opacity%3D%221%22%3E%3C%2Fuse%3E%3Cg%3E%3Cuse%20xlink%3Ahref%3D%22%23g5jjnq26yS%22%20opacity%3D%221%22%20fill-opacity%3D%220%22%20stroke%3D%22%23000000%22%20stroke-width%3D%221%22%20stroke-opacity%3D%220%22%3E%3C%2Fuse%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%3E%3Cuse%20xlink%3Ahref%3D%22%23i3Prh1JpXt%22%20opacity%3D%221%22%20fill%3D%22%23000000%22%20fill-opacity%3D%221%22%3E%3C%2Fuse%3E%3Cg%3E%3Cuse%20xlink%3Ahref%3D%22%23i3Prh1JpXt%22%20opacity%3D%221%22%20fill-opacity%3D%220%22%20stroke%3D%22%23000000%22%20stroke-width%3D%221%22%20stroke-opacity%3D%220%22%3E%3C%2Fuse%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%3E%3Cuse%20xlink%3Ahref%3D%22%23a4ov9rRGQm%22%20opacity%3D%221%22%20fill%3D%22%23000000%22%20fill-opacity%3D%221%22%3E%3C%2Fuse%3E%3Cg%3E%3Cuse%20xlink%3Ahref%3D%22%23a4ov9rRGQm%22%20opacity%3D%221%22%20fill-opacity%3D%220%22%20stroke%3D%22%23000000%22%20stroke-width%3D%221%22%20stroke-opacity%3D%220%22%3E%3C%2Fuse%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%3E%3Cuse%20xlink%3Ahref%3D%22%23fk968BpsX%22%20opacity%3D%221%22%20fill%3D%22%23000000%22%20fill-opacity%3D%221%22%3E%3C%2Fuse%3E%3Cg%3E%3Cuse%20xlink%3Ahref%3D%22%23fk968BpsX%22%20opacity%3D%221%22%20fill-opacity%3D%220%22%20stroke%3D%22%23000000%22%20stroke-width%3D%221%22%20stroke-opacity%3D%220%22%3E%3C%2Fuse%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E");background-size:contain;background-repeat:no-repeat;background-position:center;flex:none}
+.dla-side .btn{justify-content:center;padding:.35rem .8rem;font-size:.82rem;min-height:2.1rem}
+.btn-green{background:linear-gradient(135deg,#22c55e,#15803d);color:#04140a;box-shadow:0 8px 26px -8px rgba(34,197,94,.55)}
+.btn-green:hover{box-shadow:0 10px 32px -6px rgba(34,197,94,.75)}
+/* filters disabled while the archive is still loading — only the
+   film/series/all type filter stays active */
+.dla-disabled{opacity:.45;pointer-events:none;filter:saturate(.4)}
+.dla-filters .tvdd.dla-disabled .tvdd-btn{cursor:not-allowed}
 /* download-archive filters: one compact row of small dropdowns
    (sort / type / country) + reset — same .tvdd dropdown as Live TV */
 .dla-filters{display:flex;gap:.45rem;flex-wrap:wrap;align-items:stretch;margin:0 0 .5rem}
@@ -7813,6 +7839,23 @@ go = function (view, preset) {
 /* ---- download archive browser: every title in the FN GitHub archive
    that actually has download links (10,876 records across 16 parts, Zivarnet archive) ---- */
 let dlaEntries = null, dlaShown = 120, dlaLoading = false;
+/* ---------- download-archive redesign (FN-DLA-REDESIGN v1) ----------
+   IMDb Top ordering: the list is ordered by IMDb score (films + series
+   mixed, highest first). DLA_MIN_VOTES is the vote threshold — a work
+   needs at least this many IMDb votes to sit at the top; a low-vote but
+   downloadable work falls to the bottom tier (still reachable via
+   filters/search). 1,000 is the cutoff: below it an IMDb rating rests
+   on a tiny sample and the work is obscure. (The IMDb Top 250 uses
+   25,000, but that is for the elite top 250 only; 1,000 is the
+   "real, rated work" cutoff for a general archive.) The archive's own
+   "IMDb Votes" field is empty for 99.99% of records, so the threshold
+   is applied where votes ARE known (the H3 field, or the OMDb
+   imdbVotes the enrichment queue fills in); a work with no vote data
+   at all is judged by its IMDb rate alone. A work with no IMDb score
+   at all always sits in the bottom tier. */
+const DLA_MIN_VOTES = 1000;
+let dlaLoaded = false;   /* true once every archive part has been read */
+let dlaListCurrent = [];   /* the filtered list currently rendered (row index -> entry) */
 async function initDlArchive() {
   /* re-entering the section: the entries and every resolved
      country/year stay exactly where they were (in memory, backed by
@@ -7821,6 +7864,8 @@ async function initDlArchive() {
   dlaEnrichFailed = false; dlaEnrichFails = 0;
   if (dlaEntries || dlaLoading) { if (dlaEntries) renderDlaList(); return; }
   dlaLoading = true;
+  dlaLoaded = false;
+  renderDlaFilters();   /* filters render greyed-out while loading (only type stays active) */
   const body = $('#dla-body');
   const entries = [];
   const entryByImdb = new Map();
@@ -7890,6 +7935,8 @@ async function initDlArchive() {
   }
   dlaEntries = entries;
   dlaLoading = false;
+  dlaLoaded = true;
+  renderDlaFilters();   /* full list arrived — all filters become active */
   dlaHydrateCache();   /* restore every country/year resolved in earlier visits before first paint */
   renderDlaList();
 }
@@ -7906,7 +7953,7 @@ async function initDlArchive() {
    shows the full original list again. */
 let dlaSort = 'default', dlaType = 'all', dlaCountry = 'all';
 let dlaTmdbHits = null, dlaTmdbQ = '', dlaTmdbBusy = false;
-const DLA_SORTS = [['default', 'مرتب‌سازی: پیش‌فرض'], ['rate', 'بالاترین نمره'], ['votes', 'بیشترین رأی'], ['new', 'جدیدترین'], ['old', 'قدیمی‌ترین']];
+const DLA_SORTS = [['default', 'برترین‌ها (نمره IMDb)'], ['rate', 'بالاترین نمره'], ['votes', 'بیشترین رأی'], ['new', 'جدیدترین'], ['old', 'قدیمی‌ترین']];
 const DLA_EN2CC = { 'United States': 'US', 'United Kingdom': 'GB', 'Canada': 'CA', 'Australia': 'AU', 'France': 'FR', 'Germany': 'DE', 'West Germany': 'DE', 'Italy': 'IT', 'Spain': 'ES', 'Japan': 'JP', 'South Korea': 'KR', 'Korea': 'KR', 'India': 'IN', 'China': 'CN', 'Hong Kong': 'HK', 'Taiwan': 'TW', 'Russia': 'RU', 'Soviet Union': 'RU', 'Iran': 'IR', 'Turkey': 'TR', 'Brazil': 'BR', 'Mexico': 'MX', 'Argentina': 'AR', 'Netherlands': 'NL', 'Belgium': 'BE', 'Sweden': 'SE', 'Norway': 'NO', 'Denmark': 'DK', 'Finland': 'FI', 'Poland': 'PL', 'Portugal': 'PT', 'Greece': 'GR', 'Czech Republic': 'CZ', 'Czechoslovakia': 'CZ', 'Hungary': 'HU', 'Romania': 'RO', 'Austria': 'AT', 'Switzerland': 'CH', 'Ireland': 'IE', 'Israel': 'IL', 'Egypt': 'EG', 'South Africa': 'ZA', 'New Zealand': 'NZ', 'Thailand': 'TH', 'Indonesia': 'ID', 'Philippines': 'PH', 'Vietnam': 'VN', 'Ukraine': 'UA', 'Pakistan': 'PK', 'Bangladesh': 'BD', 'Sri Lanka': 'LK', 'Malaysia': 'MY', 'Singapore': 'SG', 'Saudi Arabia': 'SA', 'United Arab Emirates': 'AE', 'Qatar': 'QA', 'Lebanon': 'LB', 'Iraq': 'IQ', 'Afghanistan': 'AF', 'Kazakhstan': 'KZ', 'Uzbekistan': 'UZ', 'Azerbaijan': 'AZ', 'Georgia': 'GE', 'Armenia': 'AM', 'Serbia': 'RS', 'Croatia': 'HR', 'Bulgaria': 'BG', 'Iceland': 'IS', 'Estonia': 'EE', 'Latvia': 'LV', 'Lithuania': 'LT', 'Slovakia': 'SK', 'Slovenia': 'SI', 'Bosnia and Herzegovina': 'BA', 'North Macedonia': 'MK', 'Montenegro': 'ME', 'Albania': 'AL', 'Chile': 'CL', 'Colombia': 'CO', 'Peru': 'PE', 'Venezuela': 'VE', 'Uruguay': 'UY', 'Cuba': 'CU', 'Nigeria': 'NG', 'Kenya': 'KE', 'Morocco': 'MA', 'Tunisia': 'TN', 'Algeria': 'DZ' };
 function dlaStatus(e) {
   /* the exact variant line — built only from the download groups
@@ -7916,7 +7963,239 @@ function dlaStatus(e) {
   if (e.soft) parts.push('زیرنویس فارسی');
   if (e.dub) parts.push('دوبله فارسی');
   if (e.nosub) parts.push('بدون زیرنویس');
-  return parts.length ? parts.join(' · ') : 'بدون زیرنویس فارسی';
+  return parts.length ? parts.join(' - ') : 'بدون زیرنویس فارسی';
+}
+/* ---------- download-archive redesign helpers (FN-DLA-REDESIGN v1) ---------- */
+/* Top tier (sits at the top of the list): has an IMDb rate AND either
+   no vote data at all (the archive's votes field is empty for 99.99%
+   of records) or at least DLA_MIN_VOTES votes. Bottom tier: no rate,
+   or votes known and below the threshold. */
+function dlaTopTier(e) {
+  const r = parseFloat(e.rate) || 0;
+  if (!r) return 1;
+  if (e.votes && e.votes < DLA_MIN_VOTES) return 1;
+  return 0;
+}
+/* IMDb Top order: tier first, then score desc, then votes desc. */
+function dlaTopSort(a, b) {
+  const ta = dlaTopTier(a), tb = dlaTopTier(b);
+  if (ta !== tb) return ta - tb;
+  const r = (parseFloat(b.rate) || 0) - (parseFloat(a.rate) || 0);
+  if (r) return r;
+  return (b.votes || 0) - (a.votes || 0);
+}
+/* Encoders from the work's ACTUAL archive links: quality tokens
+   (2160/1080/720/480/360) highest-to-lowest, then codec tokens
+   (x265/x264/HEVC/10bit). Source tokens (WEB-DL/BluRay) are NOT
+   encoders and are left out. Filenames come from the entry's own
+   _hrefs (every link URL of its H3 record, old archive included). */
+function dlaEncoders(e) {
+  const hrefs = e._hrefs ? Array.from(e._hrefs) : [];
+  const text = hrefs.join(' ').toLowerCase();
+  const quals = ['2160', '1080', '720', '480', '360'].filter(q => new RegExp('\\b' + q + 'p\\b').test(text));
+  const codecs = [];
+  if (/\bx265\b/.test(text)) codecs.push('x265');
+  if (/\bx264\b/.test(text)) codecs.push('x264');
+  if (/\bhevc\b/.test(text) && codecs.indexOf('x265') === -1) codecs.push('HEVC');
+  if (/\b10bit\b/.test(text)) codecs.push('10bit');
+  return { quals: quals, codecs: codecs };
+}
+function dlaEncHtml(e) {
+  const enc = dlaEncoders(e);
+  let out = '';
+  if (e.type === 'tv') out += dlaSeasonBubble(e);
+  enc.quals.forEach(q => { out += '<span class="enc">' + q + '</span>'; });
+  enc.codecs.forEach(c => { out += '<span class="enc">' + c + '</span>'; });
+  return out;
+}
+/* Year label next to the English name. Film: the release year.
+   Series: start year to end year from REAL TMDB dates — the end year
+   only when TMDB says the series has ended; otherwise a trailing
+   dash (ongoing / end unknown — never guessed). OMDb's Year range
+   ("2008–2013" / "2022–") is the backup when TMDB has not enriched
+   the row yet. */
+function dlaYearLabel(e) {
+  if (e.type !== 'tv') {
+    if (e.year) return String(e.year);
+    if (e._tmdb && e._tmdb.year) return String(e._tmdb.year);
+    return '';
+  }
+  if (e._tmdb && e._tmdb.firstAir) {
+    const s = String(e._tmdb.firstAir).slice(0, 4);
+    const ended = e._tmdb.status === 'Ended' || e._tmdb.status === 'Canceled';
+    const en = ended && e._tmdb.lastAir ? String(e._tmdb.lastAir).slice(0, 4) : '';
+    return en ? (s + '-' + en) : (s + '-');
+  }
+  if (e.yearRange) {
+    const m = String(e.yearRange).match(/^(\d{4})(?:[–—-](\d{4})?)?$/);
+    if (m) return m[2] ? (m[1] + '-' + m[2]) : (m[1] + '-');
+  }
+  return e.year ? String(e.year) + '-' : '';
+}
+/* Green season bubble for series: the TMDB season count (bare number,
+   e.g. 5), or «Mini» for a miniseries (TMDB type Miniseries). Empty
+   until the row is enriched — never guessed. */
+function dlaSeasonBubble(e) {
+  if (e.type !== 'tv') return '';
+  const t = e._tmdb;
+  if (t && t.isMini) return '<span class="seas">Mini</span>';
+  const n = (t && t.seasons) || e.seasons || 0;
+  return n ? '<span class="seas">' + n + '</span>' : '';
+}
+/* Line 1 of a row: English name + year (or year range for series).
+   The original name never appears on a card (fnNameParts rule). The
+   archive's own English title leads; the TMDB English title only
+   fills in when the archive title is not Latin at all. */
+function dlaTitleLine(e) {
+  const parts = (typeof fnNameParts === 'function') ? fnNameParts({ title: e.title, fa: e.fa }) : null;
+  let en = (parts && parts.en) || '';
+  if (!en && e._tmdb && e._tmdb.enTitle) en = e._tmdb.enTitle;
+  if (!en) en = e.title;
+  const y = dlaYearLabel(e);
+  /* the H3 title itself sometimes carries the release year ("Madden
+     2026") — strip a trailing year ONLY when it is the work's own
+     release year, so line 1 never reads "Madden 2026 (2026)". A
+     trailing year that is part of the title ("Blade Runner 2049",
+     "Wonder Woman 1984") never matches the release year and stays. */
+  const y0 = e.year || (e._tmdb && e._tmdb.year) || 0;
+  if (y0) en = en.replace(new RegExp('\\s' + y0 + '$'), '');
+  return y ? (en + ' (' + y + ')') : en;
+}
+/* Lazy TMDB enrichment for ONE visible row: poster + English title +
+   (for series) first/last air dates, status, season count and the
+   miniseries flag. One find call by IMDb id (or a title search when
+   there is no IMDb id), then one /tv details call for series. Cached
+   per entry (e._tmdbP promise / e._tmdb resolved object) — a row never
+   fetches twice. The find/search run in en-US so the title that comes
+   back is the English name. */
+function dlaEnrichEntry(e) {
+  if (e._tmdbP) return e._tmdbP;
+  e._tmdbP = (async () => {
+    let hit = null, kind = e.type === 'tv' ? 'tv' : 'movie';
+    try {
+      if (e.imdb) {
+        const f = await tmdb('find/' + e.imdb, { external_source: 'imdb_id' }, 'en-US');
+        const mv = (f && f.movie_results && f.movie_results[0]) || null;
+        const tv = (f && f.tv_results && f.tv_results[0]) || null;
+        hit = e.type === 'tv' ? (tv || mv) : (mv || tv);
+        if (hit) kind = (hit === tv && tv) ? 'tv' : 'movie';
+      }
+      if (!hit) {
+        /* no IMDb id (or the find missed) — resolve by title via the
+           proven search/multi path, preferring the entry's kind and
+           a result whose year matches the record */
+        const s = await tmdb('search/multi', { query: e.title, include_adult: 'false', page: 1 }, 'en-US');
+        const rs = ((s && s.results) || []).filter(x => x.media_type === kind);
+        hit = null;
+        if (e.year) hit = rs.find(x => String((x.release_date || x.first_air_date || '').slice(0, 4)) === String(e.year)) || null;
+        hit = hit || rs[0] || null;
+      }
+      if (!hit) return null;
+      const out = { poster: hit.poster_path || '', kind: kind, enTitle: hit.title || hit.name || '' };
+      if (kind === 'tv') {
+        const d = await tmdb('tv/' + hit.id, {});
+        if (d) {
+          out.firstAir = d.first_air_date || '';
+          out.lastAir = d.last_air_date || '';
+          out.status = d.status || '';
+          out.seasons = d.number_of_seasons || 0;
+          out.type = d.type || '';
+          out.isMini = d.type === 'Miniseries';
+        }
+      } else if (hit.release_date) {
+        out.year = String(hit.release_date).slice(0, 4);
+      }
+      e._tmdb = out;
+      return out;
+    } catch (err) { return null; }
+  })();
+  return e._tmdbP;
+}
+/* Repaint one visible row from its enrichment: the real poster
+   (replacing the first-letter placeholder), the year label (series
+   range once TMDB answers) and the encoder row (season bubble once
+   TMDB answers). */
+function dlaPaintRow(row, e) {
+  const t = e._tmdb;
+  if (!t) return;
+  if (t.poster) {
+    const ph = row.querySelector('.dla-poster .noimg');
+    if (ph) {
+      const img = document.createElement('img');
+      img.loading = 'lazy'; img.decoding = 'async';
+      img.src = IMG(t.poster, 'w185'); img.alt = e.title || '';
+      ph.replaceWith(img);
+    }
+  }
+  const b = row.querySelector('.inf b');
+  if (b) b.textContent = dlaTitleLine(e);
+  const enc = row.querySelector('.dla-enc');
+  if (enc) enc.innerHTML = dlaEncHtml(e);
+}
+/* Observe the rendered rows: as each row scrolls into view, enrich
+   it (poster + series details) and repaint it in place. Only visible
+   rows fetch — the list is ~18,000 titles and must stay light. */
+let dlaRowObs = null;
+function dlaObserveRows(container) {
+  if (dlaRowObs) dlaRowObs.disconnect();
+  if (!('IntersectionObserver' in window)) return;
+  dlaRowObs = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      const row = en.target;
+      dlaRowObs.unobserve(row);
+      const e = dlaListCurrent[+row.dataset.dlaIdx];
+      if (!e) return;
+      dlaEnrichEntry(e).then(t => {
+        if (!t || !document.body.contains(row)) return;
+        dlaPaintRow(row, e);
+      });
+    });
+  }, { rootMargin: '400px' });
+  container.querySelectorAll('[data-dla-idx]').forEach(row => dlaRowObs.observe(row));
+}
+/* While the archive is still loading, every filter except the
+   film/series/all type filter is greyed out and unclickable — a user
+   must never filter a half-loaded list. Only when every part has
+   arrived (dlaLoaded) do they become active. */
+function dlaSetFiltersEnabled(on) {
+  const dis = function (sel, off) {
+    const el = $(sel); if (!el) return;
+    el.classList.toggle('dla-disabled', !off);
+    if (off) el.removeAttribute('aria-disabled'); else el.setAttribute('aria-disabled', 'true');
+  };
+  dis('#dla-dd-sort', on);
+  dis('#dla-dd-country', on);
+  dis('#dla-reset', on);
+  const inp = $('#dla-input');
+  if (inp) { inp.disabled = !on; inp.classList.toggle('dla-disabled', !on); }
+  /* the type filter (#dla-dd-type) stays active while loading */
+}
+/* Repaint the Persian line 2 of the rows currently on screen from
+   the shared title cache (and the entry's own fa field). Called after
+   every translation chunk lands, so a row's Persian name appears the
+   moment its chunk resolves — never only after the whole batch. Also
+   writes the value back onto the entry so later renders use it. */
+function dlaPaintFa() {
+  if (currentView !== 'dlarchive') return;
+  const body = $('#dla-body');
+  if (!body) return;
+  body.querySelectorAll('[data-dla-fa]').forEach(el => {
+    const e = dlaListCurrent[+el.dataset.dlaFa];
+    if (!e) return;
+    const v = e.fa || titleFaCache.get(e.title) || '';
+    if (!v) return;
+    if (e.fa !== v) e.fa = v;
+    const wasEmpty = !el.textContent;
+    el.textContent = v;
+    /* the version separator: line 2 reads «نام فارسی · زیرنویس فارسی»
+       — when the Persian name arrives late, the separator skipped at
+       render time is added now. */
+    if (wasEmpty) {
+      const ver = el.parentElement && el.parentElement.querySelector('.dla-ver');
+      if (ver && ver.textContent && ver.textContent.indexOf('·') !== 0) ver.textContent = ' · ' + ver.textContent;
+    }
+  });
 }
 function dlaCountryName(cc) { const c = (typeof FN_COUNTRIES !== 'undefined' ? FN_COUNTRIES : []).find(x => x[0] === cc); return c ? c[1] : cc; }
 /* ---------- enrichment cache: never complete the archive twice ----
@@ -7958,7 +8237,7 @@ function dlaHydrateCache() {
   if (!cache.size || !dlaEntries) return;
   dlaEntries.forEach(e => {
     const v = cache.get(e.imdb);
-    if (v) { e.cc = v[0] || ''; if (!e.year && v[1]) e.year = v[1]; }
+    if (v) { e.cc = v[0] || ''; if (!e.year && v[1]) e.year = v[1]; if (v[2]) e.yearRange = v[2]; if (v[3]) e.seasons = v[3]; if (v[4]) e.votes = v[4]; }
   });
 }
 let dlaEnrichRunning = false, dlaEnrichDone = 0, dlaEnrichFailed = false, dlaEnrichFails = 0;
@@ -7980,7 +8259,14 @@ function dlaEnrichQueue() {
         const country = om && om.Country ? String(om.Country).split(',')[0].trim() : '';
         e.cc = DLA_EN2CC[country] || '';
         if (!e.year && om && om.Year) e.year = parseInt(om.Year, 10) || 0;
-        dlaMetaLoad().set(e.imdb, [e.cc, e.year || 0]);
+        /* year range (series: "2008–2013" / "2022–"), season count and
+           IMDb vote count — real OMDb data for the year-range label,
+           the season bubble and the vote threshold. No extra call:
+           these come from the response already fetched for country. */
+        if (om && om.Year && e.type === 'tv') { const yr = String(om.Year).trim(); if (/[–—-]/.test(yr)) e.yearRange = yr; }
+        if (om && om.totalSeasons) e.seasons = parseInt(om.totalSeasons, 10) || 0;
+        if (om && om.imdbVotes) { const vv = parseInt(String(om.imdbVotes).replace(/[^0-9]/g, ''), 10); if (vv) e.votes = vv; }
+        dlaMetaLoad().set(e.imdb, [e.cc, e.year || 0, e.yearRange || '', e.seasons || 0, e.votes || 0]);
         dlaEnrichDone++;
       } catch (err) { e.cc = ''; dlaMetaLoad().set(e.imdb, ['', e.year || 0]); dlaEnrichDone++; if (++dlaEnrichFails > 60) dlaEnrichFailed = true; }
       if (dlaEnrichDone % 40 === 0) { dlaMetaSave(); dlaPaintFnote(); if (dlaCountry !== 'all' && currentView === 'dlarchive') renderDlaList(); }
@@ -8003,10 +8289,10 @@ function dlaPaintFnote() {
 }
 function renderDlaFilters() {
   if (typeof tvDd !== 'function') return;
-  tvDd($('#dla-dd-sort'), DLA_SORTS.map(s => ({ v: s[0], label: s[1] })), dlaSort, v => { dlaSort = v; dlaShown = 120; renderDlaFilters(); renderDlaList(); }, false);
+  tvDd($('#dla-dd-sort'), DLA_SORTS.map(s => ({ v: s[0], label: s[1] })), dlaSort, v => { if (!dlaLoaded) return; dlaSort = v; dlaShown = 120; renderDlaFilters(); renderDlaList(); }, false);
   tvDd($('#dla-dd-type'), [{ v: 'all', label: 'همه' }, { v: 'movie', label: 'فیلم‌ها' }, { v: 'tv', label: 'سریال‌ها' }], dlaType, v => { dlaType = v; dlaShown = 120; renderDlaFilters(); renderDlaList(); }, false);
   const countries = (typeof FN_COUNTRIES !== 'undefined' ? FN_COUNTRIES : []).slice().sort((a, b) => a[1].localeCompare(b[1], 'fa'));
-  tvDd($('#dla-dd-country'), [{ v: 'all', label: 'همه کشورها' }].concat(countries.map(c => ({ v: c[0], label: c[1], flag: c[0] }))), dlaCountry, v => { dlaCountry = v; dlaShown = 120; renderDlaFilters(); renderDlaList(); }, true);
+  tvDd($('#dla-dd-country'), [{ v: 'all', label: 'همه کشورها' }].concat(countries.map(c => ({ v: c[0], label: c[1], flag: c[0] }))), dlaCountry, v => { if (!dlaLoaded) return; dlaCountry = v; dlaShown = 120; renderDlaFilters(); renderDlaList(); }, true);
   const rst = $('#dla-reset');
   if (rst) rst.onclick = () => {
     dlaSort = 'default'; dlaType = 'all'; dlaCountry = 'all'; dlaShown = 120;
@@ -8014,6 +8300,7 @@ function renderDlaFilters() {
     dlaTmdbHits = null; dlaTmdbQ = '';
     renderDlaFilters(); renderDlaList();
   };
+  dlaSetFiltersEnabled(dlaLoaded);
 }
 /* Persian (or any) queries also run through TMDB in fa-IR + en-US:
    every hit's IMDb id is resolved and matched against the archive,
@@ -8071,6 +8358,7 @@ function dlaFiltered() {
   else if (dlaSort === 'votes') list.sort((a, b) => (b.votes || 0) - (a.votes || 0));
   else if (dlaSort === 'new') list.sort((a, b) => (b.year || 0) - (a.year || 0));
   else if (dlaSort === 'old') list.sort((a, b) => (a.year || 9999) - (b.year || 9999));
+  else list.sort(dlaTopSort);   /* default: IMDb Top order (score desc, vote threshold) */
   return list;
 }
 function renderDlaList() {
@@ -8086,33 +8374,49 @@ function renderDlaList() {
     body.innerHTML = '<div class="state">' + (q || dlaType !== 'all' || dlaCountry !== 'all' ? 'با این جستجو و فیلترها عنوانی در آرشیو دانلود پیدا نشد.' : 'عنوانی با این نام در آرشیو دانلود پیدا نشد.') + (dlaTmdbBusy && q ? '<br>در حال جستجوی فارسی و انگلیسی در TMDB…' : '') + '</div>';
     return;
   }
+  dlaListCurrent = list;
   body.innerHTML = (q || dlaType !== 'all' || dlaCountry !== 'all' || dlaSort !== 'default' ? '<p class="dla-fnote" style="display:block">' + list.length.toLocaleString('fa-IR') + ' عنوان پیدا شد</p>' : '')
-    + list.slice(0, dlaShown).map((e, i) =>
-    '<div class="dla-row" data-dla="' + i + '" role="button" tabindex="0"><span class="inf"><b data-fa-done="1">' + esc(e.title) + '</b>'
-    + '<span class="dla-fa" data-dla-fa="' + i + '">' + esc(e.fa || titleFaCache.get(e.title) || '') + '</span>'
-    + '<span>' + esc(dlaStatus(e)) + '</span>'
-    + '<span class="dla-meta">' + (e.type === 'tv' ? 'سریال' : 'فیلم') + (e.year ? ' · ' + e.year : '') + (e.cc ? ' · ' + esc(dlaCountryName(e.cc)) : '') + (e.votes ? ' · ' + e.votes.toLocaleString('fa-IR') + ' رأی' : '') + '</span></span>'
-    + (e.rate ? '<span class="rt">★ ' + esc(e.rate) + '</span>' : '')
-    + '<span class="acts">' + (e.imdb ? '<button class="btn btn-gold btn-sm" type="button" data-dla-view="' + i + '">مشاهده</button>' : '') + '<button class="btn btn-gold btn-sm" type="button" data-dla-dl="' + i + '">دانلود</button></span></div>').join('')
+    + list.slice(0, dlaShown).map((e, i) => {
+    const fa = e.fa || titleFaCache.get(e.title) || '';
+    const ver = dlaStatus(e);
+    return '<div class="dla-row" data-dla="' + i + '" data-dla-idx="' + i + '" role="button" tabindex="0">'
+    + '<span class="dla-poster"><span class="noimg">' + esc((e.title || '?').trim().charAt(0)) + '</span></span>'
+    + '<span class="inf"><b data-fa-done="1">' + esc(dlaTitleLine(e)) + '</b>'
+    + '<span class="dla-sub"><span class="dla-fa" data-dla-fa="' + i + '">' + esc(fa) + '</span><span class="dla-ver">' + (fa ? ' · ' : '') + esc(ver) + '</span></span>'
+    + '<span class="dla-enc">' + dlaEncHtml(e) + '</span></span>'
+    + '<span class="dla-side">'
+    + (e.rate ? '<span class="dla-imdb"><span class="imdb-logo" aria-hidden="true"></span>' + esc(e.rate) + '</span>' : '')
+    + '<button class="btn btn-gold btn-sm" type="button" data-dla-view="' + i + '">مشاهده</button>'
+    + '<button class="btn btn-green btn-sm" type="button" data-dla-dl="' + i + '">دانلود</button>'
+    + '</span></div>';
+    }).join('')
     + (list.length > dlaShown ? '<button class="btn btn-glass loadmore" id="dla-more">نمایش بیشتر</button>' : '');
   body.querySelectorAll('[data-dla]').forEach(row => {
     row.onclick = e => {
       const v = e.target.closest('[data-dla-view]');
       if (v) { e.stopPropagation(); dlaViewTitle(list[+v.dataset.dlaView], v); return; }
+      const d = e.target.closest('[data-dla-dl]');
+      if (d) { e.stopPropagation(); openArchiveEntry(list[+d.dataset.dlaDl]); return; }
       openArchiveEntry(list[+row.dataset.dla]);
     };
   });
+  dlaObserveRows(body);   /* lazy poster + series details for visible rows */
   const more = $('#dla-more'); if (more) more.onclick = () => { dlaShown += 120; renderDlaList(); };
   /* fill the Persian line of the visible rows from the shared title
      translation cache (batched, like everywhere else on the site) */
+  /* Persian line 2, promptly: every visible row that has no Persian
+     name is translated NOW (Google-first batch, the site's shared
+     path) — the batch fires on this very render, and each finished
+     chunk repaints its rows in place (dlaPaintFa via onChunk), so no
+     row sits with an empty Persian line 2 waiting for the whole
+     batch. The queue covers the whole visible page (dlaShown), not
+     just the first 48 titles. */
   const need = list.slice(0, dlaShown).filter(e => !e.fa && !titleFaCache.has(e.title) && isLatinTitle(e.title)).map(e => e.title);
   if (need.length) {
-    translateTitlesBatch([...new Set(need)].slice(0, 48)).then(() => {
+    translateTitlesBatch([...new Set(need)], dlaPaintFa).then(() => {
       let changed = false;
       list.slice(0, dlaShown).forEach(e => { const v = titleFaCache.get(e.title); if (v && e.fa !== v) { e.fa = v; changed = true; } });
-      if (changed && currentView === 'dlarchive') {
-        body.querySelectorAll('[data-dla-fa]').forEach(el => { const e = list[+el.dataset.dlaFa]; if (e && e.fa) el.textContent = e.fa; });
-      }
+      if (changed) dlaPaintFa();
     }).catch(() => {});
   }
 }
@@ -8122,24 +8426,40 @@ function renderDlaList() {
    right back on this archive list — no doubt left about whether this
    row really is the title they were looking for. */
 async function dlaViewTitle(entry, btn) {
-  if (!entry || !entry.imdb) return;
+  if (!entry) return;
   const old = btn ? btn.textContent : '';
   if (btn) { btn.disabled = true; btn.textContent = '…'; }
   try {
-    const f = await tmdb('find/' + entry.imdb, { external_source: 'imdb_id' });
-    const mvHit = (f && f.movie_results && f.movie_results[0]) || null;
-    const tvHit = (f && f.tv_results && f.tv_results[0]) || null;
-    /* prefer the side the archive record itself declares (movie /
-       series), so a series row can never open as a movie page */
-    const hit = entry.type === 'tv' ? (tvHit || mvHit) : (mvHit || tvHit);
+    let hit = null, kind = entry.type === 'tv' ? 'tv' : 'movie';
+    if (entry.imdb) {
+      const f = await tmdb('find/' + entry.imdb, { external_source: 'imdb_id' });
+      const mvHit = (f && f.movie_results && f.movie_results[0]) || null;
+      const tvHit = (f && f.tv_results && f.tv_results[0]) || null;
+      /* prefer the side the archive record itself declares (movie /
+         series), so a series row can never open as a movie page */
+      hit = entry.type === 'tv' ? (tvHit || mvHit) : (mvHit || tvHit);
+      if (hit) kind = (hit === tvHit && tvHit) ? 'tv' : 'movie';
+    }
+    if (!hit) {
+      /* no IMDb id (or the find missed) — resolve by title (+ year)
+         via the proven search/multi path, so every row still gets a
+         working View button. Prefer a result whose year matches. */
+      const s = await tmdb('search/multi', { query: entry.title, include_adult: 'false', page: 1 }, 'en-US');
+      const rs = ((s && s.results) || []).filter(x => x.media_type === kind);
+      hit = null;
+      if (entry.year) {
+        hit = rs.find(x => String((x.release_date || x.first_air_date || '').slice(0, 4)) === String(entry.year)) || null;
+      }
+      hit = hit || rs[0] || null;
+    }
     if (!hit) throw new Error('find');
-    openDetail(hit === tvHit && tvHit ? 'tv' : 'movie', hit.id);
+    openDetail(kind, hit.id);
   } catch (e) { toast('صفحه این اثر پیدا نشد'); }
   if (btn) { btn.disabled = false; btn.textContent = old; }
 }
 let dlaDeb = null;
 document.addEventListener('input', e => {
-  if (e.target && e.target.id === 'dla-input') { clearTimeout(dlaDeb); dlaDeb = setTimeout(() => { dlaShown = 120; renderDlaList(); }, 250); }
+  if (e.target && e.target.id === 'dla-input') { if (!dlaLoaded) return; clearTimeout(dlaDeb); dlaDeb = setTimeout(() => { dlaShown = 120; renderDlaList(); }, 250); }
 });
 document.addEventListener('submit', e => { if (e.target && e.target.id === 'dla-form') e.preventDefault(); });
 async function openArchiveEntry(entry) {
@@ -8167,7 +8487,7 @@ async function openArchiveEntry(entry) {
   const tokenSnapshot = detailToken;
   try {
     var dlTmdbId = '';
-    var dlPosterP = entry.imdb ? Promise.race([tmdb('find/' + entry.imdb, { external_source: 'imdb_id' }), new Promise(function (res) { setTimeout(function () { res(null); }, 4000); })]).then(function (f) { var hit = f && (((f.movie_results || [])[0]) || ((f.tv_results || [])[0])); if (hit && hit.id) dlTmdbId = hit.id; return (hit && hit.poster_path) ? IMG(hit.poster_path, 'w342') : ''; }).catch(function () { return ''; }) : Promise.resolve('');
+    var dlPosterP = (entry._tmdb && entry._tmdb.poster) ? Promise.resolve(IMG(entry._tmdb.poster, 'w342')) : (entry.imdb ? Promise.race([tmdb('find/' + entry.imdb, { external_source: 'imdb_id' }), new Promise(function (res) { setTimeout(function () { res(null); }, 4000); })]).then(function (f) { var hit = f && (((f.movie_results || [])[0]) || ((f.tv_results || [])[0])); if (hit && hit.id) dlTmdbId = hit.id; return (hit && hit.poster_path) ? IMG(hit.poster_path, 'w342') : ''; }).catch(function () { return ''; }) : Promise.resolve(''));
     const resolved = await resolveDlRecordByPart(entry.imdb, entry.num, entry.part, entry.src || 'new');
     let rec = resolved ? resolved.rec : null;
     if (rec && entry.hasOld) { /* same title also has links in the old archive — merge them in */
@@ -10900,7 +11220,7 @@ function fnParseBatchLines(text, count) {
   }
   return out;
 }
-async function translateTitlesBatch(list) {
+async function translateTitlesBatch(list, onChunk) {
   const out = new Map();
   const missing = list.filter(t => !titleFaCache.has(t));
   /* small chunks, but a REAL token budget: the chain's reasoning
@@ -10919,7 +11239,7 @@ async function translateTitlesBatch(list) {
       chunk.forEach((t, ix) => { const v = g[ix]; if (v && v !== t && isLatinTitle(v) === false) titleFaCache.set(t, v); });
     } catch (e) { /* Google unusable — the AI batch below covers the chunk */ }
     chunk = chunk.filter(t => !titleFaCache.has(t));
-    if (!chunk.length) continue;
+    if (chunk.length) {
     try {
       const text = await fnAiText('عنوان‌های فیلم و سریال زیر را به فارسی برگردان؛ اگر نام فارسی رایجی دارند همان را بنویس وگرنه آوانویسی فارسی کن. دقیقاً ' + chunk.length + ' خط برگردان، هر خط با شماره‌اش به شکل «1. عنوان» شروع شود، هر عنوان فقط در یک خط، بدون هیچ توضیح یا پرانتز اضافه‌ای:\n' + chunk.map((t, ix) => (ix + 1) + '. ' + t).join('\n'), 700, 0.2);
       const lines = fnParseBatchLines(text, chunk.length);
@@ -10928,6 +11248,11 @@ async function translateTitlesBatch(list) {
          title being stuck in English for the whole session */
       chunk.forEach((t, ix) => { const v = lines[ix]; if (v && v !== t && isLatinTitle(v) === false) titleFaCache.set(t, v); });
     } catch (e) { /* failures stay uncached — retried by a later pass */ }
+    }
+    /* paint-as-you-go: this chunk's Persian names are usable right
+       away — a caller that passed onChunk repaints its rows now
+       instead of waiting for the whole batch to finish. */
+    if (typeof onChunk === 'function') { try { onChunk(); } catch (e) {} }
   }
   list.forEach(t => { const v = titleFaCache.get(t); if (v && v !== t) out.set(t, v); });
   return out;
