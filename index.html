@@ -783,6 +783,7 @@ box-shadow:0 0 26px rgba(229,169,60,.28),inset 0 0 14px rgba(0,0,0,.65);animatio
    both are searchable from the page's live search box */
 .pgrid .person b.enname{direction:ltr;font-family:var(--display);font-size:.82rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .pgrid .person span.faname{font-size:.72rem;color:var(--pearl2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.person span.en2{direction:ltr;font-family:var(--display);font-size:.68rem;color:var(--pearl);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .pgrid .person span.faname:empty{display:none}
 /* the directors-only live search box on the browse page */
 #browse-search .searchbox{margin:.4rem 0 .9rem}
@@ -8819,11 +8820,116 @@ function cleanCollName(n) { return String(n || '').replace(/\s*(Collection|Saga|
 function flagUrl(code) { return code === 'IR' ? 'https://flagofiran.com/files/Flag_of_Iran.svg' : 'https://flagcdn.com/w80/' + String(code).toLowerCase() + '.png'; }
 
 /* ---------- card builders ---------- */
+/* ---------- people names: Persian line 1 + English line 2 ----------
+   FN-PEOPLE-NAMES v1 — the Search tab's people sections (cinema stars
+   men/women + famous directors, category view AND see-all) show EVERY
+   person the same way: line 1 = the Persian name, line 2 = the English
+   name. The original-language name (Chinese, Japanese, Thai, ...) never
+   appears here — it belongs only on the person's detail page/profile.
+   Name sources, in order: (1) the TMDB fa-IR name when it is really
+   Persian; (2) the site's live translation chain for the English name
+   (Google Translate batch first, the AI batch second — the same chain
+   translateTitlesBatch uses); (3) if nothing yields Persian, the card
+   falls back to the English name on line 1 and the person is reported
+   as missing a Persian name — never an invented name, never an empty line. */
+const PN_FA_RE = /[؀-ۿ]/;
+const PN_NONLATIN_RE = /[\u0600-\u06FF\u3000-\u30FF\u3400-\u4DBF\u4E00-\u9FFF\uAC00-\uD7AF\u0E00-\u0E7F]/;
+function pnIsFa(s) { return PN_FA_RE.test(String(s || '')); }
+function pnIsLatin(s) { return /[A-Za-z]/.test(s || '') && !PN_NONLATIN_RE.test(s || ''); }
+const pnFaCache = new Map(); /* English name -> Persian name */
+const pnOrigById = new Map(); /* person id -> original-language name (detail page only) */
+function pnNoteOrig(id, orig) { if (id && orig) pnOrigById.set(id, orig); }
+/* The English name of a TMDB person. TMDB sometimes shortens the en-US
+   name (e.g. 'Aniesh' for 'Aniesh Reddy'); when the original name is
+   Latin and the en-US name is its prefix, the full one is the English name. */
+function pnEnName(p) {
+  const en = (p && p.name) || '';
+  const orig = (p && p.original_name) || '';
+  if (orig && en && orig.length > en.length && orig.toLowerCase().indexOf(en.toLowerCase()) === 0 && pnIsLatin(orig)) return orig;
+  return en;
+}
+async function pnTranslateNames(list) {
+  /* English names -> Persian, via the site's live chain: Google Translate
+     batch first (chunks of 6, the site's pattern), the AI batch second.
+     Returns Map name -> fa ('' when unobtainable). Only real Persian
+     results are kept — a still-Latin answer is not a Persian name. */
+  const out = new Map();
+  const missing = list.filter(t => t && !pnFaCache.has(t));
+  for (let i = 0; i < missing.length; i += 6) {
+    let chunk = missing.slice(i, i + 6);
+    try {
+      const g = await fnGoogleBatch(chunk);
+      chunk.forEach((t, ix) => { const v = g[ix]; if (v && v !== t && !isLatinTitle(v)) pnFaCache.set(t, v); });
+    } catch (e) { /* Google unusable — the AI batch below covers the chunk */ }
+    chunk = chunk.filter(t => !pnFaCache.has(t));
+    if (chunk.length) {
+      try {
+        const text = await fnAiText('نام‌های افراد زیر را به فارسی برگردان؛ اگر نام فارسی رایجی دارند همان را بنویس وگرنه آوانویسی فارسی کن. دقیقاً ' + chunk.length + ' خط برگردان، هر خط با شماره‌اش به شکل «1. نام» شروع شود، هر نام فقط در یک خط، بدون هیچ توضیح یا پرانتز اضافه‌ای:\n' + chunk.map((t, ix) => (ix + 1) + '. ' + t).join('\n'), 700, 0.2);
+        const lines = fnParseBatchLines(text, chunk.length);
+        chunk.forEach((t, ix) => { const v = lines[ix]; if (v && v !== t && !isLatinTitle(v)) pnFaCache.set(t, v); });
+      } catch (e) { /* stays uncached — the card falls back to English */ }
+    }
+  }
+  list.forEach(t => { if (t) out.set(t, pnFaCache.get(t) || ''); });
+  return out;
+}
+/* Normalize one TMDB person (en-US object + its fa-IR name) to
+   {id, en, fa, profile_path, gender, known_for_department}.
+   fa is the fa-IR name ONLY when it is really Persian, else ''. */
+function pnNormPerson(p, faName) {
+  pnNoteOrig(p.id, p.original_name);
+  return { id: p.id, en: pnEnName(p), fa: pnIsFa(faName) ? (faName || '') : '', profile_path: p.profile_path || '', gender: p.gender, known_for_department: p.known_for_department || '' };
+}
+/* Normalize one search-result person (fa-IR object + its en-US name). */
+function pnNormSearchPerson(p, enName) {
+  pnNoteOrig(p.id, p.original_name);
+  const en = enName || (pnIsLatin(p.original_name) ? p.original_name : '') || (pnIsLatin(p.name) ? p.name : '');
+  return { id: p.id, en, fa: pnIsFa(p.name) ? (p.name || '') : '', profile_path: p.profile_path || '', gender: p.gender, known_for_department: p.known_for_department || '' };
+}
+/* Zip one person/popular page fetched in both languages into normalized people. */
+function pnZipPage(enPage, faPage) {
+  const enList = (enPage && enPage.results) || [];
+  const faList = (faPage && faPage.results) || [];
+  const faMap = new Map(faList.map(p => [p.id, p.name || '']));
+  if (enList.length) return enList.map(p => pnNormPerson(p, faMap.get(p.id) || ''));
+  return faList.map(p => ({ id: p.id, en: p.name || '', fa: pnIsFa(p.name) ? (p.name || '') : '', profile_path: p.profile_path || '', gender: p.gender, known_for_department: p.known_for_department || '' }));
+}
+/* Fill the Persian names of people that lack one (in place). A fa that is
+   not really Persian is treated as missing. Returns the list. */
+async function pnFillFa(list) {
+  list.forEach(p => { if (p.fa && !pnIsFa(p.fa)) p.fa = ''; });
+  const need = [...new Set(list.filter(p => p.en && !p.fa).map(p => p.en))];
+  if (!need.length) return list;
+  const got = await pnTranslateNames(need);
+  list.forEach(p => { if (!p.fa && p.en) p.fa = got.get(p.en) || ''; });
+  return list;
+}
+/* pnFillFa with a time budget — search results must never stall on a
+   slow translation; whatever is filled by then renders, the rest falls
+   back to English and is filled by a later section load (shared cache). */
+async function pnFillFaTimed(list, ms) {
+  const budget = ms || 8000;
+  await Promise.race([pnFillFa(list).catch(() => {}), new Promise(r => setTimeout(r, budget))]);
+  return list;
+}
 function sxPersonCard(p) {
-  return '<div class="person" data-person="' + p.id + '" role="button" tabindex="0" title="' + esc(p.name || '') + '">'
+  /* FN-PEOPLE-NAMES v1: line 1 = the Persian name, line 2 = the English
+     name. p is a normalized person {id, en, fa, profile_path,
+     known_for_department}; a raw TMDB object ({name}) still renders
+     (single line) so no caller can break the page. When fa is missing
+     (translation failed) the English name stands on line 1 rather than
+     an empty or invented name. The department stays as a third line.
+     The original-language name never appears here. */
+  const fa = p.fa || '';
+  const en = p.en || p._en || p.name || '';
+  const line1 = fa || en;
+  const line2 = (fa && en && en !== fa) ? en : '';
+  return '<div class="person" data-person="' + p.id + '" role="button" tabindex="0" title="' + esc(line1) + '">'
     + (p.known_for_department === 'Directing' ? '<span class="dirbadge">Dir</span>' : '')
-    + (p.profile_path ? '<img loading="lazy" src="' + IMG(p.profile_path, 'w185') + '" alt="' + esc(p.name || '') + '">' : '<div class="ph">' + esc((p.name || '?').slice(0, 1)) + '</div>')
-    + '<b>' + esc(p.name || '') + '</b><span>' + esc(deptFa(p.known_for_department)) + '</span></div>';
+    + (p.profile_path ? '<img loading="lazy" src="' + IMG(p.profile_path, 'w185') + '" alt="' + esc(line1) + '">' : '<div class="ph">' + esc((line1 || '?').slice(0, 1)) + '</div>')
+    + '<b>' + esc(line1) + '</b>'
+    + (line2 ? '<span class="en2">' + esc(line2) + '</span>' : '')
+    + '<span>' + esc(deptFa(p.known_for_department)) + '</span></div>';
 }
 /* ---------- company logos: repo-hosted (download-data/company-logos/) ----------
    Root cause of the wrong / missing logos: sxHydrateLogos fetched
@@ -8953,6 +9059,7 @@ async function openPerson(id) {
   const bio = (fa && fa.biography) || (en && en.biography) || '';
   const name = (fa && fa.name) || d.name || '';
   const enName = (en && en.name) || '';
+  const origName = (typeof pnOrigById !== 'undefined' && pnOrigById.get(id)) || '';
   const seenC = new Set(), seenD = new Set(), seenW = new Set();
   const cast = ((credits && credits.cast) || []).filter(x => x.poster_path && (x.media_type === 'movie' || x.media_type === 'tv') && !seenC.has(x.media_type + ':' + x.id) && seenC.add(x.media_type + ':' + x.id)).sort(sxWorkSort).slice(0, 80);
   /* directing works (job === 'Director') get their OWN list; the crew
@@ -9011,6 +9118,7 @@ async function openPerson(id) {
     + (d.profile_path ? '<img class="ent-photo" src="' + IMG(d.profile_path, 'w342') + '" alt="' + esc(name) + '">' : '<span class="ent-photo-ph">' + esc((name || '?').slice(0, 1)) + '</span>')
     + '<div><h1>' + esc(name) + '</h1>'
     + (enName && enName !== name ? '<div class="orig">' + esc(enName) + '</div>' : '')
+    + (origName && origName !== name && origName !== enName ? '<div class="orig">' + esc(origName) + '</div>' : '')
     + '<div class="detail-meta"><span>' + esc(deptFa(d.known_for_department)) + '</span>' + (d.birthday ? '<span class="num">' + esc(String(d.birthday).slice(0, 4)) + '</span>' : '') + '</div></div>'
     + '<div class="awards-bubble" id="p-awards" hidden><h3>جوایز و افتخارات</h3><div class="aw-chips"></div></div></div>'
     + '<div style="margin:1rem 0 .2rem"><button class="btn btn-glass" id="p-gallery-btn" type="button"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="m4 18 5.5-5 3.5 3 3-2.5L20 18"/></svg> گالری عکس‌های ' + esc(name) + '</button></div>'
@@ -9266,9 +9374,15 @@ async function loadPeopleBrowse(cfg, append) {
   try {
     while (added < 12 && guard < 4 && !cfg.done) {
       guard++;
-      const d = await tmdb('person/popular', { page: cfg.page });
+      const [enD, faD] = await Promise.all([
+        tmdb('person/popular', { page: cfg.page }, 'en-US').catch(() => null),
+        tmdb('person/popular', { page: cfg.page }, 'fa-IR').catch(() => null)
+      ]);
       cfg.page++;
-      const list = (d.results || []).filter(p => p.profile_path && !cfg.seen.has(p.id) && cfg.seen.add(p.id) && (cfg.mode === 'male' ? p.gender === 2 : cfg.mode === 'female' ? p.gender === 1 : p.known_for_department === 'Directing'));
+      const d = enD || faD || { results: [], total_pages: 1 };
+      const zipped = pnZipPage(enD, faD);
+      await pnFillFa(zipped);
+      const list = zipped.filter(p => p.profile_path && !cfg.seen.has(p.id) && cfg.seen.add(p.id) && (cfg.mode === 'male' ? p.gender === 2 : cfg.mode === 'female' ? p.gender === 1 : p.known_for_department === 'Directing'));
       if (list.length) {
         if (body.querySelector('.state')) body.innerHTML = '<div class="pgrid"></div>';
         const g = body.querySelector('.pgrid');
@@ -9334,15 +9448,24 @@ async function dirResolveOne(pair) {
       if (sc > bestScore) { bestScore = sc; best = p; }
     });
     if (!best) return null;
-    return { id: best.id, en: best.name || en, fa, profile_path: best.profile_path || '' };
+    pnNoteOrig(best.id, best.original_name);
+    return { id: best.id, en: pnEnName(best) || en, fa, profile_path: best.profile_path || '' };
   } catch (e) { return null; }
 }
 function sxDirCard(p) {
-  return '<div class="person" data-person="' + p.id + '" role="button" tabindex="0" title="' + esc(p.en || '') + '">'
+  /* FN-PEOPLE-NAMES v1: line 1 = the Persian name, line 2 = the English
+     name (was the reverse: English first, Persian second). p is
+     {id, en, fa, profile_path}; fa is the curated Persian name for the
+     great directors, or the translated one for the tail. */
+  const fa = p.fa || '';
+  const en = p.en || '';
+  const line1 = fa || en;
+  const line2 = (fa && en && en !== fa) ? en : '';
+  return '<div class="person" data-person="' + p.id + '" role="button" tabindex="0" title="' + esc(line1) + '">'
     + '<span class="dirbadge">Dir</span>'
-    + (p.profile_path ? '<img loading="lazy" src="' + IMG(p.profile_path, 'w185') + '" alt="' + esc(p.en || '') + '">' : '<div class="ph">' + esc((p.en || '?').slice(0, 1)) + '</div>')
-    + '<b class="enname">' + esc(p.en || '') + '</b>'
-    + '<span class="faname">' + (p.fa && p.fa !== p.en ? esc(p.fa) : '') + '</span></div>';
+    + (p.profile_path ? '<img loading="lazy" src="' + IMG(p.profile_path, 'w185') + '" alt="' + esc(line1) + '">' : '<div class="ph">' + esc((line1 || '?').slice(0, 1)) + '</div>')
+    + '<b>' + esc(line1) + '</b>'
+    + (line2 ? '<span class="en2">' + esc(line2) + '</span>' : '') + '</div>';
 }
 function openDirectorsBrowse() {
   const cfg = { kind: 'people', mode: 'director', title: 'کارگردان‌های مطرح', sub: '',
@@ -9411,8 +9534,9 @@ async function loadDirectors(cfg, append) {
         const faMap = new Map(((fa && fa.results) || []).map(p => [p.id, p.name]));
         const batch = (en.results || [])
           .filter(p => p.known_for_department === 'Directing' && p.profile_path && !cfg.seen.has(p.id) && cfg.seen.add(p.id))
-          .map(p => ({ id: p.id, en: p.name || '', fa: faMap.get(p.id) || '', profile_path: p.profile_path }));
+          .map(p => { pnNoteOrig(p.id, p.original_name); return { id: p.id, en: pnEnName(p), fa: faMap.get(p.id) || '', profile_path: p.profile_path }; });
         for (let i = batch.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const t = batch[i]; batch[i] = batch[j]; batch[j] = t; }
+        await pnFillFa(batch);
         batch.forEach(p => cfg.all.push(p));
         added += batch.length;
         if (pg >= (en.total_pages || 1) || pg > 80) cfg.popDone = true;
@@ -9436,13 +9560,16 @@ async function dirRemoteSearch(cfg, q) {
     const enMap = new Map(((both[0] && both[0].results) || []).map(p => [p.id, p]));
     const faMap = new Map(((both[1] && both[1].results) || []).map(p => [p.id, p]));
     let changed = false;
+    const fresh = [];
     [...new Set([...enMap.keys(), ...faMap.keys()])].forEach(id => {
       const ep = enMap.get(id), fp = faMap.get(id), src = ep || fp;
       if (!src || src.known_for_department !== 'Directing' || cfg.seen.has(id)) return;
       cfg.seen.add(id);
-      cfg.all.push({ id, en: ep ? (ep.name || '') : (fp.name || ''), fa: fp ? (fp.name || '') : '', profile_path: src.profile_path || '' });
+      pnNoteOrig(id, (ep && ep.original_name) || (fp && fp.original_name) || '');
+      fresh.push({ id, en: ep ? pnEnName(ep) : (fp.name || ''), fa: fp ? (fp.name || '') : '', profile_path: src.profile_path || '' });
       changed = true;
     });
+    if (fresh.length) { await pnFillFa(fresh); fresh.forEach(p => cfg.all.push(p)); }
     if (changed) renderDirGrid(cfg);
   } catch (e) {}
 }
@@ -9691,8 +9818,15 @@ async function sxInitSearchHome() {
   const cr = $('#sb-countries'); if (cr) cr.innerHTML = FN_COUNTRIES.slice(0, 14).map(sxCountryChip).join('');
   const cp = $('#sb-companies'); if (cp) { cp.innerHTML = FN_COMPANIES.slice(0, 12).map(sxCompCardCur).join(''); coLogoMap().then(() => coRefreshCards(cp)); }
   try {
-    const pages = await Promise.all([1, 2, 3].map(pg => tmdb('person/popular', { page: pg }).catch(() => ({ results: [] }))));
-    const all = pages.flatMap(d => d.results || []);
+    const pages = await Promise.all([1, 2, 3].map(async pg => {
+      const [en, fa] = await Promise.all([
+        tmdb('person/popular', { page: pg }, 'en-US').catch(() => ({ results: [] })),
+        tmdb('person/popular', { page: pg }, 'fa-IR').catch(() => ({ results: [] }))
+      ]);
+      return pnZipPage(en, fa);
+    }));
+    const all = pages.flatMap(x => x);
+    await pnFillFa(all);
     const males = all.filter(p => p.gender === 2 && p.profile_path).slice(0, 12);
     const females = all.filter(p => p.gender === 1 && p.profile_path).slice(0, 12);
     const me = $('#sb-male'); if (me) me.innerHTML = males.length ? males.map(sxPersonCard).join('') : '<span style="color:var(--pearl);font-size:.88rem">موردی نیست.</span>';
@@ -9702,8 +9836,16 @@ async function sxInitSearchHome() {
     const fe = $('#sb-female'); if (fe) fe.innerHTML = '<span style="color:var(--pearl);font-size:.88rem">در دسترس نیست.</span>';
   }
   try {
-    const dirs = await Promise.all(FN_FAMOUS_DIRECTORS.map(id => tmdb('person/' + id, {}, 'fa-IR').catch(() => null)));
+    const dirs = await Promise.all(FN_FAMOUS_DIRECTORS.map(async id => {
+      const [en, fa] = await Promise.all([
+        tmdb('person/' + id, {}, 'en-US').catch(() => null),
+        tmdb('person/' + id, {}, 'fa-IR').catch(() => null)
+      ]);
+      if (!en && !fa) return null;
+      return pnNormPerson(en || fa, fa ? fa.name : '');
+    }));
     const list = dirs.filter(Boolean).filter(p => p.profile_path);
+    await pnFillFa(list);
     const de = $('#sb-directors'); if (de) de.innerHTML = list.length ? list.map(p => sxPersonCard(Object.assign({}, p, { known_for_department: 'Directing' }))).join('') : '<span style="color:var(--pearl);font-size:.88rem">موردی نیست.</span>';
   } catch (e) { const de = $('#sb-directors'); if (de) de.innerHTML = '<span style="color:var(--pearl);font-size:.88rem">در دسترس نیست.</span>'; }
   try {
@@ -9801,7 +9943,12 @@ async function sxSearchPage(seq, append) {
       /* v8.9 FN-SEARCH-DEDUP: drop TMDB titles already in the local rows above. */
       var lkAll = fnLocalDedupKeys(st.q, st.type);
       if (lkAll) items = items.filter(function (x) { return !lkAll.has(x.media_type + ':' + x.id); });
-      const people = multiRes.filter(x => x.media_type === 'person');
+      let people = multiRes.filter(x => x.media_type === 'person');
+      /* FN-PEOPLE-NAMES v1: the search-results people get the same two-line
+         cards — English names from the en-US multi page, Persian filled in
+         (timed, so a slow translation can never stall search). */
+      const _enMap = new Map(((multiEn && multiEn.results) || []).map(x => [x.id, x.name || '']));
+      people = await pnFillFaTimed(people.map(p => pnNormSearchPerson(p, _enMap.get(p.id) || '')), 8000);
       cacheItems(items);
       if (!append) {
         let html = '';
@@ -9847,7 +9994,7 @@ async function sxSearchPage(seq, append) {
       let list = (d.results || []).filter(x => { const k = st.type + ':' + x.id; if (seenT.has(k)) return false; seenT.add(k); return true; });
       let inner = '', wrapCls = 'grid';
       if (st.type === 'movie' || st.type === 'tv') { /* v8.9 FN-SEARCH-DEDUP: drop TMDB titles already in the local rows above. */ var lkT = fnLocalDedupKeys(st.q, st.type); if (lkT) list = list.filter(function (x) { return !lkT.has(st.type + ':' + x.id); }); list = list.map(x => Object.assign({}, x, { media_type: st.type })); cacheItems(list); inner = list.map(x => cardHtml(x)).join(''); }
-      else if (st.type === 'person') { wrapCls = 'pgrid'; inner = list.map(sxPersonCard).join(''); }
+      else if (st.type === 'person') { wrapCls = 'pgrid'; list = await pnFillFaTimed(list.map(p => pnNormSearchPerson(p, p._en || '')), 8000); inner = list.map(sxPersonCard).join(''); }
       else if (st.type === 'company') { wrapCls = 'compgrid'; inner = list.map(sxCompCardTmdb).join(''); }
       else { wrapCls = 'collgrid'; list = list.filter(c => c.poster_path || c.backdrop_path); inner = list.map(sxCollCard).join(''); }
       if (!append) {
@@ -11476,18 +11623,25 @@ async function fnMultiSearch(q, pages) {
    collection), fa-IR + en-US merged, one page at a time */
 async function fnTypedSearch(path, q, page) {
   const seen = new Map();
-  const add = arr => (arr || []).forEach(x => { if (x && x.id && !seen.has(x.id)) seen.set(x.id, x); });
+  /* FN-PEOPLE-NAMES v1: keep the en-US name on person results so the
+     two-line person card can show it — the fa-IR object wins the merge,
+     the en-US name rides along as _en. Harmless for non-person types. */
+  const add = (arr, lang) => (arr || []).forEach(x => {
+    if (!x || !x.id) return;
+    if (!seen.has(x.id)) { seen.set(x.id, x); if (lang === 'en-US') x._en = x.name; }
+    else if (lang === 'en-US') { const k = seen.get(x.id); if (k && !k._en) k._en = x.name; }
+  });
   let total = 1;
   const ds = await Promise.all([
     tmdb(path, { query: q, include_adult: 'false', page }).catch(() => null),
     tmdb(path, { query: q, include_adult: 'false', page }, 'en-US').catch(() => null)
   ]);
-  ds.forEach(d => { if (d) { total = Math.max(total, d.total_pages || 1); add(d.results); } });
+  ds.forEach((d, i) => { if (d) { total = Math.max(total, d.total_pages || 1); add(d.results, i === 1 ? 'en-US' : 'fa-IR'); } });
   if (page === 1 && /[؀-ۿ]/.test(q) && seen.size < 30) {
     const en = await fnQueryToEn(q);
     if (en && en.toLowerCase() !== String(q).toLowerCase()) {
       const d2 = await tmdb(path, { query: en, include_adult: 'false', page: 1 }, 'en-US').catch(() => null);
-      if (d2) { total = Math.max(total, d2.total_pages || 1); add(d2.results); }
+      if (d2) { total = Math.max(total, d2.total_pages || 1); add(d2.results, 'en-US'); }
     }
   }
   if (!ds[0] && !ds[1] && !seen.size) throw new Error('search');
