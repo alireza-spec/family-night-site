@@ -6001,6 +6001,23 @@ async function fnPlayResolve(ctx) {
   try {
     var data = await fnPlayFetchPart(part);
     var entry = data[key];
+    if (!entry && ctx.tmdbKey) {
+      /* FN-PLAY-NKEY v1: rescued-series entries are keyed n:NNNN, not by
+         IMDb — the IMDb path above finds the part (the download-index maps
+         the IMDb) but the key misses, which used to shadow the TMDB path
+         and hide the whole play list (Black Sails: 114 mkv rows, entry
+         n:10966). Fall back to the title index so the TMDB key resolves
+         to the n: key. */
+      try {
+        var ti2 = await getTitleIndex();
+        var hit2 = ti2[ctx.tmdbKey];
+        if (hit2 && hit2.part && hit2.num) {
+          var data2 = await fnPlayFetchPart(hit2.part);
+          var entry2 = data2['n:' + hit2.num];
+          if (entry2 && fnPlayJoined(entry2).length) return { entry: entry2, key: 'n:' + hit2.num, part: hit2.part };
+        }
+      } catch (e2) {}
+    }
     if (!entry || !fnPlayJoined(entry).length) return null;
     return { entry: entry, key: key, part: part };
   } catch (e) { return null; }
@@ -9383,6 +9400,12 @@ async function sxSearchMain(q) {
   if (!store.searches.includes(q)) { store.searches.unshift(q); store.searches = store.searches.slice(0, 10); fnSaveState(); renderRecentSearches(); }
   const seq = ++searchSeq;
   sxSearchState = { q, type: searchType, page: 1, total: 1, loading: false };
+  /* FN-SEARCH-MORE v1: a previous search's button is a direct child of
+     #search-results (outside #sx-local-sec / #sx-tmdb-sec), so neither
+     the local render nor the fresh-search path ever removes it — stale
+     buttons pile up as duplicate dead buttons under the new results.
+     Drop every one of them at the start of a fresh search. */
+  res.querySelectorAll('#search-more').forEach(function (b) { b.remove(); });
   /* v8.7 FN-LOCAL-SEARCH: local archive matches render instantly (no
      spinner wipe); the TMDB search runs in the background and merges
      its sections in when it arrives, never wiping the local rows. */
@@ -9450,7 +9473,7 @@ async function sxSearchPage(seq, append) {
            below the local rows — never wiping them. */
         fnLocalTmdbRender(res, html, st.q);
       } else {
-        const old = $('#search-more'); if (old) old.remove();
+        res.querySelectorAll('#search-more').forEach(function (b) { b.remove(); });
         const tc = res.querySelector('#sx-tmdb-sec');
         const g = $('#sx-all-grid');
         if (items.length) {
@@ -9464,8 +9487,10 @@ async function sxSearchPage(seq, append) {
         }
       }
       if (st.page < st.total && (items.length || people.length)) {
+        res.querySelectorAll('#search-more').forEach(function (b) { b.remove(); });
         res.insertAdjacentHTML('beforeend', '<button class="btn btn-glass loadmore" id="search-more">نمایش بیشتر</button>');
-        $('#search-more').onclick = () => { st.page++; sxSearchPage(seq, true).catch(() => {}); };
+        var smBtn = res.lastElementChild;
+        if (smBtn) smBtn.onclick = () => { st.page++; sxSearchPage(seq, true).catch(() => {}); };
       }
     } else {
       const path = st.type === 'movie' ? 'search/movie' : st.type === 'tv' ? 'search/tv' : st.type === 'person' ? 'search/person' : st.type === 'company' ? 'search/company' : 'search/collection';
@@ -9487,11 +9512,13 @@ async function sxSearchPage(seq, append) {
         fnLocalTmdbRender(res, list.length ? '<div class="sec"><div class="' + wrapCls + '" id="sx-sgrid">' + inner + '</div></div>' : '', st.q);
       } else {
         const g = $('#sx-sgrid'); if (g && inner) g.insertAdjacentHTML('beforeend', inner);
-        const old = $('#search-more'); if (old) old.remove();
+        res.querySelectorAll('#search-more').forEach(function (b) { b.remove(); });
       }
       if (st.page < st.total && list.length) {
+        res.querySelectorAll('#search-more').forEach(function (b) { b.remove(); });
         res.insertAdjacentHTML('beforeend', '<button class="btn btn-glass loadmore" id="search-more">نمایش بیشتر</button>');
-        $('#search-more').onclick = () => { st.page++; sxSearchPage(seq, true).catch(() => {}); };
+        var smBtn = res.lastElementChild;
+        if (smBtn) smBtn.onclick = () => { st.page++; sxSearchPage(seq, true).catch(() => {}); };
       }
     }
   } finally { st.loading = false; }
