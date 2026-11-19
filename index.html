@@ -2667,9 +2667,17 @@ function openCollection(key) {
   const ysel = $('#arch-year');
   if (ysel && ysel.options.length <= 1) { const nowY = new Date().getFullYear(); for (let yr = nowY; yr >= 1950; yr--) { const o = document.createElement('option'); o.value = yr; o.textContent = yr; ysel.appendChild(o); } }
   $('#arch-more').style.display = 'none';
+  /* FN-CAT-FIRST50 v1: the local see-all used to render the snapshot
+     list unfiltered on first paint (only a later sort change went
+     through renderLocalArch). Filter here too — list order kept,
+     link-less works dropped when fewer than 50 qualify (strict50);
+     re-render filtered once the index arrives if it is late. */
+  var _lcItems = list.slice();
+  if (FN_AVAIL.loaded) { arch.qualCount = 0; arch.availPending = []; _lcItems = fnAvailFirst50(_lcItems, arch, true, true); }
+  else if (!FN_AVAIL.failed) { var _lcK = arch.localKey; fnAvailEnsure().then(function () { if (arch.mode === 'local' && arch.localKey === _lcK && FN_AVAIL.loaded) renderLocalArch(); }); }
   const grid = $('#arch-grid');
-  grid.innerHTML = list.length
-    ? list.map(x => cardHtml(x)).join('')
+  grid.innerHTML = _lcItems.length
+    ? _lcItems.map(x => cardHtml(x)).join('')
     : '<div class="state" style="grid-column:1/-1">این مجموعه در حال حاضر خالی است.</div>';
   activateArchiveView();
 }
@@ -3074,10 +3082,15 @@ async function loadHome() {
     _upLive.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
     if (_upLive.length) rows.updates = _upLive.slice(0, 20);
   } catch (e) { /* keep the snapshot row */ }
-  /* Snapshot fallback rows (used when a live fetch failed/empty) must
-     also show only archive works — filter them the same way. */
+  /* FN-CAT-FIRST50 v1: EVERY home rail shows only archive works
+     (avail-index d||p) — a rail is the first 50 of its category, so
+     a link-less work must not appear in it at all. The three live
+     rails above already fill archive-only; this filters every
+     snapshot row the same way (trending/newM25/updates fallbacks
+     included). A rail with no qualifying works disappears (railKeys
+     skips empty rows) until its works gain links. */
   if (FN_AVAIL.idx) {
-    ['trending_now', 'newM25', 'updates'].forEach(k => { if (rows[k]) rows[k] = rows[k].filter(x => fnAvailQualifies(x)); });
+    Object.keys(rows).forEach(k => { if (rows[k]) rows[k] = rows[k].filter(x => fnAvailQualifies(x)); });
   }
   cacheItems(Object.values(rows).flat());
   /* Progressive rails: only the first rows render up front; the rest
@@ -3400,7 +3413,15 @@ $$('#genre-chips [data-gchip]').forEach(b => b.onclick = () => openArchive({ tit
    item, in original order, followed by everything else unfiltered —
    so the listing keeps every result exactly once, with the first 50
    all qualifying. When the source is exhausted before 50 qualifying
-   are found (isFinal), the held items are appended too. */
+   are found (isFinal), the held items are appended too.
+   FN-CAT-FIRST50 v1: pass strict50=true (4th arg) on CATEGORY
+   listings — then the isFinal release only happens once 50
+   qualifying exist, so a category with fewer than 50 archive works
+   never shows a link-less work inside its first 50; the held items
+   stay held (still findable via search/detail) until they gain a
+   link. Non-category listings (collection parts, calendar day, person
+   filmography) keep the old call without strict50 and still release
+   everything at the end. */
 var FN_AVAIL = { idx: null, loading: null, loaded: false, failed: false };
 function fnAvailEnsure() {
   if (FN_AVAIL.loaded) return Promise.resolve(FN_AVAIL.idx);
@@ -3483,7 +3504,7 @@ function fnDlIconApply() {
     if (has) poster.insertAdjacentHTML('beforeend', fnDlBadgeHtml());
   }
 }
-function fnAvailFirst50(items, state, isFinal) {
+function fnAvailFirst50(items, state, isFinal, strict50) {
   var list = items || [];
   if (!FN_AVAIL.idx) return list.slice();
   var st = state || {};
@@ -3499,7 +3520,7 @@ function fnAvailFirst50(items, state, isFinal) {
       if (st.qualCount >= 50 && st.availPending.length) { show = show.concat(st.availPending); st.availPending = []; }
     } else st.availPending.push(x);
   }
-  if (isFinal && st.availPending.length) { show = show.concat(st.availPending); st.availPending = []; }
+  if (isFinal && st.availPending.length && (!strict50 || st.qualCount >= 50)) { show = show.concat(st.availPending); st.availPending = []; }
   return show;
 }
 
@@ -3636,7 +3657,7 @@ function renderLocalArch() {
      the rest unfiltered after them. The index loads lazily: if it is
      not in hand yet, render as-is now and re-render filtered once it
      arrives (same listing still open). */
-  if (FN_AVAIL.loaded) { arch.qualCount = 0; arch.availPending = []; if (arch.localKey && FN_STRICT_CATS.indexOf(arch.localKey) > -1) { items = fnAvailStrict(items); arch.qualCount = items.length; } else items = fnAvailFirst50(items, arch, true); }
+  if (FN_AVAIL.loaded) { arch.qualCount = 0; arch.availPending = []; if (arch.localKey && FN_STRICT_CATS.indexOf(arch.localKey) > -1) { items = fnAvailStrict(items); arch.qualCount = items.length; } else items = fnAvailFirst50(items, arch, true, true); }
   else if (!FN_AVAIL.failed) { var _rlk = arch.localKey; fnAvailEnsure().then(function () { if (arch.mode === 'local' && arch.localKey === _rlk && FN_AVAIL.loaded) renderLocalArch(); }); }
   cacheItems(items);
   grid.innerHTML = items.length ? items.map(x => cardHtml(x)).join('') : '<div class="state" style="grid-column:1/-1">با این فیلترها اثری در این مجموعه پیدا نشد.</div>';
@@ -3870,7 +3891,7 @@ async function loadArchPage() {
        items — release the held items so the listing still shows
        every TMDB result, qualifying first. */
     if (arch.done && arch.availPending && arch.availPending.length) {
-      const _afTail = fnAvailFirst50([], arch, true);
+      const _afTail = fnAvailFirst50([], arch, true, true);
       if (_afTail.length) { cacheItems(_afTail); if (!grid.querySelector('.card')) grid.innerHTML = ''; grid.insertAdjacentHTML('beforeend', _afTail.map(x => cardHtml(x)).join('')); items = items.concat(_afTail); }
     }
     /* with a first-letter filter a whole page can legitimately
@@ -3901,7 +3922,7 @@ async function loadArchPage() {
          section instead of a dead end */
       const local = (arch.localList && arch.localList.length) ? arch.localList : ((arch.type === 'movie' || arch.type === 'tv') ? localDiscover() : []);
       if (local.length) {
-        if (FN_AVAIL.loaded) { arch.qualCount = 0; arch.availPending = []; local = (arch.collKey && FN_STRICT_CATS.indexOf(arch.collKey) > -1) ? fnAvailStrict(local) : fnAvailFirst50(local, arch, true); }
+        if (FN_AVAIL.loaded) { arch.qualCount = 0; arch.availPending = []; local = (arch.collKey && FN_STRICT_CATS.indexOf(arch.collKey) > -1) ? fnAvailStrict(local) : fnAvailFirst50(local, arch, true, true); }
         cacheItems(local);
         grid.innerHTML = local.map(x => cardHtml(x)).join('');
         arch.done = true;
@@ -9978,7 +9999,7 @@ async function loadCoWorks(append) {
     if (more) more.style.display = st.page < st.total ? 'block' : 'none';
     /* FN-AVAIL-FILTER v1: source exhausted — release held items. */
     if (!(st.page < st.total) && st.availPending && st.availPending.length) {
-      const _tail = fnAvailFirst50([], st, true);
+      const _tail = fnAvailFirst50([], st, true, true);
       if (_tail.length) { cacheItems(_tail); if (!grid.querySelector('.card')) grid.innerHTML = ''; grid.insertAdjacentHTML('beforeend', _tail.map(x => cardHtml(x)).join('')); }
     }
     /* FN-AVAIL-FILTER v1: keep paging until 50 qualifying (bounded
@@ -10551,7 +10572,7 @@ async function loadCountryWorks(cfg, append) {
     more.onclick = () => { if (cfg.tab !== 'tv') cfg.mPage++; if (cfg.tab !== 'movie') cfg.tPage++; loadCountryWorks(cfg, true); };
     /* FN-AVAIL-FILTER v1: source exhausted — release held items. */
     if (!canMore && cfg.availPending && cfg.availPending.length) {
-      const _tail = fnAvailFirst50([], cfg, true);
+      const _tail = fnAvailFirst50([], cfg, true, true);
       if (_tail.length) { cacheItems(_tail); if (!body.querySelector('.grid')) body.innerHTML = '<div class="grid"></div>'; const _g = body.querySelector('.grid'); if (_g) _g.insertAdjacentHTML('beforeend', _tail.map(x => cardHtml(x)).join('')); }
     }
     /* FN-AVAIL-FILTER v1: keep paging until 50 qualifying (bounded
@@ -11431,7 +11452,7 @@ async function loadGenreBrowse(cfg, append) {
     more.onclick = () => { if (cfg.tab !== 'tv') cfg.mPage++; if (cfg.tab !== 'movie') cfg.tPage++; loadGenreBrowse(cfg, true); };
     /* FN-AVAIL-FILTER v1: source exhausted — release held items. */
     if (!canMore && cfg.availPending && cfg.availPending.length) {
-      const _tail = fnAvailFirst50([], cfg, true);
+      const _tail = fnAvailFirst50([], cfg, true, true);
       if (_tail.length) { cacheItems(_tail); if (!body.querySelector('.grid')) body.innerHTML = '<div class="grid"></div>'; const _g = body.querySelector('.grid'); if (_g) _g.insertAdjacentHTML('beforeend', _tail.map(x => cardHtml(x)).join('')); }
     }
     /* FN-AVAIL-FILTER v1: keep paging until 50 qualifying (bounded
