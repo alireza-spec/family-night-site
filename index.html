@@ -6239,7 +6239,29 @@ async function openPlayListOrPlayer(o) {
        timeout the external player opens at once */
     try { res = await Promise.race([fnPlayResolve(ctx), fnPlayTimeout(6000)]); } catch (e) { res = null; }
   }
-  if (!res) { closeOverlay('#ov-playlist'); openPlayer({ id: ctx.id, type: ctx.type, item: ctx.item, imdbId: ctx.imdbId }); return; }
+  if (!res) {
+    /* FN-PLAY-NOPLAY v1: no internal play rows. If the title IS in the
+       download archive (a download-only title), show a clear empty
+       state here — "no online play for this work, use download" —
+       instead of falling back to the external player (which, with no
+       usable id/item, renders a black screen). If it is NOT in the
+       download archive at all, the external player is the only
+       playback and the old fallback stays. The archive check is
+       fail-open: any error keeps the old fallback. */
+    var hasDl = false;
+    try {
+      if (typeof fnDlTitleFallback === 'function') {
+        var dl = await fnDlTitleFallback(ctx.imdbId, ctx.tmdbKey, ctx.title, ctx.year);
+        hasDl = !!(dl && dl.rec);
+      }
+    } catch (e2) { hasDl = false; }
+    if (hasDl) {
+      $('#pl-body').innerHTML = '<div class="state"><b>برای این اثر پخش آنلاین وجود ندارد.</b><br>می‌توانید آن را از «دانلود رایگان» دانلود کنید.<br><button class="btn btn-gold" id="pl-nodl" style="margin-top:1rem">دانلود رایگان</button></div>';
+      var nb = $('#pl-nodl'); if (nb) nb.onclick = function () { closeOverlay('#ov-playlist'); };
+      return;
+    }
+    closeOverlay('#ov-playlist'); openPlayer({ id: ctx.id, type: ctx.type, item: ctx.item, imdbId: ctx.imdbId }); return;
+  }
   FN_PLAY.entry = res.entry; FN_PLAY.key = res.key; FN_PLAY.part = res.part;
   fnPlayRenderList();
 }
@@ -9725,7 +9747,7 @@ document.addEventListener('keydown', e => {
    the compare picker and the list search.
    This block lives OUTSIDE the play-module script block, so module
    refreshes (update_patch.py) never touch it. */
-var FN_LSEARCH = { idx: null, loading: false, loaded: false, findCache: {}, lastRender: null };
+var FN_LSEARCH = { idx: null, loading: false, loaded: false, findCache: {}, lastRender: null, titleCache: {}, titlePending: {} };
 
 function fnLocalNormTitle(s) {
   return String(s || '').toLowerCase().replace(/[''′`]/g, '').replace(/[^a-z0-9\u0600-\u06FF]+/g, ' ').replace(/\s+/g, ' ').trim();
@@ -9864,6 +9886,11 @@ function fnLocalPosterFor(e, cb) {
       var list = (e.type === 'tv' ? (d && d.tv_results) : (d && d.movie_results)) || [];
       done(list[0] && list[0].poster_path);
     }).catch(function () { done(''); });
+  } else if (e.t) {
+    /* FN-LOCAL-RESOLVE v1: no IMDb and no TMDB id — resolve by exact
+       TMDB title search (the search-index row was never updated with
+       the ids the H3 record carries). */
+    fnLocalResolveByTitle(e).then(function (r) { done(r && r.poster); }).catch(function () { done(''); });
   } else done('');
 }
 function fnLocalPosters(container) {
@@ -9926,6 +9953,94 @@ function fnLocalResolveTmdb(e) {
   }).catch(function () { FN_LSEARCH.findCache[e.imdb] = 0; return 0; });
 }
 
+/* FN-LOCAL-RESOLVE v1: a local row whose search-index record carries
+   NO IMDb and NO TMDB id (e.g. a backfilled H3 record whose search-index
+   row was never updated) still needs a poster, a dedup key and a detail
+   page. Resolve it at runtime by exact TMDB title search (title +
+   year +-1, exact normalized-title match only — never a fuzzy guess).
+   Cached per title+year+type; in-flight calls are shared. On success
+   the id is stored back on the entry, so the dedup key, the poster
+   loader and the tap handler all see it. Never throws. */
+function fnLocalResolveByTitle(e) {
+  var key = fnLocalNormTitle(e.t) + '|' + (e.y || '') + '|' + e.type;
+  if (FN_LSEARCH.titleCache[key] !== undefined) return Promise.resolve(FN_LSEARCH.titleCache[key]);
+  if (FN_LSEARCH.titlePending[key]) return FN_LSEARCH.titlePending[key];
+  var kind = e.type === 'tv' ? 'tv' : 'movie';
+  var p = tmdb('search/' + kind, { query: e.t }).then(function (d) {
+    var res = { id: 0, poster: '' };
+    var list = (d && d.results) || [];
+    var needle = fnLocalNormTitle(e.t);
+    for (var i = 0; i < list.length; i++) {
+      var r = list[i];
+      var t1 = fnLocalNormTitle(r.title || r.name || '');
+      var t2 = fnLocalNormTitle(r.original_title || r.original_name || '');
+      if (t1 !== needle && t2 !== needle) continue;
+      var ry = String((r.release_date || r.first_air_date || '').slice(0, 4) || '');
+      if (e.y && ry && Math.abs(+ry - +e.y) > 1) continue;
+      if (r.id) { res = { id: r.id, poster: r.poster_path || '' }; break; }
+    }
+    FN_LSEARCH.titleCache[key] = res;
+    delete FN_LSEARCH.titlePending[key];
+    if (res.id) {
+      try {
+        e.tmdb = res.id; e._poster = res.poster;
+        /* pre-populate the poster cache under the key fnLocalPosterFor
+           will use now that e.tmdb is set, so it does not re-fetch. */
+        FN_LPOSTER.cache['|' + res.id + '|' + e.type] = res.poster || '';
+      } catch (err) {}
+    }
+    return res;
+  }).catch(function () {
+    var res = { id: 0, poster: '' };
+    FN_LSEARCH.titleCache[key] = res;
+    delete FN_LSEARCH.titlePending[key];
+    return res;
+  });
+  FN_LSEARCH.titlePending[key] = p;
+  return p;
+}
+
+/* FN-LOCAL-RESOLVE v1: rows with no IMDb/TMDB id still need a poster, a
+   dedup key and a download icon. Resolve them in the background (exact
+   TMDB title search, cached); when one resolves, paint its poster,
+   add its download badge if the archive has links for it, and drop
+   its duplicate TMDB card below. Never throws; never blocks search. */
+function fnLocalResolveMissing(res, loc, seq) {
+  if (!res || !loc || !loc.length) return;
+  loc.forEach(function (e) {
+    if (!e || e.tmdb || e.imdb) return;
+    fnLocalResolveByTitle(e).then(function (r) {
+      if (!r || !r.id) return;
+      if (!document.body.contains(res)) return;
+      if (FN_LSEARCH.lastRender && FN_LSEARCH.lastRender.seq !== seq) return;
+      var card = res.querySelector('.card[data-ls="' + e.i + '"]');
+      if (card) {
+        card.setAttribute('data-ls-tmdb', String(r.id));
+        var noimg = card.querySelector('.poster .noimg');
+        if (noimg && r.poster) {
+          var img = document.createElement('img');
+          img.loading = 'lazy'; img.decoding = 'async';
+          img.src = IMG(r.poster, 'w342'); img.alt = e.t || '';
+          noimg.replaceWith(img);
+        }
+        /* download icon: the avail-index has no entry for this title
+           (its ids were never recorded), so prove the links directly
+           from the archive — the title fallback returns a record only
+           when it carries download links. */
+        if (!card.querySelector('.dlbadge') && typeof fnDlTitleFallback === 'function' && typeof fnDlBadgeHtml === 'function') {
+          fnDlTitleFallback('', (e.type === 'tv' ? 'tv:' : 'movie:') + r.id, e.t, e.y).then(function (dl) {
+            if (!dl || !dl.rec) return;
+            if (!document.body.contains(card) || card.querySelector('.dlbadge')) return;
+            var poster = card.querySelector('.poster');
+            if (poster) poster.insertAdjacentHTML('beforeend', fnDlBadgeHtml());
+          }).catch(function () {});
+        }
+      }
+      try { fnLocalDedupTmdbDom(FN_LSEARCH.lastRender); } catch (err) {}
+    }).catch(function () {});
+  });
+}
+
 /* tap on a local grid card (search tab / archive pages): TMDB detail
    when its id is known (or resolvable via /find); otherwise straight
    to the play list — fnPlayResolve works from the IMDb id alone. */
@@ -9939,7 +10054,29 @@ function fnLocalOpen(e) {
     });
     return;
   }
-  fnLocalOpenPlayer(e);
+  /* FN-LOCAL-RESOLVE v1: no ids at all — resolve the TMDB id by exact
+     title search, then open the DETAIL page (with its download box +
+     play section), never straight to the play list. Only if nothing
+     resolves do we fall back to the play list — and the play list now
+     shows a clear empty state for a download-only title instead of a
+     black player. */
+  fnLocalResolveByTitle(e).then(function (r) {
+    if (r && r.id) { openDetail(e.type, r.id); return; }
+    /* second chance via the archive itself: the H3 record may carry an
+       IMDb the title search could not match (e.g. a transliterated
+       title). */
+    if (typeof findImdbByTitle === 'function') {
+      findImdbByTitle(e.t, e.y).then(function (im) {
+        if (!im) { fnLocalOpenPlayer(e); return; }
+        fnLocalResolveTmdb({ imdb: im, type: e.type, tmdb: 0 }).then(function (id) {
+          if (id) openDetail(e.type, id);
+          else fnLocalOpenPlayer(e);
+        });
+      }).catch(function () { fnLocalOpenPlayer(e); });
+      return;
+    }
+    fnLocalOpenPlayer(e);
+  }).catch(function () { fnLocalOpenPlayer(e); });
 }
 
 function fnLocalOpenPlayer(e) {
@@ -10019,7 +10156,7 @@ function fnLocalRenderSearch(res, q, type, seq) {
   if (tmdbSec && tmdbSec.dataset.q !== q) { tmdbSec.remove(); tmdbSec = null; }
   var localSec = res.querySelector('#sx-local-sec');
   if (localSec) localSec.remove();
-  if (html) { res.insertAdjacentHTML('afterbegin', html); try { fnLocalPosters(res); } catch (e) {} }
+  if (html) { res.insertAdjacentHTML('afterbegin', html); try { fnLocalPosters(res); } catch (e) {} try { fnLocalResolveMissing(res, loc, seq); } catch (e) {} }
   if (!tmdbSec) res.insertAdjacentHTML('beforeend', '<div id="sx-tmdb-sec" data-q="' + esc(q) + '"><div class="state" style="padding:1.2rem 0"><div class="spin"></div>در حال جستجو…</div></div>');
 }
 
