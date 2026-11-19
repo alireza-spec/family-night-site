@@ -1651,7 +1651,7 @@ html.tg .bottomnav{display:flex}
         <div class="sec"><div class="sechead"><h2>کارگردان‌های مطرح</h2><button data-browse-people="director" type="button">مشاهده همه</button></div><div class="cast" id="sb-directors"><span style="color:var(--pearl);font-size:.88rem">در حال بارگذاری…</span></div></div>
         <div class="sec"><div class="sechead"><h2>استودیوها و شبکه‌ها</h2><button data-browse-companies type="button">مشاهده همه</button></div><div class="hscroll" id="sb-companies"><span style="color:var(--pearl);font-size:.88rem">در حال بارگذاری…</span></div></div>
         <div class="sec"><div class="sechead"><h2>مجموعه‌ها</h2><button data-browse-collections type="button">مشاهده همه</button></div><div class="hscroll" id="sb-coll-rail"><span style="color:var(--pearl);font-size:.88rem">در حال بارگذاری…</span></div></div>
-        <div class="sec"><div class="sechead"><h2>به‌زودی در سینما</h2></div><div class="hscroll" id="sb-upcoming"><span style="color:var(--pearl);font-size:.88rem">در حال بارگذاری…</span></div></div>
+        <div class="sec"><div class="sechead"><h2>به‌زودی در فمیلی نایت</h2></div><div class="hscroll" id="sb-upcoming"><span style="color:var(--pearl);font-size:.88rem">در حال بارگذاری…</span></div></div>
       </div>
       <div id="search-results"></div>
     </div>
@@ -2296,7 +2296,7 @@ function sameName(a, b) {
   return !!x && !!y && x === y;
 }
 function yearOf(x){ const d = x.release_date || x.first_air_date || ''; return d ? String(d).slice(0, 4) : ''; }
-function cardHtml(x, wide) {
+function cardHtml(x, wide, noDl) {
   const type = x.media_type || x.type || 'movie';
   const t = titleOf(x), o = origOf(x);
   const poster = wide ? (x.backdrop_path || x.poster_path) : x.poster_path;
@@ -2322,7 +2322,7 @@ function cardHtml(x, wide) {
   const yr = yearOf(x);
   const yrHtml = yr ? '<span class="yr">' + esc(yr) + '</span>' : '';
   return '<article class="card' + (wide ? ' wide' : '') + '"' + (needEn ? ' data-need-en="1"' : '') + ' data-open="' + type + ':' + x.id + '" tabindex="0" role="button" aria-label="' + esc(t) + ' — مشاهده جزئیات">'
-    + '<div class="poster">' + img + rate + typ + (fnDlIconHas(x) ? fnDlBadgeHtml() : '')
+    + '<div class="poster">' + img + rate + typ + ((!noDl && fnDlIconHas(x)) ? fnDlBadgeHtml() : '')
     + '</div><h3 class="origline" dir="' + (headLatin ? 'ltr' : 'rtl') + '"><span class="oname' + (headLatin ? ' ltr' : '') + '">' + esc(headName) + '</span>' + yrHtml + '</h3><div class="sub">' + faHtml + '</div></article>';
 }
 const itemCache = new Map();
@@ -3461,6 +3461,7 @@ function fnDlIconApply() {
   var cards = document.querySelectorAll('.card');
   for (var i = 0; i < cards.length; i++) {
     var c = cards[i];
+    if (c.closest && c.closest('#sb-upcoming')) continue; /* FN-COMING-SOON-FN: this rail never shows a download badge */
     if (c.querySelector('.dlbadge')) continue;
     var poster = c.querySelector('.poster');
     if (!poster) continue;
@@ -10422,6 +10423,85 @@ async function loadCountryWorks(cfg, append) {
   cfg.loading = false;
 }
 
+/* ---------- Coming Soon to Family Night (FN-COMING-SOON-FN v1) ----------
+   Search-tab bottom rail, renamed from «به‌زودی در سینما». It shows ONLY
+   the most important anticipated works of the year that have NO real
+   download link yet: either no download link at all (avail d==0 / absent)
+   or CAM-only links (پرده سینما). A work with ANY real-quality download
+   link (BluRay / WEB-DL / WEBRip / HDTV / HDRip / DVDRip / BDRip) is
+   NEVER shown. Importance = TMDB popularity: pool movie/upcoming pages
+   1-2, release year >= current year (old re-releases excluded),
+   popularity >= 50, sorted by popularity desc, top 12. No download badge
+   is ever shown for this rail (cardHtml noDl + fnDlIconApply skip).
+   "Has a page but no link": every rendered card opens the normal detail
+   page; the operative filters are no-real-link + importance. */
+var FN_SOON_POP_FLOOR = 50, FN_SOON_MAX = 12;
+async function fnUpcomingCamOnly(x) {
+  /* CAM-only? Resolve the work's real archive download record and check
+     EVERY link: CAM iff >=1 link and every link is CAM/HDTS (substring,
+     like fnPlayIsCam — catches HDCAM) and NO link is real-quality.
+     Any link with no parseable source, or any resolution failure, means
+     NOT proven CAM-only -> false (conservative: never show a work that
+     might have a real link). Uses resolveDlRecord (both archives merged)
+     when the search-index row carries an IMDb code, else the tmdb
+     title-fallback path. */
+  try {
+    var idx = await getDlSearchIndex();
+    var row = null;
+    if (idx) { for (var i = 0; i < idx.length; i++) { var e = idx[i]; if (e.type === 'movie' && e.tmdb === x.id) { row = e; break; } } }
+    var rec = null;
+    if (row && row.imdb) {
+      try { var r = await resolveDlRecord(String(row.imdb).toLowerCase()); if (r && r.rec) rec = r.rec; } catch (e2) {}
+    }
+    if (!rec) {
+      var fb = await fnDlTitleFallback('', 'movie:' + x.id, (x.title || x.name || ''), ((x.release_date || '').slice(0, 4) || null));
+      if (fb && fb.rec) rec = fb.rec;
+    }
+    if (!rec) return false;
+    var links = [];
+    ['softsub', 'dubbed', 'nosub'].forEach(function (k) { (rec.groups[k] || []).forEach(function (l) { links.push(l); }); });
+    if (!links.length) return false;
+    for (var j = 0; j < links.length; j++) {
+      var hay = (links[j].quality || '') + ' ' + (links[j].url || '');
+      if (/BluRay|WEB-?DL|WEBRip|HDTV|HDRip|DVDRip|BDRip/i.test(hay)) return false;
+      if (!/CAM|HDTS/i.test(hay)) return false;
+    }
+    return true;
+  } catch (e) { return false; }
+}
+async function sxLoadUpcoming() {
+  var ue = $('#sb-upcoming');
+  var noneHtml = '<span style="color:var(--pearl);font-size:.88rem">موردی نیست.</span>';
+  var errHtml = '<span style="color:var(--pearl);font-size:.88rem">در دسترس نیست.</span>';
+  try {
+    var pages = await Promise.all([1, 2].map(function (pg) { return tmdb('movie/upcoming', { page: pg }).catch(function () { return { results: [] }; }); }));
+    var pool = [];
+    var seen = {};
+    pages.forEach(function (d) { (d.results || []).forEach(function (x) { if (x && x.id && x.poster_path && !seen[x.id]) { seen[x.id] = 1; pool.push(Object.assign({}, x, { media_type: 'movie' })); } }); });
+    /* The download filter needs the avail-index. If it cannot be loaded,
+       the rail cannot verify any work — show "unavailable" rather than
+       risk showing a work with a real download link. */
+    var avail = await fnAvailEnsure();
+    if (!avail) { if (ue) ue.innerHTML = errHtml; return; }
+    var yrNow = new Date().getFullYear();
+    var kept = [];
+    for (var i = 0; i < pool.length; i++) {
+      var x = pool[i];
+      var ry = (x.release_date || '').slice(0, 4);
+      if (!/^\d{4}$/.test(ry) || +ry < yrNow) continue;
+      if (!(x.popularity >= FN_SOON_POP_FLOOR)) continue;
+      var ent = fnAvailTmdbEntry(avail, 'movie', x.id);
+      if (ent && ent[0] === 1) {
+        if (!(await fnUpcomingCamOnly(x))) continue;
+      }
+      kept.push(x);
+    }
+    kept.sort(function (a, b) { return (b.popularity || 0) - (a.popularity || 0) || String(b.release_date || '').localeCompare(String(a.release_date || '')); });
+    var items = kept.slice(0, FN_SOON_MAX);
+    cacheItems(items);
+    if (ue) ue.innerHTML = items.length ? items.map(function (x) { return cardHtml(x, false, true); }).join('') : noneHtml;
+  } catch (e) { if (ue) ue.innerHTML = errHtml; }
+}
 /* ---------- search home rails (lazy, only when Search opens) ---------- */
 let sxHomeInit = false, sxHomeBusy = false;
 async function sxInitSearchHome() {
@@ -10465,12 +10545,7 @@ async function sxInitSearchHome() {
     const list = found.filter(Boolean);
     const ce = $('#sb-coll-rail'); if (ce) ce.innerHTML = list.length ? list.map(sxCollCard).join('') : '<span style="color:var(--pearl);font-size:.88rem">موردی نیست.</span>';
   } catch (e) { const ce = $('#sb-coll-rail'); if (ce) ce.innerHTML = '<span style="color:var(--pearl);font-size:.88rem">در دسترس نیست.</span>'; }
-  try {
-    const d = await tmdb('movie/upcoming', { page: 1 });
-    const items = (d.results || []).filter(x => x.poster_path).slice(0, 14).map(x => Object.assign({}, x, { media_type: 'movie' }));
-    cacheItems(items);
-    const ue = $('#sb-upcoming'); if (ue) ue.innerHTML = items.length ? items.map(x => cardHtml(x)).join('') : '<span style="color:var(--pearl);font-size:.88rem">موردی نیست.</span>';
-  } catch (e) { const ue = $('#sb-upcoming'); if (ue) ue.innerHTML = '<span style="color:var(--pearl);font-size:.88rem">در دسترس نیست.</span>'; }
+  await sxLoadUpcoming();
   sxHomeInit = true; sxHomeBusy = false;
 }
 const sxOrigGo = go;
