@@ -1918,7 +1918,7 @@ const IMG = (p, s) => p ? 'https://image.tmdb.org/t/p/' + (s || 'w500') + p : ''
 
 const GENRES_FA = {28:'اکشن',12:'ماجراجویی',16:'انیمیشن',35:'کمدی',80:'جنایی',99:'مستند',18:'درام',10751:'خانوادگی',14:'فانتزی',36:'تاریخی',27:'ترسناک',10402:'موسیقی',9648:'معمایی',10749:'عاشقانه',878:'علمی‌تخیلی',10770:'فیلم تلویزیونی',53:'هیجان‌انگیز',10752:'جنگ',37:'وسترن',10759:'اکشن و ماجراجویی',10762:'کودک',10763:'اخبار',10764:'ریالیتی',10765:'علمی‌تخیلی و فانتزی',10766:'سریال روزانه',10767:'تاک‌شو',10768:'جنگ و سیاست'};
 const ROW_LABELS = {trending_now:'ترندهای روز',newM25:'فیلم‌های جدید',updates:'سریال‌های جدید و به‌روز شده',tm:'برترین فیلم‌های تاریخ',ts:'برترین سریال‌های تاریخ',miniseries:'مینی‌سریال‌های برتر',emmy:'برندگان جایزه امی',oscar:'برندگان اسکار',golden_globe:'برندگان گلدن گلوب',academy_award:'جوایز آکادمی',survival:'بقا و نجات',act:'اکشن',com:'کمدی',hor:'ترسناک',dra:'درام',sci:'علمی‌تخیلی',ani:'انیمیشن',anime:'انیمه',rom:'عاشقانه',fam:'خانوادگی',sports:'ورزشی',war:'جنگ',bio:'زندگینامه',book:'اقتباس از کتاب',docs:'مستند',romcom:'کمدی رمانتیک',parody:'پارودی',christmas_time:'کریسمس',apocalypse:'آخرالزمانی',iran:'سینمای ایران',iran_pre1978:'آثار ایران قدیم (پیش از ۱۹۷۸)',india:'سینمای هند',asia:'سینمای آسیا',a24:'برگزیده‌های A24',marvel:'دنیای مارول',marvelTV:'سریال‌های مارول',dc:'دنیای دی‌سی',adult:'ویژه بزرگسالان',curator:'پیشنهاد سردبیر',fan:'فانتزی',mental:'روان‌شناختی',heartbreak_loss:'غم و فقدان','20s':'دهه ۱۹۲۰','30s':'دهه ۱۹۳۰','40s':'دهه ۱۹۴۰','50s':'دهه ۱۹۵۰','60s':'دهه ۱۹۶۰','70s':'دهه ۱۹۷۰','80s':'دهه ۱۹۸۰','90s':'دهه ۱۹۹۰','00s':'دهه ۲۰۰۰','10s':'دهه ۲۰۱۰'};
-const HOME_ORDER = ['trending_now','newM25','updates','tm','ts','miniseries','act','ani','anime','iran','com','oscar','sci','fam','hor','romcom','docs','marvel','dc','war','curator'];
+const HOME_ORDER = ['trending_now','curator','newM25','updates','tm','ts','miniseries','act','ani','anime','iran','com','oscar','sci','fam','hor','romcom','docs','marvel','dc','war'];
 /* ================= FN-CURATOR-PICKS v2 =================
    «پیشنهاد سردبیر» — the old repo's CURATOR'S PICK list (483 movies,
    title + year only, fn-repo/index.html L6495-6496), resolved to TMDB
@@ -2575,7 +2575,7 @@ function openCollectionApi(key, spec) {
   loadArchPage();
   activateArchiveView();
 }
-function buildCollFilters() {
+function buildCollFilters(keepSort) {
   const grow = $('#arch-genre-row'); if (grow) grow.style.display = '';
   /* FN-CATEGORY-FIX: offer only the types this collection actually has —
      newM25 is movies-only and updates is series-only, so the other
@@ -2591,17 +2591,26 @@ function buildCollFilters() {
     arch.collType = b.dataset.ct;
     const spec = collectionStreams(arch.collKey) || [];
     arch.streams = spec.filter(s => arch.collType === 'all' || s.type === arch.collType).map(s => ({ type: s.type, extra: Object.assign({}, s.extra), page: 1, done: false }));
-    buildCollFilters(); resetArchPaging(true); loadArchPage();
+    buildCollFilters(true); resetArchPaging(true); loadArchPage();
   });
   const fillYears = sel => { if (sel && sel.options.length <= 1) { const now = new Date().getFullYear(); for (let yr = now; yr >= 1950; yr--) { const o = document.createElement('option'); o.value = yr; o.textContent = yr; sel.appendChild(o); } } };
   fillYears($('#arch-year')); fillYears($('#arch-yearto'));
   buildArchCountryDd();
   fillArchLetters();
   const sort = $('#arch-sort');
+  /* FN-SEEALL-FILTER-FIX (b): rebuilding the sort options wipes the
+     user's sort pick — preserve it when the filters are rebuilt
+     from a type-chip tap (keepSort), so the pick survives. On a
+     fresh collection open the three home categories still default
+     to newest-first (user rule). */
+  var _keepSort = (keepSort && sort) ? sort.value : '';
   if (sort) sort.innerHTML = '<option value="popularity.desc">محبوب‌ترین</option><option value="vote_average.desc">بالاترین امتیاز</option><option value="primary_release_date.desc">جدیدترین</option>';
   /* Trending / updates / newest open newest-first (user rule): the sort
      dropdown keeps working afterwards (extra never overrides sort_by). */
-  if (sort && arch.collKey && (arch.collKey === 'trending_now' || arch.collKey === 'updates' || arch.collKey === 'newM25')) sort.value = 'primary_release_date.desc';
+  if (sort) {
+    if (_keepSort && sort.querySelector('option[value="' + _keepSort + '"]')) sort.value = _keepSort;
+    else if (arch.collKey && (arch.collKey === 'trending_now' || arch.collKey === 'updates' || arch.collKey === 'newM25')) sort.value = 'primary_release_date.desc';
+  }
   const certSel = $('#arch-cert'); if (certSel) certSel.style.display = '';
   const certLab = $('#arch-cert-label'); if (certLab) certLab.style.display = '';
 }
@@ -2664,6 +2673,23 @@ async function fnFillHomeRail(fetchPage, keep) {
   }
   return out;
 }
+/* FN-EDITORS-PICK-RAIL: «پیشنهاد سردبیر» home rail — the curator list
+   is a resolved static list (FN_CURATOR_DATA, 482 movies). Shuffle it
+   on EVERY home load (Fisher-Yates) so the rail is different each
+   visit, keep only archive works (fnAvailQualifies — the same
+   avail-index rule as the other home rails), take 20. If the index
+   has not loaded yet, fail open (unfiltered) like fnFillHomeRail. */
+function fnCuratorRailItems() {
+  var list = fnCuratorItems().slice();
+  for (var i = list.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = list[i]; list[i] = list[j]; list[j] = t; }
+  var out = [];
+  for (var k = 0; k < list.length && out.length < 20; k++) {
+    var x = list[k];
+    if (FN_AVAIL.idx && !fnAvailQualifies(x)) continue;
+    out.push(x);
+  }
+  return out;
+}
 async function loadHome() {
   fnAvailEnsure(); /* FN-DL-ICON v1: load the avail-index early so home cards get their download badge */
   let snap;
@@ -2714,6 +2740,11 @@ async function loadHome() {
     _live.sort((a, b) => _dt(b).localeCompare(_dt(a)));
     if (_live.length) rows.trending_now = _live.slice(0, 20); else _trendFallback();
   } catch (e) { _trendFallback(); }
+  /* FN-EDITORS-PICK-RAIL: «پیشنهاد سردبیر» sits directly under the
+     trending row (user order). Shuffled on every home load, archive
+     works only, 20 items. The rail's «مشاهده همه» opens the existing
+     curator view-all page (openCurator via data-viewall="curator"). */
+  try { var _cur = fnCuratorRailItems(); if (_cur.length) rows.curator = _cur; } catch (e) { /* no curator rail */ }
   /* newM25 + updates rails: live TMDB discover — the snapshot is stale
      (generated 03:40Z, ~8h old), so the rails would never update.
      FN-CATEGORY-FIX: newM25 = MOVIES only, released only, newest
@@ -3281,6 +3312,29 @@ async function loadArchPage() {
      unfiltered (never an empty page). Search never reaches here:
      the arch.query early-return above sends it to loadArchSearchPage. */
   await fnAvailEnsure();
+  /* FN-SEEALL-FILTER-FIX (a): if the avail-index failed to load
+     (slow network on a fresh app start), the strict rule would
+     silently be lost for this page — the first batch renders
+     unfiltered and, unlike the local path, nothing ever
+     re-applies it. Retry once in the background and re-render
+     strict-filtered when it arrives. */
+  if (!FN_AVAIL.loaded && !arch._safHook && arch.collKey && FN_STRICT_CATS.indexOf(arch.collKey) > -1) {
+    arch._safHook = true;
+    (function () {
+      var _safK = arch.collKey;
+      setTimeout(function () {
+        if (FN_AVAIL.loaded || arch.collKey !== _safK || arch.mode !== 'api') return;
+        fnAvailEnsure().then(function () {
+          if (!FN_AVAIL.loaded || arch.collKey !== _safK || arch.mode !== 'api') return;
+          var _t = 0;
+          var _iv = setInterval(function () {
+            if (arch.collKey !== _safK || arch.mode !== 'api' || ++_t > 12) { clearInterval(_iv); return; }
+            if (!arch.loading) { clearInterval(_iv); resetArchPaging(true); loadArchPage(); }
+          }, 500);
+        });
+      }, 3000);
+    })();
+  }
   const vcSel = ($('#arch-votecount') || {}).value || '';
   const vote = $('#arch-vote').value;
   const sortUi = $('#arch-sort').value;
