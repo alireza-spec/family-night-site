@@ -3072,6 +3072,7 @@ async function loadArchSearchPage() {
     grid.innerHTML = loc.length
       ? '<div class="sec" id="sx-local-sec" style="grid-column:1/-1"><h2>در فهرست Family Night</h2><div class="grid">' + loc.map(fnLocalCardHtml).join('') + '</div></div>'
       : '';
+    try { fnLocalPosters(grid); } catch (e) {}
   }
   if (page === 1 && !grid.querySelector('.card')) grid.innerHTML = Array.from({ length: 12 }, () => '<div class="skel" style="aspect-ratio:2/3"></div>').join('');
   try {
@@ -8789,6 +8790,57 @@ function fnLocalCardHtml(e) {
     + '<div class="sub"><span>در فهرست Family Night</span></div></article>';
 }
 
+/* Local search cards are text-only by design (instant, no API call) —
+   but a wall of blank cards looks broken, so the poster is lazy-loaded
+   into each card that scrolls into view. One TMDB call per card: the
+   /find result already carries the poster_path, so an IMDb-only entry
+   needs no second call. Posters are cached by IMDb/TMDB id, a card
+   whose poster never resolves keeps its text placeholder, and nothing
+   here ever blocks the search itself. */
+var FN_LPOSTER = { cache: {}, obs: null };
+function fnLocalPosterFor(e, cb) {
+  var key = (e.imdb || '') + '|' + (e.tmdb || '') + '|' + e.type;
+  if (FN_LPOSTER.cache[key] !== undefined) { cb(FN_LPOSTER.cache[key]); return; }
+  var done = function (p) { FN_LPOSTER.cache[key] = p || ''; cb(p || ''); };
+  var kind = e.type === 'tv' ? 'tv' : 'movie';
+  if (e.tmdb) {
+    tmdb(kind + '/' + e.tmdb).then(function (d) { done(d && d.poster_path); }).catch(function () { done(''); });
+  } else if (e.imdb) {
+    tmdb('find/' + e.imdb, { external_source: 'imdb_id' }).then(function (d) {
+      var list = (e.type === 'tv' ? (d && d.tv_results) : (d && d.movie_results)) || [];
+      done(list[0] && list[0].poster_path);
+    }).catch(function () { done(''); });
+  } else done('');
+}
+function fnLocalPosters(container) {
+  if (!container || typeof IntersectionObserver === 'undefined' || typeof tmdb !== 'function') return;
+  if (FN_LPOSTER.obs) { try { FN_LPOSTER.obs.disconnect(); } catch (err) {} FN_LPOSTER.obs = null; }
+  var placeholders = container.querySelectorAll('.card[data-ls] .poster .noimg');
+  if (!placeholders.length) return;
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      var noimg = en.target;
+      obs.unobserve(noimg);
+      var card = noimg.closest ? noimg.closest('.card[data-ls]') : null;
+      if (!card) return;
+      var e = FN_LSEARCH.idx && FN_LSEARCH.idx[+card.dataset.ls];
+      if (!e) return;
+      fnLocalPosterFor(e, function (p) {
+        if (!p || !document.body.contains(card)) return;
+        var ph = card.querySelector('.poster .noimg');
+        if (!ph) return;
+        var img = document.createElement('img');
+        img.loading = 'lazy'; img.decoding = 'async';
+        img.src = IMG(p, 'w342'); img.alt = e.t || '';
+        ph.replaceWith(img);
+      });
+    });
+  }, { rootMargin: '400px' });
+  FN_LPOSTER.obs = obs;
+  placeholders.forEach(function (n) { obs.observe(n); });
+}
+
 function fnLocalPickCardHtml(e) {
   var yr = e.y ? '<span>' + e.y + '</span>' : '';
   return '<article class="card pickcard" data-ls-pick="' + e.i + '" data-ls-tmdb="' + (e.tmdb || '') + '" data-ls-title="' + esc(fnLocalNormTitle(e.t)) + '" data-ls-year="' + (e.y || '') + '"><div class="poster"><div class="noimg">' + esc(e.t) + '</div><span class="tick">✓</span></div><h3>' + esc(e.t) + '</h3><div class="sub">' + yr + '<span>' + (e.type === 'tv' ? 'سریال' : 'فیلم') + '</span></div></article>';
@@ -8913,7 +8965,7 @@ function fnLocalRenderSearch(res, q, type, seq) {
   if (tmdbSec && tmdbSec.dataset.q !== q) { tmdbSec.remove(); tmdbSec = null; }
   var localSec = res.querySelector('#sx-local-sec');
   if (localSec) localSec.remove();
-  if (html) res.insertAdjacentHTML('afterbegin', html);
+  if (html) { res.insertAdjacentHTML('afterbegin', html); try { fnLocalPosters(res); } catch (e) {} }
   if (!tmdbSec) res.insertAdjacentHTML('beforeend', '<div id="sx-tmdb-sec" data-q="' + esc(q) + '"><div class="state" style="padding:1.2rem 0"><div class="spin"></div>در حال جستجو…</div></div>');
 }
 
