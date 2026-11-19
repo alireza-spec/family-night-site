@@ -1917,7 +1917,7 @@ const TV_PROXY = 'https://iran-tv-proxy-v3.alirezadoe8.workers.dev/proxy?url=';
 const IMG = (p, s) => p ? 'https://image.tmdb.org/t/p/' + (s || 'w500') + p : '';
 
 const GENRES_FA = {28:'اکشن',12:'ماجراجویی',16:'انیمیشن',35:'کمدی',80:'جنایی',99:'مستند',18:'درام',10751:'خانوادگی',14:'فانتزی',36:'تاریخی',27:'ترسناک',10402:'موسیقی',9648:'معمایی',10749:'عاشقانه',878:'علمی‌تخیلی',10770:'فیلم تلویزیونی',53:'هیجان‌انگیز',10752:'جنگ',37:'وسترن',10759:'اکشن و ماجراجویی',10762:'کودک',10763:'اخبار',10764:'ریالیتی',10765:'علمی‌تخیلی و فانتزی',10766:'سریال روزانه',10767:'تاک‌شو',10768:'جنگ و سیاست'};
-const ROW_LABELS = {trending_now:'ترندهای روز',newM25:'فیلم‌های جدید (اکران شده)',updates:'به‌روزرسانی‌های تازه',tm:'برترین فیلم‌های تاریخ',ts:'برترین سریال‌های تاریخ',miniseries:'مینی‌سریال‌های برتر',emmy:'برندگان جایزه امی',oscar:'برندگان اسکار',golden_globe:'برندگان گلدن گلوب',academy_award:'جوایز آکادمی',survival:'بقا و نجات',act:'اکشن',com:'کمدی',hor:'ترسناک',dra:'درام',sci:'علمی‌تخیلی',ani:'انیمیشن',anime:'انیمه',rom:'عاشقانه',fam:'خانوادگی',sports:'ورزشی',war:'جنگ',bio:'زندگینامه',book:'اقتباس از کتاب',docs:'مستند',romcom:'کمدی رمانتیک',parody:'پارودی',christmas_time:'کریسمس',apocalypse:'آخرالزمانی',iran:'سینمای ایران',iran_pre1978:'آثار ایران قدیم (پیش از ۱۹۷۸)',india:'سینمای هند',asia:'سینمای آسیا',a24:'برگزیده‌های A24',marvel:'دنیای مارول',marvelTV:'سریال‌های مارول',dc:'دنیای دی‌سی',adult:'ویژه بزرگسالان',curator:'پیشنهاد سردبیر',fan:'فانتزی',mental:'روان‌شناختی',heartbreak_loss:'غم و فقدان','20s':'دهه ۱۹۲۰','30s':'دهه ۱۹۳۰','40s':'دهه ۱۹۴۰','50s':'دهه ۱۹۵۰','60s':'دهه ۱۹۶۰','70s':'دهه ۱۹۷۰','80s':'دهه ۱۹۸۰','90s':'دهه ۱۹۹۰','00s':'دهه ۲۰۰۰','10s':'دهه ۲۰۱۰'};
+const ROW_LABELS = {trending_now:'ترندهای روز',newM25:'فیلم‌های جدید',updates:'به‌روزرسانی‌های تازه',tm:'برترین فیلم‌های تاریخ',ts:'برترین سریال‌های تاریخ',miniseries:'مینی‌سریال‌های برتر',emmy:'برندگان جایزه امی',oscar:'برندگان اسکار',golden_globe:'برندگان گلدن گلوب',academy_award:'جوایز آکادمی',survival:'بقا و نجات',act:'اکشن',com:'کمدی',hor:'ترسناک',dra:'درام',sci:'علمی‌تخیلی',ani:'انیمیشن',anime:'انیمه',rom:'عاشقانه',fam:'خانوادگی',sports:'ورزشی',war:'جنگ',bio:'زندگینامه',book:'اقتباس از کتاب',docs:'مستند',romcom:'کمدی رمانتیک',parody:'پارودی',christmas_time:'کریسمس',apocalypse:'آخرالزمانی',iran:'سینمای ایران',iran_pre1978:'آثار ایران قدیم (پیش از ۱۹۷۸)',india:'سینمای هند',asia:'سینمای آسیا',a24:'برگزیده‌های A24',marvel:'دنیای مارول',marvelTV:'سریال‌های مارول',dc:'دنیای دی‌سی',adult:'ویژه بزرگسالان',curator:'پیشنهاد سردبیر',fan:'فانتزی',mental:'روان‌شناختی',heartbreak_loss:'غم و فقدان','20s':'دهه ۱۹۲۰','30s':'دهه ۱۹۳۰','40s':'دهه ۱۹۴۰','50s':'دهه ۱۹۵۰','60s':'دهه ۱۹۶۰','70s':'دهه ۱۹۷۰','80s':'دهه ۱۹۸۰','90s':'دهه ۱۹۹۰','00s':'دهه ۲۰۰۰','10s':'دهه ۲۰۱۰'};
 const HOME_ORDER = ['trending_now','newM25','updates','tm','ts','miniseries','act','ani','anime','iran','com','oscar','sci','fam','hor','romcom','docs','marvel','dc','war','curator'];
 /* ================= FN-CURATOR-PICKS v2 =================
    «پیشنهاد سردبیر» — the old repo's CURATOR'S PICK list (483 movies,
@@ -2467,7 +2467,11 @@ function collectionStreams(key) {
   if (COUNTRY_ROWS[key]) return [{ type: 'movie', extra: { with_origin_country: COUNTRY_ROWS[key] } }, { type: 'tv', extra: { with_origin_country: COUNTRY_ROWS[key] } }];
   if (key === 'iran_pre1978') return [{ type: 'movie', extra: { with_origin_country: 'IR', 'primary_release_date.lte': '1978-12-31' } }, { type: 'tv', extra: { with_origin_country: 'IR', 'first_air_date.lte': '1978-12-31' } }];
   if (key === 'asia') return ['JP', 'KR'].flatMap(cc => [{ type: 'movie', extra: { with_origin_country: cc } }, { type: 'tv', extra: { with_origin_country: cc } }]);
-  if (key === 'trending_now' || key === 'updates') { const d3 = new Date(); d3.setMonth(d3.getMonth() - 3); const g3 = d3.toISOString().slice(0, 10); return [{ type: 'movie', extra: { 'primary_release_date.gte': g3 } }, { type: 'tv', extra: { 'first_air_date.gte': g3 } }]; }
+  if (key === 'trending_now') { const d3 = new Date(); d3.setMonth(d3.getMonth() - 3); const g3 = d3.toISOString().slice(0, 10); return [{ type: 'movie', extra: { 'primary_release_date.gte': g3 } }, { type: 'tv', extra: { 'first_air_date.gte': g3 } }]; }
+  /* Updates (user rule): a series with a new episode must appear —
+     air_date.gte is the EPISODE air date, first_air_date is the series
+     premiere (a series with a new episode never appears under it). */
+  if (key === 'updates') { const d3 = new Date(); d3.setMonth(d3.getMonth() - 3); const g3 = d3.toISOString().slice(0, 10); return [{ type: 'movie', extra: { 'primary_release_date.gte': g3 } }, { type: 'tv', extra: { 'air_date.gte': g3 } }]; }
   if (key === 'newM25') { const y = new Date().getFullYear() - 1; return [{ type: 'movie', extra: { 'primary_release_date.gte': y + '-01-01' } }, { type: 'tv', extra: { 'first_air_date.gte': y + '-01-01' } }]; }
   if (key === 'tm') return [{ type: 'movie', extra: {} }];
   if (key === 'ts') return [{ type: 'tv', extra: {} }];
@@ -2666,6 +2670,31 @@ async function loadHome() {
       .sort((a, b) => _dt(b).localeCompare(_dt(a))).slice(0, 20);
     if (_live.length) rows.trending_now = _live; else _trendFallback();
   } catch (e) { _trendFallback(); }
+  /* newM25 + updates rails: live TMDB discover — the snapshot is stale
+     (generated 03:40Z, ~8h old), so the rails would never update. One
+     parallel round for both rows; falls back to the snapshot rows if
+     the live fetch fails/empty. newM25 = newest-first; updates = most
+     popular among the recently updated (a new episode spikes it). */
+  try {
+    const _y = new Date().getFullYear() - 1;
+    const _d3 = new Date(); _d3.setMonth(_d3.getMonth() - 3);
+    const _g3 = _d3.toISOString().slice(0, 10);
+    const [_nm, _nt, _um, _ut] = await Promise.all([
+      tmdb('discover/movie', { 'primary_release_date.gte': _y + '-01-01', sort_by: 'primary_release_date.desc', page: 1 }),
+      tmdb('discover/tv', { 'first_air_date.gte': _y + '-01-01', sort_by: 'first_air_date.desc', page: 1 }),
+      tmdb('discover/movie', { 'primary_release_date.gte': _g3, sort_by: 'primary_release_date.desc', page: 1 }),
+      tmdb('discover/tv', { 'air_date.gte': _g3, sort_by: 'popularity.desc', page: 1 })
+    ]);
+    const _dt = x => x.media_type === 'tv' ? (x.first_air_date || '') : (x.release_date || '');
+    const _nmLive = [].concat((_nm.results || []).map(x => Object.assign({}, x, { media_type: 'movie' })))
+      .concat((_nt.results || []).map(x => Object.assign({}, x, { media_type: 'tv' })))
+      .sort((a, b) => _dt(b).localeCompare(_dt(a))).slice(0, 20);
+    if (_nmLive.length) rows.newM25 = _nmLive;
+    const _upLive = [].concat((_um.results || []).map(x => Object.assign({}, x, { media_type: 'movie' })))
+      .concat((_ut.results || []).map(x => Object.assign({}, x, { media_type: 'tv' })))
+      .sort((a, b) => (b.popularity || 0) - (a.popularity || 0)).slice(0, 20);
+    if (_upLive.length) rows.updates = _upLive;
+  } catch (e) { /* keep the snapshot rows */ }
   cacheItems(Object.values(rows).flat());
   /* Progressive rails: only the first rows render up front; the rest
      are appended as the reader scrolls near them — the home page
@@ -3199,6 +3228,12 @@ async function loadArchPage() {
       let sort = sortUi;
       if (sort === 'random') sort = 'popularity.desc';
       if (isTv && sort.indexOf('primary_release_date') === 0) sort = sort.replace('primary_release_date', 'first_air_date');
+      /* Updates (user rule): a series with a new episode must come first.
+         first_air_date is the series premiere (wrong for updates); sort the
+         TV stream by popularity when the default newest-first sort is in
+         effect — a new episode spikes popularity, so the most recently
+         updated popular series lead. An explicit user sort pick is respected. */
+      if (arch.collKey === 'updates' && isTv && sort === 'first_air_date.desc') sort = 'popularity.desc';
       if (isTv && sort === 'revenue.desc') sort = 'popularity.desc';
       if (!isTv && sort.indexOf('first_air_date') === 0) sort = sort.replace('first_air_date', 'primary_release_date');
       /* keyword browse carries NO default vote floor: niche topics
