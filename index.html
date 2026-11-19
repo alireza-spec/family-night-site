@@ -8608,7 +8608,10 @@ async function sxSearchPage(seq, append) {
           ((dTr && dTr.results) || []).forEach(x => { const k = x.media_type + ':' + x.id; if (!seen.has(k)) { seen.add(k); multiRes.push(x); } });
         }
       }
-      const items = multiRes.filter(x => x.media_type === 'movie' || x.media_type === 'tv');
+      let items = multiRes.filter(x => x.media_type === 'movie' || x.media_type === 'tv');
+      /* v8.9 FN-SEARCH-DEDUP: drop TMDB titles already in the local rows above. */
+      var lkAll = fnLocalDedupKeys(st.q, st.type);
+      if (lkAll) items = items.filter(function (x) { return !lkAll.has(x.media_type + ':' + x.id); });
       const people = multiRes.filter(x => x.media_type === 'person');
       cacheItems(items);
       if (!append) {
@@ -8652,7 +8655,7 @@ async function sxSearchPage(seq, append) {
       const seenT = st.seenT || (st.seenT = new Set());
       let list = (d.results || []).filter(x => { const k = st.type + ':' + x.id; if (seenT.has(k)) return false; seenT.add(k); return true; });
       let inner = '', wrapCls = 'grid';
-      if (st.type === 'movie' || st.type === 'tv') { list = list.map(x => Object.assign({}, x, { media_type: st.type })); cacheItems(list); inner = list.map(x => cardHtml(x)).join(''); }
+      if (st.type === 'movie' || st.type === 'tv') { /* v8.9 FN-SEARCH-DEDUP: drop TMDB titles already in the local rows above. */ var lkT = fnLocalDedupKeys(st.q, st.type); if (lkT) list = list.filter(function (x) { return !lkT.has(st.type + ':' + x.id); }); list = list.map(x => Object.assign({}, x, { media_type: st.type })); cacheItems(list); inner = list.map(x => cardHtml(x)).join(''); }
       else if (st.type === 'person') { wrapCls = 'pgrid'; inner = list.map(sxPersonCard).join(''); }
       else if (st.type === 'company') { wrapCls = 'compgrid'; inner = list.map(sxCompCardTmdb).join(''); }
       else { wrapCls = 'collgrid'; list = list.filter(c => c.poster_path || c.backdrop_path); inner = list.map(sxCollCard).join(''); }
@@ -8758,7 +8761,7 @@ function fnLocalSearchEnsure() {
          still on screen, if it is still the current one. */
       try {
         var lr = FN_LSEARCH.lastRender;
-        if (lr && lr.res && document.body.contains(lr.res) && lr.seq === searchSeq) fnLocalRenderSearch(lr.res, lr.q, lr.type, lr.seq);
+        if (lr && lr.res && document.body.contains(lr.res) && lr.seq === searchSeq) { fnLocalRenderSearch(lr.res, lr.q, lr.type, lr.seq); try { fnLocalDedupTmdbDom(lr); } catch (e) {} }
       } catch (e) {}
     })
     .catch(function () { FN_LSEARCH.loading = false; });
@@ -8780,6 +8783,47 @@ function fnLocalSearch(q, type) {
   var byYear = function (a, b) { return (b.y || 0) - (a.y || 0); };
   starts.sort(byYear); contains.sort(byYear);
   return starts.concat(contains).slice(0, 40);
+}
+
+/* v8.9 FN-SEARCH-DEDUP: a title already shown in «در فهرست Family Night»
+   must not repeat in the TMDB section below. The key set is exactly the
+   local entries rendered for this query (fnLocalSearch — same 40-cap), so
+   a dropped TMDB card is always visible above and no title can vanish.
+   Match key: type + ':' + tmdb (local idx) vs media_type + ':' + id. */
+function fnLocalDedupKeys(q, type) {
+  var keys = null;
+  try {
+    var loc = fnLocalSearch(q, type);
+    keys = new Set();
+    for (var i = 0; i < loc.length; i++) {
+      var e = loc[i];
+      if (e && e.tmdb) keys.add(e.type + ':' + e.tmdb);
+    }
+  } catch (e) { keys = null; }
+  return keys;
+}
+
+/* Cold-start cleanup: when the search index arrives AFTER sxSearchPage
+   already rendered the TMDB section, drop any TMDB card (data-open)
+   that duplicates a local row now on screen. Empty movie/tv grids lose
+   their whole section; people/company/collection sections are untouched
+   (their keys can never match a local title key). */
+function fnLocalDedupTmdbDom(lr) {
+  if (!lr || !lr.res || !document.body.contains(lr.res)) return;
+  var keys = fnLocalDedupKeys(lr.q, lr.type);
+  if (!keys || !keys.size) return;
+  var sec = lr.res.querySelector('#sx-tmdb-sec');
+  if (!sec) return;
+  var removed = 0;
+  sec.querySelectorAll('.card[data-open]').forEach(function (c) {
+    var k = c.getAttribute('data-open') || '';
+    if (keys.has(k)) { c.remove(); removed++; }
+  });
+  if (!removed) return;
+  sec.querySelectorAll('.sec').forEach(function (s) {
+    var g = s.querySelector('.grid');
+    if (g && !g.querySelector('.card')) s.remove();
+  });
 }
 
 function fnLocalCardHtml(e) {
