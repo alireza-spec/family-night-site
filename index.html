@@ -590,6 +590,7 @@ box-shadow:0 0 26px rgba(229,169,60,.28),inset 0 0 14px rgba(0,0,0,.65);animatio
 .fn-dl-hinfo{flex:1;min-width:9rem}
 .fn-dl-hinfo b{display:block;font-size:1rem;line-height:1.6}
 .fn-dl-hinfo span{display:block;font-size:.78rem;color:var(--pearl2);line-height:1.7}
+.fn-dl-hinfo .fn-dl-fa{display:block;font-size:.9rem;font-weight:700;color:var(--gold2);line-height:1.6}
 .fn-dl-tot{text-align:center;flex:none}
 .fn-dl-tot b{font-family:var(--display);font-size:1.05rem;color:var(--gold2);display:block}
 .fn-dl-tot span{font-size:.7rem;color:var(--pearl)}
@@ -5696,9 +5697,17 @@ function dlTilesHtml(rec, opts) {
   var isSeries = all.some(function (r) { return r.x.season || r.x.episode; });
   var totalMB = all.reduce(function (s, r) { return s + sizeToMB(r.x.size); }, 0);
   var allUrls = all.map(function (r) { return r.x.url; });
+  /* FN-DLBOX-TITLE-FA v1 — the header follows the ONE naming rule:
+     line 1 (<b>) is the ENGLISH title, line 2 (.fn-dl-fa) the PERSIAN
+     name. The original-language title never headlines here (it stays
+     on the detail page as the labelled «نام اصلی: » line only). When
+     the Persian name is still being translated, an empty slot is
+     rendered and filled in place when it lands. */
+  var faLine = (o.faTitle && !sameName(o.faTitle, title)) ? '<span class="fn-dl-fa">' + esc(o.faTitle) + '</span>' : (o.faPending ? '<span class="fn-dl-fa" data-dl-fa hidden></span>' : '');
   var out = '<div class="fn-dl-head">'
     + '<span class="fn-dl-poster">' + dlPosterHtml(o.poster || '', title) + '</span>'
     + '<span class="fn-dl-hinfo"><b>' + esc(title) + '</b>'
+    + faLine
     + (o.meta ? '<span>' + esc(o.meta) + '</span>' : '')
     + (rec.rate ? '<span>IMDb ' + esc(rec.rate) + ' ★</span>' : '')
     + '</span>'
@@ -6227,9 +6236,47 @@ async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUr
     if (!rec || (!rec.groups.softsub.length && !rec.groups.dubbed.length && !rec.groups.nosub.length)) { body.innerHTML = '<div class="state"><b>فعلاً لینک دانلود رایگانی برای این اثر نیست.</b><br>از «پخش آنلاین» می‌توانید همین حالا تماشا کنید.</div>'; return; }
     var srcLabel = resolved.src === 'old' ? 'آرشیو قبلی' : resolved.src === 'both' ? 'آرشیو جدید + قبلی' : '';
     var dlMeta = [fbYear || '', (tmdbKey && tmdbKey.indexOf('tv:') === 0) ? 'سریال' : 'فیلم', srcLabel].filter(Boolean).join(' • ');
-    var dlBuilt = dlTilesHtml(rec, { poster: posterUrl || '', title: fbTitle || rec.title, meta: dlMeta, tmdbId: (tmdbKey && tmdbKey.indexOf('tv:') === 0) ? tmdbKey.slice(3) : '' });
+    /* FN-DLBOX-TITLE-FA v1 — the header follows the ONE naming rule
+       (English line 1, Persian line 2). fbTitle is the fa-IR TMDB
+       title, which for a work with no Persian TMDB title IS the
+       original-language name (The Rules: Thai) — it must never
+       headline the box. English comes from the archive record title
+       first (H3 titles are English; a trailing release year is
+       stripped, as the title-match parser does), then a Latin-script
+       fbTitle, then a lazy en-US TMDB fetch (only when neither is
+       Latin). Persian is fbTitle when it is Persian-script, else the
+       record title when it is Persian-script, else a translateFa of
+       the English title, painted in place when it lands. A real
+       Persian fa-IR title always beats a machine translation; a
+       translation is accepted only when it is Persian-script and
+       differs from the source. */
+    var isFaDl = function (s) { return /[؀-ۿ]/.test(s || ''); };
+    var isLatDl = function (s) { return typeof isLatinTitle === 'function' ? isLatinTitle(s) : (/[A-Za-z]/.test(s || '') && !isFaDl(s)); };
+    var cleanRec = (rec.title || '').replace(/\s+\d{4}\s*$/, '').trim();
+    var enTitle = (cleanRec && isLatDl(cleanRec)) ? cleanRec : ((fbTitle && isLatDl(fbTitle)) ? fbTitle : '');
+    var faTitle = (fbTitle && isFaDl(fbTitle)) ? fbTitle : ((cleanRec && isFaDl(cleanRec)) ? cleanRec : '');
+    if (!enTitle && tmdbKey) {
+      try {
+        var enDet = await tmdb(tmdbKey.replace(':', '/'), {}, 'en-US');
+        var enT = (enDet && (enDet.title || enDet.name)) || '';
+        if (enT && isLatDl(enT)) enTitle = enT;
+      } catch (e) { /* en-US fetch failed — fall through to the Persian-only headline */ }
+      if (token !== detailToken) return;
+    }
+    var headTitle = enTitle || faTitle || fbTitle || rec.title;
+    var faPending = !faTitle && !!enTitle && typeof translateFa === 'function';
+    var dlBuilt = dlTilesHtml(rec, { poster: posterUrl || '', title: headTitle, faTitle: faTitle, faPending: faPending, meta: dlMeta, tmdbId: (tmdbKey && tmdbKey.indexOf('tv:') === 0) ? tmdbKey.slice(3) : '' });
     body.innerHTML = dlBuilt.html;
     wireDlTiles(body, dlBuilt.ctx);
+    if (faPending) {
+      var trSrc = enTitle;
+      translateFa(trSrc).then(function (v) {
+        if (token !== detailToken) return;
+        if (!v || v === trSrc || !/[؀-ۿ]/.test(v)) return;
+        var el = body.querySelector('[data-dl-fa]');
+        if (el && document.body.contains(el)) { el.textContent = v; el.hidden = false; }
+      }).catch(function () {});
+    }
   } catch (e) {
     if (token === detailToken) body.innerHTML = '<div class="state">دریافت لینک‌های دانلود از آرشیو ممکن نشد؛ اتصال را بررسی و دوباره تلاش کنید.</div>';
   }
