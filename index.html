@@ -603,21 +603,20 @@ box-shadow:0 0 26px rgba(229,169,60,.28),inset 0 0 14px rgba(0,0,0,.65);animatio
 /* drawer chevron next to the kebab — flips when this tile's sheet is open */
 .fn-dl-chev{display:grid;place-items:center;flex:none;color:var(--pearl)}
 .fn-dl-chev svg{width:1.1rem;height:1.1rem;transition:transform .2s}
-.fn-dl-tile.sel .fn-dl-chev{color:var(--gold2)}
-.fn-dl-tile.sel .fn-dl-chev svg{transform:rotate(180deg)}
+.fn-dl-tile.sel .fn-dl-chev,.fn-dl-eptile.sel .fn-dl-chev{color:var(--gold2)}
+.fn-dl-tile.sel .fn-dl-chev svg,.fn-dl-eptile.sel .fn-dl-chev svg{transform:rotate(180deg)}
 .fn-dl-seasons{display:flex;gap:.45rem;flex-wrap:wrap;margin-bottom:.8rem}
 .fn-dl-season{padding:.4rem 1rem;border-radius:99px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--pearl2);font-size:.82rem;font-weight:700;min-height:2.3rem;cursor:pointer;font-family:inherit}
 .fn-dl-season.on{background:var(--gold);border-color:var(--gold);color:#231700}
-.fn-dl-eplist{background:var(--surface);border:1px solid var(--line);border-radius:1rem;overflow:hidden;margin-bottom:1rem}
+/* series episode tiles (v6): the same tile language as the film box —
+   thumb + line 1 + line 2 + kebab + chevron — but the thumb is the
+   episode's own 16:9 still (filled in by loadEpMeta; the series
+   poster is the placeholder until it arrives) */
+.fn-dl-eplist{display:flex;flex-direction:column;gap:.6rem;margin-bottom:1rem}
 .fn-dl-eplist[hidden]{display:none}
-.fn-dl-eprow{padding:.6rem .9rem;cursor:pointer;border-top:1px solid rgba(255,255,255,.05)}
-.fn-dl-eprow:first-child{border-top:none}
-.fn-dl-eprow.sel{background:rgba(229,169,60,.09)}
-.fn-dl-eprow.sel .fn-dl-eprow-top b{color:var(--gold2)}
-.fn-dl-eprow-top{display:flex;align-items:center;gap:.4rem}
-.fn-dl-eprow-top b{font-size:.92rem}
-.fn-dl-eprow-top .fn-dl-size{margin-inline-start:auto}
-.fn-dl-eprow-sub{display:block;font-size:.75rem;color:var(--pearl2);margin-top:.15rem}
+.fn-dl-eptile{display:flex;gap:.7rem;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:1rem;padding:.55rem .8rem;cursor:pointer}
+.fn-dl-eptile.sel{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
+.fn-dl-eptile .fn-dl-thumb{width:4.6rem;height:2.6rem;border-radius:.5rem}
 .fn-dl-sheet{background:var(--surface2);border:1px solid var(--line);border-radius:1.1rem;padding:.7rem .9rem 1rem}
 .fn-dl-sheet[hidden]{display:none}
 .fn-dl-sheet.in-list{border:0;border-top:1px solid var(--line);border-radius:0}
@@ -652,6 +651,12 @@ box-shadow:0 0 26px rgba(229,169,60,.28),inset 0 0 14px rgba(0,0,0,.65);animatio
 .fn-dl-actrow img{width:1.4rem;height:1.4rem;flex:none}
 .fn-dl-actrow.play svg{fill:var(--gold)}
 .fn-dl-actrow.sel{color:var(--gold2)}
+/* download box: smooth phone scrolling (v6, film + series) — the modal
+   is a fixed overlay with plain overflow-y:auto, so a swipe hitting its
+   top/bottom edge used to chain into the detail sheet behind it (the
+   box felt stuck, then jumped). These are the same properties the
+   detail sheet overlay already carries. */
+.dlmodal{overscroll-behavior:contain;-webkit-overflow-scrolling:touch;touch-action:pan-y}
 /* while the download box is open, hide the detail sheet's own × —
    the box has its own × in its header; one step back at a time.
    (:has is supported by the modern WebView; if not, the rule is
@@ -4702,13 +4707,20 @@ function resRank(r) { return ({ '2160p': 6, '1440p': 5, '1080p': 4, '720p': 3, '
    Film (title-d): poster header card + one tile per link, size
    largest -> smallest, big title + gold quality chip + size + group
    on every tile, kebab + drawer chevron at the end.
-   Series (8jj-d, corrected): poster header card + season chips +
-   ONE card of plain episode rows (no icons, no per-row buttons on
-   the rows at all).
+   Series (v6): the SAME tile language as the film box — one tile
+   per episode, with THIS episode's own still (16:9) as the thumb,
+   line 1 «قسمت N (اسم قسمت به فارسی)», line 2 exactly like the
+   film tiles (gold quality chip + Persian size + group), kebab +
+   chevron. The stills + Persian names come from the SAME source as
+   the detail page's episode list (TMDB season, fa-IR merged with
+   en-US) via loadEpMeta, per season, in place; until they arrive
+   the tile shows the series poster + «قسمت N». A name TMDB has no
+   Persian for shows in English and is auto-translated by the site's
+   own sweep (the parens sit outside the translated span).
    ACCORDION: one action sheet, moved in the DOM to sit right under
-   the tile/row the user tapped — tapping another one moves it there
+   the tile the user tapped — tapping another one moves it there
    (the old one closes). The sheet starts CLOSED in both modes;
-   tapping the SAME tile/row again closes it (toggle). Film sheet:
+   tapping the SAME tile again closes it (toggle). Film sheet:
    2x2 action grid. Series sheet: gold COPY hero button + full-width
    rows (ADM / browser / play).
    SWAP (v5): کپی لینک and دانلود با ADM swapped in both modes —
@@ -4731,9 +4743,15 @@ function resRank(r) { return ({ '2160p': 6, '1440p': 5, '1080p': 4, '720p': 3, '
    480p / ... — with the encode when a quality has more than one);
    tapping one copies the whole CURRENT season in only that quality,
    one link per episode, episode order.
+   SCROLL (v6): the modal is a fixed overlay with plain
+   overflow-y:auto, so a swipe hitting its top/bottom edge used to
+   chain into the detail sheet behind it (the box felt stuck, then
+   jumped). The .dlmodal rules in the CSS carry the same
+   overscroll-behavior / touch-action / -webkit-overflow-scrolling
+   the detail sheet overlay already has.
    Sizes display with Persian units (مگابایت / گیگابایت, digits stay
    English). Selection: NO permanent gold outline anywhere — the
-   tile/row/action the user taps turns gold. Icons: real ADM logo
+   tile/action the user taps turns gold. Icons: real ADM logo
    (same asset as the old ADM button) + real Chrome logo, both inline
    base64; copy/play are inline SVG.
    CLOSE (v5, CSS): while the download box modal is open, the detail
@@ -4772,8 +4790,10 @@ function dlSortLinksDesc(a, b) {
 function faSize(s) {
   return String(s || '').replace(/\s*GB\b/gi, ' گیگابایت').replace(/\s*MB\b/gi, ' مگابایت').replace(/\s*KB\b/gi, ' کیلوبایت');
 }
-/* opts: { poster, title, meta, year } — meta is plain text (year • kind • source);
-   the year is read from opts.year, or from the first segment of meta when 4-digit. */
+/* opts: { poster, title, meta, year, tmdbId } — meta is plain text
+   (year • kind • source); the year is read from opts.year, or from
+   the first segment of meta when 4-digit. tmdbId is the TMDB tv id
+   (series only) — it feeds loadEpMeta's episode stills + names. */
 function dlTilesHtml(rec, opts) {
   var o = opts || {};
   var title = o.title || rec.title || 'Family Night';
@@ -4806,7 +4826,7 @@ function dlTilesHtml(rec, opts) {
   if (isSeries) {
     out += '<div class="fn-dl-cabox" hidden><div class="fn-dl-ca-title"></div><div class="fn-dl-ca-chips"></div><button class="fn-dl-ca-close">بستن</button></div>';
   }
-  var ctx = { title: title, year: year, isSeries: isSeries, links: [], eps: {}, firstEp: '', allUrls: allUrls, sel: null, epLinks: null, epKey: '' };
+  var ctx = { title: title, year: year, isSeries: isSeries, links: [], eps: {}, firstEp: '', allUrls: allUrls, sel: null, epLinks: null, epKey: '', tmdbId: o.tmdbId || '', epMeta: {}, epMetaDone: {} };
   if (isSeries) {
     out += dlSeriesHtml(groups, o.poster || '', title, ctx);
   } else {
@@ -4858,18 +4878,26 @@ function dlSeriesHtml(groups, posterUrl, title, ctx) {
     list.forEach(function (ep) {
       ep.links.sort(dlSortLinksDesc);
       var top = ep.links[0];
-      out += '<div class="fn-dl-eprow" data-dl-ep="' + esc(s + '|' + ep.episode) + '">'
-        + '<span class="fn-dl-eprow-top"><b>قسمت ' + esc(ep.episode) + '</b><span class="fn-dl-size">' + esc(faSize(top.x.size)) + '</span></span>'
-        + '<span class="fn-dl-eprow-sub">' + esc([top.sp.res, top.sp.source, top.label].filter(Boolean).join(' • ')) + '</span>'
-        + '</div>';
+      /* same tile language as the film box: thumb + line 1 + line 2 +
+         kebab + chevron. The thumb starts as the series poster and is
+         swapped for this episode's own still by loadEpMeta; line 1
+         starts as «قسمت N» and gains the Persian name the same way. */
+      out += '<div class="fn-dl-eptile" data-dl-ep="' + esc(s + '|' + ep.episode) + '">'
+        + '<span class="fn-dl-thumb">' + dlPosterHtml(posterUrl, title) + '</span>'
+        + '<span class="fn-dl-tinfo"><b>قسمت ' + esc(ep.episode) + '</b>'
+        + '<span class="fn-dl-tline"><span class="fn-dl-qchip">' + esc(top.sp.res || '—') + '</span>'
+        + '<span class="fn-dl-size">' + esc(faSize(top.x.size)) + '</span>'
+        + '<span class="fn-dl-grp">' + esc(top.label) + '</span></span></span>'
+        + '<span class="fn-dl-kebab"><i></i><i></i><i></i></span>'
+        + '<span class="fn-dl-chev">' + FN_DL_CHEV_SVG + '</span></div>';
     });
     out += '</div>';
   });
   return out;
 }
 function dlSheetHtml(isSeries) {
-  /* the sheet starts CLOSED in both modes — it opens under the tile/row
-     the user taps, and tapping that same tile/row again closes it */
+  /* the sheet starts CLOSED in both modes — it opens under the tile
+     the user taps, and tapping that same tile again closes it */
   var inner = '<span class="fn-dl-grip"></span><div class="fn-dl-sum"></div><div class="fn-dl-sub"></div><div class="fn-dl-qchips" hidden></div><div class="fn-dl-acts">';
   if (isSeries) {
     /* copy is the hero (universal); ADM is a plain row (optional app) */
@@ -4911,13 +4939,13 @@ function wireDlTiles(root, ctx) {
   function closeSheet() {
     var sh = root.querySelector('.fn-dl-sheet');
     if (sh) sh.hidden = true;
-    root.querySelectorAll('.fn-dl-tile.sel, .fn-dl-eprow.sel').forEach(function (t) { t.classList.remove('sel'); });
+    root.querySelectorAll('.fn-dl-tile.sel, .fn-dl-eptile.sel').forEach(function (t) { t.classList.remove('sel'); });
     markAction(null);
     hidePick();
     ctx.sel = null;
   }
   /* accordion: move the single sheet to sit right under the tapped
-     tile/row — tapping another one moves it there (closing the old one) */
+     tile — tapping another one moves it there (closing the old one) */
   function placeSheet(el) {
     var sh = root.querySelector('.fn-dl-sheet');
     if (!sh || !el || !el.parentNode) return;
@@ -4960,6 +4988,46 @@ function wireDlTiles(root, ctx) {
       }
       copyText(s.url); toast('لینک کپی شد — آن را در MX Player باز کنید');
     } catch (e) { copyText(s.url); }
+  }
+  /* episode stills + Persian names, from the SAME source as the detail
+     page's episode list (TMDB season, fa-IR merged with en-US). The
+     tiles render first with the series poster + «قسمت N»; this fetch
+     swaps in each episode's own still and its name, in place. */
+  function loadEpMeta(season) {
+    if (!ctx.tmdbId || ctx.epMetaDone[season] || typeof tmdb !== 'function') return;
+    ctx.epMetaDone[season] = true;
+    Promise.all([
+      tmdb('tv/' + ctx.tmdbId + '/season/' + season, {}, 'fa-IR').catch(function () { return null; }),
+      tmdb('tv/' + ctx.tmdbId + '/season/' + season, {}, 'en-US').catch(function () { return null; })
+    ]).then(function (rs) {
+      var faS = rs[0], enS = rs[1];
+      var sd = faS || enS; if (!sd) return;
+      var enByNum = {};
+      ((enS && enS.episodes) || []).forEach(function (e) { enByNum[e.episode_number] = e; });
+      var filled = false;
+      (sd.episodes || []).forEach(function (ep) {
+        var en = enByNum[ep.episode_number] || {};
+        var name = ep.name || en.name || '';
+        var still = ep.still_path || en.still_path || '';
+        if (!name && !still) return;
+        var key = season + '|' + ep.episode_number;
+        ctx.epMeta[key] = { name: name, still: still };
+        var tile = root.querySelector('.fn-dl-eptile[data-dl-ep="' + key + '"]');
+        if (!tile) return;
+        if (name) {
+          var b = tile.querySelector('.fn-dl-tinfo > b');
+          if (b) b.innerHTML = 'قسمت ' + esc(ep.episode_number) + ' (<span data-trtxt="' + esc(name) + '">' + esc(name) + '</span>)';
+        }
+        if (still && typeof IMG === 'function') {
+          var th = tile.querySelector('.fn-dl-thumb');
+          if (th) th.innerHTML = '<img loading="lazy" decoding="async" src="' + esc(IMG(still, 'w300')) + '" alt="">';
+        }
+        filled = true;
+      });
+      /* the site's own sweep translates any English name left in the
+         span — the parens sit outside it, so they survive */
+      if (filled && typeof fnSweepTrTxt === 'function') { try { fnSweepTrTxt(root); } catch (e) {} }
+    }).catch(function () {});
   }
   function updateSheet() {
     var s = ctx.sel; if (!s) return;
@@ -5054,26 +5122,27 @@ function wireDlTiles(root, ctx) {
       b.onclick = function () { copySeason(ctx.season, b.dataset.dlCaRes, b.dataset.dlCaCodec); box.hidden = true; };
     });
   }
-  function selectEp(key) {    var ep = ctx.eps[key]; if (!ep || !ep.links.length) return;
-    var row = root.querySelector('.fn-dl-eprow[data-dl-ep="' + key + '"]');
-    /* tapping the already-open row closes the drawer */
-    if (row && row.classList.contains('sel')) { closeSheet(); return; }
+  function selectEp(key) {
+    var ep = ctx.eps[key]; if (!ep || !ep.links.length) return;
+    var tile = root.querySelector('.fn-dl-eptile[data-dl-ep="' + key + '"]');
+    /* tapping the already-open tile closes the drawer */
+    if (tile && tile.classList.contains('sel')) { closeSheet(); return; }
     ctx.epKey = key;
     ctx.epLinks = ep.links.slice().sort(dlSortLinksDesc);
     ctx.sel = dlLinkSel(ctx.epLinks[0]);
     ctx.sel.epLabel = 'قسمت ' + ep.episode;
     ctx.sel.epNum = parseInt(ep.episode, 10) || 0;
-    root.querySelectorAll('.fn-dl-eprow').forEach(function (t) { t.classList.toggle('sel', t.dataset.dlEp === key); });
+    root.querySelectorAll('.fn-dl-eptile').forEach(function (t) { t.classList.toggle('sel', t.dataset.dlEp === key); });
     markAction(null);
     hidePick();
-    placeSheet(row);
+    placeSheet(tile);
     updateSheet();
     showSheet();
   }
   root.querySelectorAll('.fn-dl-tile').forEach(function (t) {
     t.onclick = function () { selectFilm(+t.dataset.dlI); };
   });
-  root.querySelectorAll('.fn-dl-eprow').forEach(function (t) {
+  root.querySelectorAll('.fn-dl-eptile').forEach(function (t) {
     t.onclick = function () { selectEp(t.dataset.dlEp); };
   });
   root.querySelectorAll('[data-dl-season]').forEach(function (b) {
@@ -5081,9 +5150,10 @@ function wireDlTiles(root, ctx) {
       ctx.season = b.dataset.dlSeason;
       root.querySelectorAll('[data-dl-season]').forEach(function (x) { x.classList.toggle('on', x === b); });
       root.querySelectorAll('.fn-dl-eplist').forEach(function (g) { g.hidden = g.dataset.dlEps !== b.dataset.dlSeason; });
+      loadEpMeta(b.dataset.dlSeason);
       var caBox = root.querySelector('.fn-dl-cabox');
       if (caBox && !caBox.hidden) refreshCaBox();
-      var first = root.querySelector('.fn-dl-eplist[data-dl-eps="' + b.dataset.dlSeason + '"] .fn-dl-eprow');
+      var first = root.querySelector('.fn-dl-eplist[data-dl-eps="' + b.dataset.dlSeason + '"] .fn-dl-eptile');
       if (first) selectEp(first.dataset.dlEp);
     };
   });
@@ -5127,6 +5197,8 @@ function wireDlTiles(root, ctx) {
   var caClose = root.querySelector('.fn-dl-ca-close');
   if (caClose) caClose.onclick = function () { var box = root.querySelector('.fn-dl-cabox'); if (box) box.hidden = true; };
   /* the sheet starts closed in both modes — no auto-select on open */
+  /* fetch this season's episode stills + names (the box opens on it) */
+  if (ctx.isSeries) loadEpMeta(ctx.season);
 }
 
 function admDownload(url) {
@@ -5176,7 +5248,7 @@ async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUr
     if (!rec || (!rec.groups.softsub.length && !rec.groups.dubbed.length && !rec.groups.nosub.length)) { body.innerHTML = '<div class="state"><b>فعلاً لینک دانلود رایگانی برای این اثر نیست.</b><br>از «پخش آنلاین» می‌توانید همین حالا تماشا کنید.</div>'; return; }
     var srcLabel = resolved.src === 'old' ? 'آرشیو قبلی' : resolved.src === 'both' ? 'آرشیو جدید + قبلی' : '';
     var dlMeta = [fbYear || '', (tmdbKey && tmdbKey.indexOf('tv:') === 0) ? 'سریال' : 'فیلم', srcLabel].filter(Boolean).join(' • ');
-    var dlBuilt = dlTilesHtml(rec, { poster: posterUrl || '', title: fbTitle || rec.title, meta: dlMeta });
+    var dlBuilt = dlTilesHtml(rec, { poster: posterUrl || '', title: fbTitle || rec.title, meta: dlMeta, tmdbId: (tmdbKey && tmdbKey.indexOf('tv:') === 0) ? tmdbKey.slice(3) : '' });
     body.innerHTML = dlBuilt.html;
     wireDlTiles(body, dlBuilt.ctx);
   } catch (e) {
@@ -7497,7 +7569,8 @@ async function openArchiveEntry(entry) {
   };
   const tokenSnapshot = detailToken;
   try {
-    var dlPosterP = entry.imdb ? Promise.race([tmdb('find/' + entry.imdb, { external_source: 'imdb_id' }), new Promise(function (res) { setTimeout(function () { res(null); }, 4000); })]).then(function (f) { var hit = f && (((f.movie_results || [])[0]) || ((f.tv_results || [])[0])); return (hit && hit.poster_path) ? IMG(hit.poster_path, 'w342') : ''; }).catch(function () { return ''; }) : Promise.resolve('');
+    var dlTmdbId = '';
+    var dlPosterP = entry.imdb ? Promise.race([tmdb('find/' + entry.imdb, { external_source: 'imdb_id' }), new Promise(function (res) { setTimeout(function () { res(null); }, 4000); })]).then(function (f) { var hit = f && (((f.movie_results || [])[0]) || ((f.tv_results || [])[0])); if (hit && hit.id) dlTmdbId = hit.id; return (hit && hit.poster_path) ? IMG(hit.poster_path, 'w342') : ''; }).catch(function () { return ''; }) : Promise.resolve('');
     const resolved = await resolveDlRecordByPart(entry.imdb, entry.num, entry.part, entry.src || 'new');
     let rec = resolved ? resolved.rec : null;
     if (rec && entry.hasOld) { /* same title also has links in the old archive — merge them in */
@@ -7506,7 +7579,7 @@ async function openArchiveEntry(entry) {
     const body = $('#d-dl-body'); if (!body) return;
     if (!rec || (!rec.groups.softsub.length && !rec.groups.dubbed.length && !rec.groups.nosub.length)) { body.innerHTML = '<div class="state">لینکی برای این عنوان پیدا نشد.</div>'; return; }
     var posterUrl = await dlPosterP;
-    var dlBuilt = dlTilesHtml(rec, { poster: posterUrl, title: entry.title, meta: (entry.type === 'tv' ? 'سریال' : 'فیلم') });
+    var dlBuilt = dlTilesHtml(rec, { poster: posterUrl, title: entry.title, meta: (entry.type === 'tv' ? 'سریال' : 'فیلم'), tmdbId: dlTmdbId });
     body.innerHTML = dlBuilt.html;
     wireDlTiles(body, dlBuilt.ctx);
     void tokenSnapshot;
