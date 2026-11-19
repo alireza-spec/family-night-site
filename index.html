@@ -2834,8 +2834,53 @@ async function fnFillHomeRail(fetchPage, keep) {
    cache — fnApiJson only caches within the session, and loadHome re-runs
    the fetch each time it is called), so a newly-added popular download
    work appears in the hero on the next visit. */
+/* FN-HERO-TREND-VOTES: vote gates for the Hero + the trending rail /
+   see-all (user orders 2026-11-19 19:25 + 19:44 + 19:48). TMDB vote_count
+   only — never invented. TRENDING (rail + see-all, movies and series): a
+   work needs vote_count >= 100, EXCEPT a REALLY VERY IMPORTANT NEW work —
+   it has a download link in the archive (fnDlIconHas, d==1: the owner added
+   it because it matters) AND it was released within the last 14 days,
+   so it has not had time to accumulate votes yet. The 14-day window
+   means the exemption expires on its own. HERO (see fnHeroLiveItems):
+   7-month window (not the rail's 3 months); the 3 most popular TRENDING
+   candidates (highest `popularity`) enter regardless of votes ("two or
+   three important trends"); every other non-pinned work needs
+   vote_count >= 300; PINNED works (FN_HERO_PINNED below) always enter —
+   they bypass the trending-pool gate and the vote gate but must still
+   pass the date + image gates. Both gates are ADDITIONAL filters on
+   top of the existing released + has-image (+ archive for the rail)
+   rules; they never replace them. If fewer than 20 qualify, the Hero/rail
+   shows what qualifies — never padded. If the avail-index failed to load,
+   fnDlIconHas is false and the exemption simply does not apply (fail-safe:
+   the work then needs >= 100). */
+function fnTrendVoteOk(x, todayStr) {
+  if ((x.vote_count || 0) >= 100) return true;
+  if (!fnDlIconHas(x)) return false;
+  var dt = x.media_type === 'tv' ? (x.first_air_date || '') : (x.release_date || '');
+  if (!dt || dt > todayStr) return false;
+  var g14 = new Date(todayStr + 'T00:00:00Z'); g14.setUTCDate(g14.getUTCDate() - 14);
+  return dt >= g14.toISOString().slice(0, 10);
+}
+
+/* FN-HERO-PINNED (user order 2026-11-19 19:48): works that ALWAYS enter
+   the Hero, taking one of the 20 slots each. Fetched directly by TMDB id
+   (not from the trending endpoint), so they bypass the trending-pool gate
+   and the vote gate — but they MUST still pass the date gate (within 7
+   months) and the image gate, or they drop out on their own. Extend or
+   remove entries HERE only; the Hero logic reads this list, never a
+   hardcoded id. Current entries:
+   - East of Eden — tv 258165, first_air_date 2026-10-01, 166 votes (below
+     the 300 floor, not in trending/week) — pinned so the Hero completes
+     to 20 (19 qualifying trending works + this one). */
+const FN_HERO_PINNED = [{ type: 'tv', id: 258165 }];
 async function fnHeroLiveItems(today, g3s, dtFn) {
   var out = [], seen = {};
+  /* FN-HERO-TREND-VOTES: the HERO window is 7 months (user order 2026-11-19
+     19:44), not the 3 months the trending rail uses — the rail still gets
+     `g3s` from its caller, so the Hero computes its own cutoff here from
+     `today` (same calendar-month style as the caller's _g3s). */
+  var _g7d = new Date(today + 'T00:00:00Z'); _g7d.setUTCMonth(_g7d.getUTCMonth() - 7);
+  var _g7s = _g7d.toISOString().slice(0, 10);
   for (var page = 1; page <= 3; page++) {
     var batch;
     try {
@@ -2851,15 +2896,68 @@ async function fnHeroLiveItems(today, g3s, dtFn) {
       if (seen[k]) continue;
       seen[k] = 1;
       var dt = dtFn(x);
-      if (!dt || dt > today || dt < g3s) continue;
+      if (!dt || dt > today || dt < _g7s) continue;
       if (!x.backdrop_path && !x.poster_path) continue;
       out.push(x);
     }
   }
+  /* FN-HERO-PINNED (user order 2026-11-19 19:48): fetch the pinned works
+     directly by TMDB id (NOT from the trending endpoint). They bypass the
+     trending-pool gate and the vote gate below, but MUST still pass the
+     date gate (within 7 months) and the image gate — a pinned work that
+     fails either drops out on its own. A pinned work already in the
+     trending pool is marked, never duplicated. Pins are best-effort: a
+     failed fetch never breaks the Hero. */
+  try {
+    var _pins = await Promise.all(FN_HERO_PINNED.map(async function (p) {
+      try {
+        var d = await tmdb(p.type + '/' + p.id);
+        if (!d || d.id == null) return null;
+        var x = Object.assign({}, d, { media_type: p.type });
+        var dtp = dtFn(x);
+        if (!dtp || dtp > today || dtp < _g7s) return null;
+        if (!x.backdrop_path && !x.poster_path) return null;
+        return x;
+      } catch (e) { return null; }
+    }));
+    _pins.forEach(function (x) {
+      if (!x) return;
+      var k = (x.media_type || 'movie') + ':' + x.id;
+      if (seen[k]) {
+        var _ex = out.find(function (y) { return (y.media_type || 'movie') + ':' + y.id === k; });
+        if (_ex) _ex._pinned = 1;
+        return;
+      }
+      seen[k] = 1;
+      x._pinned = 1;
+      out.push(x);
+    });
+  } catch (e) { /* pins are best-effort; the trending Hero still stands */ }
+  /* FN-HERO-TREND-VOTES: Hero vote gate — the 3 most popular TRENDING
+     candidates (highest `popularity`, pinned works excluded — they bypass
+     the gate by design) enter regardless of votes ("two or three important
+     trends"); every other non-pinned work needs vote_count >= 300. Pinned
+     works always pass. Never padded: if fewer qualify, the Hero shows
+     what qualifies. */
+  (function () {
+    var _pool = out.filter(function (x) { return !x._pinned; });
+    var _top = _pool.slice().sort(function (a, b) { return (b.popularity || 0) - (a.popularity || 0); }).slice(0, 3);
+    var _topIds = {};
+    _top.forEach(function (x) { _topIds[(x.media_type || 'movie') + ':' + x.id] = 1; });
+    out = out.filter(function (x) { return x._pinned || _topIds[(x.media_type || 'movie') + ':' + x.id] || (x.vote_count || 0) >= 300; });
+  })();
   out.sort((a, b) => dtFn(b).localeCompare(dtFn(a)));
   var dl = [], rest = [];
   out.forEach(x => { (fnDlIconHas(x) ? dl : rest).push(x); });
-  return dl.concat(rest).slice(0, 20);
+  /* FN-HERO-PINNED: a pinned work ALWAYS takes one of the 20 slots (user
+     order 2026-11-19 19:48) — the ordered list is truncated to 20, but a
+     pinned work is never truncated out: it displaces the last non-pinned
+     work instead. The order itself (archive-first, newest-first) is
+     unchanged; a pinned work keeps its natural position in it. */
+  var _heroAll = dl.concat(rest);
+  var _heroPins = _heroAll.filter(function (x) { return x._pinned; });
+  var _heroOthers = _heroAll.filter(function (x) { return !x._pinned; }).slice(0, Math.max(0, 20 - _heroPins.length));
+  return _heroAll.filter(function (x) { return x._pinned || _heroOthers.indexOf(x) !== -1; }).slice(0, 20);
 }
 /* FN-EDITORS-PICK-RAIL: «پیشنهاد سردبیر» home rail — the curator list
    is a resolved static list (FN_CURATOR_DATA, 482 movies). Shuffle it
@@ -2924,7 +3022,7 @@ async function loadHome() {
       const [_tm, _tt] = await Promise.all([tmdb('trending/movie/week', { page: page }), tmdb('trending/tv/week', { page: page })]);
       return [].concat((_tm.results || []).map(x => Object.assign({}, x, { media_type: 'movie' })))
         .concat((_tt.results || []).map(x => Object.assign({}, x, { media_type: 'tv' })));
-    }, x => { const dt = _dt(x); return dt && dt <= _today && dt >= _g3s; });
+    }, x => { const dt = _dt(x); return dt && dt <= _today && dt >= _g3s && fnTrendVoteOk(x, _today); });
     _live.sort((a, b) => _dt(b).localeCompare(_dt(a)));
     if (_live.length) rows.trending_now = _live.slice(0, 20); else _trendFallback();
   } catch (e) { _trendFallback(); }
@@ -3744,7 +3842,7 @@ async function loadArchPage() {
       const _g3 = new Date(); _g3.setMonth(_g3.getMonth() - 3);
       const _g3s = _g3.toISOString().slice(0, 10);
       const _dt = x => x.media_type === 'tv' ? (x.first_air_date || '') : (x.release_date || '');
-      items = items.filter(x => { const dt = _dt(x); return dt && dt <= _today && dt >= _g3s; })
+      items = items.filter(x => { const dt = _dt(x); return dt && dt <= _today && dt >= _g3s && fnTrendVoteOk(x, _today); })
         .sort((a, b) => _dt(b).localeCompare(_dt(a)));
     }
     /* حروف و اعداد: keep only titles whose original name starts
