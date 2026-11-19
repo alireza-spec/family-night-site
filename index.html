@@ -179,7 +179,10 @@ main{padding-bottom:6.2rem;min-height:100vh}
 .card .poster{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:2/3;background:var(--surface3);border:1px solid var(--line);transition:transform .25s,box-shadow .25s}
 .card:hover .poster{transform:translateY(-4px) scale(1.03);box-shadow:0 16px 36px -8px rgba(0,0,0,.8),0 0 24px 2px rgba(229,169,60,.22)}
 .card .poster img{width:100%;height:100%;object-fit:cover}
-.card .poster .noimg{width:100%;height:100%;display:grid;place-items:center;color:var(--pearl);font-size:.8rem;padding:.6rem;text-align:center}
+/* FN-NOIMG-PLACEHOLDER v1: poster-less cards get a designed placeholder (dark gradient + gold FN monogram + title) instead of a bare dark box, so they read as intentional, not broken. */
+.card .poster .noimg{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.45rem;background:linear-gradient(160deg,#1d2231,#12151f);color:var(--pearl);font-size:.8rem;padding:.6rem;text-align:center}
+.card .poster .noimg .fn-mark{font-family:var(--display);font-size:1.5rem;font-weight:900;color:var(--gold2);letter-spacing:.5px;line-height:1}
+.card .poster .noimg .fn-title{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-height:1.5}
 .card .rate{position:absolute;top:.45rem;inset-inline-start:.45rem;background:rgba(5,7,13,.72);border:1px solid rgba(229,169,60,.5);color:var(--gold2);font-size:.7rem;font-weight:800;padding:.08rem .45rem;border-radius:99px;backdrop-filter:blur(6px);font-family:var(--display)}
 .card .typ{position:absolute;top:.45rem;inset-inline-end:.45rem;background:rgba(5,7,13,.72);color:#fff;font-size:.66rem;font-weight:700;padding:.12rem .5rem;border-radius:99px;backdrop-filter:blur(6px)}
 .card .dlbadge{position:absolute;bottom:.45rem;left:.45rem;width:17px;height:17px;box-sizing:border-box;border-radius:5px;border:1px solid rgba(229,169,60,.65);overflow:hidden;background:#101014;box-shadow:0 2px 8px rgba(0,0,0,.5);z-index:2}
@@ -205,7 +208,8 @@ main{padding-bottom:6.2rem;min-height:100vh}
 .card .sub .fa-name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 .card .sub .fa-name.endup{display:none}
 .card.hasfa .sub .fa-name.endup{display:block}
-.card .sub .ls-badge{flex:none;font-size:.6rem;color:var(--pearl);opacity:.75;white-space:nowrap}
+/* FN-LS-BADGE-PILL v1: the «در فهرست» mark is a distinct gold pill, not inline dim text, so it can never be read as part of the Persian name. */
+.card .sub .ls-badge{flex:none;font-size:.58rem;font-weight:700;color:var(--gold2);background:var(--gold-soft);border:1px solid rgba(229,169,60,.45);border-radius:99px;padding:.06rem .45rem;white-space:nowrap}
 .card.wide{width:15.5rem}
 .card.wide .poster{aspect-ratio:16/9}
 @media(min-width:900px){.card.wide{width:18rem}}
@@ -2304,8 +2308,9 @@ function yearOf(x){ const d = x.release_date || x.first_air_date || ''; return d
 function cardHtml(x, wide, noDl) {
   const type = x.media_type || x.type || 'movie';
   const t = titleOf(x), o = origOf(x);
-  const poster = wide ? (x.backdrop_path || x.poster_path) : x.poster_path;
-  const img = poster ? '<img loading="lazy" decoding="async" src="' + IMG(poster, wide ? 'w780' : 'w342') + '" alt="' + esc(t) + '">' : '<div class="noimg">' + esc(t) + '</div>';
+  /* FN-NOIMG-PLACEHOLDER v1: fall back to the backdrop when there is no poster (already in the TMDB response — no extra fetch). */
+  const poster = wide ? (x.backdrop_path || x.poster_path) : (x.poster_path || x.backdrop_path);
+  const img = poster ? '<img loading="lazy" decoding="async" src="' + IMG(poster, wide ? 'w780' : 'w342') + '" alt="' + esc(t) + '">' : '<div class="noimg"><span class="fn-mark">FN</span><span class="fn-title">' + esc(t) + '</span></div>';
   const rate = x.vote_average ? '<span class="rate">★ ' + Number(x.vote_average).toFixed(1) + '</span>' : '';
   const typ = '<span class="typ">' + (type === 'tv' ? 'سریال' : 'فیلم') + '</span>';
   /* Name order under the poster — ONE rule for every card: line 1
@@ -10797,6 +10802,18 @@ async function sxSearchMain(q) {
     }
   }
 }
+/* FN-NOIMG-PLACEHOLDER v1: poster-less results sort last. Sorts ONLY the
+   already-fetched page of TMDB results (a few dozen cards) — never the
+   17,476-row search-index, no new fetch, no timer. Stable: within each
+   group the TMDB order is kept. A card counts as having an image if it
+   has a poster OR a backdrop (the backdrop fallback in cardHtml). */
+function fnSortPosterFirst(list) {
+  return (list || []).slice().sort(function (a, b) {
+    var pa = (a.poster_path || a.backdrop_path) ? 0 : 1;
+    var pb = (b.poster_path || b.backdrop_path) ? 0 : 1;
+    return pa - pb;
+  });
+}
 async function sxSearchPage(seq, append) {
   const st = sxSearchState; if (!st || st.loading) return;
   st.loading = true;
@@ -10830,6 +10847,7 @@ async function sxSearchPage(seq, append) {
       /* v8.9 FN-SEARCH-DEDUP: drop TMDB titles already in the local rows above. */
       var lkAll = fnLocalDedupKeys(st.q, st.type);
       if (lkAll) items = items.filter(function (x) { return !lkAll.has(x.media_type + ':' + x.id); });
+      items = fnSortPosterFirst(items);
       let people = multiRes.filter(x => x.media_type === 'person');
       /* FN-PEOPLE-NAMES v1: the search-results people get the same two-line
          cards — English names from the en-US multi page, Persian filled in
@@ -10880,7 +10898,7 @@ async function sxSearchPage(seq, append) {
       const seenT = st.seenT || (st.seenT = new Set());
       let list = (d.results || []).filter(x => { const k = st.type + ':' + x.id; if (seenT.has(k)) return false; seenT.add(k); return true; });
       let inner = '', wrapCls = 'grid';
-      if (st.type === 'movie' || st.type === 'tv') { /* v8.9 FN-SEARCH-DEDUP: drop TMDB titles already in the local rows above. */ var lkT = fnLocalDedupKeys(st.q, st.type); if (lkT) list = list.filter(function (x) { return !lkT.has(st.type + ':' + x.id); }); list = list.map(x => Object.assign({}, x, { media_type: st.type })); cacheItems(list); inner = list.map(x => cardHtml(x)).join(''); }
+      if (st.type === 'movie' || st.type === 'tv') { /* v8.9 FN-SEARCH-DEDUP: drop TMDB titles already in the local rows above. */ var lkT = fnLocalDedupKeys(st.q, st.type); if (lkT) list = list.filter(function (x) { return !lkT.has(st.type + ':' + x.id); }); list = list.map(x => Object.assign({}, x, { media_type: st.type })); list = fnSortPosterFirst(list); cacheItems(list); inner = list.map(x => cardHtml(x)).join(''); }
       else if (st.type === 'person') { wrapCls = 'pgrid'; list = await pnFillFaTimed(list.map(p => pnNormSearchPerson(p, p._en || '')), 8000); inner = list.map(sxPersonCard).join(''); }
       else if (st.type === 'company') { wrapCls = 'compgrid'; inner = list.map(sxCompCardTmdb).join(''); }
       else { wrapCls = 'collgrid'; list = list.filter(c => c.poster_path || c.backdrop_path); inner = list.map(sxCollCard).join(''); }
@@ -11063,7 +11081,7 @@ function fnLocalDedupTmdbDom(lr) {
 function fnLocalCardHtml(e) {
   var yr = e.y ? '<span class="yr">' + e.y + '</span>' : '';
   return '<article class="card" data-ls="' + e.i + '" data-ls-tmdb="' + (e.tmdb || '') + '" data-ls-title="' + esc(fnLocalNormTitle(e.t)) + '" data-ls-year="' + (e.y || '') + '" tabindex="0" role="button" aria-label="' + esc(e.t) + ' — مشاهده جزئیات">'
-    + '<div class="poster"><div class="noimg">' + esc(e.t) + '</div><span class="typ">' + (e.type === 'tv' ? 'سریال' : 'فیلم') + '</span>' + (fnDlIconHas(e) ? fnDlBadgeHtml() : '') + '</div>'
+    + '<div class="poster"><div class="noimg"><span class="fn-mark">FN</span><span class="fn-title">' + esc(e.t) + '</span></div><span class="typ">' + (e.type === 'tv' ? 'سریال' : 'فیلم') + '</span>' + (fnDlIconHas(e) ? fnDlBadgeHtml() : '') + '</div>'
     + '<h3>' + esc(e.t) + ' ' + yr + '</h3>'
     + '<div class="sub"><span class="fa-name endup">' + esc(e.t) + '</span><span class="ls-badge">در فهرست</span></div></article>';
 }
