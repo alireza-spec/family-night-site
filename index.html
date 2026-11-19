@@ -616,6 +616,15 @@ box-shadow:0 0 26px rgba(229,169,60,.28),inset 0 0 14px rgba(0,0,0,.65);animatio
 .fn-dl-eplist[hidden]{display:none}
 .fn-dl-eptile{display:flex;gap:.7rem;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:1rem;padding:.55rem .8rem;cursor:pointer}
 .fn-dl-eptile.sel{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
+/* episode rating (v8): a soft tint + halo glow on the tile — subtle
+   on purpose, so the tile never looks garish. 10 = blue, 8-9.9 =
+   green, 6-7.9 = yellow, below 6 = red. (The .sel gold ring wins
+   over the glow because it comes later in the cascade.) */
+.fn-dl-eptile.fn-dl-rate-blue{background:rgba(59,130,246,.14);box-shadow:0 0 14px rgba(59,130,246,.28)}
+.fn-dl-eptile.fn-dl-rate-green{background:rgba(34,197,94,.13);box-shadow:0 0 14px rgba(34,197,94,.24)}
+.fn-dl-eptile.fn-dl-rate-yellow{background:rgba(234,179,8,.13);box-shadow:0 0 14px rgba(234,179,8,.22)}
+.fn-dl-eptile.fn-dl-rate-red{background:rgba(239,68,68,.13);box-shadow:0 0 14px rgba(239,68,68,.24)}
+.fn-dl-rate{color:var(--gold);font-weight:800;white-space:nowrap}
 .fn-dl-eptile .fn-dl-thumb{width:4.6rem;height:2.6rem;border-radius:.5rem}
 .fn-dl-sheet{background:var(--surface2);border:1px solid var(--line);border-radius:1.1rem;padding:.7rem .9rem 1rem}
 .fn-dl-sheet[hidden]{display:none}
@@ -4749,10 +4758,21 @@ function resRank(r) { return ({ '2160p': 6, '1440p': 5, '1080p': 4, '720p': 3, '
    jumped). The .dlmodal rules in the CSS carry the same
    overscroll-behavior / touch-action / -webkit-overflow-scrolling
    the detail sheet overlay already has.
-   TILE TYPE (v7): line 1 (the title / episode name) is a touch
-   smaller (.88rem), and every tile shows ALL the qualities that
-   film / episode has as small gold bubbles — not just the top one —
-   so the user sees at a glance what is available.
+   TILE TYPE (v7, corrected v8): line 1 (the title / episode name)
+   is a touch smaller (.88rem). Every SERIES episode tile shows ALL
+   the qualities that episode has as small gold bubbles — so the user
+   sees at a glance what is available. FILM tiles show only their
+   OWN quality (one chip): each film tile is one link, so all
+   qualities on every tile would make them identical and hide which
+   quality a tile is (user correction 2026-11-19 ~06:27).
+   EPISODE RATING (v8, series only): each episode tile is tinted by
+   its rating — 10 = blue halo, 8–9.9 = green, 6–7.9 = yellow, below
+   6 = red — and the rating (★ 9.3) shows on the tile's line 2 and
+   in the sheet's line 2. The rating is TMDB's per-episode
+   vote_average from the same season fetch as the stills/names, so it
+   is as up-to-date as TMDB (IMDb exposes no per-episode rating the
+   site can read). Unrated episodes (no votes) stay uncoloured.
+   Films: no rating, no colour.
    Sizes display with Persian units (مگابایت / گیگابایت, digits stay
    English). Selection: NO permanent gold outline anywhere — the
    tile/action the user taps turns gold. Icons: real ADM logo
@@ -4793,6 +4813,16 @@ function dlSortLinksDesc(a, b) {
 /* display sizes with Persian units (digits stay English): "1.2 GB" -> "1.2 گیگابایت" */
 function faSize(s) {
   return String(s || '').replace(/\s*GB\b/gi, ' گیگابایت').replace(/\s*MB\b/gi, ' مگابایت').replace(/\s*KB\b/gi, ' کیلوبایت');
+}
+/* episode rating (TMDB vote_average) -> tile colour. 10 = blue halo,
+   8–9.9 = green, 6–7.9 = yellow, below 6 = red. No rating (0 /
+   missing) = '' (the tile stays uncoloured). */
+function dlRateClass(r) {
+  if (typeof r !== 'number' || !(r > 0)) return '';
+  if (r >= 9.95) return 'blue';
+  if (r >= 8) return 'green';
+  if (r >= 6) return 'yellow';
+  return 'red';
 }
 /* opts: { poster, title, meta, year, tmdbId } — meta is plain text
    (year • kind • source); the year is read from opts.year, or from
@@ -4836,20 +4866,16 @@ function dlTilesHtml(rec, opts) {
   } else {
     var rows = all.slice().sort(dlSortLinksDesc);
     ctx.links = rows;
-    /* every tile shows ALL the qualities this film has (small gold
-       bubbles), so the user sees at a glance what is available */
-    var filmRes = [];
-    rows.forEach(function (r) { if (r.sp.res && filmRes.indexOf(r.sp.res) < 0) filmRes.push(r.sp.res); });
-    filmRes.sort(function (a, b) { return resRank(b) - resRank(a); });
-    var filmChips = filmRes.length
-      ? filmRes.map(function (q) { return '<span class="fn-dl-qchip">' + esc(q) + '</span>'; }).join('')
-      : '<span class="fn-dl-qchip">—</span>';
+    /* film tiles: ONE chip each — the tile's OWN quality. (Each film
+       tile is one link, so showing all qualities on every tile would
+       make them identical and hide which quality a tile is.) The
+       all-qualities bubbles live on the SERIES episode tiles only. */
     out += '<div class="fn-dl-sec"><span>لینک‌های دانلود</span><span class="fn-dl-cnt">' + rows.length + ' لینک</span></div><div class="fn-dl-tiles">';
     rows.forEach(function (r, i) {
       out += '<div class="fn-dl-tile" data-dl-i="' + i + '">'
         + '<span class="fn-dl-thumb">' + dlPosterHtml(o.poster || '', title) + '</span>'
         + '<span class="fn-dl-tinfo"><b>' + esc(title) + '</b>'
-        + '<span class="fn-dl-tline">' + filmChips
+        + '<span class="fn-dl-tline"><span class="fn-dl-qchip">' + esc(r.sp.res || '—') + '</span>'
         + '<span class="fn-dl-size">' + esc(faSize(r.x.size)) + '</span>'
         + '<span class="fn-dl-grp">' + esc(r.label) + '</span></span></span>'
         + '<span class="fn-dl-kebab"><i></i><i></i><i></i></span>'
@@ -5030,9 +5056,13 @@ function wireDlTiles(root, ctx) {
         var en = enByNum[ep.episode_number] || {};
         var name = ep.name || en.name || '';
         var still = ep.still_path || en.still_path || '';
-        if (!name && !still) return;
+        /* vote_average is language-independent, so fa and en agree;
+           0 means "no votes yet" — an unrated episode stays uncoloured */
+        var rating = (typeof ep.vote_average === 'number' && ep.vote_average > 0) ? ep.vote_average
+          : ((typeof en.vote_average === 'number' && en.vote_average > 0) ? en.vote_average : 0);
+        if (!name && !still && !rating) return;
         var key = season + '|' + ep.episode_number;
-        ctx.epMeta[key] = { name: name, still: still };
+        ctx.epMeta[key] = { name: name, still: still, rating: rating };
         var tile = root.querySelector('.fn-dl-eptile[data-dl-ep="' + key + '"]');
         if (!tile) return;
         if (name) {
@@ -5042,6 +5072,17 @@ function wireDlTiles(root, ctx) {
         if (still && typeof IMG === 'function') {
           var th = tile.querySelector('.fn-dl-thumb');
           if (th) th.innerHTML = '<img loading="lazy" decoding="async" src="' + esc(IMG(still, 'w300')) + '" alt="">';
+        }
+        if (rating > 0) {
+          var cls = dlRateClass(rating);
+          if (cls) tile.classList.add('fn-dl-rate-' + cls);
+          tile.dataset.rate = rating.toFixed(1);
+          var line = tile.querySelector('.fn-dl-tline');
+          if (line) {
+            var rb = line.querySelector('.fn-dl-rate');
+            if (!rb) { rb = document.createElement('span'); rb.className = 'fn-dl-rate'; line.appendChild(rb); }
+            rb.textContent = '★ ' + rating.toFixed(1);
+          }
         }
         filled = true;
       });
@@ -5056,7 +5097,7 @@ function wireDlTiles(root, ctx) {
     /* line 1: title + year. line 2: the details (episode first for series) */
     if (sum) sum.textContent = ctx.title + (ctx.year ? ' • ' + ctx.year : '');
     if (sub) sub.textContent = (ctx.isSeries
-      ? [s.epLabel, s.res, s.size ? faSize(s.size) : '', s.source, s.group, s.codec, s.enc, s.ext]
+      ? [s.epLabel, s.epRate ? '★ ' + s.epRate : '', s.res, s.size ? faSize(s.size) : '', s.source, s.group, s.codec, s.enc, s.ext]
       : [s.res, s.size ? faSize(s.size) : '', s.source, s.group, s.codec, s.enc, s.ext]).filter(Boolean).join(' • ');
     if (chips) {
       if (ctx.epLinks && ctx.epLinks.length > 1) {
@@ -5072,7 +5113,7 @@ function wireDlTiles(root, ctx) {
             b.onclick = function () {
               var cand = ctx.epLinks.filter(function (l) { return l.sp.res === b.dataset.dlQ; });
               cand.sort(dlSortLinksDesc);
-              if (cand.length) { ctx.sel = dlLinkSel(cand[0]); ctx.sel.epLabel = s.epLabel; ctx.sel.epNum = s.epNum; updateSheet(); }
+              if (cand.length) { ctx.sel = dlLinkSel(cand[0]); ctx.sel.epLabel = s.epLabel; ctx.sel.epNum = s.epNum; ctx.sel.epRate = s.epRate; updateSheet(); }
             };
           });
           return;
@@ -5153,6 +5194,10 @@ function wireDlTiles(root, ctx) {
     ctx.sel = dlLinkSel(ctx.epLinks[0]);
     ctx.sel.epLabel = 'قسمت ' + ep.episode;
     ctx.sel.epNum = parseInt(ep.episode, 10) || 0;
+    /* the episode's rating, from the tile (filled by loadEpMeta) or
+       the stored episode meta — the sheet's line 2 shows it */
+    var em = ctx.epMeta[key] || {};
+    ctx.sel.epRate = (tile && tile.dataset.rate) || ((em.rating > 0) ? em.rating.toFixed(1) : '');
     root.querySelectorAll('.fn-dl-eptile').forEach(function (t) { t.classList.toggle('sel', t.dataset.dlEp === key); });
     markAction(null);
     hidePick();
