@@ -158,6 +158,19 @@ main{padding-bottom:6.2rem;min-height:100vh}
 .rail-head h2::before{content:"";width:.28rem;height:1.15rem;border-radius:99px;background:var(--gold)}
 .rail-head button{color:var(--pearl);font-size:.82rem;display:inline-flex;align-items:center;gap:.25rem}
 .rail-head button:hover{color:var(--gold2)}
+/* FN-RECENT-CLEAR v1: trash + see-all in the Recently Watched rail head */
+.rail-head .rail-head-actions{display:inline-flex;align-items:center;gap:.55rem}
+.rail-head button.fn-recent-clear{color:var(--pearl);padding:.3rem;border-radius:.55rem}
+.rail-head button.fn-recent-clear:hover{color:var(--red)}
+.rail-head button.fn-recent-clear svg{display:block}
+#ov-confirm{position:fixed;inset:0;z-index:300;background:rgba(3,4,8,.88);display:none;place-items:center;padding:1rem}
+#ov-confirm.on{display:grid}
+#ov-confirm .cf-box{width:min(420px,100%);background:var(--surface);border:1px solid var(--line);border-radius:1rem;padding:1.2rem 1.2rem 1.1rem;box-shadow:0 24px 60px -12px rgba(0,0,0,.8)}
+#ov-confirm .cf-box h3{margin:0 0 .5rem;font-size:1.05rem;font-weight:800}
+#ov-confirm .cf-box p{margin:0 0 1.1rem;color:var(--pearl);font-size:.92rem;line-height:1.7}
+#ov-confirm .cf-actions{display:flex;gap:.6rem}
+#ov-confirm .cf-ok{background:var(--red);border-color:var(--red);color:#fff}
+
 .rail-track{display:flex;gap:.8rem;overflow-x:auto;padding:.2rem 1rem 1rem;scroll-snap-type:x mandatory;scrollbar-width:none;max-width:1440px;margin:0 auto}
 .rail-track::-webkit-scrollbar{display:none}
 @media(min-width:900px){.rail-track{padding-inline:2.2rem}}
@@ -1633,6 +1646,7 @@ html.tg .bottomnav{display:flex}
   <section class="view" id="view-archive">
     <div class="wrap">
       <div class="pagehead"><h1 id="archive-title">فیلم‌ها</h1><p id="archive-sub">آرشیو کامل با فیلتر پیشرفته ژانر، سال و امتیاز</p></div>
+      <button class="btn btn-glass" id="arch-recent-clear" type="button" style="display:none;margin:.6rem 0 0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg> پاک کردن همهٔ تاریخچه تماشا</button>
       <form class="searchbox" id="arch-search-form" style="display:none;margin-top:0">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" style="opacity:.7;flex:none"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg>
         <input id="arch-search" type="search" placeholder="جستجو در فیلم‌ها…" autocomplete="off" />
@@ -2601,6 +2615,8 @@ function activateArchiveView() {
   $$('.view').forEach(v => v.classList.toggle('on', v.id === 'view-archive'));
   $$('#bottomnav button, #mainnav button, #sidebar [data-nav]').forEach(b => b.classList.remove('active'));
   $$('#sidebar [data-sb-row]').forEach(b => b.classList.toggle('active', arch.localKey && b.dataset.sbRow === arch.localKey));
+  /* FN-RECENT-CLEAR v1: the see-all view's trash button shows only for the recent list, and only while it has items */
+  const rcBtn = $('#arch-recent-clear'); if (rcBtn) rcBtn.style.display = (arch && arch.localKey === 'recent' && store.recent.length) ? '' : 'none';
   window.scrollTo({ top: 0 });
 }
 function openCollection(key) {
@@ -3020,12 +3036,66 @@ function setHero(i) {
   clearInterval(heroTimer);
   heroTimer = setInterval(() => { if (currentView === 'home' && !document.hidden) setHero(heroIdx + 1); }, 5000);
 }
+/* FN-RECENT-CLEAR v1: trash (left, opposite the title) + see-all when long.
+   The rail-head is flex space-between, so the actions span (2nd child)
+   sits on the LEFT in RTL, opposite the title on the right. */
+const FN_TRASH_SVG = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>';
+const FN_RECENT_SEEALL_MIN = 7; /* «مشاهده همه» appears when 7+ items (cap is 12) */
 function renderContinue() {
   const w = $('#continue-wrap');
   if (!store.recent.length) { w.innerHTML = ''; return; }
-  w.innerHTML = '<section class="rail"><div class="rail-head"><h2>اخیراً تماشا کرده‌اید</h2></div><div class="rail-track">'
+  const n = store.recent.length;
+  const acts = (n >= FN_RECENT_SEEALL_MIN ? '<button data-recent-all type="button">مشاهده همه <span aria-hidden="true">‹</span></button>' : '')
+    + '<button class="fn-recent-clear" data-recent-clear type="button" aria-label="پاک کردن تاریخچه تماشا" title="پاک کردن تاریخچه تماشا">' + FN_TRASH_SVG + '</button>';
+  w.innerHTML = '<section class="rail"><div class="rail-head"><h2>اخیراً تماشا کرده‌اید</h2><span class="rail-head-actions">' + acts + '</span></div><div class="rail-track">'
     + store.recent.map(x => cardHtml(x, true)).join('') + '</div></section>';
+  const cb = w.querySelector('[data-recent-clear]'); if (cb) cb.onclick = () => fnAskClearRecent();
+  const ab = w.querySelector('[data-recent-all]'); if (ab) ab.onclick = () => openRecentAll();
 }
+/* FN-RECENT-CLEAR v1: clear the stored recent-watch history for real —
+   empties store.recent, persists it (fnSaveState), re-renders the rail
+   (which disappears when empty) and the see-all view if it is open. */
+function fnClearRecent() {
+  store.recent = [];
+  fnSaveState();
+  renderContinue();
+  if (arch && arch.localKey === 'recent' && document.querySelector('#view-archive.on')) openRecentAll();
+  toast('تاریخچه تماشا پاک شد');
+}
+function fnAskClearRecent() {
+  if (!store.recent.length) return;
+  let ov = $('#ov-confirm');
+  if (!ov) {
+    ov = document.createElement('div');
+    ov.id = 'ov-confirm'; ov.setAttribute('role', 'dialog'); ov.setAttribute('aria-modal', 'true');
+    ov.innerHTML = '<div class="cf-box"><h3>پاک کردن تاریخچه تماشا؟</h3><p>همهٔ آثار اخیراً تماشا شده پاک می‌شوند و این کار قابل بازگشت نیست.</p><div class="cf-actions"><button class="btn cf-ok" type="button">بله، پاک کن</button><button class="btn btn-glass cf-no" type="button">انصراف</button></div></div>';
+    document.body.appendChild(ov);
+    ov.querySelector('.cf-ok').onclick = () => { ov.classList.remove('on'); fnClearRecent(); };
+    ov.querySelector('.cf-no').onclick = () => ov.classList.remove('on');
+    ov.addEventListener('click', e => { if (e.target === ov) ov.classList.remove('on'); });
+  }
+  ov.classList.add('on');
+}
+/* FN-RECENT-CLEAR v1: the full recent-watch list, same local-archive
+   view-all path as the curator/collection pages. */
+function openRecentAll() {
+  const list = store.recent.slice();
+  arch = { title: 'اخیراً تماشا کرده‌اید', type: '', genre: '', page: 1, loading: false, done: true, qualCount: 0, availPending: [], mode: 'local', localKey: 'recent', localList: list.slice() };
+  cacheItems(list);
+  $('#archive-title').textContent = 'اخیراً تماشا کرده‌اید';
+  $('#archive-sub').textContent = 'همهٔ آثار اخیراً تماشا شده — روی هر عنوان بزنید تا اطلاعات کامل، گزینه پخش و دانلود (در صورت وجود) نمایش داده شود';
+  const flt = document.querySelector('#view-archive .filters'); if (flt) { flt.style.display = ''; flt.classList.add('flt-local'); }
+  const grow = $('#arch-genre-row'); if (grow) grow.style.display = 'none';
+  resetArchFilters();
+  $('#arch-more').style.display = 'none';
+  const grid = $('#arch-grid');
+  grid.innerHTML = list.length
+    ? list.map(x => cardHtml(x)).join('')
+    : '<div class="state" style="grid-column:1/-1">تاریخچه تماشا خالی است.</div>';
+  activateArchiveView();
+}
+const arcRecentClearEl = $('#arch-recent-clear'); if (arcRecentClearEl) arcRecentClearEl.onclick = () => fnAskClearRecent();
+
 
 /* ---------- search ---------- */
 let searchSeq = 0;
