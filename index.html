@@ -3071,6 +3071,29 @@ function paintHeroText(at) {
      secondary line below */
   let faTitle = h._faTitle || titleOf(h);
   if (nonLatinScript(faTitle)) { const enT = titleOf(h); if (enT && !nonLatinScript(enT)) faTitle = enT; }
+  /* FN-HERO-PERSIAN-NAME: the Hero headline must be Persian, whatever
+     the work's language (owner's rule). The fa-IR title is Persian
+     when TMDB has one; otherwise faTitle is the English title or the
+     non-Latin original. Translate it (Google-first, cached) and
+     re-paint when the Persian name lands. A real Persian fa-IR title
+     always wins over a machine translation, so a translated title is
+     used only while the current headline is not Persian-script, and
+     only when it was translated FROM that headline. Only the active
+     slide and its neighbours translate (the same lazy window as the
+     fa-IR fetch); a swipe re-runs paintHeroText for the new slide, so
+     every slide gets its Persian name as it comes into view. */
+  if (!/[؀-ۿ]/.test(faTitle || '') && h._faTrTitle && h._faTrSrc === faTitle) faTitle = h._faTrTitle;
+  else if (faTitle && !/[؀-ۿ]/.test(faTitle) && !h._faTrLoading && Math.abs(ix - heroIdx) <= 1 && typeof translateFa === 'function') {
+    h._faTrLoading = true;
+    const trSrc = faTitle;
+    translateFa(trSrc).then(v => {
+      h._faTrLoading = false;
+      if (heroItems[ix] !== h) return;
+      if (!v || v === trSrc || !/[؀-ۿ]/.test(v)) return;
+      h._faTrTitle = v; h._faTrSrc = trSrc;
+      paintHeroText(ix);
+    }).catch(() => { h._faTrLoading = false; });
+  }
   const genreNames = (h.genre_ids || []).map(g => GENRES_FA[g]).filter(Boolean).slice(0, 3);
   box.innerHTML =
     '<div class="badges"><span class="badge gold">' + (type === 'tv' ? 'سریال' : 'فیلم') + ' · ترند روز</span>'
@@ -4562,7 +4585,12 @@ function buildDetailSheet(o) {
   else if (o.title && typeof isLatinTitle === 'function' && isLatinTitle(o.title)) nameLines.push('<div class="fa-name endup" dir="rtl">' + esc(o.title) + '</div>');
   const enLine = o.enTitle && !sameName(o.enTitle, o.title) && !nonLatinScript(o.enTitle) ? o.enTitle : '';
   if (enLine) nameLines.push('<div class="entitle" dir="ltr">' + esc(enLine) + '</div>');
-  if (o.orig && !sameName(o.orig, o.title) && !sameName(o.orig, enLine) && !sameName(o.orig, o.faTitle || '')) nameLines.push('<div class="orig">' + (enLine ? '<span class="orig-lab">نام اصلی: </span>' : '') + esc(o.orig) + '</div>');
+  /* FN-DETAIL-ORIG-LABEL: the third name (original) is always labelled
+     «نام اصلی: » — the owner's rule is that the original must be
+     clearly labelled, and the label used to show only when an English
+     line existed (which the TMDB detail path almost never has, so the
+     label never appeared there). */
+  if (o.orig && !sameName(o.orig, o.title) && !sameName(o.orig, enLine) && !sameName(o.orig, o.faTitle || '')) nameLines.push('<div class="orig"><span class="orig-lab">نام اصلی: </span>' + esc(o.orig) + '</div>');
   return '<div class="sheet-hero">' + (o.backdrop ? '<img class="bg" src="' + IMG(o.backdrop, 'w1280') + '" alt="">' : '') + '<div class="shade"></div>'
     + '<button class="xbtn" data-close-detail aria-label="بستن"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>'
     + '<div class="sheet-body"><div class="detail-head"><div class="poster">' + (o.poster ? '<img src="' + IMG(o.poster, 'w342') + '" alt="' + esc(o.title) + '">' : '') + '</div>'
