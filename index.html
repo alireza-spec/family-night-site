@@ -3238,9 +3238,27 @@ function fnAvailEnsure() {
     .catch(function () { FN_AVAIL.failed = true; FN_AVAIL.loading = null; return null; });
   return FN_AVAIL.loading;
 }
+/* ---------- avail-index tmdb lookup: TYPE-AWARE (FN-ICON-COLLISION) ----------
+   TMDB movie ids and TV ids share the same number space (movie 1701 =
+   Con Air, tv 1701 = Barareh Nights). The avail-index tmdb keys are
+   type-prefixed ("movie:<id>" / "tv:<id>"), so the lookup MUST use the
+   item's own type or a movie's flags leak onto a TV title with the same
+   numeric id (and vice versa). The bare-key fallback is for the
+   transition window only (old index still cached): the rebuilt index has
+   NO bare tmdb keys, so the fallback can only fire against an old index. */
+function fnAvailTmdbEntry(idx, type, tid) {
+  if (!idx || !idx.tmdb || tid == null) return null;
+  var t = idx.tmdb[(type === 'tv' ? 'tv:' : 'movie:') + String(tid)];
+  if (t) return t;
+  return idx.tmdb[String(tid)] || null;
+}
+function fnAvailTypeOf(x) {
+  var t = x && (x.media_type || x.type);
+  return t === 'tv' ? 'tv' : 'movie';
+}
 function fnAvailQualifies(x) {
   var idx = FN_AVAIL.idx; if (!idx || !x) return false;
-  var t = idx.tmdb && x.id != null ? idx.tmdb[String(x.id)] : null;
+  var t = idx.tmdb && x.id != null ? fnAvailTmdbEntry(idx, fnAvailTypeOf(x), x.id) : null;
   if (t) return !!(t[0] || t[1]);
   var im = x.imdb_id || x.imdb || '';
   if (im && idx.imdb) { var m = idx.imdb[String(im)]; if (m) return !!(m[0] || m[1]); }
@@ -3257,7 +3275,7 @@ function fnDlBadgeHtml() { return '<span class="dlbadge" aria-hidden="true"><img
 function fnDlIconHas(x) {
   var idx = FN_AVAIL.idx; if (!idx || !x) return false;
   var tid = x.id != null ? x.id : (x.tmdb != null && x.tmdb !== '' ? x.tmdb : null);
-  var t = idx.tmdb && tid != null ? idx.tmdb[String(tid)] : null;
+  var t = idx.tmdb && tid != null ? fnAvailTmdbEntry(idx, fnAvailTypeOf(x), tid) : null;
   if (t) return t[0] === 1;
   var im = x.imdb_id || x.imdb || '';
   if (im && idx.imdb) { var m = idx.imdb[String(im)]; if (m) return m[0] === 1; }
@@ -3275,13 +3293,14 @@ function fnDlIconApply() {
     var op = c.getAttribute('data-open');
     if (op) {
       var parts = op.split(':');
-      if (parts.length === 2 && parts[1]) has = fnDlIconHas({ id: parts[1] });
+      if (parts.length === 2 && parts[1]) has = fnDlIconHas({ id: parts[1], media_type: parts[0] });
     } else if (c.hasAttribute('data-ls')) {
-      var tm = c.getAttribute('data-ls-tmdb') || '';
-      if (tm) has = fnDlIconHas({ id: tm });
-      else if (typeof FN_LSEARCH !== 'undefined' && FN_LSEARCH.idx) {
-        var e = FN_LSEARCH.idx[+c.getAttribute('data-ls')];
-        if (e) has = fnDlIconHas(e);
+      var le = (typeof FN_LSEARCH !== 'undefined' && FN_LSEARCH.idx)
+        ? FN_LSEARCH.idx[+c.getAttribute('data-ls')] : null;
+      if (le) has = fnDlIconHas(le);
+      else {
+        var tm = c.getAttribute('data-ls-tmdb') || '';
+        if (tm) has = fnDlIconHas({ id: tm });
       }
     }
     if (has) poster.insertAdjacentHTML('beforeend', fnDlBadgeHtml());
