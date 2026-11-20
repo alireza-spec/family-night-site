@@ -2019,7 +2019,7 @@ html.tg .bottomnav{display:flex}
 const FN_API = 'https://family-night-api.alirezadoe8.workers.dev';
 const SNAP_HOME = 'https://cdn.jsdelivr.net/gh/alireza-spec/FN@main/snapshot/home.json';
 const DL_BASE = 'https://alireza-spec.github.io/family-night-site/download-data/';
-const OLD_DL_BASE = 'https://alireza-spec.github.io/FN/download-data/'; /* fallback: old FN archive, used only when a title is NOT in the new Zivarnet archive */
+const OLD_DL_BASE = DL_BASE + 'old/'; /* fallback: old FN archive, used only when a title is NOT in the new Zivarnet archive */
 const TV_PROXY = 'https://iran-tv-proxy-v3.alirezadoe8.workers.dev/proxy?url=';
 const IMG = (p, s) => p ? 'https://image.tmdb.org/t/p/' + (s || 'w500') + p : '';
 
