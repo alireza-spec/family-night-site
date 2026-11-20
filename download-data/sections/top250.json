@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-11-20T19:39:20Z",
+ "generated_at": "2026-11-20T20:17:00Z",
  "date": "2026-11-20",
- "source": "IMDb chart (imdb.com/chart/top + /chart/toptv, via Jina Reader proxy, fetched 2026-11-20)",
+ "source": "IMDb chart (imdb.com/chart/top + /chart/toptv, via Jina Reader proxy, fetched 2026-11-20) — TV backfill 2026-11-20: 7 Indian series without a download link removed from the TV list only (stay in search); backfilled from dataset-recomputed chart ranks 251+ (IMDb WR formula m=25000, C=dataset mean 6.9708)",
  "movies": {
   "results": [
    {
@@ -5660,7 +5660,8 @@
     ],
     "overview": "Walter White, a New Mexico chemistry teacher, is diagnosed with Stage III cancer and given a prognosis of only two years left to live. He becomes filled with a sense of fearlessness and an unrelenting desire to secure his family's financial future at any cost as he enters the dangerous world of drugs and crime.",
     "imdb_rating": 9.5,
-    "imdb_votes": 2700000
+    "imdb_votes": 2700000,
+    "chart_rank": 1
    },
    {
     "rank": 2,
@@ -5682,7 +5683,8 @@
     ],
     "overview": "David Attenborough presents a documentary series exploring how animals meet the challenges of surviving in the most iconic habitats on earth.",
     "imdb_rating": 9.4,
-    "imdb_votes": 178000
+    "imdb_votes": 178000,
+    "chart_rank": 2
    },
    {
     "rank": 3,
@@ -5703,7 +5705,8 @@
     ],
     "overview": "David Attenborough celebrates the amazing variety of the natural world in this epic documentary series, filmed over four years across 64 different countries.",
     "imdb_rating": 9.4,
-    "imdb_votes": 238000
+    "imdb_votes": 238000,
+    "chart_rank": 3
    },
    {
     "rank": 4,
@@ -5725,7 +5728,8 @@
     ],
     "overview": "Drawn from interviews with survivors of Easy Company, as well as their journals and letters, Band of Brothers chronicles the experiences of these men from paratrooper training in Georgia through the end of the war. As an elite rifle company parachuting into Normandy early on D-Day morning, participants in the Battle of the Bulge, and witness to the horrors of war, the men of Easy knew extraordinary bravery and extraordinary fear - and became the stuff of legend. Based on Stephen E. Ambrose's acclaimed book of the same name.",
     "imdb_rating": 9.4,
-    "imdb_votes": 614000
+    "imdb_votes": 614000,
+    "chart_rank": 4
    },
    {
     "rank": 5,
@@ -5746,7 +5750,8 @@
     ],
     "overview": "The true story of one of the worst man-made catastrophes in history: the catastrophic nuclear accident at Chernobyl. A tale of the brave men and women who sacrificed to save Europe from unimaginable disaster.",
     "imdb_rating": 9.3,
-    "imdb_votes": 1100000
+    "imdb_votes": 1100000,
+    "chart_rank": 5
    },
    {
     "rank": 6,
@@ -5769,7 +5774,8 @@
     ],
     "overview": "In a war-torn world of elemental magic, a young boy reawakens to undertake a dangerous mystic quest to fulfill his destiny as the Avatar, and bring peace to the world.",
     "imdb_rating": 9.3,
-    "imdb_votes": 462000
+    "imdb_votes": 462000,
+    "chart_rank": 6
    },
    {
     "rank": 7,
@@ -5791,7 +5797,8 @@
     ],
     "overview": "Told from the points of view of both the Baltimore homicide and narcotics detectives and their targets, the series captures a universe in which the national war on drugs has become a permanent, self-sustaining bureaucracy, and distinctions between good and evil are routinely obliterated.",
     "imdb_rating": 9.3,
-    "imdb_votes": 445000
+    "imdb_votes": 445000,
+    "chart_rank": 7
    },
    {
     "rank": 8,
@@ -5813,7 +5820,8 @@
     ],
     "overview": "The story of New Jersey-based Italian-American mobster Tony Soprano and the difficulties he faces as he tries to balance the conflicting requirements of his home life and the criminal organization he heads. Those difficulties are often highlighted through his ongoing professional relationship with psychiatrist Jennifer Melfi. The show features Tony's family members and Mafia associates in prominent roles and story arcs, most notably his wife Carmela and his cousin and protégé Christopher Moltisanti.",
     "imdb_rating": 9.2,
-    "imdb_votes": 607000
+    "imdb_votes": 607000,
+    "chart_rank": 8
    },
    {
     "rank": 9,
@@ -5835,7 +5843,8 @@
     ],
     "overview": "There is nowhere more powerful and unforgiving yet more beautiful and compelling than the ocean. Join us and explore the greatest yet least known parts of our planet.",
     "imdb_rating": 9.3,
-    "imdb_votes": 59000
+    "imdb_votes": 59000,
+    "chart_rank": 9
    },
    {
     "rank": 10,
@@ -5856,7 +5865,8 @@
     ],
     "overview": "Famed astrophysicist Neil deGrasse Tyson provides clarity for the vision of the cosmos as he voyages across the universe with never-before-told stories that delve into the scientific concepts of the laws of gravity and the origins of space and time.",
     "imdb_rating": 9.2,
-    "imdb_votes": 142000
+    "imdb_votes": 142000,
+    "chart_rank": 10
    },
    {
     "rank": 11,
@@ -5877,7 +5887,8 @@
     ],
     "overview": "Carl Sagan covers a wide range of scientific subjects, including the origin of life and a perspective of our place in the universe.",
     "imdb_rating": 9.3,
-    "imdb_votes": 54000
+    "imdb_votes": 54000,
+    "chart_rank": 11
    },
    {
     "rank": 12,
@@ -5899,7 +5910,8 @@
     ],
     "overview": "Experience our planet's natural beauty and examine how climate change impacts all living creatures in this ambitious documentary of spectacular scope.",
     "imdb_rating": 9.2,
-    "imdb_votes": 64000
+    "imdb_votes": 64000,
+    "chart_rank": 12
    },
    {
     "rank": 13,
@@ -5922,7 +5934,8 @@
     ],
     "overview": "Seven noble families fight for control of the mythical land of Westeros. Friction between the houses leads to full-scale war. All while a very ancient evil awakens in the farthest north. Amidst the war, a neglected military order of misfits, the Night's Watch, is all that stands between the realms of men and icy horrors beyond.",
     "imdb_rating": 9.2,
-    "imdb_votes": 2700000
+    "imdb_votes": 2700000,
+    "chart_rank": 13
    },
    {
     "rank": 14,
@@ -5946,7 +5959,8 @@
     ],
     "overview": "Bluey is an inexhaustible six year-old Blue Heeler dog, who loves to play and turns everyday family life into extraordinary adventures, developing her imagination as well as her mental, physical and emotional resilience.",
     "imdb_rating": 9.2,
-    "imdb_votes": 50000
+    "imdb_votes": 50000,
+    "chart_rank": 14
    },
    {
     "rank": 15,
@@ -5968,7 +5982,8 @@
     ],
     "overview": "A documentary series that gives a historical account of the events of World War II, from its roots in the 1920s to the aftermath and the lives it profoundly influenced.",
     "imdb_rating": 9.2,
-    "imdb_votes": 38000
+    "imdb_votes": 38000,
+    "chart_rank": 15
    },
    {
     "rank": 16,
@@ -5991,7 +6006,8 @@
     ],
     "overview": "100 years ago, the last remnants of humanity were forced to retreat behind the towering walls of a fortified city to escape the massive, man-eating Titans that roamed the land outside their fortress. Only the members of the Scouting Legion dared to stray beyond the safety of the walls – but even those brave warriors seldom returned alive. Those within the city clung to the illusion of a peaceful existence until the day that dream was shattered, and their slim chance at survival was reduced to one horrifying choice: kill – or be devoured!",
     "imdb_rating": 9.1,
-    "imdb_votes": 761000
+    "imdb_votes": 761000,
+    "chart_rank": 16
    },
    {
     "rank": 17,
@@ -6015,7 +6031,8 @@
     ],
     "overview": "Disregard for alchemy’s laws ripped half of Edward Elric’s limbs from his body and left his brother Alphonse’s soul clinging to a suit of armor. To restore what was lost, the brothers seek the Philosopher’s Stone. Enemies and allies – the corrupt military, the Homunculi, and foreign alchemists – will alter the Elric brothers course, but their purpose will remain unchanged and their bond unbreakable.",
     "imdb_rating": 9.1,
-    "imdb_votes": 262000
+    "imdb_votes": 262000,
+    "chart_rank": 17
    },
    {
     "rank": 18,
@@ -6036,7 +6053,8 @@
     ],
     "overview": "David Attenborough looks at the extraordinary ends to which animals and plants go in order to survive. Featuring epic spectacles, amazing TV firsts and examples of new wildlife behaviour.",
     "imdb_rating": 9.1,
-    "imdb_votes": 51000
+    "imdb_votes": 51000,
+    "chart_rank": 18
    },
    {
     "rank": 19,
@@ -6057,7 +6075,8 @@
     ],
     "overview": "A 10-part documentary chronicling the untold story of Michael Jordan and the Chicago Bulls dynasty with rare, never-before-seen footage and sound from the 1997-98 championship season – plus over 100 interviews with famous figures and basketball’s biggest names.",
     "imdb_rating": 9.0,
-    "imdb_votes": 186000
+    "imdb_votes": 186000,
+    "chart_rank": 19
    },
    {
     "rank": 20,
@@ -6080,7 +6099,8 @@
     ],
     "overview": "An anthology series containing drama, psychological thriller, fantasy, science fiction, suspense, and/or horror, often concluding with a macabre or unexpected twist.",
     "imdb_rating": 9.0,
-    "imdb_votes": 112000
+    "imdb_votes": 112000,
+    "chart_rank": 20
    },
    {
     "rank": 21,
@@ -6102,7 +6122,8 @@
     ],
     "overview": "An immersive 360-degree narrative telling the epic story of the Vietnam War as it has never before been told on film. Featuring testimony from nearly 80 witnesses, including many Americans who fought in the war and others who opposed it, as well as Vietnamese combatants and civilians from both the winning and losing sides.",
     "imdb_rating": 9.1,
-    "imdb_votes": 38000
+    "imdb_votes": 38000,
+    "chart_rank": 21
    },
    {
     "rank": 22,
@@ -6126,7 +6147,8 @@
     ],
     "overview": "Follows a sociopathic genius scientist who drags his inherently timid grandson on adventures across the universe.",
     "imdb_rating": 9.0,
-    "imdb_votes": 719000
+    "imdb_votes": 719000,
+    "chart_rank": 22
    },
    {
     "rank": 23,
@@ -6149,7 +6171,8 @@
     ],
     "overview": "A modern update finds the famous sleuth and his doctor partner solving crime in 21st century London.",
     "imdb_rating": 9.0,
-    "imdb_votes": 1100000
+    "imdb_votes": 1100000,
+    "chart_rank": 23
    },
    {
     "rank": 24,
@@ -6173,7 +6196,8 @@
     ],
     "overview": "Vowing to avenge the murder of his parents, Bruce Wayne devotes his life to wiping out crime in Gotham City as the masked vigilante \"Batman\".",
     "imdb_rating": 9.0,
-    "imdb_votes": 141000
+    "imdb_votes": 141000,
+    "chart_rank": 24
    },
    {
     "rank": 25,
@@ -6195,7 +6219,8 @@
     ],
     "overview": "Six years before Saul Goodman meets Walter White. We meet him when the man who will become Saul Goodman is known as Jimmy McGill, a small-time lawyer searching for his destiny, and, more immediately, hustling to make ends meet. Working alongside, and, often, against Jimmy, is “fixer” Mike Ehrmantraut. The series tracks Jimmy’s transformation into Saul Goodman, the man who puts “criminal” in “criminal lawyer\".",
     "imdb_rating": 9.0,
-    "imdb_votes": 878000
+    "imdb_votes": 878000,
+    "chart_rank": 25
    },
    {
     "rank": 26,
@@ -6216,7 +6241,8 @@
     ],
     "overview": "The everyday lives of office employees in the Scranton, Pennsylvania branch of the fictional Dunder Mifflin Paper Company.",
     "imdb_rating": 9.0,
-    "imdb_votes": 860000
+    "imdb_votes": 860000,
+    "chart_rank": 26
    },
    {
     "rank": 27,
@@ -6239,7 +6265,8 @@
     ],
     "overview": "Amid the stark discord of twin cities Piltover and Zaun, two sisters fight on rival sides of a war between magic technologies and clashing convictions.",
     "imdb_rating": 9.0,
-    "imdb_votes": 462000
+    "imdb_votes": 462000,
+    "chart_rank": 27
    },
    {
     "rank": 28,
@@ -6260,7 +6287,8 @@
     ],
     "overview": "Sir David Attenborough narrates this critically acclaimed series that dives deep into the marine environment of Planet Earth. Although two-thirds of the world's surface is covered with water, scientists know less about the oceans than they do about the surface of the moon. This limited series travels from various coasts to the poles to examine watery denizens ranging from the gigantic blue whale to microscopic coral polyps.",
     "imdb_rating": 9.0,
-    "imdb_votes": 52000
+    "imdb_votes": 52000,
+    "chart_rank": 28
    },
    {
     "rank": 29,
@@ -6282,7 +6310,8 @@
     ],
     "overview": "Follow Jeremy Clarkson as he embarks on his latest adventure, farming. The man who on several occasions claims to be allergic to manual labour takes on the most manually labour intensive job there is. What could possibly go wrong?",
     "imdb_rating": 9.0,
-    "imdb_votes": 92000
+    "imdb_votes": 92000,
+    "chart_rank": 29
    },
    {
     "rank": 30,
@@ -6305,7 +6334,8 @@
     ],
     "overview": "Gon, a young boy who lives on Whale Island, dreams of becoming a Hunter like his father, who left when Gon was still young.",
     "imdb_rating": 9.0,
-    "imdb_votes": 210000
+    "imdb_votes": 210000,
+    "chart_rank": 30
    },
    {
     "rank": 31,
@@ -6327,7 +6357,8 @@
     ],
     "overview": "Set in 1980's & 90's Bombay, Scam 1992 follows the life of Harshad Mehta - a stockbroker who single-handedly took the stock market to dizzying heights & his catastrophic downfall. Being directed by National Award-winning filmmaker Hansal Mehta, the series is based on journalist Debashis Basu & Sucheta Dalal's book \"The Scam\".",
     "imdb_rating": 9.2,
-    "imdb_votes": 176000
+    "imdb_votes": 176000,
+    "chart_rank": 31
    },
    {
     "rank": 32,
@@ -6348,7 +6379,8 @@
     ],
     "overview": "David Attenborough travels to the end of the earth, taking viewers on an extraordinary journey across the polar regions of our planet.",
     "imdb_rating": 9.0,
-    "imdb_votes": 41000
+    "imdb_votes": 41000,
+    "chart_rank": 32
    },
    {
     "rank": 33,
@@ -6369,7 +6401,8 @@
     ],
     "overview": "Only Fools and Horses.... Is a British sitcom created and written by John Sullivan. Seven series were originally transmitted on BBC One from 1981 to 1991, with sixteen sporadic Christmas specials aired until 2003.\n\nIn working-class Peckham in south-east London, ambitious market trader Derek 'Del Boy' Trotter and his younger half-brother Rodney, explore their highs and lows in life, in particular their attempts to get rich.\n\nInitially not an immediate hit and receiving little promotion early on, it later achieved consistently high ratings, and the 1996 episode \"Time on Our Hands\" (originally billed as the series finale) holds the record for the biggest UK audience for a sitcom episode, attracting 24.3 million viewers. The series bears a significant influence on British culture, contributing several words and phrases to the English language.",
     "imdb_rating": 9.0,
-    "imdb_votes": 67000
+    "imdb_votes": 67000,
+    "chart_rank": 33
    },
    {
     "rank": 34,
@@ -6390,7 +6423,8 @@
     ],
     "overview": "A cinematic experience bringing you the most amazing human stories in the world. Humans and wildlife surviving in the most extreme environments on Earth.",
     "imdb_rating": 9.0,
-    "imdb_votes": 34000
+    "imdb_votes": 34000,
+    "chart_rank": 34
    },
    {
     "rank": 35,
@@ -6411,7 +6445,8 @@
     ],
     "overview": "A documentary series on the career of The Beatles.",
     "imdb_rating": 9.1,
-    "imdb_votes": 11000
+    "imdb_votes": 11000,
+    "chart_rank": 35
    },
    {
     "rank": 36,
@@ -6434,7 +6469,8 @@
     ],
     "overview": "Set 10 weeks after Dexter: New Blood, Dexter Morgan chases a missing Harrison to New York City, where Captain Angel Batista is hot on their trail from way down in Miami.",
     "imdb_rating": 9.0,
-    "imdb_votes": 167000
+    "imdb_votes": 167000,
+    "chart_rank": 36
    },
    {
     "rank": 37,
@@ -6456,7 +6492,8 @@
     ],
     "overview": "A documentary on the American Civil War narrated by Ken Burns, covering the secession of the Confederacy to the assassination of Abraham Lincoln.",
     "imdb_rating": 9.0,
-    "imdb_votes": 27000
+    "imdb_votes": 27000,
+    "chart_rank": 37
    },
    {
     "rank": 38,
@@ -6477,7 +6514,8 @@
     ],
     "overview": "Yılmaz and İlkkan are two friends who are constantly fighting each other. Their biggest feature is always being able to do things that will turn their ordinary lives upside down. They magnify small events incredibly and give you a nervous breakdown. They are the embodiment of the misfortunes, strange events and despair we experience every day.",
     "imdb_rating": 9.0,
-    "imdb_votes": 38000
+    "imdb_votes": 38000,
+    "chart_rank": 38
    },
    {
     "rank": 39,
@@ -6498,7 +6536,8 @@
     ],
     "overview": "The staff of Pittsburgh's Trauma Medical Center work around the clock to save lives in an overcrowded and underfunded emergency department.",
     "imdb_rating": 8.9,
-    "imdb_votes": 180000
+    "imdb_votes": 180000,
+    "chart_rank": 39
    },
    {
     "rank": 40,
@@ -6525,7 +6564,8 @@
     "imdb_rating": 8.9,
     "imdb_votes": 188000,
     "tmdb_title": "Gravity Falls",
-    "note": "Gravity Falls: Weirdmageddon -> TMDB stub has no poster/backdrop; parent series Gravity Falls"
+    "note": "Gravity Falls: Weirdmageddon -> TMDB stub has no poster/backdrop; parent series Gravity Falls",
+    "chart_rank": 40
    },
    {
     "rank": 41,
@@ -6548,7 +6588,8 @@
     ],
     "overview": "In the year 2517, the universe is a vast frontier where lawlessness reigns and adventure awaits! Join Captain Malcolm Reynolds and his ragtag crew aboard the spaceship Serenity as they navigate the fringes of society, battling the oppressive Alliance and facing off against ruthless bounty hunters.",
     "imdb_rating": 8.9,
-    "imdb_votes": 306000
+    "imdb_votes": 306000,
+    "chart_rank": 41
    },
    {
     "rank": 42,
@@ -6571,7 +6612,8 @@
     ],
     "overview": "Light Yagami is an ace student with great prospects—and he’s bored out of his mind. But all that changes when he finds the Death Note, a notebook dropped by a rogue Shinigami death god. Any human whose name is written in the notebook dies, and Light has vowed to use the power of the Death Note to rid the world of evil. But will Light succeed in his noble goal, or will the Death Note turn him into the very thing he fights against?",
     "imdb_rating": 8.9,
-    "imdb_votes": 507000
+    "imdb_votes": 507000,
+    "chart_rank": 42
    },
    {
     "rank": 43,
@@ -6592,7 +6634,8 @@
     ],
     "overview": "Greg Davies is the Taskmaster, and with the help of his ever-loyal assistant Alex Horne, they will set out to test the wiles, wit, wisdom and skills of five hyper-competitive comedians. Who will be crowned the Taskmaster champion?",
     "imdb_rating": 9.0,
-    "imdb_votes": 33000
+    "imdb_votes": 33000,
+    "chart_rank": 43
    },
    {
     "rank": 44,
@@ -6616,7 +6659,8 @@
     ],
     "overview": "After the party of heroes defeated the Demon King, they restored peace to the land and returned to lives of solitude. Generations pass, and the elven mage Frieren comes face to face with humanity's mortality. She takes on a new apprentice and promises to fulfill old friends' dying wishes. Can an elven mind make peace with the nature of life and death? Frieren embarks on her quest to find out.",
     "imdb_rating": 8.9,
-    "imdb_votes": 88000
+    "imdb_votes": 88000,
+    "chart_rank": 44
    },
    {
     "rank": 45,
@@ -6638,7 +6682,8 @@
     ],
     "overview": "Nathan Fielder uses his business degree and life experiences to help real small businesses turn a profit.",
     "imdb_rating": 8.9,
-    "imdb_votes": 53000
+    "imdb_votes": 53000,
+    "chart_rank": 45
    },
    {
     "rank": 46,
@@ -6659,7 +6704,8 @@
     ],
     "overview": "The three-part documentary series, compiled from over 60 hours of unseen footage, captures the warmth, camaraderie, and creative genius that defined the legacy of music's most iconic foursome. The series also includes – for the first time in its entirety – The Beatles' final performance at London's Savile Row.",
     "imdb_rating": 8.9,
-    "imdb_votes": 38000
+    "imdb_votes": 38000,
+    "chart_rank": 46
    },
    {
     "rank": 47,
@@ -6680,7 +6726,8 @@
     ],
     "overview": "A stand-up comedian and his three offbeat friends weather the pitfalls and payoffs of life in New York City in the '90s. It's a show about nothing.",
     "imdb_rating": 8.8,
-    "imdb_votes": 391000
+    "imdb_votes": 391000,
+    "chart_rank": 47
    },
    {
     "rank": 48,
@@ -6702,7 +6749,8 @@
     ],
     "overview": "An American anthology police detective series utilizing multiple timelines in which investigations seem to unearth personal and professional secrets of those involved, both within or outside the law.",
     "imdb_rating": 8.8,
-    "imdb_votes": 780000
+    "imdb_votes": 780000,
+    "chart_rank": 48
    },
    {
     "rank": 49,
@@ -6726,7 +6774,8 @@
     ],
     "overview": "In 2071, roughly fifty years after an accident with a hyperspace gateway made the Earth almost uninhabitable, humanity has colonized most of the rocky planets and moons of the Solar System. Amid a rising crime rate, the Inter Solar System Police (ISSP) set up a legalized contract system, in which registered bounty hunters, also referred to as \"Cowboys\", chase criminals and bring them in alive in return for a reward.",
     "imdb_rating": 8.9,
-    "imdb_votes": 175000
+    "imdb_votes": 175000,
+    "chart_rank": 49
    },
    {
     "rank": 50,
@@ -6747,7 +6796,8 @@
     ],
     "overview": "The Ten Commandments, exact and uncompromising, literally cast in stone, continues to provide a source of moral conflict in contemporary society. In the ten part collection of films, The Decalogue, Krzysztof Kieślowski examines the dilemma of fundamental sin in the lives of ordinary Warsaw citizens.",
     "imdb_rating": 8.9,
-    "imdb_votes": 35000
+    "imdb_votes": 35000,
+    "chart_rank": 50
    },
    {
     "rank": 51,
@@ -6769,7 +6819,8 @@
     ],
     "overview": "A six-part French documentary about the Second World War composed exclusively of actual footage of the war as filmed by war correspondents, soldiers, resistance fighters and private citizens. The series is shown in color, with the black and white footage being fully colorized, save for some original color footage. The only exception to the treatment are most Holocaust scenes, which are presented in the original black and white.",
     "imdb_rating": 8.9,
-    "imdb_votes": 21000
+    "imdb_votes": 21000,
+    "chart_rank": 51
    },
    {
     "rank": 52,
@@ -6791,7 +6842,8 @@
     ],
     "overview": "A close-knit anthology series dealing with stories involving malice, violence and murder based in and around Minnesota.",
     "imdb_rating": 8.8,
-    "imdb_votes": 479000
+    "imdb_votes": 479000,
+    "chart_rank": 52
    },
    {
     "rank": 53,
@@ -6814,7 +6866,8 @@
     ],
     "overview": "Years ago, the fearsome Pirate King, Gol D. Roger was executed leaving a huge pile of treasure and the famous \"One Piece\" behind. Whoever claims the \"One Piece\" will be named the new King of the Pirates.\n\nMonkey D. Luffy, a boy who consumed a \"Devil Fruit,\" decides to follow in the footsteps of his idol, the pirate Shanks, and find the One Piece. It helps, of course, that his body has the properties of rubber and that he's surrounded by a bevy of skilled fighters and thieves to help him along the way.\n\nLuffy will do anything to get the One Piece and become King of the Pirates!",
     "imdb_rating": 9.0,
-    "imdb_votes": 373000
+    "imdb_votes": 373000,
+    "chart_rank": 53
    },
    {
     "rank": 54,
@@ -6835,7 +6888,8 @@
     ],
     "overview": "Africa, the world's wildest continent. David Attenborough takes us on an awe-inspiring journey through one of the most diverse places in the world. We visit deserts, savannas, and jungles and meet up with some of Africa's amazing wildlife.",
     "imdb_rating": 8.9,
-    "imdb_votes": 24000
+    "imdb_votes": 24000,
+    "chart_rank": 54
    },
    {
     "rank": 55,
@@ -6858,7 +6912,8 @@
     ],
     "overview": "The life of Christ through the eyes of those who encountered him.",
     "imdb_rating": 9.1,
-    "imdb_votes": 73000
+    "imdb_votes": 73000,
+    "chart_rank": 55
    },
    {
     "rank": 56,
@@ -6879,7 +6934,8 @@
     ],
     "overview": "The West Wing provides a glimpse into presidential politics in the nation's capital as it tells the stories of the members of a fictional presidential administration. These interesting characters have humor and dedication that touches the heart while the politics that they discuss touch on everyday life.",
     "imdb_rating": 8.9,
-    "imdb_votes": 102000
+    "imdb_votes": 102000,
+    "chart_rank": 56
    },
    {
     "rank": 57,
@@ -6902,7 +6958,8 @@
     ],
     "overview": "After being diagnosed with Alzheimer's, a retired judicial officer decides to commit a murder that he had been planning for years.",
     "imdb_rating": 8.9,
-    "imdb_votes": 58000
+    "imdb_votes": 58000,
+    "chart_rank": 57
    },
    {
     "rank": 58,
@@ -6923,7 +6980,8 @@
     ],
     "overview": "In Jeju, a spirited girl and a steadfast boy's island story blossoms into a lifelong tale of setbacks and triumphs — proving love endures across time.",
     "imdb_rating": 9.0,
-    "imdb_votes": 44000
+    "imdb_votes": 44000,
+    "chart_rank": 58
    },
    {
     "rank": 59,
@@ -6944,7 +7002,8 @@
     ],
     "overview": "Six young people from New York City, on their own and struggling to survive in the real world, find the companionship, comfort and support they get from each other to be the perfect antidote to the pressures of life.",
     "imdb_rating": 8.8,
-    "imdb_votes": 1200000
+    "imdb_votes": 1200000,
+    "chart_rank": 59
    },
    {
     "rank": 60,
@@ -6965,7 +7024,8 @@
     ],
     "overview": "Five teens from Harlem become trapped in a nightmare when they're falsely accused of a brutal attack in Central Park.",
     "imdb_rating": 8.8,
-    "imdb_votes": 163000
+    "imdb_votes": 163000,
+    "chart_rank": 60
    },
    {
     "rank": 61,
@@ -6986,7 +7046,8 @@
     ],
     "overview": "Four egocentric friends run a neighborhood Irish pub in Philadelphia and try to find their way through the adult world of work and relationships. Unfortunately, their warped views and precarious judgments often lead them to trouble, creating a myriad of uncomfortable situations that usually only get worse before they get better.",
     "imdb_rating": 8.8,
-    "imdb_votes": 288000
+    "imdb_votes": 288000,
+    "chart_rank": 61
    },
    {
     "rank": 62,
@@ -7010,7 +7071,8 @@
     ],
     "overview": "For a thousand years, the Vikings have made quite a name and reputation for themselves as the strongest families with a thirst for violence. Thorfinn, the son of one of the Vikings' greatest warriors, spends his boyhood in a battlefield enhancing his skills in his adventure to redeem his most-desired revenge after his father was murdered.",
     "imdb_rating": 8.9,
-    "imdb_votes": 156000
+    "imdb_votes": 156000,
+    "chart_rank": 62
    },
    {
     "rank": 63,
@@ -7035,7 +7097,8 @@
     "imdb_rating": 9.0,
     "imdb_votes": 119000,
     "tmdb_title": "Bleach",
-    "note": "Bleach: Thousand-Year Blood War -> parent series Bleach"
+    "note": "Bleach: Thousand-Year Blood War -> parent series Bleach",
+    "chart_rank": 63
    },
    {
     "rank": 64,
@@ -7057,7 +7120,8 @@
     ],
     "overview": "Follow the lives of the Roy family as they contemplate their future once their aging father begins to step back from the media and entertainment conglomerate they control.",
     "imdb_rating": 8.8,
-    "imdb_votes": 374000
+    "imdb_votes": 374000,
+    "chart_rank": 64
    },
    {
     "rank": 65,
@@ -7079,7 +7143,8 @@
     ],
     "overview": "A story of trials and tribulations of four young entrepreneurs who quit their day jobs in order to pursue their start up venture.",
     "imdb_rating": 9.0,
-    "imdb_votes": 80000
+    "imdb_votes": 80000,
+    "chart_rank": 65
    },
    {
     "rank": 66,
@@ -7102,7 +7167,8 @@
     ],
     "overview": "A half-hour satirical look at the week in news, politics and current events.",
     "imdb_rating": 8.8,
-    "imdb_votes": 106000
+    "imdb_votes": 106000,
+    "chart_rank": 66
    },
    {
     "rank": 67,
@@ -7125,7 +7191,8 @@
     ],
     "overview": "Meet the most beloved sitcom horse of the '90s , 20 years later. He's a curmudgeon with a heart of...not quite gold...but something like gold. Copper?",
     "imdb_rating": 8.8,
-    "imdb_votes": 242000
+    "imdb_votes": 242000,
+    "chart_rank": 67
    },
    {
     "rank": 68,
@@ -7146,7 +7213,8 @@
     ],
     "overview": "The off-kilter, unscripted comic vision of Larry David, who plays himself in a parallel universe in which he can't seem to do anything right, and, by his standards, neither can anyone else.",
     "imdb_rating": 8.8,
-    "imdb_votes": 170000
+    "imdb_votes": 170000,
+    "chart_rank": 68
    },
    {
     "rank": 69,
@@ -7168,7 +7236,8 @@
     ],
     "overview": "Panchayat is a comedy-drama, which captures the journey of an engineering graduate Abhishek, who for lack of a better job option joins as secretary of a panchayat office in a remote village of Uttar Pradesh. Stuck between crazy villagers and a difficult village lifestyle Abhishek starts his job with the sole motivation of getting out of there as soon as possible, for which he even prepares for CAT.",
     "imdb_rating": 9.0,
-    "imdb_votes": 121000
+    "imdb_votes": 121000,
+    "chart_rank": 69
    },
    {
     "rank": 70,
@@ -7190,7 +7259,8 @@
     ],
     "overview": "Based on an autobiographical novel by German World War II photographer Lothar-Guenther Buchheim, Das Boot follows the lives of a fearless U-Boat captain (Jurgen Prochnow) and his inexperienced crew as they patrol the Atlantic and Mediterranean in search of Allied vessels, taking turns as hunter and prey.",
     "imdb_rating": 8.8,
-    "imdb_votes": 41000
+    "imdb_votes": 41000,
+    "chart_rank": 70
    },
    {
     "rank": 71,
@@ -7211,7 +7281,8 @@
     ],
     "overview": "A British sketch comedy series with the shows being composed of surreality, risqué or innuendo-laden humour, sight gags and observational sketches without punchlines.",
     "imdb_rating": 8.8,
-    "imdb_votes": 88000
+    "imdb_votes": 88000,
+    "chart_rank": 71
    },
    {
     "rank": 72,
@@ -7232,7 +7303,8 @@
     ],
     "overview": "Owner Basil Fawlty, his wife Sybil, a chambermaid Polly, and Spanish waiter Manuel attempt to run their hotel amidst farcical situations and an array of demanding guests.",
     "imdb_rating": 8.8,
-    "imdb_votes": 113000
+    "imdb_votes": 113000,
+    "chart_rank": 72
    },
    {
     "rank": 73,
@@ -7257,33 +7329,11 @@
     "imdb_rating": 8.8,
     "imdb_votes": 183000,
     "tmdb_title": "Dragon Ball Z",
-    "note": "Dragon Ball Z -> TMDB record exists but carries no IMDb id"
+    "note": "Dragon Ball Z -> TMDB record exists but carries no IMDb id",
+    "chart_rank": 73
    },
    {
     "rank": 74,
-    "imdb_id": "tt10530900",
-    "id": 90966,
-    "media_type": "tv",
-    "title": "Gullak",
-    "original_title": "गुल्लक",
-    "poster_path": "/arn3mvRYSrEqO7vaKbH8QxM8EEK.jpg",
-    "backdrop_path": "/t0J74zw5N5Ux7CvvBtIHvjnSB4n.jpg",
-    "release_date": "",
-    "first_air_date": "2019-06-27",
-    "vote_average": 7.716,
-    "vote_count": 51,
-    "popularity": 5.568,
-    "genre_ids": [
-     35,
-     18,
-     10751
-    ],
-    "overview": "Set in quaint by-lanes in the heart of India, Gullak is a collection of disarming and relatable tales of the Mishra family.",
-    "imdb_rating": 9.0,
-    "imdb_votes": 32000
-   },
-   {
-    "rank": 75,
     "imdb_id": "tt0096548",
     "id": 7246,
     "media_type": "tv",
@@ -7303,10 +7353,11 @@
     "imdb_rating": 8.8,
     "imdb_votes": 66000,
     "tmdb_title": "Blackadder",
-    "note": "Blackadder Goes Forth -> TMDB has one Blackadder series"
+    "note": "Blackadder Goes Forth -> TMDB has one Blackadder series",
+    "chart_rank": 75
    },
    {
-    "rank": 76,
+    "rank": 75,
     "imdb_id": "tt0121220",
     "id": 12971,
     "media_type": "tv",
@@ -7326,10 +7377,11 @@
     ],
     "overview": "Now happily married and with a son, martial arts champion Goku must defend Earth from a series of extraterrestrial invaders bent on destruction.",
     "imdb_rating": 8.8,
-    "imdb_votes": 106000
+    "imdb_votes": 106000,
+    "chart_rank": 76
    },
    {
-    "rank": 77,
+    "rank": 76,
     "imdb_id": "tt0353049",
     "id": 713,
     "media_type": "tv",
@@ -7347,10 +7399,11 @@
     ],
     "overview": "Dave Chappelle's singular point of view is unleashed through a combination of laidback stand-up and street-smart sketches.",
     "imdb_rating": 8.8,
-    "imdb_votes": 80000
+    "imdb_votes": 80000,
+    "chart_rank": 77
    },
    {
-    "rank": 78,
+    "rank": 77,
     "imdb_id": "tt0193676",
     "id": 2382,
     "media_type": "tv",
@@ -7369,10 +7422,11 @@
     ],
     "overview": "High school mathlete Lindsay Weir rebels and begins hanging out with a crowd of burnouts (the \"freaks\"), while her brother Sam Weir navigates a different part of the social universe with his nerdy friends (the \"geeks\").",
     "imdb_rating": 8.7,
-    "imdb_votes": 166000
+    "imdb_votes": 166000,
+    "chart_rank": 78
    },
    {
-    "rank": 79,
+    "rank": 78,
     "imdb_id": "tt5182866",
     "id": 64010,
     "media_type": "tv",
@@ -7390,10 +7444,11 @@
     ],
     "overview": "Take a nostalgic trip back to the late 1980s through the lives of five families and their five teenage kids living in a small neighbourhood in Seoul.",
     "imdb_rating": 9.0,
-    "imdb_votes": 21000
+    "imdb_votes": 21000,
+    "chart_rank": 79
    },
    {
-    "rank": 80,
+    "rank": 79,
     "imdb_id": "tt1831164",
     "id": 40417,
     "media_type": "tv",
@@ -7414,10 +7469,11 @@
     ],
     "overview": "Leyla ile Mecnun is a Turkish television comedy series. The show is set in Istanbul, Turkey and premiered in 2011 on TRT. The series is a surreal and absurd comedy that revolves around the fictional love story between Leyla and Mecnun.",
     "imdb_rating": 9.0,
-    "imdb_votes": 104000
+    "imdb_votes": 104000,
+    "chart_rank": 80
    },
    {
-    "rank": 81,
+    "rank": 80,
     "imdb_id": "tt0112130",
     "id": 1457,
     "media_type": "tv",
@@ -7435,10 +7491,11 @@
     ],
     "overview": "Set in England in the early 19th century, Pride and Prejudice tells the story of Mr and Mrs Bennet's five unmarried daughters after the rich and eligible Mr Bingley and his status-conscious friend, Mr Darcy, have moved into their neighbourhood. While Bingley takes an immediate liking to the eldest Bennet daughter, Jane, Darcy has difficulty adapting to local society and repeatedly clashes with the second-eldest Bennet daughter, Elizabeth.",
     "imdb_rating": 8.8,
-    "imdb_votes": 106000
+    "imdb_votes": 106000,
+    "chart_rank": 81
    },
    {
-    "rank": 82,
+    "rank": 81,
     "imdb_id": "tt0098936",
     "id": 1920,
     "media_type": "tv",
@@ -7457,10 +7514,11 @@
     ],
     "overview": "The body of Laura Palmer is washed up on a beach near the small Washington state town of Twin Peaks. FBI Special Agent Dale Cooper is called in to investigate her strange demise only to uncover a web of mystery that ultimately leads him deep into the heart of the surrounding woodland and his very own soul.",
     "imdb_rating": 8.7,
-    "imdb_votes": 253000
+    "imdb_votes": 253000,
+    "chart_rank": 82
    },
    {
-    "rank": 83,
+    "rank": 82,
     "imdb_id": "tt2707408",
     "id": 63351,
     "media_type": "tv",
@@ -7479,10 +7537,11 @@
     ],
     "overview": "A gritty chronicle of the war against Colombia's infamously violent and powerful drug cartels.",
     "imdb_rating": 8.7,
-    "imdb_votes": 540000
+    "imdb_votes": 540000,
+    "chart_rank": 83
    },
    {
-    "rank": 84,
+    "rank": 83,
     "imdb_id": "tt0074006",
     "id": 5487,
     "media_type": "tv",
@@ -7501,10 +7560,11 @@
     ],
     "overview": "Acclaimed blackly comic historical drama series. Set amidst a web of power, corruption and lies, it chronicles the reigns of the Roman emperors - Augustus, Tiberius, Caligula and finally Claudius.",
     "imdb_rating": 8.8,
-    "imdb_votes": 23000
+    "imdb_votes": 23000,
+    "chart_rank": 84
    },
    {
-    "rank": 85,
+    "rank": 84,
     "imdb_id": "tt0318871",
     "id": 35935,
     "media_type": "tv",
@@ -7524,10 +7584,11 @@
     ],
     "overview": "Guts, a wandering mercenary, joins the Band of the Hawk after being defeated in a duel by Griffith, the group's leader and founder. Together, they dominate every battle, but something menacing lurks in the shadows.",
     "imdb_rating": 8.8,
-    "imdb_votes": 85000
+    "imdb_votes": 85000,
+    "chart_rank": 85
    },
    {
-    "rank": 86,
+    "rank": 85,
     "imdb_id": "tt0121955",
     "id": 2190,
     "media_type": "tv",
@@ -7546,10 +7607,11 @@
     ],
     "overview": "Follow the misadventures of four irreverent grade-schoolers in the quiet, dysfunctional town of South Park, Colorado.",
     "imdb_rating": 8.7,
-    "imdb_votes": 454000
+    "imdb_votes": 454000,
+    "chart_rank": 86
    },
    {
-    "rank": 87,
+    "rank": 86,
     "imdb_id": "tt9432978",
     "id": 89113,
     "media_type": "tv",
@@ -7568,10 +7630,11 @@
     ],
     "overview": "In a city of coaching centers known to train India’s finest collegiate minds, an earnest but unexceptional student and his friends navigate campus life.",
     "imdb_rating": 9.0,
-    "imdb_votes": 94000
+    "imdb_votes": 94000,
+    "chart_rank": 87
    },
    {
-    "rank": 88,
+    "rank": 87,
     "imdb_id": "tt1910272",
     "id": 42509,
     "media_type": "tv",
@@ -7592,10 +7655,11 @@
     ],
     "overview": "A group of friends have customized their microwave so that it can send text messages to the past. As they perform different experiments, an organization named SERN who has been doing their own research on time travel tracks them down and now the characters have to find a way to avoid being captured by them.",
     "imdb_rating": 8.8,
-    "imdb_votes": 99000
+    "imdb_votes": 99000,
+    "chart_rank": 88
    },
    {
-    "rank": 89,
+    "rank": 88,
     "imdb_id": "tt7923710",
     "id": 76662,
     "media_type": "tv",
@@ -7613,10 +7677,11 @@
     ],
     "overview": "In a world that is less than kind, a young woman and a middle-aged man develop a sense of kinship as they find warmth and comfort in one another.",
     "imdb_rating": 9.0,
-    "imdb_votes": 17000
+    "imdb_votes": 17000,
+    "chart_rank": 89
    },
    {
-    "rank": 90,
+    "rank": 89,
     "imdb_id": "tt3718778",
     "id": 61617,
     "media_type": "tv",
@@ -7638,10 +7703,11 @@
     ],
     "overview": "Two brothers, Wirt and Greg, find themselves lost in the Unknown; a strange forest adrift in time. With the help of a wise old Woodsman and a foul-tempered bluebird named Beatrice, Wirt and Greg must travel across this strange land, in hope of finding their way home. Join them as they encounter surprises and obstacles on their journey through the wood.",
     "imdb_rating": 8.7,
-    "imdb_votes": 95000
+    "imdb_votes": 95000,
+    "chart_rank": 90
    },
    {
-    "rank": 91,
+    "rank": 90,
     "imdb_id": "tt2085059",
     "id": 42009,
     "media_type": "tv",
@@ -7661,10 +7727,11 @@
     ],
     "overview": "Twisted tales run wild in this mind-bending anthology series that reveals humanity's worst traits, greatest innovations and more.",
     "imdb_rating": 8.7,
-    "imdb_votes": 755000
+    "imdb_votes": 755000,
+    "chart_rank": 91
    },
    {
-    "rank": 92,
+    "rank": 91,
     "imdb_id": "tt2442560",
     "id": 60574,
     "media_type": "tv",
@@ -7683,10 +7750,11 @@
     ],
     "overview": "A gangster family epic set in 1919 Birmingham, England and centered on a gang who sew razor blades in the peaks of their caps, and their fierce boss Tommy Shelby, who means to move up in the world.",
     "imdb_rating": 8.7,
-    "imdb_votes": 800000
+    "imdb_votes": 800000,
+    "chart_rank": 92
    },
    {
-    "rank": 93,
+    "rank": 92,
     "imdb_id": "tt0248654",
     "id": 1274,
     "media_type": "tv",
@@ -7704,10 +7772,11 @@
     ],
     "overview": "When death is your business, what is your life? For the Fisher family, the world outside of their family-owned funeral home continues to be at least as challenging as—and far less predictable than—the one inside.",
     "imdb_rating": 8.7,
-    "imdb_votes": 172000
+    "imdb_votes": 172000,
+    "chart_rank": 93
    },
    {
-    "rank": 94,
+    "rank": 93,
     "imdb_id": "tt0434706",
     "id": 30981,
     "media_type": "tv",
@@ -7728,10 +7797,11 @@
     ],
     "overview": "Kenzou Tenma, a Japanese brain surgeon in Germany, finds his life in utter turmoil after getting involved with a psychopath that was once a former patient.",
     "imdb_rating": 8.8,
-    "imdb_votes": 78000
+    "imdb_votes": 78000,
+    "chart_rank": 94
    },
    {
-    "rank": 95,
+    "rank": 94,
     "imdb_id": "tt10986410",
     "id": 97546,
     "media_type": "tv",
@@ -7750,10 +7820,11 @@
     ],
     "overview": "Ted Lasso, an American football coach, moves to England when he's hired to manage a soccer team—despite having no experience. With cynical players and a doubtful town, will he get them to see the Ted Lasso Way?",
     "imdb_rating": 8.7,
-    "imdb_votes": 481000
+    "imdb_votes": 481000,
+    "chart_rank": 95
    },
    {
-    "rank": 96,
+    "rank": 95,
     "imdb_id": "tt5753856",
     "id": 70523,
     "media_type": "tv",
@@ -7774,10 +7845,11 @@
     ],
     "overview": "A missing child sets four families on a frantic hunt for answers as they unearth a mind-bending mystery that spans three generations.",
     "imdb_rating": 8.7,
-    "imdb_votes": 569000
+    "imdb_votes": 569000,
+    "chart_rank": 96
    },
    {
-    "rank": 97,
+    "rank": 96,
     "imdb_id": "tt0384766",
     "id": 1891,
     "media_type": "tv",
@@ -7796,10 +7868,11 @@
     ],
     "overview": "A down-to-earth account of the lives of both illustrious and ordinary Romans set in the last days of the Roman Republic.",
     "imdb_rating": 8.7,
-    "imdb_votes": 209000
+    "imdb_votes": 209000,
+    "chart_rank": 97
    },
    {
-    "rank": 98,
+    "rank": 97,
     "imdb_id": "tt0988824",
     "id": 31910,
     "media_type": "tv",
@@ -7819,10 +7892,11 @@
     ],
     "overview": "After 2 and a half years Naruto finally returns to his village of Konoha, and sets about putting his ambitions to work. It will not be easy though as he has amassed a few more dangerous enemies, in the likes of the shinobi organization; Akatsuki.",
     "imdb_rating": 8.7,
-    "imdb_votes": 235000
+    "imdb_votes": 235000,
+    "chart_rank": 98
    },
    {
-    "rank": 99,
+    "rank": 98,
     "imdb_id": "tt0118421",
     "id": 3322,
     "media_type": "tv",
@@ -7841,10 +7915,11 @@
     ],
     "overview": "The daily lives of prisoners in Emerald City, an experimental unit of the Oswald Maximum Security Prison where ingroups - Muslims, Latinos, Italians, Aryans - stick close to their mutual friends and terrorize their mutual enemies.",
     "imdb_rating": 8.7,
-    "imdb_votes": 119000
+    "imdb_votes": 119000,
+    "chart_rank": 99
    },
    {
-    "rank": 100,
+    "rank": 99,
     "imdb_id": "tt5712554",
     "id": 67557,
     "media_type": "tv",
@@ -7864,10 +7939,11 @@
     ],
     "overview": "Jeremy Clarkson, Richard Hammond and James May are back with a show about adventure, excitement and friendship... as long as you accept that the people you call friends are also the ones you find extremely annoying. Sometimes it's even a show about cars. Follow them on their global adventure.",
     "imdb_rating": 8.7,
-    "imdb_votes": 97000
+    "imdb_votes": 97000,
+    "chart_rank": 100
    },
    {
-    "rank": 101,
+    "rank": 100,
     "imdb_id": "tt6741278",
     "id": 95557,
     "media_type": "tv",
@@ -7888,10 +7964,11 @@
     ],
     "overview": "Mark Grayson is a normal teenager except for the fact that his father is the most powerful superhero on the planet. Shortly after his seventeenth birthday, Mark begins to develop powers of his own and enters into his father's tutelage.",
     "imdb_rating": 8.7,
-    "imdb_votes": 357000
+    "imdb_votes": 357000,
+    "chart_rank": 101
    },
    {
-    "rank": 102,
+    "rank": 101,
     "imdb_id": "tt0286486",
     "id": 1414,
     "media_type": "tv",
@@ -7911,10 +7988,11 @@
     ],
     "overview": "The story of an inner-city Los Angeles police precinct where some of the cops aren't above breaking the rules or working against their associates to both keep the streets safe and their self-interests intact.",
     "imdb_rating": 8.7,
-    "imdb_votes": 99000
+    "imdb_votes": 99000,
+    "chart_rank": 102
    },
    {
-    "rank": 103,
+    "rank": 102,
     "imdb_id": "tt1606375",
     "id": 33907,
     "media_type": "tv",
@@ -7932,10 +8010,11 @@
     ],
     "overview": "A chronicle of the lives of the aristocratic Crawley family and their servants in the post-Edwardian era—with great events in history having an effect on their lives and on the British social hierarchy.\n\n",
     "imdb_rating": 8.7,
-    "imdb_votes": 251000
+    "imdb_votes": 251000,
+    "chart_rank": 103
    },
    {
-    "rank": 104,
+    "rank": 103,
     "imdb_id": "tt5687612",
     "id": 67070,
     "media_type": "tv",
@@ -7954,10 +8033,11 @@
     ],
     "overview": "A portrait into the mind of a dry-witted, sexual, angry, porn-watching, grief-riddled woman, trying to make sense of the world. As she hurls herself headlong at modern living, Fleabag is thrown roughly up against the walls of contemporary London, with all its frenetic energy, late nights, and bright lights.",
     "imdb_rating": 8.7,
-    "imdb_votes": 257000
+    "imdb_votes": 257000,
+    "chart_rank": 104
    },
    {
-    "rank": 105,
+    "rank": 104,
     "imdb_id": "tt0407362",
     "id": 1972,
     "media_type": "tv",
@@ -7977,10 +8057,11 @@
     ],
     "overview": "When an old enemy, the Cylons, resurface and obliterate the 12 colonies, the crew of the aged Galactica protect a small civilian fleet - the last of humanity - as they journey toward the fabled 13th colony, Earth.",
     "imdb_rating": 8.7,
-    "imdb_votes": 189000
+    "imdb_votes": 189000,
+    "chart_rank": 105
    },
    {
-    "rank": 106,
+    "rank": 105,
     "imdb_id": "tt0092455",
     "id": 655,
     "media_type": "tv",
@@ -8001,10 +8082,11 @@
     ],
     "overview": "Follow the intergalactic adventures of Capt. Jean-Luc Picard and his loyal crew aboard the all-new USS Enterprise NCC-1701D, as they explore new worlds.",
     "imdb_rating": 8.7,
-    "imdb_votes": 153000
+    "imdb_votes": 153000,
+    "chart_rank": 106
    },
    {
-    "rank": 107,
+    "rank": 106,
     "imdb_id": "tt0804503",
     "id": 1104,
     "media_type": "tv",
@@ -8022,10 +8104,11 @@
     ],
     "overview": "Set in 1960-1970 New York, this sexy, stylized and provocative drama follows the lives of the ruthlessly competitive men and women of Madison Avenue advertising.",
     "imdb_rating": 8.7,
-    "imdb_votes": 297000
+    "imdb_votes": 297000,
+    "chart_rank": 107
    },
    {
-    "rank": 108,
+    "rank": 107,
     "imdb_id": "tt0387764",
     "id": 815,
     "media_type": "tv",
@@ -8043,10 +8126,11 @@
     ],
     "overview": "Two dysfunctional flatmates reveal all their inner thoughts - whether dark, stupid or embarrassing. Or, occasionally, all three...",
     "imdb_rating": 8.7,
-    "imdb_votes": 75000
+    "imdb_votes": 75000,
+    "chart_rank": 108
    },
    {
-    "rank": 109,
+    "rank": 108,
     "imdb_id": "tt16026746",
     "id": 138502,
     "media_type": "tv",
@@ -8066,10 +8150,11 @@
     ],
     "overview": "The X-Men, a band of mutants who use their uncanny gifts to protect a world that hates and fears them, are challenged like never before, forced to face a dangerous and unexpected new future.",
     "imdb_rating": 8.7,
-    "imdb_votes": 61000
+    "imdb_votes": 61000,
+    "chart_rank": 109
    },
    {
-    "rank": 110,
+    "rank": 109,
     "imdb_id": "tt38268282",
     "id": 45790,
     "media_type": "tv",
@@ -8091,10 +8176,11 @@
     "imdb_rating": 9.3,
     "imdb_votes": 32000,
     "tmdb_title": "JoJo's Bizarre Adventure",
-    "note": "Steel Ball Run -> no TMDB entry; parent series JoJo's Bizarre Adventure"
+    "note": "Steel Ball Run -> no TMDB entry; parent series JoJo's Bizarre Adventure",
+    "chart_rank": 110
    },
    {
-    "rank": 111,
+    "rank": 110,
     "imdb_id": "tt0281491",
     "id": 436,
     "media_type": "tv",
@@ -8112,10 +8198,11 @@
     ],
     "overview": "Cult Scottish comedy about the lives of two OAP's (Old Age Pensioners) Jack and Victor and their views on how it used to be in the old days and how bad it is now in the fictional town of Craiglang.",
     "imdb_rating": 8.9,
-    "imdb_votes": 12000
+    "imdb_votes": 12000,
+    "chart_rank": 111
    },
    {
-    "rank": 112,
+    "rank": 111,
     "imdb_id": "tt13309742",
     "id": 225180,
     "media_type": "tv",
@@ -8134,10 +8221,11 @@
     ],
     "overview": "Driven by a dream of revenge against those who made her an outcast in Edo-period Japan, a young warrior cuts a bloody path toward her destiny.",
     "imdb_rating": 8.7,
-    "imdb_votes": 109000
+    "imdb_votes": 109000,
+    "chart_rank": 112
    },
    {
-    "rank": 113,
+    "rank": 112,
     "imdb_id": "tt0096697",
     "id": 456,
     "media_type": "tv",
@@ -8156,31 +8244,11 @@
     ],
     "overview": "Set in Springfield, the average American town, the show focuses on the antics and everyday adventures of the Simpson family; Homer, Marge, Bart, Lisa and Maggie, as well as a virtual cast of thousands. Since the beginning, the series has been a pop culture icon, attracting hundreds of celebrities to guest star. The show has also made name for itself in its fearless satirical take on politics, media and American life in general.",
     "imdb_rating": 8.6,
-    "imdb_votes": 475000
+    "imdb_votes": 475000,
+    "chart_rank": 113
    },
    {
-    "rank": 114,
-    "imdb_id": "tt0158417",
-    "id": 12605,
-    "media_type": "tv",
-    "title": "Mahabharat",
-    "original_title": "महाभारत",
-    "poster_path": "/850vJ2Is5zTYh7lnwhMvwovwRSe.jpg",
-    "backdrop_path": "/a7oZ4AMrR7y3q0xm6VHb4FxXGED.jpg",
-    "release_date": "",
-    "first_air_date": "1988-10-02",
-    "vote_average": 7.2,
-    "vote_count": 42,
-    "popularity": 8.6249,
-    "genre_ids": [
-     18
-    ],
-    "overview": "A dynastic struggle occurs for the throne of Hastinapur, the kingdom ruled by the Kuru clan, between the Kauravas and Pandavas, collateral branches of the clan, which causes the Kurukshetra War.",
-    "imdb_rating": 8.9,
-    "imdb_votes": 28000
-   },
-   {
-    "rank": 115,
+    "rank": 113,
     "imdb_id": "tt6025022",
     "id": 84200,
     "media_type": "tv",
@@ -8200,10 +8268,11 @@
     ],
     "overview": "The galaxy's most powerful superheroes return to battle the allied villains and criminal plots that endanger the universe.",
     "imdb_rating": 8.7,
-    "imdb_votes": 27000
+    "imdb_votes": 27000,
+    "chart_rank": 115
    },
    {
-    "rank": 116,
+    "rank": 114,
     "imdb_id": "tt0412142",
     "id": 1408,
     "media_type": "tv",
@@ -8221,10 +8290,11 @@
     ],
     "overview": "Dr. Gregory House, a drug-addicted, unconventional, misanthropic medical genius, leads a team of diagnosticians at the fictional Princeton–Plainsboro Teaching Hospital in New Jersey.",
     "imdb_rating": 8.7,
-    "imdb_votes": 604000
+    "imdb_votes": 604000,
+    "chart_rank": 116
    },
    {
-    "rank": 117,
+    "rank": 115,
     "imdb_id": "tt0994314",
     "id": 31724,
     "media_type": "tv",
@@ -8245,10 +8315,11 @@
     ],
     "overview": "Japan has been invaded and conquered by the Britannian Empire. Japan is now known as Area 11 and its citizens known as Elevens. The Britannian Empire takes away Japan's autonomous power and imposes its rule through the use of Knightmares. The Empire's rule has never faltered, but cracks have begun to show...",
     "imdb_rating": 8.7,
-    "imdb_votes": 112000
+    "imdb_votes": 112000,
+    "chart_rank": 117
    },
    {
-    "rank": 118,
+    "rank": 116,
     "imdb_id": "tt0086661",
     "id": 799,
     "media_type": "tv",
@@ -8268,10 +8339,11 @@
     ],
     "overview": "Sherlock Holmes, along with his friend Dr. Watson, uses his abilities to take on cases by private clients and those that the Scotland Yard are unable to solve.",
     "imdb_rating": 8.7,
-    "imdb_votes": 28000
+    "imdb_votes": 28000,
+    "chart_rank": 118
    },
    {
-    "rank": 119,
+    "rank": 117,
     "imdb_id": "tt0481256",
     "id": 42705,
     "media_type": "tv",
@@ -8292,10 +8364,11 @@
     ],
     "overview": "Makunouchi Ippo is an ordinary high school student in Japan. Since he spends most of his time away from school helping his mother run the family business, he doesn't get to enjoy his younger years like most teenagers. Always a target for bullying at school (the family fishing business grants him a distinct odor), Ippo's life is one of hardship. One of these after-school bullying sessions turns Ippo's life around for the better, as he is saved by a boxer named Takamura. He decides to follow in Takamura's footsteps and train to become a boxer, giving his life direction and purpose. Ippo's path to perfecting his pugilistic prowess is just beginning...",
     "imdb_rating": 8.8,
-    "imdb_votes": 20000
+    "imdb_votes": 20000,
+    "chart_rank": 119
    },
    {
-    "rank": 120,
+    "rank": 118,
     "imdb_id": "tt2303687",
     "id": 43982,
     "media_type": "tv",
@@ -8315,10 +8388,11 @@
     ],
     "overview": "A drama about the investigations of AC-12, a controversial police anticorruption unit.",
     "imdb_rating": 8.7,
-    "imdb_votes": 83000
+    "imdb_votes": 83000,
+    "chart_rank": 120
    },
    {
-    "rank": 121,
+    "rank": 119,
     "imdb_id": "tt1628033",
     "id": 45,
     "media_type": "tv",
@@ -8337,33 +8411,11 @@
     ],
     "overview": "This fast-paced and stunt-filled motor show tests whether cars, both mundane and extraordinary, live up to their manufacturers' claims. The long-running show travels to locations around the world, performing extreme stunts and challenges to see what the featured cars are capable of doing. The current hosts are Paddy McGuinness, Chris Harris and Andrew \"Freddie\" Flintoff.",
     "imdb_rating": 8.7,
-    "imdb_votes": 139000
+    "imdb_votes": 139000,
+    "chart_rank": 121
    },
    {
-    "rank": 122,
-    "imdb_id": "tt0268093",
-    "id": 1990,
-    "media_type": "tv",
-    "title": "Ramayan",
-    "original_title": "रामायण",
-    "poster_path": "/gIOtRVKHHyPtyGPsLLhzhSYG1QF.jpg",
-    "backdrop_path": "/sjaJaXRjp6FrJccBAWup9a8TQ7f.jpg",
-    "release_date": "",
-    "first_air_date": "1987-06-21",
-    "vote_average": 8.3,
-    "vote_count": 35,
-    "popularity": 6.5056,
-    "genre_ids": [
-     18,
-     10759,
-     10751
-    ],
-    "overview": "Ramayan is a highly successful and phenomenally popular Indian epic television series created, written, and directed by Ramanand Sagar. The 78 episode series originally aired weekly on Doordarshan from 25 January 1987, to 31 July 1988, on Sundays at 9:30 a.m. IST.\n\nIt is a television adaptation of the ancient Indian Hindu religious epic of the same name and is primarily based on Valmiki's Ramayan and Tulsidas' Ramcharitmanas. It is also partly derived from portions of Kamban's Ramavataram and other works.",
-    "imdb_rating": 9.0,
-    "imdb_votes": 29000
-   },
-   {
-    "rank": 123,
+    "rank": 120,
     "imdb_id": "tt0062588",
     "id": 15,
     "media_type": "tv",
@@ -8381,10 +8433,11 @@
     ],
     "overview": "Mister Rogers' Neighborhood is an American children's television series that was created and hosted by namesake Fred Rogers. The series originated in 1963 as Misterogers on CBC Television, and was later debuted in 1966 as Misterogers' Neighborhood on the regional Eastern Educational Network, followed by its US network debut on February 19, 1968, and it aired on NET and its successor, PBS, until August 31, 2001. The series is aimed primarily at preschool ages 2 to 5, but has been stated by PBS as \"appropriate for all ages\". Mister Rogers' Neighborhood was produced by Pittsburgh, Pennsylvania, USA public broadcaster WQED and Rogers' non-profit production company Family Communications, Inc.; previously known as Small World Enterprises prior to 1971, the company was renamed The Fred Rogers Company after Rogers' death.",
     "imdb_rating": 8.8,
-    "imdb_votes": 11000
+    "imdb_votes": 11000,
+    "chart_rank": 123
    },
    {
-    "rank": 124,
+    "rank": 121,
     "imdb_id": "tt0758745",
     "id": 4278,
     "media_type": "tv",
@@ -8402,10 +8455,11 @@
     ],
     "overview": "The trials and triumphs of life in the small town of Dillon, Texas, where high school football is everything.",
     "imdb_rating": 8.7,
-    "imdb_votes": 81000
+    "imdb_votes": 81000,
+    "chart_rank": 124
    },
    {
-    "rank": 125,
+    "rank": 122,
     "imdb_id": "tt0367279",
     "id": 4589,
     "media_type": "tv",
@@ -8423,10 +8477,11 @@
     ],
     "overview": "The story of a wealthy family that lost everything, and the one son who had no choice but to keep them all together.",
     "imdb_rating": 8.6,
-    "imdb_votes": 348000
+    "imdb_votes": 348000,
+    "chart_rank": 125
    },
    {
-    "rank": 126,
+    "rank": 123,
     "imdb_id": "tt1305826",
     "id": 15260,
     "media_type": "tv",
@@ -8446,10 +8501,11 @@
     ],
     "overview": "Young Finn and his shape-shifting dog buddy, Jake, go on a series of surreal adventures as they journey through the postapocalyptic Land of Ooo.",
     "imdb_rating": 8.7,
-    "imdb_votes": 138000
+    "imdb_votes": 138000,
+    "chart_rank": 126
    },
    {
-    "rank": 127,
+    "rank": 124,
     "imdb_id": "tt7472896",
     "id": 81358,
     "media_type": "tv",
@@ -8468,10 +8524,11 @@
     ],
     "overview": "Ray Shoesmith is a father, ex-husband, boyfriend and best friend: tough roles to juggle in the modern age. Even harder when you’re a criminal for hire.",
     "imdb_rating": 8.7,
-    "imdb_votes": 57000
+    "imdb_votes": 57000,
+    "chart_rank": 127
    },
    {
-    "rank": 128,
+    "rank": 125,
     "imdb_id": "tt11280740",
     "id": 95396,
     "media_type": "tv",
@@ -8491,10 +8548,11 @@
     ],
     "overview": "Mark leads a team of office workers whose memories have been surgically divided between their work and personal lives. When a mysterious colleague appears outside of work, it begins a journey to discover the truth about their jobs.",
     "imdb_rating": 8.6,
-    "imdb_votes": 416000
+    "imdb_votes": 416000,
+    "chart_rank": 128
    },
    {
-    "rank": 129,
+    "rank": 126,
     "imdb_id": "tt5555260",
     "id": 67136,
     "media_type": "tv",
@@ -8512,10 +8570,11 @@
     ],
     "overview": "Follows the lives and families of three adults living and growing up in the United States of America in present and past times. As their paths cross and their life stories intertwine in curious ways, we find that several of them share the same birthday - and so much more than anyone would expect.",
     "imdb_rating": 8.7,
-    "imdb_votes": 178000
+    "imdb_votes": 178000,
+    "chart_rank": 129
    },
    {
-    "rank": 130,
+    "rank": 127,
     "imdb_id": "tt5788792",
     "id": 70796,
     "media_type": "tv",
@@ -8534,10 +8593,11 @@
     ],
     "overview": "It’s 1958 Manhattan and Miriam “Midge” Maisel has everything she’s ever wanted - the perfect husband, kids, and Upper West Side apartment. But when her life suddenly takes a turn and Midge must start over, she discovers a previously unknown talent - one that will take her all the way from the comedy clubs of Greenwich Village to a spot on Johnny Carson’s couch.",
     "imdb_rating": 8.6,
-    "imdb_votes": 162000
+    "imdb_votes": 162000,
+    "chart_rank": 130
    },
    {
-    "rank": 131,
+    "rank": 128,
     "imdb_id": "tt10801534",
     "id": 110971,
     "media_type": "tv",
@@ -8556,10 +8616,11 @@
     ],
     "overview": "In a uniquely hilarious odyssey of self-discovery and cultural observation, documentary filmmaker and self-described \"anxious New Yorker\" John Wilson covertly and obsessively films the lives of his fellow New Yorkers while attempting to give everyday advice on relatable topics. The awkward contradictions of modern life are eased by Wilson’s candid, unpolished commentary. Building upon Wilson’s previously released \"how to\" short films, each episode takes wildly unexpected turns but is grounded in John's refreshing honesty.",
     "imdb_rating": 8.7,
-    "imdb_votes": 18000
+    "imdb_votes": 18000,
+    "chart_rank": 131
    },
    {
-    "rank": 132,
+    "rank": 129,
     "imdb_id": "tt0111958",
     "id": 1813,
     "media_type": "tv",
@@ -8577,31 +8638,11 @@
     ],
     "overview": "A crazy comedy about three rather strange parish priests exiled to Craggy Island, a remote island off the Irish west coast.",
     "imdb_rating": 8.6,
-    "imdb_votes": 49000
+    "imdb_votes": 49000,
+    "chart_rank": 132
    },
    {
-    "rank": 133,
-    "imdb_id": "tt14392248",
-    "id": 124411,
-    "media_type": "tv",
-    "title": "Aspirants",
-    "original_title": "आस्पिरेंट्स",
-    "poster_path": "/lG8wK40jH4EX6dbVFI1fzw2E96N.jpg",
-    "backdrop_path": "/1g3856hsrYrSp6gWQMUpwqDw8Nb.jpg",
-    "release_date": "",
-    "first_air_date": "2021-04-07",
-    "vote_average": 7.7,
-    "vote_count": 79,
-    "popularity": 3.7715,
-    "genre_ids": [
-     18
-    ],
-    "overview": "Aspirants is a story of 3 friends - Abhilash, SK, and Guri. The story takes place in the past and the present where the past captures the struggle and the drama behind the making of UPSC CSE aspirants in Old Rajinder Nagar of Delhi, while the present talks about the aftermath. It is the story of three UPSC aspirants journey.",
-    "imdb_rating": 9.1,
-    "imdb_votes": 320000
-   },
-   {
-    "rank": 134,
+    "rank": 130,
     "imdb_id": "tt0459159",
     "id": 4507,
     "media_type": "tv",
@@ -8619,10 +8660,11 @@
     ],
     "overview": "Set in the corridors of power and spin, the Minister for Social Affairs is continually harassed by Number 10's policy enforcer and dependent on his not-so-reliable team of civil servants.",
     "imdb_rating": 8.7,
-    "imdb_votes": 30000
+    "imdb_votes": 30000,
+    "chart_rank": 134
    },
    {
-    "rank": 135,
+    "rank": 131,
     "imdb_id": "tt1795096",
     "id": 39176,
     "media_type": "tv",
@@ -8643,10 +8685,11 @@
     ],
     "overview": "Centered around a personally troubled, officially discredited police chief and his inharmonious police team in Ankara Police Force. Even though the show usually focuses on murders and other crimes that happens on a weekly basis, the undertone of the story leads to an eventual duel between Behzat Ç. and the rotten department officials and bureaucrats.",
     "imdb_rating": 8.8,
-    "imdb_votes": 37000
+    "imdb_votes": 37000,
+    "chart_rank": 135
    },
    {
-    "rank": 136,
+    "rank": 132,
     "imdb_id": "tt0773262",
     "id": 1405,
     "media_type": "tv",
@@ -8666,10 +8709,11 @@
     ],
     "overview": "Dexter Morgan, a blood spatter pattern analyst for the Miami Metro Police also leads a secret life as a serial killer, hunting down criminals who have slipped through the cracks of justice.",
     "imdb_rating": 8.6,
-    "imdb_votes": 965000
+    "imdb_votes": 965000,
+    "chart_rank": 136
    },
    {
-    "rank": 137,
+    "rank": 133,
     "imdb_id": "tt0106179",
     "id": 4087,
     "media_type": "tv",
@@ -8689,10 +8733,11 @@
     ],
     "overview": "The exploits of FBI Special Agents Fox Mulder and Dana Scully who investigate X-Files: marginalized, unsolved cases involving paranormal phenomena. Mulder believes in the existence of aliens and the paranormal while Scully, a skeptic, is assigned to make scientific analyses of Mulder's discoveries that debunk Mulder's work and thus return him to mainstream cases.",
     "imdb_rating": 8.6,
-    "imdb_votes": 279000
+    "imdb_votes": 279000,
+    "chart_rank": 137
    },
    {
-    "rank": 138,
+    "rank": 134,
     "imdb_id": "tt1266020",
     "id": 8592,
     "media_type": "tv",
@@ -8710,10 +8755,11 @@
     ],
     "overview": "In an attempt to beautify her town — and advance her career — Leslie Knope, a mid-level bureaucrat in the Parks and Recreation Department of Pawnee, Indiana, takes on bureaucrats, cranky neighbors, and single-issue fanatics whose weapons are lawsuits, the jumble of city codes, and the democratic process she loves so much.",
     "imdb_rating": 8.6,
-    "imdb_votes": 322000
+    "imdb_votes": 322000,
+    "chart_rank": 138
    },
    {
-    "rank": 139,
+    "rank": 135,
     "imdb_id": "tt13991232",
     "id": 118357,
     "media_type": "tv",
@@ -8732,10 +8778,11 @@
     ],
     "overview": "Follow the Dutton family as they embark on a journey west through the Great Plains toward the last bastion of untamed America. A stark retelling of Western expansion, and an intense study of one family fleeing poverty to seek a better future in America’s promised land — Montana.",
     "imdb_rating": 8.6,
-    "imdb_votes": 174000
+    "imdb_votes": 174000,
+    "chart_rank": 139
    },
    {
-    "rank": 140,
+    "rank": 136,
     "imdb_id": "tt0094525",
     "id": 790,
     "media_type": "tv",
@@ -8755,31 +8802,11 @@
     ],
     "overview": "From England to Egypt, accompanied by his elegant and trustworthy sidekicks, the intelligent yet eccentrically-refined Belgian detective Hercule Poirot pits his wits against a collection of first class deceptions.",
     "imdb_rating": 8.6,
-    "imdb_votes": 61000
+    "imdb_votes": 61000,
+    "chart_rank": 140
    },
    {
-    "rank": 141,
-    "imdb_id": "tt30263074",
-    "id": 240983,
-    "media_type": "tv",
-    "title": "Sapne vs Everyone",
-    "original_title": "सपने vs Everyone",
-    "poster_path": "/ajBMZ9JNpfrecj4xpZz49tCONBm.jpg",
-    "backdrop_path": "/xP8OH1O4DBd6Std0LVprox9cYQD.jpg",
-    "release_date": "",
-    "first_air_date": "2023-12-08",
-    "vote_average": 7.5,
-    "vote_count": 21,
-    "popularity": 3.1712,
-    "genre_ids": [
-     18
-    ],
-    "overview": "Two obsessive dreamers collide with the resistance of expectations, morality and each other.",
-    "imdb_rating": 9.2,
-    "imdb_votes": 88000
-   },
-   {
-    "rank": 142,
+    "rank": 137,
     "imdb_id": "tt3322312",
     "id": 61889,
     "media_type": "tv",
@@ -8799,10 +8826,11 @@
     ],
     "overview": "Lawyer-by-day Matt Murdock uses his heightened senses from being blinded as a young boy to fight crime at night on the streets of Hell’s Kitchen as Daredevil.",
     "imdb_rating": 8.6,
-    "imdb_votes": 546000
+    "imdb_votes": 546000,
+    "chart_rank": 142
    },
    {
-    "rank": 143,
+    "rank": 138,
     "imdb_id": "tt0348914",
     "id": 1406,
     "media_type": "tv",
@@ -8822,10 +8850,11 @@
     ],
     "overview": "The story of the early days of Deadwood, South Dakota; woven around actual historic events with most of the main characters based on real people. Deadwood starts as a gold mining camp and gradually turns from a lawless wild-west community into an organized wild-west civilized town. The story focuses on the real-life characters Seth Bullock and Al Swearengen.",
     "imdb_rating": 8.6,
-    "imdb_votes": 131000
+    "imdb_votes": 131000,
+    "chart_rank": 143
    },
    {
-    "rank": 144,
+    "rank": 139,
     "imdb_id": "tt4786824",
     "id": 65494,
     "media_type": "tv",
@@ -8843,10 +8872,11 @@
     ],
     "overview": "The gripping, decades-spanning inside story of Her Majesty Queen Elizabeth II and the Prime Ministers who shaped Britain's post-war destiny. \n\nThe Crown tells the inside story of two of the most famous addresses in the world – Buckingham Palace and 10 Downing Street – and the intrigues, love lives and machinations behind the great events that shaped the second half of the 20th century. Two houses, two courts, one Crown.",
     "imdb_rating": 8.6,
-    "imdb_votes": 287000
+    "imdb_votes": 287000,
+    "chart_rank": 144
    },
    {
-    "rank": 145,
+    "rank": 140,
     "imdb_id": "tt4288182",
     "id": 65495,
     "media_type": "tv",
@@ -8865,31 +8895,11 @@
     ],
     "overview": "Two cousins work through the Atlanta music scene in order to better their lives and the lives of their families.",
     "imdb_rating": 8.6,
-    "imdb_votes": 101000
+    "imdb_votes": 101000,
+    "chart_rank": 145
    },
    {
-    "rank": 146,
-    "imdb_id": "tt1518542",
-    "id": 4165,
-    "media_type": "tv",
-    "title": "Sarabhai vs Sarabhai",
-    "original_title": "Sarabhai vs Sarabhai",
-    "poster_path": "/b4YbLCWGeaY0YTy2vawNccLmTE6.jpg",
-    "backdrop_path": "/6dO01CoIfDxDxIuqFxOwVjR3aYu.jpg",
-    "release_date": "",
-    "first_air_date": "2004-11-01",
-    "vote_average": 7.0,
-    "vote_count": 57,
-    "popularity": 7.1469,
-    "genre_ids": [
-     35
-    ],
-    "overview": "The show revolves around the lives of the members of an Uber Wealthy - High Society Gujarati family of Cuffe Parade - South Mumbai, whose daughter-in-law is from a middle class Delhi background.",
-    "imdb_rating": 8.8,
-    "imdb_votes": 20000
-   },
-   {
-    "rank": 147,
+    "rank": 141,
     "imdb_id": "tt0096657",
     "id": 4327,
     "media_type": "tv",
@@ -8907,10 +8917,11 @@
     ],
     "overview": "Mr Bean turns simple everyday tasks into chaotic situations and will leave you in stitches as he creates havoc wherever he goes.",
     "imdb_rating": 8.6,
-    "imdb_votes": 155000
+    "imdb_votes": 155000,
+    "chart_rank": 147
    },
    {
-    "rank": 148,
+    "rank": 142,
     "imdb_id": "tt0096639",
     "id": 41692,
     "media_type": "tv",
@@ -8929,10 +8940,11 @@
     ],
     "overview": "A pair of longtime friends and former Texas Rangers crave one last adventure before hanging-up their spurs. After stealing over a thousand head of cattle from rustlers south of the border, they recruit an unlikely crew of hands to drive the herd 3,000 miles north to the grasslands of Montana.",
     "imdb_rating": 8.6,
-    "imdb_votes": 31000
+    "imdb_votes": 31000,
+    "chart_rank": 148
    },
    {
-    "rank": 149,
+    "rank": 143,
     "imdb_id": "tt5290382",
     "id": 67744,
     "media_type": "tv",
@@ -8951,10 +8963,11 @@
     ],
     "overview": "An agent in the FBI's Elite Serial Crime Unit develops profiling techniques as he pursues notorious serial killers and rapists.",
     "imdb_rating": 8.6,
-    "imdb_votes": 410000
+    "imdb_votes": 410000,
+    "chart_rank": 149
    },
    {
-    "rank": 150,
+    "rank": 144,
     "imdb_id": "tt1733785",
     "id": 45016,
     "media_type": "tv",
@@ -8974,10 +8987,11 @@
     ],
     "overview": "When a body is found on the bridge between Denmark and Sweden, right on the border, Danish inspector Martin Rohde and Swedish Saga Norén have to share jurisdiction and work together to find the killer.",
     "imdb_rating": 8.6,
-    "imdb_votes": 86000
+    "imdb_votes": 86000,
+    "chart_rank": 150
    },
    {
-    "rank": 151,
+    "rank": 145,
     "imdb_id": "tt9140342",
     "id": 116174,
     "media_type": "tv",
@@ -8996,10 +9010,11 @@
     ],
     "overview": "A chronicle of five friends during a decade in which everything changed, including the rise of AIDS.",
     "imdb_rating": 8.6,
-    "imdb_votes": 42000
+    "imdb_votes": 42000,
+    "chart_rank": 151
    },
    {
-    "rank": 152,
+    "rank": 146,
     "imdb_id": "tt1856010",
     "id": 1425,
     "media_type": "tv",
@@ -9017,10 +9032,11 @@
     ],
     "overview": "Betrayed by the White House, Congressman Frank Underwood embarks on a ruthless rise to power. Blackmail, seduction and ambition are his weapons.",
     "imdb_rating": 8.6,
-    "imdb_votes": 566000
+    "imdb_votes": 566000,
+    "chart_rank": 152
    },
    {
-    "rank": 153,
+    "rank": 147,
     "imdb_id": "tt3398540",
     "id": 60863,
     "media_type": "tv",
@@ -9040,10 +9056,11 @@
     ],
     "overview": "Inspired by a small-statured pro volleyball player, Hinata creates a volleyball team in his last year of middle school. Unfortunately the team is matched up against the \"King of the Court\" Tobio Kageyama’s team in their first tournament and inevitably lose. After the crushing defeat, Hinata vows to surpass Kageyama After entering high school, Hinata joins the volleyball team only to find that Tobio has also joined.",
     "imdb_rating": 8.7,
-    "imdb_votes": 58000
+    "imdb_votes": 58000,
+    "chart_rank": 153
    },
    {
-    "rank": 154,
+    "rank": 148,
     "imdb_id": "tt0088484",
     "id": 7246,
     "media_type": "tv",
@@ -9063,10 +9080,11 @@
     "imdb_rating": 8.6,
     "imdb_votes": 55000,
     "tmdb_title": "Blackadder",
-    "note": "Blackadder II -> TMDB has one Blackadder series"
+    "note": "Blackadder II -> TMDB has one Blackadder series",
+    "chart_rank": 154
    },
    {
-    "rank": 155,
+    "rank": 149,
     "imdb_id": "tt10332508",
     "id": 89456,
     "media_type": "tv",
@@ -9085,10 +9103,11 @@
     ],
     "overview": "A caveman forms a bond with a dinosaur as they struggle to survive in a hostile world.",
     "imdb_rating": 8.6,
-    "imdb_votes": 32000
+    "imdb_votes": 32000,
+    "chart_rank": 155
    },
    {
-    "rank": 156,
+    "rank": 150,
     "imdb_id": "tt4063800",
     "id": 62476,
     "media_type": "tv",
@@ -9107,10 +9126,11 @@
     ],
     "overview": "Within the DGSE (General Directorate for External Security), a department called the Office Of Legends (BDL) forms and remote pilot the most important agents of the French intelligence services: Clandestine. Immersion in hostile country, their mission is to identify individuals who may be recruited as sources of information. Operating \"under caption\", that is to say in a fabricated identity from scratch, they live for many years in a permanent duplicity. Our hero just returned from a clandestine mission six years in Damascus. But contrary to what is required by safety rules, he does not abandon his legend and the identity under which he lived in Syria, thus putting in danger the whole system.",
     "imdb_rating": 8.7,
-    "imdb_votes": 20000
+    "imdb_votes": 20000,
+    "chart_rank": 156
    },
    {
-    "rank": 157,
+    "rank": 151,
     "imdb_id": "tt8111088",
     "id": 82856,
     "media_type": "tv",
@@ -9129,10 +9149,11 @@
     ],
     "overview": "After the fall of the Galactic Empire, lawlessness has spread throughout the galaxy. A lone gunfighter makes his way through the outer reaches, earning his keep as a bounty hunter.",
     "imdb_rating": 8.6,
-    "imdb_votes": 670000
+    "imdb_votes": 670000,
+    "chart_rank": 157
    },
    {
-    "rank": 158,
+    "rank": 152,
     "imdb_id": "tt9253284",
     "id": 83867,
     "media_type": "tv",
@@ -9152,10 +9173,11 @@
     ],
     "overview": "In an era filled with danger, deception and intrigue, Cassian Andor will discover the difference he can make in the struggle against the tyrannical Galactic Empire. He embarks on a path that is destined to turn him into a rebel hero.",
     "imdb_rating": 8.6,
-    "imdb_votes": 291000
+    "imdb_votes": 291000,
+    "chart_rank": 158
    },
    {
-    "rank": 159,
+    "rank": 153,
     "imdb_id": "tt0229889",
     "id": 47,
     "media_type": "tv",
@@ -9175,10 +9197,11 @@
     ],
     "overview": "The mishaps of Chavo, an 8-year-old Mestizo-Latino American orphan boy who lives in a village. Together with Quico, Chilindrina, Ñoño and La Popis, Chavo experiences a series of humorous entanglements.",
     "imdb_rating": 8.7,
-    "imdb_votes": 18000
+    "imdb_votes": 18000,
+    "chart_rank": 159
    },
    {
-    "rank": 160,
+    "rank": 154,
     "imdb_id": "tt10850932",
     "id": 94796,
     "media_type": "tv",
@@ -9197,10 +9220,11 @@
     ],
     "overview": "A paragliding mishap drops a South Korean heiress in North Korea -- and into the life of an army officer, who decides he will help her hide.",
     "imdb_rating": 8.7,
-    "imdb_votes": 62000
+    "imdb_votes": 62000,
+    "chart_rank": 160
    },
    {
-    "rank": 161,
+    "rank": 155,
     "imdb_id": "tt0080306",
     "id": 4549,
     "media_type": "tv",
@@ -9219,10 +9243,11 @@
     ],
     "overview": "Satirical sitcom set in the office of a UK Cabinet minister, Jim Hacker MP, who struggles with Civil Service bureaucracy and political machinations as he tries to get on with government business.",
     "imdb_rating": 8.6,
-    "imdb_votes": 19000
+    "imdb_votes": 19000,
+    "chart_rank": 161
    },
    {
-    "rank": 162,
+    "rank": 156,
     "imdb_id": "tt13111040",
     "id": 114068,
     "media_type": "tv",
@@ -9240,10 +9265,11 @@
     ],
     "overview": "Oscar-winning producer Al Ruddy’s never before revealed experiences of making the iconic 1972 film The Godfather that Francis Ford Coppola directed and adapted with Mario Puzo.",
     "imdb_rating": 8.6,
-    "imdb_votes": 53000
+    "imdb_votes": 53000,
+    "chart_rank": 162
    },
    {
-    "rank": 163,
+    "rank": 157,
     "imdb_id": "tt27497448",
     "id": 224372,
     "media_type": "tv",
@@ -9263,10 +9289,11 @@
     ],
     "overview": "A century before the events of Game of Thrones, two unlikely heroes wandered Westeros: a young, naive but courageous knight, Ser Duncan the Tall, and his diminutive squire, Egg. Set in an age when the Targaryen line still holds the Iron Throne and the last dragon has not yet passed from living memory, great destinies, powerful foes, and dangerous exploits await these improbable and incomparable friends.",
     "imdb_rating": 8.6,
-    "imdb_votes": 295000
+    "imdb_votes": 295000,
+    "chart_rank": 163
    },
    {
-    "rank": 164,
+    "rank": 158,
     "imdb_id": "tt2788316",
     "id": 126308,
     "media_type": "tv",
@@ -9285,10 +9312,11 @@
     ],
     "overview": "In Japan in the year 1600, at the dawn of a century-defining civil war, Lord Yoshii Toranaga is fighting for his life as his enemies on the Council of Regents unite against him, when a mysterious European ship is found marooned in a nearby fishing village.",
     "imdb_rating": 8.6,
-    "imdb_votes": 256000
+    "imdb_votes": 256000,
+    "chart_rank": 164
    },
    {
-    "rank": 165,
+    "rank": 159,
     "imdb_id": "tt9103932",
     "id": 91724,
     "media_type": "tv",
@@ -9307,10 +9335,11 @@
     ],
     "overview": "Using highly advanced colourisation techniques, critical moments from World War II, from Stalingrad to The Battle of Britain, are shown in a whole new light.",
     "imdb_rating": 8.6,
-    "imdb_votes": 14000
+    "imdb_votes": 14000,
+    "chart_rank": 165
    },
    {
-    "rank": 166,
+    "rank": 160,
     "imdb_id": "tt7562112",
     "id": 79084,
     "media_type": "tv",
@@ -9328,10 +9357,11 @@
     ],
     "overview": "A dance musical that explores the juxtaposition of several segments of 1980s life and society in New York: the ball culture world, the rise of the luxury Trump-era universe and the downtown social and literary scene.",
     "imdb_rating": 8.6,
-    "imdb_votes": 37000
+    "imdb_votes": 37000,
+    "chart_rank": 166
    },
    {
-    "rank": 167,
+    "rank": 161,
     "imdb_id": "tt2049116",
     "id": 61068,
     "media_type": "tv",
@@ -9350,10 +9380,11 @@
     ],
     "overview": "Based on Robert Saviano's bestselling book, this gritty Italian crime drama paints a portrait of the brutal Neapolitan crime organisation the Camorra, as seen through the eyes of Ciro Di Marzo, the obedient and self- confident right-hand man of the clan's godfather, Pietro Savastano.",
     "imdb_rating": 8.6,
-    "imdb_votes": 51000
+    "imdb_votes": 51000,
+    "chart_rank": 167
    },
    {
-    "rank": 168,
+    "rank": 162,
     "imdb_id": "tt0090509",
     "id": 325386,
     "media_type": "tv",
@@ -9373,10 +9404,11 @@
     ],
     "overview": "In the second series of the widely celebrated ITV detective programme, Dr John Watson finds a mystery in an empty house, while Holmes and he later solve the mysteries of an abbey grange, the Musgrave ritual, a second stain, a man with a twisted lip, the priory school, and a half-dozen plaster busts of Bonaparte.",
     "imdb_rating": 8.7,
-    "imdb_votes": 16000
+    "imdb_votes": 16000,
+    "chart_rank": 168
    },
    {
-    "rank": 169,
+    "rank": 163,
     "imdb_id": "tt4508902",
     "id": 63926,
     "media_type": "tv",
@@ -9397,10 +9429,11 @@
     ],
     "overview": "Saitama is a hero who only became a hero for fun. After three years of “special” training, though, he’s become so strong that he’s practically invincible. In fact, he’s too strong—even his mightiest opponents are taken out with a single punch, and it turns out that being devastatingly powerful is actually kind of a bore. With his passion for being a hero lost along with his hair, yet still faced with new enemies every day, how much longer can he keep it going?",
     "imdb_rating": 8.6,
-    "imdb_votes": 233000
+    "imdb_votes": 233000,
+    "chart_rank": 169
    },
    {
-    "rank": 170,
+    "rank": 164,
     "imdb_id": "tt0092324",
     "id": 7246,
     "media_type": "tv",
@@ -9420,10 +9453,11 @@
     "imdb_rating": 8.6,
     "imdb_votes": 51000,
     "tmdb_title": "Blackadder",
-    "note": "Blackadder the Third -> TMDB stub has no poster/backdrop; parent series Blackadder"
+    "note": "Blackadder the Third -> TMDB stub has no poster/backdrop; parent series Blackadder",
+    "chart_rank": 170
    },
    {
-    "rank": 171,
+    "rank": 165,
     "imdb_id": "tt1870479",
     "id": 15621,
     "media_type": "tv",
@@ -9441,10 +9475,11 @@
     ],
     "overview": "A behind-the-scenes look at the people who make a nightly cable-news program. Focusing on a network anchor, his new executive producer, the newsroom staff and their boss, the series tracks their quixotic mission to do the news well in the face of corporate and commercial obstacles-not to mention their own personal entanglements.",
     "imdb_rating": 8.6,
-    "imdb_votes": 137000
+    "imdb_votes": 137000,
+    "chart_rank": 171
    },
    {
-    "rank": 172,
+    "rank": 166,
     "imdb_id": "tt15435876",
     "id": 194764,
     "media_type": "tv",
@@ -9463,10 +9498,11 @@
     ],
     "overview": "With the city in peril following the seawall's collapse, Oswald \"Oz\" Cobb seeks to fill the power vacuum left by the death of Carmine Falcone and finally give his mother Francis the life he's always promised. But first, Oz must confront his enemies and his own demoralizing reputation as \"the Penguin.\"",
     "imdb_rating": 8.6,
-    "imdb_votes": 255000
+    "imdb_votes": 255000,
+    "chart_rank": 172
    },
    {
-    "rank": 173,
+    "rank": 167,
     "imdb_id": "tt4299972",
     "id": 61929,
     "media_type": "tv",
@@ -9485,10 +9521,11 @@
     ],
     "overview": "Robert Durst, scion of NY's billionaire real-estate family, has been accused of three murders but has evaded justice for over 30 years. Durst speaks in this true crime series, revealing secrets of a case that has baffled authorities.",
     "imdb_rating": 8.5,
-    "imdb_votes": 60000
+    "imdb_votes": 60000,
+    "chart_rank": 173
    },
    {
-    "rank": 174,
+    "rank": 168,
     "imdb_id": "tt0106028",
     "id": 4464,
     "media_type": "tv",
@@ -9508,10 +9545,11 @@
     ],
     "overview": "An American police procedural chronicling the work of a fictional version of the Baltimore Police Department's Homicide Unit.",
     "imdb_rating": 8.7,
-    "imdb_votes": 18000
+    "imdb_votes": 18000,
+    "chart_rank": 174
    },
    {
-    "rank": 175,
+    "rank": 169,
     "imdb_id": "tt5421602",
     "id": 70785,
     "media_type": "tv",
@@ -9530,10 +9568,11 @@
     ],
     "overview": "A coming-of-age story about an outsider who, against all odds and numerous challenges, fights for love and acceptance and for her place in the world. The series centers on a young orphaned girl in the late 1890s, who, after an abusive childhood spent in orphanages and the homes of strangers, is mistakenly sent to live with an elderly woman and her aging brother. Over time, 13-year-old Anne will transform their lives and eventually the small town in which they live with her unique spirit, fierce intellect and brilliant imagination.",
     "imdb_rating": 8.6,
-    "imdb_votes": 84000
+    "imdb_votes": 84000,
+    "chart_rank": 175
    },
    {
-    "rank": 176,
+    "rank": 170,
     "imdb_id": "tt0979432",
     "id": 1621,
     "media_type": "tv",
@@ -9552,10 +9591,11 @@
     ],
     "overview": "Atlantic City at the dawn of Prohibition is a place where the rules don't apply. And the man who runs things -- legally and otherwise -- is the town's treasurer, Enoch \"Nucky\" Thompson, who is equal parts politician and gangster.",
     "imdb_rating": 8.5,
-    "imdb_votes": 221000
+    "imdb_votes": 221000,
+    "chart_rank": 176
    },
    {
-    "rank": 177,
+    "rank": 171,
     "imdb_id": "tt4834232",
     "id": 254002,
     "media_type": "tv",
@@ -9576,10 +9616,11 @@
     ],
     "overview": "Critical Role is a weekly actual play series that uses tabletop role-playing game mechanics as a means to explore and develop stories from the vast fantasy worlds of Exandria, Aramán, and beyond, with sweeping narratives intricately woven through collaboration between Game Masters and players.",
     "imdb_rating": 9.0,
-    "imdb_votes": 15000
+    "imdb_votes": 15000,
+    "chart_rank": 177
    },
    {
-    "rank": 178,
+    "rank": 172,
     "imdb_id": "tt9174558",
     "id": 110695,
     "media_type": "tv",
@@ -9598,10 +9639,11 @@
     ],
     "overview": "The story of how one company triggered the worst drug epidemic in American history. Look into the epicenter of America's struggle with opioid addiction, from a distressed Virginia mining community, to the hallways of the DEA, and to the opulence of \"one percenter\" Big Pharma Manhattan.",
     "imdb_rating": 8.6,
-    "imdb_votes": 96000
+    "imdb_votes": 96000,
+    "chart_rank": 178
    },
    {
-    "rank": 179,
+    "rank": 173,
     "imdb_id": "tt1486217",
     "id": 10283,
     "media_type": "tv",
@@ -9621,10 +9663,11 @@
     ],
     "overview": "Smart-mouthed superspy Sterling Archer and his dysfunctional team of secret agents turn dangerous missions into messy misadventures around the globe.",
     "imdb_rating": 8.6,
-    "imdb_votes": 178000
+    "imdb_votes": 178000,
+    "chart_rank": 179
    },
    {
-    "rank": 180,
+    "rank": 174,
     "imdb_id": "tt8595766",
     "id": 81166,
     "media_type": "tv",
@@ -9643,10 +9686,11 @@
     ],
     "overview": "Set in the summer of 1998 it is a story about conflicting emotions towards family members from the eyes of a twelve year old.",
     "imdb_rating": 8.9,
-    "imdb_votes": 28000
+    "imdb_votes": 28000,
+    "chart_rank": 180
    },
    {
-    "rank": 181,
+    "rank": 175,
     "imdb_id": "tt21056886",
     "id": 204154,
     "media_type": "tv",
@@ -9667,10 +9711,11 @@
     ],
     "overview": "When a deep space freighter is damaged by a solar flare its surviving crew are stranded on a beautiful and unforgiving planet. They begin to learn the true nature of this planet as they try to survive long enough to escape or be rescued.",
     "imdb_rating": 8.6,
-    "imdb_votes": 38000
+    "imdb_votes": 38000,
+    "chart_rank": 181
    },
    {
-    "rank": 182,
+    "rank": 176,
     "imdb_id": "tt2063241",
     "id": 58887,
     "media_type": "tv",
@@ -9689,10 +9734,11 @@
     ],
     "overview": "A historical saga about the second caliph and Commander of the Faithful Omar Bin Al-Khattab and his pivotal role in the Islamic State.",
     "imdb_rating": 8.9,
-    "imdb_votes": 11000
+    "imdb_votes": 11000,
+    "chart_rank": 182
    },
    {
-    "rank": 183,
+    "rank": 177,
     "imdb_id": "tt0094517",
     "id": 1952,
     "media_type": "tv",
@@ -9711,10 +9757,11 @@
     ],
     "overview": "A stranded spaceship pilot captured by mad scientists survives a blitz of cheesy B movies by riffing on them with his funny robot pals.",
     "imdb_rating": 8.6,
-    "imdb_votes": 28000
+    "imdb_votes": 28000,
+    "chart_rank": 183
    },
    {
-    "rank": 184,
+    "rank": 178,
     "imdb_id": "tt0053488",
     "id": 339760,
     "media_type": "tv",
@@ -9730,10 +9777,11 @@
     "genre_ids": [],
     "overview": "",
     "imdb_rating": 8.5,
-    "imdb_votes": 38000
+    "imdb_votes": 38000,
+    "chart_rank": 184
    },
    {
-    "rank": 185,
+    "rank": 179,
     "imdb_id": "tt1489428",
     "id": 1436,
     "media_type": "tv",
@@ -9752,10 +9800,11 @@
     ],
     "overview": "A character drama based on the 2001 Elmore Leonard short story \"Fire in the Hole.\" Leonard's tale centers around U.S. Marshal Raylan Givens of Kentucky, a quiet but strong-willed official of the law. The tale covers his high-stakes job, as well as his strained relationships with his ex-wife and father.",
     "imdb_rating": 8.6,
-    "imdb_votes": 134000
+    "imdb_votes": 134000,
+    "chart_rank": 185
    },
    {
-    "rank": 186,
+    "rank": 180,
     "imdb_id": "tt4574334",
     "id": 66732,
     "media_type": "tv",
@@ -9775,10 +9824,11 @@
     ],
     "overview": "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.",
     "imdb_rating": 8.6,
-    "imdb_votes": 1800000
+    "imdb_votes": 1800000,
+    "chart_rank": 186
    },
    {
-    "rank": 187,
+    "rank": 181,
     "imdb_id": "tt0380136",
     "id": 1554,
     "media_type": "tv",
@@ -9797,10 +9847,11 @@
     ],
     "overview": "Comedy quiz show full of quirky facts, in which contestants are rewarded more if their answers are 'quite interesting'.",
     "imdb_rating": 8.6,
-    "imdb_votes": 36000
+    "imdb_votes": 36000,
+    "chart_rank": 187
    },
    {
-    "rank": 188,
+    "rank": 182,
     "imdb_id": "tt0314979",
     "id": 71365,
     "media_type": "tv",
@@ -9820,10 +9871,11 @@
     ],
     "overview": "A re-imagining of the original series in which a \"rag-tag fugitive fleet\" of the last remnants of mankind flees pursuing robots while simultaneously searching for their true home, Earth.",
     "imdb_rating": 8.5,
-    "imdb_votes": 86000
+    "imdb_votes": 86000,
+    "chart_rank": 188
    },
    {
-    "rank": 189,
+    "rank": 183,
     "imdb_id": "tt2701582",
     "id": 44264,
     "media_type": "tv",
@@ -9843,10 +9895,11 @@
     ],
     "overview": "The early days of a young Endeavour Morse, whose experiences as a detective constable with the Oxford City Police will ultimately shape his future.",
     "imdb_rating": 8.6,
-    "imdb_votes": 39000
+    "imdb_votes": 39000,
+    "chart_rank": 189
    },
    {
-    "rank": 190,
+    "rank": 184,
     "imdb_id": "tt1710308",
     "id": 31132,
     "media_type": "tv",
@@ -9867,10 +9920,11 @@
     ],
     "overview": "The surreal misadventures of two best friends - a blue jay and a raccoon - as they seek to liven up their mundane jobs as groundskeepers at the local park.",
     "imdb_rating": 8.6,
-    "imdb_votes": 78000
+    "imdb_votes": 78000,
+    "chart_rank": 190
    },
    {
-    "rank": 191,
+    "rank": 185,
     "imdb_id": "tt0417373",
     "id": 2418,
     "media_type": "tv",
@@ -9891,10 +9945,11 @@
     ],
     "overview": "Hank and Dean Venture, with their father Doctor Venture and faithful bodyguard Brock Samson, go on wild adventures facing megalomaniacs, zombies, and suspicious ninjas, all for the glory of adventure. Or something like that.",
     "imdb_rating": 8.6,
-    "imdb_votes": 31000
+    "imdb_votes": 31000,
+    "chart_rank": 191
    },
    {
-    "rank": 192,
+    "rank": 186,
     "imdb_id": "tt0088509",
     "id": 12609,
     "media_type": "tv",
@@ -9914,10 +9969,11 @@
     ],
     "overview": "Young Goku sets off on a quest with his teenage friend Bulma to find the seven Dragon Balls, which grant whoever possesses them a single wish.",
     "imdb_rating": 8.5,
-    "imdb_votes": 78000
+    "imdb_votes": 78000,
+    "chart_rank": 192
    },
    {
-    "rank": 193,
+    "rank": 187,
     "imdb_id": "tt10802170",
     "id": 204284,
     "media_type": "tv",
@@ -9936,10 +9992,11 @@
     ],
     "overview": "With a construction crew, a legion of actors, and seemingly unlimited resources, Nathan Fielder allows ordinary people to prepare for life's biggest moments by \"rehearsing\" them in carefully crafted simulations of his own design. When a single misstep could shatter your entire world, why leave life to chance?",
     "imdb_rating": 8.5,
-    "imdb_votes": 41000
+    "imdb_votes": 41000,
+    "chart_rank": 193
    },
    {
-    "rank": 194,
+    "rank": 188,
     "imdb_id": "tt0275137",
     "id": 1618,
     "media_type": "tv",
@@ -9959,10 +10016,11 @@
     ],
     "overview": "The long-awaited rebirth of the greatest superhero team of all time: Batman, Superman, Wonder Woman, The Flash, Hawkgirl, Green Lantern, and Martian Manhunter.",
     "imdb_rating": 8.5,
-    "imdb_votes": 59000
+    "imdb_votes": 59000,
+    "chart_rank": 194
    },
    {
-    "rank": 195,
+    "rank": 189,
     "imdb_id": "tt0086831",
     "id": 12597,
     "media_type": "tv",
@@ -9981,10 +10039,11 @@
     ],
     "overview": "James Hacker MP the Government's bumbling minister  for Administrative Affairs is propelled along the corridors of power to the very pinnacle of politics - No. 10.  Could this have possibly have been managed by his trusted Permanent Private Secretary, the formidably political Sir Humphrey Appleby who must move to the “Top Job” in Downing Street to support him, together with his much put upon PPS Bernard Wolley. \n\nWhat could possibly go wrong?",
     "imdb_rating": 8.6,
-    "imdb_votes": 15000
+    "imdb_votes": 15000,
+    "chart_rank": 195
    },
    {
-    "rank": 196,
+    "rank": 190,
     "imdb_id": "tt7908628",
     "id": 83631,
     "media_type": "tv",
@@ -10003,10 +10062,11 @@
     ],
     "overview": "A documentary-style look into the daily (or rather, nightly) lives of a group of vampires in Staten Island who have “lived” together for hundreds and hundreds of years.",
     "imdb_rating": 8.5,
-    "imdb_votes": 131000
+    "imdb_votes": 131000,
+    "chart_rank": 196
    },
    {
-    "rank": 197,
+    "rank": 191,
     "imdb_id": "tt0423731",
     "id": 1063,
     "media_type": "tv",
@@ -10026,10 +10086,11 @@
     ],
     "overview": "Break-dancing but fierce warrior Mugen has to deal with the cold-blooded and conceited Jin, a samurai who believes he is above all. These sworn enemies are brought together by Fuu for a special task.",
     "imdb_rating": 8.5,
-    "imdb_votes": 66000
+    "imdb_votes": 66000,
+    "chart_rank": 197
    },
    {
-    "rank": 198,
+    "rank": 192,
     "imdb_id": "tt0280249",
     "id": 12609,
     "media_type": "tv",
@@ -10051,10 +10112,11 @@
     "imdb_rating": 8.5,
     "imdb_votes": 79000,
     "tmdb_title": "Dragon Ball",
-    "note": "Dragon Ball -> TMDB record exists but carries no IMDb id"
+    "note": "Dragon Ball -> TMDB record exists but carries no IMDb id",
+    "chart_rank": 198
    },
    {
-    "rank": 199,
+    "rank": 193,
     "imdb_id": "tt1641384",
     "id": 33217,
     "media_type": "tv",
@@ -10074,10 +10136,11 @@
     ],
     "overview": "Teenage superheroes strive to prove themselves as members of the Justice League.",
     "imdb_rating": 8.6,
-    "imdb_votes": 52000
+    "imdb_votes": 52000,
+    "chart_rank": 199
    },
    {
-    "rank": 200,
+    "rank": 194,
     "imdb_id": "tt35495073",
     "id": 301507,
     "media_type": "tv",
@@ -10095,10 +10158,11 @@
     ],
     "overview": "Two of the biggest stars in Major League Hockey are bound by ambition, rivalry, and a magnetic pull neither of them fully understands. What begins as a secret fling between two fresh faced rookies evolves into a years-long journey of love, denial, and self-discovery. Over the next eight years, as they chase glory on the ice, they struggle to navigate their feelings for each other. Torn between the sport they live for and the love they can’t ignore, they must decide if there’s room in their fiercely competitive world for something as fragile – and powerful – as real love.",
     "imdb_rating": 8.7,
-    "imdb_votes": 117000
+    "imdb_votes": 117000,
+    "chart_rank": 200
    },
    {
-    "rank": 201,
+    "rank": 195,
     "imdb_id": "tt6763664",
     "id": 72844,
     "media_type": "tv",
@@ -10117,10 +10181,11 @@
     ],
     "overview": "Flashing between past and present, a fractured family confronts haunting memories of their old home and the terrifying events that drove them from it.",
     "imdb_rating": 8.5,
-    "imdb_votes": 342000
+    "imdb_votes": 342000,
+    "chart_rank": 201
    },
    {
-    "rank": 202,
+    "rank": 196,
     "imdb_id": "tt9335498",
     "id": 85937,
     "media_type": "tv",
@@ -10140,10 +10205,11 @@
     ],
     "overview": "After a demon attack leaves his family slain and his sister cursed, Tanjiro embarks upon a perilous journey to find a cure and avenge those he's lost.",
     "imdb_rating": 8.5,
-    "imdb_votes": 242000
+    "imdb_votes": 242000,
+    "chart_rank": 202
    },
    {
-    "rank": 203,
+    "rank": 197,
     "imdb_id": "tt4082744",
     "id": 61828,
     "media_type": "tv",
@@ -10161,10 +10227,11 @@
     ],
     "overview": "The lives of two eccentric metal detectorists, who spend their days plodding along ploughed tracks and open fields, hoping to disturb the tedium by unearthing the fortune of a lifetime.",
     "imdb_rating": 8.6,
-    "imdb_votes": 28000
+    "imdb_votes": 28000,
+    "chart_rank": 203
    },
    {
-    "rank": 204,
+    "rank": 198,
     "imdb_id": "tt0487831",
     "id": 2490,
     "media_type": "tv",
@@ -10182,31 +10249,11 @@
     ],
     "overview": "The comedic misadventures of Roy, Moss, and their grifting supervisor Jen, a 'motley crew' of IT support workers at a large corporation headed by a hotheaded yuppie.",
     "imdb_rating": 8.5,
-    "imdb_votes": 179000
+    "imdb_votes": 179000,
+    "chart_rank": 204
    },
    {
-    "rank": 205,
-    "imdb_id": "tt13868972",
-    "id": 138211,
-    "media_type": "tv",
-    "title": "Rocket Boys",
-    "original_title": "Rocket Boys",
-    "poster_path": "/oCE0UGhIy7VdRV2mZOOCPRlLEoa.jpg",
-    "backdrop_path": "/xhwbLfYfKimKYpzjzk5KOmGIWwX.jpg",
-    "release_date": "",
-    "first_air_date": "2022-02-04",
-    "vote_average": 8.3,
-    "vote_count": 31,
-    "popularity": 3.1064,
-    "genre_ids": [
-     18
-    ],
-    "overview": "Spanning three crucial decades (1940-60s) in the history of India, the story chronicles the life of three great men responsible for launching India's space and nuclear programs respectively: Dr. Homi J. Bhabha, the architect of India's Nuclear Programme, Dr. Vikram Sarabhai, universally acknowledged as the Father of the Indian Space Programme and Dr. A.P.J. Abdul Kalam, the pioneer of modern Indian aerospace and nuclear technology. The season traces the journey of Bhabha and Sarabhai coming to terms with the challenges facing a young, independent nation and their friendship, sacrifice and determination.",
-    "imdb_rating": 8.8,
-    "imdb_votes": 21000
-   },
-   {
-    "rank": 206,
+    "rank": 199,
     "imdb_id": "tt0863046",
     "id": 2742,
     "media_type": "tv",
@@ -10224,10 +10271,11 @@
     ],
     "overview": "The trials and tribulations of a two man, digi-folk band who have moved from New Zealand to New York City in the hope of forging a successful music career. So far they've managed to find a manager (whose \"other\" job is at the New Zealand Consulate), one fan (a married obsessive) and one friend (who owns the local pawn shop) -- but not much else.",
     "imdb_rating": 8.5,
-    "imdb_votes": 71000
+    "imdb_votes": 71000,
+    "chart_rank": 206
    },
    {
-    "rank": 207,
+    "rank": 200,
     "imdb_id": "tt6108262",
     "id": 74647,
     "media_type": "tv",
@@ -10247,10 +10295,11 @@
     ],
     "overview": "A historical fiction drama and thriller set in the turbulent period of the late 1930s in the Balkans as a place where high politics, local interests, capital and crime all merge together.",
     "imdb_rating": 8.8,
-    "imdb_votes": 14000
+    "imdb_votes": 14000,
+    "chart_rank": 207
    },
    {
-    "rank": 208,
+    "rank": 201,
     "imdb_id": "tt4158110",
     "id": 62560,
     "media_type": "tv",
@@ -10269,10 +10318,11 @@
     ],
     "overview": "A young programmer, Elliot, suffers from a debilitating anti-social disorder and decides that he can only connect to people by hacking them. He wields his skills as a weapon to protect the people that he cares about. Elliot finds himself in the intersection between a cybersecurity firm he works for and the underworld organizations that are recruiting him to bring down corporate America.",
     "imdb_rating": 8.5,
-    "imdb_votes": 478000
+    "imdb_votes": 478000,
+    "chart_rank": 208
    },
    {
-    "rank": 209,
+    "rank": 202,
     "imdb_id": "tt0278238",
     "id": 2723,
     "media_type": "tv",
@@ -10292,10 +10342,11 @@
     ],
     "overview": "A great warrior is displaced to the distant future by the evil shape-shifting wizard Aku. The world has become a bleak place under the rule of Aku, segregated into fantastic tribes and ruled by Aku's evil robot warlords. Jack travels this foreign landscape in search of a time portal that can return him to his home time so he can \"undo the future that is Aku!\".",
     "imdb_rating": 8.5,
-    "imdb_votes": 68000
+    "imdb_votes": 68000,
+    "chart_rank": 209
    },
    {
-    "rank": 210,
+    "rank": 203,
     "imdb_id": "tt7120662",
     "id": 76148,
     "media_type": "tv",
@@ -10314,10 +10365,11 @@
     ],
     "overview": "Amidst the political conflict of Northern Ireland in the 1990s, five secondary school students square off with the universal challenges of being a teenager.",
     "imdb_rating": 8.5,
-    "imdb_votes": 81000
+    "imdb_votes": 81000,
+    "chart_rank": 210
    },
    {
-    "rank": 211,
+    "rank": 204,
     "imdb_id": "tt3428912",
     "id": 61244,
     "media_type": "tv",
@@ -10337,10 +10389,11 @@
     ],
     "overview": "Happy Valley is a dark, funny, multi-layered thriller revolving around the personal and professional life of Catherine, a dedicated, experienced, hard-working copper. She is also a bereaved mother who looks after her orphaned grandchild.",
     "imdb_rating": 8.5,
-    "imdb_votes": 76000
+    "imdb_votes": 76000,
+    "chart_rank": 211
    },
    {
-    "rank": 212,
+    "rank": 205,
     "imdb_id": "tt9544034",
     "id": 93352,
     "media_type": "tv",
@@ -10359,10 +10412,11 @@
     ],
     "overview": "The story of a middle-class man who works for a special cell of the National Investigation Agency. While he tries to protect the nation from terrorists, he also has to protect his family from the impact of his secretive, high-pressure, and low paying job.",
     "imdb_rating": 8.6,
-    "imdb_votes": 115000
+    "imdb_votes": 115000,
+    "chart_rank": 212
    },
    {
-    "rank": 213,
+    "rank": 206,
     "imdb_id": "tt10048342",
     "id": 87739,
     "media_type": "tv",
@@ -10380,10 +10434,11 @@
     ],
     "overview": "In a 1950s orphanage, a young girl reveals an astonishing talent for chess and begins an unlikely journey to stardom while grappling with addiction.",
     "imdb_rating": 8.5,
-    "imdb_votes": 685000
+    "imdb_votes": 685000,
+    "chart_rank": 213
    },
    {
-    "rank": 214,
+    "rank": 207,
     "imdb_id": "tt0237123",
     "id": 2719,
     "media_type": "tv",
@@ -10401,10 +10456,11 @@
     ],
     "overview": "Six friends in their thirties navigate dating, sexual adventures,  and mishaps on their quest to find love.",
     "imdb_rating": 8.5,
-    "imdb_votes": 51000
+    "imdb_votes": 51000,
+    "chart_rank": 214
    },
    {
-    "rank": 215,
+    "rank": 208,
     "imdb_id": "tt5897304",
     "id": 67075,
     "media_type": "tv",
@@ -10425,10 +10481,11 @@
     ],
     "overview": "Shigeo Kageyama, a.k.a. \"Mob,\" is a boy who has trouble expressing himself, but who happens to be a powerful esper. Mob is determined to live a normal life and keeps his ESP suppressed, but when his emotions surge to a level of 100%, something terrible happens to him! As he's surrounded by false espers, evil spirits, and mysterious organizations, what will Mob think? What choices will he make?",
     "imdb_rating": 8.5,
-    "imdb_votes": 73000
+    "imdb_votes": 73000,
+    "chart_rank": 215
    },
    {
-    "rank": 216,
+    "rank": 209,
     "imdb_id": "tt0129690",
     "id": 1073,
     "media_type": "tv",
@@ -10446,10 +10503,11 @@
     ],
     "overview": "The fortunes of a former chat show host who is reduced to a lowly slot on Radio Norwich. Alan Partridge is divorced, living in a travel tavern, and desperate for a return to television.",
     "imdb_rating": 8.6,
-    "imdb_votes": 24000
+    "imdb_votes": 24000,
+    "chart_rank": 216
    },
    {
-    "rank": 217,
+    "rank": 210,
     "imdb_id": "tt1534360",
     "id": 32519,
     "media_type": "tv",
@@ -10469,10 +10527,11 @@
     ],
     "overview": "Ömer, a young man returning from military service, is set up by his friends and fiancé and ends up in prison for ten years. He fakes his own death and manages to escape. He re-creates himself as ‘Ezel’, a high-end gambler who is outwardly a successful man, but inwardly driven by one thing - his determination to understand why the people he loved betrayed him, and take his revenge.",
     "imdb_rating": 8.6,
-    "imdb_votes": 45000
+    "imdb_votes": 45000,
+    "chart_rank": 217
    },
    {
-    "rank": 218,
+    "rank": 211,
     "imdb_id": "tt20859920",
     "id": 135157,
     "media_type": "tv",
@@ -10493,10 +10552,11 @@
     ],
     "overview": "She was named Naksu because wherever she went, a trail of heads followed. She performs the alchemy of souls, magic that can change people's bodies and souls, which is forbidden in Daeho, and ends up being chased. Naksu hurriedly abandons her body and attempts the alchemy of souls on a woman passing by. Jang Wook, the son of the King of Daeho, realizes that Mudeok's soul has been changed and helps her. Jang Wook wants to learn Naksu's martial arts and become a sorcerer, and Naksu, in the body of Mudeok, stays by his side so she can recover her strength.",
     "imdb_rating": 8.7,
-    "imdb_votes": 31000
+    "imdb_votes": 31000,
+    "chart_rank": 218
    },
    {
-    "rank": 219,
+    "rank": 212,
     "imdb_id": "tt0403778",
     "id": 2899,
     "media_type": "tv",
@@ -10515,10 +10575,11 @@
     ],
     "overview": "In 2004 Ewan McGregor and Charley Boorman embarked on an epic challenge to bike 20,000-miles across 12 countries and 19 time zones in just 115 days. Watch as two friends ride around the world together and, against all the odds, realize their dream.",
     "imdb_rating": 8.6,
-    "imdb_votes": 17000
+    "imdb_votes": 17000,
+    "chart_rank": 219
    },
    {
-    "rank": 220,
+    "rank": 213,
     "imdb_id": "tt12343534",
     "id": 95479,
     "media_type": "tv",
@@ -10538,10 +10599,11 @@
     ],
     "overview": "Yuji Itadori is a boy with tremendous physical strength, though he lives a completely ordinary high school life. One day, to save a classmate who has been attacked by curses, he eats the finger of Ryomen Sukuna, taking the curse into his own soul. From then on, he shares one body with Ryomen Sukuna. Guided by the most powerful of sorcerers, Satoru Gojo, Itadori is admitted to Tokyo Jujutsu High School, an organization that fights the curses... and thus begins the heroic tale of a boy who became a curse to exorcise a curse, a life from which he could never turn back.",
     "imdb_rating": 8.5,
-    "imdb_votes": 227000
+    "imdb_votes": 227000,
+    "chart_rank": 220
    },
    {
-    "rank": 221,
+    "rank": 214,
     "imdb_id": "tt10590066",
     "id": 108255,
     "media_type": "tv",
@@ -10560,10 +10622,11 @@
     ],
     "overview": "The heartwarming and humorous adventures of a young country vet in the Yorkshire Dales in the 1930s. A remake of the 1978 series.",
     "imdb_rating": 8.6,
-    "imdb_votes": 24000
+    "imdb_votes": 24000,
+    "chart_rank": 221
    },
    {
-    "rank": 222,
+    "rank": 215,
     "imdb_id": "tt4093826",
     "id": 1920,
     "media_type": "tv",
@@ -10584,10 +10647,11 @@
     "imdb_rating": 8.5,
     "imdb_votes": 93000,
     "tmdb_title": "Twin Peaks",
-    "note": "Twin Peaks (2017) -> TMDB stub has no poster/backdrop; parent series Twin Peaks"
+    "note": "Twin Peaks (2017) -> TMDB stub has no poster/backdrop; parent series Twin Peaks",
+    "chart_rank": 222
    },
    {
-    "rank": 223,
+    "rank": 216,
     "imdb_id": "tt5189670",
     "id": 64439,
     "media_type": "tv",
@@ -10606,10 +10670,11 @@
     ],
     "overview": "Filmed over 10 years, this real-life thriller follows a DNA exoneree who, while exposing police corruption, becomes a suspect in a grisly new crime.",
     "imdb_rating": 8.5,
-    "imdb_votes": 110000
+    "imdb_votes": 110000,
+    "chart_rank": 223
    },
    {
-    "rank": 224,
+    "rank": 217,
     "imdb_id": "tt1124373",
     "id": 1409,
     "media_type": "tv",
@@ -10628,10 +10693,11 @@
     ],
     "overview": "The Sons of Anarchy (SOA) are an outlaw motorcycle club with many charters in the United States and overseas. The show focused on the original and founding charter, Sons of Anarchy Motorcycle Club, Redwood Original, often referred to by the acronym SAMCRO, Sam Crow, or simply Redwood Charter. The charter operates both legal and illegal businesses in the small town of Charming, California. They combine gun-running and a garage, and involvement in porn film industry. Clay, the charter president, likes it old school and violent; while Jax, his stepson and the club's VP, has thoughts about changing the way things are done. Their conflict has effects on both the club and their personal relationship, especially when Jax goes on a personal quest to cleanse the SAMCRO name and image.",
     "imdb_rating": 8.5,
-    "imdb_votes": 363000
+    "imdb_votes": 363000,
+    "chart_rank": 224
    },
    {
-    "rank": 225,
+    "rank": 218,
     "imdb_id": "tt36988358",
     "id": 284445,
     "media_type": "tv",
@@ -10651,10 +10717,11 @@
     ],
     "overview": "A Happy alien, Takopi, lands on Earth with one mission: to spread happiness! When he meets Shizuka, a lonely fourth grader, he vows to bring back her smile using his magical Happy Gadgets. But as he uncovers the pain in her life, Takopi learns that true happiness may require more than gadgets.",
     "imdb_rating": 8.7,
-    "imdb_votes": 31000
+    "imdb_votes": 31000,
+    "chart_rank": 225
    },
    {
-    "rank": 226,
+    "rank": 219,
     "imdb_id": "tt0187664",
     "id": 745,
     "media_type": "tv",
@@ -10672,10 +10739,11 @@
     ],
     "overview": "Spaced: the anti-Friends, in that it examines the lives of common 20 somethings, but in a way that is more down to earth and realistic. Here we have Daisy and Tim; two 'young' adults with big dreams just trying to get by in this crazy world. They are thrown together in a common pursuit of tenancy, which they find by posing as a couple. The house has a landlady and an oddball artist living there. The series explores the ins and outs of London living.",
     "imdb_rating": 8.5,
-    "imdb_votes": 61000
+    "imdb_votes": 61000,
+    "chart_rank": 226
    },
    {
-    "rank": 227,
+    "rank": 220,
     "imdb_id": "tt0163507",
     "id": 61018,
     "media_type": "tv",
@@ -10694,10 +10762,11 @@
     ],
     "overview": "The show where everything's made up and the points don't matter. Not a talk show, not a sitcom, not a game show, Whose Line Is It Anyway? is a completely unique concept to network television. Four talented actors perform completely unrehearsed skits and games in front of a studio audience. Host Drew Carey sets the scene, with contributions from the audience, but the actors rely completely on their quick wit and improvisational skills. It's genuinely improvised, so anything can happen - and often does.",
     "imdb_rating": 8.5,
-    "imdb_votes": 50000
+    "imdb_votes": 50000,
+    "chart_rank": 227
    },
    {
-    "rank": 228,
+    "rank": 221,
     "imdb_id": "tt0988818",
     "id": 57041,
     "media_type": "tv",
@@ -10717,10 +10786,11 @@
     ],
     "overview": "In a world where aliens have invaded Edo Period Japan, skyscrapers, trains and motor bikes have replaced the simple life of Earth inhabitants. One man however, still carries the soul of a samurai, Gintoki Sakata, otherwise known as Yorozuya Gin-san. As reckless as he is, Gintoki carries his own resolve and is ready to take on any challenge with his fellow companions.",
     "imdb_rating": 8.7,
-    "imdb_votes": 23000
+    "imdb_votes": 23000,
+    "chart_rank": 228
    },
    {
-    "rank": 229,
+    "rank": 222,
     "imdb_id": "tt2100976",
     "id": 59186,
     "media_type": "tv",
@@ -10739,10 +10809,11 @@
     ],
     "overview": "This hidden-camera series follows four lifelong friends -- Brian \"Q\"' Quinn, James \"Murr\"' Murray, Joe Gatto and Sal Vulcano -- who take dares to an outrageous level. To find out who is best under pressure, the guys compete in awkward and outrageous hidden-camera hijinks with the loser performing what is deemed to be the most-mortifying challenge yet.",
     "imdb_rating": 8.5,
-    "imdb_votes": 53000
+    "imdb_votes": 53000,
+    "chart_rank": 229
    },
    {
-    "rank": 230,
+    "rank": 223,
     "imdb_id": "tt0112159",
     "id": 890,
     "media_type": "tv",
@@ -10762,10 +10833,11 @@
     ],
     "overview": "At the turn of the century, the Angels returned to Earth, seeking to wipe out humanity in an apocalyptic fury. Devastated, mankind's last remnants moved underground to wait for the day when the Angels would come back to finish the job. Fifteen years later, that day has come... but this time, humanity is ready to fight back with terrifying bio-mechanical weapons known as the Evangelions. Watch as Shinji, Rei, Asuka and the rest of the mysterious shadow agency Nerv battle to save earth from total annihilation.",
     "imdb_rating": 8.5,
-    "imdb_votes": 117000
+    "imdb_votes": 117000,
+    "chart_rank": 230
    },
    {
-    "rank": 231,
+    "rank": 224,
     "imdb_id": "tt3895150",
     "id": 61663,
     "media_type": "tv",
@@ -10785,10 +10857,11 @@
     ],
     "overview": "Kousei Arima was a genius pianist until his mother's sudden death took away his ability to play. Each day was dull for Kousei. But, then he meets a violinist named Kaori Miyazono who has an eccentric playing style. Can the heartfelt sounds of the girl's violin lead the boy to play the piano again?",
     "imdb_rating": 8.6,
-    "imdb_votes": 55000
+    "imdb_votes": 55000,
+    "chart_rank": 231
    },
    {
-    "rank": 232,
+    "rank": 225,
     "imdb_id": "tt27446493",
     "id": 212204,
     "media_type": "tv",
@@ -10807,10 +10880,11 @@
     ],
     "overview": "A CODA (child of deaf adult) student born with a gift for music crash lands at an unfamiliar place after time traveling through a suspicious music shop. There, he forms the band Watermelon Sugar with other mysterious youths.",
     "imdb_rating": 8.8,
-    "imdb_votes": 17000
+    "imdb_votes": 17000,
+    "chart_rank": 232
    },
    {
-    "rank": 233,
+    "rank": 226,
     "imdb_id": "tt1190634",
     "id": 76479,
     "media_type": "tv",
@@ -10829,10 +10903,11 @@
     ],
     "overview": "A group of vigilantes known informally as “The Boys” set out to take down corrupt superheroes with no more than blue-collar grit and a willingness to fight dirty.",
     "imdb_rating": 8.5,
-    "imdb_votes": 1000000
+    "imdb_votes": 1000000,
+    "chart_rank": 233
    },
    {
-    "rank": 234,
+    "rank": 227,
     "imdb_id": "tt1513168",
     "id": 32900,
     "media_type": "tv",
@@ -10850,10 +10925,11 @@
     ],
     "overview": "Hosted by Morgan Freeman, Through the Wormhole explores the deepest mysteries of existence - the questions that have puzzled mankind for eternity. What are we made of? What was there before the beginning? Are we really alone? Is there a creator? These questions have been pondered by the most exquisite minds of the human race. Now, science has evolved to the point where hard facts and evidence may be able to provide us with answers instead of philosophical theories. Through the Wormhole brings together the brightest minds and best ideas from the very edges of science - Astrophysics, Astrobiology, Quantum Mechanics, String Theory, and more - to reveal the extraordinary truth of our Universe.",
     "imdb_rating": 8.6,
-    "imdb_votes": 20000
+    "imdb_votes": 20000,
+    "chart_rank": 234
    },
    {
-    "rank": 235,
+    "rank": 228,
     "imdb_id": "tt7278862",
     "id": 78154,
     "media_type": "tv",
@@ -10871,10 +10947,11 @@
     ],
     "overview": "When the most important friend in her life seems to have disappeared without a trace, Elena Greco, a now-elderly woman immersed in a house full of books, turns on her computer and starts writing the story of their friendship.",
     "imdb_rating": 8.6,
-    "imdb_votes": 24000
+    "imdb_votes": 24000,
+    "chart_rank": 235
    },
    {
-    "rank": 236,
+    "rank": 229,
     "imdb_id": "tt0075537",
     "id": 2508,
     "media_type": "tv",
@@ -10892,10 +10969,11 @@
     ],
     "overview": "Jeremy Brown, a language teacher, tries to make a living by teaching English to immigrants. With pupils from India, France, China, and many other countries, his lessons do not always go as planned.",
     "imdb_rating": 8.6,
-    "imdb_votes": 11000
+    "imdb_votes": 11000,
+    "chart_rank": 236
    },
    {
-    "rank": 237,
+    "rank": 230,
     "imdb_id": "tt0290988",
     "id": 3796,
     "media_type": "tv",
@@ -10913,10 +10991,11 @@
     ],
     "overview": "Follow the booze-fueled misadventures of three longtime pals and petty serial criminals who run scams from their Nova Scotia trailer park.",
     "imdb_rating": 8.5,
-    "imdb_votes": 59000
+    "imdb_votes": 59000,
+    "chart_rank": 237
    },
    {
-    "rank": 238,
+    "rank": 231,
     "imdb_id": "tt1492966",
     "id": 32962,
     "media_type": "tv",
@@ -10935,10 +11014,11 @@
     ],
     "overview": "Louis C.K. stars as a fictionalized version of himself; a comedian and newly divorced father raising his two daughters in New York City.",
     "imdb_rating": 8.5,
-    "imdb_votes": 86000
+    "imdb_votes": 86000,
+    "chart_rank": 238
    },
    {
-    "rank": 239,
+    "rank": 232,
     "imdb_id": "tt3526078",
     "id": 61662,
     "media_type": "tv",
@@ -10956,10 +11036,11 @@
     ],
     "overview": "Formerly filthy rich video store magnate Johnny Rose, his soap star wife Moira, and their two kids, über-hipster son David and socialite daughter Alexis, suddenly find themselves broke and forced to live in Schitt's Creek, a small depressing town they once bought as a joke.",
     "imdb_rating": 8.5,
-    "imdb_votes": 179000
+    "imdb_votes": 179000,
+    "chart_rank": 239
    },
    {
-    "rank": 240,
+    "rank": 233,
     "imdb_id": "tt1877368",
     "id": 34549,
     "media_type": "tv",
@@ -10977,10 +11058,11 @@
     ],
     "overview": "This British television baking competition selects from amongst its competitors the best amateur baker. The series is credited with reinvigorating interest in baking throughout the UK, and many of its participants, including winners, have gone on to start a career based on baking.",
     "imdb_rating": 8.6,
-    "imdb_votes": 16000
+    "imdb_votes": 16000,
+    "chart_rank": 240
    },
    {
-    "rank": 241,
+    "rank": 234,
     "imdb_id": "tt0290978",
     "id": 2996,
     "media_type": "tv",
@@ -10998,10 +11080,11 @@
     ],
     "overview": "Nightmare boss. Tedious colleagues. Pointless tasks. Welcome to Wernham Hogg.",
     "imdb_rating": 8.5,
-    "imdb_votes": 135000
+    "imdb_votes": 135000,
+    "chart_rank": 241
    },
    {
-    "rank": 242,
+    "rank": 235,
     "imdb_id": "tt4236770",
     "id": 73586,
     "media_type": "tv",
@@ -11020,10 +11103,11 @@
     ],
     "overview": "Follow the violent world of the Dutton family, who controls the largest contiguous ranch in the United States. Led by their patriarch John Dutton, the family defends their property against constant attack by land developers, an Indian reservation, and America’s first National Park.",
     "imdb_rating": 8.6,
-    "imdb_votes": 326000
+    "imdb_votes": 326000,
+    "chart_rank": 242
    },
    {
-    "rank": 243,
+    "rank": 236,
     "imdb_id": "tt26743760",
     "id": 220542,
     "media_type": "tv",
@@ -11043,10 +11127,11 @@
     ],
     "overview": "Maomao lived a peaceful life with her apothecary father. Until one day, she's sold as a lowly servant to the emperor's palace. But she wasn't meant for a compliant life among royalty. So when imperial heirs fall ill, she decides to step in and find a cure! This catches the eye of Jinshi, a handsome palace official who promotes her. Now, she's making a name for herself solving medical mysteries!",
     "imdb_rating": 8.6,
-    "imdb_votes": 30000
+    "imdb_votes": 30000,
+    "chart_rank": 243
    },
    {
-    "rank": 244,
+    "rank": 237,
     "imdb_id": "tt0118273",
     "id": 63,
     "media_type": "tv",
@@ -11064,10 +11149,11 @@
     ],
     "overview": "Investigative reporter Chris Morris puts modern Britain under the spotlight, and smacks the issues of the day till they bleed. He tackles weighty issues including animals, drugs, sex and skewered celebrities and politicians alike - and in a later episode in 2001, paedophiles.",
     "imdb_rating": 8.6,
-    "imdb_votes": 13000
+    "imdb_votes": 13000,
+    "chart_rank": 244
    },
    {
-    "rank": 245,
+    "rank": 238,
     "imdb_id": "tt0373732",
     "id": 2604,
     "media_type": "tv",
@@ -11087,10 +11173,11 @@
     ],
     "overview": "When Robert “Granddad” Freeman becomes legal guardian to his two grandsons, he moves from the tough south side of Chicago to the upscale neighborhood of Woodcrest (a.k.a. \"The Boondocks\") so he can enjoy his golden years in safety and comfort. But with Huey, a 10-year-old leftist revolutionary, and his eight-year-old misfit brother, Riley, suburbia is about to be shaken up.",
     "imdb_rating": 8.5,
-    "imdb_votes": 44000
+    "imdb_votes": 44000,
+    "chart_rank": 245
    },
    {
-    "rank": 246,
+    "rank": 239,
     "imdb_id": "tt3230854",
     "id": 63639,
     "media_type": "tv",
@@ -11110,10 +11197,11 @@
     ],
     "overview": "A thriller set two hundred years in the future following the case of a missing young woman who brings a hardened detective and a rogue ship's captain together in a race across the solar system to expose the greatest conspiracy in human history.",
     "imdb_rating": 8.5,
-    "imdb_votes": 197000
+    "imdb_votes": 197000,
+    "chart_rank": 246
    },
    {
-    "rank": 247,
+    "rank": 240,
     "imdb_id": "tt12074628",
     "id": 126506,
     "media_type": "tv",
@@ -11133,10 +11221,11 @@
     ],
     "overview": "Smiling Friends Inc. is a small company whose main purpose is to bring happiness and make people smile. The series follows the day-to-day lives and misadventures of its representatives, the lazy, cynical Charlie, and the cheerful, optimistic Pim, as they try to cheer up and comfort the troubled people who call their company's hotline. They receive seemingly simple requests but the jobs turn out to be more complicated than they seem, making it difficult to bring happiness to the world.",
     "imdb_rating": 8.5,
-    "imdb_votes": 34000
+    "imdb_votes": 34000,
+    "chart_rank": 247
    },
    {
-    "rank": 248,
+    "rank": 241,
     "imdb_id": "tt2359704",
     "id": 45790,
     "media_type": "tv",
@@ -11156,10 +11245,11 @@
     ],
     "overview": "Follow the intergenerational feud between the Joestar Family and various forces of evil, the most prominent of which is Dio Brando and his followers.",
     "imdb_rating": 8.6,
-    "imdb_votes": 64000
+    "imdb_votes": 64000,
+    "chart_rank": 248
    },
    {
-    "rank": 249,
+    "rank": 242,
     "imdb_id": "tt2575988",
     "id": 60573,
     "media_type": "tv",
@@ -11177,10 +11267,11 @@
     ],
     "overview": "In the high-tech gold rush of modern Silicon Valley, the people most qualified to succeed are the least capable of handling success. Partially inspired by Mike Judge’s own experiences as a Silicon Valley engineer in the late ‘80s, Silicon Valley is an American sitcom that centers around six programmers who are living together and trying to make it big in the Silicon Valley.",
     "imdb_rating": 8.5,
-    "imdb_votes": 186000
+    "imdb_votes": 186000,
+    "chart_rank": 249
    },
    {
-    "rank": 250,
+    "rank": 243,
     "imdb_id": "tt1983079",
     "id": 39793,
     "media_type": "tv",
@@ -11198,7 +11289,173 @@
     ],
     "overview": "Drama following the lives of a group of midwives working in the poverty-stricken East End of London during the 1950s, based on the best-selling memoirs of Jennifer Worth.",
     "imdb_rating": 8.6,
-    "imdb_votes": 36000
+    "imdb_votes": 36000,
+    "chart_rank": 250
+   },
+   {
+    "rank": 244,
+    "chart_rank": 251,
+    "imdb_id": "tt2699128",
+    "id": 54344,
+    "media_type": "tv",
+    "title": "The Leftovers",
+    "original_title": "The Leftovers",
+    "poster_path": "/NKJdryIFHr245Umq6gXsf7oULW.jpg",
+    "backdrop_path": "/rK9D7R4nzG3YGBktQY7VD5tGdtb.jpg",
+    "release_date": "",
+    "first_air_date": "2014-06-29",
+    "vote_average": 7.674,
+    "vote_count": 1327,
+    "popularity": 23.6866,
+    "genre_ids": [
+     10765,
+     18
+    ],
+    "overview": "When 2% of the world's population abruptly disappears without explanation, the world struggles to understand just what they're supposed to do about it. This is the story of the people who didn't make the cut.",
+    "imdb_rating": 8.3,
+    "imdb_votes": 136183
+   },
+   {
+    "rank": 245,
+    "chart_rank": 252,
+    "imdb_id": "tt1196946",
+    "id": 5920,
+    "media_type": "tv",
+    "title": "The Mentalist",
+    "original_title": "The Mentalist",
+    "poster_path": "/k0kMdO52LpC5JWgd0uWEH7gqcCe.jpg",
+    "backdrop_path": "/rJFqKcmMSttdNP58l0dVzY2NcTA.jpg",
+    "release_date": "",
+    "first_air_date": "2008-09-23",
+    "vote_average": 8.419,
+    "vote_count": 5033,
+    "popularity": 2142.5506,
+    "genre_ids": [
+     80,
+     18,
+     9648
+    ],
+    "overview": "Patrick Jane, a former celebrity psychic medium, uses his razor sharp skills of observation and expertise at \"reading\" people to solve serious crimes with the California Bureau of Investigation.",
+    "imdb_rating": 8.2,
+    "imdb_votes": 263643
+   },
+   {
+    "rank": 246,
+    "chart_rank": 256,
+    "imdb_id": "tt4189022",
+    "id": 62264,
+    "media_type": "tv",
+    "title": "Ash vs Evil Dead",
+    "original_title": "Ash vs Evil Dead",
+    "poster_path": "/9tNtSk46s3f1ePr59p0JG6uacc8.jpg",
+    "backdrop_path": "/bIna9BL7Uny1hM63ntTI9BpRkRJ.jpg",
+    "release_date": "",
+    "first_air_date": "2015-10-31",
+    "vote_average": 7.8,
+    "vote_count": 1831,
+    "popularity": 15.7891,
+    "genre_ids": [
+     35,
+     10759,
+     10765
+    ],
+    "overview": "Bruce Campbell reprises his role as Ash Williams, an aging lothario and chainsaw-handed monster hunter who’s spent the last three decades avoiding maturity, and the terrors of the Evil Dead. But when a Deadite plague threatens to destroy all of mankind, he’s forced to face his demons — both metaphorical and literal.",
+    "imdb_rating": 8.4,
+    "imdb_votes": 87283
+   },
+   {
+    "rank": 247,
+    "chart_rank": 257,
+    "imdb_id": "tt2234222",
+    "id": 56296,
+    "media_type": "tv",
+    "title": "Orphan Black",
+    "original_title": "Orphan Black",
+    "poster_path": "/tjFYkWMafg71sihs1aa7IDx17aS.jpg",
+    "backdrop_path": "/cBmVnbc9KKhsdHCDJU2pibU5Pjs.jpg",
+    "release_date": "",
+    "first_air_date": "2013-03-30",
+    "vote_average": 7.8,
+    "vote_count": 1525,
+    "popularity": 22.8704,
+    "genre_ids": [
+     18,
+     10765
+    ],
+    "overview": "A streetwise hustler is pulled into a compelling conspiracy after witnessing the suicide of a girl who looks just like her.",
+    "imdb_rating": 8.3,
+    "imdb_votes": 126595
+   },
+   {
+    "rank": 248,
+    "chart_rank": 258,
+    "imdb_id": "tt4202274",
+    "id": 340243,
+    "media_type": "tv",
+    "title": "The Filthy Frank Show",
+    "original_title": "The filthy frank show",
+    "poster_path": "/qLxxL1LSxYfC2DWy3NHT025u264.jpg",
+    "backdrop_path": "/oiIGO9A8SBUtRhw44u6KnFQA9tE.jpg",
+    "release_date": "",
+    "first_air_date": "2011-08-05",
+    "vote_average": 7.5,
+    "vote_count": 2,
+    "popularity": 0.4867,
+    "genre_ids": [
+     35
+    ],
+    "overview": "ilthy Frank and his disease ridden friends talk about various subjects and take part in multiple adventures.",
+    "imdb_rating": 9.1,
+    "imdb_votes": 27197,
+    "tmdb_title": "The filthy frank show",
+    "note": "Display title is the IMDb chart title; TMDB record name differs (case only)"
+   },
+   {
+    "rank": 249,
+    "chart_rank": 259,
+    "imdb_id": "tt4955642",
+    "id": 66573,
+    "media_type": "tv",
+    "title": "The Good Place",
+    "original_title": "The Good Place",
+    "poster_path": "/qIhsuhoIYR5yTnDta0IL4senbeN.jpg",
+    "backdrop_path": "/tZmlWeFEMvxrjJhBJJcLNXpSRiG.jpg",
+    "release_date": "",
+    "first_air_date": "2016-09-19",
+    "vote_average": 7.963,
+    "vote_count": 2148,
+    "popularity": 24.9559,
+    "genre_ids": [
+     10765,
+     35
+    ],
+    "overview": "Eleanor Shellstrop, an ordinary woman who, through an extraordinary string of events, enters the afterlife where she comes to realize that she hasn't been a very good person. With the help of her wise afterlife mentor, she's determined to shed her old way of living and discover the awesome (or at least the pretty good) person within.",
+    "imdb_rating": 8.2,
+    "imdb_votes": 227519
+   },
+   {
+    "rank": 250,
+    "chart_rank": 261,
+    "imdb_id": "tt1520211",
+    "id": 1402,
+    "media_type": "tv",
+    "title": "The Walking Dead",
+    "original_title": "The Walking Dead",
+    "poster_path": "/ng3cMtxYKt1OSQYqFlnKWnVsqNO.jpg",
+    "backdrop_path": "/rAOjnEFTuNysY7bot8zonhImGMh.jpg",
+    "release_date": "",
+    "first_air_date": "2010-10-31",
+    "vote_average": 8.1,
+    "vote_count": 18391,
+    "popularity": 116.9307,
+    "genre_ids": [
+     10759,
+     18,
+     10765
+    ],
+    "overview": "Sheriff's deputy Rick Grimes awakens from a coma to find a post-apocalyptic world dominated by flesh-eating zombies. He sets out to find his family and encounters many other survivors along the way.",
+    "imdb_rating": 8.1,
+    "imdb_votes": 1222849
    }
   ]
  }
