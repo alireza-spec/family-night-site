@@ -3612,7 +3612,8 @@ async function loadHome() {
           var _nmMerged = (rows.newM25 || []).slice();
           _nmLive.forEach(function (x) { if (!_nmMerged.some(function (y) { return y.id === x.id; })) _nmMerged.push(x); });
           _nmMerged.sort((a, b) => String(b.release_date || '').localeCompare(String(a.release_date || '')));
-          rows.newM25 = _nmMerged.slice(0, 20);
+          _nmLive = _nmMerged.slice(0, 20);
+          rows.newM25 = _nmLive;
         }
       } catch (e) { /* keep the static row or the snapshot row */ }
     })(),
@@ -3637,7 +3638,8 @@ async function loadHome() {
           var _upMerged = (rows.updates || []).slice();
           _upLive.forEach(function (x) { if (!_upMerged.some(function (y) { return y.id === x.id; })) _upMerged.push(x); });
           _upMerged.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
-          rows.updates = _upMerged.slice(0, 20);
+          _upLive = _upMerged.slice(0, 20);
+          rows.updates = _upLive;
         }
       } catch (e) { /* keep the static row or the snapshot row */ }
     })()
