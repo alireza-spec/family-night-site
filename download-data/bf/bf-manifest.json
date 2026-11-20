@@ -1,0 +1,108 @@
+{
+ "code": "BF",
+ "source": "Babak Film",
+ "entries": 68,
+ "links": 68,
+ "nosub_only_titles": [
+  {
+   "imdb": "tt0368836",
+   "title": "The Lazarus Child",
+   "year": 2004,
+   "nlinks": 1,
+   "note": "NoSub only — needs a Persian-subtitle version"
+  },
+  {
+   "imdb": "tt0472113",
+   "title": "Iron Island",
+   "year": 2005,
+   "nlinks": 1,
+   "note": "NoSub only — needs a Persian-subtitle version"
+  },
+  {
+   "imdb": "tt1277737",
+   "title": "The Stoning of Soraya M.",
+   "year": 2009,
+   "nlinks": 1,
+   "note": "NoSub only — needs a Persian-subtitle version"
+  },
+  {
+   "imdb": "tt1318044",
+   "title": "American Virgin",
+   "year": 2009,
+   "nlinks": 1,
+   "note": "NoSub only — needs a Persian-subtitle version"
+  },
+  {
+   "imdb": "tt1407050",
+   "title": "American Pie Presents: The Book of Love",
+   "year": 2009,
+   "nlinks": 1,
+   "note": "NoSub only — needs a Persian-subtitle version"
+  },
+  {
+   "imdb": "tt1124039",
+   "title": "Echelon Conspiracy",
+   "year": 2009,
+   "nlinks": 1,
+   "note": "NoSub only — needs a Persian-subtitle version"
+  },
+  {
+   "imdb": "tt4145108",
+   "title": "Blood Orange",
+   "year": 2016,
+   "nlinks": 1,
+   "note": "NoSub only — needs a Persian-subtitle version"
+  },
+  {
+   "imdb": "tt5584796",
+   "title": "Tehran Taboo",
+   "year": 2017,
+   "nlinks": 1,
+   "note": "NoSub only — needs a Persian-subtitle version"
+  },
+  {
+   "imdb": "tt3544008",
+   "title": "Boy 7",
+   "year": 2015,
+   "nlinks": 1,
+   "note": "NoSub only — needs a Persian-subtitle version"
+  },
+  {
+   "imdb": "tt10103028",
+   "title": "Blindfire",
+   "year": 2020,
+   "nlinks": 1,
+   "note": "NoSub only — needs a Persian-subtitle version"
+  },
+  {
+   "imdb": "tt4024814",
+   "title": "Fucking Berlin",
+   "year": 2016,
+   "nlinks": 1,
+   "note": "NoSub only — needs a Persian-subtitle version"
+  },
+  {
+   "imdb": "tt12515958",
+   "title": "Innocence",
+   "year": 2020,
+   "nlinks": 1,
+   "note": "NoSub only — needs a Persian-subtitle version"
+  },
+  {
+   "imdb": null,
+   "title": "Addiction",
+   "year": 2023,
+   "nlinks": 1,
+   "note": "NoSub only — needs a Persian-subtitle version"
+  },
+  {
+   "imdb": "tt8959820",
+   "title": "Petta",
+   "year": 2019,
+   "nlinks": 1,
+   "note": "NoSub only — needs a Persian-subtitle version"
+  }
+ ],
+ "cam_only_titles": [],
+ "generated_at": "2026-11-20T23:33:52Z"
+}

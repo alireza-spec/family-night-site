@@ -148081,16 +148081,6 @@
    "src": "TP",
    "nosub": true
   },
-  "movie:24402": {
-   "title": "Emmanuelle",
-   "year": "1974",
-   "votes": 851,
-   "s1": 1,
-   "s2": 0,
-   "verified": "2026-11-20",
-   "src": "TP",
-   "nosub": true
-  },
   "movie:244043": {
    "title": "Deputy Marshal",
    "year": "1949",
@@ -212701,16 +212691,6 @@
    "src": "TP",
    "nosub": true
   },
-  "movie:33166": {
-   "title": "Downhill Racer",
-   "year": "1969",
-   "votes": 116,
-   "s1": 1,
-   "s2": 0,
-   "verified": "2026-11-20",
-   "src": "TP",
-   "nosub": true
-  },
   "movie:331680": {
    "title": "Word of Honour",
    "year": "1973",
@@ -222035,16 +222015,6 @@
    "title": "My Brother Jonathan",
    "year": "1948",
    "votes": 6,
-   "s1": 1,
-   "s2": 0,
-   "verified": "2026-11-20",
-   "src": "TP",
-   "nosub": true
-  },
-  "movie:3479": {
-   "title": "Innocents with Dirty Hands",
-   "year": "1975",
-   "votes": 75,
    "s1": 1,
    "s2": 0,
    "verified": "2026-11-20",
@@ -275075,16 +275045,6 @@
    "title": "Mujeres de medianoche",
    "year": "1969",
    "votes": 7,
-   "s1": 1,
-   "s2": 0,
-   "verified": "2026-11-20",
-   "src": "TP",
-   "nosub": true
-  },
-  "movie:44741": {
-   "title": "Malicious",
-   "year": "1973",
-   "votes": 382,
    "s1": 1,
    "s2": 0,
    "verified": "2026-11-20",
@@ -382131,7 +382091,7 @@
   "1960s": {
    "probed": 9148,
    "qualified": 8784,
-   "added": 8783,
+   "added": 8782,
    "no_server": 364,
    "unresolved": 0,
    "skipped_title_index": 1,
@@ -382140,7 +382100,7 @@
   "1970s": {
    "probed": 11299,
    "qualified": 10796,
-   "added": 10796,
+   "added": 10793,
    "no_server": 503,
    "unresolved": 0,
    "skipped_title_index": 0,
@@ -382148,7 +382108,7 @@
   }
  },
  "totals": {
-  "ext_titles": 38208,
+  "ext_titles": 38204,
   "decades_done": [
    "1910s",
    "1920s",
