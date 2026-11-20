@@ -5931,6 +5931,13 @@ function dlSeriesHtml(groups, posterUrl, title, ctx) {
      the file's encoder token — the `all` override (E7a) never reaches here:
      dlSeriesHtml parses its own specs per link. */
   if (ctx.src === 'sm') Object.keys(eps).forEach(function (k) { eps[k].links.forEach(function (l) { l.sp.enc = 'SM'; }); });
+  /* FN-DN-SRC v1: a DN box shows the DN code in the episode sheets, not
+     the file's encoder token — same gap as SM (E7c): dlSeriesHtml parses
+     its own specs per link, so the `all` override (film path, E7a) never
+     reaches here. DN files carry release-group tokens or none at all
+     (Banana Fish: Erai-raws, not whitelisted — the sheet showed blank).
+     Variety titles keep the file encoder (their src is not 'dn'). */
+  if (ctx.src === 'dn') Object.keys(eps).forEach(function (k) { eps[k].links.forEach(function (l) { l.sp.enc = 'DN'; }); });
   var seasons = [];
   Object.keys(eps).forEach(function (k) { var s = eps[k].season; if (seasons.indexOf(s) < 0) seasons.push(s); });
   seasons.sort(function (a, b) { return (parseInt(a, 10) || 0) - (parseInt(b, 10) || 0); });
