@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-11-20T20:17:00Z",
+ "generated_at": "2026-11-20T21:05:04Z",
  "date": "2026-11-20",
- "source": "IMDb chart (imdb.com/chart/top + /chart/toptv, via Jina Reader proxy, fetched 2026-11-20) — TV backfill 2026-11-20: 7 Indian series without a download link removed from the TV list only (stay in search); backfilled from dataset-recomputed chart ranks 251+ (IMDb WR formula m=25000, C=dataset mean 6.9708)",
+ "source": "IMDb chart (imdb.com/chart/top + /chart/toptv, via Jina Reader proxy, fetched 2026-11-20) — TV backfill v2 2026-11-21: all 26 remaining unlinked TV titles removed from the TV list only (stay in search); backfilled with 26 linked-only replacements from dataset-recomputed chart ranks 262-301 (IMDb WR formula m=25000, C=dataset mean 6.9708)",
  "movies": {
   "results": [
    {
@@ -6428,28 +6428,6 @@
    },
    {
     "rank": 35,
-    "imdb_id": "tt0111893",
-    "id": 16906,
-    "media_type": "tv",
-    "title": "The Beatles Anthology",
-    "original_title": "The Beatles Anthology",
-    "poster_path": "/97zhDkOLlrkaIiIvROPsAMSqnzQ.jpg",
-    "backdrop_path": "/zJjOIxENeaCQJxE06It4ClgxYGh.jpg",
-    "release_date": "",
-    "first_air_date": "1995-11-19",
-    "vote_average": 8.231,
-    "vote_count": 104,
-    "popularity": 4.3366,
-    "genre_ids": [
-     99
-    ],
-    "overview": "A documentary series on the career of The Beatles.",
-    "imdb_rating": 9.1,
-    "imdb_votes": 11000,
-    "chart_rank": 35
-   },
-   {
-    "rank": 36,
     "imdb_id": "tt33043892",
     "id": 259909,
     "media_type": "tv",
@@ -6473,7 +6451,7 @@
     "chart_rank": 36
    },
    {
-    "rank": 37,
+    "rank": 36,
     "imdb_id": "tt0098769",
     "id": 9693,
     "media_type": "tv",
@@ -6496,29 +6474,7 @@
     "chart_rank": 37
    },
    {
-    "rank": 38,
-    "imdb_id": "tt13675832",
-    "id": 115678,
-    "media_type": "tv",
-    "title": "As If",
-    "original_title": "Gibi",
-    "poster_path": "/y1uhSlwcjuzOTxviRDqiMkExnVv.jpg",
-    "backdrop_path": "/p7VgbdDN2LK41JTavzJ9x3i4ktE.jpg",
-    "release_date": "",
-    "first_air_date": "2021-01-01",
-    "vote_average": 8.563,
-    "vote_count": 87,
-    "popularity": 10.8253,
-    "genre_ids": [
-     35
-    ],
-    "overview": "Yılmaz and İlkkan are two friends who are constantly fighting each other. Their biggest feature is always being able to do things that will turn their ordinary lives upside down. They magnify small events incredibly and give you a nervous breakdown. They are the embodiment of the misfortunes, strange events and despair we experience every day.",
-    "imdb_rating": 9.0,
-    "imdb_votes": 38000,
-    "chart_rank": 38
-   },
-   {
-    "rank": 39,
+    "rank": 37,
     "imdb_id": "tt31938062",
     "id": 250307,
     "media_type": "tv",
@@ -6540,7 +6496,7 @@
     "chart_rank": 39
    },
    {
-    "rank": 40,
+    "rank": 38,
     "imdb_id": "tt1865718",
     "id": 40075,
     "media_type": "tv",
@@ -6568,7 +6524,7 @@
     "chart_rank": 40
    },
    {
-    "rank": 41,
+    "rank": 39,
     "imdb_id": "tt0303461",
     "id": 1437,
     "media_type": "tv",
@@ -6592,7 +6548,7 @@
     "chart_rank": 41
    },
    {
-    "rank": 42,
+    "rank": 40,
     "imdb_id": "tt0877057",
     "id": 13916,
     "media_type": "tv",
@@ -6616,7 +6572,7 @@
     "chart_rank": 42
    },
    {
-    "rank": 43,
+    "rank": 41,
     "imdb_id": "tt4934214",
     "id": 63404,
     "media_type": "tv",
@@ -6638,7 +6594,7 @@
     "chart_rank": 43
    },
    {
-    "rank": 44,
+    "rank": 42,
     "imdb_id": "tt22248376",
     "id": 209867,
     "media_type": "tv",
@@ -6663,7 +6619,7 @@
     "chart_rank": 44
    },
    {
-    "rank": 45,
+    "rank": 43,
     "imdb_id": "tt2297757",
     "id": 58957,
     "media_type": "tv",
@@ -6686,7 +6642,7 @@
     "chart_rank": 45
    },
    {
-    "rank": 46,
+    "rank": 44,
     "imdb_id": "tt9735318",
     "id": 128876,
     "media_type": "tv",
@@ -6708,7 +6664,7 @@
     "chart_rank": 46
    },
    {
-    "rank": 47,
+    "rank": 45,
     "imdb_id": "tt0098904",
     "id": 1400,
     "media_type": "tv",
@@ -6730,7 +6686,7 @@
     "chart_rank": 47
    },
    {
-    "rank": 48,
+    "rank": 46,
     "imdb_id": "tt2356777",
     "id": 46648,
     "media_type": "tv",
@@ -6753,7 +6709,7 @@
     "chart_rank": 48
    },
    {
-    "rank": 49,
+    "rank": 47,
     "imdb_id": "tt0213338",
     "id": 30991,
     "media_type": "tv",
@@ -6778,7 +6734,7 @@
     "chart_rank": 49
    },
    {
-    "rank": 50,
+    "rank": 48,
     "imdb_id": "tt0092337",
     "id": 42699,
     "media_type": "tv",
@@ -6800,7 +6756,7 @@
     "chart_rank": 50
    },
    {
-    "rank": 51,
+    "rank": 49,
     "imdb_id": "tt1508238",
     "id": 33189,
     "media_type": "tv",
@@ -6823,7 +6779,7 @@
     "chart_rank": 51
    },
    {
-    "rank": 52,
+    "rank": 50,
     "imdb_id": "tt2802850",
     "id": 60622,
     "media_type": "tv",
@@ -6846,7 +6802,7 @@
     "chart_rank": 52
    },
    {
-    "rank": 53,
+    "rank": 51,
     "imdb_id": "tt0388629",
     "id": 37854,
     "media_type": "tv",
@@ -6870,7 +6826,7 @@
     "chart_rank": 53
    },
    {
-    "rank": 54,
+    "rank": 52,
     "imdb_id": "tt2571774",
     "id": 46664,
     "media_type": "tv",
@@ -6892,7 +6848,7 @@
     "chart_rank": 54
    },
    {
-    "rank": 55,
+    "rank": 53,
     "imdb_id": "tt5622316",
     "id": 85077,
     "media_type": "tv",
@@ -6916,7 +6872,7 @@
     "chart_rank": 55
    },
    {
-    "rank": 56,
+    "rank": 54,
     "imdb_id": "tt0200276",
     "id": 688,
     "media_type": "tv",
@@ -6938,7 +6894,7 @@
     "chart_rank": 56
    },
    {
-    "rank": 57,
+    "rank": 55,
     "imdb_id": "tt7920978",
     "id": 77994,
     "media_type": "tv",
@@ -6962,7 +6918,7 @@
     "chart_rank": 57
    },
    {
-    "rank": 58,
+    "rank": 56,
     "imdb_id": "tt26471411",
     "id": 219246,
     "media_type": "tv",
@@ -6984,7 +6940,7 @@
     "chart_rank": 58
    },
    {
-    "rank": 59,
+    "rank": 57,
     "imdb_id": "tt0108778",
     "id": 1668,
     "media_type": "tv",
@@ -7006,7 +6962,7 @@
     "chart_rank": 59
    },
    {
-    "rank": 60,
+    "rank": 58,
     "imdb_id": "tt7137906",
     "id": 81355,
     "media_type": "tv",
@@ -7028,7 +6984,7 @@
     "chart_rank": 60
    },
    {
-    "rank": 61,
+    "rank": 59,
     "imdb_id": "tt0472954",
     "id": 2710,
     "media_type": "tv",
@@ -7050,7 +7006,7 @@
     "chart_rank": 61
    },
    {
-    "rank": 62,
+    "rank": 60,
     "imdb_id": "tt10233448",
     "id": 88803,
     "media_type": "tv",
@@ -7075,7 +7031,7 @@
     "chart_rank": 62
    },
    {
-    "rank": 63,
+    "rank": 61,
     "imdb_id": "tt14986406",
     "id": 30984,
     "media_type": "tv",
@@ -7101,7 +7057,7 @@
     "chart_rank": 63
    },
    {
-    "rank": 64,
+    "rank": 62,
     "imdb_id": "tt7660850",
     "id": 76331,
     "media_type": "tv",
@@ -7124,7 +7080,7 @@
     "chart_rank": 64
    },
    {
-    "rank": 65,
+    "rank": 63,
     "imdb_id": "tt4742876",
     "id": 63180,
     "media_type": "tv",
@@ -7147,7 +7103,7 @@
     "chart_rank": 65
    },
    {
-    "rank": 66,
+    "rank": 64,
     "imdb_id": "tt3530232",
     "id": 60694,
     "media_type": "tv",
@@ -7171,7 +7127,7 @@
     "chart_rank": 66
    },
    {
-    "rank": 67,
+    "rank": 65,
     "imdb_id": "tt3398228",
     "id": 61222,
     "media_type": "tv",
@@ -7195,7 +7151,7 @@
     "chart_rank": 67
    },
    {
-    "rank": 68,
+    "rank": 66,
     "imdb_id": "tt0264235",
     "id": 4546,
     "media_type": "tv",
@@ -7217,7 +7173,7 @@
     "chart_rank": 68
    },
    {
-    "rank": 69,
+    "rank": 67,
     "imdb_id": "tt12004706",
     "id": 101352,
     "media_type": "tv",
@@ -7240,7 +7196,7 @@
     "chart_rank": 69
    },
    {
-    "rank": 70,
+    "rank": 68,
     "imdb_id": "tt0081834",
     "id": 156249,
     "media_type": "tv",
@@ -7263,7 +7219,7 @@
     "chart_rank": 70
    },
    {
-    "rank": 71,
+    "rank": 69,
     "imdb_id": "tt0063929",
     "id": 849,
     "media_type": "tv",
@@ -7285,7 +7241,7 @@
     "chart_rank": 71
    },
    {
-    "rank": 72,
+    "rank": 70,
     "imdb_id": "tt0072500",
     "id": 2207,
     "media_type": "tv",
@@ -7307,7 +7263,7 @@
     "chart_rank": 72
    },
    {
-    "rank": 73,
+    "rank": 71,
     "imdb_id": "tt0214341",
     "id": 12971,
     "media_type": "tv",
@@ -7333,7 +7289,7 @@
     "chart_rank": 73
    },
    {
-    "rank": 74,
+    "rank": 72,
     "imdb_id": "tt0096548",
     "id": 7246,
     "media_type": "tv",
@@ -7357,7 +7313,7 @@
     "chart_rank": 75
    },
    {
-    "rank": 75,
+    "rank": 73,
     "imdb_id": "tt0121220",
     "id": 12971,
     "media_type": "tv",
@@ -7381,29 +7337,7 @@
     "chart_rank": 76
    },
    {
-    "rank": 76,
-    "imdb_id": "tt0353049",
-    "id": 713,
-    "media_type": "tv",
-    "title": "Chappelle's Show",
-    "original_title": "Chappelle's Show",
-    "poster_path": "/aHpTmNU2wLHokoVpzcnh2VQBJOI.jpg",
-    "backdrop_path": "/m67I7sJNdmvOGs3I6EPdVSaQhl7.jpg",
-    "release_date": "",
-    "first_air_date": "2003-01-22",
-    "vote_average": 8.118,
-    "vote_count": 459,
-    "popularity": 6.9153,
-    "genre_ids": [
-     35
-    ],
-    "overview": "Dave Chappelle's singular point of view is unleashed through a combination of laidback stand-up and street-smart sketches.",
-    "imdb_rating": 8.8,
-    "imdb_votes": 80000,
-    "chart_rank": 77
-   },
-   {
-    "rank": 77,
+    "rank": 74,
     "imdb_id": "tt0193676",
     "id": 2382,
     "media_type": "tv",
@@ -7426,7 +7360,7 @@
     "chart_rank": 78
    },
    {
-    "rank": 78,
+    "rank": 75,
     "imdb_id": "tt5182866",
     "id": 64010,
     "media_type": "tv",
@@ -7448,7 +7382,7 @@
     "chart_rank": 79
    },
    {
-    "rank": 79,
+    "rank": 76,
     "imdb_id": "tt1831164",
     "id": 40417,
     "media_type": "tv",
@@ -7473,7 +7407,7 @@
     "chart_rank": 80
    },
    {
-    "rank": 80,
+    "rank": 77,
     "imdb_id": "tt0112130",
     "id": 1457,
     "media_type": "tv",
@@ -7495,7 +7429,7 @@
     "chart_rank": 81
    },
    {
-    "rank": 81,
+    "rank": 78,
     "imdb_id": "tt0098936",
     "id": 1920,
     "media_type": "tv",
@@ -7518,7 +7452,7 @@
     "chart_rank": 82
    },
    {
-    "rank": 82,
+    "rank": 79,
     "imdb_id": "tt2707408",
     "id": 63351,
     "media_type": "tv",
@@ -7541,30 +7475,7 @@
     "chart_rank": 83
    },
    {
-    "rank": 83,
-    "imdb_id": "tt0074006",
-    "id": 5487,
-    "media_type": "tv",
-    "title": "I, Claudius",
-    "original_title": "I, Claudius",
-    "poster_path": "/oztxNqan7wKvFuCDS55WyUmKNMU.jpg",
-    "backdrop_path": "/ep6X0ekrWS0go3UXPRXmtN6AfNs.jpg",
-    "release_date": "",
-    "first_air_date": "1976-09-20",
-    "vote_average": 7.813,
-    "vote_count": 147,
-    "popularity": 9.129,
-    "genre_ids": [
-     18,
-     10768
-    ],
-    "overview": "Acclaimed blackly comic historical drama series. Set amidst a web of power, corruption and lies, it chronicles the reigns of the Roman emperors - Augustus, Tiberius, Caligula and finally Claudius.",
-    "imdb_rating": 8.8,
-    "imdb_votes": 23000,
-    "chart_rank": 84
-   },
-   {
-    "rank": 84,
+    "rank": 80,
     "imdb_id": "tt0318871",
     "id": 35935,
     "media_type": "tv",
@@ -7588,7 +7499,7 @@
     "chart_rank": 85
    },
    {
-    "rank": 85,
+    "rank": 81,
     "imdb_id": "tt0121955",
     "id": 2190,
     "media_type": "tv",
@@ -7611,7 +7522,7 @@
     "chart_rank": 86
    },
    {
-    "rank": 86,
+    "rank": 82,
     "imdb_id": "tt9432978",
     "id": 89113,
     "media_type": "tv",
@@ -7634,7 +7545,7 @@
     "chart_rank": 87
    },
    {
-    "rank": 87,
+    "rank": 83,
     "imdb_id": "tt1910272",
     "id": 42509,
     "media_type": "tv",
@@ -7659,7 +7570,7 @@
     "chart_rank": 88
    },
    {
-    "rank": 88,
+    "rank": 84,
     "imdb_id": "tt7923710",
     "id": 76662,
     "media_type": "tv",
@@ -7681,7 +7592,7 @@
     "chart_rank": 89
    },
    {
-    "rank": 89,
+    "rank": 85,
     "imdb_id": "tt3718778",
     "id": 61617,
     "media_type": "tv",
@@ -7707,7 +7618,7 @@
     "chart_rank": 90
    },
    {
-    "rank": 90,
+    "rank": 86,
     "imdb_id": "tt2085059",
     "id": 42009,
     "media_type": "tv",
@@ -7731,7 +7642,7 @@
     "chart_rank": 91
    },
    {
-    "rank": 91,
+    "rank": 87,
     "imdb_id": "tt2442560",
     "id": 60574,
     "media_type": "tv",
@@ -7754,7 +7665,7 @@
     "chart_rank": 92
    },
    {
-    "rank": 92,
+    "rank": 88,
     "imdb_id": "tt0248654",
     "id": 1274,
     "media_type": "tv",
@@ -7776,7 +7687,7 @@
     "chart_rank": 93
    },
    {
-    "rank": 93,
+    "rank": 89,
     "imdb_id": "tt0434706",
     "id": 30981,
     "media_type": "tv",
@@ -7801,7 +7712,7 @@
     "chart_rank": 94
    },
    {
-    "rank": 94,
+    "rank": 90,
     "imdb_id": "tt10986410",
     "id": 97546,
     "media_type": "tv",
@@ -7824,7 +7735,7 @@
     "chart_rank": 95
    },
    {
-    "rank": 95,
+    "rank": 91,
     "imdb_id": "tt5753856",
     "id": 70523,
     "media_type": "tv",
@@ -7849,7 +7760,7 @@
     "chart_rank": 96
    },
    {
-    "rank": 96,
+    "rank": 92,
     "imdb_id": "tt0384766",
     "id": 1891,
     "media_type": "tv",
@@ -7872,7 +7783,7 @@
     "chart_rank": 97
    },
    {
-    "rank": 97,
+    "rank": 93,
     "imdb_id": "tt0988824",
     "id": 31910,
     "media_type": "tv",
@@ -7896,7 +7807,7 @@
     "chart_rank": 98
    },
    {
-    "rank": 98,
+    "rank": 94,
     "imdb_id": "tt0118421",
     "id": 3322,
     "media_type": "tv",
@@ -7919,7 +7830,7 @@
     "chart_rank": 99
    },
    {
-    "rank": 99,
+    "rank": 95,
     "imdb_id": "tt5712554",
     "id": 67557,
     "media_type": "tv",
@@ -7943,7 +7854,7 @@
     "chart_rank": 100
    },
    {
-    "rank": 100,
+    "rank": 96,
     "imdb_id": "tt6741278",
     "id": 95557,
     "media_type": "tv",
@@ -7968,7 +7879,7 @@
     "chart_rank": 101
    },
    {
-    "rank": 101,
+    "rank": 97,
     "imdb_id": "tt0286486",
     "id": 1414,
     "media_type": "tv",
@@ -7992,7 +7903,7 @@
     "chart_rank": 102
    },
    {
-    "rank": 102,
+    "rank": 98,
     "imdb_id": "tt1606375",
     "id": 33907,
     "media_type": "tv",
@@ -8014,7 +7925,7 @@
     "chart_rank": 103
    },
    {
-    "rank": 103,
+    "rank": 99,
     "imdb_id": "tt5687612",
     "id": 67070,
     "media_type": "tv",
@@ -8037,7 +7948,7 @@
     "chart_rank": 104
    },
    {
-    "rank": 104,
+    "rank": 100,
     "imdb_id": "tt0407362",
     "id": 1972,
     "media_type": "tv",
@@ -8061,7 +7972,7 @@
     "chart_rank": 105
    },
    {
-    "rank": 105,
+    "rank": 101,
     "imdb_id": "tt0092455",
     "id": 655,
     "media_type": "tv",
@@ -8086,7 +7997,7 @@
     "chart_rank": 106
    },
    {
-    "rank": 106,
+    "rank": 102,
     "imdb_id": "tt0804503",
     "id": 1104,
     "media_type": "tv",
@@ -8108,7 +8019,7 @@
     "chart_rank": 107
    },
    {
-    "rank": 107,
+    "rank": 103,
     "imdb_id": "tt0387764",
     "id": 815,
     "media_type": "tv",
@@ -8130,7 +8041,7 @@
     "chart_rank": 108
    },
    {
-    "rank": 108,
+    "rank": 104,
     "imdb_id": "tt16026746",
     "id": 138502,
     "media_type": "tv",
@@ -8154,7 +8065,7 @@
     "chart_rank": 109
    },
    {
-    "rank": 109,
+    "rank": 105,
     "imdb_id": "tt38268282",
     "id": 45790,
     "media_type": "tv",
@@ -8180,29 +8091,7 @@
     "chart_rank": 110
    },
    {
-    "rank": 110,
-    "imdb_id": "tt0281491",
-    "id": 436,
-    "media_type": "tv",
-    "title": "Still Game",
-    "original_title": "Still Game",
-    "poster_path": "/b5O5zTFlaiwXb8FrqqTA0sihJPO.jpg",
-    "backdrop_path": "/eeNX1xshEAZ663DZgiHdh4xSNhF.jpg",
-    "release_date": "",
-    "first_air_date": "2002-09-06",
-    "vote_average": 8.311,
-    "vote_count": 74,
-    "popularity": 8.9175,
-    "genre_ids": [
-     35
-    ],
-    "overview": "Cult Scottish comedy about the lives of two OAP's (Old Age Pensioners) Jack and Victor and their views on how it used to be in the old days and how bad it is now in the fictional town of Craiglang.",
-    "imdb_rating": 8.9,
-    "imdb_votes": 12000,
-    "chart_rank": 111
-   },
-   {
-    "rank": 111,
+    "rank": 106,
     "imdb_id": "tt13309742",
     "id": 225180,
     "media_type": "tv",
@@ -8225,7 +8114,7 @@
     "chart_rank": 112
    },
    {
-    "rank": 112,
+    "rank": 107,
     "imdb_id": "tt0096697",
     "id": 456,
     "media_type": "tv",
@@ -8248,7 +8137,7 @@
     "chart_rank": 113
    },
    {
-    "rank": 113,
+    "rank": 108,
     "imdb_id": "tt6025022",
     "id": 84200,
     "media_type": "tv",
@@ -8272,7 +8161,7 @@
     "chart_rank": 115
    },
    {
-    "rank": 114,
+    "rank": 109,
     "imdb_id": "tt0412142",
     "id": 1408,
     "media_type": "tv",
@@ -8294,7 +8183,7 @@
     "chart_rank": 116
    },
    {
-    "rank": 115,
+    "rank": 110,
     "imdb_id": "tt0994314",
     "id": 31724,
     "media_type": "tv",
@@ -8319,7 +8208,7 @@
     "chart_rank": 117
    },
    {
-    "rank": 116,
+    "rank": 111,
     "imdb_id": "tt0086661",
     "id": 799,
     "media_type": "tv",
@@ -8343,7 +8232,7 @@
     "chart_rank": 118
    },
    {
-    "rank": 117,
+    "rank": 112,
     "imdb_id": "tt0481256",
     "id": 42705,
     "media_type": "tv",
@@ -8368,31 +8257,7 @@
     "chart_rank": 119
    },
    {
-    "rank": 118,
-    "imdb_id": "tt2303687",
-    "id": 43982,
-    "media_type": "tv",
-    "title": "Line of Duty",
-    "original_title": "Line of Duty",
-    "poster_path": "/pBAp7VfKVQKQIiLRJHZSMGtyXAB.jpg",
-    "backdrop_path": "/5ZLEFPayOJr3KhXPoAnLWdVQJem.jpg",
-    "release_date": "",
-    "first_air_date": "2012-06-26",
-    "vote_average": 8.2,
-    "vote_count": 509,
-    "popularity": 26.5403,
-    "genre_ids": [
-     80,
-     18,
-     9648
-    ],
-    "overview": "A drama about the investigations of AC-12, a controversial police anticorruption unit.",
-    "imdb_rating": 8.7,
-    "imdb_votes": 83000,
-    "chart_rank": 120
-   },
-   {
-    "rank": 119,
+    "rank": 113,
     "imdb_id": "tt1628033",
     "id": 45,
     "media_type": "tv",
@@ -8415,29 +8280,7 @@
     "chart_rank": 121
    },
    {
-    "rank": 120,
-    "imdb_id": "tt0062588",
-    "id": 15,
-    "media_type": "tv",
-    "title": "Mister Rogers' Neighborhood",
-    "original_title": "Mister Rogers' Neighborhood",
-    "poster_path": "/qhbeRYVg120cBmc9XvGxvk6EmJF.jpg",
-    "backdrop_path": "/bvbOrvK0hQveMB6SmQoAwIuRToh.jpg",
-    "release_date": "",
-    "first_air_date": "1967-09-21",
-    "vote_average": 6.12,
-    "vote_count": 129,
-    "popularity": 24.8163,
-    "genre_ids": [
-     10762
-    ],
-    "overview": "Mister Rogers' Neighborhood is an American children's television series that was created and hosted by namesake Fred Rogers. The series originated in 1963 as Misterogers on CBC Television, and was later debuted in 1966 as Misterogers' Neighborhood on the regional Eastern Educational Network, followed by its US network debut on February 19, 1968, and it aired on NET and its successor, PBS, until August 31, 2001. The series is aimed primarily at preschool ages 2 to 5, but has been stated by PBS as \"appropriate for all ages\". Mister Rogers' Neighborhood was produced by Pittsburgh, Pennsylvania, USA public broadcaster WQED and Rogers' non-profit production company Family Communications, Inc.; previously known as Small World Enterprises prior to 1971, the company was renamed The Fred Rogers Company after Rogers' death.",
-    "imdb_rating": 8.8,
-    "imdb_votes": 11000,
-    "chart_rank": 123
-   },
-   {
-    "rank": 121,
+    "rank": 114,
     "imdb_id": "tt0758745",
     "id": 4278,
     "media_type": "tv",
@@ -8459,7 +8302,7 @@
     "chart_rank": 124
    },
    {
-    "rank": 122,
+    "rank": 115,
     "imdb_id": "tt0367279",
     "id": 4589,
     "media_type": "tv",
@@ -8481,7 +8324,7 @@
     "chart_rank": 125
    },
    {
-    "rank": 123,
+    "rank": 116,
     "imdb_id": "tt1305826",
     "id": 15260,
     "media_type": "tv",
@@ -8505,7 +8348,7 @@
     "chart_rank": 126
    },
    {
-    "rank": 124,
+    "rank": 117,
     "imdb_id": "tt7472896",
     "id": 81358,
     "media_type": "tv",
@@ -8528,7 +8371,7 @@
     "chart_rank": 127
    },
    {
-    "rank": 125,
+    "rank": 118,
     "imdb_id": "tt11280740",
     "id": 95396,
     "media_type": "tv",
@@ -8552,7 +8395,7 @@
     "chart_rank": 128
    },
    {
-    "rank": 126,
+    "rank": 119,
     "imdb_id": "tt5555260",
     "id": 67136,
     "media_type": "tv",
@@ -8574,7 +8417,7 @@
     "chart_rank": 129
    },
    {
-    "rank": 127,
+    "rank": 120,
     "imdb_id": "tt5788792",
     "id": 70796,
     "media_type": "tv",
@@ -8597,7 +8440,7 @@
     "chart_rank": 130
    },
    {
-    "rank": 128,
+    "rank": 121,
     "imdb_id": "tt10801534",
     "id": 110971,
     "media_type": "tv",
@@ -8620,7 +8463,7 @@
     "chart_rank": 131
    },
    {
-    "rank": 129,
+    "rank": 122,
     "imdb_id": "tt0111958",
     "id": 1813,
     "media_type": "tv",
@@ -8642,54 +8485,7 @@
     "chart_rank": 132
    },
    {
-    "rank": 130,
-    "imdb_id": "tt0459159",
-    "id": 4507,
-    "media_type": "tv",
-    "title": "The Thick of It",
-    "original_title": "The Thick of It",
-    "poster_path": "/xuOz95tUuXclfnlOID7ejtREYqf.jpg",
-    "backdrop_path": "/rReAn187hBmmk5YoWA7I3amfaUK.jpg",
-    "release_date": "",
-    "first_air_date": "2005-05-19",
-    "vote_average": 8.033,
-    "vote_count": 229,
-    "popularity": 11.6392,
-    "genre_ids": [
-     35
-    ],
-    "overview": "Set in the corridors of power and spin, the Minister for Social Affairs is continually harassed by Number 10's policy enforcer and dependent on his not-so-reliable team of civil servants.",
-    "imdb_rating": 8.7,
-    "imdb_votes": 30000,
-    "chart_rank": 134
-   },
-   {
-    "rank": 131,
-    "imdb_id": "tt1795096",
-    "id": 39176,
-    "media_type": "tv",
-    "title": "Behzat Ç.: An Ankara Policeman",
-    "original_title": "Behzat Ç.: Bir Ankara Polisiyesi",
-    "poster_path": "/aRqNQ5v2tvZ9ZRAXpYik0JamHkm.jpg",
-    "backdrop_path": "/pF1OQe4zaXX9vOwxbxjZzws0CAe.jpg",
-    "release_date": "",
-    "first_air_date": "2010-09-19",
-    "vote_average": 7.6,
-    "vote_count": 89,
-    "popularity": 15.3029,
-    "genre_ids": [
-     18,
-     10768,
-     10759,
-     80
-    ],
-    "overview": "Centered around a personally troubled, officially discredited police chief and his inharmonious police team in Ankara Police Force. Even though the show usually focuses on murders and other crimes that happens on a weekly basis, the undertone of the story leads to an eventual duel between Behzat Ç. and the rotten department officials and bureaucrats.",
-    "imdb_rating": 8.8,
-    "imdb_votes": 37000,
-    "chart_rank": 135
-   },
-   {
-    "rank": 132,
+    "rank": 123,
     "imdb_id": "tt0773262",
     "id": 1405,
     "media_type": "tv",
@@ -8713,7 +8509,7 @@
     "chart_rank": 136
    },
    {
-    "rank": 133,
+    "rank": 124,
     "imdb_id": "tt0106179",
     "id": 4087,
     "media_type": "tv",
@@ -8737,7 +8533,7 @@
     "chart_rank": 137
    },
    {
-    "rank": 134,
+    "rank": 125,
     "imdb_id": "tt1266020",
     "id": 8592,
     "media_type": "tv",
@@ -8759,7 +8555,7 @@
     "chart_rank": 138
    },
    {
-    "rank": 135,
+    "rank": 126,
     "imdb_id": "tt13991232",
     "id": 118357,
     "media_type": "tv",
@@ -8782,7 +8578,7 @@
     "chart_rank": 139
    },
    {
-    "rank": 136,
+    "rank": 127,
     "imdb_id": "tt0094525",
     "id": 790,
     "media_type": "tv",
@@ -8806,7 +8602,7 @@
     "chart_rank": 140
    },
    {
-    "rank": 137,
+    "rank": 128,
     "imdb_id": "tt3322312",
     "id": 61889,
     "media_type": "tv",
@@ -8830,7 +8626,7 @@
     "chart_rank": 142
    },
    {
-    "rank": 138,
+    "rank": 129,
     "imdb_id": "tt0348914",
     "id": 1406,
     "media_type": "tv",
@@ -8854,7 +8650,7 @@
     "chart_rank": 143
    },
    {
-    "rank": 139,
+    "rank": 130,
     "imdb_id": "tt4786824",
     "id": 65494,
     "media_type": "tv",
@@ -8876,7 +8672,7 @@
     "chart_rank": 144
    },
    {
-    "rank": 140,
+    "rank": 131,
     "imdb_id": "tt4288182",
     "id": 65495,
     "media_type": "tv",
@@ -8899,7 +8695,7 @@
     "chart_rank": 145
    },
    {
-    "rank": 141,
+    "rank": 132,
     "imdb_id": "tt0096657",
     "id": 4327,
     "media_type": "tv",
@@ -8921,7 +8717,7 @@
     "chart_rank": 147
    },
    {
-    "rank": 142,
+    "rank": 133,
     "imdb_id": "tt0096639",
     "id": 41692,
     "media_type": "tv",
@@ -8944,7 +8740,7 @@
     "chart_rank": 148
    },
    {
-    "rank": 143,
+    "rank": 134,
     "imdb_id": "tt5290382",
     "id": 67744,
     "media_type": "tv",
@@ -8967,7 +8763,7 @@
     "chart_rank": 149
    },
    {
-    "rank": 144,
+    "rank": 135,
     "imdb_id": "tt1733785",
     "id": 45016,
     "media_type": "tv",
@@ -8991,7 +8787,7 @@
     "chart_rank": 150
    },
    {
-    "rank": 145,
+    "rank": 136,
     "imdb_id": "tt9140342",
     "id": 116174,
     "media_type": "tv",
@@ -9014,7 +8810,7 @@
     "chart_rank": 151
    },
    {
-    "rank": 146,
+    "rank": 137,
     "imdb_id": "tt1856010",
     "id": 1425,
     "media_type": "tv",
@@ -9036,7 +8832,7 @@
     "chart_rank": 152
    },
    {
-    "rank": 147,
+    "rank": 138,
     "imdb_id": "tt3398540",
     "id": 60863,
     "media_type": "tv",
@@ -9060,7 +8856,7 @@
     "chart_rank": 153
    },
    {
-    "rank": 148,
+    "rank": 139,
     "imdb_id": "tt0088484",
     "id": 7246,
     "media_type": "tv",
@@ -9084,7 +8880,7 @@
     "chart_rank": 154
    },
    {
-    "rank": 149,
+    "rank": 140,
     "imdb_id": "tt10332508",
     "id": 89456,
     "media_type": "tv",
@@ -9107,7 +8903,7 @@
     "chart_rank": 155
    },
    {
-    "rank": 150,
+    "rank": 141,
     "imdb_id": "tt4063800",
     "id": 62476,
     "media_type": "tv",
@@ -9130,7 +8926,7 @@
     "chart_rank": 156
    },
    {
-    "rank": 151,
+    "rank": 142,
     "imdb_id": "tt8111088",
     "id": 82856,
     "media_type": "tv",
@@ -9153,7 +8949,7 @@
     "chart_rank": 157
    },
    {
-    "rank": 152,
+    "rank": 143,
     "imdb_id": "tt9253284",
     "id": 83867,
     "media_type": "tv",
@@ -9177,31 +8973,7 @@
     "chart_rank": 158
    },
    {
-    "rank": 153,
-    "imdb_id": "tt0229889",
-    "id": 47,
-    "media_type": "tv",
-    "title": "El Chavo del Ocho",
-    "original_title": "El Chavo del Ocho",
-    "poster_path": "/1TdBpVOASafzfWlnecwW17UL6a5.jpg",
-    "backdrop_path": "/6zzyWTu3p2Diztotbnb0kf128uo.jpg",
-    "release_date": "",
-    "first_air_date": "1973-02-26",
-    "vote_average": 8.1,
-    "vote_count": 2095,
-    "popularity": 31.8344,
-    "genre_ids": [
-     35,
-     10751,
-     18
-    ],
-    "overview": "The mishaps of Chavo, an 8-year-old Mestizo-Latino American orphan boy who lives in a village. Together with Quico, Chilindrina, Ñoño and La Popis, Chavo experiences a series of humorous entanglements.",
-    "imdb_rating": 8.7,
-    "imdb_votes": 18000,
-    "chart_rank": 159
-   },
-   {
-    "rank": 154,
+    "rank": 144,
     "imdb_id": "tt10850932",
     "id": 94796,
     "media_type": "tv",
@@ -9224,7 +8996,7 @@
     "chart_rank": 160
    },
    {
-    "rank": 155,
+    "rank": 145,
     "imdb_id": "tt0080306",
     "id": 4549,
     "media_type": "tv",
@@ -9247,7 +9019,7 @@
     "chart_rank": 161
    },
    {
-    "rank": 156,
+    "rank": 146,
     "imdb_id": "tt13111040",
     "id": 114068,
     "media_type": "tv",
@@ -9269,7 +9041,7 @@
     "chart_rank": 162
    },
    {
-    "rank": 157,
+    "rank": 147,
     "imdb_id": "tt27497448",
     "id": 224372,
     "media_type": "tv",
@@ -9293,7 +9065,7 @@
     "chart_rank": 163
    },
    {
-    "rank": 158,
+    "rank": 148,
     "imdb_id": "tt2788316",
     "id": 126308,
     "media_type": "tv",
@@ -9316,30 +9088,7 @@
     "chart_rank": 164
    },
    {
-    "rank": 159,
-    "imdb_id": "tt9103932",
-    "id": 91724,
-    "media_type": "tv",
-    "title": "Greatest Events of World War II in Colour",
-    "original_title": "Greatest Events of World War II in Colour",
-    "poster_path": "/dZpfRWErT6wyvlgGanhhUM89aQa.jpg",
-    "backdrop_path": "/39pBDj2HRiUXKXXEaxWFk7Q4hGz.jpg",
-    "release_date": "",
-    "first_air_date": "2019-07-12",
-    "vote_average": 8.071,
-    "vote_count": 133,
-    "popularity": 4.0806,
-    "genre_ids": [
-     99,
-     10768
-    ],
-    "overview": "Using highly advanced colourisation techniques, critical moments from World War II, from Stalingrad to The Battle of Britain, are shown in a whole new light.",
-    "imdb_rating": 8.6,
-    "imdb_votes": 14000,
-    "chart_rank": 165
-   },
-   {
-    "rank": 160,
+    "rank": 149,
     "imdb_id": "tt7562112",
     "id": 79084,
     "media_type": "tv",
@@ -9361,7 +9110,7 @@
     "chart_rank": 166
    },
    {
-    "rank": 161,
+    "rank": 150,
     "imdb_id": "tt2049116",
     "id": 61068,
     "media_type": "tv",
@@ -9384,7 +9133,7 @@
     "chart_rank": 167
    },
    {
-    "rank": 162,
+    "rank": 151,
     "imdb_id": "tt0090509",
     "id": 325386,
     "media_type": "tv",
@@ -9408,7 +9157,7 @@
     "chart_rank": 168
    },
    {
-    "rank": 163,
+    "rank": 152,
     "imdb_id": "tt4508902",
     "id": 63926,
     "media_type": "tv",
@@ -9433,7 +9182,7 @@
     "chart_rank": 169
    },
    {
-    "rank": 164,
+    "rank": 153,
     "imdb_id": "tt0092324",
     "id": 7246,
     "media_type": "tv",
@@ -9457,7 +9206,7 @@
     "chart_rank": 170
    },
    {
-    "rank": 165,
+    "rank": 154,
     "imdb_id": "tt1870479",
     "id": 15621,
     "media_type": "tv",
@@ -9479,7 +9228,7 @@
     "chart_rank": 171
    },
    {
-    "rank": 166,
+    "rank": 155,
     "imdb_id": "tt15435876",
     "id": 194764,
     "media_type": "tv",
@@ -9502,7 +9251,7 @@
     "chart_rank": 172
    },
    {
-    "rank": 167,
+    "rank": 156,
     "imdb_id": "tt4299972",
     "id": 61929,
     "media_type": "tv",
@@ -9525,31 +9274,7 @@
     "chart_rank": 173
    },
    {
-    "rank": 168,
-    "imdb_id": "tt0106028",
-    "id": 4464,
-    "media_type": "tv",
-    "title": "Homicide: Life on the Street",
-    "original_title": "Homicide: Life on the Street",
-    "poster_path": "/nb5310xlFjx5r9TnpKoaOTQsAlP.jpg",
-    "backdrop_path": "/sEkUddzvrgRd70o28aRiZdwdq2p.jpg",
-    "release_date": "",
-    "first_air_date": "1993-01-31",
-    "vote_average": 8.118,
-    "vote_count": 153,
-    "popularity": 41.4423,
-    "genre_ids": [
-     9648,
-     18,
-     80
-    ],
-    "overview": "An American police procedural chronicling the work of a fictional version of the Baltimore Police Department's Homicide Unit.",
-    "imdb_rating": 8.7,
-    "imdb_votes": 18000,
-    "chart_rank": 174
-   },
-   {
-    "rank": 169,
+    "rank": 157,
     "imdb_id": "tt5421602",
     "id": 70785,
     "media_type": "tv",
@@ -9572,7 +9297,7 @@
     "chart_rank": 175
    },
    {
-    "rank": 170,
+    "rank": 158,
     "imdb_id": "tt0979432",
     "id": 1621,
     "media_type": "tv",
@@ -9595,32 +9320,7 @@
     "chart_rank": 176
    },
    {
-    "rank": 171,
-    "imdb_id": "tt4834232",
-    "id": 254002,
-    "media_type": "tv",
-    "title": "Critical Role",
-    "original_title": "Critical Role",
-    "poster_path": "/keSNwdzmSgQzluKmqTI6kwDOFa7.jpg",
-    "backdrop_path": "/aqjNyP1wSPcMau2rCqwNfFeLR3V.jpg",
-    "release_date": "",
-    "first_air_date": "2015-03-12",
-    "vote_average": 8.2,
-    "vote_count": 26,
-    "popularity": 70.9002,
-    "genre_ids": [
-     10765,
-     10759,
-     35,
-     18
-    ],
-    "overview": "Critical Role is a weekly actual play series that uses tabletop role-playing game mechanics as a means to explore and develop stories from the vast fantasy worlds of Exandria, Aramán, and beyond, with sweeping narratives intricately woven through collaboration between Game Masters and players.",
-    "imdb_rating": 9.0,
-    "imdb_votes": 15000,
-    "chart_rank": 177
-   },
-   {
-    "rank": 172,
+    "rank": 159,
     "imdb_id": "tt9174558",
     "id": 110695,
     "media_type": "tv",
@@ -9643,7 +9343,7 @@
     "chart_rank": 178
    },
    {
-    "rank": 173,
+    "rank": 160,
     "imdb_id": "tt1486217",
     "id": 10283,
     "media_type": "tv",
@@ -9667,7 +9367,7 @@
     "chart_rank": 179
    },
    {
-    "rank": 174,
+    "rank": 161,
     "imdb_id": "tt8595766",
     "id": 81166,
     "media_type": "tv",
@@ -9690,7 +9390,7 @@
     "chart_rank": 180
    },
    {
-    "rank": 175,
+    "rank": 162,
     "imdb_id": "tt21056886",
     "id": 204154,
     "media_type": "tv",
@@ -9715,53 +9415,7 @@
     "chart_rank": 181
    },
    {
-    "rank": 176,
-    "imdb_id": "tt2063241",
-    "id": 58887,
-    "media_type": "tv",
-    "title": "Omar",
-    "original_title": "عُمَرْ‎",
-    "poster_path": "/ypNn2XybknDmxDOXDWcToFtVYMV.jpg",
-    "backdrop_path": "/A9zg1MPSzBPoPBBAJmqD7jr2wWW.jpg",
-    "release_date": "",
-    "first_air_date": "2012-07-20",
-    "vote_average": 9.014,
-    "vote_count": 35,
-    "popularity": 5.7807,
-    "genre_ids": [
-     10768,
-     18
-    ],
-    "overview": "A historical saga about the second caliph and Commander of the Faithful Omar Bin Al-Khattab and his pivotal role in the Islamic State.",
-    "imdb_rating": 8.9,
-    "imdb_votes": 11000,
-    "chart_rank": 182
-   },
-   {
-    "rank": 177,
-    "imdb_id": "tt0094517",
-    "id": 1952,
-    "media_type": "tv",
-    "title": "Mystery Science Theater 3000",
-    "original_title": "Mystery Science Theater 3000",
-    "poster_path": "/nNeb35RFoeLwxu0CFzZ9NAI5UTA.jpg",
-    "backdrop_path": "/dnePq1kDs0On398Oc7sVUCZgtft.jpg",
-    "release_date": "",
-    "first_air_date": "1989-11-25",
-    "vote_average": 7.717,
-    "vote_count": 235,
-    "popularity": 36.9076,
-    "genre_ids": [
-     35,
-     10765
-    ],
-    "overview": "A stranded spaceship pilot captured by mad scientists survives a blitz of cheesy B movies by riffing on them with his funny robot pals.",
-    "imdb_rating": 8.6,
-    "imdb_votes": 28000,
-    "chart_rank": 183
-   },
-   {
-    "rank": 178,
+    "rank": 163,
     "imdb_id": "tt0053488",
     "id": 339760,
     "media_type": "tv",
@@ -9781,7 +9435,7 @@
     "chart_rank": 184
    },
    {
-    "rank": 179,
+    "rank": 164,
     "imdb_id": "tt1489428",
     "id": 1436,
     "media_type": "tv",
@@ -9804,7 +9458,7 @@
     "chart_rank": 185
    },
    {
-    "rank": 180,
+    "rank": 165,
     "imdb_id": "tt4574334",
     "id": 66732,
     "media_type": "tv",
@@ -9828,30 +9482,7 @@
     "chart_rank": 186
    },
    {
-    "rank": 181,
-    "imdb_id": "tt0380136",
-    "id": 1554,
-    "media_type": "tv",
-    "title": "QI",
-    "original_title": "QI",
-    "poster_path": "/9zWVsauqP7GM9E1N9WDYVf9CWe3.jpg",
-    "backdrop_path": "/ikS12cRIPV1ZDVmCVKMNfMmow9Y.jpg",
-    "release_date": "",
-    "first_air_date": "2003-09-11",
-    "vote_average": 7.912,
-    "vote_count": 296,
-    "popularity": 56.6503,
-    "genre_ids": [
-     35,
-     10767
-    ],
-    "overview": "Comedy quiz show full of quirky facts, in which contestants are rewarded more if their answers are 'quite interesting'.",
-    "imdb_rating": 8.6,
-    "imdb_votes": 36000,
-    "chart_rank": 187
-   },
-   {
-    "rank": 182,
+    "rank": 166,
     "imdb_id": "tt0314979",
     "id": 71365,
     "media_type": "tv",
@@ -9875,7 +9506,7 @@
     "chart_rank": 188
    },
    {
-    "rank": 183,
+    "rank": 167,
     "imdb_id": "tt2701582",
     "id": 44264,
     "media_type": "tv",
@@ -9899,7 +9530,7 @@
     "chart_rank": 189
    },
    {
-    "rank": 184,
+    "rank": 168,
     "imdb_id": "tt1710308",
     "id": 31132,
     "media_type": "tv",
@@ -9924,7 +9555,7 @@
     "chart_rank": 190
    },
    {
-    "rank": 185,
+    "rank": 169,
     "imdb_id": "tt0417373",
     "id": 2418,
     "media_type": "tv",
@@ -9949,7 +9580,7 @@
     "chart_rank": 191
    },
    {
-    "rank": 186,
+    "rank": 170,
     "imdb_id": "tt0088509",
     "id": 12609,
     "media_type": "tv",
@@ -9973,7 +9604,7 @@
     "chart_rank": 192
    },
    {
-    "rank": 187,
+    "rank": 171,
     "imdb_id": "tt10802170",
     "id": 204284,
     "media_type": "tv",
@@ -9996,7 +9627,7 @@
     "chart_rank": 193
    },
    {
-    "rank": 188,
+    "rank": 172,
     "imdb_id": "tt0275137",
     "id": 1618,
     "media_type": "tv",
@@ -10020,7 +9651,7 @@
     "chart_rank": 194
    },
    {
-    "rank": 189,
+    "rank": 173,
     "imdb_id": "tt0086831",
     "id": 12597,
     "media_type": "tv",
@@ -10043,7 +9674,7 @@
     "chart_rank": 195
    },
    {
-    "rank": 190,
+    "rank": 174,
     "imdb_id": "tt7908628",
     "id": 83631,
     "media_type": "tv",
@@ -10066,7 +9697,7 @@
     "chart_rank": 196
    },
    {
-    "rank": 191,
+    "rank": 175,
     "imdb_id": "tt0423731",
     "id": 1063,
     "media_type": "tv",
@@ -10090,7 +9721,7 @@
     "chart_rank": 197
    },
    {
-    "rank": 192,
+    "rank": 176,
     "imdb_id": "tt0280249",
     "id": 12609,
     "media_type": "tv",
@@ -10116,7 +9747,7 @@
     "chart_rank": 198
    },
    {
-    "rank": 193,
+    "rank": 177,
     "imdb_id": "tt1641384",
     "id": 33217,
     "media_type": "tv",
@@ -10140,7 +9771,7 @@
     "chart_rank": 199
    },
    {
-    "rank": 194,
+    "rank": 178,
     "imdb_id": "tt35495073",
     "id": 301507,
     "media_type": "tv",
@@ -10162,7 +9793,7 @@
     "chart_rank": 200
    },
    {
-    "rank": 195,
+    "rank": 179,
     "imdb_id": "tt6763664",
     "id": 72844,
     "media_type": "tv",
@@ -10185,7 +9816,7 @@
     "chart_rank": 201
    },
    {
-    "rank": 196,
+    "rank": 180,
     "imdb_id": "tt9335498",
     "id": 85937,
     "media_type": "tv",
@@ -10209,7 +9840,7 @@
     "chart_rank": 202
    },
    {
-    "rank": 197,
+    "rank": 181,
     "imdb_id": "tt4082744",
     "id": 61828,
     "media_type": "tv",
@@ -10231,7 +9862,7 @@
     "chart_rank": 203
    },
    {
-    "rank": 198,
+    "rank": 182,
     "imdb_id": "tt0487831",
     "id": 2490,
     "media_type": "tv",
@@ -10253,7 +9884,7 @@
     "chart_rank": 204
    },
    {
-    "rank": 199,
+    "rank": 183,
     "imdb_id": "tt0863046",
     "id": 2742,
     "media_type": "tv",
@@ -10275,31 +9906,7 @@
     "chart_rank": 206
    },
    {
-    "rank": 200,
-    "imdb_id": "tt6108262",
-    "id": 74647,
-    "media_type": "tv",
-    "title": "Shadows over the Balkans",
-    "original_title": "Senke nad Balkanom",
-    "poster_path": "/8CoJjks7qPiycXzgHTt7f0capzB.jpg",
-    "backdrop_path": "/qw8vLrADaU7NfgnUFvwKBwgh46P.jpg",
-    "release_date": "",
-    "first_air_date": "2017-10-22",
-    "vote_average": 8.0,
-    "vote_count": 40,
-    "popularity": 5.9897,
-    "genre_ids": [
-     80,
-     18,
-     10768
-    ],
-    "overview": "A historical fiction drama and thriller set in the turbulent period of the late 1930s in the Balkans as a place where high politics, local interests, capital and crime all merge together.",
-    "imdb_rating": 8.8,
-    "imdb_votes": 14000,
-    "chart_rank": 207
-   },
-   {
-    "rank": 201,
+    "rank": 184,
     "imdb_id": "tt4158110",
     "id": 62560,
     "media_type": "tv",
@@ -10322,7 +9929,7 @@
     "chart_rank": 208
    },
    {
-    "rank": 202,
+    "rank": 185,
     "imdb_id": "tt0278238",
     "id": 2723,
     "media_type": "tv",
@@ -10346,7 +9953,7 @@
     "chart_rank": 209
    },
    {
-    "rank": 203,
+    "rank": 186,
     "imdb_id": "tt7120662",
     "id": 76148,
     "media_type": "tv",
@@ -10369,7 +9976,7 @@
     "chart_rank": 210
    },
    {
-    "rank": 204,
+    "rank": 187,
     "imdb_id": "tt3428912",
     "id": 61244,
     "media_type": "tv",
@@ -10393,7 +10000,7 @@
     "chart_rank": 211
    },
    {
-    "rank": 205,
+    "rank": 188,
     "imdb_id": "tt9544034",
     "id": 93352,
     "media_type": "tv",
@@ -10416,7 +10023,7 @@
     "chart_rank": 212
    },
    {
-    "rank": 206,
+    "rank": 189,
     "imdb_id": "tt10048342",
     "id": 87739,
     "media_type": "tv",
@@ -10438,7 +10045,7 @@
     "chart_rank": 213
    },
    {
-    "rank": 207,
+    "rank": 190,
     "imdb_id": "tt0237123",
     "id": 2719,
     "media_type": "tv",
@@ -10460,7 +10067,7 @@
     "chart_rank": 214
    },
    {
-    "rank": 208,
+    "rank": 191,
     "imdb_id": "tt5897304",
     "id": 67075,
     "media_type": "tv",
@@ -10485,29 +10092,7 @@
     "chart_rank": 215
    },
    {
-    "rank": 209,
-    "imdb_id": "tt0129690",
-    "id": 1073,
-    "media_type": "tv",
-    "title": "I'm Alan Partridge",
-    "original_title": "I'm Alan Partridge",
-    "poster_path": "/koh80SEzUnqVt9p7rkyNN4eB7pz.jpg",
-    "backdrop_path": "/8zMRVkDWcVDIdjEeMza9vqrujuY.jpg",
-    "release_date": "",
-    "first_air_date": "1997-11-03",
-    "vote_average": 7.431,
-    "vote_count": 181,
-    "popularity": 6.4113,
-    "genre_ids": [
-     35
-    ],
-    "overview": "The fortunes of a former chat show host who is reduced to a lowly slot on Radio Norwich. Alan Partridge is divorced, living in a travel tavern, and desperate for a return to television.",
-    "imdb_rating": 8.6,
-    "imdb_votes": 24000,
-    "chart_rank": 216
-   },
-   {
-    "rank": 210,
+    "rank": 192,
     "imdb_id": "tt1534360",
     "id": 32519,
     "media_type": "tv",
@@ -10531,7 +10116,7 @@
     "chart_rank": 217
    },
    {
-    "rank": 211,
+    "rank": 193,
     "imdb_id": "tt20859920",
     "id": 135157,
     "media_type": "tv",
@@ -10556,30 +10141,7 @@
     "chart_rank": 218
    },
    {
-    "rank": 212,
-    "imdb_id": "tt0403778",
-    "id": 2899,
-    "media_type": "tv",
-    "title": "Long Way Round",
-    "original_title": "Long Way Round",
-    "poster_path": "/uoAYNsbmjQXk0vs72R6ITZzYaYx.jpg",
-    "backdrop_path": "/wbgHTeHSVV23OIla1GiV9DS60SQ.jpg",
-    "release_date": "",
-    "first_air_date": "2004-10-18",
-    "vote_average": 8.157,
-    "vote_count": 140,
-    "popularity": 3.4512,
-    "genre_ids": [
-     99,
-     10764
-    ],
-    "overview": "In 2004 Ewan McGregor and Charley Boorman embarked on an epic challenge to bike 20,000-miles across 12 countries and 19 time zones in just 115 days. Watch as two friends ride around the world together and, against all the odds, realize their dream.",
-    "imdb_rating": 8.6,
-    "imdb_votes": 17000,
-    "chart_rank": 219
-   },
-   {
-    "rank": 213,
+    "rank": 194,
     "imdb_id": "tt12343534",
     "id": 95479,
     "media_type": "tv",
@@ -10603,7 +10165,7 @@
     "chart_rank": 220
    },
    {
-    "rank": 214,
+    "rank": 195,
     "imdb_id": "tt10590066",
     "id": 108255,
     "media_type": "tv",
@@ -10626,7 +10188,7 @@
     "chart_rank": 221
    },
    {
-    "rank": 215,
+    "rank": 196,
     "imdb_id": "tt4093826",
     "id": 1920,
     "media_type": "tv",
@@ -10651,7 +10213,7 @@
     "chart_rank": 222
    },
    {
-    "rank": 216,
+    "rank": 197,
     "imdb_id": "tt5189670",
     "id": 64439,
     "media_type": "tv",
@@ -10674,7 +10236,7 @@
     "chart_rank": 223
    },
    {
-    "rank": 217,
+    "rank": 198,
     "imdb_id": "tt1124373",
     "id": 1409,
     "media_type": "tv",
@@ -10697,7 +10259,7 @@
     "chart_rank": 224
    },
    {
-    "rank": 218,
+    "rank": 199,
     "imdb_id": "tt36988358",
     "id": 284445,
     "media_type": "tv",
@@ -10721,7 +10283,7 @@
     "chart_rank": 225
    },
    {
-    "rank": 219,
+    "rank": 200,
     "imdb_id": "tt0187664",
     "id": 745,
     "media_type": "tv",
@@ -10743,30 +10305,7 @@
     "chart_rank": 226
    },
    {
-    "rank": 220,
-    "imdb_id": "tt0163507",
-    "id": 61018,
-    "media_type": "tv",
-    "title": "Whose Line Is It Anyway?",
-    "original_title": "Whose Line Is It Anyway?",
-    "poster_path": "/iAIiJFlGCnmNO1fLtXxsM0IKo8H.jpg",
-    "backdrop_path": "/bmqbuK2fB5skmVwZeLTqun68waa.jpg",
-    "release_date": "",
-    "first_air_date": "1998-08-05",
-    "vote_average": 7.86,
-    "vote_count": 388,
-    "popularity": 23.2204,
-    "genre_ids": [
-     10764,
-     35
-    ],
-    "overview": "The show where everything's made up and the points don't matter. Not a talk show, not a sitcom, not a game show, Whose Line Is It Anyway? is a completely unique concept to network television. Four talented actors perform completely unrehearsed skits and games in front of a studio audience. Host Drew Carey sets the scene, with contributions from the audience, but the actors rely completely on their quick wit and improvisational skills. It's genuinely improvised, so anything can happen - and often does.",
-    "imdb_rating": 8.5,
-    "imdb_votes": 50000,
-    "chart_rank": 227
-   },
-   {
-    "rank": 221,
+    "rank": 201,
     "imdb_id": "tt0988818",
     "id": 57041,
     "media_type": "tv",
@@ -10790,7 +10329,7 @@
     "chart_rank": 228
    },
    {
-    "rank": 222,
+    "rank": 202,
     "imdb_id": "tt2100976",
     "id": 59186,
     "media_type": "tv",
@@ -10813,7 +10352,7 @@
     "chart_rank": 229
    },
    {
-    "rank": 223,
+    "rank": 203,
     "imdb_id": "tt0112159",
     "id": 890,
     "media_type": "tv",
@@ -10837,7 +10376,7 @@
     "chart_rank": 230
    },
    {
-    "rank": 224,
+    "rank": 204,
     "imdb_id": "tt3895150",
     "id": 61663,
     "media_type": "tv",
@@ -10861,7 +10400,7 @@
     "chart_rank": 231
    },
    {
-    "rank": 225,
+    "rank": 205,
     "imdb_id": "tt27446493",
     "id": 212204,
     "media_type": "tv",
@@ -10884,7 +10423,7 @@
     "chart_rank": 232
    },
    {
-    "rank": 226,
+    "rank": 206,
     "imdb_id": "tt1190634",
     "id": 76479,
     "media_type": "tv",
@@ -10907,29 +10446,7 @@
     "chart_rank": 233
    },
    {
-    "rank": 227,
-    "imdb_id": "tt1513168",
-    "id": 32900,
-    "media_type": "tv",
-    "title": "Through the Wormhole",
-    "original_title": "Through the Wormhole",
-    "poster_path": "/cEziWNr1n1HKAuKhngF2n4engOR.jpg",
-    "backdrop_path": "/pSCOyP2VKzEmwXmDCjWU0pL0WD7.jpg",
-    "release_date": "",
-    "first_air_date": "2010-06-09",
-    "vote_average": 7.669,
-    "vote_count": 177,
-    "popularity": 8.963,
-    "genre_ids": [
-     99
-    ],
-    "overview": "Hosted by Morgan Freeman, Through the Wormhole explores the deepest mysteries of existence - the questions that have puzzled mankind for eternity. What are we made of? What was there before the beginning? Are we really alone? Is there a creator? These questions have been pondered by the most exquisite minds of the human race. Now, science has evolved to the point where hard facts and evidence may be able to provide us with answers instead of philosophical theories. Through the Wormhole brings together the brightest minds and best ideas from the very edges of science - Astrophysics, Astrobiology, Quantum Mechanics, String Theory, and more - to reveal the extraordinary truth of our Universe.",
-    "imdb_rating": 8.6,
-    "imdb_votes": 20000,
-    "chart_rank": 234
-   },
-   {
-    "rank": 228,
+    "rank": 207,
     "imdb_id": "tt7278862",
     "id": 78154,
     "media_type": "tv",
@@ -10951,51 +10468,7 @@
     "chart_rank": 235
    },
    {
-    "rank": 229,
-    "imdb_id": "tt0075537",
-    "id": 2508,
-    "media_type": "tv",
-    "title": "Mind Your Language",
-    "original_title": "Mind Your Language",
-    "poster_path": "/58RfYeIwDnJFbahMEy2yCDWyRAY.jpg",
-    "backdrop_path": "/dO4lLOgNzlGylCOuZ0moy5xpQtX.jpg",
-    "release_date": "",
-    "first_air_date": "1977-12-30",
-    "vote_average": 8.201,
-    "vote_count": 77,
-    "popularity": 7.8639,
-    "genre_ids": [
-     35
-    ],
-    "overview": "Jeremy Brown, a language teacher, tries to make a living by teaching English to immigrants. With pupils from India, France, China, and many other countries, his lessons do not always go as planned.",
-    "imdb_rating": 8.6,
-    "imdb_votes": 11000,
-    "chart_rank": 236
-   },
-   {
-    "rank": 230,
-    "imdb_id": "tt0290988",
-    "id": 3796,
-    "media_type": "tv",
-    "title": "Trailer Park Boys",
-    "original_title": "Trailer Park Boys",
-    "poster_path": "/nIcIwVTYcZnW1BDzexGfFO7KmX1.jpg",
-    "backdrop_path": "/4RttvRiea7C5BaD1YJXpny6nGSx.jpg",
-    "release_date": "",
-    "first_air_date": "2001-04-22",
-    "vote_average": 7.8,
-    "vote_count": 352,
-    "popularity": 20.6391,
-    "genre_ids": [
-     35
-    ],
-    "overview": "Follow the booze-fueled misadventures of three longtime pals and petty serial criminals who run scams from their Nova Scotia trailer park.",
-    "imdb_rating": 8.5,
-    "imdb_votes": 59000,
-    "chart_rank": 237
-   },
-   {
-    "rank": 231,
+    "rank": 208,
     "imdb_id": "tt1492966",
     "id": 32962,
     "media_type": "tv",
@@ -11018,7 +10491,7 @@
     "chart_rank": 238
    },
    {
-    "rank": 232,
+    "rank": 209,
     "imdb_id": "tt3526078",
     "id": 61662,
     "media_type": "tv",
@@ -11040,7 +10513,7 @@
     "chart_rank": 239
    },
    {
-    "rank": 233,
+    "rank": 210,
     "imdb_id": "tt1877368",
     "id": 34549,
     "media_type": "tv",
@@ -11062,7 +10535,7 @@
     "chart_rank": 240
    },
    {
-    "rank": 234,
+    "rank": 211,
     "imdb_id": "tt0290978",
     "id": 2996,
     "media_type": "tv",
@@ -11084,7 +10557,7 @@
     "chart_rank": 241
    },
    {
-    "rank": 235,
+    "rank": 212,
     "imdb_id": "tt4236770",
     "id": 73586,
     "media_type": "tv",
@@ -11107,7 +10580,7 @@
     "chart_rank": 242
    },
    {
-    "rank": 236,
+    "rank": 213,
     "imdb_id": "tt26743760",
     "id": 220542,
     "media_type": "tv",
@@ -11131,29 +10604,7 @@
     "chart_rank": 243
    },
    {
-    "rank": 237,
-    "imdb_id": "tt0118273",
-    "id": 63,
-    "media_type": "tv",
-    "title": "Brass Eye",
-    "original_title": "Brass Eye",
-    "poster_path": "/nCWMA285aPbdQ8x9ZcqSolOzUoo.jpg",
-    "backdrop_path": "/29R7IcPgdsw3j1zSBAb4zkJNySs.jpg",
-    "release_date": "",
-    "first_air_date": "1997-01-29",
-    "vote_average": 7.75,
-    "vote_count": 112,
-    "popularity": 4.2773,
-    "genre_ids": [
-     35
-    ],
-    "overview": "Investigative reporter Chris Morris puts modern Britain under the spotlight, and smacks the issues of the day till they bleed. He tackles weighty issues including animals, drugs, sex and skewered celebrities and politicians alike - and in a later episode in 2001, paedophiles.",
-    "imdb_rating": 8.6,
-    "imdb_votes": 13000,
-    "chart_rank": 244
-   },
-   {
-    "rank": 238,
+    "rank": 214,
     "imdb_id": "tt0373732",
     "id": 2604,
     "media_type": "tv",
@@ -11177,7 +10628,7 @@
     "chart_rank": 245
    },
    {
-    "rank": 239,
+    "rank": 215,
     "imdb_id": "tt3230854",
     "id": 63639,
     "media_type": "tv",
@@ -11201,7 +10652,7 @@
     "chart_rank": 246
    },
    {
-    "rank": 240,
+    "rank": 216,
     "imdb_id": "tt12074628",
     "id": 126506,
     "media_type": "tv",
@@ -11225,7 +10676,7 @@
     "chart_rank": 247
    },
    {
-    "rank": 241,
+    "rank": 217,
     "imdb_id": "tt2359704",
     "id": 45790,
     "media_type": "tv",
@@ -11249,7 +10700,7 @@
     "chart_rank": 248
    },
    {
-    "rank": 242,
+    "rank": 218,
     "imdb_id": "tt2575988",
     "id": 60573,
     "media_type": "tv",
@@ -11271,29 +10722,7 @@
     "chart_rank": 249
    },
    {
-    "rank": 243,
-    "imdb_id": "tt1983079",
-    "id": 39793,
-    "media_type": "tv",
-    "title": "Call the Midwife",
-    "original_title": "Call the Midwife",
-    "poster_path": "/b1p0nL00x563ACkcmGNIRP4ZnkA.jpg",
-    "backdrop_path": "/a600KQ3DdQUQl5LewN5imbL0BaF.jpg",
-    "release_date": "",
-    "first_air_date": "2012-01-15",
-    "vote_average": 7.563,
-    "vote_count": 268,
-    "popularity": 44.8952,
-    "genre_ids": [
-     18
-    ],
-    "overview": "Drama following the lives of a group of midwives working in the poverty-stricken East End of London during the 1950s, based on the best-selling memoirs of Jennifer Worth.",
-    "imdb_rating": 8.6,
-    "imdb_votes": 36000,
-    "chart_rank": 250
-   },
-   {
-    "rank": 244,
+    "rank": 219,
     "chart_rank": 251,
     "imdb_id": "tt2699128",
     "id": 54344,
@@ -11316,7 +10745,7 @@
     "imdb_votes": 136183
    },
    {
-    "rank": 245,
+    "rank": 220,
     "chart_rank": 252,
     "imdb_id": "tt1196946",
     "id": 5920,
@@ -11340,7 +10769,7 @@
     "imdb_votes": 263643
    },
    {
-    "rank": 246,
+    "rank": 221,
     "chart_rank": 256,
     "imdb_id": "tt4189022",
     "id": 62264,
@@ -11364,7 +10793,7 @@
     "imdb_votes": 87283
    },
    {
-    "rank": 247,
+    "rank": 222,
     "chart_rank": 257,
     "imdb_id": "tt2234222",
     "id": 56296,
@@ -11387,31 +10816,7 @@
     "imdb_votes": 126595
    },
    {
-    "rank": 248,
-    "chart_rank": 258,
-    "imdb_id": "tt4202274",
-    "id": 340243,
-    "media_type": "tv",
-    "title": "The Filthy Frank Show",
-    "original_title": "The filthy frank show",
-    "poster_path": "/qLxxL1LSxYfC2DWy3NHT025u264.jpg",
-    "backdrop_path": "/oiIGO9A8SBUtRhw44u6KnFQA9tE.jpg",
-    "release_date": "",
-    "first_air_date": "2011-08-05",
-    "vote_average": 7.5,
-    "vote_count": 2,
-    "popularity": 0.4867,
-    "genre_ids": [
-     35
-    ],
-    "overview": "ilthy Frank and his disease ridden friends talk about various subjects and take part in multiple adventures.",
-    "imdb_rating": 9.1,
-    "imdb_votes": 27197,
-    "tmdb_title": "The filthy frank show",
-    "note": "Display title is the IMDb chart title; TMDB record name differs (case only)"
-   },
-   {
-    "rank": 249,
+    "rank": 223,
     "chart_rank": 259,
     "imdb_id": "tt4955642",
     "id": 66573,
@@ -11434,7 +10839,7 @@
     "imdb_votes": 227519
    },
    {
-    "rank": 250,
+    "rank": 224,
     "chart_rank": 261,
     "imdb_id": "tt1520211",
     "id": 1402,
@@ -11456,6 +10861,619 @@
     "overview": "Sheriff's deputy Rick Grimes awakens from a coma to find a post-apocalyptic world dominated by flesh-eating zombies. He sets out to find his family and encounters many other survivors along the way.",
     "imdb_rating": 8.1,
     "imdb_votes": 1222849
+   },
+   {
+    "rank": 225,
+    "chart_rank": 262,
+    "imdb_id": "tt11337908",
+    "id": 111141,
+    "media_type": "tv",
+    "title": "Maid",
+    "original_title": "Maid",
+    "poster_path": "/4brWcSXdH31BZUTtRTHj2BYFe6M.jpg",
+    "backdrop_path": "/zzZ1U0y3r0owZ8y0FIf7rMKKvZI.jpg",
+    "release_date": "",
+    "first_air_date": "2021-09-30",
+    "vote_average": 7.981,
+    "vote_count": 1016,
+    "popularity": 9.3412,
+    "genre_ids": [
+     18
+    ],
+    "overview": "After fleeing an abusive relationship, a young mother finds a job cleaning houses as she fights to provide for her child and build them a better future.",
+    "imdb_rating": 8.3,
+    "imdb_votes": 124075
+   },
+   {
+    "rank": 226,
+    "chart_rank": 265,
+    "imdb_id": "tt0898266",
+    "id": 1418,
+    "media_type": "tv",
+    "title": "The Big Bang Theory",
+    "original_title": "The Big Bang Theory",
+    "poster_path": "/euKFiO5M125rpngFRBbSW83beeI.jpg",
+    "backdrop_path": "/rwYvhVv0vwbulMwxOfEsuAr1JrT.jpg",
+    "release_date": "",
+    "first_air_date": "2007-09-24",
+    "vote_average": 7.929,
+    "vote_count": 12993,
+    "popularity": 68.5644,
+    "genre_ids": [
+     35
+    ],
+    "overview": "Physicists Leonard and Sheldon find their nerd-centric social circle with pals Howard and Raj expanding when aspiring actress Penny moves in next door.",
+    "imdb_rating": 8.1,
+    "imdb_votes": 950920
+   },
+   {
+    "rank": 227,
+    "chart_rank": 266,
+    "imdb_id": "tt4270492",
+    "id": 62852,
+    "media_type": "tv",
+    "title": "Billions",
+    "original_title": "Billions",
+    "poster_path": "/edwYPQdZE998d748AdwWLsfy0rl.jpg",
+    "backdrop_path": "/51Hw58fMwJQKYJ6XYJIRQBP9EPA.jpg",
+    "release_date": "",
+    "first_air_date": "2016-01-17",
+    "vote_average": 7.8,
+    "vote_count": 1099,
+    "popularity": 50.5859,
+    "genre_ids": [
+     18
+    ],
+    "overview": "Shrewd, savvy U.S. Attorney Chuck Rhoades and the brilliant, ambitious hedge fund king Bobby \"Axe\" Axelrod are on an explosive collision course, with each using all of his considerable smarts, power and influence to outmaneuver the other. The stakes are in the billions in this timely, provocative series.",
+    "imdb_rating": 8.3,
+    "imdb_votes": 119960
+   },
+   {
+    "rank": 228,
+    "chart_rank": 269,
+    "imdb_id": "tt13146488",
+    "id": 110492,
+    "media_type": "tv",
+    "title": "Peacemaker",
+    "original_title": "Peacemaker",
+    "poster_path": "/yb4F1Oocq8GfQt6iIuAgYEBokhG.jpg",
+    "backdrop_path": "/aJcUU3LMlqMKBi8L3eaxGfAbd4G.jpg",
+    "release_date": "",
+    "first_air_date": "2022-01-13",
+    "vote_average": 8.175,
+    "vote_count": 3638,
+    "popularity": 30.7515,
+    "genre_ids": [
+     10759,
+     10765,
+     35
+    ],
+    "overview": "The continuing story of Peacemaker, a vainglorious superhero/supervillain who believes in peace at any cost — no matter how many people he has to kill. After a miraculous recovery from his duel with Bloodsport, Peacemaker soon discovers that his freedom comes at a price.",
+    "imdb_rating": 8.2,
+    "imdb_votes": 202806
+   },
+   {
+    "rank": 229,
+    "chart_rank": 270,
+    "imdb_id": "tt13616990",
+    "id": 114410,
+    "media_type": "tv",
+    "title": "Chainsaw Man",
+    "original_title": "チェンソーマン",
+    "poster_path": "/npdB6eFzizki0WaZ1OvKcJrWe97.jpg",
+    "backdrop_path": "/fOUKSCbZzaoQKsO39enivHnWDid.jpg",
+    "release_date": "",
+    "first_air_date": "2022-10-12",
+    "vote_average": 8.507,
+    "vote_count": 2377,
+    "popularity": 29.1181,
+    "genre_ids": [
+     16,
+     10759,
+     10765
+    ],
+    "overview": "Denji has a simple dream—to live a happy and peaceful life, spending time with a girl he likes. This is a far cry from reality, however, as Denji is forced by the yakuza into killing devils in order to pay off his crushing debts. Using his pet devil Pochita as a weapon, he is ready to do anything for a bit of cash.",
+    "imdb_rating": 8.3,
+    "imdb_votes": 115282
+   },
+   {
+    "rank": 230,
+    "chart_rank": 274,
+    "imdb_id": "tt5249462",
+    "id": 65249,
+    "media_type": "tv",
+    "title": "Erased",
+    "original_title": "僕だけがいない街",
+    "poster_path": "/EljUwZJhpuYfVuSfqY8Pt1xxpH.jpg",
+    "backdrop_path": "/rRGnjRCHdDl3m3oCVSvo5z2E5c5.jpg",
+    "release_date": "",
+    "first_air_date": "2016-01-08",
+    "vote_average": 8.5,
+    "vote_count": 1324,
+    "popularity": 9.9226,
+    "genre_ids": [
+     16,
+     18,
+     9648
+    ],
+    "overview": "Satoru Fujinuma is a struggling manga artist who has the ability to turn back time and prevent deaths. When his mother is killed he turns back time to solve the mystery, but ends up back in elementary school, just before the disappearance of his classmate Kayo.",
+    "imdb_rating": 8.4,
+    "imdb_votes": 78333,
+    "tmdb_title": "ERASED",
+    "note": "Display title is the IMDb chart title; TMDB record name differs (case only)"
+   },
+   {
+    "rank": 231,
+    "chart_rank": 275,
+    "imdb_id": "tt18335752",
+    "id": 157744,
+    "media_type": "tv",
+    "title": "1923",
+    "original_title": "1923",
+    "poster_path": "/zgZRJZvZn5cpsWAB0zMUdad3iZd.jpg",
+    "backdrop_path": "/vIioWssbxRtEkIzgj8r0pCWYkYM.jpg",
+    "release_date": "",
+    "first_air_date": "2022-12-18",
+    "vote_average": 8.287,
+    "vote_count": 889,
+    "popularity": 18.3335,
+    "genre_ids": [
+     18,
+     37
+    ],
+    "overview": "Follow a new generation of the Dutton family during the early twentieth century when pandemics, historic drought, the end of Prohibition and the Great Depression all plague the mountain west, and the Duttons who call it home.",
+    "imdb_rating": 8.3,
+    "imdb_votes": 108926
+   },
+   {
+    "rank": 232,
+    "chart_rank": 276,
+    "imdb_id": "tt0238784",
+    "id": 4586,
+    "media_type": "tv",
+    "title": "Gilmore Girls",
+    "original_title": "Gilmore Girls",
+    "poster_path": "/gwtzCwU2wdLLf8oejQu2TINiWfQ.jpg",
+    "backdrop_path": "/8U2ndZrneigI2zkvGuTJtt1ZsxK.jpg",
+    "release_date": "",
+    "first_air_date": "2000-10-05",
+    "vote_average": 7.867,
+    "vote_count": 1347,
+    "popularity": 77.0968,
+    "genre_ids": [
+     35,
+     18
+    ],
+    "overview": "Set in the charming town of Stars Hollow, Connecticut, the series follows the captivating lives of Lorelai and Rory Gilmore, a mother/daughter pair who have a relationship most people only dream of.",
+    "imdb_rating": 8.2,
+    "imdb_votes": 180063
+   },
+   {
+    "rank": 233,
+    "chart_rank": 279,
+    "imdb_id": "tt2431438",
+    "id": 61664,
+    "media_type": "tv",
+    "title": "Sense8",
+    "original_title": "Sense8",
+    "poster_path": "/kmyvlQ9QKzgdZY31rXaUlgCnzrB.jpg",
+    "backdrop_path": "/d6JYL53xISzfqz6HhvaKWTDcOUZ.jpg",
+    "release_date": "",
+    "first_air_date": "2015-06-05",
+    "vote_average": 7.702,
+    "vote_count": 1975,
+    "popularity": 14.352,
+    "genre_ids": [
+     10765,
+     18
+    ],
+    "overview": "One gunshot, one death, one moment out of time that irrevocably links eight minds in disparate parts of the world, putting them in each other's lives, each other's secrets, and in terrible danger. Ordinary people suddenly reborn as \"Sensates.\"",
+    "imdb_rating": 8.2,
+    "imdb_votes": 173509
+   },
+   {
+    "rank": 234,
+    "chart_rank": 282,
+    "imdb_id": "tt8714904",
+    "id": 80968,
+    "media_type": "tv",
+    "title": "Narcos: Mexico",
+    "original_title": "Narcos: Mexico",
+    "poster_path": "/aXwMx8OvRFMfI1RmkbJm6Bq1jVg.jpg",
+    "backdrop_path": "/64jEzC7YeKEpnn1YwjCGRo9ZvOX.jpg",
+    "release_date": "",
+    "first_air_date": "2018-11-16",
+    "vote_average": 7.925,
+    "vote_count": 1573,
+    "popularity": 21.219,
+    "genre_ids": [
+     18,
+     80
+    ],
+    "overview": "See the rise of the Guadalajara Cartel as an American DEA agent learns the danger of targeting narcos in 1980s Mexico.",
+    "imdb_rating": 8.3,
+    "imdb_votes": 103693
+   },
+   {
+    "rank": 235,
+    "chart_rank": 283,
+    "imdb_id": "tt0434665",
+    "id": 30984,
+    "media_type": "tv",
+    "title": "Bleach",
+    "original_title": "BLEACH",
+    "poster_path": "/2EewmxXe72ogD0EaWM8gqa0ccIw.jpg",
+    "backdrop_path": "/o0NsbcIvsllg6CJX0FBFY8wWbsn.jpg",
+    "release_date": "",
+    "first_air_date": "2004-10-05",
+    "vote_average": 8.3,
+    "vote_count": 2345,
+    "popularity": 118.6282,
+    "genre_ids": [
+     10759,
+     16,
+     10765
+    ],
+    "overview": "For as long as he can remember, Ichigo Kurosaki has been able to see ghosts. But when he meets Rukia, a Soul Reaper who battles evil spirits known as Hollows, he finds his life is changed forever. Now, with a newfound wealth of spiritual energy, Ichigo discovers his true calling: to protect the living and the dead from evil.",
+    "imdb_rating": 8.3,
+    "imdb_votes": 101810
+   },
+   {
+    "rank": 236,
+    "chart_rank": 284,
+    "imdb_id": "tt0212671",
+    "id": 2004,
+    "media_type": "tv",
+    "title": "Malcolm in the Middle",
+    "original_title": "Malcolm in the Middle",
+    "poster_path": "/ckLLIsNy3Z0Go1PYHA2PHzVymUA.jpg",
+    "backdrop_path": "/si3OheCrSpEyK2JUtZOThsZPUR4.jpg",
+    "release_date": "",
+    "first_air_date": "2000-01-09",
+    "vote_average": 8.46,
+    "vote_count": 5050,
+    "popularity": 162.2112,
+    "genre_ids": [
+     35
+    ],
+    "overview": "A gifted young teen tries to survive life with his dimwitted, dysfunctional family.",
+    "imdb_rating": 8.2,
+    "imdb_votes": 164050
+   },
+   {
+    "rank": 237,
+    "chart_rank": 285,
+    "imdb_id": "tt2632424",
+    "id": 46896,
+    "media_type": "tv",
+    "title": "The Originals",
+    "original_title": "The Originals",
+    "poster_path": "/keJOhJXGiLL54EW6QocbyvQGquA.jpg",
+    "backdrop_path": "/2OAoGOvysScieVhIazrWTXj2ESp.jpg",
+    "release_date": "",
+    "first_air_date": "2013-10-03",
+    "vote_average": 8.58,
+    "vote_count": 3704,
+    "popularity": 43.9687,
+    "genre_ids": [
+     10765,
+     18,
+     9648
+    ],
+    "overview": "The Vampire Diaries spin-off that follows the Mikaelsons, a family of millennia-old, power-hungry vampires who want to reclaim the city they built, New Orleans, and dominate all those who have wronged them.",
+    "imdb_rating": 8.2,
+    "imdb_votes": 163962
+   },
+   {
+    "rank": 238,
+    "chart_rank": 286,
+    "imdb_id": "tt1759761",
+    "id": 2947,
+    "media_type": "tv",
+    "title": "Veep",
+    "original_title": "Veep",
+    "poster_path": "/cdd78fGdaA3EbK2ToZRWcaaB1fx.jpg",
+    "backdrop_path": "/vKaDMLbdLrThldFj9Vavo6suTS2.jpg",
+    "release_date": "",
+    "first_air_date": "2012-04-22",
+    "vote_average": 7.503,
+    "vote_count": 559,
+    "popularity": 30.1853,
+    "genre_ids": [
+     35,
+     10768
+    ],
+    "overview": "A look into American politics, revolving around former Senator Selina Meyer who finds being Vice President of the United States is nothing like she expected and everything everyone ever warned her about.",
+    "imdb_rating": 8.4,
+    "imdb_votes": 73478
+   },
+   {
+    "rank": 239,
+    "chart_rank": 287,
+    "imdb_id": "tt2249007",
+    "id": 1423,
+    "media_type": "tv",
+    "title": "Ray Donovan",
+    "original_title": "Ray Donovan",
+    "poster_path": "/cwJ6nLNvX62By0yoLYWFhRelPkF.jpg",
+    "backdrop_path": "/k1UpU2cfa4PbDUBnJtr43TpdNBg.jpg",
+    "release_date": "",
+    "first_air_date": "2013-06-30",
+    "vote_average": 7.493,
+    "vote_count": 883,
+    "popularity": 33.3504,
+    "genre_ids": [
+     18
+    ],
+    "overview": "Set in the sprawling mecca of the rich and famous, Ray Donovan does the dirty work for LA's top power players, and makes their problems disappear. His father's unexpected release from prison sets off a chain of events that shakes the Donovan family to its core.",
+    "imdb_rating": 8.3,
+    "imdb_votes": 100860
+   },
+   {
+    "rank": 240,
+    "chart_rank": 288,
+    "imdb_id": "tt5607616",
+    "id": 65942,
+    "media_type": "tv",
+    "title": "Re: Zero - Starting Life in Another World",
+    "original_title": "Re:ゼロから始める異世界生活",
+    "poster_path": "/oHqYrPAsIiTD5m4DuxumV4er8BU.jpg",
+    "backdrop_path": "/7ZruEnSnHD6Jx5mF0hBt1E306Vt.jpg",
+    "release_date": "",
+    "first_air_date": "2016-04-04",
+    "vote_average": 8.128,
+    "vote_count": 827,
+    "popularity": 65.6855,
+    "genre_ids": [
+     16,
+     9648,
+     10759,
+     10765
+    ],
+    "overview": "Natsuki Subaru, an ordinary high school  student, is on his way home from the convenience store when he finds  himself transported to another world. As he's lost and confused in a new  world where he doesn't even know left from right, the only person to  reach out to him was a beautiful girl with silver hair. Determined to  repay her somehow for saving him from his own despair, Subaru agrees to  help the girl find something she's looking for.",
+    "imdb_rating": 8.3,
+    "imdb_votes": 100444,
+    "tmdb_title": "Re:ZERO -Starting Life in Another World-",
+    "note": "Display title is the IMDb chart title; TMDB record name differs (case only)"
+   },
+   {
+    "rank": 241,
+    "chart_rank": 289,
+    "imdb_id": "tt11912196",
+    "id": 100911,
+    "media_type": "tv",
+    "title": "Asur: Welcome to Your Dark Side",
+    "original_title": "असुर",
+    "poster_path": "/aw8W6JCrE3zsQexfvsu4cDjb1ub.jpg",
+    "backdrop_path": "/eXUr34XTqYaDwyOerFpL6sUOgDL.jpg",
+    "release_date": "",
+    "first_air_date": "2020-03-02",
+    "vote_average": 7.8,
+    "vote_count": 100,
+    "popularity": 3.7281,
+    "genre_ids": [
+     80,
+     18,
+     9648
+    ],
+    "overview": "Set in the backdrop of the mystical city of Varanasi, Asur follows Nikhil Nair, a forensic-expert-turned-teacher, who returns to his roots at the Central Bureau of Investigation, and along with his former mentor Dhananjay Rajpoot, finds himself caught in a cat-and-mouse game with a brutal serial killer. What follows is a blend of suspense, mythology and the murders of some people totally unrelated.",
+    "imdb_rating": 8.4,
+    "imdb_votes": 72492,
+    "tmdb_title": "Asur",
+    "note": "Display title is the IMDb chart title; TMDB record name differs (case only)"
+   },
+   {
+    "rank": 242,
+    "chart_rank": 290,
+    "imdb_id": "tt0182576",
+    "id": 1434,
+    "media_type": "tv",
+    "title": "Family Guy",
+    "original_title": "Family Guy",
+    "poster_path": "/3PFsEuAiyLkWsP4GG6dIV37Q6gu.jpg",
+    "backdrop_path": "/jbTqU6BJMufoMnPSlO4ThrcXs3Y.jpg",
+    "release_date": "",
+    "first_air_date": "1999-01-31",
+    "vote_average": 7.418,
+    "vote_count": 5224,
+    "popularity": 2457.7645,
+    "genre_ids": [
+     16,
+     35
+    ],
+    "overview": "Sick, twisted, politically incorrect and Freakin' Sweet animated series featuring the adventures of the dysfunctional Griffin family. Bumbling Peter and long-suffering Lois have three kids. Stewie (a brilliant but sadistic baby bent on killing his mother and taking over the world), Meg (the oldest, and is the most unpopular girl in town) and Chris (the middle kid, he's not very bright but has a passion for movies). The final member of the family is Brian - a talking dog and much more than a pet, he keeps Stewie in check whilst sipping Martinis and sorting through his own life issues.",
+    "imdb_rating": 8.1,
+    "imdb_votes": 393979
+   },
+   {
+    "rank": 243,
+    "chart_rank": 292,
+    "imdb_id": "tt1358522",
+    "id": 21510,
+    "media_type": "tv",
+    "title": "White Collar",
+    "original_title": "White Collar",
+    "poster_path": "/417XNiGvdzCsG9kDnnQJYaBsIrx.jpg",
+    "backdrop_path": "/aUyweq31etaay92oF4crwdDcnoT.jpg",
+    "release_date": "",
+    "first_air_date": "2009-10-23",
+    "vote_average": 8.201,
+    "vote_count": 1649,
+    "popularity": 41.9392,
+    "genre_ids": [
+     80,
+     18,
+     9648
+    ],
+    "overview": "In exchange for his freedom, charming con artist Neal Caffrey provides his expertise to help straight-man FBI agent Peter Burke catch elusive white-collar criminals.",
+    "imdb_rating": 8.2,
+    "imdb_votes": 155655
+   },
+   {
+    "rank": 244,
+    "chart_rank": 293,
+    "imdb_id": "tt0934814",
+    "id": 1404,
+    "media_type": "tv",
+    "title": "Chuck",
+    "original_title": "Chuck",
+    "poster_path": "/vEZvGVVMjk1TRs59nfypTI5lAXj.jpg",
+    "backdrop_path": "/zP5SftyPx2VCdly369kTVVNIcT3.jpg",
+    "release_date": "",
+    "first_air_date": "2007-09-24",
+    "vote_average": 7.7,
+    "vote_count": 1279,
+    "popularity": 36.0671,
+    "genre_ids": [
+     10759,
+     35,
+     18
+    ],
+    "overview": "When Buy More computer geek Chuck Bartowski unwittingly downloads a database of government information and deadly fighting skills into his head, he becomes the CIA's most vital secret. This sets Chuck on a path to become a full-fledged spy.",
+    "imdb_rating": 8.2,
+    "imdb_votes": 155169
+   },
+   {
+    "rank": 245,
+    "chart_rank": 294,
+    "imdb_id": "tt6517102",
+    "id": 71024,
+    "media_type": "tv",
+    "title": "Castlevania",
+    "original_title": "Castlevania",
+    "poster_path": "/WzFHnJY44uDERER0xi1jOdoafT.jpg",
+    "backdrop_path": "/jLE5bsPA9xOKzBWOaOmKbp1DWQS.jpg",
+    "release_date": "",
+    "first_air_date": "2017-07-07",
+    "vote_average": 8.271,
+    "vote_count": 1655,
+    "popularity": 14.7522,
+    "genre_ids": [
+     16,
+     10765,
+     18
+    ],
+    "overview": "A vampire hunter fights to save a besieged city from an army of otherworldly beasts controlled by Dracula himself.",
+    "imdb_rating": 8.3,
+    "imdb_votes": 97466
+   },
+   {
+    "rank": 246,
+    "chart_rank": 295,
+    "imdb_id": "tt7049682",
+    "id": 79788,
+    "media_type": "tv",
+    "title": "Watchmen",
+    "original_title": "Watchmen",
+    "poster_path": "/m8rWq3j73ZGhDuSCZWMMoE9ePH1.jpg",
+    "backdrop_path": "/fh2CStc3fKFYhkKOFyUHBGksRWj.jpg",
+    "release_date": "",
+    "first_air_date": "2019-10-20",
+    "vote_average": 7.622,
+    "vote_count": 1729,
+    "popularity": 10.9931,
+    "genre_ids": [
+     18,
+     80,
+     10765,
+     9648
+    ],
+    "overview": "Set in an alternate history where “superheroes” are treated as outlaws, “Watchmen” embraces the nostalgia of the original groundbreaking graphic novel while attempting to break new ground of its own.",
+    "imdb_rating": 8.2,
+    "imdb_votes": 149561
+   },
+   {
+    "rank": 247,
+    "chart_rank": 297,
+    "imdb_id": "tt8772296",
+    "id": 85552,
+    "media_type": "tv",
+    "title": "Euphoria",
+    "original_title": "Euphoria",
+    "poster_path": "/aJrG7OkoTMPWG5c8opz8a93AZPY.jpg",
+    "backdrop_path": "/aJN0VtMbtYndK0M0XoaoKBoAzPu.jpg",
+    "release_date": "",
+    "first_air_date": "2019-06-16",
+    "vote_average": 8.267,
+    "vote_count": 11171,
+    "popularity": 49.2419,
+    "genre_ids": [
+     18
+    ],
+    "overview": "A group of high school students navigate love and friendships in a world of drugs, sex, trauma, and social media.",
+    "imdb_rating": 8.1,
+    "imdb_votes": 328391
+   },
+   {
+    "rank": 248,
+    "chart_rank": 298,
+    "imdb_id": "tt0402711",
+    "id": 4598,
+    "media_type": "tv",
+    "title": "Boston Legal",
+    "original_title": "Boston Legal",
+    "poster_path": "/b0bXUCfpcsgQ6EVVmucU2G76ixT.jpg",
+    "backdrop_path": "/ojEmDThITGk9IsE32uxCWCA0kH5.jpg",
+    "release_date": "",
+    "first_air_date": "2004-10-03",
+    "vote_average": 7.938,
+    "vote_count": 412,
+    "popularity": 50.4371,
+    "genre_ids": [
+     35,
+     18
+    ],
+    "overview": "Alan Shore and Denny Crane lead a brigade of high-priced civil litigators in an upscale Boston law firm in a series focusing on the professional and personal lives of brilliant but often emotionally challenged attorneys. A spin-off of long-running series The Practice.",
+    "imdb_rating": 8.5,
+    "imdb_votes": 54626
+   },
+   {
+    "rank": 249,
+    "chart_rank": 299,
+    "imdb_id": "tt31806037",
+    "id": 249042,
+    "media_type": "tv",
+    "title": "Adolescence",
+    "original_title": "Adolescence",
+    "poster_path": "/20i4nShZZg1g1VFHSB8xpaYM4r7.jpg",
+    "backdrop_path": "/llZodlkVKRkTdUsiRxvn8h80hhx.jpg",
+    "release_date": "",
+    "first_air_date": "2025-03-13",
+    "vote_average": 7.8,
+    "vote_count": 1891,
+    "popularity": 10.99,
+    "genre_ids": [
+     18,
+     80
+    ],
+    "overview": "When a 13-year-old is accused of the murder of a classmate, his family, the psychological expert and the detective in charge are all left asking: what really happened?",
+    "imdb_rating": 8.1,
+    "imdb_votes": 321998
+   },
+   {
+    "rank": 250,
+    "chart_rank": 301,
+    "imdb_id": "tt2628232",
+    "id": 54671,
+    "media_type": "tv",
+    "title": "Penny Dreadful",
+    "original_title": "Penny Dreadful",
+    "poster_path": "/hQSdrXBYTbLGHYDIseHkBOPXTgL.jpg",
+    "backdrop_path": "/32iacqVElB91YZKl9Ky3QEEkXtH.jpg",
+    "release_date": "",
+    "first_air_date": "2014-05-11",
+    "vote_average": 7.8,
+    "vote_count": 1597,
+    "popularity": 14.3317,
+    "genre_ids": [
+     10765,
+     18,
+     9648,
+     10759
+    ],
+    "overview": "Some of literature's most terrifying characters, including Dr. Frankenstein, Dorian Gray, and iconic figures from the novel Dracula are lurking in the darkest corners of Victorian London. Penny Dreadful is a frightening psychological thriller that weaves together these classic horror origin stories into a new adult drama.",
+    "imdb_rating": 8.2,
+    "imdb_votes": 141566
    }
   ]
  }
