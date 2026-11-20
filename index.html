@@ -2863,13 +2863,20 @@ async function fnFillHomeRail(fetchPage, keep) {
    the fetch each time it is called), so a newly-added popular download
    work appears in the hero on the next visit. */
 /* FN-HERO-TREND-VOTES: vote gates for the Hero + the trending rail /
-   see-all (user orders 2026-11-19 19:25 + 19:44 + 19:48). TMDB vote_count
-   only — never invented. TRENDING (rail + see-all, movies and series): a
-   work needs vote_count >= 100, EXCEPT a REALLY VERY IMPORTANT NEW work —
-   it has a download link in the archive (fnDlIconHas, d==1: the owner added
-   it because it matters) AND it was released within the last 14 days,
-   so it has not had time to accumulate votes yet. The 14-day window
-   means the exemption expires on its own. HERO (see fnHeroLiveItems):
+   see-all (user orders 2026-11-19 19:25 + 19:44 + 19:48; TRENDING rule
+   CORRECTED 2026-11-20 on the user's word, with phone screenshots:
+   new films go to newM25 and new series to updates — NOT into trending.
+   Trending is ONLY for famous / popular / anticipated works. The 14-day
+   download-link exemption (2026-11-19: a newly-released work WITH a
+   download link bypassed the vote floor) was REMOVED 2026-11-20:
+   bulk merges tripped it for ordinary new releases — Madden, Guarding
+   Stars, The Altruists (all 2026, all under 100 votes) sat in trending
+   purely because they were newly released and had download links.
+   TMDB vote_count only — never invented. TRENDING (rail + see-all,
+   movies and series): a work needs vote_count >= 100, no exceptions —
+   having a download link or being newly released does not bypass the
+   floor. New works belong in newM25 / updates until they earn votes.
+   HERO (see fnHeroLiveItems):
    7-month window (not the rail's 3 months); the 3 most popular TRENDING
    candidates (highest `popularity`) enter regardless of votes ("two or
    three important trends"); every other non-pinned work needs
@@ -2878,16 +2885,11 @@ async function fnFillHomeRail(fetchPage, keep) {
    pass the date + image gates. Both gates are ADDITIONAL filters on
    top of the existing released + has-image (+ archive for the rail)
    rules; they never replace them. If fewer than 20 qualify, the Hero/rail
-   shows what qualifies — never padded. If the avail-index failed to load,
-   fnDlIconHas is false and the exemption simply does not apply (fail-safe:
-   the work then needs >= 100). */
+   shows what qualifies — never padded. */
 function fnTrendVoteOk(x, todayStr) {
-  if ((x.vote_count || 0) >= 100) return true;
-  if (!fnDlIconHas(x)) return false;
-  var dt = x.media_type === 'tv' ? (x.first_air_date || '') : (x.release_date || '');
-  if (!dt || dt > todayStr) return false;
-  var g14 = new Date(todayStr + 'T00:00:00Z'); g14.setUTCDate(g14.getUTCDate() - 14);
-  return dt >= g14.toISOString().slice(0, 10);
+  /* FN-TREND-VOTE-FIX v1 (2026-11-20): no exemption — vote_count >= 100
+     for everyone. todayStr kept only so the two call sites need no change. */
+  return (x.vote_count || 0) >= 100;
 }
 
 /* FN-HERO-PINNED (user order 2026-11-19 19:48): works that ALWAYS enter
