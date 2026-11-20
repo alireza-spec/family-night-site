@@ -8322,6 +8322,13 @@
   "title": "Neighbors",
   "year": 2014
  },
+ "movie:196024": {
+  "imdb_id": "tt2438644",
+  "num": 7462,
+  "part": 3,
+  "title": "Department Q: The Keeper of Lost Causes",
+  "year": 2013
+ },
  "movie:1989": {
   "imdb_id": "tt0765120",
   "num": 1285,
@@ -8426,6 +8433,13 @@
   "part": 1,
   "title": "The Breakfast Club",
   "year": 1985
+ },
+ "movie:2109": {
+  "imdb_id": "tt0120812",
+  "num": 6393,
+  "part": 3,
+  "title": "Rush Hour",
+  "year": 1998
  },
  "movie:21175": {
   "imdb_id": "tt0323013",
@@ -8558,6 +8572,13 @@
   "num": 6261,
   "part": 3,
   "title": "The Signal",
+  "year": 2014
+ },
+ "movie:242512": {
+  "imdb_id": "tt1204977",
+  "num": 8913,
+  "part": 4,
+  "title": "Ouija",
   "year": 2014
  },
  "movie:244610": {
@@ -9048,6 +9069,13 @@
   "num": 1126,
   "part": 1,
   "title": "Unthinkable",
+  "year": 2010
+ },
+ "movie:38365": {
+  "imdb_id": "tt1375670",
+  "num": 8863,
+  "part": 4,
+  "title": "Grown Ups",
   "year": 2010
  },
  "movie:38523": {
@@ -10751,6 +10779,13 @@
   "title": "Moulin Rouge",
   "year": 2001
  },
+ "movie:82675": {
+  "imdb_id": "tt1397280",
+  "num": 9036,
+  "part": 4,
+  "title": "Taken 2",
+  "year": 2012
+ },
  "movie:827": {
   "imdb_id": "tt0046911",
   "num": 892,
@@ -11297,6 +11332,13 @@
   "title": "In the Line of Fire",
   "year": 1993
  },
+ "movie:9387": {
+  "imdb_id": "tt0082198",
+  "num": 6392,
+  "part": 3,
+  "title": "Conan the Barbarian",
+  "year": 1982
+ },
  "movie:939243": {
   "imdb_id": "tt18259086",
   "num": 3620,
@@ -11548,6 +11590,13 @@
   "part": 1,
   "title": "Pets 2",
   "year": 2021
+ },
+ "movie:9738": {
+  "imdb_id": "tt0120667",
+  "num": 8441,
+  "part": 4,
+  "title": "Fantastic Four",
+  "year": 2005
  },
  "movie:975": {
   "imdb_id": "tt0050825",
@@ -11876,7 +11925,7 @@
   "num": 9946,
   "part": 10,
   "title": "Blades of the Guardians",
-  "year": null
+  "year": 2023
  },
  "tv:108181": {
   "imdb_id": "tt31937954",
@@ -15509,7 +15558,7 @@
   "num": 10087,
   "part": 11,
   "title": "The Gentleman",
-  "year": null
+  "year": 2026
  },
  "tv:314172": {
   "imdb_id": "tt38048350",
@@ -16083,7 +16132,7 @@
   "num": 9402,
   "part": 6,
   "title": "Lovesick",
-  "year": null
+  "year": 2014
  },
  "tv:64122": {
   "imdb_id": "tt1051220",
