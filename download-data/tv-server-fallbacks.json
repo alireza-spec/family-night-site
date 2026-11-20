@@ -31,16 +31,16 @@
   "dn_name": "پی ام سی",
   "servers": [
    {
-    "url": "https://10g.vitarani.com/live/G3WICIjinmHWzrCDE4hxdQ__/master.m3u8",
-    "title": "سرور اصلی"
-   },
-   {
     "url": "https://cp12.adabmedia.com/hls/pm30/stream.m3u8",
     "title": "سرورمناسب ایران۱"
    },
    {
     "url": "http://46.245.122.7:8080/hls/pm30/stream.m3u8",
     "title": "سرورمناسب ایران۲"
+   },
+   {
+    "url": "https://10g.vitarani.com/live/G3WICIjinmHWzrCDE4hxdQ__/master.m3u8",
+    "title": "سرور اصلی"
    },
    {
     "url": "https://ca-rt.onetv.app:8443/PMCMusic/index-0.m3u8?token=onetv202",
@@ -54,12 +54,12 @@
   "dn_name": "آوا سریس",
   "servers": [
    {
-    "url": "https://10g.vitarani.com/live/j_fHB9WUAwH2PXnoAsnEDw__/master.m3u8",
-    "title": "سرور اصلی"
-   },
-   {
     "url": "https://ca.onetvapi.win:8443/avaserieshls.wns.live/hls/stream.m3u8?token=onetv202",
     "title": "سرور 3"
+   },
+   {
+    "url": "https://10g.vitarani.com/live/j_fHB9WUAwH2PXnoAsnEDw__/master.m3u8",
+    "title": "سرور اصلی"
    }
   ],
   "probe_main": "inconclusive-vm"
