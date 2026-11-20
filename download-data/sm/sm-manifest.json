@@ -1,0 +1,739 @@
+{
+ "auto_translated_fa_names": [
+  {
+   "fa": "شناورها",
+   "title": "The Floaters"
+  },
+  {
+   "fa": "چرخه عشق",
+   "title": "The Cycle of Love"
+  },
+  {
+   "fa": "نفرت",
+   "title": "Hatred"
+  }
+ ],
+ "cam_dropped": [],
+ "cam_only_titles": [
+  {
+   "imdb": "tt40210362",
+   "nlinks": 3,
+   "note": "CAM links kept: no real quality exists anywhere for this title",
+   "title": "The Last Temptation of Becky"
+  }
+ ],
+ "code": "SM",
+ "complete_titles": [
+  {
+   "imdb": "tt43590341",
+   "nlinks": 18,
+   "note": "already fully in the live archive (all Simba URLs live in its own record); adds nothing",
+   "simba_id": 35982,
+   "title": "Our Yesterday's Escape",
+   "year": 2026
+  },
+  {
+   "imdb": "tt30235784",
+   "nlinks": 2,
+   "note": "already fully in the live archive (all Simba URLs live in its own record); adds nothing",
+   "simba_id": 36016,
+   "title": "Winter of the Crow",
+   "year": 2025
+  },
+  {
+   "imdb": "tt22754948",
+   "nlinks": 3,
+   "note": "already fully in the live archive (all Simba URLs live in its own record); adds nothing",
+   "simba_id": 36033,
+   "title": "Yezhu Kadal Yezhu Malai",
+   "year": 2026
+  },
+  {
+   "imdb": "tt36304379",
+   "nlinks": 2,
+   "note": "already fully in the live archive (all Simba URLs live in its own record); adds nothing",
+   "simba_id": 36039,
+   "title": "Gamer Girls",
+   "year": 2025
+  },
+  {
+   "imdb": "tt13943462",
+   "nlinks": 36,
+   "note": "already fully in the live archive (all Simba URLs live in its own record); adds nothing",
+   "simba_id": 35962,
+   "title": "The Dungeon of Black Company",
+   "year": 2021
+  },
+  {
+   "imdb": "tt40857820",
+   "nlinks": 4,
+   "note": "already fully in the live archive (all Simba URLs live in its own record); adds nothing",
+   "simba_id": 35969,
+   "title": "Isakapatnam",
+   "year": 2026
+  },
+  {
+   "imdb": "tt27525140",
+   "nlinks": 34,
+   "note": "already fully in the live archive (all Simba URLs live in its own record); adds nothing",
+   "simba_id": 35972,
+   "title": "Wrong Side of the Rainbow",
+   "year": 2026
+  },
+  {
+   "imdb": "tt40181533",
+   "nlinks": 26,
+   "note": "already fully in the live archive (all Simba URLs live in its own record); adds nothing",
+   "simba_id": 35973,
+   "title": "Oops! I'm the Concubine",
+   "year": 2026
+  },
+  {
+   "imdb": "tt31183805",
+   "nlinks": 20,
+   "note": "already fully in the live archive (all Simba URLs live in its own record); adds nothing",
+   "simba_id": 35978,
+   "title": "The Empress of Ayodhaya",
+   "year": 2024
+  },
+  {
+   "imdb": "tt19768024",
+   "nlinks": 4,
+   "note": "already fully in the live archive (all Simba URLs live in its own record); adds nothing",
+   "simba_id": 35983,
+   "title": "Indian Police Force",
+   "year": 2024
+  },
+  {
+   "imdb": "tt31557623",
+   "nlinks": 3,
+   "note": "already fully in the live archive (all Simba URLs live in its own record); adds nothing",
+   "simba_id": 35987,
+   "title": "Honeko Akabane's Bodyguards",
+   "year": 2024
+  },
+  {
+   "imdb": "tt17564828",
+   "nlinks": 5,
+   "note": "already fully in the live archive (all Simba URLs live in its own record); adds nothing",
+   "simba_id": 35992,
+   "title": "Our Only Chance",
+   "year": 2022
+  },
+  {
+   "imdb": "tt34498121",
+   "nlinks": 69,
+   "note": "already fully in the live archive (all Simba URLs live in its own record); adds nothing",
+   "simba_id": 35993,
+   "title": "Thukra Ke Mera Pyaar",
+   "year": 2024
+  },
+  {
+   "imdb": "tt0445883",
+   "nlinks": 22,
+   "note": "already fully in the live archive (all Simba URLs live in its own record); adds nothing",
+   "simba_id": 35995,
+   "title": "Koffee with Karan",
+   "year": 2004
+  },
+  {
+   "imdb": "tt6131920",
+   "nlinks": 9,
+   "note": "already fully in the live archive (all Simba URLs live in its own record); adds nothing",
+   "simba_id": 35996,
+   "title": "In Plain Sight",
+   "year": 2016
+  },
+  {
+   "imdb": "tt2647420",
+   "nlinks": 4,
+   "note": "already fully in the live archive (all Simba URLs live in its own record); adds nothing",
+   "simba_id": 35997,
+   "title": "Fleming",
+   "year": 2014
+  },
+  {
+   "imdb": "tt6733372",
+   "nlinks": 3,
+   "note": "already fully in the live archive (all Simba URLs live in its own record); adds nothing",
+   "simba_id": 35999,
+   "title": "Love and Lies",
+   "year": 2017
+  },
+  {
+   "imdb": "tt0063105",
+   "nlinks": 4,
+   "note": "already fully in the live archive (all Simba URLs live in its own record); adds nothing",
+   "simba_id": 36008,
+   "title": "Golden Swallow",
+   "year": 1968
+  },
+  {
+   "imdb": "tt15305982",
+   "nlinks": 30,
+   "note": "already fully in the live archive (all Simba URLs live in its own record); adds nothing",
+   "simba_id": 36010,
+   "title": "Crime Puzzle",
+   "year": 2021
+  },
+  {
+   "imdb": "tt0099272",
+   "nlinks": 1,
+   "note": "already fully in the live archive (all Simba URLs live in its own record); adds nothing",
+   "simba_id": 36019,
+   "title": "City Hunter: Bay City Wars",
+   "year": 1990
+  },
+  {
+   "imdb": "tt0084310",
+   "nlinks": 2,
+   "note": "already fully in the live archive (all Simba URLs live in its own record); adds nothing",
+   "simba_id": 36020,
+   "title": "The Treasure Hunters",
+   "year": 1981
+  },
+  {
+   "imdb": "tt41567863",
+   "nlinks": 2,
+   "note": "already fully in the live archive (all Simba URLs live in its own record); adds nothing",
+   "simba_id": 36031,
+   "title": "Jerax",
+   "year": 2026
+  },
+  {
+   "imdb": "tt36460652",
+   "nlinks": 2,
+   "note": "already fully in the live archive (all Simba URLs live in its own record); adds nothing",
+   "simba_id": 36041,
+   "title": "No One Will Hear Your Scream",
+   "year": 2025
+  }
+ ],
+ "counts": {
+  "by_resolution": {
+   "1080p": 47,
+   "480p": 132,
+   "720p": 220
+  },
+  "by_type": {
+   "movie": 10,
+   "series": 21
+  },
+  "by_version": {
+   "Dubbed": 10,
+   "HardSub": 352,
+   "SoftSub": 37
+  },
+  "by_year": {
+   "1991": 1,
+   "1992": 1,
+   "1997": 1,
+   "2015": 1,
+   "2016": 1,
+   "2018": 3,
+   "2022": 3,
+   "2023": 2,
+   "2024": 1,
+   "2025": 4,
+   "2026": 13
+  },
+  "new_links": 399,
+  "new_play_rows_expanded": 487,
+  "new_titles": 31,
+  "total_links_added": 399,
+  "total_titles": 31,
+  "variety_links_added": 0,
+  "variety_links_parsed": 0,
+  "variety_play_rows_expanded": 0,
+  "variety_titles": 0
+ },
+ "generated": "2026-11-20",
+ "live_base_head": "cc1419452bec94ac734b6e13fc9f922405227a39",
+ "new_titles": [
+  {
+   "imdb": "tt38674953",
+   "nlinks": 4,
+   "note": null,
+   "num": 11632,
+   "play_rows": 12,
+   "title": "#Love",
+   "tmdb": 302882,
+   "type": "series",
+   "year": 2026
+  },
+  {
+   "imdb": "tt43711902",
+   "nlinks": 16,
+   "note": "OMDb/Simba title 'Mikon Sagi' = original Japanese title; record title = TMDB.",
+   "num": 11633,
+   "play_rows": 16,
+   "title": "Unmarried Fraud: The Side of Him I Didn't Know",
+   "tmdb": 325604,
+   "type": "series",
+   "year": 2026
+  },
+  {
+   "imdb": "tt35019253",
+   "nlinks": 20,
+   "note": "",
+   "num": 11634,
+   "play_rows": 20,
+   "title": "Necromancer",
+   "tmdb": 311141,
+   "type": "series",
+   "year": 2026
+  },
+  {
+   "imdb": "tt30477931",
+   "nlinks": 29,
+   "note": "",
+   "num": 11635,
+   "play_rows": 29,
+   "title": "Khaie",
+   "tmdb": 242666,
+   "type": "series",
+   "year": 2024
+  },
+  {
+   "imdb": "tt44934375",
+   "nlinks": 4,
+   "note": "",
+   "num": 11636,
+   "play_rows": 12,
+   "title": "Hunkkaar: The Roar",
+   "tmdb": 333483,
+   "type": "series",
+   "year": 2026
+  },
+  {
+   "imdb": "tt36838527",
+   "nlinks": 8,
+   "note": "",
+   "num": 11637,
+   "play_rows": 8,
+   "title": "Obsess",
+   "tmdb": 311853,
+   "type": "series",
+   "year": 2026
+  },
+  {
+   "imdb": "tt36643714",
+   "nlinks": 4,
+   "note": "",
+   "num": 11638,
+   "play_rows": 12,
+   "title": "Operation Safed Sagar: The Untold Story of the Kargil War",
+   "tmdb": 284753,
+   "type": "series",
+   "year": 2026
+  },
+  {
+   "imdb": "tt21908550",
+   "nlinks": 8,
+   "note": "",
+   "num": 11639,
+   "play_rows": 32,
+   "title": "Vadhandhi",
+   "tmdb": 200881,
+   "type": "series",
+   "year": 2022
+  },
+  {
+   "imdb": "tt48434821",
+   "nlinks": 7,
+   "note": "Original title 'Talae Nazil' (OMDb) / TMDB alt 'Tale' Nazel: El Hob Elli Kan'; record title = TMDB.",
+   "num": 11640,
+   "play_rows": 7,
+   "title": "Up and Down",
+   "tmdb": 294897,
+   "type": "series",
+   "year": 2026
+  },
+  {
+   "imdb": "tt40210362",
+   "nlinks": 3,
+   "note": "CAM-only title (3× HDCAM SoftSub); no real quality exists, CAM stays per rule.",
+   "num": 11641,
+   "play_rows": 3,
+   "title": "The Last Temptation of Becky",
+   "tmdb": 1642568,
+   "type": "movie",
+   "year": 2026
+  },
+  {
+   "imdb": "tt15252040",
+   "nlinks": 2,
+   "note": "",
+   "num": 11642,
+   "play_rows": 2,
+   "title": "Mum Said",
+   "tmdb": 1164639,
+   "type": "movie",
+   "year": 2023
+  },
+  {
+   "imdb": "tt31924802",
+   "nlinks": 4,
+   "note": "title note: OMDb title 'Revolutionaries: The Other Story of How India Won Its Freedom' = TMDB original/alt title; TMDB display title 'The Revolutionaries'",
+   "num": 11643,
+   "play_rows": 16,
+   "title": "The Revolutionaries",
+   "tmdb": 249863,
+   "type": "series",
+   "year": 2026
+  },
+  {
+   "imdb": "tt38804603",
+   "nlinks": 30,
+   "note": "OMDb/Simba short title 'Imam Gazali'; record title = TMDB.",
+   "num": 11644,
+   "play_rows": 30,
+   "title": "Imam al‑Ghazali, the Proof of Islam",
+   "tmdb": 314697,
+   "type": "series",
+   "year": 2026
+  },
+  {
+   "imdb": "tt7155178",
+   "nlinks": 3,
+   "note": "",
+   "num": 11645,
+   "play_rows": 3,
+   "title": "Over Drive",
+   "tmdb": 517380,
+   "type": "movie",
+   "year": 2018
+  },
+  {
+   "imdb": "tt16434892",
+   "nlinks": 24,
+   "note": "",
+   "num": 11646,
+   "play_rows": 24,
+   "title": "Don't Call It Mystery",
+   "tmdb": 126849,
+   "type": "series",
+   "year": 2022
+  },
+  {
+   "imdb": "tt40204609",
+   "nlinks": 3,
+   "note": "year note: OMDb+Simba say 2025, TMDB says 2026 (same IMDb id, title+type exact)",
+   "num": 11647,
+   "play_rows": 3,
+   "title": "Free at Heart",
+   "tmdb": 1427540,
+   "type": "movie",
+   "year": 2025
+  },
+  {
+   "imdb": "tt37660537",
+   "nlinks": 18,
+   "note": "",
+   "num": 11648,
+   "play_rows": 18,
+   "title": "Two Much with Kajol and Twinkle",
+   "tmdb": 295251,
+   "type": "series",
+   "year": 2025
+  },
+  {
+   "imdb": "tt8448644",
+   "nlinks": 11,
+   "note": "",
+   "num": 11649,
+   "play_rows": 11,
+   "title": "Dance Deewane",
+   "tmdb": 90355,
+   "type": "series",
+   "year": 2018
+  },
+  {
+   "imdb": "tt19868678",
+   "nlinks": 4,
+   "note": "",
+   "num": 11650,
+   "play_rows": 16,
+   "title": "Jee Karda",
+   "tmdb": 227807,
+   "type": "series",
+   "year": 2023
+  },
+  {
+   "imdb": "tt6068960",
+   "nlinks": 3,
+   "note": "",
+   "num": 11651,
+   "play_rows": 3,
+   "title": "Hatred",
+   "tmdb": 406449,
+   "type": "movie",
+   "year": 2016
+  },
+  {
+   "imdb": "tt38063160",
+   "nlinks": 2,
+   "note": "year note: OMDb+Simba say 2025, TMDB says 2026 (same IMDb id, title+type exact)",
+   "num": 11652,
+   "play_rows": 2,
+   "title": "The Cycle of Love",
+   "tmdb": 1537518,
+   "type": "movie",
+   "year": 2025
+  },
+  {
+   "imdb": "tt31145438",
+   "nlinks": 2,
+   "note": "year note: OMDb+Simba say 2025, TMDB says 2026 (same IMDb id, title+type exact)",
+   "num": 11653,
+   "play_rows": 2,
+   "title": "The Floaters",
+   "tmdb": 1238735,
+   "type": "movie",
+   "year": 2025
+  },
+  {
+   "imdb": "tt22001186",
+   "nlinks": 60,
+   "note": "IMDb id from OMDb (title+year+type agree); TMDB has no IMDb link for this entry.",
+   "num": 11654,
+   "play_rows": 60,
+   "title": "Be My Princess",
+   "tmdb": 133953,
+   "type": "series",
+   "year": 2022
+  },
+  {
+   "imdb": "tt0101583",
+   "nlinks": 2,
+   "note": "",
+   "num": 11655,
+   "play_rows": 2,
+   "title": "Ranma 1/2 the Movie: Big Trouble in Nekonron, China",
+   "tmdb": 37024,
+   "type": "movie",
+   "year": 1991
+  },
+  {
+   "imdb": "tt0104604",
+   "nlinks": 2,
+   "note": "Simba title 'Ranma The Movie 2 The Battle of Togenkyo Rescue the Brides' = literal translation of the Japanese title; OMDb year 1999 vs TMDB 1992 (record year 1992).",
+   "num": 11656,
+   "play_rows": 2,
+   "title": "Ranma 1/2 the Movie 2: Nihao My Concubine",
+   "tmdb": 37021,
+   "type": "movie",
+   "year": 1992
+  },
+  {
+   "imdb": "tt29668631",
+   "nlinks": 31,
+   "note": "IMDb id from OMDb; TMDB+OMDb agree on 1997 (Simba year 2022 uncorroborated).",
+   "num": 11657,
+   "play_rows": 31,
+   "title": "Sai Roong",
+   "tmdb": 340510,
+   "type": "series",
+   "year": 1997
+  },
+  {
+   "imdb": "tt3513704",
+   "nlinks": 13,
+   "note": "",
+   "num": 11658,
+   "play_rows": 13,
+   "title": "The Messengers",
+   "tmdb": 60864,
+   "type": "series",
+   "year": 2015
+  },
+  {
+   "imdb": "tt8043492",
+   "nlinks": 72,
+   "note": "",
+   "num": 11659,
+   "play_rows": 72,
+   "title": "The Piano Forest",
+   "tmdb": 78471,
+   "type": "series",
+   "year": 2018
+  },
+  {
+   "imdb": "tt39390491",
+   "nlinks": 3,
+   "note": "OMDb title 'La Ley de Alicia' = Spanish original for 'Alicia's Law'.",
+   "num": 11660,
+   "play_rows": 3,
+   "title": "Alicia's Law",
+   "tmdb": 338562,
+   "type": "series",
+   "year": 2026
+  },
+  {
+   "imdb": "tt39151086",
+   "nlinks": 4,
+   "note": "",
+   "num": 11661,
+   "play_rows": 20,
+   "title": "Muthu Alias Kaattaan",
+   "tmdb": 301734,
+   "type": "series",
+   "year": 2026
+  },
+  {
+   "imdb": "tt6611324",
+   "nlinks": 3,
+   "note": "IMDb/OMDb title 'The Bodyguard'; record title = TMDB.",
+   "num": 11662,
+   "play_rows": 3,
+   "title": "Guarding Stars",
+   "tmdb": 1551025,
+   "type": "movie",
+   "year": 2026
+  }
+ ],
+ "nosub_only_new": [],
+ "nosub_only_variety": [],
+ "parse_flags": [
+  {
+   "file": "Jee.Karda.S01E05E08.Hindi.480p.WEBDL.HardSub.mkv",
+   "flag": "episode JSON=(4, 8) vs filename=(5,8)",
+   "title": "Jee Karda"
+  },
+  {
+   "file": "Jee.Karda.S01E05E08.Hindi.720p.WEBDL.HardSub.mkv",
+   "flag": "episode JSON=(4, 8) vs filename=(5,8)",
+   "title": "Jee Karda"
+  }
+ ],
+ "part": 1,
+ "queued_titles": [
+  {
+   "nlinks": 40,
+   "reason": "NO-IMDB+NO-OMDB: TMDB has no IMDb id and OMDb has no entry by title",
+   "simba_id": 35872,
+   "title": "The Confession Truth",
+   "year": "2026"
+  },
+  {
+   "nlinks": 48,
+   "reason": "NO-IMDB+NO-OMDB: TMDB has no IMDb id and OMDb has no entry by title",
+   "simba_id": 35876,
+   "title": "Mystery Forest",
+   "year": "2026"
+  },
+  {
+   "nlinks": 102,
+   "reason": "WGP-ANIME-NO-IDENTITY: TMDB stub 295947 links imdb tt30781596, which OMDb says is a 1997 VIDEO GAME ('Mini Yonku Bakusou Kyoudai Let's & Go!! WGP Hyper Heat'), not the anime; Simba title says MAX but the files are WGP; no clean TMDB+IMDb+OMDb identity.",
+   "simba_id": 35900,
+   "title": "Bakuso Kyodai Lets & Go MAX",
+   "year": "1998"
+  },
+  {
+   "nlinks": 6,
+   "reason": "NO-IMDB+NO-OMDB: TMDB has no IMDb id and OMDb has no entry by title",
+   "simba_id": 35907,
+   "title": "Happy Anding",
+   "year": "2026"
+  },
+  {
+   "nlinks": 34,
+   "reason": "NO-IMDB+NO-OMDB: TMDB has no IMDb id and OMDb has no entry by title",
+   "simba_id": 35922,
+   "title": "Vow of Autumn",
+   "year": "2026"
+  },
+  {
+   "nlinks": 54,
+   "reason": "NO-IMDB+NO-OMDB: TMDB has no IMDb id and OMDb has no entry by title",
+   "simba_id": 35926,
+   "title": "Wherever Whoever Whatever",
+   "year": "2026"
+  },
+  {
+   "nlinks": 20,
+   "reason": "NO-IMDB+NO-OMDB: TMDB has no IMDb id and OMDb has no entry by title",
+   "simba_id": 35945,
+   "title": "Hell Home",
+   "year": "2026"
+  },
+  {
+   "nlinks": 46,
+   "reason": "NO-IMDB+NO-OMDB: TMDB has no IMDb id and OMDb has no entry by title",
+   "simba_id": 35946,
+   "title": "Northern Storm",
+   "year": "2026"
+  },
+  {
+   "nlinks": 10,
+   "reason": "NO-IMDB+NO-OMDB: TMDB has no IMDb id and OMDb has no entry by title",
+   "simba_id": 35947,
+   "title": "squall",
+   "year": "2026"
+  },
+  {
+   "nlinks": 49,
+   "reason": "NO-IMDB+NO-OMDB: TMDB has no IMDb id and OMDb has no entry by title",
+   "simba_id": 35960,
+   "title": "Wanteez",
+   "year": "2022"
+  },
+  {
+   "nlinks": 10,
+   "reason": "NO-IMDB+NO-OMDB: TMDB has no IMDb id and OMDb has no entry by title",
+   "simba_id": 35970,
+   "title": "Motherland",
+   "year": "2026"
+  },
+  {
+   "nlinks": 10,
+   "reason": "OMDB-SILENT: TMDB+IMDb agree, OMDb has no entry (strict all-three rule; user decision pending)",
+   "simba_id": 35971,
+   "title": "The Silent Killer",
+   "year": "2026"
+  },
+  {
+   "nlinks": 20,
+   "reason": "NO-IMDB+NO-OMDB: TMDB has no IMDb id and OMDb has no entry by title",
+   "simba_id": 35974,
+   "title": "Cycle of Sin",
+   "year": "2026"
+  },
+  {
+   "nlinks": 48,
+   "reason": "OMDB-SILENT: TMDB+IMDb agree, OMDb has no entry (strict all-three rule; user decision pending)",
+   "simba_id": 36001,
+   "title": "Faces Reborn",
+   "year": "2026"
+  },
+  {
+   "nlinks": 48,
+   "reason": "NO-IMDB+NO-OMDB: TMDB has no IMDb id and OMDb has no entry by title",
+   "simba_id": 36002,
+   "title": "Maybe I Can Hear Love",
+   "year": "2023"
+  },
+  {
+   "nlinks": 12,
+   "reason": "OMDB-SILENT: TMDB+IMDb agree, OMDb has no entry (strict all-three rule; user decision pending)",
+   "simba_id": 36026,
+   "title": "Taming the Husband",
+   "year": "2026"
+  }
+ ],
+ "source": "Simba",
+ "start_num": 11632,
+ "url_dupes_dropped": [
+  {
+   "file": "The.Cycle.Of.Love.2025.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.mkv",
+   "title": "The Cycle of Love"
+  },
+  {
+   "file": "Sai.Roong.EP01.480P.NextMovie.m4v",
+   "title": "Sai Roong"
+  }
+ ],
+ "url_dupes_in_dn_records": [],
+ "variety_added": [],
+ "zero_h3_variety": []
+}

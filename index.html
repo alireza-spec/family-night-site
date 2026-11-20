@@ -5101,7 +5101,7 @@ async function findImdbByTitle(title, year) {
      old one (3 parts). Previously this only searched new parts 1-3, so
      most titles were never found when the worker could not supply an
      IMDb id (worker blocked without VPN) and the box stayed empty. */
-  const archives = [{ parts: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], which: undefined }, { parts: [1], which: 'ao' }, { parts: [1], which: 'mbm' }, { parts: [1, 2], which: 'dn' }, { parts: [1], which: 'srm' }, /* FN-MBM-SRC v1; FN-SRM-SRC v1 */{ parts: [1, 2, 3], which: 'old' }]; /* FN-AO-SRC v1: AO part added; FN-DN-SRC v1: DN parts added */
+  const archives = [{ parts: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], which: undefined }, { parts: [1], which: 'ao' }, { parts: [1], which: 'mbm' }, { parts: [1, 2], which: 'dn' }, { parts: [1], which: 'srm' }, { parts: [1], which: 'sm' }, /* FN-MBM-SRC v1; FN-SRM-SRC v1; FN-SM-SRC v1 */{ parts: [1, 2, 3], which: 'old' }]; /* FN-AO-SRC v1: AO part added; FN-DN-SRC v1: DN parts added */
   for (const arc of archives) {
   for (const part of arc.parts) {
     let doc;
@@ -5325,7 +5325,7 @@ function paintFrame() {
 }
 
 /* ================= downloads — FN archive (same logic as the app) ================= */
-let fnDlIndex = null, fnDlIndexPromise = null; const fnDlParts = {}; const aoDlParts = {}; const mbmDlParts = {}; const dnDlParts = {}; const srmDlParts = {}; /* FN-AO-SRC v1; FN-MBM-SRC v1; FN-DN-SRC v1 adds dn; FN-SRM-SRC v1 */
+let fnDlIndex = null, fnDlIndexPromise = null; const fnDlParts = {}; const aoDlParts = {}; const mbmDlParts = {}; const dnDlParts = {}; const srmDlParts = {}; const smDlParts = {}; /* FN-AO-SRC v1; FN-MBM-SRC v1; FN-DN-SRC v1 adds dn; FN-SRM-SRC v1; FN-SM-SRC v1 */
 let oldDlIndex = null, oldDlIndexPromise = null; const oldDlParts = {};
 function getOldDlIndex() {
   if (oldDlIndex) return Promise.resolve(oldDlIndex);
@@ -5405,6 +5405,15 @@ function loadDlPart(part, which) {
     return fetch(DL_BASE + 'srm/archive-part-' + n + '.html').then(r => { if (!r.ok) throw new Error('archive'); return r.text(); })
       .then(t => { const d = new DOMParser().parseFromString(t, 'text/html'); srmDlParts[n] = d; return d; });
   }
+  /* FN-SM-SRC v1: Simba part — the SM H3 file lives in
+     download-data/sm/archive-part-1.html; the global download-index
+     maps SM titles to part 'sm'. */
+  if (part === 'sm' || which === 'sm') {
+    const n = Number(part) >= 1 ? Number(part) : 1;
+    if (smDlParts[n]) return Promise.resolve(smDlParts[n]);
+    return fetch(DL_BASE + 'sm/archive-part-' + n + '.html').then(r => { if (!r.ok) throw new Error('archive'); return r.text(); })
+      .then(t => { const d = new DOMParser().parseFromString(t, 'text/html'); smDlParts[n] = d; return d; });
+  }
   const isOld = which === 'old';
   const cache = isOld ? oldDlParts : fnDlParts;
   const base = isOld ? OLD_DL_BASE : DL_BASE;
@@ -5436,7 +5445,7 @@ async function resolveDlRecord(imdbId, num) {
       const part = index[imdbId];
       if (part) {
         const rec = recordFromArchive(await loadDlPart(part), imdbId);
-        if (dlRecHasLinks(rec)) { main = rec; mainSrc = (part === 'ao' ? 'ao' : part === 'mbm' ? 'mbm' : (part === 'dn1' || part === 'dn2') ? 'dn' : part === 'srm' ? 'srm' : 'new'); } /* FN-MBM-SRC v1; FN-DN-SRC v1 adds dn; FN-SRM-SRC v1 */
+        if (dlRecHasLinks(rec)) { main = rec; mainSrc = (part === 'ao' ? 'ao' : part === 'mbm' ? 'mbm' : (part === 'dn1' || part === 'dn2') ? 'dn' : part === 'srm' ? 'srm' : part === 'sm' ? 'sm' : 'new'); } /* FN-MBM-SRC v1; FN-DN-SRC v1 adds dn; FN-SRM-SRC v1; FN-SM-SRC v1 */
       }
     } catch (e) {}
     try {
@@ -5466,7 +5475,7 @@ async function resolveDlRecord(imdbId, num) {
   return null;
 }
 async function resolveDlRecordByPart(imdbId, num, part, which) {
-  const base = which === 'old' ? 'old' : which === 'ao' ? 'ao' : which === 'mbm' ? 'mbm' : which === 'dn' ? 'dn' : which === 'srm' ? 'srm' : 'new'; /* FN-AO-SRC v1; FN-MBM-SRC v1 adds mbm; FN-DN-SRC v1 adds dn; FN-SRM-SRC v1 adds srm */
+  const base = which === 'old' ? 'old' : which === 'ao' ? 'ao' : which === 'mbm' ? 'mbm' : which === 'dn' ? 'dn' : which === 'srm' ? 'srm' : which === 'sm' ? 'sm' : 'new'; /* FN-AO-SRC v1; FN-MBM-SRC v1 adds mbm; FN-DN-SRC v1 adds dn; FN-SRM-SRC v1 adds srm; FN-SM-SRC v1 adds sm */
   const rec = recordFromArchive(await loadDlPart(part, base), imdbId || '', num);
   if (rec && (rec.groups.softsub.length || rec.groups.dubbed.length || rec.groups.nosub.length)) return { rec, src: base };
   return null;
@@ -5510,9 +5519,13 @@ function recordFromArchive(doc, imdb, num) {
       if (!href || !q) return;
       /* Zivarnet archive has no <p>Season N</p> markers — season/episode
          live in the label / file name as S01E02 */
-      const se = (q + ' ' + href).match(/S(\d+)E(\d+)/i);
+      /* FN-SM-SRC v1: Simba series files are RANGE groups (one file covers
+         S01E01–E05) — expand the range so the file attaches to every
+         episode tile in its range. A single-episode label is unchanged. */
+      const se = (q + ' ' + href).match(/S(\d+)E(\d+)(?:\s*[-–]\s*E?(\d+)|E(\d+)|\.\s*E(\d+))?/i);
       const epSeason = se ? String(parseInt(se[1], 10)) : season;
-      const epNum = se ? parseInt(se[2], 10) : 0;
+      const epStart = se ? parseInt(se[2], 10) : 0;
+      const epEnd = se ? parseInt(se[3] || se[4] || se[5] || se[2], 10) : 0;
       /* size = the text right after this link, up to the next link */
       let size = '', sib = a.nextSibling;
       while (sib && !(sib.nodeType === 1 && sib.tagName === 'A')) { size += sib.textContent || ''; sib = sib.nextSibling; }
@@ -5521,7 +5534,9 @@ function recordFromArchive(doc, imdb, num) {
          .m4a / .aac / .flac / .ogg / .wav / .opus) belongs to the audio
          group no matter which marker precedes it. None exists today. */
       const fnDlIsAudio = (function (u) { try { var f = decodeURIComponent((u.split('/').pop() || '').split('?')[0]); var e = f.split('.').pop() || ''; return /^(mp3|m4a|aac|flac|ogg|wav|opus)$/i.test(e); } catch (e2) { return false; } })(href);
-      (fnDlIsAudio ? groups.audio : groups[cat]).push({ quality: q, url: href, size, season: epSeason, episode: epNum });
+      for (let epI = epStart; epI <= Math.max(epEnd, epStart); epI++) {
+        (fnDlIsAudio ? groups.audio : groups[cat]).push({ quality: q, url: href, size, season: epSeason, episode: epI });
+      }
     });
     n = n.nextElementSibling;
   }
@@ -5633,7 +5648,14 @@ function parseDlSpecs(x) {
      any token. Displayed as SR, never the full name (source-code table).
      This also fixes the 1,010 existing srm links in old part 3. */
   if (/sermoviedown/i.test(x.url || '')) encRaw = 'SerMovieDown';
-  const enc = (function (r) { var l = String(r).toLowerCase(); if (l === 'film2media' || l === 'f2m') return 'F2M'; if (l === 'donyayeserial') return 'DS'; if (l === 'trendingpie' || l === 'vidsrc') return 'TP'; /* FN-EXT-DL v1: ext source code */ if (l === 'archive.org' || l === 'archiveorg') return 'AO'; if (l === 'mobomovies') return 'MBM'; /* FN-MBM-SRC v1 */ if (l === 'sermoviedown' || l === 'sermovie') return 'SR'; /* FN-SRM-SRC v1 */ return r; })(encRaw); /* v8.6: display-only abbreviation; FN-AO-SRC v1 adds AO */
+  /* FN-SM-SRC v1: Simba files end in .simba.mkv and carry release-group
+     tokens (YTS/PSA/Pahe) that the encoder regex matches first — so the
+     .simba.mkv suffix is the source, overriding any token. Displayed as
+     SM, never the full name (source-code table). This also fixes the 11
+     Simba-11 titles in part 16 (their .simba.mkv files currently show
+     the release group instead of SM). */
+  if (/\.simba\.mkv/i.test(x.url || '')) encRaw = 'Simba';
+  const enc = (function (r) { var l = String(r).toLowerCase(); if (l === 'film2media' || l === 'f2m') return 'F2M'; if (l === 'donyayeserial') return 'DS'; if (l === 'trendingpie' || l === 'vidsrc') return 'TP'; /* FN-EXT-DL v1: ext source code */ if (l === 'archive.org' || l === 'archiveorg') return 'AO'; if (l === 'mobomovies') return 'MBM'; /* FN-MBM-SRC v1 */ if (l === 'sermoviedown' || l === 'sermovie') return 'SR'; /* FN-SRM-SRC v1 */ if (l === 'simba') return 'SM'; /* FN-SM-SRC v1 */ return r; })(encRaw); /* v8.6: display-only abbreviation; FN-AO-SRC v1 adds AO */
   const ext = (fn.match(/\.(mkv|mp4|avi)$/i) || [])[1] || '';
   return { res, source, codec: codecBits.join(' · '), enc, ext: ext ? ext.toUpperCase() : '', fn };
 }
@@ -5810,6 +5832,11 @@ function dlTilesHtml(rec, opts) {
      src can). Variety titles keep the file encoder (their src is not
      'dn'). */
   if (o.src === 'dn') all.forEach(function (r) { r.sp.enc = 'DN'; });
+  /* FN-SM-SRC v1: an SM box shows the SM code in the link sheet, not the
+     file's encoder token (SM files share hosts/encoders with F2M files —
+     the URL alone cannot tell them apart; the record's src can).
+     Variety titles keep the file encoder (their src is not 'sm'). */
+  if (o.src === 'sm') all.forEach(function (r) { r.sp.enc = 'SM'; });
   var isSeries = all.some(function (r) { return r.x.season || r.x.episode; });
   var totalMB = all.reduce(function (s, r) { return s + sizeToMB(r.x.size); }, 0);
   var allUrls = all.map(function (r) { return r.x.url; });
@@ -5838,7 +5865,7 @@ function dlTilesHtml(rec, opts) {
   if (isSeries) {
     out += '<div class="fn-dl-cabox" hidden><div class="fn-dl-ca-title"></div><div class="fn-dl-ca-chips"></div><button class="fn-dl-ca-close">بستن</button></div>';
   }
-  var ctx = { title: title, year: year, isSeries: isSeries, links: [], eps: {}, firstEp: '', allUrls: allUrls, sel: null, epLinks: null, epKey: '', tmdbId: o.tmdbId || '', epMeta: {}, epMetaDone: {} };
+  var ctx = { title: title, year: year, isSeries: isSeries, links: [], eps: {}, firstEp: '', allUrls: allUrls, sel: null, epLinks: null, epKey: '', tmdbId: o.tmdbId || '', src: o.src, epMeta: {}, epMetaDone: {} }; /* FN-SM-SRC v1: ctx.src feeds the E7c series-sheet override */
   if (isSeries) {
     out += dlSeriesHtml(groups, o.poster || '', title, ctx);
   } else {
@@ -5900,6 +5927,10 @@ function dlSeriesHtml(groups, posterUrl, title, ctx) {
       rec0.links.push({ x: x, label: g.label, sp: parseDlSpecs(x) });
     });
   });
+  /* FN-SM-SRC v1: an SM box shows the SM code in the episode sheets, not
+     the file's encoder token — the `all` override (E7a) never reaches here:
+     dlSeriesHtml parses its own specs per link. */
+  if (ctx.src === 'sm') Object.keys(eps).forEach(function (k) { eps[k].links.forEach(function (l) { l.sp.enc = 'SM'; }); });
   var seasons = [];
   Object.keys(eps).forEach(function (k) { var s = eps[k].season; if (seasons.indexOf(s) < 0) seasons.push(s); });
   seasons.sort(function (a, b) { return (parseInt(a, 10) || 0) - (parseInt(b, 10) || 0); });
@@ -6496,7 +6527,7 @@ function fnPlayHash(s) { var h = 5381, i; for (i = 0; i < s.length; i++) h = ((h
 function fnPlayResOf(p) { var m = ((p.quality || '') + ' ' + (p.play_url || '')).match(/\b(2160p|1440p|1080p|720p|576p|480p|360p)\b/i); return m ? m[1].toLowerCase() : ''; }
 function fnPlayResFa(p) { var r = fnPlayResOf(p).replace('p', ''); return r ? fnPlayFa(r) : ''; }
 function fnPlaySourceOf(p) { var m = ((p.quality || '') + ' ' + (p.play_url || '')).match(/\b(BluRay|WEB-DL|WEBRip|HDTV|HDRip|DVDRip|BDRip|CAM|HDTS)\b/i); return m ? m[1] : ''; }
-function fnPlayIsCam(p) { return /CAM|HDTS/i.test((p.quality || '') + ' ' + (p.play_url || '')); }
+function fnPlayIsCam(p) { return /(?:^|[^A-Za-z])(HDCAM|HDTS|CAM|HD-TS)/i.test((p.quality || '') + ' ' + (p.play_url || '')); } /* FN-SM-SRC v1: CAM must be a token, not 'cam' inside a word — the old /CAM/i flagged 'Decameron'/'Bodycam'/'Scam'/'Intercambiadas' (57 live rows) as پرده. HDCAM/HDTS still match. */
 function fnPlayGroupRank(g) { return g === 'SoftSub' ? 0 : g === 'Dubbed' ? 1 : g === 'NoSub' ? 2 : 3; }
 /* FN-DL-VERSIONS v1 — the film version group of one play row, as the key
    the download box uses ('softsub' / 'dubbed' / 'nosub' / 'audio'). The
@@ -6533,6 +6564,7 @@ function fnPlayEncShort(e) {
   if (l === 'darknama' || l === 'dn') return 'DN'; /* FN-DN-SRC v1 */
   if (l === 'mobomovies') return 'MBM'; /* FN-MBM-SRC v1 */
   if (l === 'sermoviedown' || l === 'sermovie') return 'SR'; /* FN-SRM-SRC v1 */
+  if (l === 'simba') return 'SM'; /* FN-SM-SRC v1 */
   return e;
 }
 function fnPlaySpecs(p) {
@@ -6577,8 +6609,10 @@ async function fnPlayFetchPart(part) {
        FN-DN-SRC v1: the DarkNama play-index lives in
        download-data/dn/play-index-dn.json (parts 'dn1'/'dn2').
        FN-SRM-SRC v1: the SerMovieDown play-index lives in
-       download-data/srm/play-index-srm.json (part 'srm'). */
-    var url = part === 'ao' ? DL_BASE + 'ao/play-index-ao.json' : part === 'mbm' ? DL_BASE + 'mbm/play-index-mbm.json' : part === 'srm' ? DL_BASE + 'srm/play-index-srm.json' : (part === 'dn1' || part === 'dn2') ? DL_BASE + 'dn/play-index-dn.json' : DL_BASE + 'play-index-part-' + part + '.json';
+       download-data/srm/play-index-srm.json (part 'srm').
+       FN-SM-SRC v1: the Simba play-index lives in
+       download-data/sm/play-index-sm.json (part 'sm'). */
+    var url = part === 'ao' ? DL_BASE + 'ao/play-index-ao.json' : part === 'mbm' ? DL_BASE + 'mbm/play-index-mbm.json' : part === 'srm' ? DL_BASE + 'srm/play-index-srm.json' : part === 'sm' ? DL_BASE + 'sm/play-index-sm.json' : (part === 'dn1' || part === 'dn2') ? DL_BASE + 'dn/play-index-dn.json' : DL_BASE + 'play-index-part-' + part + '.json';
     var r = await fetch(url, { signal: ctl.signal });
     if (!r.ok) throw new Error('play part');
     var j = await r.json(); FN_PLAY.parts[part] = j; return j;
@@ -8753,7 +8787,7 @@ let dlaListCurrent = [];   /* the filtered list currently rendered (row index ->
 /* FN-DN-SRC v1: DarkNama parts — same H3 format, own folder
    (download-data/dn/); the section loader and the background preload
    both read this one list. */
-const DLA_ARCHIVES = [{ base: DL_BASE, parts: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], src: 'new' }, { base: DL_BASE + 'ao/', parts: [1], src: 'ao' }, { base: DL_BASE + 'mbm/', parts: [1], src: 'mbm' }, { base: DL_BASE + 'dn/', parts: [1, 2], src: 'dn' }, { base: DL_BASE + 'srm/', parts: [1], src: 'srm' }, /* FN-MBM-SRC v1; FN-SRM-SRC v1 */{ base: OLD_DL_BASE, parts: [1, 2, 3], src: 'old' }];
+const DLA_ARCHIVES = [{ base: DL_BASE, parts: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], src: 'new' }, { base: DL_BASE + 'ao/', parts: [1], src: 'ao' }, { base: DL_BASE + 'mbm/', parts: [1], src: 'mbm' }, { base: DL_BASE + 'dn/', parts: [1, 2], src: 'dn' }, { base: DL_BASE + 'srm/', parts: [1], src: 'srm' }, { base: DL_BASE + 'sm/', parts: [1], src: 'sm' }, /* FN-MBM-SRC v1; FN-SRM-SRC v1; FN-SM-SRC v1 */{ base: OLD_DL_BASE, parts: [1, 2, 3], src: 'old' }];
 
 /* ---------- FN-DLA-PRELOAD v1: shared chunk ingestion ----------
    dlaIngestChunk is the exact parse initDlArchive used to do inline,
@@ -8825,7 +8859,7 @@ function dlaIngestChunk(ch, arc, n, entries, entryByImdb) {
      H3 title's year (AO H3 titles carry the real year).
      FN-DN-SRC v1: same for DN series URLs (film URLs carry the year in
      the file name; series URLs do not). */
-  const hym = (arc.src === 'ao' || arc.src === 'mbm' || arc.src === 'dn' || arc.src === 'srm') ? /* FN-MBM-SRC v1: MBM H3 titles carry the real year, like AO; FN-SRM-SRC v1: SRM too */ (ch.split(/<\/h3>/i)[0] || '').match(/\b((?:19|20)\d{2})\b/) : null;
+  const hym = (arc.src === 'ao' || arc.src === 'mbm' || arc.src === 'dn' || arc.src === 'srm' || arc.src === 'sm') ? /* FN-MBM-SRC v1: MBM H3 titles carry the real year, like AO; FN-SRM-SRC v1: SRM too; FN-SM-SRC v1: SM too */ (ch.split(/<\/h3>/i)[0] || '').match(/\b((?:19|20)\d{2})\b/) : null;
   const year = ym ? +ym[1] : hym ? +hym[1] : 0;
   const ent = { title, imdb: imdbNoCode, num: numNoCode, rate, votes, year, type, links, soft: /<b>(SoftSub|HardSub)<\/b>/i.test(ch), /* FN-MBM-SRC v1 */ dub: /<b>Dubbed<\/b>/i.test(ch), nosub: /<b>NoSub<\/b>/i.test(ch), part: n, src: arc.src, _hrefs: new Set(hrefs) };
   dlaAddEntry(ent, arc, n, entries, entryByImdb);
@@ -9180,7 +9214,7 @@ async function initDlArchive() {
   for (const arc of archives) {
   for (const n of arc.parts) {
     if (currentView !== 'dlarchive' && dlaEntries) break;
-    body.innerHTML = '<div class="state"><div class="spin"></div>در حال بارگذاری آرشیو دانلود Family Night…<br>آرشیو ' + (arc.src === 'new' ? 'جدید' : arc.src === 'ao' ? 'AO' : arc.src === 'mbm' ? 'MBM' : arc.src === 'dn' ? 'DN' : arc.src === 'srm' ? 'SR' : 'قبلی') + ' — بخش ' + n + ' از ' + arc.parts.length + ' — عنوان‌ها و لینک‌های واقعی آرشیو خوانده می‌شوند.</div>';
+    body.innerHTML = '<div class="state"><div class="spin"></div>در حال بارگذاری آرشیو دانلود Family Night…<br>آرشیو ' + (arc.src === 'new' ? 'جدید' : arc.src === 'ao' ? 'AO' : arc.src === 'mbm' ? 'MBM' : arc.src === 'dn' ? 'DN' : arc.src === 'srm' ? 'SR' : arc.src === 'sm' ? 'SM' : 'قبلی') + ' — بخش ' + n + ' از ' + arc.parts.length + ' — عنوان‌ها و لینک‌های واقعی آرشیو خوانده می‌شوند.</div>';
     const key = dlaPreKey(arc.src, n);
     const pre = DLA_PRE.parts[key];
     if (pre && pre.entries) {
