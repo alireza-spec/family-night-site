@@ -8442,6 +8442,33 @@ function prefetchTv() {
        empty) from the local map */
     tvAll.forEach(c => { if (!c.logo && c.url) { const loc = tvLogoByUrl(c.url); if (loc) c.logo = loc; } });
     tvAttachFallbacks(tvAll);
+    /* FN-TV-ROUTE-OVERRIDE v1: URL-keyed route-order overrides
+       (download-data/tv-route-overrides.json) — promotes a better route
+       (e.g. an Iran-alive fallback server) to primary for channels whose
+       data files are never reordered (FEATURED + playlist). Key is the
+       channel's current primary URL; value is the full ordered URL list.
+       Routes not listed are kept, appended in their current order; listed
+       URLs the channel does not have are ignored. tw is recomputed from
+       the new primary (a telewebion primary means proxy-first for every
+       route). Fail-open: a missing/bad file changes nothing. */
+    try {
+      const tvOv = await fetch(DL_BASE + 'tv-route-overrides.json').then(r => r.ok ? r.json() : null);
+      if (tvOv && typeof tvOv === 'object') {
+        tvAll.forEach(c => {
+          const list = c && c.url && tvOv[c.url];
+          if (!Array.isArray(list) || !list.length) return;
+          const byUrl = new Map([[c.url, '']].concat((c.servers || []).map(s => [s.url, s.title || ''])));
+          const ordered = [];
+          list.forEach(u => { if (u && byUrl.has(u) && ordered.indexOf(u) < 0) ordered.push(u); });
+          [c.url].concat((c.servers || []).map(s => s.url)).forEach(u => { if (ordered.indexOf(u) < 0) ordered.push(u); });
+          const cur = [c.url].concat((c.servers || []).map(s => s.url));
+          if (ordered.length === cur.length && ordered.every((u, i) => u === cur[i])) return;
+          c.url = ordered[0];
+          c.servers = ordered.slice(1).map(u => ({ url: u, title: byUrl.get(u) || '' }));
+          c.tw = c.url.indexOf('telewebion') > -1 ? 1 : 0;
+        });
+      }
+    } catch (e) {}
     warmTvLogos();
     return tvAll;
   })();

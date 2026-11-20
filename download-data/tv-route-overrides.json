@@ -1,0 +1,14 @@
+{
+ "https://kalemeh.tv/live/hls/gate.php?p=/live/ngrp:kalemeh_all/playlist.m3u8": [
+  "https://player.kalemeh.tv/live/ngrp:kalemeh_all/playlist.m3u8",
+  "https://klmhls.wns.live/hls/stream.m3u8",
+  "https://kalemeh.tv/live/hls/gate.php?p=/live/ngrp:kalemeh_all/playlist.m3u8"
+ ],
+ "https://pmchls.wns.live/hls/stream.m3u8": [
+  "https://cp12.adabmedia.com/hls/pm30/stream.m3u8",
+  "http://46.245.122.7:8080/hls/pm30/stream.m3u8",
+  "https://pmchls.wns.live/hls/stream.m3u8",
+  "https://10g.vitarani.com/live/G3WICIjinmHWzrCDE4hxdQ__/master.m3u8",
+  "https://ca-rt.onetv.app:8443/PMCMusic/index-0.m3u8?token=onetv202"
+ ]
+}
