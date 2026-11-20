@@ -1,0 +1,3958 @@
+{
+ "source": "SerMovieDown",
+ "code": "SR",
+ "part": 1,
+ "generated": "2026-11-20",
+ "live_base_head": "ea91d365ade37dcb473ea2044e1da6148bfb0993",
+ "start_num": 11590,
+ "counts": {
+  "new_titles": 41,
+  "new_links": 727,
+  "have_new_titles": 277,
+  "have_new_links_added": 3555,
+  "have_old_titles": 35,
+  "have_old_links_added": 618,
+  "have_mbm_titles": 2,
+  "have_mbm_links_added": 46,
+  "total_titles": 355,
+  "total_links_added": 4946,
+  "by_year": {
+   "2011": 1,
+   "2018": 2,
+   "2019": 1,
+   "2020": 1,
+   "2021": 3,
+   "2022": 2,
+   "2023": 6,
+   "2024": 19,
+   "2025": 6
+  },
+  "by_resolution": {
+   "1080p": 209,
+   "540p": 12,
+   "720p": 506
+  },
+  "by_version": {
+   "NoSub": 445,
+   "SoftSub": 282
+  },
+  "by_type": {
+   "movie": 5,
+   "tv": 36
+  },
+  "total_bytes_new": 217928380939
+ },
+ "partition": {
+  "new": 41,
+  "have_new": 277,
+  "have_old_only": 35,
+  "have_mbm": 2
+ },
+ "reclassifications": [
+  {
+   "title": "Acapulco",
+   "imdb": "tt13567344",
+   "from": "new (partition, stale inventory)",
+   "to": "have-mbm variety on num 11188",
+   "files": 40,
+   "note": "MBM record has S01 HardSub; srm adds S03 NoSub (new season)"
+  },
+  {
+   "title": "Dostoyevsky",
+   "imdb": "tt12005620",
+   "from": "new (partition, stale inventory)",
+   "to": "have-mbm variety on num 11199",
+   "files": 6,
+   "note": "srm NoSub 720p x264 vs MBM HardSub 720p x264: different versions, both kept"
+  },
+  {
+   "title": "Hierarchy",
+   "imdb": "tt27763561",
+   "from": "have-new part 1 num 1324 (movie record)",
+   "to": "have-new part 15 num 10587 (series record)",
+   "files": 21,
+   "note": "srm files are series S01E01-07; the part-1 movie record is a pre-existing duplicate"
+  }
+ ],
+ "dropped": [
+  {
+   "title": "American Horror Story",
+   "imdb": "tt1844624",
+   "file": "American.Horror.Story.S12E09.720p.WEB-HD.x264-Pahe.SoftSub.Sermovie.mkv",
+   "reason": "exact duplicate (same filename + 314,782,515 B) in a mislabelled 480p folder; kept the identical copy from the 720p.x264 folder"
+  },
+  {
+   "title": "Obsession",
+   "imdb": "tt37287335",
+   "file": "Obsession.2025.720p.WEB-DL.AAC.YIFY.SoftSub.Sermovie.mkv",
+   "reason": "URL already in the H3 record (variety-diff miss)"
+  },
+  {
+   "title": "Obsession",
+   "imdb": "tt37287335",
+   "file": "Obsession.2025.720p.WEB-DL.DD5.1.H.264-SoftSub.Sermovie.mkv",
+   "reason": "URL already in the H3 record (variety-diff miss)"
+  }
+ ],
+ "zero_file_titles": [
+  {
+   "title": "Rebel Moon Chapter One Chalice of Blood",
+   "imdb": "tt14998742",
+   "reason": "Rebel Moon Chapter One adds 0 files (adjudicated in the brief)"
+  },
+  {
+   "title": "Obsession",
+   "imdb": "tt37287335",
+   "reason": "both srm files already in the old record (URL duplicates, diff miss)"
+  },
+  {
+   "title": "The Legend of Aang The Last Airbender",
+   "imdb": "tt18259538",
+   "reason": "Legend of Aang = Avatar Aang, 0 files (adjudicated in the brief)"
+  }
+ ],
+ "ep_fixes": [
+  {
+   "title": "Sausage Party Foodtopia",
+   "imdb": "tt23036426",
+   "file": "Sausage.Party.Foodtopia.S02E081080p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+   "from": [
+    2,
+    81
+   ],
+   "to": [
+    2,
+    8
+   ],
+   "reason": "filename 'E081080p' mis-parsed as episode 81"
+  }
+ ],
+ "monsters_note": "All 36 Monsters files normalised to anthology season 2 (parsed ep already [2,n]); the two 720p x265 files per episode are SoftSub + NoSub (different versions) - no collapse.",
+ "nosub_only_new": [
+  {
+   "title": "My Next Guest Needs No Introduction with David Letterman",
+   "imdb": "tt7829834",
+   "tmdb": 76178,
+   "nlinks": 3
+  },
+  {
+   "title": "Merry Happy Whatever",
+   "imdb": "tt9770286",
+   "tmdb": 94587,
+   "nlinks": 8
+  },
+  {
+   "title": "FBI: International",
+   "imdb": "tt14449470",
+   "tmdb": 121658,
+   "nlinks": 20
+  },
+  {
+   "title": "The Great North",
+   "imdb": "tt9140632",
+   "tmdb": 93221,
+   "nlinks": 42
+  },
+  {
+   "title": "Bel-Air",
+   "imdb": "tt12878838",
+   "tmdb": 107365,
+   "nlinks": 28
+  },
+  {
+   "title": "Animal Control",
+   "imdb": "tt21376524",
+   "tmdb": 214162,
+   "nlinks": 31
+  },
+  {
+   "title": "Brawn: The Impossible Formula 1 Story",
+   "imdb": "tt22297946",
+   "tmdb": 233254,
+   "nlinks": 8
+  },
+  {
+   "title": "Krapopolis",
+   "imdb": "tt14016574",
+   "tmdb": 131033,
+   "nlinks": 57
+  },
+  {
+   "title": "Not Dead Yet",
+   "imdb": "tt18250904",
+   "tmdb": 203178,
+   "nlinks": 20
+  },
+  {
+   "title": "The Ark",
+   "imdb": "tt17371078",
+   "tmdb": 47663,
+   "nlinks": 36
+  },
+  {
+   "title": "Breathless",
+   "imdb": "tt28298539",
+   "tmdb": 230069,
+   "nlinks": 8
+  },
+  {
+   "title": "English Teacher",
+   "imdb": "tt20782190",
+   "tmdb": 258902,
+   "nlinks": 16
+  },
+  {
+   "title": "Exploding Kittens",
+   "imdb": "tt19734104",
+   "tmdb": 219532,
+   "nlinks": 9
+  },
+  {
+   "title": "Fast Friends",
+   "imdb": "tt33481273",
+   "tmdb": 272306,
+   "nlinks": 4
+  },
+  {
+   "title": "Megamind Rules!",
+   "imdb": "tt18214172",
+   "tmdb": 157432,
+   "nlinks": 16
+  },
+  {
+   "title": "Mr. Throwback",
+   "imdb": "tt27427856",
+   "tmdb": 246410,
+   "nlinks": 6
+  },
+  {
+   "title": "Sexy Beast",
+   "imdb": "tt18259204",
+   "tmdb": 207718,
+   "nlinks": 2
+  },
+  {
+   "title": "A Very Jonas Christmas Movie",
+   "imdb": "tt35600079",
+   "tmdb": 1425122,
+   "nlinks": 2
+  },
+  {
+   "title": "Boys Go to Jupiter",
+   "imdb": "tt31021863",
+   "tmdb": 1235137,
+   "nlinks": 2
+  },
+  {
+   "title": "Disney Parks Magical Christmas Day Parade",
+   "imdb": "tt38870906",
+   "tmdb": 1604170,
+   "nlinks": 2
+  },
+  {
+   "title": "Fran the Man",
+   "imdb": "tt31778990",
+   "tmdb": 1268552,
+   "nlinks": 2
+  },
+  {
+   "title": "The Revenge Club",
+   "imdb": "tt37367168",
+   "tmdb": 294120,
+   "nlinks": 6
+  },
+  {
+   "title": "Waltzing with Brando",
+   "imdb": "tt9619902",
+   "tmdb": 574452,
+   "nlinks": 2
+  }
+ ],
+ "nosub_only_have": [
+  {
+   "title": "Black Rabbit White Rabbit",
+   "imdb": "tt37981111",
+   "tmdb": 1528235,
+   "nlinks": 1
+  },
+  {
+   "title": "Cadi",
+   "imdb": "tt31579702",
+   "tmdb": 1250999,
+   "nlinks": 2
+  },
+  {
+   "title": "Demon Slayer Kimetsu No Yaiba Infinity Castle",
+   "imdb": "tt32820897",
+   "tmdb": 1311031,
+   "nlinks": 2
+  },
+  {
+   "title": "Exterritorial",
+   "imdb": "tt30876483",
+   "tmdb": null,
+   "nlinks": 2
+  },
+  {
+   "title": "HIT The 3rd Case",
+   "imdb": "tt23804696",
+   "tmdb": 1060046,
+   "nlinks": 2
+  },
+  {
+   "title": "Lost On A Mountain In Maine",
+   "imdb": "tt2965408",
+   "tmdb": null,
+   "nlinks": 2
+  },
+  {
+   "title": "Lulu Is A Rhinoceros",
+   "imdb": "tt36789845",
+   "tmdb": null,
+   "nlinks": 2
+  },
+  {
+   "title": "Murder At The Embassy",
+   "imdb": "tt22772712",
+   "tmdb": null,
+   "nlinks": 2
+  },
+  {
+   "title": "Nouvelle Vague",
+   "imdb": "tt31688586",
+   "tmdb": null,
+   "nlinks": 2
+  },
+  {
+   "title": "One Shot with Ed Sheeran",
+   "imdb": "tt38608937",
+   "tmdb": null,
+   "nlinks": 1
+  },
+  {
+   "title": "Rebel Ridge",
+   "imdb": "tt11301886",
+   "tmdb": null,
+   "nlinks": 2
+  },
+  {
+   "title": "Ricky Gervais Mortality",
+   "imdb": "tt32767869",
+   "tmdb": null,
+   "nlinks": 2
+  },
+  {
+   "title": "Song Sung Blue",
+   "imdb": "tt30343021",
+   "tmdb": null,
+   "nlinks": 1
+  },
+  {
+   "title": "Soul On Fire",
+   "imdb": "tt28078628",
+   "tmdb": null,
+   "nlinks": 2
+  },
+  {
+   "title": "The Death Of Stalin",
+   "imdb": "tt4686844",
+   "tmdb": null,
+   "nlinks": 1
+  },
+  {
+   "title": "The Heart Knows",
+   "imdb": "tt33244550",
+   "tmdb": 1327766,
+   "nlinks": 2
+  },
+  {
+   "title": "The Ice Tower",
+   "imdb": "tt28171985",
+   "tmdb": null,
+   "nlinks": 2
+  },
+  {
+   "title": "The King Of Kings",
+   "imdb": "tt7967302",
+   "tmdb": null,
+   "nlinks": 2
+  },
+  {
+   "title": "The Magic Faraway Tree",
+   "imdb": "tt7734244",
+   "tmdb": 1140521,
+   "nlinks": 2
+  },
+  {
+   "title": "The Moviemakers Scorsese",
+   "imdb": "tt29620674",
+   "tmdb": 1248983,
+   "nlinks": 2
+  },
+  {
+   "title": "The Pout-Pout Fish",
+   "imdb": "tt12824390",
+   "tmdb": 1146058,
+   "nlinks": 2
+  },
+  {
+   "title": "Tom Clancys Jack Ryan Ghost War",
+   "imdb": "tt34378301",
+   "tmdb": 1380291,
+   "nlinks": 2
+  },
+  {
+   "title": "Weapon",
+   "imdb": "tt27440937",
+   "tmdb": null,
+   "nlinks": 2
+  },
+  {
+   "title": "Boots",
+   "imdb": "tt27987047",
+   "tmdb": 225647,
+   "nlinks": 16
+  },
+  {
+   "title": "Dept Q",
+   "imdb": "tt27995114",
+   "tmdb": null,
+   "nlinks": 18
+  },
+  {
+   "title": "Duster",
+   "imdb": "tt12160826",
+   "tmdb": null,
+   "nlinks": 16
+  },
+  {
+   "title": "Greys Anatomy",
+   "imdb": "tt0413573",
+   "tmdb": null,
+   "nlinks": 20
+  },
+  {
+   "title": "Harry Potter Wizards of Baking",
+   "imdb": "tt32374361",
+   "tmdb": null,
+   "nlinks": 9
+  },
+  {
+   "title": "Ironheart",
+   "imdb": "tt13623126",
+   "tmdb": null,
+   "nlinks": 12
+  },
+  {
+   "title": "Lanterns",
+   "imdb": "tt26545992",
+   "tmdb": null,
+   "nlinks": 16
+  },
+  {
+   "title": "Marvel Zombies",
+   "imdb": "tt16027014",
+   "tmdb": null,
+   "nlinks": 8
+  },
+  {
+   "title": "Murdaugh Death in the Family",
+   "imdb": "tt19853270",
+   "tmdb": null,
+   "nlinks": 16
+  },
+  {
+   "title": "My Brilliant Career",
+   "imdb": "tt37352716",
+   "tmdb": 309798,
+   "nlinks": 12
+  },
+  {
+   "title": "Nero the Assassin",
+   "imdb": "tt32400599",
+   "tmdb": null,
+   "nlinks": 16
+  },
+  {
+   "title": "Ransom Canyon",
+   "imdb": "tt28088031",
+   "tmdb": null,
+   "nlinks": 20
+  },
+  {
+   "title": "Star Wars Visions Presents-The Ninth Jedi",
+   "imdb": "tt43337681",
+   "tmdb": null,
+   "nlinks": 16
+  },
+  {
+   "title": "Sword of the Demon Hunter Kijin Gentosho",
+   "imdb": "tt32281073",
+   "tmdb": 133154,
+   "nlinks": 4
+  },
+  {
+   "title": "The 8 Show",
+   "imdb": "tt30423279",
+   "tmdb": null,
+   "nlinks": 16
+  },
+  {
+   "title": "The Better Sister",
+   "imdb": "tt32260680",
+   "tmdb": null,
+   "nlinks": 16
+  },
+  {
+   "title": "The Perfect Couple",
+   "imdb": "tt11514868",
+   "tmdb": null,
+   "nlinks": 18
+  },
+  {
+   "title": "The Scandal",
+   "imdb": "tt36347588",
+   "tmdb": 275102,
+   "nlinks": 8
+  },
+  {
+   "title": "The Simpsons",
+   "imdb": "tt0096697",
+   "tmdb": null,
+   "nlinks": 7
+  },
+  {
+   "title": "The Spiderwick Chronicles",
+   "imdb": "tt16026032",
+   "tmdb": 138492,
+   "nlinks": 16
+  },
+  {
+   "title": "Tracker",
+   "imdb": "tt13875494",
+   "tmdb": null,
+   "nlinks": 46
+  },
+  {
+   "title": "We Were Liars",
+   "imdb": "tt3914054",
+   "tmdb": null,
+   "nlinks": 16
+  },
+  {
+   "title": "Curb Your Enthusiasm",
+   "imdb": "tt0264235",
+   "tmdb": null,
+   "nlinks": 14
+  },
+  {
+   "title": "Elsbeth",
+   "imdb": "tt26591110",
+   "tmdb": 226285,
+   "nlinks": 25
+  },
+  {
+   "title": "FBI",
+   "imdb": "tt7491982",
+   "tmdb": 80748,
+   "nlinks": 20
+  },
+  {
+   "title": "FBI Most Wanted",
+   "imdb": "tt9742936",
+   "tmdb": 94372,
+   "nlinks": 20
+  },
+  {
+   "title": "Ghosts",
+   "imdb": "tt11379026",
+   "tmdb": 126027,
+   "nlinks": 20
+  },
+  {
+   "title": "Loot",
+   "imdb": "tt14271498",
+   "tmdb": 197449,
+   "nlinks": 40
+  },
+  {
+   "title": "The Dragon Prince",
+   "imdb": "tt8688814",
+   "tmdb": 81046,
+   "nlinks": 18
+  },
+  {
+   "title": "The Outlaws",
+   "imdb": "tt11646832",
+   "tmdb": 136044,
+   "nlinks": 10
+  },
+  {
+   "title": "Velma",
+   "imdb": "tt14153790",
+   "tmdb": 126725,
+   "nlinks": 10
+  },
+  {
+   "title": "Acapulco",
+   "imdb": "tt13567344",
+   "tmdb": 133727,
+   "nlinks": 40
+  },
+  {
+   "title": "Dostoyevsky",
+   "imdb": "tt12005620",
+   "tmdb": 155543,
+   "nlinks": 6
+  }
+ ],
+ "search_flagged_no_second_row": [
+  {
+   "title": "1923",
+   "imdb": "tt18335752",
+   "tmdb": 157744,
+   "old_part": 2,
+   "existing_num": 3031,
+   "existing_row": [
+    "1923",
+    2022,
+    "tv",
+    null,
+    null,
+    15,
+    0
+   ],
+   "note": "search row points to another record (new archive / different imdb); no second row created; srm links live on the old record"
+  },
+  {
+   "title": "Evil",
+   "imdb": "tt9055008",
+   "tmdb": 86848,
+   "old_part": 2,
+   "existing_num": 4840,
+   "existing_row": [
+    "Evil",
+    2019,
+    "tv",
+    null,
+    null,
+    11,
+    0
+   ],
+   "note": "search row points to another record (new archive / different imdb); no second row created; srm links live on the old record"
+  },
+  {
+   "title": "Feud",
+   "imdb": "tt1984119",
+   "tmdb": 69851,
+   "old_part": 3,
+   "existing_num": 1582,
+   "existing_row": [
+    "Feud",
+    2025,
+    "tv",
+    "tt33502004",
+    252320,
+    10,
+    0
+   ],
+   "note": "search row points to another record (new archive / different imdb); no second row created; srm links live on the old record"
+  },
+  {
+   "title": "Ghosts",
+   "imdb": "tt11379026",
+   "tmdb": 126027,
+   "old_part": 2,
+   "existing_num": 5090,
+   "existing_row": [
+    "Ghosts",
+    2021,
+    "tv",
+    "tt8594324",
+    null,
+    7,
+    0
+   ],
+   "note": "search row points to another record (new archive / different imdb); no second row created; srm links live on the old record"
+  },
+  {
+   "title": "Interview with the Vampire",
+   "imdb": "tt3960394",
+   "tmdb": 128098,
+   "old_part": 2,
+   "existing_num": 5897,
+   "existing_row": [
+    "Interview with the Vampire",
+    2022,
+    "tv",
+    "tt14921986",
+    null,
+    6,
+    0
+   ],
+   "note": "search row points to another record (new archive / different imdb); no second row created; srm links live on the old record"
+  },
+  {
+   "title": "Only Murders in the Building",
+   "imdb": "tt11691774",
+   "tmdb": 107113,
+   "old_part": 1,
+   "existing_num": 1471,
+   "existing_row": [
+    "Only Murders in the Building",
+    2021,
+    "tv",
+    "tt12851524",
+    null,
+    9,
+    0
+   ],
+   "note": "search row points to another record (new archive / different imdb); no second row created; srm links live on the old record"
+  }
+ ],
+ "new_titles": [
+  {
+   "num": 11590,
+   "title": "Blue Exorcist",
+   "year": 2011,
+   "type": "tv",
+   "imdb": "tt1799631",
+   "tmdb": 38464,
+   "nlinks": 66
+  },
+  {
+   "num": 11591,
+   "title": "Captain Tsubasa",
+   "year": 2018,
+   "type": "tv",
+   "imdb": "tt7784442",
+   "tmdb": 77240,
+   "nlinks": 20
+  },
+  {
+   "num": 11592,
+   "title": "My Next Guest Needs No Introduction with David Letterman",
+   "year": 2018,
+   "type": "tv",
+   "imdb": "tt7829834",
+   "tmdb": 76178,
+   "nlinks": 3
+  },
+  {
+   "num": 11593,
+   "title": "Merry Happy Whatever",
+   "year": 2019,
+   "type": "tv",
+   "imdb": "tt9770286",
+   "tmdb": 94587,
+   "nlinks": 8
+  },
+  {
+   "num": 11594,
+   "title": "Hightown",
+   "year": 2020,
+   "type": "tv",
+   "imdb": "tt7718110",
+   "tmdb": 86588,
+   "nlinks": 3
+  },
+  {
+   "num": 11595,
+   "title": "BMF",
+   "year": 2021,
+   "type": "tv",
+   "imdb": "tt3850598",
+   "tmdb": 101591,
+   "nlinks": 28
+  },
+  {
+   "num": 11596,
+   "title": "FBI: International",
+   "year": 2021,
+   "type": "tv",
+   "imdb": "tt14449470",
+   "tmdb": 121658,
+   "nlinks": 20
+  },
+  {
+   "num": 11597,
+   "title": "The Great North",
+   "year": 2021,
+   "type": "tv",
+   "imdb": "tt9140632",
+   "tmdb": 93221,
+   "nlinks": 42
+  },
+  {
+   "num": 11598,
+   "title": "Bel-Air",
+   "year": 2022,
+   "type": "tv",
+   "imdb": "tt12878838",
+   "tmdb": 107365,
+   "nlinks": 28
+  },
+  {
+   "num": 11599,
+   "title": "The Cleaning Lady",
+   "year": 2022,
+   "type": "tv",
+   "imdb": "tt11188682",
+   "tmdb": 125282,
+   "nlinks": 48
+  },
+  {
+   "num": 11600,
+   "title": "Animal Control",
+   "year": 2023,
+   "type": "tv",
+   "imdb": "tt21376524",
+   "tmdb": 214162,
+   "nlinks": 31
+  },
+  {
+   "num": 11601,
+   "title": "Brawn: The Impossible Formula 1 Story",
+   "year": 2023,
+   "type": "tv",
+   "imdb": "tt22297946",
+   "tmdb": 233254,
+   "nlinks": 8
+  },
+  {
+   "num": 11602,
+   "title": "Krapopolis",
+   "year": 2023,
+   "type": "tv",
+   "imdb": "tt14016574",
+   "tmdb": 131033,
+   "nlinks": 57
+  },
+  {
+   "num": 11603,
+   "title": "Not Dead Yet",
+   "year": 2023,
+   "type": "tv",
+   "imdb": "tt18250904",
+   "tmdb": 203178,
+   "nlinks": 20
+  },
+  {
+   "num": 11604,
+   "title": "The Ark",
+   "year": 2023,
+   "type": "tv",
+   "imdb": "tt17371078",
+   "tmdb": 47663,
+   "nlinks": 36
+  },
+  {
+   "num": 11605,
+   "title": "The Irrational",
+   "year": 2023,
+   "type": "tv",
+   "imdb": "tt16288838",
+   "tmdb": 217211,
+   "nlinks": 4
+  },
+  {
+   "num": 11606,
+   "title": "Breathless",
+   "year": 2024,
+   "type": "tv",
+   "imdb": "tt28298539",
+   "tmdb": 230069,
+   "nlinks": 8
+  },
+  {
+   "num": 11607,
+   "title": "English Teacher",
+   "year": 2024,
+   "type": "tv",
+   "imdb": "tt20782190",
+   "tmdb": 258902,
+   "nlinks": 16
+  },
+  {
+   "num": 11608,
+   "title": "Exploding Kittens",
+   "year": 2024,
+   "type": "tv",
+   "imdb": "tt19734104",
+   "tmdb": 219532,
+   "nlinks": 9
+  },
+  {
+   "num": 11609,
+   "title": "Fast Friends",
+   "year": 2024,
+   "type": "tv",
+   "imdb": "tt33481273",
+   "tmdb": 272306,
+   "nlinks": 4
+  },
+  {
+   "num": 11610,
+   "title": "Fight Night: The Million Dollar Heist",
+   "year": 2024,
+   "type": "tv",
+   "imdb": "tt30428188",
+   "tmdb": 241485,
+   "nlinks": 16
+  },
+  {
+   "num": 11611,
+   "title": "Iwájú",
+   "year": 2024,
+   "type": "tv",
+   "imdb": "tt13623772",
+   "tmdb": 114481,
+   "nlinks": 6
+  },
+  {
+   "num": 11612,
+   "title": "Jurassic World: Chaos Theory",
+   "year": 2024,
+   "type": "tv",
+   "imdb": "tt29899148",
+   "tmdb": 237512,
+   "nlinks": 49
+  },
+  {
+   "num": 11613,
+   "title": "Kite Man: Hell Yeah!",
+   "year": 2024,
+   "type": "tv",
+   "imdb": "tt19853518",
+   "tmdb": 200753,
+   "nlinks": 20
+  },
+  {
+   "num": 11614,
+   "title": "Megamind Rules!",
+   "year": 2024,
+   "type": "tv",
+   "imdb": "tt18214172",
+   "tmdb": 157432,
+   "nlinks": 16
+  },
+  {
+   "num": 11615,
+   "title": "Mr. Throwback",
+   "year": 2024,
+   "type": "tv",
+   "imdb": "tt27427856",
+   "tmdb": 246410,
+   "nlinks": 6
+  },
+  {
+   "num": 11616,
+   "title": "Sexy Beast",
+   "year": 2024,
+   "type": "tv",
+   "imdb": "tt18259204",
+   "tmdb": 207718,
+   "nlinks": 2
+  },
+  {
+   "num": 11617,
+   "title": "Supersex",
+   "year": 2024,
+   "type": "tv",
+   "imdb": "tt22325774",
+   "tmdb": 211079,
+   "nlinks": 14
+  },
+  {
+   "num": 11618,
+   "title": "The Big Cigar",
+   "year": 2024,
+   "type": "tv",
+   "imdb": "tt19399602",
+   "tmdb": 197124,
+   "nlinks": 12
+  },
+  {
+   "num": 11619,
+   "title": "The Completely Made-Up Adventures of Dick Turpin",
+   "year": 2024,
+   "type": "tv",
+   "imdb": "tt19516036",
+   "tmdb": 197459,
+   "nlinks": 12
+  },
+  {
+   "num": 11620,
+   "title": "The Emperor of Ocean Park",
+   "year": 2024,
+   "type": "tv",
+   "imdb": "tt27601690",
+   "tmdb": 225265,
+   "nlinks": 20
+  },
+  {
+   "num": 11621,
+   "title": "The Girls on the Bus",
+   "year": 2024,
+   "type": "tv",
+   "imdb": "tt10970364",
+   "tmdb": 105532,
+   "nlinks": 20
+  },
+  {
+   "num": 11622,
+   "title": "The Signal",
+   "year": 2024,
+   "type": "tv",
+   "imdb": "tt25375256",
+   "tmdb": 241473,
+   "nlinks": 4
+  },
+  {
+   "num": 11623,
+   "title": "The Whirlwind",
+   "year": 2024,
+   "type": "tv",
+   "imdb": "tt27368132",
+   "tmdb": 223329,
+   "nlinks": 48
+  },
+  {
+   "num": 11624,
+   "title": "Tokyo Swindlers",
+   "year": 2024,
+   "type": "tv",
+   "imdb": "tt31250132",
+   "tmdb": 249906,
+   "nlinks": 7
+  },
+  {
+   "num": 11625,
+   "title": "A Very Jonas Christmas Movie",
+   "year": 2025,
+   "type": "movie",
+   "imdb": "tt35600079",
+   "tmdb": 1425122,
+   "nlinks": 2
+  },
+  {
+   "num": 11626,
+   "title": "Boys Go to Jupiter",
+   "year": 2025,
+   "type": "movie",
+   "imdb": "tt31021863",
+   "tmdb": 1235137,
+   "nlinks": 2
+  },
+  {
+   "num": 11627,
+   "title": "Disney Parks Magical Christmas Day Parade",
+   "year": 2025,
+   "type": "movie",
+   "imdb": "tt38870906",
+   "tmdb": 1604170,
+   "nlinks": 2
+  },
+  {
+   "num": 11628,
+   "title": "Fran the Man",
+   "year": 2025,
+   "type": "movie",
+   "imdb": "tt31778990",
+   "tmdb": 1268552,
+   "nlinks": 2
+  },
+  {
+   "num": 11629,
+   "title": "The Revenge Club",
+   "year": 2025,
+   "type": "tv",
+   "imdb": "tt37367168",
+   "tmdb": 294120,
+   "nlinks": 6
+  },
+  {
+   "num": 11630,
+   "title": "Waltzing with Brando",
+   "year": 2025,
+   "type": "movie",
+   "imdb": "tt9619902",
+   "tmdb": 574452,
+   "nlinks": 2
+  }
+ ],
+ "have_new_added": [
+  {
+   "title": "100 Meters",
+   "imdb": "tt32600395",
+   "part": 1,
+   "existing_num": 1824,
+   "nlinks_added": 2
+  },
+  {
+   "title": "100 Nights Of Hero",
+   "imdb": "tt33350512",
+   "part": 1,
+   "existing_num": 1556,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Alarum",
+   "imdb": "tt31456973",
+   "part": 2,
+   "existing_num": 3364,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Altered",
+   "imdb": "tt32123395",
+   "part": 1,
+   "existing_num": 2078,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Am I OK",
+   "imdb": "tt11225626",
+   "part": 3,
+   "existing_num": 5115,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Anemone",
+   "imdb": "tt33549447",
+   "part": 1,
+   "existing_num": 2187,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Anniversary",
+   "imdb": "tt12583926",
+   "part": 1,
+   "existing_num": 1783,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Apex",
+   "imdb": "tt16431404",
+   "part": 1,
+   "existing_num": 1188,
+   "nlinks_added": 1
+  },
+  {
+   "title": "Bad Apples",
+   "imdb": "tt29714073",
+   "part": 1,
+   "existing_num": 141,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Bad Boys Ride or Die",
+   "imdb": "tt4919268",
+   "part": 2,
+   "existing_num": 3842,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Black Rabbit White Rabbit",
+   "imdb": "tt37981111",
+   "part": 1,
+   "existing_num": 1090,
+   "nlinks_added": 1
+  },
+  {
+   "title": "Bob Marley One Love",
+   "imdb": "tt8521778",
+   "part": 3,
+   "existing_num": 5411,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Breathe",
+   "imdb": "tt11540468",
+   "part": 3,
+   "existing_num": 5252,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Buddy",
+   "imdb": "tt37281055",
+   "part": 1,
+   "existing_num": 160,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Bugonia",
+   "imdb": "tt12300742",
+   "part": 1,
+   "existing_num": 1767,
+   "nlinks_added": 2
+  },
+  {
+   "title": "By Any Means",
+   "imdb": "tt34379051",
+   "part": 1,
+   "existing_num": 76,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Cadi",
+   "imdb": "tt31579702",
+   "part": 2,
+   "existing_num": 4064,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Christy",
+   "imdb": "tt32323252",
+   "part": 1,
+   "existing_num": 996,
+   "nlinks_added": 1
+  },
+  {
+   "title": "Crime 101",
+   "imdb": "tt32430579",
+   "part": 1,
+   "existing_num": 827,
+   "nlinks_added": 1
+  },
+  {
+   "title": "Daddio",
+   "imdb": "tt7461686",
+   "part": 3,
+   "existing_num": 4975,
+   "nlinks_added": 2
+  },
+  {
+   "title": "David",
+   "imdb": "tt15678738",
+   "part": 1,
+   "existing_num": 1389,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Deadpool and Wolverine",
+   "imdb": "tt6263850",
+   "part": 1,
+   "existing_num": 1197,
+   "nlinks_added": 1
+  },
+  {
+   "title": "Demon Slayer Kimetsu No Yaiba Infinity Castle",
+   "imdb": "tt32820897",
+   "part": 1,
+   "existing_num": 515,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Despicable Me 4",
+   "imdb": "tt7510222",
+   "part": 3,
+   "existing_num": 4941,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Die My Love",
+   "imdb": "tt9362736",
+   "part": 1,
+   "existing_num": 1580,
+   "nlinks_added": 4
+  },
+  {
+   "title": "Elize Shadows of a Woman",
+   "imdb": "tt37042085",
+   "part": 1,
+   "existing_num": 152,
+   "nlinks_added": 1
+  },
+  {
+   "title": "Exterritorial",
+   "imdb": "tt30876483",
+   "part": 2,
+   "existing_num": 2708,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Finding Harry The Craft Behind The Magic",
+   "imdb": "tt41368989",
+   "part": 1,
+   "existing_num": 1226,
+   "nlinks_added": 1
+  },
+  {
+   "title": "Fixed",
+   "imdb": "tt8785038",
+   "part": 2,
+   "existing_num": 2875,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Fly Me To The Moon",
+   "imdb": "tt1896747",
+   "part": 2,
+   "existing_num": 3730,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Freaky Tales",
+   "imdb": "tt21942598",
+   "part": 2,
+   "existing_num": 3456,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Good Luck Have Fun Dont Die",
+   "imdb": "tt1341338",
+   "part": 1,
+   "existing_num": 1104,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Goodbye June",
+   "imdb": "tt35766629",
+   "part": 1,
+   "existing_num": 1699,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Greenland 2 Migration",
+   "imdb": "tt14850054",
+   "part": 1,
+   "existing_num": 1753,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Hamnet",
+   "imdb": "tt14905854",
+   "part": 1,
+   "existing_num": 1006,
+   "nlinks_added": 3
+  },
+  {
+   "title": "Heretic",
+   "imdb": "tt28015403",
+   "part": 2,
+   "existing_num": 4423,
+   "nlinks_added": 2
+  },
+  {
+   "title": "His Three Daughters",
+   "imdb": "tt28491891",
+   "part": 3,
+   "existing_num": 4762,
+   "nlinks_added": 2
+  },
+  {
+   "title": "HIT The 3rd Case",
+   "imdb": "tt23804696",
+   "part": 2,
+   "existing_num": 3236,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Hope",
+   "imdb": "tt27369017",
+   "part": 1,
+   "existing_num": 156,
+   "nlinks_added": 2
+  },
+  {
+   "title": "I Saw The TV Glow",
+   "imdb": "tt15574270",
+   "part": 3,
+   "existing_num": 5071,
+   "nlinks_added": 2
+  },
+  {
+   "title": "I Swear",
+   "imdb": "tt31514146",
+   "part": 1,
+   "existing_num": 658,
+   "nlinks_added": 2
+  },
+  {
+   "title": "In Your Dreams",
+   "imdb": "tt27604215",
+   "part": 1,
+   "existing_num": 2097,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Keeper",
+   "imdb": "tt32332404",
+   "part": 1,
+   "existing_num": 335,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Kinds of Kindness",
+   "imdb": "tt22408160",
+   "part": 3,
+   "existing_num": 4940,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Late Night With The Devil",
+   "imdb": "tt14966898",
+   "part": 3,
+   "existing_num": 5315,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Lost In Starlight",
+   "imdb": "tt28664733",
+   "part": 2,
+   "existing_num": 3180,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Lost On A Mountain In Maine",
+   "imdb": "tt2965408",
+   "part": 2,
+   "existing_num": 3786,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Lulu Is A Rhinoceros",
+   "imdb": "tt36789845",
+   "part": 2,
+   "existing_num": 3130,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Mononoke the Movie Chapter III The Curse of the Serpent",
+   "imdb": "tt36282134",
+   "part": 1,
+   "existing_num": 221,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Murder At The Embassy",
+   "imdb": "tt22772712",
+   "part": 1,
+   "existing_num": 2090,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Neighborhood Watch",
+   "imdb": "tt1714918",
+   "part": 2,
+   "existing_num": 2888,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Never After Dark",
+   "imdb": "tt38589433",
+   "part": 1,
+   "existing_num": 85,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Nouvelle Vague",
+   "imdb": "tt31688586",
+   "part": 1,
+   "existing_num": 2124,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Nuremberg",
+   "imdb": "tt29567915",
+   "part": 1,
+   "existing_num": 1456,
+   "nlinks_added": 3
+  },
+  {
+   "title": "On Swift Horses",
+   "imdb": "tt15042300",
+   "part": 2,
+   "existing_num": 3263,
+   "nlinks_added": 2
+  },
+  {
+   "title": "One Shot with Ed Sheeran",
+   "imdb": "tt38608937",
+   "part": 1,
+   "existing_num": 2081,
+   "nlinks_added": 1
+  },
+  {
+   "title": "Peaky Blinders The Immortal Man",
+   "imdb": "tt15574124",
+   "part": 1,
+   "existing_num": 1231,
+   "nlinks_added": 2
+  },
+  {
+   "title": "People We Meet on Vacation",
+   "imdb": "tt22740896",
+   "part": 1,
+   "existing_num": 1511,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Prey",
+   "imdb": "tt27682129",
+   "part": 3,
+   "existing_num": 5408,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Primetime",
+   "imdb": "tt34206385",
+   "part": 1,
+   "existing_num": 120,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Queen At Sea",
+   "imdb": "tt27541205",
+   "part": 1,
+   "existing_num": 163,
+   "nlinks_added": 1
+  },
+  {
+   "title": "Ready or Not 2 Here I Come",
+   "imdb": "tt33978029",
+   "part": 1,
+   "existing_num": 957,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Rebel Moon Part Two The Scargiver",
+   "imdb": "tt23137904",
+   "part": 2,
+   "existing_num": 3669,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Rebel Ridge",
+   "imdb": "tt11301886",
+   "part": 3,
+   "existing_num": 4902,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Remain Calm",
+   "imdb": "tt49058294",
+   "part": 1,
+   "existing_num": 151,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Rental Family",
+   "imdb": "tt14142060",
+   "part": 1,
+   "existing_num": 1624,
+   "nlinks_added": 1
+  },
+  {
+   "title": "Resident Evil",
+   "imdb": "tt35538033",
+   "part": 1,
+   "existing_num": 31,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Ricky Gervais Mortality",
+   "imdb": "tt32767869",
+   "part": 1,
+   "existing_num": 1814,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Saturday Night",
+   "imdb": "tt27657135",
+   "part": 2,
+   "existing_num": 3910,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Scream 7",
+   "imdb": "tt27047903",
+   "part": 1,
+   "existing_num": 836,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Shadow Force",
+   "imdb": "tt11092020",
+   "part": 2,
+   "existing_num": 3103,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Sing Sing",
+   "imdb": "tt28479262",
+   "part": 2,
+   "existing_num": 3923,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Sisu Road to Revenge",
+   "imdb": "tt31844586",
+   "part": 1,
+   "existing_num": 1534,
+   "nlinks_added": 3
+  },
+  {
+   "title": "Small Things Like These",
+   "imdb": "tt27196021",
+   "part": 2,
+   "existing_num": 3889,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Song Sung Blue",
+   "imdb": "tt30343021",
+   "part": 1,
+   "existing_num": 1461,
+   "nlinks_added": 1
+  },
+  {
+   "title": "Soul On Fire",
+   "imdb": "tt28078628",
+   "part": 1,
+   "existing_num": 2087,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Spider-Man Brand New Day",
+   "imdb": "tt22084616",
+   "part": 1,
+   "existing_num": 211,
+   "nlinks_added": 4
+  },
+  {
+   "title": "Springsteen Deliver Me From Nowhere",
+   "imdb": "tt31923069",
+   "part": 1,
+   "existing_num": 1810,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Spy x Family Code White",
+   "imdb": "tt26684398",
+   "part": 2,
+   "existing_num": 2855,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Steve",
+   "imdb": "tt32985279",
+   "part": 1,
+   "existing_num": 2142,
+   "nlinks_added": 2
+  },
+  {
+   "title": "The Assessment",
+   "imdb": "tt32768323",
+   "part": 1,
+   "existing_num": 2131,
+   "nlinks_added": 2
+  },
+  {
+   "title": "The Boy and the Heron",
+   "imdb": "tt6587046",
+   "part": 3,
+   "existing_num": 5050,
+   "nlinks_added": 2
+  },
+  {
+   "title": "The Bride",
+   "imdb": "tt30851137",
+   "part": 1,
+   "existing_num": 835,
+   "nlinks_added": 1
+  },
+  {
+   "title": "The Brink of War",
+   "imdb": "tt33070884",
+   "part": 1,
+   "existing_num": 336,
+   "nlinks_added": 2
+  },
+  {
+   "title": "The Choral",
+   "imdb": "tt31851518",
+   "part": 1,
+   "existing_num": 1857,
+   "nlinks_added": 2
+  },
+  {
+   "title": "The Death Of Stalin",
+   "imdb": "tt4686844",
+   "part": 4,
+   "existing_num": 8453,
+   "nlinks_added": 1
+  },
+  {
+   "title": "The Drama",
+   "imdb": "tt33071426",
+   "part": 1,
+   "existing_num": 896,
+   "nlinks_added": 2
+  },
+  {
+   "title": "The Family Plan 2",
+   "imdb": "tt34276058",
+   "part": 1,
+   "existing_num": 2027,
+   "nlinks_added": 2
+  },
+  {
+   "title": "The Garfield Movie",
+   "imdb": "tt5779228",
+   "part": 3,
+   "existing_num": 5038,
+   "nlinks_added": 2
+  },
+  {
+   "title": "The Heart Knows",
+   "imdb": "tt33244550",
+   "part": 2,
+   "existing_num": 2577,
+   "nlinks_added": 2
+  },
+  {
+   "title": "The Housemaid",
+   "imdb": "tt27543632",
+   "part": 1,
+   "existing_num": 1058,
+   "nlinks_added": 1
+  },
+  {
+   "title": "The Ice Tower",
+   "imdb": "tt28171985",
+   "part": 1,
+   "existing_num": 2130,
+   "nlinks_added": 2
+  },
+  {
+   "title": "The Idea Of You",
+   "imdb": "tt9466114",
+   "part": 3,
+   "existing_num": 5224,
+   "nlinks_added": 2
+  },
+  {
+   "title": "The Imaginary",
+   "imdb": "tt16369708",
+   "part": 3,
+   "existing_num": 5016,
+   "nlinks_added": 2
+  },
+  {
+   "title": "The Killer",
+   "imdb": "tt1121948",
+   "part": 2,
+   "existing_num": 3173,
+   "nlinks_added": 2
+  },
+  {
+   "title": "The King Of Kings",
+   "imdb": "tt7967302",
+   "part": 2,
+   "existing_num": 3158,
+   "nlinks_added": 2
+  },
+  {
+   "title": "The Legend of Ochi",
+   "imdb": "tt8866456",
+   "part": 1,
+   "existing_num": 1336,
+   "nlinks_added": 2
+  },
+  {
+   "title": "The Lost Bus",
+   "imdb": "tt21103218",
+   "part": 1,
+   "existing_num": 1759,
+   "nlinks_added": 2
+  },
+  {
+   "title": "The Love Hypothesis",
+   "imdb": "tt22526100",
+   "part": 1,
+   "existing_num": 304,
+   "nlinks_added": 2
+  },
+  {
+   "title": "The Magic Faraway Tree",
+   "imdb": "tt7734244",
+   "part": 1,
+   "existing_num": 755,
+   "nlinks_added": 2
+  },
+  {
+   "title": "The Moviemakers Scorsese",
+   "imdb": "tt29620674",
+   "part": 3,
+   "existing_num": 4763,
+   "nlinks_added": 2
+  },
+  {
+   "title": "The Odyssey",
+   "imdb": "tt33764258",
+   "part": 1,
+   "existing_num": 52,
+   "nlinks_added": 1
+  },
+  {
+   "title": "The Pout-Pout Fish",
+   "imdb": "tt12824390",
+   "part": 1,
+   "existing_num": 253,
+   "nlinks_added": 2
+  },
+  {
+   "title": "The Presidents Cake",
+   "imdb": "tt36580119",
+   "part": 1,
+   "existing_num": 1049,
+   "nlinks_added": 2
+  },
+  {
+   "title": "The Punisher One Last Kill",
+   "imdb": "tt36042156",
+   "part": 1,
+   "existing_num": 126,
+   "nlinks_added": 2
+  },
+  {
+   "title": "The Red Hangar",
+   "imdb": "tt37664358",
+   "part": 1,
+   "existing_num": 158,
+   "nlinks_added": 2
+  },
+  {
+   "title": "The Rivals of Amziah King",
+   "imdb": "tt27706593",
+   "part": 1,
+   "existing_num": 271,
+   "nlinks_added": 2
+  },
+  {
+   "title": "The Roses",
+   "imdb": "tt31973693",
+   "part": 1,
+   "existing_num": 2106,
+   "nlinks_added": 2
+  },
+  {
+   "title": "The Runner",
+   "imdb": "tt34564059",
+   "part": 1,
+   "existing_num": 367,
+   "nlinks_added": 1
+  },
+  {
+   "title": "The Secret Agent",
+   "imdb": "tt27847051",
+   "part": 1,
+   "existing_num": 1741,
+   "nlinks_added": 1
+  },
+  {
+   "title": "The Sun Never Sets",
+   "imdb": "tt37818327",
+   "part": 1,
+   "existing_num": 148,
+   "nlinks_added": 2
+  },
+  {
+   "title": "The Super Mario Galaxy Movie",
+   "imdb": "tt28650488",
+   "part": 1,
+   "existing_num": 734,
+   "nlinks_added": 2
+  },
+  {
+   "title": "The Wrecking Crew",
+   "imdb": "tt33046197",
+   "part": 1,
+   "existing_num": 1700,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Tom Clancys Jack Ryan Ghost War",
+   "imdb": "tt34378301",
+   "part": 1,
+   "existing_num": 994,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Toy Story 5",
+   "imdb": "tt29355505",
+   "part": 1,
+   "existing_num": 497,
+   "nlinks_added": 5
+  },
+  {
+   "title": "Train Dreams",
+   "imdb": "tt29768334",
+   "part": 1,
+   "existing_num": 1766,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Unstoppable",
+   "imdb": "tt0477080",
+   "part": 4,
+   "existing_num": 7893,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Watchmen Chapter I",
+   "imdb": "tt32627540",
+   "part": 3,
+   "existing_num": 4964,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Weapon",
+   "imdb": "tt27440937",
+   "part": 2,
+   "existing_num": 4362,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Widows Bay",
+   "imdb": "tt33332385",
+   "part": 10,
+   "existing_num": 9939,
+   "nlinks_added": 10
+  },
+  {
+   "title": "Wuthering Heights",
+   "imdb": "tt32897959",
+   "part": 1,
+   "existing_num": 954,
+   "nlinks_added": 2
+  },
+  {
+   "title": "You Me and Tuscany",
+   "imdb": "tt36352591",
+   "part": 1,
+   "existing_num": 1085,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Your Mother Your Mother Your Mother",
+   "imdb": "tt35856037",
+   "part": 1,
+   "existing_num": 114,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Zootopia 2",
+   "imdb": "tt26443597",
+   "part": 1,
+   "existing_num": 627,
+   "nlinks_added": 5
+  },
+  {
+   "title": "3 Body Problem",
+   "imdb": "tt13016388",
+   "part": 10,
+   "existing_num": 9966,
+   "nlinks_added": 24
+  },
+  {
+   "title": "A Gentleman in Moscow",
+   "imdb": "tt8230448",
+   "part": 16,
+   "existing_num": 10717,
+   "nlinks_added": 16
+  },
+  {
+   "title": "A Good Girls Guide to Murder",
+   "imdb": "tt28118211",
+   "part": 11,
+   "existing_num": 10058,
+   "nlinks_added": 18
+  },
+  {
+   "title": "A Man in Full",
+   "imdb": "tt15845610",
+   "part": 16,
+   "existing_num": 10727,
+   "nlinks_added": 18
+  },
+  {
+   "title": "Abbott Elementary",
+   "imdb": "tt14218830",
+   "part": 4,
+   "existing_num": 9139,
+   "nlinks_added": 10
+  },
+  {
+   "title": "Agents of the Four Seasons Dance of Spring",
+   "imdb": "tt39267868",
+   "part": 11,
+   "existing_num": 10009,
+   "nlinks_added": 6
+  },
+  {
+   "title": "American Horror Story",
+   "imdb": "tt1844624",
+   "part": 5,
+   "existing_num": 9267,
+   "nlinks_added": 15
+  },
+  {
+   "title": "Ark The Animated Series",
+   "imdb": "tt13629530",
+   "part": 16,
+   "existing_num": 10743,
+   "nlinks_added": 12
+  },
+  {
+   "title": "Baby Reindeer",
+   "imdb": "tt13649112",
+   "part": 15,
+   "existing_num": 10685,
+   "nlinks_added": 14
+  },
+  {
+   "title": "Bad Monkey",
+   "imdb": "tt15203646",
+   "part": 8,
+   "existing_num": 9592,
+   "nlinks_added": 20
+  },
+  {
+   "title": "Bandidos",
+   "imdb": "tt11262142",
+   "part": 16,
+   "existing_num": 11033,
+   "nlinks_added": 14
+  },
+  {
+   "title": "Batman Caped Crusader",
+   "imdb": "tt14681596",
+   "part": 7,
+   "existing_num": 9508,
+   "nlinks_added": 40
+  },
+  {
+   "title": "Beacon 23",
+   "imdb": "tt9174724",
+   "part": 16,
+   "existing_num": 10709,
+   "nlinks_added": 16
+  },
+  {
+   "title": "Belgravia The Next Chapter",
+   "imdb": "tt23931190",
+   "part": 13,
+   "existing_num": 10286,
+   "nlinks_added": 6
+  },
+  {
+   "title": "Black Bird",
+   "imdb": "tt4301160",
+   "part": 15,
+   "existing_num": 10634,
+   "nlinks_added": 12
+  },
+  {
+   "title": "Blood of Zeus",
+   "imdb": "tt10009170",
+   "part": 15,
+   "existing_num": 10618,
+   "nlinks_added": 48
+  },
+  {
+   "title": "Bodkin",
+   "imdb": "tt21072112",
+   "part": 16,
+   "existing_num": 10711,
+   "nlinks_added": 14
+  },
+  {
+   "title": "Boots",
+   "imdb": "tt27987047",
+   "part": 9,
+   "existing_num": 9699,
+   "nlinks_added": 16
+  },
+  {
+   "title": "Bridgerton",
+   "imdb": "tt8740790",
+   "part": 5,
+   "existing_num": 9263,
+   "nlinks_added": 32
+  },
+  {
+   "title": "Brothers",
+   "imdb": "tt6773088",
+   "part": 5,
+   "existing_num": 9254,
+   "nlinks_added": 16
+  },
+  {
+   "title": "Chad Powers",
+   "imdb": "tt31449991",
+   "part": 7,
+   "existing_num": 9452,
+   "nlinks_added": 18
+  },
+  {
+   "title": "Chainsaw Man",
+   "imdb": "tt13616990",
+   "part": 13,
+   "existing_num": 10317,
+   "nlinks_added": 24
+  },
+  {
+   "title": "Clarkson's Farm",
+   "imdb": "tt10541088",
+   "part": 10,
+   "existing_num": 9951,
+   "nlinks_added": 40
+  },
+  {
+   "title": "Cobra Kai",
+   "imdb": "tt7221388",
+   "part": 15,
+   "existing_num": 10681,
+   "nlinks_added": 30
+  },
+  {
+   "title": "Constellation",
+   "imdb": "tt19395018",
+   "part": 16,
+   "existing_num": 10742,
+   "nlinks_added": 10
+  },
+  {
+   "title": "Countdown",
+   "imdb": "tt32559610",
+   "part": 9,
+   "existing_num": 9720,
+   "nlinks_added": 26
+  },
+  {
+   "title": "Daemons of the Shadow Realm",
+   "imdb": "tt37532356",
+   "part": 6,
+   "existing_num": 9393,
+   "nlinks_added": 7
+  },
+  {
+   "title": "Dark Matter",
+   "imdb": "tt19231492",
+   "part": 4,
+   "existing_num": 9146,
+   "nlinks_added": 27
+  },
+  {
+   "title": "Dark Moon The Blood Altar",
+   "imdb": "tt38646055",
+   "part": 9,
+   "existing_num": 9858,
+   "nlinks_added": 12
+  },
+  {
+   "title": "Dead Boy Detectives",
+   "imdb": "tt15358446",
+   "part": 16,
+   "existing_num": 10731,
+   "nlinks_added": 16
+  },
+  {
+   "title": "Death and Other Details",
+   "imdb": "tt15439048",
+   "part": 16,
+   "existing_num": 10748,
+   "nlinks_added": 6
+  },
+  {
+   "title": "Demon Slayer Kimetsu no Yaiba",
+   "imdb": "tt9335498",
+   "part": 14,
+   "existing_num": 10381,
+   "nlinks_added": 16
+  },
+  {
+   "title": "Dept Q",
+   "imdb": "tt27995114",
+   "part": 9,
+   "existing_num": 9782,
+   "nlinks_added": 18
+  },
+  {
+   "title": "Duster",
+   "imdb": "tt12160826",
+   "part": 14,
+   "existing_num": 10439,
+   "nlinks_added": 16
+  },
+  {
+   "title": "Elite",
+   "imdb": "tt7134908",
+   "part": 7,
+   "existing_num": 9447,
+   "nlinks_added": 32
+  },
+  {
+   "title": "Emily in Paris",
+   "imdb": "tt8962124",
+   "part": 9,
+   "existing_num": 9856,
+   "nlinks_added": 65
+  },
+  {
+   "title": "Eric",
+   "imdb": "tt16283824",
+   "part": 16,
+   "existing_num": 10712,
+   "nlinks_added": 12
+  },
+  {
+   "title": "Fallout",
+   "imdb": "tt12637874",
+   "part": 10,
+   "existing_num": 9888,
+   "nlinks_added": 48
+  },
+  {
+   "title": "Family Guy",
+   "imdb": "tt0182576",
+   "part": 6,
+   "existing_num": 9339,
+   "nlinks_added": 12
+  },
+  {
+   "title": "Franklin",
+   "imdb": "tt18351584",
+   "part": 16,
+   "existing_num": 10718,
+   "nlinks_added": 16
+  },
+  {
+   "title": "Goodbye Earth",
+   "imdb": "tt17492848",
+   "part": 16,
+   "existing_num": 10732,
+   "nlinks_added": 24
+  },
+  {
+   "title": "Greys Anatomy",
+   "imdb": "tt0413573",
+   "part": 4,
+   "existing_num": 9135,
+   "nlinks_added": 20
+  },
+  {
+   "title": "Hacks",
+   "imdb": "tt11815682",
+   "part": 11,
+   "existing_num": 10071,
+   "nlinks_added": 38
+  },
+  {
+   "title": "Halo",
+   "imdb": "tt2934286",
+   "part": 16,
+   "existing_num": 10744,
+   "nlinks_added": 20
+  },
+  {
+   "title": "Harry Potter Wizards of Baking",
+   "imdb": "tt32374361",
+   "part": 15,
+   "existing_num": 10694,
+   "nlinks_added": 9
+  },
+  {
+   "title": "Heeramandi The Diamond Bazaar",
+   "imdb": "tt15204292",
+   "part": 15,
+   "existing_num": 10472,
+   "nlinks_added": 16
+  },
+  {
+   "title": "Hierarchy",
+   "imdb": "tt27763561",
+   "part": 15,
+   "existing_num": 10587,
+   "nlinks_added": 21
+  },
+  {
+   "title": "Hotel Cocaine",
+   "imdb": "tt17676706",
+   "part": 7,
+   "existing_num": 9445,
+   "nlinks_added": 16
+  },
+  {
+   "title": "House of David",
+   "imdb": "tt30955673",
+   "part": 9,
+   "existing_num": 9829,
+   "nlinks_added": 32
+  },
+  {
+   "title": "House of the Dragon",
+   "imdb": "tt11198330",
+   "part": 10,
+   "existing_num": 9902,
+   "nlinks_added": 64
+  },
+  {
+   "title": "Ironheart",
+   "imdb": "tt13623126",
+   "part": 13,
+   "existing_num": 10348,
+   "nlinks_added": 12
+  },
+  {
+   "title": "Knuckles",
+   "imdb": "tt18291136",
+   "part": 16,
+   "existing_num": 10734,
+   "nlinks_added": 18
+  },
+  {
+   "title": "Kung Fu Panda 4",
+   "imdb": "tt21692408",
+   "part": 3,
+   "existing_num": 5067,
+   "nlinks_added": 3
+  },
+  {
+   "title": "Lady in the Lake",
+   "imdb": "tt14022668",
+   "part": 7,
+   "existing_num": 9532,
+   "nlinks_added": 14
+  },
+  {
+   "title": "Lanterns",
+   "imdb": "tt26545992",
+   "part": 6,
+   "existing_num": 9327,
+   "nlinks_added": 16
+  },
+  {
+   "title": "Life Larry and the Pursuit of Unhappiness an Almost History of America",
+   "imdb": "tt37543147",
+   "part": 10,
+   "existing_num": 9914,
+   "nlinks_added": 14
+  },
+  {
+   "title": "Link Click",
+   "imdb": "tt14976292",
+   "part": 6,
+   "existing_num": 9287,
+   "nlinks_added": 41
+  },
+  {
+   "title": "Manhunt",
+   "imdb": "tt16912512",
+   "part": 16,
+   "existing_num": 10735,
+   "nlinks_added": 14
+  },
+  {
+   "title": "Marvel Zombies",
+   "imdb": "tt16027014",
+   "part": 12,
+   "existing_num": 10198,
+   "nlinks_added": 8
+  },
+  {
+   "title": "Mary and George",
+   "imdb": "tt26246248",
+   "part": 16,
+   "existing_num": 11026,
+   "nlinks_added": 14
+  },
+  {
+   "title": "Masters of the Air",
+   "imdb": "tt11454722",
+   "part": 16,
+   "existing_num": 10746,
+   "nlinks_added": 15
+  },
+  {
+   "title": "Maxton Hall The World Between Us",
+   "imdb": "tt27792190",
+   "part": 16,
+   "existing_num": 11054,
+   "nlinks_added": 12
+  },
+  {
+   "title": "Mayor of Kingstown",
+   "imdb": "tt11712058",
+   "part": 5,
+   "existing_num": 9225,
+   "nlinks_added": 40
+  },
+  {
+   "title": "Monsieur Spade",
+   "imdb": "tt14203572",
+   "part": 16,
+   "existing_num": 10751,
+   "nlinks_added": 18
+  },
+  {
+   "title": "Monsters at Work",
+   "imdb": "tt8610082",
+   "part": 16,
+   "existing_num": 10724,
+   "nlinks_added": 20
+  },
+  {
+   "title": "Murdaugh Death in the Family",
+   "imdb": "tt19853270",
+   "part": 9,
+   "existing_num": 9704,
+   "nlinks_added": 16
+  },
+  {
+   "title": "My Adventures with Superman",
+   "imdb": "tt14681924",
+   "part": 7,
+   "existing_num": 9425,
+   "nlinks_added": 40
+  },
+  {
+   "title": "My Brilliant Career",
+   "imdb": "tt37352716",
+   "part": 8,
+   "existing_num": 9563,
+   "nlinks_added": 12
+  },
+  {
+   "title": "My Hero Academia",
+   "imdb": "tt5626028",
+   "part": 9,
+   "existing_num": 9752,
+   "nlinks_added": 53
+  },
+  {
+   "title": "Nero the Assassin",
+   "imdb": "tt32400599",
+   "part": 9,
+   "existing_num": 9746,
+   "nlinks_added": 16
+  },
+  {
+   "title": "Ninja Kamui",
+   "imdb": "tt28480255",
+   "part": 16,
+   "existing_num": 10721,
+   "nlinks_added": 22
+  },
+  {
+   "title": "Nippon Sangoku The Three Nations of the Crimson Sun",
+   "imdb": "tt40548519",
+   "part": 8,
+   "existing_num": 9575,
+   "nlinks_added": 12
+  },
+  {
+   "title": "One Hundred Years of Solitude",
+   "imdb": "tt9892936",
+   "part": 7,
+   "existing_num": 9522,
+   "nlinks_added": 16
+  },
+  {
+   "title": "Outer Range",
+   "imdb": "tt11685912",
+   "part": 16,
+   "existing_num": 10716,
+   "nlinks_added": 14
+  },
+  {
+   "title": "Palm Royale",
+   "imdb": "tt8888540",
+   "part": 12,
+   "existing_num": 10195,
+   "nlinks_added": 38
+  },
+  {
+   "title": "Parasyte The Grey",
+   "imdb": "tt21874396",
+   "part": 15,
+   "existing_num": 10581,
+   "nlinks_added": 18
+  },
+  {
+   "title": "Parish",
+   "imdb": "tt18552362",
+   "part": 16,
+   "existing_num": 10723,
+   "nlinks_added": 12
+  },
+  {
+   "title": "Presumed Innocent",
+   "imdb": "tt17677860",
+   "part": 7,
+   "existing_num": 9441,
+   "nlinks_added": 16
+  },
+  {
+   "title": "Pretty Little Liars Original Sin",
+   "imdb": "tt13075042",
+   "part": 7,
+   "existing_num": 9435,
+   "nlinks_added": 16
+  },
+  {
+   "title": "Ransom Canyon",
+   "imdb": "tt28088031",
+   "part": 10,
+   "existing_num": 9945,
+   "nlinks_added": 20
+  },
+  {
+   "title": "Renegade Nell",
+   "imdb": "tt14502758",
+   "part": 16,
+   "existing_num": 10737,
+   "nlinks_added": 24
+  },
+  {
+   "title": "Resident Alien",
+   "imdb": "tt8690918",
+   "part": 12,
+   "existing_num": 10190,
+   "nlinks_added": 24
+  },
+  {
+   "title": "Rick and Morty The Anime",
+   "imdb": "tt28466465",
+   "part": 8,
+   "existing_num": 9598,
+   "nlinks_added": 20
+  },
+  {
+   "title": "Ripley",
+   "imdb": "tt11016042",
+   "part": 16,
+   "existing_num": 10738,
+   "nlinks_added": 24
+  },
+  {
+   "title": "Sanctuary A Witchs Tale",
+   "imdb": "tt21632986",
+   "part": 16,
+   "existing_num": 10726,
+   "nlinks_added": 14
+  },
+  {
+   "title": "Sausage Party Foodtopia",
+   "imdb": "tt23036426",
+   "part": 8,
+   "existing_num": 9682,
+   "nlinks_added": 48
+  },
+  {
+   "title": "Shardlake",
+   "imdb": "tt27390563",
+   "part": 16,
+   "existing_num": 10730,
+   "nlinks_added": 8
+  },
+  {
+   "title": "Shogun",
+   "imdb": "tt2788316",
+   "part": 12,
+   "existing_num": 10228,
+   "nlinks_added": 50
+  },
+  {
+   "title": "Snowpiercer",
+   "imdb": "tt6156584",
+   "part": 7,
+   "existing_num": 9544,
+   "nlinks_added": 20
+  },
+  {
+   "title": "Solar Opposites",
+   "imdb": "tt8910922",
+   "part": 9,
+   "existing_num": 9706,
+   "nlinks_added": 54
+  },
+  {
+   "title": "Solo Leveling",
+   "imdb": "tt21209876",
+   "part": 10,
+   "existing_num": 9882,
+   "nlinks_added": 35
+  },
+  {
+   "title": "Splinter Cell Deathwatch",
+   "imdb": "tt12809802",
+   "part": 9,
+   "existing_num": 9705,
+   "nlinks_added": 16
+  },
+  {
+   "title": "Star Wars Tales of The Empire",
+   "imdb": "tt32019314",
+   "part": 16,
+   "existing_num": 10722,
+   "nlinks_added": 12
+  },
+  {
+   "title": "Star Wars Visions Presents-The Ninth Jedi",
+   "imdb": "tt43337681",
+   "part": 7,
+   "existing_num": 9432,
+   "nlinks_added": 16
+  },
+  {
+   "title": "Stuart Fails to Save the Universe",
+   "imdb": "tt27497393",
+   "part": 5,
+   "existing_num": 9277,
+   "nlinks_added": 16
+  },
+  {
+   "title": "Sugar",
+   "imdb": "tt16418808",
+   "part": 10,
+   "existing_num": 9913,
+   "nlinks_added": 32
+  },
+  {
+   "title": "Suicide Squad Isekai",
+   "imdb": "tt28279848",
+   "part": 7,
+   "existing_num": 9530,
+   "nlinks_added": 20
+  },
+  {
+   "title": "Sunny",
+   "imdb": "tt18070898",
+   "part": 7,
+   "existing_num": 9539,
+   "nlinks_added": 20
+  },
+  {
+   "title": "Sweet Home",
+   "imdb": "tt11612120",
+   "part": 7,
+   "existing_num": 9476,
+   "nlinks_added": 42
+  },
+  {
+   "title": "Sweet Tooth",
+   "imdb": "tt12809988",
+   "part": 7,
+   "existing_num": 9453,
+   "nlinks_added": 24
+  },
+  {
+   "title": "Sword of the Demon Hunter Kijin Gentosho",
+   "imdb": "tt32281073",
+   "part": 9,
+   "existing_num": 9758,
+   "nlinks_added": 4
+  },
+  {
+   "title": "Tales of the Teenage Mutant Ninja Turtles",
+   "imdb": "tt28521741",
+   "part": 12,
+   "existing_num": 10187,
+   "nlinks_added": 60
+  },
+  {
+   "title": "Terminator Zero",
+   "imdb": "tt14153236",
+   "part": 7,
+   "existing_num": 9533,
+   "nlinks_added": 16
+  },
+  {
+   "title": "The 8 Show",
+   "imdb": "tt30423279",
+   "part": 15,
+   "existing_num": 10584,
+   "nlinks_added": 16
+  },
+  {
+   "title": "The Abandons",
+   "imdb": "tt16280546",
+   "part": 9,
+   "existing_num": 9717,
+   "nlinks_added": 14
+  },
+  {
+   "title": "The Acolyte",
+   "imdb": "tt12262202",
+   "part": 7,
+   "existing_num": 9442,
+   "nlinks_added": 20
+  },
+  {
+   "title": "The Bear",
+   "imdb": "tt14452776",
+   "part": 10,
+   "existing_num": 9978,
+   "nlinks_added": 50
+  },
+  {
+   "title": "The Better Sister",
+   "imdb": "tt32260680",
+   "part": 16,
+   "existing_num": 11042,
+   "nlinks_added": 16
+  },
+  {
+   "title": "The Big Door Prize",
+   "imdb": "tt14761860",
+   "part": 16,
+   "existing_num": 10812,
+   "nlinks_added": 20
+  },
+  {
+   "title": "The Boys",
+   "imdb": "tt1190634",
+   "part": 11,
+   "existing_num": 10091,
+   "nlinks_added": 56
+  },
+  {
+   "title": "The Couple Next Door",
+   "imdb": "tt27369122",
+   "part": 16,
+   "existing_num": 11044,
+   "nlinks_added": 6
+  },
+  {
+   "title": "The Decameron",
+   "imdb": "tt21831910",
+   "part": 7,
+   "existing_num": 9443,
+   "nlinks_added": 24
+  },
+  {
+   "title": "The Four Seasons",
+   "imdb": "tt30826447",
+   "part": 11,
+   "existing_num": 10054,
+   "nlinks_added": 16
+  },
+  {
+   "title": "The Frog",
+   "imdb": "tt26767508",
+   "part": 7,
+   "existing_num": 9534,
+   "nlinks_added": 8
+  },
+  {
+   "title": "The Good Doctor",
+   "imdb": "tt6470478",
+   "part": 16,
+   "existing_num": 10733,
+   "nlinks_added": 20
+  },
+  {
+   "title": "The Lord of the Rings The Rings of Power",
+   "imdb": "tt7631058",
+   "part": 5,
+   "existing_num": 9183,
+   "nlinks_added": 50
+  },
+  {
+   "title": "The New Look",
+   "imdb": "tt18177528",
+   "part": 16,
+   "existing_num": 10741,
+   "nlinks_added": 12
+  },
+  {
+   "title": "The Penguin",
+   "imdb": "tt15435876",
+   "part": 7,
+   "existing_num": 9548,
+   "nlinks_added": 48
+  },
+  {
+   "title": "The Perfect Couple",
+   "imdb": "tt11514868",
+   "part": 7,
+   "existing_num": 9540,
+   "nlinks_added": 18
+  },
+  {
+   "title": "The Ramparts of Ice",
+   "imdb": "tt39123061",
+   "part": 5,
+   "existing_num": 9207,
+   "nlinks_added": 2
+  },
+  {
+   "title": "The Regime",
+   "imdb": "tt21375036",
+   "part": 16,
+   "existing_num": 10736,
+   "nlinks_added": 12
+  },
+  {
+   "title": "The Rehearsal",
+   "imdb": "tt10802170",
+   "part": 15,
+   "existing_num": 10537,
+   "nlinks_added": 24
+  },
+  {
+   "title": "The Rookie",
+   "imdb": "tt7587890",
+   "part": 9,
+   "existing_num": 9777,
+   "nlinks_added": 20
+  },
+  {
+   "title": "The Scandal",
+   "imdb": "tt36347588",
+   "part": 6,
+   "existing_num": 9413,
+   "nlinks_added": 8
+  },
+  {
+   "title": "The Serpent Queen",
+   "imdb": "tt14022350",
+   "part": 7,
+   "existing_num": 9535,
+   "nlinks_added": 16
+  },
+  {
+   "title": "The Simpsons",
+   "imdb": "tt0096697",
+   "part": 4,
+   "existing_num": 9122,
+   "nlinks_added": 7
+  },
+  {
+   "title": "The Spiderwick Chronicles",
+   "imdb": "tt16026032",
+   "part": 16,
+   "existing_num": 10715,
+   "nlinks_added": 16
+  },
+  {
+   "title": "The Sympathizer",
+   "imdb": "tt14404618",
+   "part": 7,
+   "existing_num": 9428,
+   "nlinks_added": 14
+  },
+  {
+   "title": "The Tattooist of Auschwitz",
+   "imdb": "tt9022422",
+   "part": 16,
+   "existing_num": 10725,
+   "nlinks_added": 18
+  },
+  {
+   "title": "The Umbrella Academy",
+   "imdb": "tt1312171",
+   "part": 7,
+   "existing_num": 9527,
+   "nlinks_added": 18
+  },
+  {
+   "title": "The Veil",
+   "imdb": "tt21433150",
+   "part": 16,
+   "existing_num": 10714,
+   "nlinks_added": 12
+  },
+  {
+   "title": "The Walking Dead The Ones Who Live",
+   "imdb": "tt9859436",
+   "part": 15,
+   "existing_num": 10630,
+   "nlinks_added": 30
+  },
+  {
+   "title": "The Westies",
+   "imdb": "tt31849235",
+   "part": 6,
+   "existing_num": 9340,
+   "nlinks_added": 6
+  },
+  {
+   "title": "Them",
+   "imdb": "tt9064858",
+   "part": 15,
+   "existing_num": 10608,
+   "nlinks_added": 18
+  },
+  {
+   "title": "Those About to Die",
+   "imdb": "tt10569934",
+   "part": 7,
+   "existing_num": 9440,
+   "nlinks_added": 40
+  },
+  {
+   "title": "Time Bandits",
+   "imdb": "tt1928307",
+   "part": 15,
+   "existing_num": 10535,
+   "nlinks_added": 20
+  },
+  {
+   "title": "Tokyo Vice",
+   "imdb": "tt2887954",
+   "part": 16,
+   "existing_num": 10740,
+   "nlinks_added": 24
+  },
+  {
+   "title": "Tracker",
+   "imdb": "tt13875494",
+   "part": 4,
+   "existing_num": 9116,
+   "nlinks_added": 46
+  },
+  {
+   "title": "Trying",
+   "imdb": "tt10982034",
+   "part": 8,
+   "existing_num": 9582,
+   "nlinks_added": 32
+  },
+  {
+   "title": "Under the Bridge",
+   "imdb": "tt1640719",
+   "part": 16,
+   "existing_num": 10713,
+   "nlinks_added": 16
+  },
+  {
+   "title": "Uzumaki",
+   "imdb": "tt10905902",
+   "part": 14,
+   "existing_num": 10382,
+   "nlinks_added": 16
+  },
+  {
+   "title": "Vikings Valhalla",
+   "imdb": "tt11311302",
+   "part": 10,
+   "existing_num": 9891,
+   "nlinks_added": 32
+  },
+  {
+   "title": "We Were Liars",
+   "imdb": "tt3914054",
+   "part": 12,
+   "existing_num": 10255,
+   "nlinks_added": 16
+  },
+  {
+   "title": "We Were The Lucky Ones",
+   "imdb": "tt9114512",
+   "part": 16,
+   "existing_num": 10728,
+   "nlinks_added": 24
+  },
+  {
+   "title": "When the Phone Rings",
+   "imdb": "tt33503491",
+   "part": 12,
+   "existing_num": 10256,
+   "nlinks_added": 12
+  },
+  {
+   "title": "Wind Breaker",
+   "imdb": "tt29605391",
+   "part": 14,
+   "existing_num": 10378,
+   "nlinks_added": 25
+  },
+  {
+   "title": "X-Men 97",
+   "imdb": "tt16026746",
+   "part": 8,
+   "existing_num": 9606,
+   "nlinks_added": 58
+  },
+  {
+   "title": "Your Friends and Neighbors",
+   "imdb": "tt30459041",
+   "part": 11,
+   "existing_num": 10040,
+   "nlinks_added": 18
+  },
+  {
+   "title": "Youre Killing Me",
+   "imdb": "tt36460202",
+   "part": 10,
+   "existing_num": 9969,
+   "nlinks_added": 12
+  },
+  {
+   "title": "Marcel Et Monsieur Pagnol",
+   "imdb": "tt13968662",
+   "part": 1,
+   "existing_num": 933,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Rebel Moon Chapter One Chalice of Blood",
+   "imdb": "tt14998742",
+   "part": 3,
+   "existing_num": 4991,
+   "nlinks_added": 0
+  },
+  {
+   "title": "Rebel Moon Chapter Two Curse of Forgiveness",
+   "imdb": "tt23137904",
+   "part": 2,
+   "existing_num": 3669,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Monsters The Lyle and Erik Menendez Story",
+   "imdb": "tt13207736",
+   "part": 5,
+   "existing_num": 9169,
+   "nlinks_added": 36
+  }
+ ],
+ "have_old_added": [
+  {
+   "title": "Anaconda",
+   "imdb": "tt0118615",
+   "part": 1,
+   "existing_num": 2439,
+   "nlinks_added": 2
+  },
+  {
+   "title": "Frankenstein",
+   "imdb": "tt0109836",
+   "part": 2,
+   "existing_num": 4211,
+   "nlinks_added": 4
+  },
+  {
+   "title": "Obsession",
+   "imdb": "tt37287335",
+   "part": 3,
+   "existing_num": 3148,
+   "nlinks_added": 0
+  },
+  {
+   "title": "Road House",
+   "imdb": "tt0098206",
+   "part": 2,
+   "existing_num": 2709,
+   "nlinks_added": 2
+  },
+  {
+   "title": "The Mummy",
+   "imdb": "tt0120616",
+   "part": 1,
+   "existing_num": 412,
+   "nlinks_added": 2
+  },
+  {
+   "title": "1923",
+   "imdb": "tt18335752",
+   "part": 2,
+   "existing_num": 3031,
+   "nlinks_added": 22
+  },
+  {
+   "title": "Alex Rider",
+   "imdb": "tt6964748",
+   "part": 3,
+   "existing_num": 249,
+   "nlinks_added": 16
+  },
+  {
+   "title": "Curb Your Enthusiasm",
+   "imdb": "tt0264235",
+   "part": 1,
+   "existing_num": 1829,
+   "nlinks_added": 14
+  },
+  {
+   "title": "Doctor Who",
+   "imdb": "tt0436992",
+   "part": 1,
+   "existing_num": 1055,
+   "nlinks_added": 34
+  },
+  {
+   "title": "Elsbeth",
+   "imdb": "tt26591110",
+   "part": 3,
+   "existing_num": 1435,
+   "nlinks_added": 25
+  },
+  {
+   "title": "Escape at Dannemora",
+   "imdb": "tt6866266",
+   "part": 2,
+   "existing_num": 6288,
+   "nlinks_added": 7
+  },
+  {
+   "title": "Evil",
+   "imdb": "tt9055008",
+   "part": 2,
+   "existing_num": 4840,
+   "nlinks_added": 28
+  },
+  {
+   "title": "Extraordinary",
+   "imdb": "tt14531842",
+   "part": 3,
+   "existing_num": 1508,
+   "nlinks_added": 8
+  },
+  {
+   "title": "FBI",
+   "imdb": "tt7491982",
+   "part": 3,
+   "existing_num": 1566,
+   "nlinks_added": 20
+  },
+  {
+   "title": "FBI Most Wanted",
+   "imdb": "tt9742936",
+   "part": 3,
+   "existing_num": 1567,
+   "nlinks_added": 20
+  },
+  {
+   "title": "Feud",
+   "imdb": "tt1984119",
+   "part": 3,
+   "existing_num": 1582,
+   "nlinks_added": 4
+  },
+  {
+   "title": "Ghosts",
+   "imdb": "tt11379026",
+   "part": 2,
+   "existing_num": 5090,
+   "nlinks_added": 20
+  },
+  {
+   "title": "Interview with the Vampire",
+   "imdb": "tt3960394",
+   "part": 2,
+   "existing_num": 5897,
+   "nlinks_added": 23
+  },
+  {
+   "title": "Loot",
+   "imdb": "tt14271498",
+   "part": 3,
+   "existing_num": 2595,
+   "nlinks_added": 40
+  },
+  {
+   "title": "Mirzapur",
+   "imdb": "tt6473300",
+   "part": 2,
+   "existing_num": 3156,
+   "nlinks_added": 39
+  },
+  {
+   "title": "Only Murders in the Building",
+   "imdb": "tt11691774",
+   "part": 1,
+   "existing_num": 1471,
+   "nlinks_added": 40
+  },
+  {
+   "title": "Panchayat",
+   "imdb": "tt12004706",
+   "part": 2,
+   "existing_num": 2593,
+   "nlinks_added": 32
+  },
+  {
+   "title": "Power Book II Ghost",
+   "imdb": "tt10732104",
+   "part": 3,
+   "existing_num": 3405,
+   "nlinks_added": 12
+  },
+  {
+   "title": "Rick and Morty",
+   "imdb": "tt2861424",
+   "part": 1,
+   "existing_num": 236,
+   "nlinks_added": 20
+  },
+  {
+   "title": "Star Trek Discovery",
+   "imdb": "tt5171438",
+   "part": 1,
+   "existing_num": 2071,
+   "nlinks_added": 20
+  },
+  {
+   "title": "Star Wars The Bad Batch",
+   "imdb": "tt12708542",
+   "part": 2,
+   "existing_num": 4117,
+   "nlinks_added": 25
+  },
+  {
+   "title": "Supacell",
+   "imdb": "tt16283758",
+   "part": 3,
+   "existing_num": 4102,
+   "nlinks_added": 12
+  },
+  {
+   "title": "That 90s Show",
+   "imdb": "tt15591076",
+   "part": 3,
+   "existing_num": 4222,
+   "nlinks_added": 26
+  },
+  {
+   "title": "The Dragon Prince",
+   "imdb": "tt8688814",
+   "part": 2,
+   "existing_num": 6522,
+   "nlinks_added": 18
+  },
+  {
+   "title": "The Gentlemen",
+   "imdb": "tt13210838",
+   "part": 1,
+   "existing_num": 1680,
+   "nlinks_added": 32
+  },
+  {
+   "title": "The Outlaws",
+   "imdb": "tt11646832",
+   "part": 3,
+   "existing_num": 4876,
+   "nlinks_added": 10
+  },
+  {
+   "title": "The Responder",
+   "imdb": "tt11899030",
+   "part": 3,
+   "existing_num": 4975,
+   "nlinks_added": 5
+  },
+  {
+   "title": "Velma",
+   "imdb": "tt14153790",
+   "part": 2,
+   "existing_num": 3492,
+   "nlinks_added": 10
+  },
+  {
+   "title": "Walker",
+   "imdb": "tt11006642",
+   "part": 3,
+   "existing_num": 5533,
+   "nlinks_added": 26
+  },
+  {
+   "title": "The Legend of Aang The Last Airbender",
+   "imdb": "tt18259538",
+   "part": 3,
+   "existing_num": 439,
+   "nlinks_added": 0
+  }
+ ],
+ "have_mbm_added": [
+  {
+   "title": "Acapulco",
+   "imdb": "tt13567344",
+   "part": "mbm",
+   "existing_num": 11188,
+   "nlinks_added": 40
+  },
+  {
+   "title": "Dostoyevsky",
+   "imdb": "tt12005620",
+   "part": "mbm",
+   "existing_num": 11199,
+   "nlinks_added": 6
+  }
+ ],
+ "search_index": {
+  "rows_repaired_in_place": [
+   {
+    "title": "Altered",
+    "imdb": "tt32123395",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "Am I OK",
+    "imdb": "tt11225626",
+    "kind": "have-new fill tmdb"
+   },
+   {
+    "title": "Black Rabbit White Rabbit",
+    "imdb": "tt37981111",
+    "kind": "have-new fill tmdb"
+   },
+   {
+    "title": "Bob Marley One Love",
+    "imdb": "tt8521778",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "By Any Means",
+    "imdb": "tt34379051",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "Cadi",
+    "imdb": "tt31579702",
+    "kind": "have-new fill tmdb"
+   },
+   {
+    "title": "David",
+    "imdb": "tt15678738",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "Demon Slayer Kimetsu No Yaiba Infinity Castle",
+    "imdb": "tt32820897",
+    "kind": "have-new fill tmdb"
+   },
+   {
+    "title": "Elize Shadows of a Woman",
+    "imdb": "tt37042085",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "Finding Harry The Craft Behind The Magic",
+    "imdb": "tt41368989",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "Fixed",
+    "imdb": "tt8785038",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "HIT The 3rd Case",
+    "imdb": "tt23804696",
+    "kind": "have-new fill tmdb"
+   },
+   {
+    "title": "Mononoke the Movie Chapter III The Curse of the Serpent",
+    "imdb": "tt36282134",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "Never After Dark",
+    "imdb": "tt38589433",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "Peaky Blinders The Immortal Man",
+    "imdb": "tt15574124",
+    "kind": "have-new fill tmdb"
+   },
+   {
+    "title": "People We Meet on Vacation",
+    "imdb": "tt22740896",
+    "kind": "have-new fill tmdb"
+   },
+   {
+    "title": "Primetime",
+    "imdb": "tt34206385",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "Queen At Sea",
+    "imdb": "tt27541205",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "Ready or Not 2 Here I Come",
+    "imdb": "tt33978029",
+    "kind": "have-new fill tmdb"
+   },
+   {
+    "title": "Remain Calm",
+    "imdb": "tt49058294",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "Resident Evil",
+    "imdb": "tt35538033",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "Scream 7",
+    "imdb": "tt27047903",
+    "kind": "have-new fill tmdb"
+   },
+   {
+    "title": "Spider-Man Brand New Day",
+    "imdb": "tt22084616",
+    "kind": "have-new fill tmdb"
+   },
+   {
+    "title": "Spy x Family Code White",
+    "imdb": "tt26684398",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "The Bride",
+    "imdb": "tt30851137",
+    "kind": "have-new fill tmdb"
+   },
+   {
+    "title": "The Brink of War",
+    "imdb": "tt33070884",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "The Choral",
+    "imdb": "tt31851518",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "The Drama",
+    "imdb": "tt33071426",
+    "kind": "have-new fill tmdb"
+   },
+   {
+    "title": "The Heart Knows",
+    "imdb": "tt33244550",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "The Love Hypothesis",
+    "imdb": "tt22526100",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "The Magic Faraway Tree",
+    "imdb": "tt7734244",
+    "kind": "have-new fill tmdb"
+   },
+   {
+    "title": "The Moviemakers Scorsese",
+    "imdb": "tt29620674",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "The Pout-Pout Fish",
+    "imdb": "tt12824390",
+    "kind": "have-new fill tmdb"
+   },
+   {
+    "title": "The Presidents Cake",
+    "imdb": "tt36580119",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "The Punisher One Last Kill",
+    "imdb": "tt36042156",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "The Red Hangar",
+    "imdb": "tt37664358",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "The Sun Never Sets",
+    "imdb": "tt37818327",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "The Super Mario Galaxy Movie",
+    "imdb": "tt28650488",
+    "kind": "have-new fill tmdb"
+   },
+   {
+    "title": "Tom Clancys Jack Ryan Ghost War",
+    "imdb": "tt34378301",
+    "kind": "have-new fill tmdb"
+   },
+   {
+    "title": "Toy Story 5",
+    "imdb": "tt29355505",
+    "kind": "have-new fill tmdb"
+   },
+   {
+    "title": "Widows Bay",
+    "imdb": "tt33332385",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "Wuthering Heights",
+    "imdb": "tt32897959",
+    "kind": "have-new fill tmdb"
+   },
+   {
+    "title": "You Me and Tuscany",
+    "imdb": "tt36352591",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "3 Body Problem",
+    "imdb": "tt13016388",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "Agents of the Four Seasons Dance of Spring",
+    "imdb": "tt39267868",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "Ark The Animated Series",
+    "imdb": "tt13629530",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "Boots",
+    "imdb": "tt27987047",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "Constellation",
+    "imdb": "tt19395018",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "Dark Moon The Blood Altar",
+    "imdb": "tt38646055",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "Halo",
+    "imdb": "tt2934286",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "My Brilliant Career",
+    "imdb": "tt37352716",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "Nippon Sangoku The Three Nations of the Crimson Sun",
+    "imdb": "tt40548519",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "One Hundred Years of Solitude",
+    "imdb": "tt9892936",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "Sausage Party Foodtopia",
+    "imdb": "tt23036426",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "Solo Leveling",
+    "imdb": "tt21209876",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "Sword of the Demon Hunter Kijin Gentosho",
+    "imdb": "tt32281073",
+    "kind": "have-new fill tmdb"
+   },
+   {
+    "title": "The Big Door Prize",
+    "imdb": "tt14761860",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "The New Look",
+    "imdb": "tt18177528",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "The Ramparts of Ice",
+    "imdb": "tt39123061",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "The Scandal",
+    "imdb": "tt36347588",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "The Walking Dead The Ones Who Live",
+    "imdb": "tt9859436",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "The Westies",
+    "imdb": "tt31849235",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "Trying",
+    "imdb": "tt10982034",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "Youre Killing Me",
+    "imdb": "tt36460202",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "Marcel Et Monsieur Pagnol",
+    "imdb": "tt13968662",
+    "kind": "have-new fill imdb"
+   },
+   {
+    "title": "Frankenstein",
+    "imdb": "tt0109836",
+    "kind": "have-old fill tmdb"
+   }
+  ],
+  "rows_added": [
+   {
+    "title": "Blue Exorcist",
+    "imdb": "tt1799631",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "Captain Tsubasa",
+    "imdb": "tt7784442",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "My Next Guest Needs No Introduction with David Letterman",
+    "imdb": "tt7829834",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "Merry Happy Whatever",
+    "imdb": "tt9770286",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "Hightown",
+    "imdb": "tt7718110",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "BMF",
+    "imdb": "tt3850598",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "FBI: International",
+    "imdb": "tt14449470",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "The Great North",
+    "imdb": "tt9140632",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "Bel-Air",
+    "imdb": "tt12878838",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "The Cleaning Lady",
+    "imdb": "tt11188682",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "Animal Control",
+    "imdb": "tt21376524",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "Brawn: The Impossible Formula 1 Story",
+    "imdb": "tt22297946",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "Krapopolis",
+    "imdb": "tt14016574",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "Not Dead Yet",
+    "imdb": "tt18250904",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "The Ark",
+    "imdb": "tt17371078",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "The Irrational",
+    "imdb": "tt16288838",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "Breathless",
+    "imdb": "tt28298539",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "English Teacher",
+    "imdb": "tt20782190",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "Exploding Kittens",
+    "imdb": "tt19734104",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "Fast Friends",
+    "imdb": "tt33481273",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "Fight Night: The Million Dollar Heist",
+    "imdb": "tt30428188",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "Iwájú",
+    "imdb": "tt13623772",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "Jurassic World: Chaos Theory",
+    "imdb": "tt29899148",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "Kite Man: Hell Yeah!",
+    "imdb": "tt19853518",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "Megamind Rules!",
+    "imdb": "tt18214172",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "Mr. Throwback",
+    "imdb": "tt27427856",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "Sexy Beast",
+    "imdb": "tt18259204",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "Supersex",
+    "imdb": "tt22325774",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "The Big Cigar",
+    "imdb": "tt19399602",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "The Completely Made-Up Adventures of Dick Turpin",
+    "imdb": "tt19516036",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "The Emperor of Ocean Park",
+    "imdb": "tt27601690",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "The Girls on the Bus",
+    "imdb": "tt10970364",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "The Signal",
+    "imdb": "tt25375256",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "The Whirlwind",
+    "imdb": "tt27368132",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "Tokyo Swindlers",
+    "imdb": "tt31250132",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "A Very Jonas Christmas Movie",
+    "imdb": "tt35600079",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "Boys Go to Jupiter",
+    "imdb": "tt31021863",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "Disney Parks Magical Christmas Day Parade",
+    "imdb": "tt38870906",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "Fran the Man",
+    "imdb": "tt31778990",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "The Revenge Club",
+    "imdb": "tt37367168",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "Waltzing with Brando",
+    "imdb": "tt9619902",
+    "kind": "new row (srm)"
+   },
+   {
+    "title": "Prey",
+    "imdb": "tt27682129",
+    "kind": "have-new add row (existing part 3)"
+   },
+   {
+    "title": "Mary and George",
+    "imdb": "tt26246248",
+    "kind": "have-new add row (existing part 16)"
+   },
+   {
+    "title": "Doctor Who",
+    "imdb": "tt0436992",
+    "kind": "have-old add row (old part 1)"
+   },
+   {
+    "title": "Elsbeth",
+    "imdb": "tt26591110",
+    "kind": "have-old add row (old part 3)"
+   },
+   {
+    "title": "Escape at Dannemora",
+    "imdb": "tt6866266",
+    "kind": "have-old add row (old part 2)"
+   },
+   {
+    "title": "Extraordinary",
+    "imdb": "tt14531842",
+    "kind": "have-old add row (old part 3)"
+   },
+   {
+    "title": "FBI",
+    "imdb": "tt7491982",
+    "kind": "have-old add row (old part 3)"
+   },
+   {
+    "title": "FBI Most Wanted",
+    "imdb": "tt9742936",
+    "kind": "have-old add row (old part 3)"
+   },
+   {
+    "title": "Loot",
+    "imdb": "tt14271498",
+    "kind": "have-old add row (old part 3)"
+   },
+   {
+    "title": "Mirzapur",
+    "imdb": "tt6473300",
+    "kind": "have-old add row (old part 2)"
+   },
+   {
+    "title": "Panchayat",
+    "imdb": "tt12004706",
+    "kind": "have-old add row (old part 2)"
+   },
+   {
+    "title": "Power Book II Ghost",
+    "imdb": "tt10732104",
+    "kind": "have-old add row (old part 3)"
+   },
+   {
+    "title": "Rick and Morty",
+    "imdb": "tt2861424",
+    "kind": "have-old add row (old part 1)"
+   },
+   {
+    "title": "Star Trek Discovery",
+    "imdb": "tt5171438",
+    "kind": "have-old add row (old part 1)"
+   },
+   {
+    "title": "Star Wars The Bad Batch",
+    "imdb": "tt12708542",
+    "kind": "have-old add row (old part 2)"
+   },
+   {
+    "title": "Supacell",
+    "imdb": "tt16283758",
+    "kind": "have-old add row (old part 3)"
+   },
+   {
+    "title": "That 90s Show",
+    "imdb": "tt15591076",
+    "kind": "have-old add row (old part 3)"
+   },
+   {
+    "title": "The Dragon Prince",
+    "imdb": "tt8688814",
+    "kind": "have-old add row (old part 2)"
+   },
+   {
+    "title": "The Gentlemen",
+    "imdb": "tt13210838",
+    "kind": "have-old add row (old part 1)"
+   },
+   {
+    "title": "The Outlaws",
+    "imdb": "tt11646832",
+    "kind": "have-old add row (old part 3)"
+   },
+   {
+    "title": "The Responder",
+    "imdb": "tt11899030",
+    "kind": "have-old add row (old part 3)"
+   },
+   {
+    "title": "Velma",
+    "imdb": "tt14153790",
+    "kind": "have-old add row (old part 2)"
+   },
+   {
+    "title": "Walker",
+    "imdb": "tt11006642",
+    "kind": "have-old add row (old part 3)"
+   }
+  ]
+ },
+ "tmdb_none": [
+  {
+   "title": "Masters of the Air",
+   "imdb": "tt11454722",
+   "type": "tv",
+   "reason": "/find returned unrelated tmdb 96718 'Genera+ion'; TMDB tv search 'Masters of the Air' -> tv 46518 whose external_ids imdb is tt2640044, NOT the archive's tt11454722. Archive imdb is suspect; needs the user's detail-page screenshot. tmdb stays None."
+  },
+  {
+   "title": "Monster",
+   "imdb": "tt13207736",
+   "type": "tv",
+   "reason": "/find by imdb returns nothing; TMDB anthology split (season record tv 225634 has no IMDb); archive search row already tmdb None; live play entry tmdb_key None. tmdb stays None."
+  }
+ ]
+}

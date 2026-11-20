@@ -4127,7 +4127,7 @@
   "year": 2013
  },
  "n:1049": {
-  "imdb": null,
+  "imdb": "tt36580119",
   "num": 1049,
   "part": 1,
   "play": [
@@ -4256,10 +4256,38 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/The.Presidents.Cake/The.Presidents.Cake.2025.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p x264",
+    "quality_label": "webrip 1080p x264",
+    "season": null,
+    "size_bytes": 2040109465,
+    "size_text": "2.0 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/The.Presidents.Cake/The.Presidents.Cake.2025.720p.WEBRip.x264.AAC-YTS.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p x264",
+    "quality_label": "webrip 720p x264",
+    "season": null,
+    "size_bytes": 1015860428,
+    "size_text": "1.0 GB"
    }
   ],
   "title": "The President’s Cake",
-  "tmdb_key": null,
+  "tmdb_key": "movie:1464883",
   "type": "movie",
   "video_mp4": {
    "is_trailer": true,
@@ -6387,7 +6415,7 @@
   "year": 2026
  },
  "n:1085": {
-  "imdb": null,
+  "imdb": "tt36352591",
   "num": 1085,
   "part": 1,
   "play": [
@@ -6474,10 +6502,38 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/You.Me.and.Tuscany/You.Me.and.Tuscany.2026.1080p.WEB-DL.6CH.Pahe-SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p x264",
+    "quality_label": "web-dl 1080p x264",
+    "season": null,
+    "size_bytes": 1825361100,
+    "size_text": "1.8 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/You.Me.and.Tuscany/You.Me.and.Tuscany.2026.720p.WEB-DL.Pahe-SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p x264",
+    "quality_label": "web-dl 720p x264",
+    "season": null,
+    "size_bytes": 996252057,
+    "size_text": "996 MB"
    }
   ],
   "title": "You, Me & Tuscany",
-  "tmdb_key": null,
+  "tmdb_key": "movie:1455079",
   "type": "movie",
   "video_mp4": {
    "is_trailer": true,
@@ -6737,7 +6793,7 @@
   "year": 2026
  },
  "n:1090": {
-  "imdb": null,
+  "imdb": "tt37981111",
   "num": 1090,
   "part": 1,
   "play": [
@@ -6782,6 +6838,20 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Black.Rabbit.White.Rabbit.2025.1080p.BluRay.Master.mkv",
+    "playit_url": null,
+    "quality": "BluRay 1080p x264",
+    "quality_label": "bluray 1080p x264",
+    "season": null,
+    "size_bytes": 2791728742,
+    "size_text": "2.8 GB"
    }
   ],
   "title": "Black Rabbit, White Rabbit",
@@ -7590,7 +7660,7 @@
   "year": 2016
  },
  "n:1104": {
-  "imdb": null,
+  "imdb": "tt1341338",
   "num": 1104,
   "part": 1,
   "play": [
@@ -7733,6 +7803,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Good.Luck.Have.Fun.Dont.Die/Good.Luck.Have.Fun.Dont.Die.2025.1080p.10bit.WEB-DL.6CH.x265.HEVC.PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p 10bit x265",
+    "quality_label": "web-dl 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1825361100,
+    "size_text": "1.8 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Good.Luck.Have.Fun.Dont.Die/Good.Luck.Have.Fun.Dont.Die.2025.720p.10bit.WEB-DL.6CH.x265.HEVC.PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p 10bit x265",
+    "quality_label": "web-dl 720p 10bit x265",
+    "season": null,
+    "size_bytes": 969513369,
+    "size_text": "970 MB"
    }
   ],
   "title": "Good Luck, Have Fun, Don’t Die",
@@ -10338,7 +10436,7 @@
   "year": 2005
  },
  "n:114": {
-  "imdb": null,
+  "imdb": "tt35856037",
   "num": 114,
   "part": 1,
   "play": [
@@ -10495,6 +10593,34 @@
     "season": null,
     "size_bytes": 424549001,
     "size_text": "404.88 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Your.Mother.Your.Mother.Your.Mother/Web/1080x265/Your.Mother.Your.Mother.Your.Mother.2026.1080p.10bit.WEB-DL.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p 10bit x265",
+    "quality_label": "web-dl 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1932735283,
+    "size_text": "1.9 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Your.Mother.Your.Mother.Your.Mother/Web/720x265/Your.Mother.Your.Mother.Your.Mother.2026.720p.10bit.WEB-DL.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p 10bit x265",
+    "quality_label": "web-dl 720p 10bit x265",
+    "season": null,
+    "size_bytes": 886466150,
+    "size_text": "886 MB"
    }
   ],
   "title": "Your Mother Your Mother Your Mother",
@@ -14641,7 +14767,7 @@
   "year": 2026
  },
  "n:1188": {
-  "imdb": null,
+  "imdb": "tt16431404",
   "num": 1188,
   "part": 1,
   "play": [
@@ -14854,6 +14980,20 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Apex/Apex.2026.1080p.10bit.WEB-DL.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p 10bit x265",
+    "quality_label": "web-dl 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1717986918,
+    "size_text": "1.7 GB"
    }
   ],
   "title": "Apex",
@@ -15847,7 +15987,7 @@
   "year": 2026
  },
  "n:120": {
-  "imdb": null,
+  "imdb": "tt34206385",
   "num": 120,
   "part": 1,
   "play": [
@@ -16004,6 +16144,34 @@
     "season": null,
     "size_bytes": 561978535,
     "size_text": "535.94 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Primetime/Web/1080/Primetime.2026.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p x264",
+    "quality_label": "webrip 1080p x264",
+    "season": null,
+    "size_bytes": 2147483648,
+    "size_text": "2.1 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Primetime/Web/720/Primetime.2026.720p.WEBRip.x264.AAC-YTS.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p x264",
+    "quality_label": "webrip 720p x264",
+    "season": null,
+    "size_bytes": 1054552883,
+    "size_text": "1.1 GB"
    }
   ],
   "title": "Primetime",
@@ -18763,7 +18931,7 @@
   "year": 2026
  },
  "n:1226": {
-  "imdb": null,
+  "imdb": "tt41368989",
   "num": 1226,
   "part": 1,
   "play": [
@@ -18878,6 +19046,20 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Finding.Harry.The.Craft.Behind.The.Magic/Finding.Harry.The.Craft.Behind.The.Magic.2026.720p.WEB-DL.YTS.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p x264",
+    "quality_label": "web-dl 720p x264",
+    "season": null,
+    "size_bytes": 249246515,
+    "size_text": "249 MB"
    }
   ],
   "title": "Finding Harry: The Craft Behind the Magic",
@@ -19279,7 +19461,7 @@
   "year": 2026
  },
  "n:1231": {
-  "imdb": null,
+  "imdb": "tt15574124",
   "num": 1231,
   "part": 1,
   "play": [
@@ -19478,6 +19660,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Peaky.Blinders.The.Immortal.Man/Peaky.Blinders.The.Immortal.Man.2026.1080p.10bit.WEB-DL.6CH.x265.HEVC.PSA.SoftSub-Sermovie..mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p 10bit x265",
+    "quality_label": "web-dl 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1932735283,
+    "size_text": "1.9 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Peaky.Blinders.The.Immortal.Man/Peaky.Blinders.The.Immortal.Man.2026.720p.10bit.WEB-DL.6CH.x265.HEVC.PSA.SoftSub-Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p 10bit x265",
+    "quality_label": "web-dl 720p 10bit x265",
+    "season": null,
+    "size_bytes": 865389772,
+    "size_text": "865 MB"
    }
   ],
   "title": "Peaky Blinders: The Immortal Man",
@@ -22034,7 +22244,7 @@
   "year": 2004
  },
  "n:126": {
-  "imdb": null,
+  "imdb": "tt36042156",
   "num": 126,
   "part": 1,
   "play": [
@@ -22233,6 +22443,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/The.Punisher.One.Last.Kill.2026/The.Punisher.One.Last.Kill.2026.1080p.10bit.WEB-DL.6CH.x265.PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p 10bit x265",
+    "quality_label": "web-dl 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 703175065,
+    "size_text": "703 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/The.Punisher.One.Last.Kill.2026/The.Punisher.One.Last.Kill.2026.720p.10bit.WEB-DL.6CH.x265.PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p 10bit x265",
+    "quality_label": "web-dl 720p 10bit x265",
+    "season": null,
+    "size_bytes": 339109478,
+    "size_text": "339 MB"
    }
   ],
   "title": "The Punisher: One Last Kill",
@@ -31216,7 +31454,7 @@
   "year": 2011
  },
  "n:1389": {
-  "imdb": null,
+  "imdb": "tt15678738",
   "num": 1389,
   "part": 1,
   "play": [
@@ -31387,6 +31625,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/David/David.2025.1080p.10bit.WEB-DL.6CH.x265.Pahe.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p 10bit x265",
+    "quality_label": "web-dl 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1825361100,
+    "size_text": "1.8 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/David/David.2025.720p.10bit.WEB-DL.x265.Pahe.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p 10bit x265",
+    "quality_label": "web-dl 720p 10bit x265",
+    "season": null,
+    "size_bytes": 650955980,
+    "size_text": "651 MB"
    }
   ],
   "title": "David",
@@ -35654,7 +35920,7 @@
   "year": 2026
  },
  "n:148": {
-  "imdb": null,
+  "imdb": "tt37818327",
   "num": 148,
   "part": 1,
   "play": [
@@ -35727,6 +35993,34 @@
     "season": null,
     "size_bytes": 530071600,
     "size_text": "505.52 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/The.Sun.Never.Sets/Web/1080x265/The.Sun.Never.Sets.2026.10bit.1080p.x265.WEB-DL.6CH.PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p 10bit x265",
+    "quality_label": "web-dl 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1825361100,
+    "size_text": "1.8 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/The.Sun.Never.Sets/Web/720x265/The.Sun.Never.Sets.2026.10bit.720p.x265.WEB-DL.6CH.PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p 10bit x265",
+    "quality_label": "web-dl 720p 10bit x265",
+    "season": null,
+    "size_bytes": 796183756,
+    "size_text": "796 MB"
    }
   ],
   "title": "The Sun Never Sets",
@@ -36367,7 +36661,7 @@
   "year": 2026
  },
  "n:151": {
-  "imdb": null,
+  "imdb": "tt49058294",
   "num": 151,
   "part": 1,
   "play": [
@@ -36412,6 +36706,34 @@
     "season": null,
     "size_bytes": 88354797,
     "size_text": "84.26 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Remain.Calm/Web/1080/Remain.Calm.2026.1080p.WEB-DL.x264.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p x264",
+    "quality_label": "web-dl 1080p x264",
+    "season": null,
+    "size_bytes": 288987545,
+    "size_text": "289 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Remain.Calm/Web/720/Remain.Calm.2026.720p.WEB-DL.x264.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p x264",
+    "quality_label": "web-dl 720p x264",
+    "season": null,
+    "size_bytes": 176685056,
+    "size_text": "177 MB"
    }
   ],
   "title": "Remain Calm",
@@ -36426,7 +36748,7 @@
   "year": 2026
  },
  "n:1511": {
-  "imdb": null,
+  "imdb": "tt22740896",
   "num": 1511,
   "part": 1,
   "play": [
@@ -36499,6 +36821,34 @@
     "season": null,
     "size_bytes": 577606308,
     "size_text": "550.85 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/People.We.Meet.on.Vacation/People.We.Meet.on.Vacation.2026.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p 10bit x265",
+    "quality_label": "webrip 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 2040109465,
+    "size_text": "2.0 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/People.We.Meet.on.Vacation/People.We.Meet.on.Vacation.2026.720p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": null,
+    "size_bytes": 921174016,
+    "size_text": "921 MB"
    }
   ],
   "title": "People We Meet on Vacation",
@@ -36586,7 +36936,7 @@
   "year": 2025
  },
  "n:152": {
-  "imdb": null,
+  "imdb": "tt37042085",
   "num": 152,
   "part": 1,
   "play": [
@@ -36645,6 +36995,20 @@
     "season": null,
     "size_bytes": 413348757,
     "size_text": "394.20 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Elize.Shadows.of.a.Woman/Web/720/Elize.Shadows.of.a.Woman.2026.720p.WEB-DL.AAC.YIFY.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p x264",
+    "quality_label": "web-dl 720p x264",
+    "season": null,
+    "size_bytes": 894749900,
+    "size_text": "895 MB"
    }
   ],
   "title": "Elize: Shadows of a Woman",
@@ -39002,7 +39366,7 @@
   "year": 2025
  },
  "n:158": {
-  "imdb": null,
+  "imdb": "tt37664358",
   "num": 158,
   "part": 1,
   "play": [
@@ -39047,6 +39411,34 @@
     "season": null,
     "size_bytes": 422386921,
     "size_text": "402.82 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/The.Red.Hangar/Web/1080/The.Red.Hangar.2026.1080p.WEB-DL.6CH.YIFY.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p x264",
+    "quality_label": "web-dl 1080p x264",
+    "season": null,
+    "size_bytes": 1610612736,
+    "size_text": "1.6 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/The.Red.Hangar/Web/720/The.Red.Hangar.2026.720p.WEB-DL.AAC.YIFY.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p x264",
+    "quality_label": "web-dl 720p x264",
+    "season": null,
+    "size_bytes": 793876889,
+    "size_text": "794 MB"
    }
   ],
   "title": "The Red Hangar",
@@ -40436,7 +40828,7 @@
   "year": 2025
  },
  "n:163": {
-  "imdb": null,
+  "imdb": "tt27541205",
   "num": 163,
   "part": 1,
   "play": [
@@ -40481,6 +40873,20 @@
     "season": null,
     "size_bytes": 557502316,
     "size_text": "531.68 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Queen.At.Sea/Web/1080x265/Queen.At.Sea.2026.1080p.WEB-DL.HEVC.x265.5.1.BONE.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p x265",
+    "quality_label": "web-dl 1080p x265",
+    "season": null,
+    "size_bytes": 1825361100,
+    "size_text": "1.8 GB"
    }
   ],
   "title": "Queen at Sea",
@@ -47126,7 +47532,7 @@
   "year": 2025
  },
  "n:1857": {
-  "imdb": null,
+  "imdb": "tt31851518",
   "num": 1857,
   "part": 1,
   "play": [
@@ -47171,10 +47577,38 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/The.Choral/The.Choral.2025.1080p.WEB-DL.H264.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p x264",
+    "quality_label": "web-dl 1080p x264",
+    "season": null,
+    "size_bytes": 2254857830,
+    "size_text": "2.3 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/The.Choral/The.Choral.2025.720p.WEB-DL.H264.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p x264",
+    "quality_label": "web-dl 720p x264",
+    "season": null,
+    "size_bytes": 1181116006,
+    "size_text": "1.2 GB"
    }
   ],
   "title": "The Choral",
-  "tmdb_key": null,
+  "tmdb_key": "movie:1262815",
   "type": "movie",
   "video_mp4": {
    "is_trailer": true,
@@ -50558,7 +50992,7 @@
   "year": 2026
  },
  "n:2078": {
-  "imdb": null,
+  "imdb": "tt32123395",
   "num": 2078,
   "part": 1,
   "play": [
@@ -50659,6 +51093,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Altered/Altered.2025.1080p.WEB-DL.6CH.YIFY.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p x264",
+    "quality_label": "web-dl 1080p x264",
+    "season": null,
+    "size_bytes": 1717986918,
+    "size_text": "1.7 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Altered/Altered.2025.720p.WEB-DL.AAC.YIFY.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p x264",
+    "quality_label": "web-dl 720p x264",
+    "season": null,
+    "size_bytes": 817364992,
+    "size_text": "817 MB"
    }
   ],
   "title": "Altered",
@@ -51094,7 +51556,7 @@
   "year": 2025
  },
  "n:211": {
-  "imdb": null,
+  "imdb": "tt22084616",
   "num": 211,
   "part": 1,
   "play": [
@@ -51379,6 +51841,62 @@
     "season": null,
     "size_bytes": 741762432,
     "size_text": "707.40 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Spider-Man.Brand.New.Day/Web/1080/Spider-Man.Brand.New.Day.2026.1080p.AMZN.WEB-DL.H.264..SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p x264",
+    "quality_label": "web-dl 1080p x264",
+    "season": null,
+    "size_bytes": 2899102924,
+    "size_text": "2.9 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Spider-Man.Brand.New.Day/Web/1080x265/Spider-Man.Brand.New.Day.2026.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p 10bit x265",
+    "quality_label": "webrip 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 2362232012,
+    "size_text": "2.4 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Spider-Man.Brand.New.Day/Web/720/Spider-Man.Brand.New.Day.2026.720p.AMZN.WEB-DL.H.264.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p x264",
+    "quality_label": "web-dl 720p x264",
+    "season": null,
+    "size_bytes": 1395864371,
+    "size_text": "1.4 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Spider-Man.Brand.New.Day/Web/720x265/Spider-Man.Brand.New.Day.2026.720p.10bit.WEBRip.6CH.x265.PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": null,
+    "size_bytes": 1181116006,
+    "size_text": "1.2 GB"
    }
   ],
   "title": "Spider-Man: Brand New Day",
@@ -51390,7 +51908,7 @@
    "size_text": "11.64 MB",
    "url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2026/Spider-Man-Brand-New-Day-Trailer.mp4"
   },
-  "year": null
+  "year": 2026
  },
  "n:214": {
   "imdb": null,
@@ -52179,7 +52697,7 @@
   "year": 2026
  },
  "n:221": {
-  "imdb": null,
+  "imdb": "tt36282134",
   "num": 221,
   "part": 1,
   "play": [
@@ -52224,6 +52742,34 @@
     "season": null,
     "size_bytes": 424223921,
     "size_text": "404.57 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Mononoke.the.Movie.Chapter.III.The.Curse.of.the.Serpent/Web/1080/Gekijoban.Mononoke.Dai-San-Sho.Hebigami.2026.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p x264",
+    "quality_label": "webrip 1080p x264",
+    "season": null,
+    "size_bytes": 1717986918,
+    "size_text": "1.7 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Mononoke.the.Movie.Chapter.III.The.Curse.of.the.Serpent/Web/720/Gekijoban.Mononoke.Dai-San-Sho.Hebigami.2026.720p.WEBRip.x264.AAC-YTS.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p x264",
+    "quality_label": "webrip 720p x264",
+    "season": null,
+    "size_bytes": 853016576,
+    "size_text": "853 MB"
    }
   ],
   "title": "Mononoke the Movie: Chapter III – The Curse of the Serpent",
@@ -54820,7 +55366,7 @@
   "year": 2026
  },
  "n:253": {
-  "imdb": null,
+  "imdb": "tt12824390",
   "num": 253,
   "part": 1,
   "play": [
@@ -54921,6 +55467,34 @@
     "season": null,
     "size_bytes": 418306904,
     "size_text": "398.93 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/The.Pout-Pout.Fish/The.Pout-Pout.Fish.2026.1080p.WEB-DL.YTS.Sermovie.mp4",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p x264",
+    "quality_label": "web-dl 1080p x264",
+    "season": null,
+    "size_bytes": 1610612736,
+    "size_text": "1.6 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/The.Pout-Pout.Fish/The.Pout-Pout.Fish.2026.720p.WEB-DL.YTS.Sermovie.mp4",
+    "playit_url": null,
+    "quality": "WEB-DL 720p x264",
+    "quality_label": "web-dl 720p x264",
+    "season": null,
+    "size_bytes": 877028966,
+    "size_text": "877 MB"
    }
   ],
   "title": "The Pout-Pout Fish",
@@ -59850,7 +60424,7 @@
   "year": 2026
  },
  "n:304": {
-  "imdb": null,
+  "imdb": "tt22526100",
   "num": 304,
   "part": 1,
   "play": [
@@ -59923,6 +60497,34 @@
     "season": null,
     "size_bytes": 572249089,
     "size_text": "545.74 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/The.Love.Hypothesis/Web-Dl/1080x265/The.Love.Hypothesis.2026.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p 10bit x265",
+    "quality_label": "webrip 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1610612736,
+    "size_text": "1.6 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/The.Love.Hypothesis/Web-Dl/720x265/The.Love.Hypothesis.2026.720p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": null,
+    "size_bytes": 756442726,
+    "size_text": "756 MB"
    }
   ],
   "title": "The Love Hypothesis",
@@ -60229,7 +60831,7 @@
   "year": 2026
  },
  "n:31": {
-  "imdb": null,
+  "imdb": "tt35538033",
   "num": 31,
   "part": 1,
   "play": [
@@ -60442,6 +61044,34 @@
     "season": null,
     "size_bytes": 420314905,
     "size_text": "400.84 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Resident.Evil/Web/1080x265/Resident.Evil.2026.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p 10bit x265",
+    "quality_label": "webrip 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1503238553,
+    "size_text": "1.5 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Resident.Evil/Web/720x265/Resident.Evil.2026.720p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": null,
+    "size_bytes": 701287628,
+    "size_text": "701 MB"
    }
   ],
   "title": "Resident Evil",
@@ -63068,7 +63698,7 @@
   "year": 2026
  },
  "n:336": {
-  "imdb": null,
+  "imdb": "tt33070884",
   "num": 336,
   "part": 1,
   "play": [
@@ -63253,6 +63883,34 @@
     "season": null,
     "size_bytes": 524230499,
     "size_text": "499.95 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/The.Brink.of.War/WEB-DL/1080/The.Brink.of.War.2026.1080p.WEB-DL.6CH.YIFY.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p x264",
+    "quality_label": "web-dl 1080p x264",
+    "season": null,
+    "size_bytes": 2362232012,
+    "size_text": "2.4 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/The.Brink.of.War/WEB-DL/720/The.Brink.of.War.2026.720p.WEB-DL.AAC.YIFY.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p x264",
+    "quality_label": "web-dl 720p x264",
+    "season": null,
+    "size_bytes": 1181116006,
+    "size_text": "1.2 GB"
    }
   ],
   "title": "The Brink of War",
@@ -76313,7 +76971,7 @@
   "year": 2025
  },
  "n:497": {
-  "imdb": null,
+  "imdb": "tt29355505",
   "num": 497,
   "part": 1,
   "play": [
@@ -76540,6 +77198,76 @@
     "season": null,
     "size_bytes": 528638385,
     "size_text": "504.15 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Toy.Story.5/Web-Dl/1080/Toy.Story.5.2026.1080p.WEB-DL.6CH.YIFY.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p x264",
+    "quality_label": "web-dl 1080p x264",
+    "season": null,
+    "size_bytes": 2040109465,
+    "size_text": "2.0 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Toy.Story.5/Web-Dl/FullHD/Toy.Story.5.2026.1080p.WEB-DL.FullHD.KyoGo.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p x264",
+    "quality_label": "web-dl 1080p x264",
+    "season": null,
+    "size_bytes": 6657199308,
+    "size_text": "6.7 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Toy.Story.5/Web-Dl/1080x265/Toy.Story.5.2026.10bit.1080p.x265.WEB-DL.6CH.PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p 10bit x265",
+    "quality_label": "web-dl 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1717986918,
+    "size_text": "1.7 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Toy.Story.5/Web-Dl/720/Toy.Story.5.2026.720p.WEB-DL.AAC.YIFY.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p x264",
+    "quality_label": "web-dl 720p x264",
+    "season": null,
+    "size_bytes": 994154905,
+    "size_text": "994 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Toy.Story.5/Web-Dl/720x265/Toy.Story.5.2026.10bit.720p.x265.WEB-DL.6CH.PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p 10bit x265",
+    "quality_label": "web-dl 720p 10bit x265",
+    "season": null,
+    "size_bytes": 865809203,
+    "size_text": "866 MB"
    }
   ],
   "title": "Toy Story 5",
@@ -94668,7 +95396,7 @@
   "year": 2024
  },
  "n:734": {
-  "imdb": null,
+  "imdb": "tt28650488",
   "num": 734,
   "part": 1,
   "play": [
@@ -94883,6 +95611,34 @@
     "season": null,
     "size_bytes": 428041232,
     "size_text": "408.21 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/The.Super.Mario.Galaxy.Movie/The.Super.Mario.Galaxy.Movie.2026.1080p.10bit.WEB-DL.6CH.x265.PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p 10bit x265",
+    "quality_label": "web-dl 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 2040109465,
+    "size_text": "2.0 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/The.Super.Mario.Galaxy.Movie/The.Super.Mario.Galaxy.Movie.2026.720p.10bit.WEB-DL.6CH.x265.PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p 10bit x265",
+    "quality_label": "web-dl 720p 10bit x265",
+    "season": null,
+    "size_bytes": 953155584,
+    "size_text": "953 MB"
    }
   ],
   "title": "The Super Mario Galaxy Movie",
@@ -96006,7 +96762,7 @@
   "year": 2026
  },
  "n:755": {
-  "imdb": null,
+  "imdb": "tt7734244",
   "num": 755,
   "part": 1,
   "play": [
@@ -96079,6 +96835,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/The.Magic.Faraway.Tree/The.Magic.Faraway.Tree.2026.1080p.WEBRip.AAC.YIFY.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p x264",
+    "quality_label": "webrip 1080p x264",
+    "season": null,
+    "size_bytes": 1932735283,
+    "size_text": "1.9 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/The.Magic.Faraway.Tree/The.Magic.Faraway.Tree.2026.720p.WEBRip.AAC.YIFY.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p x264",
+    "quality_label": "webrip 720p x264",
+    "season": null,
+    "size_bytes": 1057174323,
+    "size_text": "1.1 GB"
    }
   ],
   "title": "The Magic Faraway Tree",
@@ -96211,7 +96995,7 @@
   "year": 1985
  },
  "n:76": {
-  "imdb": null,
+  "imdb": "tt34379051",
   "num": 76,
   "part": 1,
   "play": [
@@ -96396,6 +97180,34 @@
     "season": null,
     "size_bytes": 545048729,
     "size_text": "519.80 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/By.Any.Means/Web/1080x265/By.Any.Means.2026.10bit.1080p.x265.WEB-DL.6CH.PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p 10bit x265",
+    "quality_label": "web-dl 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1610612736,
+    "size_text": "1.6 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/By.Any.Means/Web/720x265/By.Any.Means.2026.10bit.720p.x265.WEB-DL.6CH.PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p 10bit x265",
+    "quality_label": "web-dl 720p 10bit x265",
+    "season": null,
+    "size_bytes": 784125132,
+    "size_text": "784 MB"
    }
   ],
   "title": "By Any Means",
@@ -102286,7 +103098,7 @@
   "year": 2026
  },
  "n:835": {
-  "imdb": null,
+  "imdb": "tt30851137",
   "num": 835,
   "part": 1,
   "play": [
@@ -102457,6 +103269,20 @@
     "season": null,
     "size_bytes": 524503759,
     "size_text": "500.21 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/The.Bride/The.Bride.2026.720p.10bit.WEB-DL.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p 10bit x265",
+    "quality_label": "web-dl 720p 10bit x265",
+    "season": null,
+    "size_bytes": 844523110,
+    "size_text": "845 MB"
    }
   ],
   "title": "The Bride",
@@ -102471,7 +103297,7 @@
   "year": 2026
  },
  "n:836": {
-  "imdb": null,
+  "imdb": "tt27047903",
   "num": 836,
   "part": 1,
   "play": [
@@ -102670,6 +103496,34 @@
     "season": null,
     "size_bytes": 472658131,
     "size_text": "450.76 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Scream.7/Scream.7.2026.1080p.10bit.WEB-DL.6CH.x265.HEVC.PSA.SoftSub-Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p 10bit x265",
+    "quality_label": "web-dl 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1181116006,
+    "size_text": "1.2 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Scream.7/Scream.7.2026.720p.10bit.WEB-DL.6CH.x265.HEVC.PSA-SoftSub-Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p 10bit x265",
+    "quality_label": "web-dl 720p 10bit x265",
+    "season": null,
+    "size_bytes": 659239731,
+    "size_text": "659 MB"
    }
   ],
   "title": "Scream 7",
@@ -103660,7 +104514,7 @@
   "year": 2013
  },
  "n:85": {
-  "imdb": null,
+  "imdb": "tt38589433",
   "num": 85,
   "part": 1,
   "play": [
@@ -103817,6 +104671,34 @@
     "season": null,
     "size_bytes": 420170178,
     "size_text": "400.71 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Never.After.Dark/Web/1080x265/Never.After.Dark.2026.10bit.1080p.x265.WEB-DL.6CH.PaHe.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p 10bit x265",
+    "quality_label": "web-dl 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1395864371,
+    "size_text": "1.4 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Never.After.Dark/Web/720x265/Never.After.Dark.2026.10bit.720p.x265.WEB-DL.PaHe.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p 10bit x265",
+    "quality_label": "web-dl 720p 10bit x265",
+    "season": null,
+    "size_bytes": 612473241,
+    "size_text": "612 MB"
    }
   ],
   "title": "Never After Dark",
@@ -106495,7 +107377,7 @@
   "year": 2004
  },
  "n:896": {
-  "imdb": null,
+  "imdb": "tt33071426",
   "num": 896,
   "part": 1,
   "play": [
@@ -106666,6 +107548,34 @@
     "season": null,
     "size_bytes": 799440779,
     "size_text": "762.41 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/The.Drama/The.Drama.2026.1080p.10bit.WEB-DL.6CH.x265.PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p 10bit x265",
+    "quality_label": "web-dl 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1932735283,
+    "size_text": "1.9 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/The.Drama/The.Drama.2026.720p.10bit.WEB-DL.6CH.x265.PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p 10bit x265",
+    "quality_label": "web-dl 720p 10bit x265",
+    "season": null,
+    "size_bytes": 787795148,
+    "size_text": "788 MB"
    }
   ],
   "title": "The Drama",
@@ -110137,7 +111047,7 @@
   "year": 2026
  },
  "n:933": {
-  "imdb": null,
+  "imdb": "tt13968662",
   "num": 933,
   "part": 1,
   "play": [
@@ -110182,6 +111092,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Marcel.Et.Monsieur.Pagnol/Marcel.Et.Monsieur.Pagnol.2025.FRENCH.VOF.WITH.AD.1080p.BluRay.x264.AAC5.1-YTS.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "BluRay 1080p x264",
+    "quality_label": "bluray 1080p x264",
+    "season": null,
+    "size_bytes": 1825361100,
+    "size_text": "1.8 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Marcel.Et.Monsieur.Pagnol/Marcel.Et.Monsieur.Pagnol.2025.FRENCH.VOF.WITH.AD.720p.BluRay.x264.AAC-YTS.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "BluRay 720p x264",
+    "quality_label": "bluray 720p x264",
+    "season": null,
+    "size_bytes": 876190105,
+    "size_text": "876 MB"
    }
   ],
   "title": "A Magnificent Life",
@@ -111162,7 +112100,7 @@
   "year": 2025
  },
  "n:954": {
-  "imdb": null,
+  "imdb": "tt32897959",
   "num": 954,
   "part": 1,
   "play": [
@@ -111333,6 +112271,34 @@
     "season": null,
     "size_bytes": 629492829,
     "size_text": "600.33 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Wuthering.Heights/Wuthering.Heights.2026.1080p.WEB-DL.YTS.SoftSub-Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p x264",
+    "quality_label": "web-dl 1080p x264",
+    "season": null,
+    "size_bytes": 2684354560,
+    "size_text": "2.7 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Wuthering.Heights/Wuthering.Heights.2026.720p.WEB-DL.YTS.SoftSub-Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p x264",
+    "quality_label": "web-dl 720p x264",
+    "season": null,
+    "size_bytes": 1288490188,
+    "size_text": "1.3 GB"
    }
   ],
   "title": "Wuthering Heights",
@@ -111812,7 +112778,7 @@
   "year": 2026
  },
  "n:957": {
-  "imdb": null,
+  "imdb": "tt33978029",
   "num": 957,
   "part": 1,
   "play": [
@@ -111969,10 +112935,38 @@
     "season": null,
     "size_bytes": 471858499,
     "size_text": "450.00 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Ready.or.Not.2.Here.I.Come/Ready.or.Not.2.Here.I.Come.2026.1080p.10bit.WEB-DL.6CH.x265.PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p 10bit x265",
+    "quality_label": "web-dl 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1932735283,
+    "size_text": "1.9 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Ready.or.Not.2.Here.I.Come/Ready.or.Not.2.Here.I.Come.2026.720p.10bit.WEB-DL.6CH.x265.PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p 10bit x265",
+    "quality_label": "web-dl 720p 10bit x265",
+    "season": null,
+    "size_bytes": 864550912,
+    "size_text": "865 MB"
    }
   ],
   "title": "Ready or Not 2: Here I Come",
-  "tmdb_key": null,
+  "tmdb_key": "movie:1266127",
   "type": "movie",
   "video_mp4": {
    "is_trailer": true,
@@ -114746,7 +115740,7 @@
   "year": 2025
  },
  "n:994": {
-  "imdb": null,
+  "imdb": "tt34378301",
   "num": 994,
   "part": 1,
   "play": [
@@ -114945,6 +115939,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Tom.Clancys.Jack.Ryan.Ghost.War/Tom.Clancys.Jack.Ryan.Ghost.War.20261080p.10bit.WEBRip.6CH.x265.HEVC-PSA.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p 10bit x265",
+    "quality_label": "webrip 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1288490188,
+    "size_text": "1.3 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Tom.Clancys.Jack.Ryan.Ghost.War/Tom.Clancys.Jack.Ryan.Ghost.War.2026.720p.10bit.WEBRip.6CH.x265.HEVC-PSA.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": null,
+    "size_bytes": 719427993,
+    "size_text": "719 MB"
    }
   ],
   "title": "Tom Clancy’s Jack Ryan: Ghost War",
@@ -143307,6 +144329,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Bugonia/Bugonia.2025.1080p.WEB-DL.YIFY.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p x264",
+    "quality_label": "web-dl 1080p x264",
+    "season": null,
+    "size_bytes": 2362232012,
+    "size_text": "2.4 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Bugonia/Bugonia.2025.720p.WEB-DL.AAC.YIFY.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p x264",
+    "quality_label": "web-dl 720p x264",
+    "season": null,
+    "size_bytes": 1181116006,
+    "size_text": "1.2 GB"
    }
   ],
   "title": "Bugonia",
@@ -144140,6 +145190,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Anniversary/Anniversary.2025.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p 10bit x265",
+    "quality_label": "webrip 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1610612736,
+    "size_text": "1.6 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Anniversary/Anniversary.2025.720p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": null,
+    "size_bytes": 748263833,
+    "size_text": "748 MB"
    }
   ],
   "title": "Anniversary",
@@ -151698,6 +152776,20 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Rental.Family/Rental.Family.2025.1080p.WEB-DL.x264-YIFY.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p x264",
+    "quality_label": "web-dl 1080p x264",
+    "season": null,
+    "size_bytes": 2147483648,
+    "size_text": "2.1 GB"
    }
   ],
   "title": "Rental Family",
@@ -154383,6 +155475,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Greenland.2.Migration/Greenland.2.Migration.2026.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p 10bit x265",
+    "quality_label": "webrip 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1610612736,
+    "size_text": "1.6 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Greenland.2.Migration/Greenland.2.Migration.2026.720p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": null,
+    "size_bytes": 763258470,
+    "size_text": "763 MB"
    }
   ],
   "title": "Greenland 2: Migration",
@@ -154913,6 +156033,48 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Hamnet/Hamnet.2025.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p x264",
+    "quality_label": "webrip 1080p x264",
+    "season": null,
+    "size_bytes": 2362232012,
+    "size_text": "2.4 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Hamnet/Hamnet.2025.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p 10bit x265",
+    "quality_label": "webrip 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 2147483648,
+    "size_text": "2.1 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Hamnet/Hamnet.2025.720p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": null,
+    "size_bytes": 972659097,
+    "size_text": "973 MB"
    }
   ],
   "title": "Hamnet",
@@ -167650,6 +168812,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/The.Lost.Bus/The.Lost.Bus.2025.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p 10bit x265",
+    "quality_label": "webrip 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 2040109465,
+    "size_text": "2.0 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/The.Lost.Bus/The.Lost.Bus.2025.720p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": null,
+    "size_bytes": 1013658419,
+    "size_text": "1.0 GB"
    }
   ],
   "title": "The Lost Bus",
@@ -169031,6 +170221,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Murder.At.The.Embassy.2025/Murder.At.The.Embassy.2025.1080p.WEBRip.x264.AAC5.1-YTS.Sermovie.mp4",
+    "playit_url": null,
+    "quality": "WEBRip 1080p x264",
+    "quality_label": "webrip 1080p x264",
+    "season": null,
+    "size_bytes": 1610612736,
+    "size_text": "1.6 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Murder.At.The.Embassy.2025/Murder.At.The.Embassy.2025.720p.WEBRip.x264.AAC-YTS.Sermovie.mp4",
+    "playit_url": null,
+    "quality": "WEBRip 720p x264",
+    "quality_label": "webrip 720p x264",
+    "season": null,
+    "size_bytes": 808766668,
+    "size_text": "809 MB"
    }
   ],
   "title": "Murder at the Embassy",
@@ -173280,6 +174498,76 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Zootopia.2/Zootopia.2.2025.2160p.HDR10Plus.DV.WEB-DL.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 2160p x265",
+    "quality_label": "web-dl 2160p x265",
+    "season": null,
+    "size_bytes": 2791728742,
+    "size_text": "2.8 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Zootopia.2/Zootopia.2.2025.1080p.WEB-DL.Pahe.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p x264",
+    "quality_label": "web-dl 1080p x264",
+    "season": null,
+    "size_bytes": 2362232012,
+    "size_text": "2.4 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Zootopia.2/Zootopia.2.2025.1080p.10bit.WEB-DL.6CH.x265.PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p 10bit x265",
+    "quality_label": "web-dl 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1503238553,
+    "size_text": "1.5 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Zootopia.2/Zootopia.2.2025.720p.WEB-DL.Pahe.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p x264",
+    "quality_label": "web-dl 720p x264",
+    "season": null,
+    "size_bytes": 944452403,
+    "size_text": "944 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Zootopia.2/Zootopia.2.2025.720p.10bit.WEB-DL.6CH.x265.PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p 10bit x265",
+    "quality_label": "web-dl 720p 10bit x265",
+    "season": null,
+    "size_bytes": 843369676,
+    "size_text": "843 MB"
    }
   ],
   "title": "Zootopia 2",
@@ -175391,6 +176679,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": "2.90 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Hope/Web/1080/Hope.2026.1080p.WEB-DL.YIFY.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p x264",
+    "quality_label": "web-dl 1080p x264",
+    "season": null,
+    "size_bytes": 3113851289,
+    "size_text": "3.1 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Hope/Web/720/Hope.2026.720p.WEB-DL.AAC.YIFY.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p x264",
+    "quality_label": "web-dl 720p x264",
+    "season": null,
+    "size_bytes": 1503238553,
+    "size_text": "1.5 GB"
    }
   ],
   "title": "Hope",
@@ -176263,6 +177579,20 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/The.Housemaid/The.Housemaid.2025.720p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": null,
+    "size_bytes": 937322086,
+    "size_text": "937 MB"
    }
   ],
   "title": "The Housemaid",
@@ -176636,6 +177966,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/In.Your.Dreams/In.Your.Dreams.2025.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p 10bit x265",
+    "quality_label": "webrip 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1288490188,
+    "size_text": "1.3 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/In.Your.Dreams/In.Your.Dreams.2025.720p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": null,
+    "size_bytes": 625370726,
+    "size_text": "625 MB"
    }
   ],
   "title": "In Your Dreams",
@@ -177253,6 +178611,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": "2.40 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/The.Rivals.of.Amziah.King/Web/1080x265/The.Rivals.of.Amziah.King.2025.10bit.1080p.x265.WEB-DL.6CH.PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p 10bit x265",
+    "quality_label": "web-dl 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 2469606195,
+    "size_text": "2.5 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/The.Rivals.of.Amziah.King/Web/720x265/The.Rivals.of.Amziah.King.2025.10bit.720p.x265.WEB-DL.6CH.PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p 10bit x265",
+    "quality_label": "web-dl 720p 10bit x265",
+    "season": null,
+    "size_bytes": 1057803468,
+    "size_text": "1.1 GB"
    }
   ],
   "title": "The Rivals of Amziah King",
@@ -178226,6 +179612,20 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/The.Secret.Agent/The.Secret.Agent.2025.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p x264",
+    "quality_label": "webrip 1080p x264",
+    "season": null,
+    "size_bytes": 3221225472,
+    "size_text": "3.2 GB"
    }
   ],
   "title": "The Secret Agent",
@@ -179399,6 +180799,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Soul.On.Fire/Soul.On.Fire.2025.1080p.WEBRip.x264.AAC5.1-YTS.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p x264",
+    "quality_label": "webrip 1080p x264",
+    "season": null,
+    "size_bytes": 2254857830,
+    "size_text": "2.3 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Soul.On.Fire/Soul.On.Fire.2025.720p.WEBRip.x264.AAC-YTS.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p x264",
+    "quality_label": "webrip 720p x264",
+    "season": null,
+    "size_bytes": 1073741824,
+    "size_text": "1.1 GB"
    }
   ],
   "title": "Soul on Fire",
@@ -179719,6 +181147,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/The.Ice.Tower/The.Ice.Tower.2025.1080p.WEBRip.x264.AAC5.1-YTS.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p x264",
+    "quality_label": "webrip 1080p x264",
+    "season": null,
+    "size_bytes": 2362232012,
+    "size_text": "2.4 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/The.Ice.Tower/The.Ice.Tower.2025.720p.WEBRip.x264.AAC-YTS.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p x264",
+    "quality_label": "webrip 720p x264",
+    "season": null,
+    "size_bytes": 1073741824,
+    "size_text": "1.1 GB"
    }
   ],
   "title": "The Ice Tower",
@@ -183467,6 +184923,48 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Nuremberg/Nuremberg.2025.1080p.10bit.WEB-DL.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p 10bit x265",
+    "quality_label": "web-dl 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 2362232012,
+    "size_text": "2.4 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Nuremberg/Nuremberg.2025.720p.WEBRip.YTS.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p x264",
+    "quality_label": "webrip 720p x264",
+    "season": null,
+    "size_bytes": 1395864371,
+    "size_text": "1.4 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Nuremberg/Nuremberg.2025.720p.10bit.WEB-DL.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p 10bit x265",
+    "quality_label": "web-dl 720p 10bit x265",
+    "season": null,
+    "size_bytes": 1073741824,
+    "size_text": "1.1 GB"
    }
   ],
   "title": "Nuremberg",
@@ -184328,6 +185826,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Bad.Apples/Web/1080/Bad.Apples.2025.1080p.WEB-DL.6CH.PaHe.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p x264",
+    "quality_label": "web-dl 1080p x264",
+    "season": null,
+    "size_bytes": 1932735283,
+    "size_text": "1.9 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Bad.Apples/Web/720/Bad.Apples.2025.720p.WEB-DL.PaHe.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p x264",
+    "quality_label": "web-dl 720p x264",
+    "season": null,
+    "size_bytes": 943508684,
+    "size_text": "944 MB"
    }
   ],
   "title": "Bad Apples",
@@ -184513,6 +186039,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Train.Dreams/Train.Dreams.2025.1080p.10bit.WEB-DL.6CH.X265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p 10bit x265",
+    "quality_label": "web-dl 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1610612736,
+    "size_text": "1.6 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Train.Dreams/Train.Dreams.2025.720p.10bit.WEB-DL.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p 10bit x265",
+    "quality_label": "web-dl 720p 10bit x265",
+    "season": null,
+    "size_bytes": 855533158,
+    "size_text": "856 MB"
    }
   ],
   "title": "Train Dreams",
@@ -185789,6 +187343,20 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Song.Sung.Blue/Song.Sung.Blue.2025.720p.WEB-DL.AAC.YIFY.Sermovie.mp4",
+    "playit_url": null,
+    "quality": "WEB-DL 720p x264",
+    "quality_label": "web-dl 720p x264",
+    "season": null,
+    "size_bytes": 1288490188,
+    "size_text": "1.3 GB"
    }
   ],
   "title": "Song Sung Blue",
@@ -189959,6 +191527,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/I.Swear/I.Swear.2025.1080p.WEB-DL.6CH.YIFY.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p x264",
+    "quality_label": "web-dl 1080p x264",
+    "season": null,
+    "size_bytes": 2254857830,
+    "size_text": "2.3 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/I.Swear/I.Swear.2025.720p.WEB-DL.AAC.YIFY.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p x264",
+    "quality_label": "web-dl 720p x264",
+    "season": null,
+    "size_bytes": 1181116006,
+    "size_text": "1.2 GB"
    }
   ],
   "title": "I Swear",
@@ -190279,6 +191875,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Nouvelle.Vague/Nouvelle.Vague.2025.1080p.WEBRip.x264.AAC5.1-YTS.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p x264",
+    "quality_label": "webrip 1080p x264",
+    "season": null,
+    "size_bytes": 2147483648,
+    "size_text": "2.1 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Nouvelle.Vague/Nouvelle.Vague.2025.720p.WEBRip.x264.AAC-YTS.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p x264",
+    "quality_label": "webrip 720p x264",
+    "season": null,
+    "size_bytes": 1021313024,
+    "size_text": "1.0 GB"
    }
   ],
   "title": "Nouvelle Vague",
@@ -191232,6 +192856,48 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Sisu.Road.to.Revenge/Sisu.Road.to.Revenge.2025.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p x264",
+    "quality_label": "webrip 1080p x264",
+    "season": null,
+    "size_bytes": 1717986918,
+    "size_text": "1.7 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Sisu.Road.to.Revenge/Sisu.Road.to.Revenge.A.K.A.Sisu.2.2025.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p 10bit x265",
+    "quality_label": "webrip 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1395864371,
+    "size_text": "1.4 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Sisu.Road.to.Revenge/Sisu.Road.to.Revenge.A.K.A.Sisu.2.2025.720p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": null,
+    "size_bytes": 677170380,
+    "size_text": "677 MB"
    }
   ],
   "title": "Sisu: Road to Revenge",
@@ -191933,6 +193599,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Springsteen.Deliver.Me.From.Nowhere/Springsteen.Deliver.Me.From.Nowhere.2025.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p x264",
+    "quality_label": "webrip 1080p x264",
+    "season": null,
+    "size_bytes": 2362232012,
+    "size_text": "2.4 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Springsteen.Deliver.Me.From.Nowhere/Springsteen.Deliver.Me.From.Nowhere.2025.720p.WEBRip.x264.AAC-YTS.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p x264",
+    "quality_label": "webrip 720p x264",
+    "season": null,
+    "size_bytes": 1181116006,
+    "size_text": "1.2 GB"
    }
   ],
   "title": "Springsteen: Deliver Me from Nowhere",
@@ -192345,6 +194039,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/The.Roses/The.Roses.2025.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p 10bit x265",
+    "quality_label": "webrip 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1610612736,
+    "size_text": "1.6 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/The.Roses/The.Roses.2025.720p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": null,
+    "size_bytes": 845361971,
+    "size_text": "845 MB"
    }
   ],
   "title": "The Roses",
@@ -194614,6 +196336,20 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Christy/Christy.2025.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p x264",
+    "quality_label": "webrip 1080p x264",
+    "season": null,
+    "size_bytes": 2684354560,
+    "size_text": "2.7 GB"
    }
   ],
   "title": "Christy",
@@ -194785,6 +196521,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Keeper/Keeper.2025.1080p.WEBRip.YTS.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p x264",
+    "quality_label": "webrip 1080p x264",
+    "season": null,
+    "size_bytes": 1932735283,
+    "size_text": "1.9 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Keeper/Keeper.2025.720p.WEBRip.YTS.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p x264",
+    "quality_label": "webrip 720p x264",
+    "season": null,
+    "size_bytes": 945605836,
+    "size_text": "946 MB"
    }
   ],
   "title": "Keeper",
@@ -195671,6 +197435,20 @@
     "season": null,
     "size_bytes": 628995935,
     "size_text": "599.86 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Crime.101/Crime.101.2026.720p.10bit.WEB-DL.6CH.x265-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p 10bit x265",
+    "quality_label": "web-dl 720p 10bit x265",
+    "season": null,
+    "size_bytes": 984717721,
+    "size_text": "985 MB"
    }
   ],
   "title": "Crime 101",
@@ -196844,6 +198622,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/100.Meters/100.Meters.2025.1080p.WEB-DL.HEVC.x265.5.1.BONE.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p x265",
+    "quality_label": "web-dl 1080p x265",
+    "season": null,
+    "size_bytes": 1610612736,
+    "size_text": "1.6 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/100.Meters/100.Meters.2025.720p.WEB-DL.HEVC.x265.5.1.BONE.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p x265",
+    "quality_label": "web-dl 720p x265",
+    "season": null,
+    "size_bytes": 1181116006,
+    "size_text": "1.2 GB"
    }
   ],
   "title": "100 Meters",
@@ -197360,6 +199166,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Ricky.Gervais.Mortality/Ricky.Gervais.Mortality.2025.1080p.WEBRip.x264.AAC5.1-YTS.Sermovie.mp4",
+    "playit_url": null,
+    "quality": "WEBRip 1080p x264",
+    "quality_label": "webrip 1080p x264",
+    "season": null,
+    "size_bytes": 1181116006,
+    "size_text": "1.2 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Ricky.Gervais.Mortality/Ricky.Gervais.Mortality.2025.720p.WEBRip.x264.AAC-YTS.Sermovie.mp4",
+    "playit_url": null,
+    "quality": "WEBRip 720p x264",
+    "quality_label": "webrip 720p x264",
+    "season": null,
+    "size_bytes": 573151641,
+    "size_text": "573 MB"
    }
   ],
   "title": "Ricky Gervais: Mortality",
@@ -197531,6 +199365,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/The.Assessment/The.Assessment.2024.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p 10bit x265",
+    "quality_label": "webrip 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 2147483648,
+    "size_text": "2.1 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/The.Assessment/The.Assessment.2024.720p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": null,
+    "size_bytes": 927884902,
+    "size_text": "928 MB"
    }
   ],
   "title": "The Assessment",
@@ -198117,10 +199979,38 @@
     "season": null,
     "size_bytes": 577669201,
     "size_text": "550.91 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Demon.Slayer.Kimetsu.No.Yaiba.Infinity.Castle/Demon.Slayer.Kimetsu.No.Yaiba.Infinity.Castle.2025.1080p.WEB-DL.HCSubbed.AAC.H.264-Cassu.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p x264",
+    "quality_label": "web-dl 1080p x264",
+    "season": null,
+    "size_bytes": 3221225472,
+    "size_text": "3.2 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Demon.Slayer.Kimetsu.No.Yaiba.Infinity.Castle/Demon.Slayer.Kimetsu.No.Yaiba.Infinity.Castle.2025.720p.WEB.H264-JFF.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p x264",
+    "quality_label": "web-dl 720p x264",
+    "season": null,
+    "size_bytes": 2254857830,
+    "size_text": "2.3 GB"
    }
   ],
   "title": "Demon Slayer: Kimetsu no Yaiba- The Movie – Infinity Castle",
-  "tmdb_key": null,
+  "tmdb_key": "movie:1311031",
   "type": "movie",
   "video_mp4": {
    "is_trailer": true,
@@ -199079,6 +200969,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Steve/Steve.2025.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p 10bit x265",
+    "quality_label": "webrip 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1825361100,
+    "size_text": "1.8 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Steve/Steve.2025.720p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": null,
+    "size_bytes": 770388787,
+    "size_text": "770 MB"
    }
   ],
   "title": "Steve",
@@ -200257,6 +202175,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/The.Wrecking.Crew/The.Wrecking.Crew.2026.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p 10bit x265",
+    "quality_label": "webrip 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 2254857830,
+    "size_text": "2.3 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/The.Wrecking.Crew/The.Wrecking.Crew.2026.720p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": null,
+    "size_bytes": 1060739481,
+    "size_text": "1.1 GB"
    }
   ],
   "title": "The Wrecking Crew",
@@ -201792,6 +203738,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/100.Nights.Of.Hero/100.Nights.Of.Hero.2025.1080p.WEBRip.x264.AAC-YTS.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p x264",
+    "quality_label": "webrip 1080p x264",
+    "season": null,
+    "size_bytes": 1610612736,
+    "size_text": "1.6 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/100.Nights.Of.Hero/100.Nights.Of.Hero.2025.720p.WEBRip.x264.AAC-YTS.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p x264",
+    "quality_label": "webrip 720p x264",
+    "season": null,
+    "size_bytes": 872624947,
+    "size_text": "873 MB"
    }
   ],
   "title": "100 Nights of Hero",
@@ -202574,6 +204548,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Anemone/Anemone.2025.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p 10bit x265",
+    "quality_label": "webrip 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 2147483648,
+    "size_text": "2.1 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Anemone/Anemone.2025.720p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": null,
+    "size_bytes": 927150899,
+    "size_text": "927 MB"
    }
   ],
   "title": "Anemone",
@@ -203213,6 +205215,20 @@
     "season": null,
     "size_bytes": 836080482,
     "size_text": "797.35 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/The.Odyssey/Web/2160/The.Odyssey.2026.2160p.10bit.HDR.BluRay.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "BluRay 2160p 10bit x265",
+    "quality_label": "bluray 2160p 10bit x265",
+    "season": null,
+    "size_bytes": 5476083302,
+    "size_text": "5.5 GB"
    }
   ],
   "title": "The Odyssey",
@@ -204290,6 +206306,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/The.Family.Plan.2/The.Family.Plan.2.2025.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p 10bit x265",
+    "quality_label": "webrip 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1717986918,
+    "size_text": "1.7 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/The.Family.Plan.2/The.Family.Plan.2.2025.720p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": null,
+    "size_bytes": 853121433,
+    "size_text": "853 MB"
    }
   ],
   "title": "The Family Plan 2",
@@ -205056,6 +207100,20 @@
     "season": null,
     "size_bytes": null,
     "size_text": "1.60 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/The.Runner/WEBRip/720x265/The.Runner.2026.720p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": null,
+    "size_bytes": 828689612,
+    "size_text": "829 MB"
    }
   ],
   "title": "The Runner",
@@ -208650,6 +210708,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Goodbye.June/Goodbye.June.2025.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p x264",
+    "quality_label": "webrip 1080p x264",
+    "season": null,
+    "size_bytes": 2254857830,
+    "size_text": "2.3 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Goodbye.June/Goodbye.June.2025.720p.WEBRip.x264.AAC-YTS.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p x264",
+    "quality_label": "webrip 720p x264",
+    "season": null,
+    "size_bytes": 1073741824,
+    "size_text": "1.1 GB"
    }
   ],
   "title": "Goodbye June",
@@ -212271,6 +214357,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": "1.80 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Buddy/Web/1080/Buddy.2026.1080p.WEB-DL.6CH.YIFY.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p x264",
+    "quality_label": "web-dl 1080p x264",
+    "season": null,
+    "size_bytes": 1932735283,
+    "size_text": "1.9 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2026/Buddy/Web/720/Buddy.2026.720p.WEB-DL.AAC.YIFY.SoftSub.Sermovei.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p x264",
+    "quality_label": "web-dl 720p x264",
+    "season": null,
+    "size_bytes": 921383731,
+    "size_text": "921 MB"
    }
   ],
   "title": "Buddy",
@@ -215149,6 +217263,20 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/One.Shot.with.Ed.Sheeran/One.Shot.with.Ed.Sheeran.2025.720p.WEB-DL.AAC.YIFY.Sermovie.mp4",
+    "playit_url": null,
+    "quality": "WEB-DL 720p x264",
+    "quality_label": "web-dl 720p x264",
+    "season": null,
+    "size_bytes": 589299712,
+    "size_text": "589 MB"
    }
   ],
   "title": "One Shot with Ed Sheeran",
@@ -223168,6 +225296,20 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/Deadpool.and.Wolverine.2024/SoftSub/Deadpool.And.Wolverine.2024.480p.WEB-DL.Pahe.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 480p x264",
+    "quality_label": "web-dl 480p x264",
+    "season": null,
+    "size_bytes": 577765376,
+    "size_text": "578 MB"
    }
   ],
   "title": "Deadpool & Wolverine",
@@ -229881,6 +232023,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/The.Legend.of.Ochi/The.Legend.of.Ochi.2025.1080p.WEB-DL.SoftSub.x264.6CH.Pahe.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p x264",
+    "quality_label": "web-dl 1080p x264",
+    "season": null,
+    "size_bytes": 2254857830,
+    "size_text": "2.3 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/The.Legend.of.Ochi/The.Legend.of.Ochi.2025.720p.WEB-DL.SoftSub.x264.Pahe.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p x264",
+    "quality_label": "web-dl 720p x264",
+    "season": null,
+    "size_bytes": 891918745,
+    "size_text": "892 MB"
    }
   ],
   "title": "The Legend of Ochi",
@@ -231215,6 +233385,62 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Die.My.Love/Soft/Die.My.Love.2025.1080p.WEBRip.YTS.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p x264",
+    "quality_label": "webrip 1080p x264",
+    "season": null,
+    "size_bytes": 2362232012,
+    "size_text": "2.4 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Die.My.Love/Soft/Die.My.Love.2025.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p 10bit x265",
+    "quality_label": "webrip 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 2040109465,
+    "size_text": "2.0 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Die.My.Love/Soft/Die.My.Love.2025.720p.WEBRip.YTS.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p x264",
+    "quality_label": "webrip 720p x264",
+    "season": null,
+    "size_bytes": 1181116006,
+    "size_text": "1.2 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/Die.My.Love/Soft/Die.My.Love.2025.720p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": null,
+    "size_bytes": 867067494,
+    "size_text": "867 MB"
    }
   ],
   "title": "Die My Love",

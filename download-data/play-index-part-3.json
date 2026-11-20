@@ -2777,7 +2777,7 @@
   "year": 1937
  },
  "n:4763": {
-  "imdb": null,
+  "imdb": "tt29620674",
   "num": 4763,
   "part": 3,
   "play": [
@@ -2808,6 +2808,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/The.Moviemakers.Scorsese/The.Moviemakers.Scorsese.2023.1080p.WEBRip.YTS.Sermovie.mp4",
+    "playit_url": null,
+    "quality": "WEBRip 1080p x264",
+    "quality_label": "webrip 1080p x264",
+    "season": null,
+    "size_bytes": 828060467,
+    "size_text": "828 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2025/The.Moviemakers.Scorsese/The.Moviemakers.Scorsese.2023.720p.WEBRip.YTS.Sermovie.mp4",
+    "playit_url": null,
+    "quality": "WEBRip 720p x264",
+    "quality_label": "webrip 720p x264",
+    "season": null,
+    "size_bytes": 446064230,
+    "size_text": "446 MB"
    }
   ],
   "title": "The Moviemakers: Scorsese",
@@ -6544,7 +6572,7 @@
   "year": 2023
  },
  "n:5411": {
-  "imdb": null,
+  "imdb": "tt8521778",
   "num": 5411,
   "part": 3,
   "play": [
@@ -6603,6 +6631,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/Bob.Marley.One.Love.2024/Bob.Marley.One.Love.2024.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.Sermovie.mp4",
+    "playit_url": null,
+    "quality": "WEBRip 1080p x264",
+    "quality_label": "webrip 1080p x264",
+    "season": null,
+    "size_bytes": 2147483648,
+    "size_text": "2.1 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/Bob.Marley.One.Love.2024/Bob.Marley.One.Love.2024.720p.WEBRip.x264.AAC-YTS.SoftSub.Sermovie.mp4",
+    "playit_url": null,
+    "quality": "WEBRip 720p x264",
+    "quality_label": "webrip 720p x264",
+    "season": null,
+    "size_bytes": 1030540492,
+    "size_text": "1.0 GB"
    }
   ],
   "title": "Bob Marley: One Love",
@@ -77888,10 +77944,38 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/Am.I.OK.2022/Am.I.OK.2022.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.Sermovie.mp4",
+    "playit_url": null,
+    "quality": "WEBRip 1080p x264",
+    "quality_label": "webrip 1080p x264",
+    "season": null,
+    "size_bytes": 1717986918,
+    "size_text": "1.7 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/Am.I.OK.2022/Am.I.OK.2022.720p.WEBRip.x264.AAC-YTS.SoftSub.Sermovie.mp4",
+    "playit_url": null,
+    "quality": "WEBRip 720p x264",
+    "quality_label": "webrip 720p x264",
+    "season": null,
+    "size_bytes": 832359628,
+    "size_text": "832 MB"
    }
   ],
   "title": "Am I OK?",
-  "tmdb_key": null,
+  "tmdb_key": "movie:641934",
   "type": "movie",
   "video_mp4": {
    "is_trailer": true,
@@ -79664,6 +79748,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/Rebel.Ridge/Rebel.Ridge.2024.1080p.WEBRip.x264.AAC5.1-YTS.Softsub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p x264",
+    "quality_label": "webrip 1080p x264",
+    "season": null,
+    "size_bytes": 2576980377,
+    "size_text": "2.6 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/Rebel.Ridge/Rebel.Ridge.2024.720p.WEBRip.x264.AAC-YTS.Softsub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p x264",
+    "quality_label": "webrip 720p x264",
+    "season": null,
+    "size_bytes": 1288490188,
+    "size_text": "1.3 GB"
    }
   ],
   "title": "Rebel Ridge",
@@ -81873,6 +81985,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/Breathe.2024/Breathe.2024.1080p.AMZN.WEBRip.1400MB.DD5.1.x264-GalaxyRG.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p x264",
+    "quality_label": "webrip 1080p x264",
+    "season": null,
+    "size_bytes": 1503238553,
+    "size_text": "1.5 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/Breathe.2024/Breathe.2024.720p.AMZN.WEBRip.800MB.x264-GalaxyRG.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p x264",
+    "quality_label": "webrip 720p x264",
+    "season": null,
+    "size_bytes": 833513062,
+    "size_text": "834 MB"
    }
   ],
   "title": "Breathe",
@@ -119500,6 +119640,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/Late.Night.With.The.Devil.2023/Late.Night.With.The.Devil.2023.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.Sermovie.mp4",
+    "playit_url": null,
+    "quality": "WEBRip 1080p x264",
+    "quality_label": "webrip 1080p x264",
+    "season": null,
+    "size_bytes": 1825361100,
+    "size_text": "1.8 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/Late.Night.With.The.Devil.2023/Late.Night.With.The.Devil.2023.720p.WEBRip.x264.AAC-YTS.SoftSub.Sermovie.mp4",
+    "playit_url": null,
+    "quality": "WEBRip 720p x264",
+    "quality_label": "webrip 720p x264",
+    "season": null,
+    "size_bytes": 892233318,
+    "size_text": "892 MB"
    }
   ],
   "title": "Late Night with the Devil",
@@ -126990,6 +127158,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/I.Saw.The.TV.Glow.2024/I.Saw.The.TV.Glow.2024.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.Sermovie.mp4",
+    "playit_url": null,
+    "quality": "WEBRip 1080p x264",
+    "quality_label": "webrip 1080p x264",
+    "season": null,
+    "size_bytes": 1932735283,
+    "size_text": "1.9 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/I.Saw.The.TV.Glow.2024/I.Saw.The.TV.Glow.2024.720p.WEBRip.x264.AAC-YTS.SoftSub.Sermovie.mp4",
+    "playit_url": null,
+    "quality": "WEBRip 720p x264",
+    "quality_label": "webrip 720p x264",
+    "season": null,
+    "size_bytes": 962173337,
+    "size_text": "962 MB"
    }
   ],
   "title": "I Saw the TV Glow",
@@ -132857,6 +133053,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/The.Imaginary.2023/The.Imaginary.2023.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.Sermovie.mp4",
+    "playit_url": null,
+    "quality": "WEBRip 1080p x264",
+    "quality_label": "webrip 1080p x264",
+    "season": null,
+    "size_bytes": 2147483648,
+    "size_text": "2.1 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/The.Imaginary.2023/The.Imaginary.2023.720p.WEBRip.x264.AAC-YTS.SoftSub.Sermovie.mp4",
+    "playit_url": null,
+    "quality": "WEBRip 720p x264",
+    "quality_label": "webrip 720p x264",
+    "season": null,
+    "size_bytes": 1054972313,
+    "size_text": "1.1 GB"
    }
   ],
   "title": "The Imaginary",
@@ -155164,6 +155388,48 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Series/2024/Kung.Fu.Panda.4.2024/Kung.Fu.Panda.4.2024.2160p.HDR10Plus.DV.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 2160p x265",
+    "quality_label": "webrip 2160p x265",
+    "season": null,
+    "size_bytes": 2469606195,
+    "size_text": "2.5 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Series/2024/Kung.Fu.Panda.4.2024/Kung.Fu.Panda.4.2024.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p 10bit x265",
+    "quality_label": "webrip 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1503238553,
+    "size_text": "1.5 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Series/2024/Kung.Fu.Panda.4.2024/Kung.Fu.Panda.4.2024.720p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": null,
+    "size_bytes": 793562316,
+    "size_text": "794 MB"
    }
   ],
   "title": "Kung Fu Panda 4",
@@ -158260,6 +158526,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/Kinds.of.Kindness/Kinds.of.Kindness.2024.1080p.10bit.WEB-DL.6CH.x265.PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p 10bit x265",
+    "quality_label": "web-dl 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 3113851289,
+    "size_text": "3.1 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/Kinds.of.Kindness/Kinds.of.Kindness.2024.720p.10bit.WEB-DL.6CH.x265.PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p 10bit x265",
+    "quality_label": "web-dl 720p 10bit x265",
+    "season": null,
+    "size_bytes": 1288490188,
+    "size_text": "1.3 GB"
    }
   ],
   "title": "Kinds of Kindness",
@@ -174432,6 +174726,51 @@
   },
   "year": 2023
  },
+ "tt27682129": {
+  "imdb": "tt27682129",
+  "num": 5408,
+  "part": 3,
+  "play": [
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/Prey.2024/Prey.2024.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.Sermovie.mp4",
+    "playit_url": null,
+    "quality": "WEBRip 1080p x264",
+    "quality_label": "webrip 1080p x264",
+    "season": null,
+    "size_bytes": 1717986918,
+    "size_text": "1.7 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/Prey.2024/Prey.2024.720p.WEBRip.x264.AAC-YTS.SoftSub.Sermovie.mp4",
+    "playit_url": null,
+    "quality": "WEBRip 720p x264",
+    "quality_label": "webrip 720p x264",
+    "season": null,
+    "size_bytes": 827745894,
+    "size_text": "828 MB"
+   }
+  ],
+  "title": "Prey",
+  "tmdb_key": "movie:1129598",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2024
+ },
  "tt27687527": {
   "imdb": "tt27687527",
   "num": 5956,
@@ -177850,6 +178189,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/His.Three.Daughters/His.Three.Daughters.2023.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p 10bit x265",
+    "quality_label": "webrip 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1825361100,
+    "size_text": "1.8 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/His.Three.Daughters/His.Three.Daughters.2023.720p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": null,
+    "size_bytes": 739246080,
+    "size_text": "739 MB"
    }
   ],
   "title": "His Three Daughters",
@@ -185688,6 +186055,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/Watchmen.Chapter.I.2024/Watchmen.Chapter.I.2024.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p 10bit x265",
+    "quality_label": "webrip 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1288490188,
+    "size_text": "1.3 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/Watchmen.Chapter.I.2024/Watchmen.Chapter.I.2024.720p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": null,
+    "size_bytes": 574619648,
+    "size_text": "575 MB"
    }
   ],
   "title": "Watchmen: Chapter I",
@@ -197976,6 +198371,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/The.Garfield.Movie.2024/The.Garfield.Movie.2024.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p 10bit x265",
+    "quality_label": "webrip 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1610612736,
+    "size_text": "1.6 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/The.Garfield.Movie.2024/The.Garfield.Movie.2024.720p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": null,
+    "size_bytes": 834142208,
+    "size_text": "834 MB"
    }
   ],
   "title": "The Garfield Movie",
@@ -201953,6 +202376,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/The.Boy.and.the.Heron.2023/The.Boy.and.the.Heron.2023.DUAL-AUDIO.JAP-ENG.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p 10bit x265",
+    "quality_label": "webrip 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1610612736,
+    "size_text": "1.6 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/The.Boy.and.the.Heron.2023/The.Boy.and.the.Heron.2023.DUAL-AUDIO.JAP-ENG.720p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": null,
+    "size_bytes": 1028233625,
+    "size_text": "1.0 GB"
    }
   ],
   "title": "The Boy and the Heron",
@@ -206717,6 +207168,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/Daddio.2023/Daddio.2023.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p 10bit x265",
+    "quality_label": "webrip 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1288490188,
+    "size_text": "1.3 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/Daddio.2023/Daddio.2023.720p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": null,
+    "size_bytes": 661546598,
+    "size_text": "662 MB"
    }
   ],
   "title": "Daddio",
@@ -207082,6 +207561,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/Despicable.Me.4.2024/Despicable.Me.4.2024.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p 10bit x265",
+    "quality_label": "webrip 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1825361100,
+    "size_text": "1.8 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/Despicable.Me.4.2024/Despicable.Me.4.2024.720p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": null,
+    "size_bytes": 911946547,
+    "size_text": "912 MB"
    }
   ],
   "title": "Despicable Me 4",
@@ -221542,6 +222049,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/The.Idea.Of.You.2024/The.Idea.of.You.2024.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 1080p 10bit x265",
+    "quality_label": "webrip 1080p 10bit x265",
+    "season": null,
+    "size_bytes": 1825361100,
+    "size_text": "1.8 GB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl2.sermoviedown.pw/Movies/2024/The.Idea.Of.You.2024/The.Idea.of.You.2024.720p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": null,
+    "size_bytes": 858049740,
+    "size_text": "858 MB"
    }
   ],
   "title": "The Idea of You",
