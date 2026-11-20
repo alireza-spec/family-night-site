@@ -2135,6 +2135,71 @@ async function tmdbDetail(type, id) {
   return d;
 }
 
+/* ---------- static JSON sections (FN-NO-VPN-R3) ----------
+   Same-origin precomputed TMDB sections (download-data/sections/),
+   refreshed daily by update_sections.py. The worker path stalls from
+   the user's network without VPN; these files load from Pages like
+   everything else. Loaders fetch the static JSON FIRST and paint at
+   once, then still attempt the live worker refresh - with VPN the
+   live data wins. A missing static file never blocks the live path,
+   and a dead worker never empties a section that has static data.
+   generated_at is shown as a small «به‌روز شده» label. */
+const FN_SECTIONS_BASE = DL_BASE + 'sections/';
+const fnStaticCache = new Map();
+/* FN-NO-VPN-R3: newest.json lives at download-data/ (top level, NOT
+   under sections/) so the bot fetches the same single file the site
+   reads - pass its base explicitly; every other section defaults to
+   FN_SECTIONS_BASE. The cache key is the full URL, so the two rails
+   share one fetch. */
+async function fnStaticJson(name, attempts, base) {
+  var key = (base || FN_SECTIONS_BASE) + name;
+  if (fnStaticCache.has(key)) return fnStaticCache.get(key);
+  const p = fnFetchResilient(key, {}, 5000, attempts == null ? 2 : attempts, 'json')
+    .catch(function () { return null; });
+  fnStaticCache.set(key, p);
+  return p;
+}
+function fnFreshFa(iso) {
+  try {
+    var d = new Date(iso);
+    if (isNaN(d.getTime())) return '';
+    return d.toLocaleDateString('fa-IR', { day: 'numeric', month: 'long' });
+  } catch (e) { return ''; }
+}
+function fnFreshTag(iso) {
+  var f = fnFreshFa(iso);
+  return f ? '<span style="font-size:.72rem;color:var(--pearl);font-weight:400"> · به‌روز شده ' + f + '</span>' : '';
+}
+/* mark a search-tab section head with the static file's freshness, once only */
+function fnMarkFresh(sel, iso) {
+  try {
+    var el = document.querySelector(sel);
+    if (!el || !iso || el.querySelector('.fn-fresh-mark')) return;
+    var sec = el.closest('.sec');
+    var h = sec ? sec.querySelector('h2') : null;
+    var host = h || el;
+    if (host.querySelector('.fn-fresh-mark')) return;
+    host.insertAdjacentHTML('beforeend', '<span class="fn-fresh-mark">' + fnFreshTag(iso) + '</span>');
+  } catch (e) {}
+}
+/* mark the see-all page subtitle with the static file's freshness, once only */
+function fnMarkFreshSub(iso) {
+  try {
+    var sub = document.querySelector('#browse-sub');
+    if (!sub || !iso || sub.textContent.indexOf('به‌روز شده') > -1) return;
+    sub.insertAdjacentHTML('beforeend', fnFreshTag(iso));
+  } catch (e) {}
+}
+/* detail extras: static per-title JSON first, worker fallback */
+async function fnDetailStaticFirst(type, id) {
+  try {
+    var st = await fnStaticJson('details/' + type + '-' + id + '.json', 1);
+    if (st && st.id != null) return st;
+  } catch (e) {}
+  return tmdbDetail(type, id);
+}
+
+
 /* ---------- personal state — persisted in this browser
    (localStorage, key fn-state-v1): profile, favorites, watchlist,
    custom lists, ratings, watch history and recent searches are all
@@ -3373,6 +3438,9 @@ function paintHomeRails(rows) {
 }
 async function loadHome() {
   fnAvailEnsure(); /* FN-DL-ICON v1: load the avail-index early so home cards get their download badge */
+  /* FN-NO-VPN-R3: start the static curator fetch early (same-origin) -
+     it resolves alongside the snapshot fetch below. */
+  var _curStaticP = fnStaticJson('curator.json');
   /* FN-NO-VPN-R2: paint from the PERSISTENT rails cache first - the
      rails (and, through the browser HTTP cache, their posters) are
      already on this device, so home paints instantly with zero
@@ -3434,11 +3502,34 @@ async function loadHome() {
   const _g3s = _g3.toISOString().slice(0, 10);
   const _dt = x => x.media_type === 'tv' ? (x.first_air_date || '') : (x.release_date || '');
   /* FN-EDITORS-PICK-RAIL: «پیشنهاد سردبیر» sits directly under the
-     trending row (user order). STABLE picks now (R2): the same 20,
-     same order, all day - fnCuratorPicksCached re-picks only on a new
-     day or when the stored ids stop resolving. Archive works only,
-     20 items. Set before the first paint (static data). */
-  try { var _cur = fnCuratorPicksCached(); if (_cur.length) rows.curator = _cur; } catch (e) { /* no curator rail */ }
+     trending row (user order). FN-NO-VPN-R3: the day's 20 come
+     precomputed from curator.json (same-origin, date-keyed) - the
+     same 20 all day on every device, with poster data in the file,
+     so the rail paints complete without VPN and without depending
+     on this device's localStorage (fn-curator-v2). The static set
+     is awaited only up to 2s so it never delays the first paint;
+     if it lands late, the swap below still applies it. Falls back
+     to the per-day localStorage cache. Archive works only, 20. */
+  var _todayStr = new Date().toISOString().slice(0, 10);
+  var _curStatic = null;
+  try { _curStatic = await Promise.race([_curStaticP, fnSleep(2000).then(function () { return null; })]); } catch (e) { _curStatic = null; }
+  if (_curStatic && _curStatic.date === _todayStr && (_curStatic.results || []).length >= 10) {
+    rows.curator = _curStatic.results.slice(0, 20);
+    try { localStorage.setItem(FN_CURATOR_CACHE_KEY, JSON.stringify({ day: _todayStr, ids: rows.curator.map(function (x) { return x.id; }) })); } catch (e2) {}
+  } else {
+    try { var _cur = fnCuratorPicksCached(); if (_cur.length) rows.curator = _cur; } catch (e) { /* no curator rail */ }
+  }
+  /* late static arrival: if curator.json lands after the 2s race with
+     today's set and it differs from the painted picks, swap it in
+     (delta - only changed cards are recreated). */
+  _curStaticP.then(function (st) {
+    try {
+      if (!st || st.date !== _todayStr || !(st.results || []).length) return;
+      var _fp = st.results.map(function (x) { return x.id; }).join(',');
+      var _cp = (rows.curator || []).map(function (x) { return x.id; }).join(',');
+      if (_fp !== _cp) { rows.curator = st.results.slice(0, 20); fnPaintHome(rows); }
+    } catch (e) {}
+  }).catch(function () {});
   /* FN-NO-VPN-RESILIENCE v1: FIRST PAINT — snapshot rails now,
      before any live call. The old code awaited all four live
      upgrades SEQUENTIALLY before painting anything, so one stalled
@@ -3452,6 +3543,14 @@ async function loadHome() {
      row. The hero upgrade re-renders the hero when it lands. */
   const _jobs = [
     (async () => {
+      /* FN-NO-VPN-R3: static trending.json first (same-origin, paints
+         at once even with the worker dead); the live refresh below
+         still replaces it when it lands. */
+      var _hadStaticTrend = false;
+      try {
+        var _stT = await fnStaticJson('trending.json');
+        if (_stT && (_stT.results || []).length) { rows.trending_now = _stT.results.slice(0, 20); _hadStaticTrend = true; try { fnPaintHome(rows); } catch (e2) {} }
+      } catch (e) {}
       try {
         const _live = await fnFillHomeRail(async page => {
           const [_tm, _tt] = await Promise.all([tmdb('trending/movie/week', { page: page }), tmdb('trending/tv/week', { page: page })]);
@@ -3459,8 +3558,8 @@ async function loadHome() {
             .concat((_tt.results || []).map(x => Object.assign({}, x, { media_type: 'tv' })));
         }, x => { const dt = _dt(x); return dt && dt <= _today && dt >= _g3s && fnTrendVoteOk(x, _today); });
         _live.sort((a, b) => _dt(b).localeCompare(_dt(a)));
-        if (_live.length) rows.trending_now = _live.slice(0, 20); else _trendFallback();
-      } catch (e) { _trendFallback(); }
+        if (_live.length) rows.trending_now = _live.slice(0, 20); else if (!_hadStaticTrend) _trendFallback();
+      } catch (e) { if (!_hadStaticTrend) _trendFallback(); }
     })(),
     (async () => {
       /* FN-HERO-LIVE v1: rebuild the hero from the LIVE trending
@@ -3486,27 +3585,61 @@ async function loadHome() {
       } catch (e) { /* keep the snapshot hero */ }
     })(),
     (async () => {
-      /* newM25 rail: live TMDB discover — the snapshot is stale, so
-         the rail would never update. MOVIES only, released only,
-         newest first; vote_count.gte 40 (the same floor the see-all
-         uses). The snapshot row is kept only if the live fetch
-         fails/empty. */
+      /* FN-NO-VPN-R3: static newest.json first (download-data/newest.json -
+         the SAME single file the bot reads for its newest lists; the
+         movies list is deep-walked, no vote floor, linked-only,
+         newest-first). The live refresh below only MERGES into it. */
+      try {
+        var _stN = await fnStaticJson('newest.json', null, DL_BASE);
+        if (_stN && (_stN.movies || {}).results && _stN.movies.results.length) { rows.newM25 = _stN.movies.results.slice(0, 20); try { fnPaintHome(rows); } catch (e2) {} }
+      } catch (e) {}
+      /* newM25 rail: live TMDB discover. NO-FLOOR WALL (parent-measured
+         2026-11-20 ~19:30): a date-desc discover with NO vote floor
+         returns only obscure zero-vote releases - pages 1-3 hold ZERO
+         archive-linked titles (gte=40: 48/60). So the live fetch must
+         never be a bare floor-less 3-page fetch that wipes the rail:
+         (1) it fetches its pool by popularity (like updates does for
+         tv) and the list is sorted newest-first below; (2) it only
+         MERGES into the static set - a live fetch that returns fewer
+         titles never drops static items. The no-floor rule itself
+         lives in the daily static precompute (deep-walked
+         new-movies.json), not in this 3-page fetch. */
       try {
         const _y = new Date().getFullYear() - 1;
-        const _nmLive = await fnFillHomeRail(page => tmdb('discover/movie', { 'primary_release_date.gte': _y + '-01-01', 'primary_release_date.lte': _today, 'vote_count.gte': 40, sort_by: 'primary_release_date.desc', page: page }).then(d => (d.results || []).map(x => Object.assign({}, x, { media_type: 'movie' }))), x => { const dt = x.release_date || ''; return dt && dt <= _today; });
+        const _nmLive = await fnFillHomeRail(page => tmdb('discover/movie', { 'primary_release_date.gte': _y + '-01-01', 'primary_release_date.lte': _today, sort_by: 'popularity.desc', page: page }).then(d => (d.results || []).map(x => Object.assign({}, x, { media_type: 'movie' }))), x => { const dt = x.release_date || ''; return dt && dt <= _today; });
         _nmLive.sort((a, b) => String(b.release_date || '').localeCompare(String(a.release_date || '')));
-        if (_nmLive.length) rows.newM25 = _nmLive.slice(0, 20);
-      } catch (e) { /* keep the snapshot row */ }
+        if (_nmLive.length) {
+          var _nmMerged = (rows.newM25 || []).slice();
+          _nmLive.forEach(function (x) { if (!_nmMerged.some(function (y) { return y.id === x.id; })) _nmMerged.push(x); });
+          _nmMerged.sort((a, b) => String(b.release_date || '').localeCompare(String(a.release_date || '')));
+          rows.newM25 = _nmMerged.slice(0, 20);
+        }
+      } catch (e) { /* keep the static row or the snapshot row */ }
     })(),
     (async () => {
+      /* FN-NO-VPN-R3: static newest.json first (download-data/newest.json -
+         the SAME single file the bot reads; the series list is walked
+         until 20 linked, no vote floor, newest-first). The live
+         refresh below only MERGES into it. */
+      try {
+        var _stU = await fnStaticJson('newest.json', null, DL_BASE);
+        if (_stU && (_stU.series || {}).results && _stU.series.results.length) { rows.updates = _stU.series.results.slice(0, 20); try { fnPaintHome(rows); } catch (e2) {} }
+      } catch (e) {}
       /* updates rail: live TMDB discover/tv — SERIES only, new
          episode within 3 months, no talk/news/reality, most popular
-         among the recently updated. Snapshot kept on fail/empty. */
+         among the recently updated. The live refresh only MERGES into
+         the static set (same NO-FLOOR WALL caution as newM25: a live
+         fetch that returns fewer titles must never shrink the rail). */
       try {
         const _upLive = await fnFillHomeRail(page => tmdb('discover/tv', { 'air_date.gte': _g3s, 'air_date.lte': _today, without_genres: '10767,10763,10764', sort_by: 'popularity.desc', page: page }).then(d => (d.results || []).map(x => Object.assign({}, x, { media_type: 'tv' }))), null);
         _upLive.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
-        if (_upLive.length) rows.updates = _upLive.slice(0, 20);
-      } catch (e) { /* keep the snapshot row */ }
+        if (_upLive.length) {
+          var _upMerged = (rows.updates || []).slice();
+          _upLive.forEach(function (x) { if (!_upMerged.some(function (y) { return y.id === x.id; })) _upMerged.push(x); });
+          _upMerged.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
+          rows.updates = _upMerged.slice(0, 20);
+        }
+      } catch (e) { /* keep the static row or the snapshot row */ }
     })()
   ];
   await Promise.allSettled(_jobs.map(j => fnWithDeadline(j, 30000)));
@@ -4203,11 +4336,28 @@ async function loadArchPage() {
          effect — a new episode spikes popularity, so the most recently
          updated popular series lead. An explicit user sort pick is respected. */
       if (arch.collKey === 'updates' && isTv && sort === 'first_air_date.desc') sort = 'popularity.desc';
+      /* FN-NO-VPN-R3 (NO-FLOOR WALL, parent-measured 2026-11-20 ~19:30):
+         a date-desc discover with NO vote floor returns only obscure
+         zero-vote releases (0/60 linked in pages 1-3) - the floor was
+         load-bearing for the pool. Like updates above (which maps
+         first_air_date.desc to popularity.desc for tv), newM25 fetches
+         its pool by popularity and the batch is sorted newest-first
+         below, so linked low-vote titles still appear and the listing
+         never goes empty. The no-floor rule itself lives in the daily
+         static precompute (deep-walked new-movies.json). */
+      if (arch.collKey === 'newM25' && !isTv && sort === 'primary_release_date.desc') sort = 'popularity.desc';
       if (isTv && sort === 'revenue.desc') sort = 'popularity.desc';
       if (!isTv && sort.indexOf('first_air_date') === 0) sort = sort.replace('first_air_date', 'primary_release_date');
-      /* keyword browse carries NO default vote floor: niche topics
-         legitimately include little-voted titles, and the old floor
-         of 40 silently cut a topic page down to a single card */
+      /* FN-NO-VPN-R3 (user order 2026-11-20): NO default vote floor
+         on ANY category rail - newest needs no floor at all, and a
+         linked title must appear in all its categories. The old
+         default of 40 silently cut listings down (a topic page to a
+         single card, Iranian series to nothing). An explicit
+         «حداقل رأی» pick still applies (vcSel). Keyword browse
+         already had no floor. NOTE on tm/ts: their sort is
+         vote_average.desc, so with no floor a little-voted title
+         can now top «برترین فیلم‌ها/سریال‌ها» - restore a floor
+         for tm/ts alone if that reads wrong. */
       /* the stream's baked-in filters (a collection's genre, keyword,
          company — or its home country, e.g. سینمای ایران = IR) are the
          BASE; the reader's live filter picks are layered on top, so an
@@ -4215,7 +4365,7 @@ async function loadArchPage() {
          silently overwrite the کشور سازنده pick (and the year range):
          the dropdown label changed but the results never did. With no
          country picked, the collection's own country still applies. */
-      const params = Object.assign({ sort_by: sort, page: s.page, 'vote_count.gte': vcSel || (arch.kwId ? 0 : 40) }, s.extra || {});
+      const params = Object.assign({ sort_by: sort, page: s.page, 'vote_count.gte': vcSel || 0 }, s.extra || {});
       if (yr) params[dk + '.gte'] = yr + '-01-01';
       if (yr2) params[dk + '.lte'] = yr2 + '-12-31';
       if (archCountry) params.with_origin_country = archCountry;
@@ -4236,7 +4386,7 @@ async function loadArchPage() {
         }
         anyOk = true;
         let items = (d.results || []).map(x => Object.assign({}, x, { media_type: s.type }));
-        /* the default vote floor must never empty a whole stream
+        /* a user-picked vote floor must never empty a whole stream
            (e.g. Iranian series): retry page 1 once without it */
         if (!items.length && s.page === 1 && arch.collKey !== 'trending_now' && +params['vote_count.gte'] > 0) {
           const d2 = await tmdb('discover/' + s.type, Object.assign({}, params, { 'vote_count.gte': 0 }));
@@ -4266,6 +4416,7 @@ async function loadArchPage() {
        with the picked letter (or a digit) */
     if (archLetter) items = items.filter(letterMatch);
     if (sortUi === 'popularity.desc') items.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
+    else if (sortUi === 'primary_release_date.desc' || sortUi === 'first_air_date.desc') items.sort((a, b) => String((b.media_type === 'tv' ? b.first_air_date : b.release_date) || '').localeCompare(String((a.media_type === 'tv' ? a.first_air_date : a.release_date) || '')));
     else if (sortUi === 'vote_average.desc') items.sort((a, b) => (b.vote_average || 0) - (a.vote_average || 0));
     else if (sortUi === 'vote_count.desc') items.sort((a, b) => (b.vote_count || 0) - (a.vote_count || 0));
     else if (sortUi === 'random') { for (let i = items.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const tmp = items[i]; items[i] = items[j]; items[j] = tmp; } }
@@ -5299,7 +5450,7 @@ async function openDetail(type, id) {
   try { _cachedDetail = itemCache.get(wlKey(type, id)) || null; } catch (e) {}
   if (_cachedDetail) { try { renderLocalDetail(type, id, _cachedDetail, token); } catch (e) {} }
   let d;
-  try { d = await fnWithDeadline(tmdbDetail(type, id), 15000); } catch (e) {
+  try { d = await fnWithDeadline(fnDetailStaticFirst(type, id), 15000); } catch (e) {
     if (token === detailToken) {
       if (_cachedDetail) { /* the local sheet is already up - leave it */ return; }
       const cached = itemCache.get(wlKey(type, id));
@@ -10797,10 +10948,22 @@ function openCompany(entry) {
 async function sxOpenCollection(id) {
   const token = ++sxEntToken;
   sxEntityLoading('در حال دریافت این کالکشن…');
-  const [fa, en] = await Promise.all([
-    tmdb('collection/' + id, {}, 'fa-IR').catch(() => null),
-    tmdb('collection/' + id, {}, 'en-US').catch(() => null)
-  ]);
+  /* FN-NO-VPN-R3: the static collections.json carries the full parts
+     list for every curated collection - open from it when the id is
+     in there; the live fetch runs only for collections outside it. */
+  let fa = null, en = null;
+  try {
+    const _sc = await fnStaticJson('collections.json', 1);
+    const _all = _sc ? ((_sc.featured || []).concat(_sc.all || [])) : [];
+    const _hit = _all.find(c => c && c.id === id);
+    if (_hit) en = _hit;
+  } catch (e) {}
+  if (!en) {
+    [fa, en] = await Promise.all([
+      tmdb('collection/' + id, {}, 'fa-IR').catch(() => null),
+      tmdb('collection/' + id, {}, 'en-US').catch(() => null)
+    ]);
+  }
   if (token !== sxEntToken) return;
   const d = fa || en;
   if (!d) { sxEntityError('دریافت این کالکشن ممکن نشد.'); return; }
@@ -10877,6 +11040,23 @@ async function loadPeopleBrowse(cfg, append) {
   const body = $('#browse-body'), more = $('#browse-more');
   if (!append) body.innerHTML = '<div class="state"><div class="spin"></div>در حال بارگذاری…</div>';
   let added = 0, guard = 0;
+  /* FN-NO-VPN-R3: static people.json first - drain 12 at a time from
+     the same-origin list before spending live calls; the live loop
+     below only runs when the static list runs out. */
+  try {
+    if (!cfg._staticPeople) { const _sp = await fnStaticJson('people.json'); cfg._staticPeople = (_sp && _sp.results) || []; cfg._staticIx = 0; cfg._staticGen = _sp ? _sp.generated_at : ''; }
+    if (!append && cfg._staticGen) fnMarkFreshSub(cfg._staticGen);
+    while (added < 12 && cfg._staticIx < cfg._staticPeople.length) {
+      const _p = cfg._staticPeople[cfg._staticIx++];
+      if (!_p.profile_path || cfg.seen.has(_p.id)) continue;
+      if (cfg.mode === 'male' ? _p.gender !== 2 : cfg.mode === 'female' ? _p.gender !== 1 : _p.known_for_department !== 'Directing') continue;
+      cfg.seen.add(_p.id);
+      if (body.querySelector('.state')) body.innerHTML = '<div class="pgrid"></div>';
+      const _g = body.querySelector('.pgrid');
+      if (_g) _g.insertAdjacentHTML('beforeend', sxPersonCard({ id: _p.id, en: _p.en || '', fa: _p.fa || '', profile_path: _p.profile_path, gender: _p.gender, known_for_department: _p.known_for_department || '' }));
+      added++;
+    }
+  } catch (e) {}
   try {
     while (added < 12 && guard < 4 && !cfg.done) {
       guard++;
@@ -10897,7 +11077,7 @@ async function loadPeopleBrowse(cfg, append) {
       }
       if (cfg.page > (d.total_pages || 1) || cfg.page > 25) cfg.done = true;
     }
-  } catch (e) { cfg.failed = true; if (!append) body.innerHTML = '<div class="state">بارگذاری ممکن نشد؛ دوباره تلاش کنید.</div>'; }
+  } catch (e) { cfg.failed = true; if (!append && !body.querySelector('.pgrid')) body.innerHTML = '<div class="state">بارگذاری ممکن نشد؛ دوباره تلاش کنید.</div>'; }
   if (!body.querySelector('.pgrid')) body.innerHTML = cfg.failed ? '<div class="state">بارگذاری ممکن نشد؛ دوباره تلاش کنید.</div>' : '<div class="state">موردی پیدا نشد.</div>';
   more.style.display = cfg.done ? 'none' : 'block';
   more.onclick = () => loadPeopleBrowse(cfg, true);
@@ -11021,14 +11201,31 @@ async function loadDirectors(cfg, append) {
   if (cfg.loading || cfg.done) return;
   cfg.loading = true;
   try {
-    if (cfg.curIdx < FN_GREAT_DIRECTORS.length) {
-      /* the curated masters, in order, 36 at a time */
-      const chunk = FN_GREAT_DIRECTORS.slice(cfg.curIdx, cfg.curIdx + 36);
-      const found = await fnWithDeadline(Promise.all(chunk.map(dirResolveOne)), 15000);
-      if (found.filter(Boolean).length) {
-        cfg.curIdx += chunk.length; dirMaster.resolved = cfg.curIdx;
-        found.forEach(p => { if (p && !cfg.seen.has(p.id)) { cfg.seen.add(p.id); cfg.all.push(p); } });
-      } else { cfg.failed = true; }
+    /* FN-NO-VPN-R3: the curated masters come pre-resolved from the
+       static directors.json (same-origin); the live search/person
+       resolution runs only when the static file is missing. */
+    if (cfg._staticDirs === undefined) {
+      try { const _sd = await fnStaticJson('directors.json'); cfg._staticDirs = (_sd && _sd.great) || null; cfg._staticGen = _sd ? _sd.generated_at : ''; } catch (e) { cfg._staticDirs = null; }
+      if (cfg._staticDirs && !append && cfg._staticGen) fnMarkFreshSub(cfg._staticGen);
+    }
+    var _greatLen = cfg._staticDirs ? cfg._staticDirs.length : FN_GREAT_DIRECTORS.length;
+    if (cfg.curIdx < _greatLen) {
+      /* the curated masters, in order, 36 at a time - from the static
+         file when present, else resolved live by name as before */
+      if (cfg._staticDirs) {
+        const chunk = cfg._staticDirs.slice(cfg.curIdx, cfg.curIdx + 36);
+        if (chunk.length) {
+          cfg.curIdx += chunk.length; dirMaster.resolved = cfg.curIdx;
+          chunk.forEach(p => { if (p && !cfg.seen.has(p.id)) { cfg.seen.add(p.id); cfg.all.push({ id: p.id, en: p.en || '', fa: p.fa || '', profile_path: p.profile_path || '' }); } });
+        } else { cfg.curIdx = _greatLen; dirMaster.resolved = cfg.curIdx; }
+      } else {
+        const chunk = FN_GREAT_DIRECTORS.slice(cfg.curIdx, cfg.curIdx + 36);
+        const found = await fnWithDeadline(Promise.all(chunk.map(dirResolveOne)), 15000);
+        if (found.filter(Boolean).length) {
+          cfg.curIdx += chunk.length; dirMaster.resolved = cfg.curIdx;
+          found.forEach(p => { if (p && !cfg.seen.has(p.id)) { cfg.seen.add(p.id); cfg.all.push(p); } });
+        } else { cfg.failed = true; }
+      }
     } else {
       /* then the rest of the world's directors, in random order,
          names in both languages (en-US and fa-IR pages zipped) */
@@ -11055,7 +11252,7 @@ async function loadDirectors(cfg, append) {
       dirMaster.tailPage = cfg.popPage; dirMaster.tailDone = cfg.popDone;
     }
   } catch (e) { cfg.failed = true; /* whatever resolved so far stays on the page */ }
-  if (cfg.curIdx >= FN_GREAT_DIRECTORS.length && cfg.popDone) cfg.done = true;
+  if (cfg.curIdx >= (cfg._staticDirs ? cfg._staticDirs.length : FN_GREAT_DIRECTORS.length) && cfg.popDone) cfg.done = true;
   if (!cfg.all.length && (cfg.curIdx > 0 || cfg.popPage > 1)) cfg.failed = true;
   cfg.loading = false;
   if (typeof sxBrowse !== 'undefined' && sxBrowse === cfg) renderDirGrid(cfg);
@@ -11181,18 +11378,28 @@ async function loadCollectionsBrowse(cfg, append) {
   cfg.loading = true;
   const body = $('#browse-body'), more = $('#browse-more');
   if (!append) body.innerHTML = '<div class="state"><div class="spin"></div>در حال بارگذاری کالکشن‌ها…</div>';
-  const batch = FN_COLLECTIONS_ALL.slice(cfg.idx, cfg.idx + 12);
+  /* FN-NO-VPN-R3: pre-resolved collections from the static file
+     (same-origin); the live search/collection resolution runs only
+     when the static file is missing. */
+  if (cfg._staticColls === undefined) {
+    try { const _sc = await fnStaticJson('collections.json'); cfg._staticColls = (_sc && _sc.all) || null; cfg._staticGen = _sc ? _sc.generated_at : ''; } catch (e) { cfg._staticColls = null; }
+    if (cfg._staticColls && !append && cfg._staticGen) fnMarkFreshSub(cfg._staticGen);
+  }
+  const batch = cfg._staticColls ? cfg._staticColls.slice(cfg.idx, cfg.idx + 12) : FN_COLLECTIONS_ALL.slice(cfg.idx, cfg.idx + 12);
   if (!batch.length) cfg.done = true;
   else {
     var _cf = null;
-    try { _cf = await fnWithDeadline(Promise.all(batch.map(q => sxResolveCollection(q))), 15000); } catch (e) { cfg.failed = true; }
+    if (cfg._staticColls) { _cf = batch; }
+    else {
+      try { _cf = await fnWithDeadline(Promise.all(batch.map(q => sxResolveCollection(q))), 15000); } catch (e) { cfg.failed = true; }
+    }
     var _clist = _cf ? _cf.filter(Boolean) : [];
     if (!cfg.failed) {
       cfg.idx += batch.length;
       if (body.querySelector('.state')) body.innerHTML = '<div class="collgrid"></div>';
       const g = body.querySelector('.collgrid');
       if (g && _clist.length) g.insertAdjacentHTML('beforeend', _clist.map(sxCollCard).join(''));
-      if (cfg.idx >= FN_COLLECTIONS_ALL.length) cfg.done = true;
+      if (cfg.idx >= (cfg._staticColls ? cfg._staticColls.length : FN_COLLECTIONS_ALL.length)) cfg.done = true;
     }
   }
   if (!body.querySelector('.collgrid')) body.innerHTML = cfg.failed ? '<div class="state">بارگذاری کالکشن‌ها ممکن نشد؛ دوباره تلاش کنید.<br><button class="btn btn-gold btn-sm" data-coll-retry type="button" style="margin-top:.6rem">تلاش مجدد</button></div>' : '<div class="state">کالکشنی پیدا نشد.</div>';
@@ -11374,38 +11581,62 @@ async function fnUpcomingCamOnly(x) {
     return true;
   } catch (e) { return false; }
 }
-async function sxLoadUpcoming() {
+async function fnSoonPaintFromPool(pool) {
+  /* shared by the static pool and the live pool: avail + CAM-only +
+     year/popularity rules, then paint. Returns the painted items, or
+     null when the avail index could not be verified (never paint a
+     work that might have a real download link). */
   var ue = $('#sb-upcoming');
   var noneHtml = '<span style="color:var(--pearl);font-size:.88rem">موردی نیست.</span>';
   var errHtml = '<span style="color:var(--pearl);font-size:.88rem">در دسترس نیست.</span>';
+  var avail = await fnAvailEnsure();
+  if (!avail) { if (ue) ue.innerHTML = errHtml; return null; }
+  var yrNow = new Date().getFullYear();
+  var kept = [];
+  for (var i = 0; i < pool.length; i++) {
+    var x = pool[i];
+    var ry = (x.release_date || '').slice(0, 4);
+    if (!/^\d{4}$/.test(ry) || +ry < yrNow) continue;
+    if (!(x.popularity >= FN_SOON_POP_FLOOR)) continue;
+    var ent = fnAvailTmdbEntry(avail, 'movie', x.id);
+    if (ent && ent[0] === 1) {
+      if (!(await fnUpcomingCamOnly(x))) continue;
+    }
+    kept.push(x);
+  }
+  kept.sort(function (a, b) { return (b.popularity || 0) - (a.popularity || 0) || String(b.release_date || '').localeCompare(String(a.release_date || '')); });
+  var items = kept.slice(0, FN_SOON_MAX);
+  cacheItems(items);
+  if (ue) ue.innerHTML = items.length ? items.map(function (x) { return cardHtml(x, false, true); }).join('') : noneHtml;
+  return items;
+}
+async function sxLoadUpcoming() {
+  var ue = $('#sb-upcoming');
+  var errHtml = '<span style="color:var(--pearl);font-size:.88rem">در دسترس نیست.</span>';
+  /* FN-NO-VPN-R3: the static coming-soon.json pool paints at once
+     (same-origin); the live pool below still replaces it when it
+     lands. If the live pool comes back empty, the static paint is
+     restored rather than showing «موردی نیست». */
+  var staticItems = null;
+  try {
+    var st = await fnStaticJson('coming-soon.json');
+    if (st && (st.results || []).length) {
+      staticItems = await fnSoonPaintFromPool(st.results);
+      if (staticItems && staticItems.length) fnMarkFresh('#sb-upcoming', st.generated_at);
+    }
+  } catch (e) {}
   try {
     var pages = await fnWithDeadline(Promise.all([1, 2].map(function (pg) { return tmdb('movie/upcoming', { page: pg }).catch(function () { return { results: [] }; }); })), 15000);
     var pool = [];
     var seen = {};
     pages.forEach(function (d) { (d.results || []).forEach(function (x) { if (x && x.id && x.poster_path && !seen[x.id]) { seen[x.id] = 1; pool.push(Object.assign({}, x, { media_type: 'movie' })); } }); });
-    /* The download filter needs the avail-index. If it cannot be loaded,
-       the rail cannot verify any work — show "unavailable" rather than
-       risk showing a work with a real download link. */
-    var avail = await fnAvailEnsure();
-    if (!avail) { if (ue) ue.innerHTML = errHtml; return; }
-    var yrNow = new Date().getFullYear();
-    var kept = [];
-    for (var i = 0; i < pool.length; i++) {
-      var x = pool[i];
-      var ry = (x.release_date || '').slice(0, 4);
-      if (!/^\d{4}$/.test(ry) || +ry < yrNow) continue;
-      if (!(x.popularity >= FN_SOON_POP_FLOOR)) continue;
-      var ent = fnAvailTmdbEntry(avail, 'movie', x.id);
-      if (ent && ent[0] === 1) {
-        if (!(await fnUpcomingCamOnly(x))) continue;
-      }
-      kept.push(x);
+    var liveItems = await fnSoonPaintFromPool(pool);
+    if ((!liveItems || !liveItems.length) && staticItems && staticItems.length && ue) {
+      ue.innerHTML = staticItems.map(function (x) { return cardHtml(x, false, true); }).join('');
     }
-    kept.sort(function (a, b) { return (b.popularity || 0) - (a.popularity || 0) || String(b.release_date || '').localeCompare(String(a.release_date || '')); });
-    var items = kept.slice(0, FN_SOON_MAX);
-    cacheItems(items);
-    if (ue) ue.innerHTML = items.length ? items.map(function (x) { return cardHtml(x, false, true); }).join('') : noneHtml;
-  } catch (e) { if (ue) ue.innerHTML = errHtml; }
+  } catch (e) {
+    if (!staticItems && ue) ue.innerHTML = errHtml;
+  }
 }
 /* ---------- search home rails (lazy, only when Search opens) ---------- */
 let sxHomeInit = false, sxHomeBusy = false;
@@ -11416,6 +11647,27 @@ async function sxInitSearchHome() {
   const cp = $('#sb-companies'); if (cp) { cp.innerHTML = FN_COMPANIES.slice(0, 12).map(sxCompCardCur).join(''); coLogoMap().then(() => coRefreshCards(cp)); }
   /* FN-CO-FIXES v1 (Issue 3): the four sections used to run SEQUENTIALLY - people, then directors, then collections, then Coming Soon - so a slow section delayed every section below it. They now run CONCURRENTLY; each paints when its own data is ready. */
   const jobs = [(async () => {
+  /* FN-NO-VPN-R3: static people.json first (same-origin) - paints at
+     once even with the worker dead; the live refresh below still
+     replaces it when it lands. */
+  let all = null;
+  const paintSbPeople = () => {
+    if (!all) return;
+    const males = all.filter(p => p.gender === 2 && p.profile_path).slice(0, 12);
+    const females = all.filter(p => p.gender === 1 && p.profile_path).slice(0, 12);
+    const me = $('#sb-male'); if (me) me.innerHTML = males.length ? males.map(sxPersonCard).join('') : '<span style="color:var(--pearl);font-size:.88rem">موردی نیست.</span>';
+    const fe = $('#sb-female'); if (fe) fe.innerHTML = females.length ? females.map(sxPersonCard).join('') : '<span style="color:var(--pearl);font-size:.88rem">موردی نیست.</span>';
+  };
+  try {
+    const st = await fnStaticJson('people.json');
+    if (st && (st.results || []).length) {
+      all = st.results;
+      paintSbPeople();
+      fnMarkFresh('#sb-male', st.generated_at);
+      fnMarkFresh('#sb-female', st.generated_at);
+      pnFillFa(all).then(() => { paintSbPeople(); }).catch(() => {});
+    }
+  } catch (e) {}
   try {
     const pages = await fnWithDeadline(Promise.all([1, 2, 3].map(async pg => {
       const [en, fa] = await Promise.all([
@@ -11424,22 +11676,40 @@ async function sxInitSearchHome() {
       ]);
       return pnZipPage(en, fa);
     })), 15000);
-    const all = pages.flatMap(x => x);
-    /* FN-CO-FIXES v1 (Issue 3): paint people IMMEDIATELY with the names in hand; fill Persian names in the background and re-paint only if any name actually changed. */
-    const paintSbPeople = () => {
-      const males = all.filter(p => p.gender === 2 && p.profile_path).slice(0, 12);
-      const females = all.filter(p => p.gender === 1 && p.profile_path).slice(0, 12);
-      const me = $('#sb-male'); if (me) me.innerHTML = males.length ? males.map(sxPersonCard).join('') : '<span style="color:var(--pearl);font-size:.88rem">موردی نیست.</span>';
-      const fe = $('#sb-female'); if (fe) fe.innerHTML = females.length ? females.map(sxPersonCard).join('') : '<span style="color:var(--pearl);font-size:.88rem">موردی نیست.</span>';
-    };
-    paintSbPeople();
-    const _faBefore = all.map(p => p.fa || '').join('|');
-    pnFillFa(all).then(() => { if (all.map(p => p.fa || '').join('|') !== _faBefore) paintSbPeople(); }).catch(() => {});
+    const live = pages.flatMap(x => x);
+    if (live.length) {
+      const _fp = live.map(p => p.id).join(',');
+      const _cur = (all || []).map(p => p.id).join(',');
+      if (_fp !== _cur) {
+        all = live;
+        paintSbPeople();
+        const _faBefore = all.map(p => p.fa || '').join('|');
+        pnFillFa(all).then(() => { if (all.map(p => p.fa || '').join('|') !== _faBefore) paintSbPeople(); }).catch(() => {});
+      }
+    }
   } catch (e) {
-    const me = $('#sb-male'); if (me) me.innerHTML = '<span style="color:var(--pearl);font-size:.88rem">در دسترس نیست.</span>';
-    const fe = $('#sb-female'); if (fe) fe.innerHTML = '<span style="color:var(--pearl);font-size:.88rem">در دسترس نیست.</span>';
+    if (!all) {
+      const me = $('#sb-male'); if (me) me.innerHTML = '<span style="color:var(--pearl);font-size:.88rem">در دسترس نیست.</span>';
+      const fe = $('#sb-female'); if (fe) fe.innerHTML = '<span style="color:var(--pearl);font-size:.88rem">در دسترس نیست.</span>';
+    }
   }
   })(), (async () => {
+  /* FN-NO-VPN-R3: static directors.json (famous 10) first. */
+  let list = null;
+  const paintSbDirs = () => {
+    if (!list) return;
+    const de = $('#sb-directors');
+    if (de) de.innerHTML = list.length ? list.map(p => sxPersonCard(Object.assign({}, p, { known_for_department: 'Directing' }))).join('') : '<span style="color:var(--pearl);font-size:.88rem">موردی نیست.</span>';
+  };
+  try {
+    const st = await fnStaticJson('directors.json');
+    if (st && (st.famous || []).length) {
+      list = st.famous.filter(p => p.profile_path).map(p => ({ id: p.id, en: p.en || '', fa: p.fa || '', profile_path: p.profile_path || '' }));
+      paintSbDirs();
+      fnMarkFresh('#sb-directors', st.generated_at);
+      pnFillFa(list).then(() => { paintSbDirs(); }).catch(() => {});
+    }
+  } catch (e) {}
   try {
     const dirs = await fnWithDeadline(Promise.all(FN_FAMOUS_DIRECTORS.map(async id => {
       const [en, fa] = await Promise.all([
@@ -11449,19 +11719,45 @@ async function sxInitSearchHome() {
       if (!en && !fa) return null;
       return pnNormPerson(en || fa, fa ? fa.name : '');
     })), 15000);
-    const list = dirs.filter(Boolean).filter(p => p.profile_path);
-    /* FN-CO-FIXES v1 (Issue 3): paint directors IMMEDIATELY; fill Persian names in the background. */
-    const paintSbDirs = () => { const de = $('#sb-directors'); if (de) de.innerHTML = list.length ? list.map(p => sxPersonCard(Object.assign({}, p, { known_for_department: 'Directing' }))).join('') : '<span style="color:var(--pearl);font-size:.88rem">موردی نیست.</span>'; };
-    paintSbDirs();
-    const _faBeforeD = list.map(p => p.fa || '').join('|');
-    pnFillFa(list).then(() => { if (list.map(p => p.fa || '').join('|') !== _faBeforeD) paintSbDirs(); }).catch(() => {});
-  } catch (e) { const de = $('#sb-directors'); if (de) de.innerHTML = '<span style="color:var(--pearl);font-size:.88rem">در دسترس نیست.</span>'; }
+    const live = dirs.filter(Boolean).filter(p => p.profile_path);
+    if (live.length) {
+      const _fp = live.map(p => p.id).join(',');
+      const _cur = (list || []).map(p => p.id).join(',');
+      if (_fp !== _cur) {
+        list = live;
+        paintSbDirs();
+        const _faBeforeD = list.map(p => p.fa || '').join('|');
+        pnFillFa(list).then(() => { if (list.map(p => p.fa || '').join('|') !== _faBeforeD) paintSbDirs(); }).catch(() => {});
+      }
+    }
+  } catch (e) {
+    if (!list) { const de = $('#sb-directors'); if (de) de.innerHTML = '<span style="color:var(--pearl);font-size:.88rem">در دسترس نیست.</span>'; }
+  }
   })(), (async () => {
+  /* FN-NO-VPN-R3: static collections.json (featured 10) first. */
+  let list = null;
+  try {
+    const st = await fnStaticJson('collections.json');
+    if (st && (st.featured || []).length) {
+      list = st.featured;
+      const ce = $('#sb-coll-rail'); if (ce) ce.innerHTML = list.map(sxCollCard).join('');
+      fnMarkFresh('#sb-coll-rail', st.generated_at);
+    }
+  } catch (e) {}
   try {
     const found = await fnWithDeadline(Promise.all(FN_FEATURED_COLLECTIONS.map(q => sxResolveCollection(q))), 15000);
-    const list = found.filter(Boolean);
-    const ce = $('#sb-coll-rail'); if (ce) ce.innerHTML = list.length ? list.map(sxCollCard).join('') : '<span style="color:var(--pearl);font-size:.88rem">موردی نیست.</span>';
-  } catch (e) { const ce = $('#sb-coll-rail'); if (ce) ce.innerHTML = '<span style="color:var(--pearl);font-size:.88rem">در دسترس نیست.</span>'; }
+    const live = found.filter(Boolean);
+    if (live.length) {
+      const _fp = live.map(c => c.id).join(',');
+      const _cur = (list || []).map(c => c.id).join(',');
+      if (_fp !== _cur) {
+        list = live;
+        const ce = $('#sb-coll-rail'); if (ce) ce.innerHTML = list.map(sxCollCard).join('');
+      }
+    }
+  } catch (e) {
+    if (!list) { const ce = $('#sb-coll-rail'); if (ce) ce.innerHTML = '<span style="color:var(--pearl);font-size:.88rem">در دسترس نیست.</span>'; }
+  }
   })(), sxLoadUpcoming()];
   await Promise.allSettled(jobs);
   sxHomeInit = true; sxHomeBusy = false;
@@ -12192,8 +12488,9 @@ async function loadGenreBrowse(cfg, append) {
   await fnAvailEnsure();
   try {
     let items = [];
-    if (cfg.tab === 'all' || cfg.tab === 'movie') { const d = await tmdb('discover/movie', { sort_by: 'popularity.desc', with_genres: cfg.gM, 'vote_count.gte': 60, page: cfg.mPage }); cfg.mTotal = d.total_pages || 1; items = items.concat((d.results || []).map(x => Object.assign({}, x, { media_type: 'movie' }))); }
-    if (cfg.tab === 'all' || cfg.tab === 'tv') { const d = await tmdb('discover/tv', { sort_by: 'popularity.desc', with_genres: cfg.gT, 'vote_count.gte': 60, page: cfg.tPage }); cfg.tTotal = d.total_pages || 1; items = items.concat((d.results || []).map(x => Object.assign({}, x, { media_type: 'tv' }))); }
+    /* FN-NO-VPN-R3: no vote floor on genre/mood rails (user order 2026-11-20) */
+    if (cfg.tab === 'all' || cfg.tab === 'movie') { const d = await tmdb('discover/movie', { sort_by: 'popularity.desc', with_genres: cfg.gM, page: cfg.mPage }); cfg.mTotal = d.total_pages || 1; items = items.concat((d.results || []).map(x => Object.assign({}, x, { media_type: 'movie' }))); }
+    if (cfg.tab === 'all' || cfg.tab === 'tv') { const d = await tmdb('discover/tv', { sort_by: 'popularity.desc', with_genres: cfg.gT, page: cfg.tPage }); cfg.tTotal = d.total_pages || 1; items = items.concat((d.results || []).map(x => Object.assign({}, x, { media_type: 'tv' }))); }
     items = items.filter(x => x.poster_path && !cfg.seen.has(x.media_type + ':' + x.id) && cfg.seen.add(x.media_type + ':' + x.id));
     items.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
     cacheItems(items);
@@ -14742,17 +15039,27 @@ async function loadTitleCollection(known, type, id, isAlive) {
   }
   if (!coll || !coll.id || !isAlive() || !document.body.contains(slot)) return;
   let parts = [], name = coll.name || '';
+  /* FN-NO-VPN-R3: static collections.json first (same-origin). */
+  let _fromStatic = false;
   try {
-    const [cf, ce] = await Promise.all([
-      tmdb('collection/' + coll.id, {}, 'fa-IR').catch(() => null),
-      tmdb('collection/' + coll.id, {}, 'en-US').catch(() => null)
-    ]);
-    const src = ce || cf;
-    if (!src) return;
-    parts = (src.parts || []).slice();
-    if (cf && cf.name && /[؀-ۿ]/.test(cf.name)) name = cf.name;
-    else if (ce && ce.name) name = ce.name;
-  } catch (e) { return; }
+    const _sc = await fnStaticJson('collections.json', 1);
+    const _all = _sc ? ((_sc.featured || []).concat(_sc.all || [])) : [];
+    const _hit = _all.find(c => c && c.id === coll.id);
+    if (_hit) { parts = (_hit.parts || []).slice(); name = _hit.name || name; _fromStatic = true; }
+  } catch (e) {}
+  if (!_fromStatic) {
+    try {
+      const [cf, ce] = await Promise.all([
+        tmdb('collection/' + coll.id, {}, 'fa-IR').catch(() => null),
+        tmdb('collection/' + coll.id, {}, 'en-US').catch(() => null)
+      ]);
+      const src = ce || cf;
+      if (!src) return;
+      parts = (src.parts || []).slice();
+      if (cf && cf.name && /[؀-ۿ]/.test(cf.name)) name = cf.name;
+      else if (ce && ce.name) name = ce.name;
+    } catch (e) { return; }
+  }
   if (!isAlive() || !document.body.contains(slot)) return;
   if (parts.length < 2) return; /* a one-part "collection" is not a series of works */
   parts.sort((a, b) => String(a.release_date || '9999').localeCompare(String(b.release_date || '9999')));
