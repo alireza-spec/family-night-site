@@ -165644,6 +165644,37 @@
   },
   "year": 2015
  },
+ "tt43724724": {
+  "imdb": "tt43724724",
+  "num": 2246,
+  "part": 3,
+  "play": [
+   {
+    "encoder": "Sermovie",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl4.sermoviedown.pw/Movies/2026/Jared.Leto.Hollywoods.Dark.Secret/WEBRip/720/Jared.Leto.Hollywoods.Dark.Secret.2026.720p.WEBRip.x264.AAC-YTS.Sermovie.mp4",
+    "playit_url": null,
+    "quality": "WEBRip 720p",
+    "quality_label": "webrip 720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Jared Leto Hollywoods Dark Secret 2026",
+  "tmdb_key": null,
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
  "tt4375438": {
   "imdb": "tt4375438",
   "num": 4396,
