@@ -5083,7 +5083,7 @@ async function findImdbByTitle(title, year) {
      old one (3 parts). Previously this only searched new parts 1-3, so
      most titles were never found when the worker could not supply an
      IMDb id (worker blocked without VPN) and the box stayed empty. */
-  const archives = [{ parts: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], which: undefined }, { parts: [1], which: 'ao' }, { parts: [1, 2, 3], which: 'old' }]; /* FN-AO-SRC v1: AO part added */
+  const archives = [{ parts: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], which: undefined }, { parts: [1], which: 'ao' }, { parts: [1], which: 'mbm' }, /* FN-MBM-SRC v1 */{ parts: [1, 2, 3], which: 'old' }]; /* FN-AO-SRC v1: AO part added */
   for (const arc of archives) {
   for (const part of arc.parts) {
     let doc;
@@ -5307,7 +5307,7 @@ function paintFrame() {
 }
 
 /* ================= downloads — FN archive (same logic as the app) ================= */
-let fnDlIndex = null, fnDlIndexPromise = null; const fnDlParts = {}; const aoDlParts = {}; /* FN-AO-SRC v1 */
+let fnDlIndex = null, fnDlIndexPromise = null; const fnDlParts = {}; const aoDlParts = {}; const mbmDlParts = {}; /* FN-AO-SRC v1; FN-MBM-SRC v1 */
 let oldDlIndex = null, oldDlIndexPromise = null; const oldDlParts = {};
 function getOldDlIndex() {
   if (oldDlIndex) return Promise.resolve(oldDlIndex);
@@ -5359,6 +5359,15 @@ function loadDlPart(part, which) {
     return fetch(DL_BASE + 'ao/archive-part-' + n + '.html').then(r => { if (!r.ok) throw new Error('archive'); return r.text(); })
       .then(t => { const d = new DOMParser().parseFromString(t, 'text/html'); aoDlParts[n] = d; return d; });
   }
+  /* FN-MBM-SRC v1: Mobomovies part — the MBM H3 file lives in
+     download-data/mbm/archive-part-1.html; the global download-index
+     maps MBM titles to part 'mbm'. */
+  if (part === 'mbm' || which === 'mbm') {
+    const n = Number(part) >= 1 ? Number(part) : 1;
+    if (mbmDlParts[n]) return Promise.resolve(mbmDlParts[n]);
+    return fetch(DL_BASE + 'mbm/archive-part-' + n + '.html').then(r => { if (!r.ok) throw new Error('archive'); return r.text(); })
+      .then(t => { const d = new DOMParser().parseFromString(t, 'text/html'); mbmDlParts[n] = d; return d; });
+  }
   const isOld = which === 'old';
   const cache = isOld ? oldDlParts : fnDlParts;
   const base = isOld ? OLD_DL_BASE : DL_BASE;
@@ -5390,7 +5399,7 @@ async function resolveDlRecord(imdbId, num) {
       const part = index[imdbId];
       if (part) {
         const rec = recordFromArchive(await loadDlPart(part), imdbId);
-        if (dlRecHasLinks(rec)) { main = rec; mainSrc = (part === 'ao' ? 'ao' : 'new'); }
+        if (dlRecHasLinks(rec)) { main = rec; mainSrc = (part === 'ao' ? 'ao' : part === 'mbm' ? 'mbm' : 'new'); } /* FN-MBM-SRC v1 */
       }
     } catch (e) {}
     try {
@@ -5420,7 +5429,7 @@ async function resolveDlRecord(imdbId, num) {
   return null;
 }
 async function resolveDlRecordByPart(imdbId, num, part, which) {
-  const base = which === 'old' ? 'old' : which === 'ao' ? 'ao' : 'new'; /* FN-AO-SRC v1 */
+  const base = which === 'old' ? 'old' : which === 'ao' ? 'ao' : which === 'mbm' ? 'mbm' : 'new'; /* FN-AO-SRC v1; FN-MBM-SRC v1 adds mbm */
   const rec = recordFromArchive(await loadDlPart(part, base), imdbId || '', num);
   if (rec && (rec.groups.softsub.length || rec.groups.dubbed.length || rec.groups.nosub.length)) return { rec, src: base };
   return null;
@@ -5449,7 +5458,7 @@ function recordFromArchive(doc, imdb, num) {
        marker — its label may carry the group word ("… SoftSub" /
        "… Dubbed"). Without the !querySelector('a') guard those links
        were silently dropped and the box showed empty / partial. */
-    else if (/soft\s*sub/.test(low) && !n.querySelector('a')) cat = 'softsub';
+    else if (/soft\s*sub|hard\s*sub/.test(low) && !n.querySelector('a')) cat = 'softsub'; /* FN-MBM-SRC v1: <b>HardSub</b> is the hardsub slot, grouped as subtitled */
     else if (/dubbed/.test(low) && !n.querySelector('a')) cat = 'dubbed';
     else if (/nosub/.test(low) && !n.querySelector('a')) cat = 'nosub';
     /* FN-DL-VERSIONS v1 — separate-audio group: a marker naming audio
@@ -5573,7 +5582,12 @@ function parseDlSpecs(x) {
      file name — the host is the source. Displayed as AO, never the
      full name (source-code table). */
   if (!encRaw && /archive\.org/i.test(x.url || '')) encRaw = 'archive.org';
-  const enc = (function (r) { var l = String(r).toLowerCase(); if (l === 'film2media' || l === 'f2m') return 'F2M'; if (l === 'donyayeserial') return 'DS'; if (l === 'trendingpie' || l === 'vidsrc') return 'TP'; /* FN-EXT-DL v1: ext source code */ if (l === 'archive.org' || l === 'archiveorg') return 'AO'; return r; })(encRaw); /* v8.6: display-only abbreviation; FN-AO-SRC v1 adds AO */
+  /* FN-MBM-SRC v1: Mobomovies files carry "(MoboMovies)" in the file
+     name — the '(' before it means the encoder regex's boundary class
+     never matches, so the host token is the source. Displayed as MBM,
+     never the full name (source-code table). */
+  if (!encRaw && /mobomovies/i.test(fn)) encRaw = 'MoboMovies';
+  const enc = (function (r) { var l = String(r).toLowerCase(); if (l === 'film2media' || l === 'f2m') return 'F2M'; if (l === 'donyayeserial') return 'DS'; if (l === 'trendingpie' || l === 'vidsrc') return 'TP'; /* FN-EXT-DL v1: ext source code */ if (l === 'archive.org' || l === 'archiveorg') return 'AO'; if (l === 'mobomovies') return 'MBM'; /* FN-MBM-SRC v1 */ return r; })(encRaw); /* v8.6: display-only abbreviation; FN-AO-SRC v1 adds AO */
   const ext = (fn.match(/\.(mkv|mp4|avi)$/i) || [])[1] || '';
   return { res, source, codec: codecBits.join(' · '), enc, ext: ext ? ext.toUpperCase() : '', fn };
 }
@@ -6445,6 +6459,7 @@ function fnPlayEncShort(e) {
   if (l === 'film2media' || l === 'f2m') return 'F2M';
   if (l === 'donyayeserial' || l === 'donyaye serial') return 'DS';
   if (l === 'archive.org' || l === 'archiveorg') return 'AO'; /* FN-AO-SRC v1 */
+  if (l === 'mobomovies') return 'MBM'; /* FN-MBM-SRC v1 */
   return e;
 }
 function fnPlaySpecs(p) {
@@ -6483,8 +6498,10 @@ async function fnPlayFetchPart(part) {
   var to = setTimeout(function () { ctl.abort(); }, 8000);
   try {
     /* FN-AO-SRC v1: the archive.org play-index lives in
-       download-data/ao/play-index-ao.json (part 'ao'). */
-    var url = part === 'ao' ? DL_BASE + 'ao/play-index-ao.json' : DL_BASE + 'play-index-part-' + part + '.json';
+       download-data/ao/play-index-ao.json (part 'ao').
+       FN-MBM-SRC v1: the Mobomovies play-index lives in
+       download-data/mbm/play-index-mbm.json (part 'mbm'). */
+    var url = part === 'ao' ? DL_BASE + 'ao/play-index-ao.json' : part === 'mbm' ? DL_BASE + 'mbm/play-index-mbm.json' : DL_BASE + 'play-index-part-' + part + '.json';
     var r = await fetch(url, { signal: ctl.signal });
     if (!r.ok) throw new Error('play part');
     var j = await r.json(); FN_PLAY.parts[part] = j; return j;
@@ -8595,7 +8612,7 @@ let dlaListCurrent = [];   /* the filtered list currently rendered (row index ->
 /* FN-AO-SRC v1: archive.org part — same H3 format, own folder
    (download-data/ao/); the section loader and the background preload
    both read this one list. */
-const DLA_ARCHIVES = [{ base: DL_BASE, parts: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], src: 'new' }, { base: DL_BASE + 'ao/', parts: [1], src: 'ao' }, { base: OLD_DL_BASE, parts: [1, 2, 3], src: 'old' }];
+const DLA_ARCHIVES = [{ base: DL_BASE, parts: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], src: 'new' }, { base: DL_BASE + 'ao/', parts: [1], src: 'ao' }, { base: DL_BASE + 'mbm/', parts: [1], src: 'mbm' }, /* FN-MBM-SRC v1 */{ base: OLD_DL_BASE, parts: [1, 2, 3], src: 'old' }];
 
 /* ---------- FN-DLA-PRELOAD v1: shared chunk ingestion ----------
    dlaIngestChunk is the exact parse initDlArchive used to do inline,
@@ -8665,9 +8682,9 @@ function dlaIngestChunk(ch, arc, n, entries, entryByImdb) {
   const ym = ch.match(/\/pnot\/(?:Movie|Series)\/(\d{4})\//i) || ch.match(/\/(?:movies?|series|tv)\/(\d{4})\//i) || ch.match(/\.(\d{4})\.(?:\d{3,4}p|bluray|web|hdtv|x26|softsub|dubbed)/i);
   /* FN-AO-SRC v1: archive.org URLs carry no year — fall back to the
      H3 title's year (AO H3 titles carry the real year). */
-  const hym = arc.src === 'ao' ? (ch.split(/<\/h3>/i)[0] || '').match(/\b((?:19|20)\d{2})\b/) : null;
+  const hym = arc.src === 'ao' || arc.src === 'mbm' ? /* FN-MBM-SRC v1: MBM H3 titles carry the real year, like AO */ (ch.split(/<\/h3>/i)[0] || '').match(/\b((?:19|20)\d{2})\b/) : null;
   const year = ym ? +ym[1] : hym ? +hym[1] : 0;
-  const ent = { title, imdb: imdbNoCode, num: numNoCode, rate, votes, year, type, links, soft: /<b>SoftSub<\/b>/i.test(ch), dub: /<b>Dubbed<\/b>/i.test(ch), nosub: /<b>NoSub<\/b>/i.test(ch), part: n, src: arc.src, _hrefs: new Set(hrefs) };
+  const ent = { title, imdb: imdbNoCode, num: numNoCode, rate, votes, year, type, links, soft: /<b>(SoftSub|HardSub)<\/b>/i.test(ch), /* FN-MBM-SRC v1 */ dub: /<b>Dubbed<\/b>/i.test(ch), nosub: /<b>NoSub<\/b>/i.test(ch), part: n, src: arc.src, _hrefs: new Set(hrefs) };
   dlaAddEntry(ent, arc, n, entries, entryByImdb);
 }
 /* a macrotask yield: lets the browser paint and handle input between
@@ -9020,7 +9037,7 @@ async function initDlArchive() {
   for (const arc of archives) {
   for (const n of arc.parts) {
     if (currentView !== 'dlarchive' && dlaEntries) break;
-    body.innerHTML = '<div class="state"><div class="spin"></div>در حال بارگذاری آرشیو دانلود Family Night…<br>آرشیو ' + (arc.src === 'new' ? 'جدید' : arc.src === 'ao' ? 'AO' : 'قبلی') + ' — بخش ' + n + ' از ' + arc.parts.length + ' — عنوان‌ها و لینک‌های واقعی آرشیو خوانده می‌شوند.</div>';
+    body.innerHTML = '<div class="state"><div class="spin"></div>در حال بارگذاری آرشیو دانلود Family Night…<br>آرشیو ' + (arc.src === 'new' ? 'جدید' : arc.src === 'ao' ? 'AO' : arc.src === 'mbm' ? 'MBM' : 'قبلی') + ' — بخش ' + n + ' از ' + arc.parts.length + ' — عنوان‌ها و لینک‌های واقعی آرشیو خوانده می‌شوند.</div>';
     const key = dlaPreKey(arc.src, n);
     const pre = DLA_PRE.parts[key];
     if (pre && pre.entries) {
