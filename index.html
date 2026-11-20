@@ -156,6 +156,7 @@ main{padding-bottom:6.2rem;min-height:100vh}
 @media(min-width:900px){.rail-head{padding:0 2.2rem}}
 .rail-head h2{font-size:1.18rem;font-weight:800;margin:0;display:flex;align-items:center;gap:.5rem}
 .rail-head h2::before{content:"";width:.28rem;height:1.15rem;border-radius:99px;background:var(--gold)}
+.imdb-badge{display:inline-flex;align-items:center;line-height:0;flex:none}.imdb-badge svg{display:block}
 .rail-head button{color:var(--pearl);font-size:.82rem;display:inline-flex;align-items:center;gap:.25rem}
 .rail-head button:hover{color:var(--gold2)}
 /* FN-RECENT-CLEAR v1: trash + see-all in the Recently Watched rail head */
@@ -2065,6 +2066,33 @@ function fnCuratorItems() {
     return { id: r[0], media_type: 'movie', title: r[1], original_title: r[2], poster_path: r[3], backdrop_path: r[4], release_date: r[5], vote_average: r[6], vote_count: r[7], popularity: r[8], genre_ids: r[9] || [], overview: r[10] || '', imdb_id: r[11] || '' };
   });
 }
+/* FN-TOP250 v1: the tm/ts home rails ARE the IMDb Top 250 (user order
+   2026-11-20) - exact IMDb chart order, ranks 1-250, from the static
+   download-data/sections/top250.json (same-origin, paints without VPN,
+   same pattern as curator.json / newest.json). Items already carry the
+   card fields (id, media_type, title, poster_path, backdrop_path,
+   dates, votes, genre_ids, overview) plus the chart rank, the IMDb id
+   and the IMDb rating/votes. The sort key is the rank - never TMDB
+   vote_average. The badge below is the official yellow/black IMDb mark
+   as inline SVG (no external asset, works offline / without VPN). */
+var FN_IMDB_BADGE = '<span class="imdb-badge" role="img" aria-label="IMDb Top 250"><svg viewBox="0 0 64 32" width="36" height="18" aria-hidden="true"><rect x="1" y="1" width="62" height="30" rx="6" fill="#F5C518"/><text x="32" y="23" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="900" fill="#000000">IMDb</text></svg></span>';
+var _fnTop250Data = null;
+var _fnTop250P = null;
+function fnTop250Load() {
+  if (!_fnTop250P) {
+    _fnTop250P = fnStaticJson('top250.json').then(function (d) {
+      if (d && (d.movies || {}).results && (d.tv || {}).results
+        && d.movies.results.length === 250 && d.tv.results.length === 250) { _fnTop250Data = d; return d; }
+      return null;
+    }).catch(function () { return null; });
+  }
+  return _fnTop250P;
+}
+function fnTop250Items(which) { /* 'tm' -> movies, 'ts' -> tv; rank order as stored */
+  if (!_fnTop250Data) return null;
+  var r = (which === 'ts' ? _fnTop250Data.tv.results : _fnTop250Data.movies.results) || [];
+  return r.slice();
+}
 
 
 const $ = s => document.querySelector(s);
@@ -2762,6 +2790,9 @@ function openCollection(key) {
      20-item rail subset — it opens its own view-all page through the
      same local-archive rendering/filtering path. */
   if (key === 'curator') { openCurator(); return; }
+  /* FN-TOP250 v1: tm/ts open their own see-all page (exact IMDb order) -
+     not the discover stream and not the snapshot's TMDB-sorted row. */
+  if (key === 'tm' || key === 'ts') { openTop250(key); return; }
   const spec = collectionStreams(key);
   if (spec) { openCollectionApi(key, spec); return; }
   const list = (homeSnap && homeSnap.rows && homeSnap.rows[key]) || [];
@@ -2802,6 +2833,26 @@ function openCurator() {
   cacheItems(list);
   $('#archive-title').textContent = arch.title;
   $('#archive-sub').textContent = 'پیشنهاد سردبیر — ' + list.length + ' فیلم برگزیده از فهرست 483 عنوانی؛ با فیلتر سال، امتیاز و مرتب‌سازی؛ روی هر عنوان بزنید تا اطلاعات کامل، گزینه پخش و دانلود (در صورت وجود) نمایش داده شود';
+  const flt = document.querySelector('#view-archive .filters'); if (flt) { flt.style.display = ''; flt.classList.add('flt-local'); }
+  const grow = $('#arch-genre-row'); if (grow) grow.style.display = 'none';
+  resetArchFilters();
+  buildCuratorFilters();
+  $('#arch-more').style.display = 'none';
+  renderLocalArch();
+  activateArchiveView();
+}
+/* FN-TOP250 v1: the tm/ts see-all page - the full 250 in exact IMDb
+   chart order (rank 1-250). NO avail reorder/filter: the order IS the
+   list; a title without a download link simply shows without the
+   download icon (the linked-only question is the parent's decision,
+   not a silent drop). Default sort = list order (IMDb rank). */
+function openTop250(key) {
+  var list = fnTop250Items(key);
+  if (!list || !list.length) list = (homeSnap && homeSnap.rows && homeSnap.rows[key]) || [];
+  arch = { title: ROW_LABELS[key] || key, type: key === 'ts' ? 'tv' : 'movie', genre: '', page: 1, loading: false, done: true, qualCount: 0, availPending: [], mode: 'local', localKey: key, localList: list.slice() };
+  cacheItems(list);
+  $('#archive-title').innerHTML = FN_IMDB_BADGE + ' ' + esc(ROW_LABELS[key] || key);
+  $('#archive-sub').textContent = 'رتبه‌بندی رسمی IMDb — ۲۵۰ اثر برتر تاریخ به ترتیب دقیق چارت IMDb؛ روی هر عنوان بزنید تا اطلاعات کامل، گزینه پخش و دانلود (در صورت وجود) نمایش داده شود';
   const flt = document.querySelector('#view-archive .filters'); if (flt) { flt.style.display = ''; flt.classList.add('flt-local'); }
   const grow = $('#arch-genre-row'); if (grow) grow.style.display = 'none';
   resetArchFilters();
@@ -3248,6 +3299,16 @@ function fnImgFail(img) {
     } else if (poster) {
       el = document.createElement('div'); el.className = 'noimg';
       el.innerHTML = '<span class="fn-mark">FN</span><span class="fn-title">' + esc(alt) + '</span>';
+      /* FN-POSTER-WATCH v1: keep the poster URL on the placeholder so
+         the watchdog can re-create the <img> when the card scrolls
+         into view again (a slow load is not a dead poster). fnRetry
+         caps the recovery at one retry so a truly dead URL cannot
+         loop forever. */
+      try {
+        el.dataset.fnSrc = img.getAttribute('src') || '';
+        el.dataset.fnAlt = alt || '';
+        el.dataset.fnRetry = (img.dataset && img.dataset.fnRetry) || '0';
+      } catch (e2) {}
     } else { img.style.display = 'none'; return; }
     img.parentNode.replaceChild(el, img);
   } catch (e) {}
@@ -3255,6 +3316,19 @@ function fnImgFail(img) {
 var _fnImgWatchTimer = null;
 var _fnImgWatchSeen = (typeof WeakMap !== 'undefined') ? new WeakMap() : null;
 var _fnImgWatchSeenList = [];
+/* FN-POSTER-WATCH v1: is this element in (or near) the viewport? A rail
+   card below the fold - or off to the side of a horizontal rail track -
+   must never be judged: its lazy image has not started yet, and a
+   wall-clock kill there is a false kill. 600px margin matches the
+   distance at which the browser itself starts lazy loads. */
+function fnImgNearViewport(el) {
+  try {
+    var r = el.getBoundingClientRect();
+    var vh = window.innerHeight || document.documentElement.clientHeight || 800;
+    var vw = window.innerWidth || document.documentElement.clientWidth || 400;
+    return r.bottom >= -600 && r.top <= vh + 600 && r.right >= -600 && r.left <= vw + 600;
+  } catch (e) { return true; }
+}
 function fnImgWatchdogStart() {
   if (_fnImgWatchTimer) return;
   /* Capture-phase load listener: a poster that loads OK joins the
@@ -3272,17 +3346,35 @@ function fnImgWatchdogStart() {
       }
     }, true);
   } catch (e) {}
+  /* FN-POSTER-WATCH v1: a hidden tab loads nothing - reset every grace
+     timer when the tab becomes visible again, so a poster that only
+     just resumed loading is never killed for time it spent hidden. */
+  try {
+    document.addEventListener('visibilitychange', function () {
+      if (!document.hidden) { _fnImgWatchSeen = (typeof WeakMap !== 'undefined') ? new WeakMap() : null; _fnImgWatchSeenList = []; }
+    });
+  } catch (e) {}
   _fnImgWatchTimer = setInterval(function () {
     try {
+      if (document.hidden) return; /* never judge a poster while hidden */
       var now = Date.now();
       var imgs = document.querySelectorAll('img[data-fn-watch]');
       for (var i = 0; i < imgs.length; i++) {
         var im = imgs[i];
         if (im.dataset && im.dataset.fnFailed) continue;
-        var src = im.currentSrc || im.getAttribute('src') || '';
+        /* FN-POSTER-WATCH v1: start the grace timer only once the
+           browser has actually begun the fetch - currentSrc is empty
+           until loading starts. The old fallback to the src ATTRIBUTE
+           made this guard dead code: the attribute is always set on
+           card images, so the watchdog timed every below-the-fold lazy
+           image from paint and killed it into an FN placeholder after
+           10s - Godfather + Shawshank on the user's 2026-11-20
+           screenshot, while Dark Knight (from HTTP cache) survived. */
+        var src = im.currentSrc || '';
         if (!src) continue; /* a lazy img that never started - leave it alone */
         if (im.complete && im.naturalWidth === 0) { fnImgFail(im); continue; }
         if (im.complete) continue;
+        if (!fnImgNearViewport(im)) continue; /* offscreen - leave it alone */
         var first = null;
         if (_fnImgWatchSeen) {
           first = _fnImgWatchSeen.get(im);
@@ -3295,8 +3387,29 @@ function fnImgWatchdogStart() {
         var path = '';
         var mm = src.match(/\/t\/p\/[^/]+\/(.+)$/);
         if (mm) path = mm[1];
-        var grace = fnPosterOkHas(path) ? 4000 : 10000;
+        /* FN-POSTER-WATCH v1: 10s killed real posters on a slow /
+           no-VPN connection - a started load gets 30s. A dead URL
+           still errors at once via onerror, and a truly hung image
+           still becomes a placeholder (and recovers below). */
+        var grace = fnPosterOkHas(path) ? 4000 : 30000;
         if (now - first > grace) fnImgFail(im);
+      }
+      /* FN-POSTER-WATCH v1: recovery - a placeholder whose card has
+         scrolled into view gets its <img> back (one retry only, see
+         fnImgFail). A slow load is not a dead poster. */
+      var _rec = document.querySelectorAll('.noimg[data-fn-src]');
+      for (var k = 0; k < _rec.length; k++) {
+        var dv = _rec[k];
+        if (+(dv.dataset.fnRetry || 0) >= 1) continue;
+        if (!fnImgNearViewport(dv)) continue;
+        var ni = document.createElement('img');
+        ni.setAttribute('loading', 'lazy'); ni.setAttribute('decoding', 'async');
+        ni.setAttribute('onerror', 'fnImgFail(this)');
+        ni.setAttribute('data-fn-watch', '');
+        ni.setAttribute('src', dv.dataset.fnSrc);
+        ni.setAttribute('alt', dv.dataset.fnAlt || '');
+        ni.dataset.fnRetry = '1';
+        dv.parentNode.replaceChild(ni, dv);
       }
     } catch (e) {}
   }, 4000);
@@ -3400,7 +3513,11 @@ function paintHomeRails(rows) {
      call again after the live upgrades land (first paint = snapshot,
      second paint = live data). */
   if (FN_AVAIL.idx) {
-    Object.keys(rows).forEach(k => { if (rows[k]) rows[k] = rows[k].filter(x => fnAvailQualifies(x)); });
+    /* FN-TOP250 v1: tm/ts keep their exact IMDb chart order - the avail
+       filter would drop unlinked titles and break ranks 1-250. Unlinked
+       Top 250 titles stay in the rail (without a download icon); the
+       linked-only question is the parent's decision, not a silent drop. */
+    Object.keys(rows).forEach(k => { if (rows[k] && k !== 'tm' && k !== 'ts') rows[k] = rows[k].filter(x => fnAvailQualifies(x)); });
   }
   cacheItems(Object.values(rows).flat());
   /* Progressive rails: only the first rows render up front; the rest
@@ -3441,6 +3558,9 @@ async function loadHome() {
   /* FN-NO-VPN-R3: start the static curator fetch early (same-origin) -
      it resolves alongside the snapshot fetch below. */
   var _curStaticP = fnStaticJson('curator.json');
+  /* FN-TOP250 v1: start the static Top 250 fetch early (same-origin) -
+     it resolves alongside the snapshot fetch below. */
+  var _top250P = fnTop250Load();
   /* FN-NO-VPN-R2: paint from the PERSISTENT rails cache first - the
      rails (and, through the browser HTTP cache, their posters) are
      already on this device, so home paints instantly with zero
@@ -3528,6 +3648,30 @@ async function loadHome() {
       var _fp = st.results.map(function (x) { return x.id; }).join(',');
       var _cp = (rows.curator || []).map(function (x) { return x.id; }).join(',');
       if (_fp !== _cp) { rows.curator = st.results.slice(0, 20); fnPaintHome(rows); }
+    } catch (e) {}
+  }).catch(function () {});
+  /* FN-TOP250 v1: tm/ts ARE the IMDb Top 250 - replace the snapshot's
+     TMDB-sorted rows with the static chart-ordered lists (ranks 1-250).
+     Awaited only up to 2s so it never delays the first paint; a late
+     arrival swaps in below. The snapshot row stays as the fallback if
+     the static file fails. */
+  try {
+    var _t250 = await Promise.race([_top250P, fnSleep(2000).then(function () { return null; })]);
+    if (_t250) {
+      var _t250m = fnTop250Items('tm'), _t250t = fnTop250Items('ts');
+      if (_t250m && _t250m.length === 250) rows.tm = _t250m;
+      if (_t250t && _t250t.length === 250) rows.ts = _t250t;
+    }
+  } catch (e) {}
+  /* late static arrival: if top250.json lands after the 2s race with
+     the full 250 and the painted rows are not it yet, swap it in
+     (delta - only the tm/ts rails are recreated). */
+  _top250P.then(function (d) {
+    try {
+      if (!d) return;
+      var _m = fnTop250Items('tm'), _t = fnTop250Items('ts');
+      if (_m && _m.length === 250 && (!rows.tm || rows.tm.length !== 250 || rows.tm[0].id !== _m[0].id)) { rows.tm = _m; fnPaintHome(rows); }
+      if (_t && _t.length === 250 && (!rows.ts || rows.ts.length !== 250 || rows.ts[0].id !== _t[0].id)) { rows.ts = _t; fnPaintHome(rows); }
     } catch (e) {}
   }).catch(function () {});
   /* FN-NO-VPN-RESILIENCE v1: FIRST PAINT — snapshot rails now,
@@ -3651,7 +3795,10 @@ async function loadHome() {
   if (_rowsFp() !== _rowsBefore) fnPaintHome(rows);
 }
 function railHtml(key, list) {
-  return '<section class="rail" data-rail="' + esc(key) + '"><div class="rail-head"><h2>' + esc(ROW_LABELS[key] || key) + '</h2><button data-viewall="' + esc(key) + '" type="button">مشاهده همه <span aria-hidden="true">‹</span></button></div>'
+  /* FN-TOP250 v1: the IMDb badge in front of the tm/ts headers (user
+     order 2026-11-20) - the yellow IMDb mark, same as the see-all page. */
+  var _imdbH = (key === 'tm' || key === 'ts') ? FN_IMDB_BADGE : '';
+  return '<section class="rail" data-rail="' + esc(key) + '"><div class="rail-head"><h2>' + _imdbH + esc(ROW_LABELS[key] || key) + '</h2><button data-viewall="' + esc(key) + '" type="button">مشاهده همه <span aria-hidden="true">‹</span></button></div>'
     + '<div class="rail-track">' + list.slice(0, 24).map(x => cardHtml(x)).join('') + '</div></section>';
 }
 document.addEventListener('click', e => {
@@ -4186,8 +4333,12 @@ function renderLocalArch() {
      the rest unfiltered after them. The index loads lazily: if it is
      not in hand yet, render as-is now and re-render filtered once it
      arrives (same listing still open). */
-  if (FN_AVAIL.loaded) { arch.qualCount = 0; arch.availPending = []; if (arch.localKey && FN_STRICT_CATS.indexOf(arch.localKey) > -1) { items = fnAvailStrict(items); arch.qualCount = items.length; } else items = fnAvailFirst50(items, arch, true, true); }
-  else if (!FN_AVAIL.failed) { var _rlk = arch.localKey; fnAvailEnsure().then(function () { if (arch.mode === 'local' && arch.localKey === _rlk && FN_AVAIL.loaded) renderLocalArch(); }); }
+  /* FN-TOP250 v1: tm/ts keep exact IMDb rank order - no avail reorder
+     or filter here either (see paintHomeRails). */
+  if (arch.localKey !== 'tm' && arch.localKey !== 'ts') {
+    if (FN_AVAIL.loaded) { arch.qualCount = 0; arch.availPending = []; if (arch.localKey && FN_STRICT_CATS.indexOf(arch.localKey) > -1) { items = fnAvailStrict(items); arch.qualCount = items.length; } else items = fnAvailFirst50(items, arch, true, true); }
+    else if (!FN_AVAIL.failed) { var _rlk = arch.localKey; fnAvailEnsure().then(function () { if (arch.mode === 'local' && arch.localKey === _rlk && FN_AVAIL.loaded) renderLocalArch(); }); }
+  }
   cacheItems(items);
   grid.innerHTML = items.length ? items.map(x => cardHtml(x)).join('') : '<div class="state" style="grid-column:1/-1">با این فیلترها اثری در این مجموعه پیدا نشد.</div>';
   $('#arch-more').style.display = 'none';
