@@ -2974,6 +2974,13 @@
   "title": "Blood Brothers: Bara Naga",
   "year": 2025
  },
+ "movie:1278263": {
+  "imdb_id": "tt32178949",
+  "num": 4097,
+  "part": 2,
+  "title": "The Seed of the Sacred Fig",
+  "year": 2024
+ },
  "movie:1278853": {
   "imdb_id": "tt35708159",
   "num": 609,
@@ -8826,6 +8833,13 @@
   "title": "The Founder",
   "year": 2016
  },
+ "movie:313106": {
+  "imdb_id": "tt2779318",
+  "num": 577,
+  "part": 1,
+  "title": "The Day of the Doctor",
+  "year": 2013
+ },
  "movie:31524": {
   "imdb_id": "tt0200087",
   "num": 7992,
@@ -8958,6 +8972,13 @@
   "part": 1,
   "title": "X-Men",
   "year": 2000
+ },
+ "movie:36658": {
+  "imdb_id": "tt0290334",
+  "num": 1236,
+  "part": 1,
+  "title": "X2: X-Men United",
+  "year": 2003
  },
  "movie:36668": {
   "imdb_id": "tt0376994",
@@ -9988,6 +10009,13 @@
   "title": "Back to the Past",
   "year": 2025
  },
+ "movie:653": {
+  "imdb_id": "tt0013442",
+  "num": 6778,
+  "part": 3,
+  "title": "Nosferatu",
+  "year": 1922
+ },
  "movie:656156": {
   "imdb_id": "tt21387514",
   "num": 5356,
@@ -10660,6 +10688,13 @@
   "title": "This Boy’s Life",
   "year": 1993
  },
+ "movie:81": {
+  "imdb_id": "tt0087544",
+  "num": 6995,
+  "part": 3,
+  "title": "Nausicaä of the Valley of the Wind",
+  "year": 1984
+ },
  "movie:811944": {
   "imdb_id": "tt14209618",
   "num": 3998,
@@ -11177,6 +11212,13 @@
   "part": 1,
   "title": "Mortal Kombat II",
   "year": 2026
+ },
+ "movie:9314": {
+  "imdb_id": "tt0087803",
+  "num": 841,
+  "part": 1,
+  "title": "1984",
+  "year": 1984
  },
  "movie:933419": {
   "imdb_id": "tt15339570",
@@ -12150,6 +12192,13 @@
   "part": 16,
   "title": "The New Look",
   "year": null
+ },
+ "tv:157744": {
+  "imdb_id": "tt18335752",
+  "num": 10652,
+  "part": 15,
+  "title": "1923",
+  "year": 2022
  },
  "tv:169593": {
   "imdb_id": "tt27488151",
