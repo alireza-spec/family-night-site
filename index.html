@@ -2077,14 +2077,39 @@ function toast(msg){ const t = $('#toast'); t.textContent = msg; t.classList.add
    All API traffic goes directly to the Family Night worker and
    nowhere else; successful responses are cached for the session so
    repeat views (hero → detail → episodes) don't re-hit the worker. */
+/* FN-NO-VPN-RESILIENCE v1 (2026-11-20): the user's network stalls
+   intermittently on the path to foreign hosts (Pages + Cloudflare),
+   and a stalled fetch NEVER rejects — so every plain fetch below
+   hung forever and no catch/fallback ever fired (home rails stuck
+   on «در حال دریافت فهرست…», search-home sections stuck on
+   «در حال بارگذاری…»). Every network call below now goes through
+   fnFetchResilient: per-attempt timeout + retry with backoff. A
+   4xx is never retried (it will not heal); 429/5xx/network/abort
+   are. The timer covers headers AND body parse, so a stall
+   mid-body also aborts. Only successful results are cached. */
+function fnSleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+async function fnFetchResilient(url, opts, timeoutMs, attempts, parse) {
+  var lastErr = null;
+  for (var a = 0; a < attempts; a++) {
+    if (a) await fnSleep(Math.min(1600, 800 * Math.pow(2, a - 1)));
+    var ctl = null, timer = null;
+    try {
+      ctl = new AbortController();
+      timer = setTimeout(function () { try { ctl.abort(); } catch (e) {} }, timeoutMs);
+      var r = await fetch(url, Object.assign({}, opts || {}, { signal: ctl.signal }));
+      if (!r.ok) { var e = new Error('http ' + r.status); if (r.status < 500 && r.status !== 429) e.noRetry = true; throw e; }
+      if (parse === 'json') return await r.json();
+      if (parse === 'text') return await r.text();
+      return r;
+    } catch (e) { lastErr = e; if (e && e.noRetry) break; }
+    finally { if (timer) clearTimeout(timer); }
+  }
+  throw lastErr || new Error('fetch failed');
+}
 const apiCache = new Map();
 async function fnApiJson(fullUrl) {
   if (apiCache.has(fullUrl)) return apiCache.get(fullUrl);
-  const p = (async () => {
-    const r = await fetch(fullUrl);
-    if (!r.ok) throw new Error('worker ' + r.status);
-    return await r.json();
-  })();
+  const p = fnFetchResilient(fullUrl, {}, 8000, 3, 'json');
   apiCache.set(fullUrl, p);
   p.catch(() => { if (apiCache.get(fullUrl) === p) apiCache.delete(fullUrl); });
   return p;
@@ -3006,14 +3031,111 @@ function fnCuratorRailItems() {
   }
   return out;
 }
+/* ---------- FN-NO-VPN-RESILIENCE v1: snapshot cache + rail paint + shell freshness ---------- */
+function fnSnapCacheSave(snap) {
+  /* Best-effort: keep the last good snapshot on this device so a
+     stalled jsDelivr fetch still paints something instead of the
+     error screen. ~160KB, well under the localStorage quota. */
+  try { localStorage.setItem('fn-snap-v1', JSON.stringify({ saved_at: Date.now(), snap: snap })); } catch (e) {}
+}
+function fnSnapCacheLoad() {
+  try {
+    const raw = localStorage.getItem('fn-snap-v1');
+    if (!raw) return null;
+    const o = JSON.parse(raw);
+    if (!o || !o.snap || !o.snap.rows) return null;
+    if (Date.now() - (o.saved_at || 0) > 7 * 24 * 3600 * 1000) return null;
+    return o.snap;
+  } catch (e) { return null; }
+}
+function fnWithDeadline(p, ms) {
+  /* The underlying job keeps running after the deadline (its late
+     row mutation is invisible until the next loadHome; a late hero
+     upgrade still re-renders the hero) — the deadline only unblocks
+     the caller. */
+  return Promise.race([p, fnSleep(ms).then(() => { throw new Error('rail timeout'); })]);
+}
+/* FN-SHELL-FRESH v1 (2026-11-20): a stale cached shell is the other
+   suspect for the no-VPN failure (the ?v= cache-buster test is
+   running with the user). No service worker exists, so the shell
+   itself checks once per session: HEAD the shell URL with
+   cache:'no-store' and compare its Last-Modified with
+   document.lastModified (the date of the copy this tab actually
+   loaded). If the server copy is newer, reload once — then never
+   again this session (sessionStorage guard, so a reload can never
+   loop). Fire-and-forget, 5s timeout, every error swallowed; it
+   never blocks paint. */
+function fnShellFreshCheck() {
+  try {
+    if (sessionStorage.getItem('fn-shell-checked')) return;
+    sessionStorage.setItem('fn-shell-checked', '1');
+    if (!document.lastModified) return;
+    const cur = Date.parse(document.lastModified);
+    if (isNaN(cur)) return;
+    let ctl = null, timer = null;
+    try { ctl = new AbortController(); timer = setTimeout(function () { try { ctl.abort(); } catch (e) {} }, 5000); } catch (e) {}
+    fetch(location.pathname, { method: 'HEAD', cache: 'no-store', signal: ctl ? ctl.signal : undefined })
+      .then(function (r) { if (timer) clearTimeout(timer); const lm = r.headers && r.headers.get('last-modified'); if (!lm) return; const srv = Date.parse(lm); if (!isNaN(srv) && srv - cur > 60000) { try { sessionStorage.setItem('fn-shell-reloaded', '1'); } catch (e2) {} location.reload(); } })
+      .catch(function () { if (timer) clearTimeout(timer); });
+  } catch (e) {}
+}
+function paintHomeRails(rows) {
+  /* FN-CAT-FIRST50 v1: EVERY home rail shows only archive works
+     (avail-index d||p) — a rail is the first 50 of its category, so
+     a link-less work must not appear in it at all. The three live
+     rails already fill archive-only; this filters every snapshot
+     row the same way (trending/newM25/updates fallbacks included).
+     A rail with no qualifying works disappears (railKeys skips
+     empty rows) until its works gain links. Idempotent: safe to
+     call again after the live upgrades land (first paint = snapshot,
+     second paint = live data). */
+  if (FN_AVAIL.idx) {
+    Object.keys(rows).forEach(k => { if (rows[k]) rows[k] = rows[k].filter(x => fnAvailQualifies(x)); });
+  }
+  cacheItems(Object.values(rows).flat());
+  /* Progressive rails: only the first rows render up front; the rest
+     are appended as the reader scrolls near them — the home page
+     stays light and smooth instead of building ~50 rails at once. */
+  const railKeys = [];
+  HOME_ORDER.forEach(k => { if (rows[k] && rows[k].length) railKeys.push(k); });
+  Object.keys(rows).forEach(k => { if (!HOME_ORDER.includes(k) && rows[k] && rows[k].length) railKeys.push(k); });
+  const railsEl = $('#home-rails');
+  if (!railKeys.length) { railsEl.innerHTML = '<div class="wrap"><div class="state">فهرستی برای نمایش وجود ندارد.</div></div>'; renderContinue(); return; }
+  if (railsEl._fnRailObs) { try { railsEl._fnRailObs.disconnect(); } catch (e) {} railsEl._fnRailObs = null; }
+  if (railsEl._fnRailMut) { try { railsEl._fnRailMut.disconnect(); } catch (e) {} railsEl._fnRailMut = null; }
+  railsEl.innerHTML = '<div id="rails-more" style="height:1px"></div>';
+  let railIx = 0;
+  const paintMoreRails = () => {
+    const sentinel = railsEl.querySelector('#rails-more');
+    if (!sentinel) return;
+    const slice = railKeys.slice(railIx, railIx + 6);
+    railIx += slice.length;
+    if (slice.length) sentinel.insertAdjacentHTML('beforebegin', slice.map(k => railHtml(k, rows[k])).join(''));
+    if (railIx >= railKeys.length) sentinel.remove();
+  };
+  paintMoreRails();
+  if (window.IntersectionObserver) {
+    const railObs = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) paintMoreRails(); }, { rootMargin: '1000px' });
+    railsEl._fnRailObs = railObs;
+    const s0 = railsEl.querySelector('#rails-more');
+    if (s0) railObs.observe(s0);
+    /* the sentinel node is replaced as batches land — keep watching */
+    const mut = new MutationObserver(() => { const s = railsEl.querySelector('#rails-more'); if (s) railObs.observe(s); });
+    mut.observe(railsEl, { childList: true });
+    railsEl._fnRailMut = mut;
+  } else { while (railIx < railKeys.length) paintMoreRails(); }
+  renderContinue();
+}
 async function loadHome() {
   fnAvailEnsure(); /* FN-DL-ICON v1: load the avail-index early so home cards get their download badge */
   let snap;
   try {
-    const r = await fetch(SNAP_HOME);
-    if (!r.ok) throw new Error('snap');
-    snap = await r.json();
+    snap = await fnFetchResilient(SNAP_HOME, {}, 8000, 3, 'json');
+    fnSnapCacheSave(snap);
   } catch (e) {
+    snap = fnSnapCacheLoad();
+  }
+  if (!snap) {
     $('#hero').innerHTML = '<div class="state"><b>بارگذاری صفحه اصلی ممکن نشد.</b><br>اتصال اینترنت را بررسی کنید و دوباره تلاش کنید.<br><button class="btn btn-gold" id="home-retry" style="margin-top:1rem">تلاش مجدد</button></div>';
     $('#home-rails').innerHTML = '';
     $('#home-retry').onclick = () => { $('#hero').innerHTML = '<div class="state"><div class="spin"></div>در حال بارگذاری…</div>'; loadHome(); };
@@ -3042,105 +3164,82 @@ async function loadHome() {
      most-recently-updated first. The avail-index is awaited here so
      the rails filter on first paint; if it failed to load, the rails
      fall back to unfiltered (never empty). */
-  await fnAvailEnsure();
+  /* FN-NO-VPN-RESILIENCE v1: the avail wait is CAPPED at 2.5s — a
+     stalled avail fetch must never delay the first paint. */
+  await Promise.race([fnAvailEnsure(), fnSleep(2500)]);
   const _today = new Date().toISOString().slice(0, 10);
   const _g3 = new Date(); _g3.setMonth(_g3.getMonth() - 3);
   const _g3s = _g3.toISOString().slice(0, 10);
   const _dt = x => x.media_type === 'tv' ? (x.first_air_date || '') : (x.release_date || '');
-  try {
-    const _live = await fnFillHomeRail(async page => {
-      const [_tm, _tt] = await Promise.all([tmdb('trending/movie/week', { page: page }), tmdb('trending/tv/week', { page: page })]);
-      return [].concat((_tm.results || []).map(x => Object.assign({}, x, { media_type: 'movie' })))
-        .concat((_tt.results || []).map(x => Object.assign({}, x, { media_type: 'tv' })));
-    }, x => { const dt = _dt(x); return dt && dt <= _today && dt >= _g3s && fnTrendVoteOk(x, _today); });
-    _live.sort((a, b) => _dt(b).localeCompare(_dt(a)));
-    if (_live.length) rows.trending_now = _live.slice(0, 20); else _trendFallback();
-  } catch (e) { _trendFallback(); }
-  /* FN-HERO-LIVE v1: rebuild the hero from the LIVE trending data —
-     the snapshot hero above is only the first paint / fallback. Same
-     rule as the trending rail (released + last-3-months + notable,
-     newest-first), ARCHIVE-FIRST: works with a download link (d==1)
-     come first, so a newly-added popular download work enters the hero
-     at the top. Re-runs on every home load, so the hero never goes
-     stale again. If the live list is empty, the snapshot hero stays. */
-  try {
-    const _heroLive = await fnHeroLiveItems(_today, _g3s, _dt);
-    if (_heroLive.length) {
-      heroItems = _heroLive;
-      heroIdx = 0;
-      cacheItems(heroItems);
-      renderHero();
-    }
-  } catch (e) { /* keep the snapshot hero */ }
   /* FN-EDITORS-PICK-RAIL: «پیشنهاد سردبیر» sits directly under the
      trending row (user order). Shuffled on every home load, archive
-     works only, 20 items. The rail's «مشاهده همه» opens the existing
-     curator view-all page (openCurator via data-viewall="curator"). */
+     works only, 20 items. Set before the first paint (static data). */
   try { var _cur = fnCuratorRailItems(); if (_cur.length) rows.curator = _cur; } catch (e) { /* no curator rail */ }
-  /* newM25 + updates rails: live TMDB discover — the snapshot is stale
-     (generated 03:40Z, ~8h old), so the rails would never update.
-     FN-CATEGORY-FIX: newM25 = MOVIES only, released only, newest
-     first; updates = SERIES only, new episode within 3 months, no
-     talk/news/reality (without_genres 10767/10763/10764), most
-     popular among the recently updated (a new episode spikes it —
-     discover/tv does NOT honour air_date.desc as a sort; verified:
-     it returns the same order as popularity.desc). Both rails show
-     only archive works (fnFillHomeRail, up to 3 pages to fill 20);
-     the snapshot rows are kept only if the live fetch fails/empty.
-     newM25 carries vote_count.gte 40 (the same floor the see-all
-     uses): without it the newest releases are all obscure zero-vote
-     films and NONE of the first 50 pages is in the archive (verified
-     2026-11-19: 1 qualifying in 1000); with the floor 15/20 qualify
-     on page 1 (Heartland, The Christmas Switch, Clayface, …). */
-  try {
-    const _y = new Date().getFullYear() - 1;
-    const _nmLive = await fnFillHomeRail(page => tmdb('discover/movie', { 'primary_release_date.gte': _y + '-01-01', 'primary_release_date.lte': _today, 'vote_count.gte': 40, sort_by: 'primary_release_date.desc', page: page }).then(d => (d.results || []).map(x => Object.assign({}, x, { media_type: 'movie' }))), x => { const dt = x.release_date || ''; return dt && dt <= _today; });
-    _nmLive.sort((a, b) => String(b.release_date || '').localeCompare(String(a.release_date || '')));
-    if (_nmLive.length) rows.newM25 = _nmLive.slice(0, 20);
-  } catch (e) { /* keep the snapshot row */ }
-  try {
-    const _upLive = await fnFillHomeRail(page => tmdb('discover/tv', { 'air_date.gte': _g3s, 'air_date.lte': _today, without_genres: '10767,10763,10764', sort_by: 'popularity.desc', page: page }).then(d => (d.results || []).map(x => Object.assign({}, x, { media_type: 'tv' }))), null);
-    _upLive.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
-    if (_upLive.length) rows.updates = _upLive.slice(0, 20);
-  } catch (e) { /* keep the snapshot row */ }
-  /* FN-CAT-FIRST50 v1: EVERY home rail shows only archive works
-     (avail-index d||p) — a rail is the first 50 of its category, so
-     a link-less work must not appear in it at all. The three live
-     rails above already fill archive-only; this filters every
-     snapshot row the same way (trending/newM25/updates fallbacks
-     included). A rail with no qualifying works disappears (railKeys
-     skips empty rows) until its works gain links. */
-  if (FN_AVAIL.idx) {
-    Object.keys(rows).forEach(k => { if (rows[k]) rows[k] = rows[k].filter(x => fnAvailQualifies(x)); });
-  }
-  cacheItems(Object.values(rows).flat());
-  /* Progressive rails: only the first rows render up front; the rest
-     are appended as the reader scrolls near them — the home page
-     stays light and smooth instead of building ~50 rails at once. */
-  const railKeys = [];
-  HOME_ORDER.forEach(k => { if (rows[k] && rows[k].length) railKeys.push(k); });
-  Object.keys(rows).forEach(k => { if (!HOME_ORDER.includes(k) && rows[k] && rows[k].length) railKeys.push(k); });
-  const railsEl = $('#home-rails');
-  if (!railKeys.length) { railsEl.innerHTML = '<div class="wrap"><div class="state">فهرستی برای نمایش وجود ندارد.</div></div>'; renderContinue(); return; }
-  railsEl.innerHTML = '<div id="rails-more" style="height:1px"></div>';
-  let railIx = 0;
-  const paintMoreRails = () => {
-    const sentinel = railsEl.querySelector('#rails-more');
-    if (!sentinel) return;
-    const slice = railKeys.slice(railIx, railIx + 6);
-    railIx += slice.length;
-    if (slice.length) sentinel.insertAdjacentHTML('beforebegin', slice.map(k => railHtml(k, rows[k])).join(''));
-    if (railIx >= railKeys.length) sentinel.remove();
-  };
-  paintMoreRails();
-  if (window.IntersectionObserver) {
-    const railObs = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) paintMoreRails(); }, { rootMargin: '1000px' });
-    const s0 = railsEl.querySelector('#rails-more');
-    if (s0) railObs.observe(s0);
-    /* the sentinel node is replaced as batches land — keep watching */
-    new MutationObserver(() => { const s = railsEl.querySelector('#rails-more'); if (s) railObs.observe(s); }).observe(railsEl, { childList: true });
-  } else { while (railIx < railKeys.length) paintMoreRails(); }
-  renderContinue();
+  /* FN-NO-VPN-RESILIENCE v1: FIRST PAINT — snapshot rails now,
+     before any live call. The old code awaited all four live
+     upgrades SEQUENTIALLY before painting anything, so one stalled
+     fetch left «در حال دریافت فهرست…» on screen forever. */
+  paintHomeRails(rows);
+  fnShellFreshCheck();
+  const _rowsFp = () => Object.keys(rows).sort().map(k => k + '=' + (rows[k] || []).map(x => (x.media_type || 'movie') + ':' + x.id).join(',')).join('|');
+  const _rowsBefore = _rowsFp();
+  /* Live upgrades run CONCURRENTLY now (each with its own 30s
+     deadline); a stalled rail fails alone and keeps its snapshot
+     row. The hero upgrade re-renders the hero when it lands. */
+  const _jobs = [
+    (async () => {
+      try {
+        const _live = await fnFillHomeRail(async page => {
+          const [_tm, _tt] = await Promise.all([tmdb('trending/movie/week', { page: page }), tmdb('trending/tv/week', { page: page })]);
+          return [].concat((_tm.results || []).map(x => Object.assign({}, x, { media_type: 'movie' })))
+            .concat((_tt.results || []).map(x => Object.assign({}, x, { media_type: 'tv' })));
+        }, x => { const dt = _dt(x); return dt && dt <= _today && dt >= _g3s && fnTrendVoteOk(x, _today); });
+        _live.sort((a, b) => _dt(b).localeCompare(_dt(a)));
+        if (_live.length) rows.trending_now = _live.slice(0, 20); else _trendFallback();
+      } catch (e) { _trendFallback(); }
+    })(),
+    (async () => {
+      /* FN-HERO-LIVE v1: rebuild the hero from the LIVE trending
+         data — the snapshot hero above is only the first paint /
+         fallback. Same rule as the trending rail (released +
+         last-3-months + notable, newest-first), ARCHIVE-FIRST. If
+         the live list is empty, the snapshot hero stays. */
+      try {
+        const _heroLive = await fnHeroLiveItems(_today, _g3s, _dt);
+        if (_heroLive.length) {
+          heroItems = _heroLive;
+          heroIdx = 0;
+          cacheItems(heroItems);
+          renderHero();
+        }
+      } catch (e) { /* keep the snapshot hero */ }
+    })(),
+    (async () => {
+      /* newM25 rail: live TMDB discover — the snapshot is stale, so
+         the rail would never update. MOVIES only, released only,
+         newest first; vote_count.gte 40 (the same floor the see-all
+         uses). The snapshot row is kept only if the live fetch
+         fails/empty. */
+      try {
+        const _y = new Date().getFullYear() - 1;
+        const _nmLive = await fnFillHomeRail(page => tmdb('discover/movie', { 'primary_release_date.gte': _y + '-01-01', 'primary_release_date.lte': _today, 'vote_count.gte': 40, sort_by: 'primary_release_date.desc', page: page }).then(d => (d.results || []).map(x => Object.assign({}, x, { media_type: 'movie' }))), x => { const dt = x.release_date || ''; return dt && dt <= _today; });
+        _nmLive.sort((a, b) => String(b.release_date || '').localeCompare(String(a.release_date || '')));
+        if (_nmLive.length) rows.newM25 = _nmLive.slice(0, 20);
+      } catch (e) { /* keep the snapshot row */ }
+    })(),
+    (async () => {
+      /* updates rail: live TMDB discover/tv — SERIES only, new
+         episode within 3 months, no talk/news/reality, most popular
+         among the recently updated. Snapshot kept on fail/empty. */
+      try {
+        const _upLive = await fnFillHomeRail(page => tmdb('discover/tv', { 'air_date.gte': _g3s, 'air_date.lte': _today, without_genres: '10767,10763,10764', sort_by: 'popularity.desc', page: page }).then(d => (d.results || []).map(x => Object.assign({}, x, { media_type: 'tv' }))), null);
+        _upLive.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
+        if (_upLive.length) rows.updates = _upLive.slice(0, 20);
+      } catch (e) { /* keep the snapshot row */ }
+    })()
+  ];
+  await Promise.allSettled(_jobs.map(j => fnWithDeadline(j, 30000)));
+  if (_rowsFp() !== _rowsBefore) paintHomeRails(rows);
 }
 function railHtml(key, list) {
   return '<section class="rail"><div class="rail-head"><h2>' + esc(ROW_LABELS[key] || key) + '</h2><button data-viewall="' + esc(key) + '" type="button">مشاهده همه <span aria-hidden="true">‹</span></button></div>'
@@ -4731,7 +4830,7 @@ function fnSweepTrTxt(root) {
 }
 async function fnAiAsk(question, ctx) {
   const prompt = 'تو دستیار سینمایی Family Night هستی. فقط بر اساس اطلاعات رسمی اثر زیر و دانش تأییدشده‌ات درباره همین اثر جواب بده؛ داستان یا اطلاعاتی اختراع نکن و اگر اطلاعات کافی نیست صادقانه بگو. پاسخ فارسی، روان و مفید باشد.\n\n[اطلاعات اثر]\n' + ctx + '\n\n[پرسش کاربر]\n' + question;
-  const r = await fetch(FN_API + '/v1/ai/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ prompt, max_tokens: 900, temperature: 0.65 }) });
+  const r = await fnFetchTimeout(FN_API + '/v1/ai/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ prompt, max_tokens: 900, temperature: 0.65 }) }, 30000);
   if (!r.ok) throw new Error('ai ' + r.status);
   const d = await r.json();
   const t = (d && d.text || '').trim();
@@ -7663,8 +7762,8 @@ function prefetchTv() {
     await Promise.all([tvLogoMap(), tvFallbacks()]);
     try {
       const [fas, ir] = await Promise.all([
-        fetch('https://iptv-org.github.io/iptv/languages/fas.m3u').then(r => r.text()),
-        fetch('https://iptv-org.github.io/iptv/countries/ir.m3u').then(r => r.text()).catch(() => '')
+        fnFetchResilient('https://iptv-org.github.io/iptv/languages/fas.m3u', {}, 9000, 2, 'text'),
+        fnFetchResilient('https://iptv-org.github.io/iptv/countries/ir.m3u', {}, 9000, 2, 'text').catch(() => '')
       ]);
       const parsed = parseM3u(fas).concat(parseM3u(ir));
       const seen = new Set(FEATURED_TV.map(c => c.url));
@@ -7808,7 +7907,7 @@ async function setTvLang(code) {
   const cnt = $('#tv-count'); if (cnt) cnt.textContent = '';
   try {
     await Promise.all([tvLogoMap(), tvFallbacks()]);
-    const t = await (await fetch('https://iptv-org.github.io/iptv/languages/' + code + '.m3u')).text();
+    const t = await fnFetchResilient('https://iptv-org.github.io/iptv/languages/' + code + '.m3u', {}, 9000, 2, 'text');
     tvLangCache[code] = parseM3u(t).filter(c => !TV_DEAD_RE.test(c.name)).map(c => { let loc = tvLogoLocal(c.logo); if (!loc) loc = tvLogoByUrl(c.url); /* TV logos: fill an empty playlist logo from the stream-URL map, like the home prefetch */ return { name: c.name, url: c.url, logo: loc, logoRemote: loc !== c.logo ? c.logo : '', group: c.group || '', cc: c.cc || '', lang: faName, cat: c.group || 'عمومی', tw: 0 }; });
   } catch (e) { tvLangCache[code] = []; }
   tvAttachFallbacks(tvLangCache[code]);
@@ -7823,7 +7922,7 @@ async function setTvScope(code) {
     if (grid) grid.innerHTML = '<div class="state" style="grid-column:1/-1"><div class="spin"></div>در حال دریافت شبکه‌های این کشور…</div>';
     try {
       await Promise.all([tvLogoMap(), tvFallbacks()]);
-      const t = await (await fetch('https://iptv-org.github.io/iptv/countries/' + code.toLowerCase() + '.m3u')).text();
+      const t = await fnFetchResilient('https://iptv-org.github.io/iptv/countries/' + code.toLowerCase() + '.m3u', {}, 9000, 2, 'text');
       tvCountryCache[code] = parseM3u(t).filter(c => !TV_DEAD_RE.test(c.name)).map(c => { let loc = tvLogoLocal(c.logo); if (!loc) loc = tvLogoByUrl(c.url); /* TV logos: fill an empty playlist logo from the stream-URL map, like the home prefetch */ return { name: c.name, url: c.url, logo: loc, logoRemote: loc !== c.logo ? c.logo : '', group: c.group || '', cc: c.cc || code, lang: TV_LANG[code] || '', cat: c.group || 'عمومی', tw: 0 }; });
     } catch (e) { tvCountryCache[code] = []; }
     tvAttachFallbacks(tvCountryCache[code]);
@@ -7917,7 +8016,7 @@ async function loadEpg(force) {
   if (epgData && !force) { renderEpg(); return; }
   epgStatus = 'loading'; renderEpg();
   try {
-    const r = await fetch(FN_API + '/v1/epg');
+    const r = await fnFetchResilient(FN_API + '/v1/epg', {}, 9000, 3);
     if (!r.ok) throw new Error('epg ' + r.status);
     const j = await r.json();
     epgData = j && Array.isArray(j.channels) ? j.channels : [];
@@ -12402,7 +12501,7 @@ async function persAiRun(items) {
     + 'متن کامل و پرجزئیات باشد؛ هر بخش دست‌کم دو جملهٔ پرمحتوا داشته باشد و از تکرار حرف‌های کلی پرهیز کن.';
   let t = '';
   try {
-    const r = await fetch(FN_API + '/v1/ai/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ prompt, max_tokens: 2600, temperature: 0.75 }) });
+    const r = await fnFetchTimeout(FN_API + '/v1/ai/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ prompt, max_tokens: 2600, temperature: 0.75 }) }, 30000);
     if (!r.ok) throw new Error('ai ' + r.status);
     const d = await r.json();
     t = (d && d.text || '').trim();
@@ -12415,7 +12514,7 @@ async function persAiRun(items) {
        fallback fails too. */
     t = '';
     try {
-      const pr = await fetch('https://text.pollinations.ai/', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: [{ role: 'user', content: prompt }] }) });
+      const pr = await fnFetchTimeout('https://text.pollinations.ai/', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: [{ role: 'user', content: prompt }] }) }, 30000);
       if (!pr.ok) throw new Error('pollinations ' + pr.status);
       let pt = (await pr.text() || '').trim();
       if (pt.charAt(0) === '{') {
@@ -12744,7 +12843,7 @@ async function fnQueryToEn(q) {
   if (!/[؀-ۿ]/.test(q)) return '';
   if (fnQTrCache.has(q)) return fnQTrCache.get(q);
   try {
-    const r = await fetch(FN_API + '/v1/ai/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ prompt: 'عبارت زیر نام یا بخشی از نام یک فیلم، سریال، بازیگر یا کارگردان است. آن را به انگلیسی برگردان؛ اگر نام رسمی انگلیسی دارد همان را بنویس. فقط خودِ برگردان انگلیسی را بنویس، بدون هیچ توضیح یا علامت اضافه‌ای:\n' + q, max_tokens: 60, temperature: 0.2 }) });
+    const r = await fnFetchTimeout(FN_API + '/v1/ai/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ prompt: 'عبارت زیر نام یا بخشی از نام یک فیلم، سریال، بازیگر یا کارگردان است. آن را به انگلیسی برگردان؛ اگر نام رسمی انگلیسی دارد همان را بنویس. فقط خودِ برگردان انگلیسی را بنویس، بدون هیچ توضیح یا علامت اضافه‌ای:\n' + q, max_tokens: 60, temperature: 0.2 }) }, 15000);
     if (!r.ok) throw new Error('qtr');
     const d = await r.json();
     const t = String((d && d.text) || '').trim().split('\n')[0].replace(/^["'«]|["'»]$/g, '').trim();
