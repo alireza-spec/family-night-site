@@ -599,7 +599,7 @@ box-shadow:0 0 26px rgba(229,169,60,.28),inset 0 0 14px rgba(0,0,0,.65);animatio
 .fn-dl-tot b{font-family:var(--display);font-size:1.05rem;color:var(--gold2);display:block}
 .fn-dl-tot span{font-size:.7rem;color:var(--pearl)}
 .fn-dl-copyall{flex:none;font-size:.75rem;font-weight:800;padding:.4rem .9rem;border-radius:99px;border:1px solid var(--gold);background:var(--gold);color:#231700;min-height:2.2rem;cursor:pointer;font-family:inherit}
-/* FN-EXT-DL-TEST v1 — experimental external-download section (one title only) */
+/* FN-EXT-DL v1 — external-download section (verified zero-link titles) */
 .fn-ext-dl{margin-top:1.1rem;text-align:center}
 .fn-ext-dl-note{color:var(--pearl);font-size:.85rem;line-height:1.9;margin:.3rem 0 .8rem}
 .fn-ext-dl-btn{display:inline-block;font-size:.85rem;font-weight:800;padding:.55rem 1.3rem;border-radius:99px;border:1px solid var(--gold);background:var(--gold);color:#231700;min-height:2.4rem;line-height:1.5;text-decoration:none;cursor:pointer;font-family:inherit}
@@ -5573,7 +5573,7 @@ function parseDlSpecs(x) {
      file name — the host is the source. Displayed as AO, never the
      full name (source-code table). */
   if (!encRaw && /archive\.org/i.test(x.url || '')) encRaw = 'archive.org';
-  const enc = (function (r) { var l = String(r).toLowerCase(); if (l === 'film2media' || l === 'f2m') return 'F2M'; if (l === 'donyayeserial') return 'DS'; if (l === 'archive.org' || l === 'archiveorg') return 'AO'; return r; })(encRaw); /* v8.6: display-only abbreviation; FN-AO-SRC v1 adds AO */
+  const enc = (function (r) { var l = String(r).toLowerCase(); if (l === 'film2media' || l === 'f2m') return 'F2M'; if (l === 'donyayeserial') return 'DS'; if (l === 'trendingpie' || l === 'vidsrc') return 'TP'; /* FN-EXT-DL v1: ext source code */ if (l === 'archive.org' || l === 'archiveorg') return 'AO'; return r; })(encRaw); /* v8.6: display-only abbreviation; FN-AO-SRC v1 adds AO */
   const ext = (fn.match(/\.(mkv|mp4|avi)$/i) || [])[1] || '';
   return { res, source, codec: codecBits.join(' · '), enc, ext: ext ? ext.toUpperCase() : '', fn };
 }
@@ -6249,29 +6249,49 @@ function admDownload(url) {
   copyText(url);
   toast('لینک کپی شد — آن را در ADM پیست کنید تا دانلود شروع شود');
 }
-/* FN-EXT-DL-TEST v1 — EXPERIMENT, one title only: Bride of Frankenstein
-   1935 (TMDB movie 229). When the archive has NO download links for
-   this title, the download box offers the external download page
-   (trendingpie landing https://media.trendingpie.com/?id=229,
-   verified 2026-11-20: HTTP 200, lists Server 1 dl.vidsrc.party/
-   movie/229 + Server 2 vidvault.to/movie/229).
-   v2 switch 2026-11-20: the button used to open the DIRECT file
-   https://dl.braflix.dev/download/movie/229?quality=480p (probed
-   HTTP 206 from the VM) — the user's phone test 02:35 got HTTP 429
-   (server busy), so the button now opens the landing page instead;
-   on it the user can retry Server 1 after a minute and try Server 2
-   (its own page sends Referer vidvault.to, so it should serve).
-   The button opens in a new tab; it is NOT an archive link (no
-   download icon, no avail-index entry). If the phone test works, roll
-   out to all zero-link titles; until then NO other title shows it. */
-var FN_EXT_DL_TEST = { key: 'movie:229', url: 'https://media.trendingpie.com/?id=229', label: 'صفحه‌ی دانلود (سرور ۱ و ۲)' };
-function fnExtDlTestHtml(tmdbKey) {
-  if (tmdbKey !== FN_EXT_DL_TEST.key) return '';
-  return '<div class="fn-ext-dl" data-ext-dl-test>'
-    + '<div class="fn-dl-sec"><span>دانلود از سرور خارجی</span><span class="fn-dl-cnt">آزمایشی</span></div>'
-    + '<p class="fn-ext-dl-note">این اثر در آرشیو ما لینک دانلود ندارد؛ دانلود از سرور خارجی (بدون زیرنویس فارسی) در تب جدید باز می‌شود.</p>'
-    + '<a class="fn-ext-dl-btn" href="' + FN_EXT_DL_TEST.url + '" target="_blank" rel="noopener">' + FN_EXT_DL_TEST.label + '</a>'
-    + '</div>';
+/* FN-EXT-DL v1 - ROLLOUT (graduates FN-EXT-DL-TEST): the external-download
+   button now covers ALL verified zero-link titles, oldest first, decade
+   by decade - not just Bride of Frankenstein 1935 (movie:229, whose
+   Server 1 was phone-verified downloadable 2026-11-20).
+   The button opens the trendingpie download LANDING page in a new tab -
+   NEVER a direct file URL: the v1 direct file
+   https://dl.braflix.dev/download/movie/229?quality=480p (probed 206
+   from the VM) 429'd on the phone. Movies:
+   https://media.trendingpie.com/?id={tmdb}; series (phase 2):
+   https://mediatv.trendingpie.com/?id={tmdb}&s={s}&e={e}.
+   Which titles get the button is data, not code: download-data/ext/
+   ext-index.json (source code TP) lists verified titles only, key
+   "movie:<tmdb>" (later "tv:<tmdb>") -> {s1, s2, verified}. A title is
+   verified only when Server 1 (dl.vidsrc.party) or Server 2 (vidvault.to)
+   actually lists a video download for it (probed, never guessed).
+   Every ext title is NoSub (vidsrc files carry no Persian subtitles)
+   and stays flagged "needs Persian subtitle version". The button is NOT
+   an archive link (no H3 record, no download-index entry); the download
+   icon comes from the avail-index d=1 set at build time. If the
+   ext-index fails to load, the section renders nothing - never an
+   error, never a guess. */
+let fnExtIndex = null, fnExtIndexPromise = null;
+function getExtIndex() {
+  if (fnExtIndex) return Promise.resolve(fnExtIndex);
+  if (!fnExtIndexPromise) fnExtIndexPromise = fetch(DL_BASE + 'ext/ext-index.json').then(r => { if (!r.ok) throw new Error('ext index'); return r.json(); }).then(x => { fnExtIndex = x || {}; return fnExtIndex; }).catch(e => { fnExtIndex = {}; return fnExtIndex; });
+  return fnExtIndexPromise;
+}
+async function fnExtDlHtml(tmdbKey) {
+  if (!tmdbKey) return '';
+  try {
+    const idx = await getExtIndex();
+    if (!idx || !idx[tmdbKey]) return '';
+    const m = String(tmdbKey).match(/^(movie|tv):(\d+)$/);
+    if (!m) return '';
+    const ent = idx[tmdbKey] || {};
+    const label = (ent.s1 && ent.s2) ? 'صفحه‌ی دانلود (سرور ۱ و ۲)' : ent.s1 ? 'صفحه‌ی دانلود (سرور ۱)' : 'صفحه‌ی دانلود (سرور ۲)';
+    const url = m[1] === 'tv' ? 'https://mediatv.trendingpie.com/?id=' + m[2] : 'https://media.trendingpie.com/?id=' + m[2];
+    return '<div class="fn-ext-dl" data-ext-dl>'
+      + '<div class="fn-dl-sec"><span>دانلود از سرور خارجی</span></div>'
+      + '<p class="fn-ext-dl-note">این اثر در آرشیو ما لینک دانلود ندارد؛ دانلود از سرور خارجی (بدون زیرنویس فارسی) در تب جدید باز می‌شود.</p>'
+      + '<a class="fn-ext-dl-btn" href="' + url + '" target="_blank" rel="noopener">' + label + '</a>'
+      + '</div>';
+  } catch (e) { return ''; }
 }
 async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUrl) {
   const body = $('#d-dl-body'); if (!body) return;
@@ -6299,7 +6319,7 @@ async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUr
     }
     if (!resolved) resolved = await fnDlTitleFallback(imdbId, tmdbKey, fbTitle, fbYear);
     if (token !== detailToken) return;
-    if (!resolved) { body.innerHTML = '<div class="state"><b>فعلاً لینک دانلود رایگانی برای این اثر نیست.</b><br>از «پخش آنلاین» می‌توانید همین حالا تماشا کنید.</div>' + fnExtDlTestHtml(tmdbKey); return; }
+    if (!resolved) { body.innerHTML = '<div class="state"><b>فعلاً لینک دانلود رایگانی برای این اثر نیست.</b><br>از «پخش آنلاین» می‌توانید همین حالا تماشا کنید.</div>' + await fnExtDlHtml(tmdbKey); return; }
   } catch (e) {
     if (token === detailToken) body.innerHTML = '<div class="state">دریافت لینک‌های دانلود از آرشیو ممکن نشد؛ اتصال را بررسی و دوباره تلاش کنید.</div>';
     return;
@@ -6307,7 +6327,7 @@ async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUr
   try {
     const rec = resolved.rec;
     const srcNote = resolved.src === 'old' ? ' <span style="color:var(--gold2)">(از آرشیو قبلی)</span>' : resolved.src === 'both' ? ' <span style="color:var(--gold2)">(آرشیو جدید + قبلی)</span>' : '';
-    if (!rec || (!rec.groups.softsub.length && !rec.groups.dubbed.length && !rec.groups.nosub.length)) { body.innerHTML = '<div class="state"><b>فعلاً لینک دانلود رایگانی برای این اثر نیست.</b><br>از «پخش آنلاین» می‌توانید همین حالا تماشا کنید.</div>' + fnExtDlTestHtml(tmdbKey); return; }
+    if (!rec || (!rec.groups.softsub.length && !rec.groups.dubbed.length && !rec.groups.nosub.length)) { body.innerHTML = '<div class="state"><b>فعلاً لینک دانلود رایگانی برای این اثر نیست.</b><br>از «پخش آنلاین» می‌توانید همین حالا تماشا کنید.</div>' + await fnExtDlHtml(tmdbKey); return; }
     var srcLabel = resolved.src === 'old' ? 'آرشیو قبلی' : resolved.src === 'both' ? 'آرشیو جدید + قبلی' : '';
     var dlMeta = [fbYear || '', (tmdbKey && tmdbKey.indexOf('tv:') === 0) ? 'سریال' : 'فیلم', srcLabel].filter(Boolean).join(' • ');
     /* FN-DLBOX-TITLE-FA v1 — the header follows the ONE naming rule
