@@ -7188,17 +7188,66 @@ function fnPlayOldFetchTitles() {
   return fnPlayOldTitlesPromise;
 }
 function fnPlayNormTitle(t) { return String(t || '').toLowerCase().replace(/[^a-z0-9]/g, ''); }
+/* FN-PLAY-OLD-FAST v1: resolve one IMDb id to a joined play entry — new
+   archive first (download-index -> play part), old archive second
+   (old download-index -> old play part). Returns the {entry,key,part}
+   record (old:true for old-archive entries) or null. */
+async function fnPlayResolveImdb(imdb) {
+  try {
+    var ix = await getDlIndex();
+    var p = ix[imdb] || 0;
+    if (p) {
+      var d = await fnPlayFetchPart(p);
+      var e = d[imdb];
+      if (e && fnPlayJoined(e).length) return { entry: e, key: imdb, part: p };
+    }
+  } catch (e1) {}
+  try {
+    var oix = await getOldDlIndex();
+    var op = oix[imdb] || 0;
+    if (op) {
+      var od = await fnPlayOldFetchPart(op);
+      var oe = od[imdb];
+      if (oe && fnPlayJoined(oe).length) return { entry: oe, key: imdb, part: op, old: true };
+    }
+  } catch (e2) {}
+  return null;
+}
 async function fnPlayResolve(ctx) {
   var part = 0, key = '';
   if (ctx.imdbId) {
-    try { var idx = await getDlIndex(); part = idx[ctx.imdbId] || 0; } catch (e) { part = 0; }
-    if (part) key = ctx.imdbId;
+    /* FN-PLAY-OLD-FAST v1: resolve the IMDb at once — new archive first,
+       old archive second — instead of only the new index here and the
+       old one after the 24-file title scan below. */
+    try { var hit0 = await fnPlayResolveImdb(ctx.imdbId); if (hit0) return hit0; } catch (e) {}
   }
   if (!key && ctx.tmdbKey) {
     try { var ti = await getTitleIndex(); var hit = ti[ctx.tmdbKey]; if (hit && hit.part && hit.num) { part = hit.part; key = 'n:' + hit.num; } } catch (e) {}
   }
   if (!key && ctx.title) {
-    try { var im = await findImdbByTitle(ctx.title, ctx.year); if (im) { var ix2 = await getDlIndex(); part = ix2[im] || 0; if (part) key = im; } } catch (e) {}
+    /* FN-PLAY-OLD-FAST v1: fast path via the search index (the same data
+       the download box uses — one fetch, usually already in memory from
+       the search page). findImdbByTitle below fetches + parses 24 part
+       files one by one and cannot finish inside the 6s tap race, so
+       old-archive titles (Recep Ivedik 1-5) never resolved in time. */
+    try {
+      var si = await getDlSearchIndex();
+      var snt = fnPlayNormTitle(ctx.title);
+      var sFb = null;
+      for (var q = 0; q < si.length; q++) {
+        var sr = si[q];
+        if (!sr.imdb || fnPlayNormTitle(sr.t) !== snt) continue;
+        var sExact = !ctx.year || !sr.y || String(sr.y) === String(ctx.year);
+        if (!sExact) { if (!sFb) sFb = sr; continue; }
+        var sHit = await fnPlayResolveImdb(sr.imdb);
+        if (sHit) return sHit;
+        if (!sFb) sFb = sr;
+      }
+      if (sFb) { var sHit2 = await fnPlayResolveImdb(sFb.imdb); if (sHit2) return sHit2; }
+    } catch (e) {}
+  }
+  if (!key && ctx.title) {
+    try { var im = await findImdbByTitle(ctx.title, ctx.year); if (im) { var hit3 = await fnPlayResolveImdb(im); if (hit3) return hit3; } } catch (e) {}
   }
   /* ---- old-archive (Donyaye Serial) MOVIES fallback (DS-OLD-MOVIES v1) ----
      Only reached when the new archive has no play data for this title.
@@ -7246,6 +7295,14 @@ async function fnPlayResolve(ctx) {
           var data2 = await fnPlayFetchPart(hit2.part);
           var entry2 = data2['n:' + hit2.num];
           if (entry2 && fnPlayJoined(entry2).length) return { entry: entry2, key: 'n:' + hit2.num, part: hit2.part };
+          /* FN-PLAY-OLD-FAST v1: the play entry may be IMDb-keyed even
+             when the title index points at an n: num (Recep Ivedik 6/7,
+             Prey 2024, Burning Body) — try the IMDb key before giving up.
+             data2 is the same part file, already fetched: no extra fetch. */
+          if (hit2.imdb_id) {
+            var entry3 = data2[hit2.imdb_id];
+            if (entry3 && fnPlayJoined(entry3).length) return { entry: entry3, key: hit2.imdb_id, part: hit2.part };
+          }
         }
       } catch (e2) {}
     }
