@@ -8441,6 +8441,15 @@ function tvAttachFallbacks(list) {
   if (!tvFbData || !Array.isArray(list)) return;
   list.forEach(c => { const fb = c && c.url && tvFbData[c.url]; if (fb && Array.isArray(fb.servers) && fb.servers.length) { const have = new Set([c.url].concat((c.servers || []).map(s => s.url))); fb.servers.forEach(s => { if (s && s.url && !have.has(s.url)) { have.add(s.url); (c.servers || (c.servers = [])).push({ url: s.url, title: s.title || '' }); } }); } });
 }
+/* FN-TV-PROXY-FIRST v1: hosts the TV proxy serves end-to-end (verified
+   2026-11-20, re-verified 2026-11-21: persiana.live ~1.2s, hlspackager
+   ~0.9s through the Worker). A channel whose PRIMARY stream is on one of
+   these hosts tries the proxy FIRST (pf=1): its direct stream is foreign
+   and hangs the 14s arm without VPN before the proxy rescues it (~17s);
+   proxy-first plays in ~1-3s without VPN and ~2s with VPN. Direct stays
+   as the next attempt, so a proxy outage costs at most ~1s. tw is left
+   untouched: it also drives the Iranian-flag badge in the grid. */
+function tvProxyFirst(u) { try { const h = new URL(u).hostname.toLowerCase(); return h === 'hlspackager.akamaized.net' || h === 'telewebion.ir' || h === 'persiana.live' || h.endsWith('.persiana.live') || h.endsWith('.telewebion.ir'); } catch (e) { return false; } }
 let tvPrefetchP = null;
 function prefetchTv() {
   if (tvPrefetchP) return tvPrefetchP;
@@ -8504,6 +8513,12 @@ function prefetchTv() {
         });
       }
     } catch (e) {}
+    /* FN-TV-PROXY-FIRST v1 (see tvProxyFirst): proxy-first for any channel
+       whose (possibly overridden) primary is on a proxy-served host —
+       covers FEATURED + playlist + extra uniformly, including channels
+       whose data flag tw is 0 (the whole Persiana family + Iran
+       International). tw untouched (grid flag badge). */
+    tvAll.forEach(c => { if (c && c.url && tvProxyFirst(c.url)) c.pf = 1; });
     warmTvLogos();
     return tvAll;
   })();
@@ -8621,7 +8636,7 @@ async function setTvLang(code) {
   try {
     await Promise.all([tvLogoMap(), tvFallbacks()]);
     const t = await fnFetchResilient('https://iptv-org.github.io/iptv/languages/' + code + '.m3u', {}, 9000, 2, 'text');
-    tvLangCache[code] = parseM3u(t).filter(c => !TV_DEAD_RE.test(c.name)).map(c => { let loc = tvLogoLocal(c.logo); if (!loc) loc = tvLogoByUrl(c.url); /* TV logos: fill an empty playlist logo from the stream-URL map, like the home prefetch */ return { name: c.name, url: c.url, logo: loc, logoRemote: loc !== c.logo ? c.logo : '', group: c.group || '', cc: c.cc || '', lang: faName, cat: c.group || 'عمومی', tw: 0 }; });
+    tvLangCache[code] = parseM3u(t).filter(c => !TV_DEAD_RE.test(c.name)).map(c => { let loc = tvLogoLocal(c.logo); if (!loc) loc = tvLogoByUrl(c.url); /* TV logos: fill an empty playlist logo from the stream-URL map, like the home prefetch */ return { name: c.name, url: c.url, logo: loc, logoRemote: loc !== c.logo ? c.logo : '', group: c.group || '', cc: c.cc || '', lang: faName, cat: c.group || 'عمومی', tw: 0, pf: tvProxyFirst(c.url) ? 1 : 0 }; });
   } catch (e) { tvLangCache[code] = []; }
   tvAttachFallbacks(tvLangCache[code]);
   if (tvLangCode === code) { tvLangList = tvLangCache[code]; renderTvFilters(); paintTvGrid(); }
@@ -8636,7 +8651,7 @@ async function setTvScope(code) {
     try {
       await Promise.all([tvLogoMap(), tvFallbacks()]);
       const t = await fnFetchResilient('https://iptv-org.github.io/iptv/countries/' + code.toLowerCase() + '.m3u', {}, 9000, 2, 'text');
-      tvCountryCache[code] = parseM3u(t).filter(c => !TV_DEAD_RE.test(c.name)).map(c => { let loc = tvLogoLocal(c.logo); if (!loc) loc = tvLogoByUrl(c.url); /* TV logos: fill an empty playlist logo from the stream-URL map, like the home prefetch */ return { name: c.name, url: c.url, logo: loc, logoRemote: loc !== c.logo ? c.logo : '', group: c.group || '', cc: c.cc || code, lang: TV_LANG[code] || '', cat: c.group || 'عمومی', tw: 0 }; });
+      tvCountryCache[code] = parseM3u(t).filter(c => !TV_DEAD_RE.test(c.name)).map(c => { let loc = tvLogoLocal(c.logo); if (!loc) loc = tvLogoByUrl(c.url); /* TV logos: fill an empty playlist logo from the stream-URL map, like the home prefetch */ return { name: c.name, url: c.url, logo: loc, logoRemote: loc !== c.logo ? c.logo : '', group: c.group || '', cc: c.cc || code, lang: TV_LANG[code] || '', cat: c.group || 'عمومی', tw: 0, pf: tvProxyFirst(c.url) ? 1 : 0 }; });
     } catch (e) { tvCountryCache[code] = []; }
     tvAttachFallbacks(tvCountryCache[code]);
     if (tvScope === code) { renderTvFilters(); paintTvGrid(); }
@@ -8920,7 +8935,7 @@ function playChannel(ch, el) {
     const urls = [{ url: ch.url, title: '' }].concat((ch.servers || []).filter(s => s && s.url));
     const seenR = new Set(); const out = [];
     urls.forEach(s => { if (!s.url || seenR.has(s.url)) return; seenR.add(s.url);
-      if (ch.tw) { out.push({ src: TV_PROXY + encodeURIComponent(s.url), title: s.title || '' }); out.push({ src: s.url, title: s.title || '' }); }
+      if (ch.tw || ch.pf) { out.push({ src: TV_PROXY + encodeURIComponent(s.url), title: s.title || '' }); out.push({ src: s.url, title: s.title || '' }); }
       else { out.push({ src: s.url, title: s.title || '' }); out.push({ src: TV_PROXY + encodeURIComponent(s.url), title: s.title || '' }); }
     });
     return out;
@@ -9487,7 +9502,7 @@ async function openSharedTitle(type, id, play, season, episode) {
 /* open a shared live-TV link on the channel it names */
 async function openSharedChannel(name, url) {
   go('tv');
-  if (url) { playChannel({ name: name || 'شبکه زنده', url, logo: '', group: '', tw: /telewebion/i.test(url) ? 1 : 0 }, null); return; }
+  if (url) { playChannel({ name: name || 'شبکه زنده', url, logo: '', group: '', tw: /telewebion/i.test(url) ? 1 : 0, pf: tvProxyFirst(url) ? 1 : 0 }, null); return; }
   try { await prefetchTv(); } catch (e) {}
   const ch = (tvAll || []).find(c => fnBrandName(c.name) === fnBrandName(name));
   if (ch) playChannel(ch, null);
