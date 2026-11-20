@@ -603,6 +603,9 @@ box-shadow:0 0 26px rgba(229,169,60,.28),inset 0 0 14px rgba(0,0,0,.65);animatio
 .fn-ext-dl{margin-top:1.1rem;text-align:center}
 .fn-ext-dl-note{color:var(--pearl);font-size:.85rem;line-height:1.9;margin:.3rem 0 .8rem}
 .fn-ext-dl-btn{display:inline-block;font-size:.85rem;font-weight:800;padding:.55rem 1.3rem;border-radius:99px;border:1px solid var(--gold);background:var(--gold);color:#231700;min-height:2.4rem;line-height:1.5;text-decoration:none;cursor:pointer;font-family:inherit}
+/* FN-DN-VPN v1 — DarkNama VPN hint in the download box: one short
+   muted line under the box header, only when the box holds DN links. */
+.fn-dn-hint{color:var(--pearl);font-size:.8rem;line-height:1.9;text-align:center;padding:.15rem .4rem .5rem}
 .fn-dl-cabox{background:var(--surface2);border:1px solid rgba(229,169,60,.4);border-radius:1rem;padding:.8rem .9rem;margin-bottom:.9rem;text-align:center}
 .fn-dl-cabox[hidden]{display:none}
 .fn-dl-ca-title{font-size:.88rem;font-weight:800;color:var(--gold2);line-height:1.8;margin-bottom:.6rem}
@@ -1508,6 +1511,13 @@ html.tg .bottomnav{display:flex}
 .fnp-hide-ui .fnp-top,.fnp-hide-ui .fnp-center,.fnp-hide-ui .fnp-bottom{opacity:0;pointer-events:none}
 .fnp-top,.fnp-center,.fnp-bottom{transition:opacity .25s ease}
 .fnp-tap{position:absolute;inset:0;z-index:4}
+/* FN-DN-SRC v1 — DarkNama VPN hint in the play list: one short muted
+   line, only when the list holds DN rows. */
+/* FN-DN-TRAILER v1 — trailer mode: the subtitle options a trailer does
+   not need are removed from the top bar (same player, same look). */
+.pl-dn-hint{padding:.55rem 1rem 0;color:var(--pearl);font-size:.8rem;line-height:1.9;text-align:center}
+#ov-fnplayer.fnp-trailer #fnp-subsize,#ov-fnplayer.fnp-trailer #fnp-subbtn,#ov-fnplayer.fnp-trailer #fnp-setbtn{display:none}
+#fnp-err-vpn{color:var(--gold2);font-weight:700}
 
 </style>
 <style id="wp-internal-css">
@@ -4824,6 +4834,13 @@ function wireDetailSheet(o, itemForWl) {
      the trailer modal — there is no lower trailer tab anymore */
   const trBtn = $('#d-trailer');
   if (trBtn) trBtn.onclick = async () => {
+    /* FN-DN-TRAILER v1: a direct DarkNama trailer plays in the SAME
+       internal player (fnPlayTrailer) — YouTube is only the fallback
+       for titles with no extracted direct trailer. */
+    try {
+      const dnUrl = await fnDnTrailerUrl(o.type + ':' + o.id);
+      if (dnUrl && typeof fnPlayTrailer === 'function') { fnPlayTrailer(dnUrl, o.title, o.type); return; }
+    } catch (e) {}
     let vids = (o.videos || []).filter(v => v.site === 'YouTube' && v.key);
     if (!vids.length) {
       try { const v = await tmdb(o.type + '/' + o.id + '/videos', {}, 'en-US'); o.videos = (v && v.results) || []; vids = o.videos.filter(x => x.site === 'YouTube' && x.key); } catch (e) {}
@@ -4890,6 +4907,7 @@ async function openDetail(type, id) {
      they start below instead of fetching them sequentially */
   try { if (typeof getDlIndex === 'function') getDlIndex().catch(function () {}); } catch (e) {}
   try { if (typeof getTitleIndex === 'function') getTitleIndex().catch(function () {}); } catch (e) {}
+  try { if (typeof getDnTrailerIndex === 'function') getDnTrailerIndex().catch(function () {}); } catch (e) {} /* FN-DN-TRAILER v1 */
   let d;
   try { d = await tmdbDetail(type, id); } catch (e) {
     if (token === detailToken) {
@@ -5083,7 +5101,7 @@ async function findImdbByTitle(title, year) {
      old one (3 parts). Previously this only searched new parts 1-3, so
      most titles were never found when the worker could not supply an
      IMDb id (worker blocked without VPN) and the box stayed empty. */
-  const archives = [{ parts: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], which: undefined }, { parts: [1], which: 'ao' }, { parts: [1], which: 'mbm' }, /* FN-MBM-SRC v1 */{ parts: [1, 2, 3], which: 'old' }]; /* FN-AO-SRC v1: AO part added */
+  const archives = [{ parts: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], which: undefined }, { parts: [1], which: 'ao' }, { parts: [1], which: 'mbm' }, { parts: [1, 2], which: 'dn' }, /* FN-MBM-SRC v1 */{ parts: [1, 2, 3], which: 'old' }]; /* FN-AO-SRC v1: AO part added; FN-DN-SRC v1: DN parts added */
   for (const arc of archives) {
   for (const part of arc.parts) {
     let doc;
@@ -5307,7 +5325,7 @@ function paintFrame() {
 }
 
 /* ================= downloads — FN archive (same logic as the app) ================= */
-let fnDlIndex = null, fnDlIndexPromise = null; const fnDlParts = {}; const aoDlParts = {}; const mbmDlParts = {}; /* FN-AO-SRC v1; FN-MBM-SRC v1 */
+let fnDlIndex = null, fnDlIndexPromise = null; const fnDlParts = {}; const aoDlParts = {}; const mbmDlParts = {}; const dnDlParts = {}; /* FN-AO-SRC v1; FN-MBM-SRC v1; FN-DN-SRC v1 adds dn */
 let oldDlIndex = null, oldDlIndexPromise = null; const oldDlParts = {};
 function getOldDlIndex() {
   if (oldDlIndex) return Promise.resolve(oldDlIndex);
@@ -5350,6 +5368,16 @@ function getDlSearchIndex() {
   return fnDlSearchIdxPromise;
 }
 function loadDlPart(part, which) {
+  /* FN-DN-SRC v1: DarkNama parts — the DN H3 files live in
+     download-data/dn/archive-part-1.html (films) and
+     archive-part-2.html (series); the global download-index maps
+     DN titles to part 'dn1'/'dn2'. */
+  if (part === 'dn1' || part === 'dn2' || which === 'dn') {
+    const n = (part === 'dn2' || Number(part) === 2) ? 2 : 1; /* string parts 'dn1'/'dn2' do not parse with Number() */
+    if (dnDlParts[n]) return Promise.resolve(dnDlParts[n]);
+    return fetch(DL_BASE + 'dn/archive-part-' + n + '.html').then(r => { if (!r.ok) throw new Error('archive'); return r.text(); })
+      .then(t => { const d = new DOMParser().parseFromString(t, 'text/html'); dnDlParts[n] = d; return d; });
+  }
   /* FN-AO-SRC v1: archive.org part — the AO H3 file lives in
      download-data/ao/archive-part-1.html; the global download-index
      maps AO titles to part 'ao'. */
@@ -5383,8 +5411,8 @@ function dlRecHasLinks(rec) { return !!(rec && (rec.groups.softsub.length || rec
 function mergeDlRecs(a, b) {
   if (!b) return a;
   const seen = new Set();
-  ['softsub', 'dubbed', 'nosub'].forEach(k => a.groups[k].forEach(x => seen.add((x.href || '').toLowerCase())));
-  ['softsub', 'dubbed', 'nosub'].forEach(k => b.groups[k].forEach(x => { const h = (x.href || '').toLowerCase(); if (h && !seen.has(h)) { seen.add(h); a.groups[k].push(x); } }));
+  ['softsub', 'dubbed', 'nosub'].forEach(k => a.groups[k].forEach(x => seen.add(((x.url || x.href) || '').toLowerCase()))); /* FN-DN-SRC v1: links carry .url, not .href */
+  ['softsub', 'dubbed', 'nosub'].forEach(k => b.groups[k].forEach(x => { const h = ((x.url || x.href) || '').toLowerCase(); if (h && !seen.has(h)) { seen.add(h); a.groups[k].push(x); } }));
   return a;
 }
 /* Resolve one title's download record: BOTH archives are read and their
@@ -5399,7 +5427,7 @@ async function resolveDlRecord(imdbId, num) {
       const part = index[imdbId];
       if (part) {
         const rec = recordFromArchive(await loadDlPart(part), imdbId);
-        if (dlRecHasLinks(rec)) { main = rec; mainSrc = (part === 'ao' ? 'ao' : part === 'mbm' ? 'mbm' : 'new'); } /* FN-MBM-SRC v1 */
+        if (dlRecHasLinks(rec)) { main = rec; mainSrc = (part === 'ao' ? 'ao' : part === 'mbm' ? 'mbm' : (part === 'dn1' || part === 'dn2') ? 'dn' : 'new'); } /* FN-MBM-SRC v1; FN-DN-SRC v1 adds dn */
       }
     } catch (e) {}
     try {
@@ -5410,8 +5438,8 @@ async function resolveDlRecord(imdbId, num) {
         if (dlRecHasLinks(rec)) extra = rec;
       }
     } catch (e) {}
-    if (main && extra) return { rec: mergeDlRecs(main, extra), src: 'both' };
-    if (main) return { rec: main, src: mainSrc };
+    if (main && extra) return { rec: mergeDlRecs(main, extra), src: 'both', hasDn: mainSrc === 'dn' }; /* FN-DN-SRC v1 */
+    if (main) return { rec: main, src: mainSrc, hasDn: mainSrc === 'dn' }; /* FN-DN-SRC v1 */
     if (extra) return { rec: extra, src: 'old' };
     return null;
   }
@@ -5429,7 +5457,7 @@ async function resolveDlRecord(imdbId, num) {
   return null;
 }
 async function resolveDlRecordByPart(imdbId, num, part, which) {
-  const base = which === 'old' ? 'old' : which === 'ao' ? 'ao' : which === 'mbm' ? 'mbm' : 'new'; /* FN-AO-SRC v1; FN-MBM-SRC v1 adds mbm */
+  const base = which === 'old' ? 'old' : which === 'ao' ? 'ao' : which === 'mbm' ? 'mbm' : which === 'dn' ? 'dn' : 'new'; /* FN-AO-SRC v1; FN-MBM-SRC v1 adds mbm; FN-DN-SRC v1 adds dn */
   const rec = recordFromArchive(await loadDlPart(part, base), imdbId || '', num);
   if (rec && (rec.groups.softsub.length || rec.groups.dubbed.length || rec.groups.nosub.length)) return { rec, src: base };
   return null;
@@ -5561,7 +5589,10 @@ async function fnDlTitleFallback(imdbId, tmdbKey, fbTitle, fbYear) {
     const rec = recordFromArchiveByTitle(doc, row.t, row.y);
     if (!rec || !dlRecHasLinks(rec)) return null;
     console.info('[fn-dl-fallback] title fallback hit: "' + row.t + '" (' + row.y + ') part ' + row.part + (row.old ? ' (old archive)' : '') + ' — ' + (rec.groups.softsub.length + rec.groups.dubbed.length + rec.groups.nosub.length) + ' links');
-    return { rec, src: which };
+    /* FN-DN-SRC v1: a DN row resolves through the title fallback too —
+       its src is 'dn', not 'new', so the box shows the DN hint. */
+    const fbSrc = (row.part === 'dn1' || row.part === 'dn2') ? 'dn' : which;
+    return { rec, src: fbSrc, hasDn: fbSrc === 'dn' };
   } catch (e) { return null; }
 }
 /* quality specs parsed from the real archive label + file name:
@@ -5758,6 +5789,12 @@ function dlTilesHtml(rec, opts) {
   ];
   var all = [];
   groups.forEach(function (g) { g.links.forEach(function (x) { all.push({ x: x, label: g.label, sp: parseDlSpecs(x) }); }); });
+  /* FN-DN-SRC v1: a DN box shows the DN code in the link sheet, not
+     the file's encoder token (DN files share hosts/encoders with
+     Simba files — the URL alone cannot tell them apart; the record's
+     src can). Variety titles keep the file encoder (their src is not
+     'dn'). */
+  if (o.src === 'dn') all.forEach(function (r) { r.sp.enc = 'DN'; });
   var isSeries = all.some(function (r) { return r.x.season || r.x.episode; });
   var totalMB = all.reduce(function (s, r) { return s + sizeToMB(r.x.size); }, 0);
   var allUrls = all.map(function (r) { return r.x.url; });
@@ -5778,7 +5815,10 @@ function dlTilesHtml(rec, opts) {
     + '<span class="fn-dl-tot"><b>' + all.length + '</b><span>لینک دانلود</span></span>'
     + (totalMB ? '<span class="fn-dl-tot"><b>' + faSize(fmtTotalMB(totalMB)) + '</b><span>حجم مجموع</span></span>' : '')
     + '<button class="fn-dl-copyall" data-dl-copyall>' + (isSeries ? 'کپی همه قسمت‌ها' : 'کپی همه لینک‌ها') + '</button>'
-    + '</div>';
+    + '</div>'
+    /* FN-DN-VPN v1 — one short line under the header, only for DN
+       boxes: some DN links need VPN off, some on. */
+    + (o.hasDn ? '<div class="fn-dn-hint">اگه دانلود نشد VPN رو خاموش کنین، اگه خاموش بود و نشد روشن کنین</div>' : '');
   /* series copy-all: quality chooser (filled in wireDlTiles) */
   if (isSeries) {
     out += '<div class="fn-dl-cabox" hidden><div class="fn-dl-ca-title"></div><div class="fn-dl-ca-chips"></div><button class="fn-dl-ca-close">بستن</button></div>';
@@ -6307,6 +6347,21 @@ async function fnExtDlHtml(tmdbKey) {
       + '</div>';
   } catch (e) { return ''; }
 }
+/* FN-DN-TRAILER v1 — direct-mp4 trailer index (download-data/dn/
+   dn-trailer-index.json, keyed "movie:<tmdb>"/"tv:<tmdb>"). Only the
+   249 films + 137 series with an extracted DarkNama trailer are in
+   it; every other title keeps the YouTube trailer. Fail-open: a
+   missing index just means no direct trailer. */
+let fnDnTrailerIndex = null, fnDnTrailerIndexPromise = null;
+function getDnTrailerIndex() {
+  if (fnDnTrailerIndex) return Promise.resolve(fnDnTrailerIndex);
+  if (!fnDnTrailerIndexPromise) fnDnTrailerIndexPromise = fetch(DL_BASE + 'dn/dn-trailer-index.json').then(r => { if (!r.ok) throw new Error('dn trailer index'); return r.json(); }).then(x => { fnDnTrailerIndex = x || {}; return fnDnTrailerIndex; }).catch(e => { fnDnTrailerIndex = {}; return fnDnTrailerIndex; });
+  return fnDnTrailerIndexPromise;
+}
+async function fnDnTrailerUrl(tmdbKey) {
+  if (!tmdbKey) return '';
+  try { const idx = await getDnTrailerIndex(); const ent = idx[tmdbKey]; if (!ent) return ''; return typeof ent === 'string' ? ent : (ent.url || ''); } catch (e) { return ''; }
+}
 async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUrl) {
   const body = $('#d-dl-body'); if (!body) return;
   if (!imdbId && fbTitle) {
@@ -6373,7 +6428,8 @@ async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUr
     }
     var headTitle = enTitle || faTitle || fbTitle || rec.title;
     var faPending = !faTitle && !!enTitle && typeof translateFa === 'function';
-    var dlBuilt = dlTilesHtml(rec, { poster: posterUrl || '', title: headTitle, faTitle: faTitle, faPending: faPending, meta: dlMeta, tmdbId: (tmdbKey && tmdbKey.indexOf('tv:') === 0) ? tmdbKey.slice(3) : '' });
+    var hasDnBox = resolved.src === 'dn' || !!resolved.hasDn; /* FN-DN-SRC v1 */
+    var dlBuilt = dlTilesHtml(rec, { poster: posterUrl || '', title: headTitle, faTitle: faTitle, faPending: faPending, meta: dlMeta, tmdbId: (tmdbKey && tmdbKey.indexOf('tv:') === 0) ? tmdbKey.slice(3) : '', src: resolved.src, hasDn: hasDnBox });
     body.innerHTML = dlBuilt.html;
     wireDlTiles(body, dlBuilt.ctx);
     if (faPending) {
@@ -6459,7 +6515,9 @@ function fnPlayEncShort(e) {
   if (l === 'film2media' || l === 'f2m') return 'F2M';
   if (l === 'donyayeserial' || l === 'donyaye serial') return 'DS';
   if (l === 'archive.org' || l === 'archiveorg') return 'AO'; /* FN-AO-SRC v1 */
+  if (l === 'darknama' || l === 'dn') return 'DN'; /* FN-DN-SRC v1 */
   if (l === 'mobomovies') return 'MBM'; /* FN-MBM-SRC v1 */
+  if (l === 'sermoviedown' || l === 'sermovie') return 'SR'; /* FN-SRM-SRC v1 */
   return e;
 }
 function fnPlaySpecs(p) {
@@ -6500,8 +6558,12 @@ async function fnPlayFetchPart(part) {
     /* FN-AO-SRC v1: the archive.org play-index lives in
        download-data/ao/play-index-ao.json (part 'ao').
        FN-MBM-SRC v1: the Mobomovies play-index lives in
-       download-data/mbm/play-index-mbm.json (part 'mbm'). */
-    var url = part === 'ao' ? DL_BASE + 'ao/play-index-ao.json' : part === 'mbm' ? DL_BASE + 'mbm/play-index-mbm.json' : DL_BASE + 'play-index-part-' + part + '.json';
+       download-data/mbm/play-index-mbm.json (part 'mbm').
+       FN-DN-SRC v1: the DarkNama play-index lives in
+       download-data/dn/play-index-dn.json (parts 'dn1'/'dn2').
+       FN-SRM-SRC v1: the SerMovieDown play-index lives in
+       download-data/srm/play-index-srm.json (part 'srm'). */
+    var url = part === 'ao' ? DL_BASE + 'ao/play-index-ao.json' : part === 'mbm' ? DL_BASE + 'mbm/play-index-mbm.json' : part === 'srm' ? DL_BASE + 'srm/play-index-srm.json' : (part === 'dn1' || part === 'dn2') ? DL_BASE + 'dn/play-index-dn.json' : DL_BASE + 'play-index-part-' + part + '.json';
     var r = await fetch(url, { signal: ctl.signal });
     if (!r.ok) throw new Error('play part');
     var j = await r.json(); FN_PLAY.parts[part] = j; return j;
@@ -6846,6 +6908,10 @@ function fnPlayRenderList() {
   var entry = FN_PLAY.entry, ctx = FN_PLAY.ctx;
   var body = $('#pl-body'), seasonBox = $('#pl-season');
   var joined = fnPlayJoined(entry);
+  /* FN-DN-SRC v1 — the VPN hint shows when the list holds DarkNama
+     rows (encoder 'darknama'): some DN links need VPN off, some on. */
+  var hasDnPlay = joined.some(function (p) { return String(p.encoder || '').toLowerCase() === 'darknama'; });
+  var dnPlayHint = hasDnPlay ? '<div class="pl-dn-hint">اگه پخش نشد VPN رو خاموش کنین، اگه خاموشه روشن کنین</div>' : '';
   if (ctx.type === 'tv') {
     var opts = [], seen = {};
     joined.forEach(function (p) {
@@ -6880,7 +6946,7 @@ function fnPlayRenderList() {
     var rows = joined.filter(function (p) { return (p.season || 0) === cur.season && (p.group || 'NoSub') === cur.group; });
     rows.sort(function (a, b) { return ((a.episode || 0) - (b.episode || 0)) || fnPlaySort(a, b); });
     FN_PLAY.rows = rows;
-    body.innerHTML = '<div class="pl-count">' + fnPlayFa(rows.length) + ' نسخه · فصل ' + fnPlayOrd(cur.season) + ' ' + fnPlayGroupShort(cur.group) + '</div>'
+    body.innerHTML = '<div class="pl-count">' + fnPlayFa(rows.length) + ' نسخه · فصل ' + fnPlayOrd(cur.season) + ' ' + fnPlayGroupShort(cur.group) + '</div>' + dnPlayHint
       + '<div class="pl-list">' + rows.map(function (p) {
         return fnPlayCardHtml(p, 'قسمت ' + fnPlayOrd(p.episode || 0) + ' ' + fnPlayResFa(p) + ' ' + fnPlayVersionLabel(p));
       }).join('') + '</div>';
@@ -6901,7 +6967,7 @@ function fnPlayRenderList() {
     plGroups.forEach(function (k) { plByGroup[k] = []; });
     rows.forEach(function (p) { plByGroup[fnPlayGroupKey(p)].push(p); });
     var plPresent = plGroups.filter(function (k) { return plByGroup[k].length; });
-    body.innerHTML = '<div class="pl-count">' + fnPlayFa(rows.length) + ' نسخه قابل پخش</div>'
+    body.innerHTML = '<div class="pl-count">' + fnPlayFa(rows.length) + ' نسخه قابل پخش</div>' + dnPlayHint
       + '<div class="pl-vchips"><button class="pl-vchip on" data-pl-v="all">همه</button>'
       + plPresent.map(function (k) { return '<button class="pl-vchip" data-pl-v="' + k + '">' + esc(fnPlayGroupLabel(k)) + '</button>'; }).join('') + '</div>'
       + plPresent.map(function (k) {
@@ -6987,7 +7053,7 @@ function fnPlayOpenOpt(p) {
   $('#fn-play-opt').classList.add('on');
 }
 /* ================= built-in player ================= */
-var FNP = { v: null, p: null, key: '', hash: '', dur: 0, subCues: [], subOn: false, subOff: 0, subColor: '#ffffff', subSize: 1, aspect: 0, rotated: false, uiTimer: null, lastSave: 0, marked: false, started: false, lastTap: 0, lastTapX: 0, singleTimer: null, tapX0: 0, tapT0: 0 };
+var FNP = { v: null, p: null, key: '', hash: '', dur: 0, subCues: [], subOn: false, subOff: 0, subColor: '#ffffff', subSize: 1, aspect: 0, rotated: false, uiTimer: null, lastSave: 0, marked: false, started: false, lastTap: 0, lastTapX: 0, singleTimer: null, tapX0: 0, tapT0: 0, trailer: false };
 var FNP_ASPECTS = [['متناسب با صفحه', ''], ['برش', 'fit-cover'], ['کشیده', 'fit-fill'], ['اندازه واقعی', 'fit-none']];
 var FNP_SUB_SIZES = [[0.85, 'کوچک'], [1, 'معمولی'], [1.25, 'بزرگ'], [1.5, 'خیلی بزرگ']];
 var FNP_SUB_COLORS = [['#ffffff', 'سفید'], ['#ffe600', 'زرد'], ['#00e5ff', 'آبی'], ['#7cfc00', 'سبز'], ['#ff7eb6', 'صورتی']];
@@ -7015,7 +7081,7 @@ function fnPlayerEnsureDom() {
     + '</div>'
     + '<div class="fnp-bottom" id="fnp-bottom"><div class="fnp-times"><span id="fnp-cur">۰۰:۰۰</span><span id="fnp-dur">۰۰:۰۰</span></div><input type="range" class="fnp-seek" id="fnp-seek" min="0" max="100" step="0.1" value="0" dir="ltr"></div>'
     + '<div class="fnp-load" id="fnp-load"><div class="spin"></div><p>در حال پخش، کمی منتظر بمانید</p></div>'
-    + '<div class="fnp-err" id="fnp-err"><b id="fnp-err-title">پخش ممکن نشد</b><p id="fnp-err-txt">در حال بررسی علت…</p><div class="row"><button class="btn btn-gold" id="fnp-err-retry">تلاش دوباره</button><button class="btn btn-gold" id="fnp-err-mx">پخش با MX</button><button class="btn btn-gold" id="fnp-err-vlc">پخش با VLC</button><button class="btn btn-ghost" id="fnp-err-copy">کپی لینک پخش</button></div></div>'
+    + '<div class="fnp-err" id="fnp-err"><b id="fnp-err-title">پخش ممکن نشد</b><p id="fnp-err-txt">در حال بررسی علت…</p><p id="fnp-err-vpn" hidden>اگه پخش نشد VPN رو خاموش کنین، اگه خاموشه روشن کنین</p><div class="row"><button class="btn btn-gold" id="fnp-err-retry">تلاش دوباره</button><button class="btn btn-gold" id="fnp-err-mx">پخش با MX</button><button class="btn btn-gold" id="fnp-err-vlc">پخش با VLC</button><button class="btn btn-ghost" id="fnp-err-copy">کپی لینک پخش</button></div></div>'
     + '<div class="fnp-menu" id="fnp-submenu"><h4>زیرنویس <button id="fnp-submenu-x" aria-label="بستن">×</button></h4><div id="fnp-sub-list"></div></div>'
     + '<div class="fnp-menu" id="fnp-setmenu"><h4>تنظیمات زیرنویس <button id="fnp-setmenu-x" aria-label="بستن">×</button></h4><div id="fnp-set-body"></div></div>'
     + '<div class="fnp-resume" id="fnp-resume"><div class="box"><h3>ادامه می‌دهید؟</h3><p id="fnp-resume-txt"></p><button class="btn btn-gold" id="fnp-resume-yes">ادامه پخش</button><button class="btn btn-ghost" id="fnp-resume-no">پخش از ابتدا</button></div></div>'
@@ -7043,6 +7109,7 @@ function fnPlayerGetSavedPos() {
 }
 function fnPlayerSavePos() {
   var v = FNP.v; if (!v || !FNP.started) return;
+  if (FNP.trailer) return; /* FN-DN-TRAILER v1: trailers save no position */
   try {
     if (v.duration && v.currentTime > 10 && v.currentTime < v.duration - 10) localStorage.setItem(fnPlayerPosKey(), JSON.stringify({ t: Math.floor(v.currentTime), dur: Math.floor(v.duration), at: Date.now() }));
     else if (v.duration && v.currentTime >= v.duration - 10) localStorage.removeItem(fnPlayerPosKey());
@@ -7256,7 +7323,7 @@ function fnPlayerWire(d) {
   v.addEventListener('playing', function () {
     $('#fnp-load').classList.remove('on');
     fnPlayerSetPP(); fnPlayerShowUi();
-    if (!FNP.marked && FNP.p) { FNP.marked = true; fnPlayMarkSeen(FNP.p); }
+    if (!FNP.marked && FNP.p && !FNP.trailer) { FNP.marked = true; fnPlayMarkSeen(FNP.p); } /* FN-DN-TRAILER v1 */
     FNP.started = true;
   });
   v.addEventListener('waiting', function () { if (!v.paused) $('#fnp-load').classList.add('on'); });
@@ -7315,9 +7382,17 @@ function fnPlayerWire(d) {
     else if (e.key === 'Escape') fnPlayerClose();
   });
 }
-function fnPlayerOpen(p) {
+function fnPlayerOpen(p, opts) {
   fnPlayerEnsureDom();
   var ctx = FN_PLAY.ctx, entry = FN_PLAY.entry;
+  /* FN-DN-TRAILER v1: trailer mode — same player, subtitle options
+     removed (fnp-trailer class), no resume, no saved position. */
+  var isTrailer = !!(opts && opts.trailer);
+  FNP.trailer = isTrailer;
+  var _ovFp = $('#ov-fnplayer');
+  if (_ovFp) _ovFp.classList.toggle('fnp-trailer', isTrailer);
+  var _ev = $('#fnp-err-vpn');
+  if (_ev) _ev.hidden = !isTrailer;
   FNP.p = p; FNP.ctx = ctx; FNP.entry = entry;
   FNP.hash = fnPlayHash(p.play_url || '');
   FNP.key = FN_PLAY.key;
@@ -7331,7 +7406,9 @@ function fnPlayerOpen(p) {
   $('#fnp-resume').classList.remove('on');
   var se = (ctx.type === 'tv' && p.season) ? 'فصل ' + fnPlayOrd(p.season) + ' · قسمت ' + fnPlayOrd(p.episode || 0) : 'فیلم';
   $('#fnp-title').textContent = (entry.title || ctx.title || 'پخش آنلاین');
-  $('#fnp-meta').textContent = se + ' · کیفیت ' + (fnPlayResFa(p) || '—') + ' ' + fnPlayVersionLabel(p);
+  /* FN-DN-TRAILER v1: a trailer has no quality/version — the meta
+     line just says تریلر. */
+  $('#fnp-meta').textContent = isTrailer ? 'تریلر' : se + ' · کیفیت ' + (fnPlayResFa(p) || '—') + ' ' + fnPlayVersionLabel(p);
   $('#fnp-sub-text').textContent = '';
   document.body.style.overflow = 'hidden';
   $('#ov-fnplayer').classList.add('on');
@@ -7341,7 +7418,7 @@ function fnPlayerOpen(p) {
   v.load();
   fnPlayerSetPP();
   fnPlayerShowUi();
-  var sv = fnPlayerGetSavedPos();
+  var sv = isTrailer ? null : fnPlayerGetSavedPos(); /* FN-DN-TRAILER v1: trailers never resume */
   if (sv) {
     $('#fnp-resume-txt').textContent = 'آخرین بار تا ' + fnPlayerFmt(sv.t) + ' از ' + fnPlayerFmt(sv.dur) + ' دیده‌اید.';
     $('#fnp-resume-yes').textContent = 'ادامه از ' + fnPlayerFmt(sv.t);
@@ -7350,6 +7427,20 @@ function fnPlayerOpen(p) {
     v.play().catch(function () { /* autoplay may need a tap; the center button stays available */ });
   }
 }
+/* ---------- FN-DN-TRAILER v1: direct-mp4 trailer in the internal player ----------
+   Only titles with an extracted DarkNama direct trailer URL use this —
+   every other title keeps the YouTube trailer modal (openTrailer).
+   The player is the SAME built-in player (same look and feel); the
+   options a trailer does not need (subtitles, subtitle settings) are
+   removed via the fnp-trailer class, and no resume position is saved. */
+function fnPlayTrailer(url, title, type) {
+  FN_PLAY.ctx = { type: type === 'tv' ? 'tv' : 'movie', title: title || 'تریلر', id: 0 };
+  FN_PLAY.entry = { title: title || 'تریلر', type: FN_PLAY.ctx.type };
+  FN_PLAY.key = '';
+  var p = { play_url: url, quality: '', group: 'NoSub', season: null, episode: null, encoder: 'darknama' };
+  fnPlayerOpen(p, { trailer: true });
+}
+
 function fnPlayerClose() {
   var v = FNP.v;
   if (v) { try { v.pause(); } catch (e) {} fnPlayerSavePos(); }
@@ -7358,7 +7449,7 @@ function fnPlayerClose() {
   var el = $('#ov-fnplayer'); if (el) el.classList.remove('on');
   if (v) { try { v.removeAttribute('src'); v.load(); } catch (e) {} }
   document.body.style.overflow = document.querySelector('.overlay.on') ? 'hidden' : '';
-  if (FNP.p && FN_PLAY.entry) fnPlayRenderList();
+  if (FNP.p && FN_PLAY.entry && !FNP.trailer) fnPlayRenderList(); /* FN-DN-TRAILER v1: a trailer closes back to the detail page, not the list */
   FNP.p = null; FNP.started = false;
 }
 
@@ -8644,7 +8735,10 @@ let dlaListCurrent = [];   /* the filtered list currently rendered (row index ->
 /* FN-AO-SRC v1: archive.org part — same H3 format, own folder
    (download-data/ao/); the section loader and the background preload
    both read this one list. */
-const DLA_ARCHIVES = [{ base: DL_BASE, parts: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], src: 'new' }, { base: DL_BASE + 'ao/', parts: [1], src: 'ao' }, { base: DL_BASE + 'mbm/', parts: [1], src: 'mbm' }, /* FN-MBM-SRC v1 */{ base: OLD_DL_BASE, parts: [1, 2, 3], src: 'old' }];
+/* FN-DN-SRC v1: DarkNama parts — same H3 format, own folder
+   (download-data/dn/); the section loader and the background preload
+   both read this one list. */
+const DLA_ARCHIVES = [{ base: DL_BASE, parts: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], src: 'new' }, { base: DL_BASE + 'ao/', parts: [1], src: 'ao' }, { base: DL_BASE + 'mbm/', parts: [1], src: 'mbm' }, { base: DL_BASE + 'dn/', parts: [1, 2], src: 'dn' }, /* FN-MBM-SRC v1 */{ base: OLD_DL_BASE, parts: [1, 2, 3], src: 'old' }];
 
 /* ---------- FN-DLA-PRELOAD v1: shared chunk ingestion ----------
    dlaIngestChunk is the exact parse initDlArchive used to do inline,
@@ -8713,8 +8807,10 @@ function dlaIngestChunk(ch, arc, n, entries, entryByImdb) {
   const votes = parseInt(((ch.match(/IMDb Votes:<\/b>\s*([\d,]+)/i) || [])[1] || '0').replace(/,/g, ''), 10) || 0;
   const ym = ch.match(/\/pnot\/(?:Movie|Series)\/(\d{4})\//i) || ch.match(/\/(?:movies?|series|tv)\/(\d{4})\//i) || ch.match(/\.(\d{4})\.(?:\d{3,4}p|bluray|web|hdtv|x26|softsub|dubbed)/i);
   /* FN-AO-SRC v1: archive.org URLs carry no year — fall back to the
-     H3 title's year (AO H3 titles carry the real year). */
-  const hym = arc.src === 'ao' || arc.src === 'mbm' ? /* FN-MBM-SRC v1: MBM H3 titles carry the real year, like AO */ (ch.split(/<\/h3>/i)[0] || '').match(/\b((?:19|20)\d{2})\b/) : null;
+     H3 title's year (AO H3 titles carry the real year).
+     FN-DN-SRC v1: same for DN series URLs (film URLs carry the year in
+     the file name; series URLs do not). */
+  const hym = (arc.src === 'ao' || arc.src === 'mbm' || arc.src === 'dn') ? /* FN-MBM-SRC v1: MBM H3 titles carry the real year, like AO */ (ch.split(/<\/h3>/i)[0] || '').match(/\b((?:19|20)\d{2})\b/) : null;
   const year = ym ? +ym[1] : hym ? +hym[1] : 0;
   const ent = { title, imdb: imdbNoCode, num: numNoCode, rate, votes, year, type, links, soft: /<b>(SoftSub|HardSub)<\/b>/i.test(ch), /* FN-MBM-SRC v1 */ dub: /<b>Dubbed<\/b>/i.test(ch), nosub: /<b>NoSub<\/b>/i.test(ch), part: n, src: arc.src, _hrefs: new Set(hrefs) };
   dlaAddEntry(ent, arc, n, entries, entryByImdb);
@@ -9069,7 +9165,7 @@ async function initDlArchive() {
   for (const arc of archives) {
   for (const n of arc.parts) {
     if (currentView !== 'dlarchive' && dlaEntries) break;
-    body.innerHTML = '<div class="state"><div class="spin"></div>در حال بارگذاری آرشیو دانلود Family Night…<br>آرشیو ' + (arc.src === 'new' ? 'جدید' : arc.src === 'ao' ? 'AO' : arc.src === 'mbm' ? 'MBM' : 'قبلی') + ' — بخش ' + n + ' از ' + arc.parts.length + ' — عنوان‌ها و لینک‌های واقعی آرشیو خوانده می‌شوند.</div>';
+    body.innerHTML = '<div class="state"><div class="spin"></div>در حال بارگذاری آرشیو دانلود Family Night…<br>آرشیو ' + (arc.src === 'new' ? 'جدید' : arc.src === 'ao' ? 'AO' : arc.src === 'mbm' ? 'MBM' : arc.src === 'dn' ? 'DN' : 'قبلی') + ' — بخش ' + n + ' از ' + arc.parts.length + ' — عنوان‌ها و لینک‌های واقعی آرشیو خوانده می‌شوند.</div>';
     const key = dlaPreKey(arc.src, n);
     const pre = DLA_PRE.parts[key];
     if (pre && pre.entries) {
@@ -9667,7 +9763,7 @@ async function openArchiveEntry(entry) {
     const body = $('#d-dl-body'); if (!body) return;
     if (!rec || (!rec.groups.softsub.length && !rec.groups.dubbed.length && !rec.groups.nosub.length && !(rec.groups.audio || []).length)) { body.innerHTML = '<div class="state">لینکی برای این عنوان پیدا نشد.</div>'; return; }
     var posterUrl = await dlPosterP;
-    var dlBuilt = dlTilesHtml(rec, { poster: posterUrl, title: entry.title, meta: (entry.type === 'tv' ? 'سریال' : 'فیلم'), tmdbId: dlTmdbId });
+    var dlBuilt = dlTilesHtml(rec, { poster: posterUrl, title: entry.title, meta: (entry.type === 'tv' ? 'سریال' : 'فیلم'), tmdbId: dlTmdbId, src: resolved.src, hasDn: resolved.src === 'dn' }); /* FN-DN-SRC v1 */
     body.innerHTML = dlBuilt.html;
     wireDlTiles(body, dlBuilt.ctx);
     void tokenSnapshot;

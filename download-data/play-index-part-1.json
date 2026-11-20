@@ -117471,6 +117471,37 @@
   },
   "year": 1975
  },
+ "tt0074156": {
+  "imdb": "tt0074156",
+  "num": 553,
+  "part": 1,
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Assault.On.Precinct.13.1976.720p.Farsi.Dubbed.HexDL.com.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Assault on Precinct 13",
+  "tmdb_key": "movie:17814",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1976
+ },
  "tt0075314": {
   "imdb": "tt0075314",
   "num": 832,
@@ -202021,6 +202052,51 @@
   },
   "year": 2025
  },
+ "tt33397303": {
+  "imdb": "tt33397303",
+  "num": 555,
+  "part": 1,
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Detective.Chen.2.2026.1080p.WEB-DL.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Detective.Chen.2.2026.720p.WEB-DL.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Detective Chen 2",
+  "tmdb_key": "movie:1707914",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
  "tt33455099": {
   "imdb": "tt33455099",
   "num": 1989,
@@ -205877,6 +205953,65 @@
   },
   "year": 2026
  },
+ "tt35076988": {
+  "imdb": "tt35076988",
+  "num": 533,
+  "part": 1,
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Chinna.Chinna.Aasai.2026.Malayalam.1080p.WEBDL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Chinna.Chinna.Aasai.2026.Malayalam.720p.WEBDL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Chinna.Chinna.Aasai.2026.Malayalam.480p.WEBDL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Chinna Chinna Aasai",
+  "tmdb_key": "movie:1404521",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
  "tt3511596": {
   "imdb": "tt3511596",
   "num": 2139,
@@ -209046,6 +209181,65 @@
    "url": "https://bvxbbajdhgxd9g87jwb463wx.abrtech.top/yA3f/Movie/2025/Henry.Johnson.2025/SUB/Henry.Johnson.2025.Trailer.mp4"
   },
   "year": 2025
+ },
+ "tt36300841": {
+  "imdb": "tt36300841",
+  "num": 226,
+  "part": 1,
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://node146.dl150m.info/film1/Awarapan.2.2026.Hindi.1080p.WEBDL.HardSub.Baharatmovie.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://node146.dl150m.info/film1/Awarapan.2.2026.Hindi.720p.WEBDL.HardSub.Baharatmovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://node146.dl150m.info/film1/Awarapan.2.2026.Hindi.480p.WEBDL.HardSub.Baharatmovie.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Awarapan 2",
+  "tmdb_key": "movie:1444466",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
  },
  "tt3631112": {
   "imdb": "tt3631112",
@@ -216054,6 +216248,51 @@
    "size_bytes": null,
    "size_text": "",
    "url": "https://bvxbbajdhgxd9g87jwb463wx.abrtech.top/yA3f/Movie/2026/This.Is.I.2026/SUB/This.Is.I.2026.Trailer.mp4"
+  },
+  "year": 2026
+ },
+ "tt39196986": {
+  "imdb": "tt39196986",
+  "num": 542,
+  "part": 1,
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Lydia.Et.Le.Vaisseau.Des.Tempetes.2026.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Lydia.Et.Le.Vaisseau.Des.Tempetes.2026.720p.WEBRip.x264.AAC-YTS.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Lydia and the Mist Rider",
+  "tmdb_key": "movie:1594694",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
   },
   "year": 2026
  },
@@ -225292,6 +225531,51 @@
    "url": "https://ymnyrfzzs84wqjrdxmmh85rn.abrtech.top/rD7g/Film/2023/Believer.Trailer._1.2018.mp4"
   },
   "year": 2018
+ },
+ "tt7130698": {
+  "imdb": "tt7130698",
+  "num": 585,
+  "part": 1,
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Sons.Will.2024.1080p.BluRay.x264.AAC5.1-YTS.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Sons.Will.2024.720p.BluRay.x264.AAC-YTS.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Warriors of the Wasteland",
+  "tmdb_key": "movie:687238",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2024
  },
  "tt7132924": {
   "imdb": "tt7132924",
