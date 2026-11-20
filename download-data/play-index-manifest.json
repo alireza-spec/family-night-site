@@ -2,7 +2,7 @@
  "description": "Split by download-archive part because the single play-index.json (118 MB) exceeds GitHub's 100 MB single-file limit.",
  "generated": "2026-11-20",
  "groups": "SoftSub = hardsub files grouped under SoftSub per the archive convention; Dubbed = dubbed; NoSub = no subtitle. Unjoined entries have play_url null and group null.",
- "joined": 205779,
+ "joined": 205830,
  "lookup": "Find the part via download-index.json (IMDb -> part) or download-title-index.json (tmdb -> part), then fetch play-index-part-<part>.json. Part 0 holds the 69 titles with no download-archive record.",
  "mp4_sized": 1122,
  "mp4_total": 10703,
@@ -69,7 +69,7 @@
    "part": 9
   },
   {
-   "bytes": 8974514,
+   "bytes": 8976047,
    "entries": 129,
    "file": "play-index-part-10.json",
    "part": 10
@@ -105,7 +105,7 @@
    "part": 15
   },
   {
-   "bytes": 3795883,
+   "bytes": 3813941,
    "entries": 346,
    "file": "play-index-part-16.json",
    "part": 16
@@ -142,6 +142,6 @@
   }
  ],
  "total_entries": 11569,
- "total_play_entries": 216719,
- "unjoined": 6278
+ "total_play_entries": 216761,
+ "unjoined": 6269
 }
