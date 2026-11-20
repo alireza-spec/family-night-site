@@ -2345,7 +2345,7 @@ function cardHtml(x, wide, noDl) {
   const t = titleOf(x), o = origOf(x);
   /* FN-NOIMG-PLACEHOLDER v1: fall back to the backdrop when there is no poster (already in the TMDB response — no extra fetch). */
   const poster = wide ? (x.backdrop_path || x.poster_path) : (x.poster_path || x.backdrop_path);
-  const img = poster ? '<img loading="lazy" decoding="async" src="' + IMG(poster, wide ? 'w780' : 'w342') + '" alt="' + esc(t) + '">' : '<div class="noimg"><span class="fn-mark">FN</span><span class="fn-title">' + esc(t) + '</span></div>';
+  const img = poster ? '<img loading="lazy" decoding="async" onerror="fnImgFail(this)" data-fn-watch src="' + IMG(poster, wide ? 'w780' : 'w342') + '" alt="' + esc(t) + '">' : '<div class="noimg"><span class="fn-mark">FN</span><span class="fn-title">' + esc(t) + '</span></div>';
   const rate = x.vote_average ? '<span class="rate">★ ' + Number(x.vote_average).toFixed(1) + '</span>' : '';
   const typ = '<span class="typ">' + (type === 'tv' ? 'سریال' : 'فیلم') + '</span>';
   /* Name order under the poster — ONE rule for every card: line 1
@@ -2366,7 +2366,7 @@ function cardHtml(x, wide, noDl) {
   const faHtml = faSrc ? '<span class="fa-name' + ((!faIsPersian || sameName(faSrc, headName)) ? ' endup' : '') + '">' + esc(faSrc) + '</span>' : '';
   const yr = yearOf(x);
   const yrHtml = yr ? '<span class="yr">' + esc(yr) + '</span>' : '';
-  return '<article class="card' + (wide ? ' wide' : '') + '"' + (needEn ? ' data-need-en="1"' : '') + ' data-open="' + type + ':' + x.id + '" tabindex="0" role="button" aria-label="' + esc(t) + ' — مشاهده جزئیات">'
+  return '<article class="card' + (wide ? ' wide' : '') + '"' + (needEn ? ' data-need-en="1"' : '') + ' data-card="' + type + ':' + x.id + '" data-sig="' + esc(fnRailItemSig(x)) + '" data-open="' + type + ':' + x.id + '" tabindex="0" role="button" aria-label="' + esc(t) + ' — مشاهده جزئیات">'
     + '<div class="poster">' + img + rate + typ + ((!noDl && fnDlIconHas(x)) ? fnDlBadgeHtml() : '')
     + '</div><h3 class="origline" dir="' + (headLatin ? 'ltr' : 'rtl') + '"><span class="oname' + (headLatin ? ' ltr' : '') + '">' + esc(headName) + '</span>' + yrHtml + '</h3><div class="sub">' + faHtml + '</div></article>';
 }
@@ -3055,6 +3055,251 @@ function fnWithDeadline(p, ms) {
      the caller. */
   return Promise.race([p, fnSleep(ms).then(() => { throw new Error('rail timeout'); })]);
 }
+/* ---------- FN-NO-VPN-R2 (2026-11-20): persistent cache + poster
+   watchdog + stable Editor's Pick. Round 1 proved the home rails
+   paint from snapshot; round 2 stops the app re-fetching every card
+   on every load: the painted rails live in a persistent localStorage
+   cache (paint-from-cache first, delta-merge after), posters reuse
+   the browser HTTP cache (TMDB serves them with Cache-Control
+   max-age ~1 year, so the same poster URL is never re-fetched across
+   rails / sections / app opens), and a hung poster becomes the
+   placeholder instead of a dark box. ---------- */
+var FN_RAILS_CACHE_KEY = 'fn-rails-v2';
+var FN_RAILS_CACHE_V = 2;
+function fnRailsCacheSave(rows, hero) {
+  try {
+    var slim = {};
+    Object.keys(rows || {}).forEach(function (k) {
+      slim[k] = (rows[k] || []).slice(0, 24).map(function (x) { return x; });
+    });
+    localStorage.setItem(FN_RAILS_CACHE_KEY, JSON.stringify({ v: FN_RAILS_CACHE_V, saved_at: Date.now(), day: new Date().toISOString().slice(0, 10), rows: slim, hero: (hero || []).slice(0, 20) }));
+  } catch (e) {}
+}
+function fnRailsCacheLoad() {
+  try {
+    var raw = localStorage.getItem(FN_RAILS_CACHE_KEY);
+    if (!raw) return null;
+    var o = JSON.parse(raw);
+    if (!o || o.v !== FN_RAILS_CACHE_V || !o.rows) return null;
+    if (Date.now() - (o.saved_at || 0) > 7 * 24 * 3600 * 1000) return null;
+    return o;
+  } catch (e) { return null; }
+}
+function fnRailCardKey(x) { return (x.media_type || x.type || 'movie') + ':' + x.id; }
+function fnRailItemSig(x) { return fnRailCardKey(x) + '|' + (x.poster_path || x.backdrop_path || '') + '|' + (x.vote_average || '') + '|' + (x.title || x.name || ''); }
+function fnSnapRows(rows) {
+  var snap = {};
+  Object.keys(rows || {}).forEach(function (k) { snap[k] = (rows[k] || []).map(function (x) { return fnRailItemSig(x); }); });
+  return snap;
+}
+function fnMergeRailRows(oldList, newList) {
+  /* Delta-merge one rail by card key: the merged list is the NEW list
+     (order + membership come from the fresh fetch), but the caller
+     learns exactly which keys are new/changed so the DOM paint can
+     keep the untouched cards' <img> elements (their posters stay in
+     the browser HTTP cache - no re-fetch). */
+  var oldMap = {};
+  (oldList || []).forEach(function (x) { oldMap[fnRailCardKey(x)] = fnRailItemSig(x); });
+  var changed = [];
+  (newList || []).forEach(function (x) {
+    var k = fnRailCardKey(x);
+    if (oldMap[k] !== fnRailItemSig(x)) changed.push(k);
+  });
+  return { list: newList || [], changed: changed };
+}
+var FN_CURATOR_CACHE_KEY = 'fn-curator-v2';
+function fnCuratorPicksCached() {
+  /* The Editor's Pick rail used to re-shuffle on EVERY home load, so
+     the rail showed 20 different works on every app open - and every
+     new pick's poster had to load fresh (dark boxes on a stalled
+     path). The picks are now stable per day: same 20, same order,
+     until the day changes or the stored ids stop resolving (a new
+     day re-picks; a changed curator list replaces the dead ids). */
+  var today = new Date().toISOString().slice(0, 10);
+  var all = fnCuratorItems();
+  var byId = {};
+  all.forEach(function (x) { byId[x.id] = x; });
+  try {
+    var raw = localStorage.getItem(FN_CURATOR_CACHE_KEY);
+    if (raw) {
+      var o = JSON.parse(raw);
+      if (o && o.day === today && o.ids && o.ids.length) {
+        var kept = o.ids.map(function (id) { return byId[id]; }).filter(Boolean);
+        if (kept.length >= 10) return kept;
+      }
+    }
+  } catch (e) {}
+  var fresh = fnCuratorRailItems();
+  try { localStorage.setItem(FN_CURATOR_CACHE_KEY, JSON.stringify({ day: today, ids: fresh.map(function (x) { return x.id; }) })); } catch (e) {}
+  return fresh;
+}
+var FN_POSTER_OK_KEY = 'fn-poster-ok-v1';
+var _fnPosterOkSet = null;
+function fnPosterOkSet() {
+  if (_fnPosterOkSet) return _fnPosterOkSet;
+  _fnPosterOkSet = {};
+  try {
+    var raw = localStorage.getItem(FN_POSTER_OK_KEY);
+    if (raw) JSON.parse(raw).forEach(function (p) { _fnPosterOkSet[p] = 1; });
+  } catch (e) {}
+  return _fnPosterOkSet;
+}
+function fnPosterOkMark(path) {
+  if (!path) return;
+  try {
+    var s = fnPosterOkSet();
+    if (s[path]) return;
+    s[path] = 1;
+    var keys = Object.keys(s);
+    if (keys.length > 2000) { keys.slice(0, keys.length - 2000).forEach(function (k) { delete s[k]; }); }
+    localStorage.setItem(FN_POSTER_OK_KEY, JSON.stringify(Object.keys(s)));
+  } catch (e) {}
+}
+function fnPosterOkHas(path) { try { return !!fnPosterOkSet()[path]; } catch (e) { return false; } }
+function fnImgFail(img) {
+  /* A poster that errored or stalled becomes the placeholder instead
+     of a dark box. People/director cards get their initial-letter
+     tile (the same fallback they already use when no image exists);
+     company logos get their initial tile; hero backdrops just hide
+     (the slide keeps its shade + title). */
+  try {
+    if (!img || !img.parentNode || (img.dataset && img.dataset.fnFailed)) return;
+    if (img.dataset) img.dataset.fnFailed = '1';
+    if (img.classList && img.classList.contains('bg')) { img.style.display = 'none'; return; }
+    var alt = img.getAttribute('alt') || '';
+    var person = (img.closest) ? img.closest('.person') : null;
+    var mat = (img.closest) ? img.closest('.mat') : null;
+    var poster = (img.closest) ? img.closest('.poster') : null;
+    var el = null;
+    if (person) {
+      el = document.createElement('div'); el.className = 'ph';
+      el.textContent = (alt || '?').trim().slice(0, 1) || '?';
+    } else if (mat) {
+      var nm = '';
+      var cc = img.closest('.compcard');
+      if (cc) nm = cc.getAttribute('data-coname') || '';
+      el = document.createElement('span'); el.className = 'ini'; el.style.background = '#3a3f52';
+      el.textContent = (nm || alt || '?').slice(0, 1) || '?';
+    } else if (poster) {
+      el = document.createElement('div'); el.className = 'noimg';
+      el.innerHTML = '<span class="fn-mark">FN</span><span class="fn-title">' + esc(alt) + '</span>';
+    } else { img.style.display = 'none'; return; }
+    img.parentNode.replaceChild(el, img);
+  } catch (e) {}
+}
+var _fnImgWatchTimer = null;
+var _fnImgWatchSeen = (typeof WeakMap !== 'undefined') ? new WeakMap() : null;
+var _fnImgWatchSeenList = [];
+function fnImgWatchdogStart() {
+  if (_fnImgWatchTimer) return;
+  /* Capture-phase load listener: a poster that loads OK joins the
+     persistent good-poster set - the same URL is then known-good
+     across every rail / section / app open, so the watchdog fails it
+     fast (4s) instead of waiting the full 10s when the HTTP cache
+     misses. */
+  try {
+    document.addEventListener('load', function (ev) {
+      var t = ev && ev.target;
+      if (t && t.tagName === 'IMG' && t.getAttribute && t.getAttribute('data-fn-watch') !== null && t.naturalWidth > 0) {
+        var src = t.getAttribute('src') || '';
+        var m = src.match(/\/t\/p\/[^/]+\/(.+)$/);
+        if (m) fnPosterOkMark(m[1]);
+      }
+    }, true);
+  } catch (e) {}
+  _fnImgWatchTimer = setInterval(function () {
+    try {
+      var now = Date.now();
+      var imgs = document.querySelectorAll('img[data-fn-watch]');
+      for (var i = 0; i < imgs.length; i++) {
+        var im = imgs[i];
+        if (im.dataset && im.dataset.fnFailed) continue;
+        var src = im.currentSrc || im.getAttribute('src') || '';
+        if (!src) continue; /* a lazy img that never started - leave it alone */
+        if (im.complete && im.naturalWidth === 0) { fnImgFail(im); continue; }
+        if (im.complete) continue;
+        var first = null;
+        if (_fnImgWatchSeen) {
+          first = _fnImgWatchSeen.get(im);
+          if (!first) { _fnImgWatchSeen.set(im, now); continue; }
+        } else {
+          first = null;
+          for (var j = 0; j < _fnImgWatchSeenList.length; j++) { if (_fnImgWatchSeenList[j][0] === im) { first = _fnImgWatchSeenList[j][1]; break; } }
+          if (!first) { _fnImgWatchSeenList.push([im, now]); continue; }
+        }
+        var path = '';
+        var mm = src.match(/\/t\/p\/[^/]+\/(.+)$/);
+        if (mm) path = mm[1];
+        var grace = fnPosterOkHas(path) ? 4000 : 10000;
+        if (now - first > grace) fnImgFail(im);
+      }
+    } catch (e) {}
+  }, 4000);
+}
+var _fnHomePainted = false;
+var _fnHomePrevRows = null;
+function fnPaintHome(rows) {
+  /* First paint builds the rails; every later paint is a delta: only
+     rails/cards whose data actually changed are touched, so the
+     untouched cards keep their <img> elements - and their posters,
+     already in the browser HTTP cache, are never re-requested.
+     EXCEPTION: while the progressive painter still has rails pending
+     (the #rails-more sentinel is in the DOM), its closure still
+     points at the OLD rows - a delta would leave the late rails
+     stale, so that transition repaints fully (posters still come
+     from the HTTP cache, no network). Once every rail is painted,
+     all later repaints are deltas. */
+  fnImgWatchdogStart();
+  if (!_fnHomePainted) { paintHomeRails(rows); _fnHomePainted = true; }
+  else if (document.querySelector('#rails-more')) { paintHomeRails(rows); }
+  else { fnPaintHomeRailsDelta(rows); }
+  _fnHomePrevRows = fnSnapRows(rows);
+  try { fnRailsCacheSave(rows, (typeof heroItems !== 'undefined') ? heroItems : []); } catch (e) {}
+}
+function fnPaintHomeRailsDelta(rows) {
+  var railsEl = document.querySelector('#home-rails');
+  if (!railsEl) { paintHomeRails(rows); return; }
+  var prev = _fnHomePrevRows || {};
+  var keys = [];
+  if (typeof HOME_ORDER !== 'undefined') HOME_ORDER.forEach(function (k) { if (rows[k] && rows[k].length) keys.push(k); });
+  Object.keys(rows).forEach(function (k) { if (keys.indexOf(k) < 0 && rows[k] && rows[k].length) keys.push(k); });
+  var anyNewRail = false;
+  keys.forEach(function (k) {
+    var sec = railsEl.querySelector('section[data-rail="' + k + '"]');
+    var newSigs = (rows[k] || []).map(function (x) { return fnRailItemSig(x); });
+    var oldSigs = prev[k] || null;
+    if (!sec) { anyNewRail = true; return; }
+    if (oldSigs && oldSigs.join('|') === newSigs.join('|')) return; /* identical - leave the DOM alone */
+    var track = sec.querySelector('.rail-track');
+    if (!track) { anyNewRail = true; return; }
+    /* Keyed update: reuse the article node for an unchanged card
+       (its <img> stays - no poster re-fetch); replace the node only
+       when its data changed; append new cards; drop removed ones. */
+    var byKey = {};
+    Array.prototype.forEach.call(track.querySelectorAll('article[data-card]'), function (a) { byKey[a.getAttribute('data-card')] = a; });
+    var frag = document.createDocumentFragment();
+    var seen = {};
+    (rows[k] || []).slice(0, 24).forEach(function (x) {
+      var key = fnRailCardKey(x);
+      seen[key] = 1;
+      var old = byKey[key];
+      if (old && old.getAttribute('data-sig') === fnRailItemSig(x)) { frag.appendChild(old); return; }
+      if (old) old.remove();
+      var tmp = document.createElement('div');
+      tmp.innerHTML = cardHtml(x);
+      var node = tmp.firstChild;
+      if (node) frag.appendChild(node);
+    });
+    Object.keys(byKey).forEach(function (key) { if (!seen[key] && byKey[key].parentNode) byKey[key].remove(); });
+    track.innerHTML = '';
+    track.appendChild(frag);
+  });
+  /* rails that vanished from the new rows leave the page too */
+  Array.prototype.forEach.call(railsEl.querySelectorAll('section[data-rail]'), function (sec) {
+    if (keys.indexOf(sec.getAttribute('data-rail')) < 0) sec.remove();
+  });
+  if (anyNewRail) { /* a rail appeared that the first paint never built - rebuild once */ paintHomeRails(rows); _fnHomePainted = true; }
+}
 /* FN-SHELL-FRESH v1 (2026-11-20): a stale cached shell is the other
    suspect for the no-VPN failure (the ?v= cache-buster test is
    running with the user). No service worker exists, so the shell
@@ -3128,6 +3373,23 @@ function paintHomeRails(rows) {
 }
 async function loadHome() {
   fnAvailEnsure(); /* FN-DL-ICON v1: load the avail-index early so home cards get their download badge */
+  /* FN-NO-VPN-R2: paint from the PERSISTENT rails cache first - the
+     rails (and, through the browser HTTP cache, their posters) are
+     already on this device, so home paints instantly with zero
+     network, even with the worker AND the snapshot both hung. The
+     snapshot fetch below then refreshes the cache; live upgrades
+     merge in as a delta (fnPaintHome). */
+  try {
+    var _cachedRails = fnRailsCacheLoad();
+    if (_cachedRails && _cachedRails.rows) {
+      homeSnap = { hero: _cachedRails.hero || [], rows: _cachedRails.rows };
+      heroItems = [].concat(_cachedRails.hero || []).slice(0, 20);
+      cacheItems(heroItems);
+      renderHero();
+      buildSidebar();
+      fnPaintHome(_cachedRails.rows);
+    }
+  } catch (e) {}
   let snap;
   try {
     snap = await fnFetchResilient(SNAP_HOME, {}, 8000, 3, 'json');
@@ -3172,14 +3434,16 @@ async function loadHome() {
   const _g3s = _g3.toISOString().slice(0, 10);
   const _dt = x => x.media_type === 'tv' ? (x.first_air_date || '') : (x.release_date || '');
   /* FN-EDITORS-PICK-RAIL: «پیشنهاد سردبیر» sits directly under the
-     trending row (user order). Shuffled on every home load, archive
-     works only, 20 items. Set before the first paint (static data). */
-  try { var _cur = fnCuratorRailItems(); if (_cur.length) rows.curator = _cur; } catch (e) { /* no curator rail */ }
+     trending row (user order). STABLE picks now (R2): the same 20,
+     same order, all day - fnCuratorPicksCached re-picks only on a new
+     day or when the stored ids stop resolving. Archive works only,
+     20 items. Set before the first paint (static data). */
+  try { var _cur = fnCuratorPicksCached(); if (_cur.length) rows.curator = _cur; } catch (e) { /* no curator rail */ }
   /* FN-NO-VPN-RESILIENCE v1: FIRST PAINT — snapshot rails now,
      before any live call. The old code awaited all four live
      upgrades SEQUENTIALLY before painting anything, so one stalled
      fetch left «در حال دریافت فهرست…» on screen forever. */
-  paintHomeRails(rows);
+  fnPaintHome(rows);
   fnShellFreshCheck();
   const _rowsFp = () => Object.keys(rows).sort().map(k => k + '=' + (rows[k] || []).map(x => (x.media_type || 'movie') + ':' + x.id).join(',')).join('|');
   const _rowsBefore = _rowsFp();
@@ -3207,10 +3471,17 @@ async function loadHome() {
       try {
         const _heroLive = await fnHeroLiveItems(_today, _g3s, _dt);
         if (_heroLive.length) {
-          heroItems = _heroLive;
-          heroIdx = 0;
-          cacheItems(heroItems);
-          renderHero();
+          /* R2: rebuild the hero only when its list actually changed
+             - a re-render recreates every backdrop <img>, so an
+             identical live list must not churn the hero. */
+          const _hFp = _heroLive.map(function (hh) { return (hh.media_type || 'movie') + ':' + hh.id + '|' + (hh.backdrop_path || hh.poster_path || ''); }).join(',');
+          const _hCur = (heroItems || []).map(function (hh) { return (hh.media_type || 'movie') + ':' + hh.id + '|' + (hh.backdrop_path || hh.poster_path || ''); }).join(',');
+          if (_hFp !== _hCur) {
+            heroItems = _heroLive;
+            heroIdx = 0;
+            cacheItems(heroItems);
+            renderHero();
+          }
         }
       } catch (e) { /* keep the snapshot hero */ }
     })(),
@@ -3239,10 +3510,13 @@ async function loadHome() {
     })()
   ];
   await Promise.allSettled(_jobs.map(j => fnWithDeadline(j, 30000)));
-  if (_rowsFp() !== _rowsBefore) paintHomeRails(rows);
+  /* R2: the live upgrade repaints as a DELTA (fnPaintHome) - only
+     changed cards are re-created, so unchanged posters are never
+     re-requested. */
+  if (_rowsFp() !== _rowsBefore) fnPaintHome(rows);
 }
 function railHtml(key, list) {
-  return '<section class="rail"><div class="rail-head"><h2>' + esc(ROW_LABELS[key] || key) + '</h2><button data-viewall="' + esc(key) + '" type="button">مشاهده همه <span aria-hidden="true">‹</span></button></div>'
+  return '<section class="rail" data-rail="' + esc(key) + '"><div class="rail-head"><h2>' + esc(ROW_LABELS[key] || key) + '</h2><button data-viewall="' + esc(key) + '" type="button">مشاهده همه <span aria-hidden="true">‹</span></button></div>'
     + '<div class="rail-track">' + list.slice(0, 24).map(x => cardHtml(x)).join('') + '</div></section>';
 }
 document.addEventListener('click', e => {
@@ -3266,7 +3540,7 @@ function renderHero() {
   el.innerHTML = heroItems.map((h, i) => {
     /* hero shows title, original name, IMDb score and year only —
        NO overview/synopsis on the hero (owner's call) */
-    return '<div class="hero-slide' + (i === heroIdx ? ' on' : '') + '"><img class="bg" data-hsrc="' + IMG(h.backdrop_path || h.poster_path, window.innerWidth < 900 ? 'w780' : 'w1280') + '" alt="">'
+    return '<div class="hero-slide' + (i === heroIdx ? ' on' : '') + '"><img class="bg" onerror="fnImgFail(this)" data-fn-watch data-hsrc="' + IMG(h.backdrop_path || h.poster_path, window.innerWidth < 900 ? 'w780' : 'w1280') + '" alt="">'
     + '<div class="hero-shade"></div><div class="hero-in" data-hero-text><h1>' + esc(titleOf(h)) + '</h1>'  + '<div class="meta">' + (h.vote_average ? '<span class="star">★ IMDb <span class="num">' + Number(h.vote_average).toFixed(1) + '</span></span>' : '') + (yearOf(h) ? '<span>سال <span class="num">' + esc(yearOf(h)) + '</span></span>' : '') + '</div>' + '</div></div>';
   }).join('')
     + '<button class="hero-nav" style="inset-inline-start:1.2rem" id="hero-prev" aria-label="قبلی"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m9 5 7 7-7 7"/></svg></button>'
@@ -3843,7 +4117,7 @@ async function loadArchSearchPage() {
   }
   if (page === 1 && !grid.querySelector('.card')) grid.innerHTML = Array.from({ length: 12 }, () => '<div class="skel" style="aspect-ratio:2/3"></div>').join('');
   try {
-    const d = await fnTypedSearch(type === 'tv' ? 'search/tv' : 'search/movie', q, page);
+    const d = await fnWithDeadline(fnTypedSearch(type === 'tv' ? 'search/tv' : 'search/movie', q, page), 15000);
     if (my !== archSearchSeq) { arch.loading = false; if (arch.query) loadArchSearchPage(); return; }
     /* the single-type index already guarantees the type; this
        filter is a hard second lock so a series can never slip onto
@@ -3917,7 +4191,7 @@ async function loadArchPage() {
   const active = arch.streams.filter(s => !s.done);
   let anyOk = false;
   try {
-    const batches = await Promise.all(active.map(async s => {
+    const batches = await fnWithDeadline(Promise.all(active.map(async s => {
       const isTv = s.type === 'tv';
       const dk = isTv ? 'first_air_date' : 'primary_release_date';
       let sort = sortUi;
@@ -3972,7 +4246,7 @@ async function loadArchPage() {
         s.page++;
         return items;
       } catch (e) { return []; /* a failed stream keeps its page and is retried on the next load */ }
-    }));
+    })), 15000);
     if (!anyOk) throw new Error('streams');
     let items = [].concat(...batches);
     const seen = new Set([...grid.querySelectorAll('[data-open]')].map(el => el.dataset.open));
@@ -4040,7 +4314,13 @@ async function loadArchPage() {
     if (!grid.querySelector('.card')) {
       /* worker unreachable → serve the FN snapshot list for this
          section instead of a dead end */
-      const local = (arch.localList && arch.localList.length) ? arch.localList : ((arch.type === 'movie' || arch.type === 'tv') ? localDiscover() : []);
+      /* FN-NO-VPN-R2: this was 'const local' and the line below
+         reassigned it (avail-filtered) - a TypeError that killed the
+         whole local fallback, so the see-all page kept its skeletons
+         forever whenever the avail index had loaded and local items
+         existed (exactly the no-VPN case: the avail index is
+         same-origin and loads fine). */
+      let local = (arch.localList && arch.localList.length) ? arch.localList : ((arch.type === 'movie' || arch.type === 'tv') ? localDiscover() : []);
       if (local.length) {
         if (FN_AVAIL.loaded) { arch.qualCount = 0; arch.availPending = []; local = (arch.collKey && FN_STRICT_CATS.indexOf(arch.collKey) > -1) ? fnAvailStrict(local) : fnAvailFirst50(local, arch, true, true); }
         cacheItems(local);
@@ -5009,9 +5289,19 @@ async function openDetail(type, id) {
   try { if (typeof getDlIndex === 'function') getDlIndex().catch(function () {}); } catch (e) {}
   try { if (typeof getTitleIndex === 'function') getTitleIndex().catch(function () {}); } catch (e) {}
   try { if (typeof getDnTrailerIndex === 'function') getDnTrailerIndex().catch(function () {}); } catch (e) {} /* FN-DN-TRAILER v1 */
+  /* FN-NO-VPN-R2: the sheet opens AT ONCE from the cached card (its
+     own title/poster/rating) + the local archive data - the download
+     box and play links resolve from the same-origin archive files,
+     which load fine. The live TMDB detail is an UPGRADE, not a gate:
+     it fills the extras in when it arrives (15s deadline); on
+     failure the local sheet stays, with its own retry button. */
+  var _cachedDetail = null;
+  try { _cachedDetail = itemCache.get(wlKey(type, id)) || null; } catch (e) {}
+  if (_cachedDetail) { try { renderLocalDetail(type, id, _cachedDetail, token); } catch (e) {} }
   let d;
-  try { d = await tmdbDetail(type, id); } catch (e) {
+  try { d = await fnWithDeadline(tmdbDetail(type, id), 15000); } catch (e) {
     if (token === detailToken) {
+      if (_cachedDetail) { /* the local sheet is already up - leave it */ return; }
       const cached = itemCache.get(wlKey(type, id));
       if (cached) { renderLocalDetail(type, id, cached, token); return; }
       sheet.innerHTML = '<button class="xbtn" data-close-detail style="position:fixed" aria-label="بستن"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button><div class="state" style="padding-top:6rem"><b>دریافت جزئیات ممکن نشد.</b><br>اتصال اینترنت را بررسی کنید و دوباره تلاش کنید.<br><button class="btn btn-gold" data-retry-detail style="margin-top:1rem">تلاش مجدد</button></div>';
@@ -5435,7 +5725,7 @@ function getOldDlIndex() {
 }
 function getDlIndex() {
   if (fnDlIndex) return Promise.resolve(fnDlIndex);
-  if (!fnDlIndexPromise) fnDlIndexPromise = fetch(DL_BASE + 'download-index.json').then(r => { if (!r.ok) throw new Error('index'); return r.json(); }).then(x => { fnDlIndex = x || {}; return fnDlIndex; });
+  if (!fnDlIndexPromise) fnDlIndexPromise = fnFetchResilient(DL_BASE + 'download-index.json', {}, 8000, 3, 'json').then(x => { fnDlIndex = x || {}; return fnDlIndex; }).catch(e => { fnDlIndexPromise = null; throw e; });
   return fnDlIndexPromise;
 }
 let titleDlIndex = null, titleDlIndexPromise = null;
@@ -5444,7 +5734,7 @@ function getTitleIndex() {
      titles that have no IMDb code (download-title-index.json, keyed
      "movie:<tmdbId>" / "tv:<tmdbId>" -> {part, num, title, year, imdb_id}) */
   if (titleDlIndex) return Promise.resolve(titleDlIndex);
-  if (!titleDlIndexPromise) titleDlIndexPromise = fetch(DL_BASE + 'download-title-index.json').then(r => { if (!r.ok) throw new Error('title index'); return r.json(); }).then(x => { titleDlIndex = x || {}; return titleDlIndex; });
+  if (!titleDlIndexPromise) titleDlIndexPromise = fnFetchResilient(DL_BASE + 'download-title-index.json', {}, 8000, 3, 'json').then(x => { titleDlIndex = x || {}; return titleDlIndex; }).catch(e => { titleDlIndexPromise = null; throw e; });
   return titleDlIndexPromise;
 }
 /* Search-index rows for the download-box title fallback (FN-DL-FALLBACK
@@ -6509,7 +6799,7 @@ async function fnExtDlHtml(tmdbKey) {
 let fnDnTrailerIndex = null, fnDnTrailerIndexPromise = null;
 function getDnTrailerIndex() {
   if (fnDnTrailerIndex) return Promise.resolve(fnDnTrailerIndex);
-  if (!fnDnTrailerIndexPromise) fnDnTrailerIndexPromise = fetch(DL_BASE + 'dn/dn-trailer-index.json').then(r => { if (!r.ok) throw new Error('dn trailer index'); return r.json(); }).then(x => { fnDnTrailerIndex = x || {}; return fnDnTrailerIndex; }).catch(e => { fnDnTrailerIndex = {}; return fnDnTrailerIndex; });
+  if (!fnDnTrailerIndexPromise) fnDnTrailerIndexPromise = fnFetchResilient(DL_BASE + 'dn/dn-trailer-index.json', {}, 8000, 3, 'json').then(x => { fnDnTrailerIndex = x || {}; return fnDnTrailerIndex; }).catch(e => { fnDnTrailerIndexPromise = null; return {}; });
   return fnDnTrailerIndexPromise;
 }
 async function fnDnTrailerUrl(tmdbKey) {
@@ -8171,6 +8461,32 @@ function playChannel(ch, el) {
      and English the fallback — bound once for the native path */
   fnBindNativeSubtitles(video);
   const token = ++tvPlayToken;
+  /* FN-NO-VPN-R2: a route that starts playing and then STALLS (the
+     user's beIN case: 0:00/1:00 forever) must move on. The old code
+     cleared the 14s arm timer on the first 'playing' event and never
+     re-armed it, so a stalled route sat forever with no error and no
+     next route. The watchdog below watches currentTime: no advance
+     for 12s while playing means the route is dead. */
+  var tvStallTimer = null;
+  var tvLastTime = 0;
+  var tvLastAdvance = 0;
+  const tvStallStart = () => {
+    if (tvStallTimer) return;
+    tvLastTime = 0; tvLastAdvance = Date.now();
+    tvStallTimer = setInterval(function () {
+      if (token !== tvPlayToken) { clearInterval(tvStallTimer); tvStallTimer = null; return; }
+      var v = video;
+      if (!v || v.paused || v.ended) return;
+      var t = v.currentTime || 0;
+      if (t > tvLastTime + 0.25) { tvLastTime = t; tvLastAdvance = Date.now(); return; }
+      if (playing && Date.now() - tvLastAdvance > 12000) {
+        playing = false;
+        tvLastAdvance = Date.now();
+        nextRoute();
+      }
+    }, 4000);
+  };
+  const tvStallStop = () => { if (tvStallTimer) { clearInterval(tvStallTimer); tvStallTimer = null; } };
   /* Same fallback idea as the FN app: Telewebion streams go through the
      iran-tv proxy first, everything else direct first — and whichever
      route fails, the other one is tried before giving up.
@@ -8190,8 +8506,12 @@ function playChannel(ch, el) {
   let routeIdx = 0, netRetries = 0, playing = false;
   const fail = msg => {
     if (token !== tvPlayToken) return;
+    clearTimeout(tvPlayTimer);
+    tvStallStop();
     $('#tv-status').textContent = '';
-    $('#tv-err').textContent = msg;
+    $('#tv-err').innerHTML = esc(msg) + ' <button class="btn btn-gold btn-sm" id="tv-retry" type="button" style="margin-top:.6rem">تلاش مجدد</button>';
+    var _rb = $('#tv-retry');
+    if (_rb) _rb.onclick = function () { if (tvCurrent) playChannel(tvCurrent, null); };
   };
   const armTimer = () => {
     clearTimeout(tvPlayTimer);
@@ -8230,6 +8550,7 @@ function playChannel(ch, el) {
   video.onplaying = () => { if (token === tvPlayToken) { playing = true; clearTimeout(tvPlayTimer); $('#tv-status').textContent = 'زنده'; $('#tv-err').textContent = ''; } };
   video.onerror = () => { if (token === tvPlayToken && !playing) nextRoute(); };
   $('#tv-status').textContent = 'در حال اتصال…';
+  tvStallStart();
   attach(tvRouteList[0]);
 }
 
@@ -8242,13 +8563,11 @@ async function wpAuth() {
   if (wp.token && Date.now() < wp.exp) return wp.token;
   if (wp.refresh) {
     try {
-      const r = await fetch(WP_PROXY + '/securetoken.googleapis.com/v1/token?key=' + FB_KEY, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: 'grant_type=refresh_token&refresh_token=' + encodeURIComponent(wp.refresh) });
-      const d = await r.json();
+      const d = await fnFetchResilient(WP_PROXY + '/securetoken.googleapis.com/v1/token?key=' + FB_KEY, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: 'grant_type=refresh_token&refresh_token=' + encodeURIComponent(wp.refresh) }, 8000, 2, 'json');
       if (d && d.id_token) { wp.token = d.id_token; wp.refresh = d.refresh_token || wp.refresh; wp.uid = d.user_id || wp.uid; wp.exp = Date.now() + (Number(d.expires_in || 3600) - 60) * 1000; return wp.token; }
     } catch (e) {}
   }
-  const r = await fetch(WP_PROXY + '/identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + FB_KEY, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ returnSecureToken: true }) });
-  const d = await r.json();
+  const d = await fnFetchResilient(WP_PROXY + '/identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + FB_KEY, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ returnSecureToken: true }) }, 8000, 2, 'json');
   if (!d || !d.idToken) throw new Error('auth');
   wp.token = d.idToken; wp.refresh = d.refreshToken; wp.uid = d.localId; wp.exp = Date.now() + (Number(d.expiresIn || 3600) - 60) * 1000;
   return wp.token;
@@ -8257,8 +8576,14 @@ async function wpDb(path, method, body, retry) {
   const tok = await wpAuth();
   const init = { method, headers: {} };
   if (body !== undefined) { init.headers['Content-Type'] = 'application/json'; init.body = JSON.stringify(body); }
-  const res = await fetch(WP_PROXY + '/' + path + '.json?auth=' + encodeURIComponent(tok), init);
-  if (res.status === 401 && !retry) { wp.token = ''; wp.exp = 0; return wpDb(path, method, body, true); }
+  var res;
+  try { res = await fnFetchResilient(WP_PROXY + '/' + path + '.json?auth=' + encodeURIComponent(tok), init, 8000, 2); }
+  catch (e) {
+    /* fnFetchResilient throws on 4xx (never retried) - a 401 still
+       means "token expired": clear it and retry once, as before. */
+    if (e && /http 401/.test(e.message || '') && !retry) { wp.token = ''; wp.exp = 0; return wpDb(path, method, body, true); }
+    throw e;
+  }
   if (!res.ok) { const t = await res.text().catch(() => ''); const er = new Error('RTDB ' + res.status + ' ' + t); er.code = res.status; throw er; }
   if (method === 'DELETE') return null;
   const txt = await res.text();
@@ -8384,11 +8709,12 @@ async function wpClearSource() {
 }
 function wpSourceKeyOf(s) { return s ? [s.kind, s.id, s.type, s.season, s.episode, s.url || ''].join('|') : ''; }
 async function wpPoll() {
-  if (!wp.room) return;
+  if (!wp.room || wp._pollBusy) return;
+  wp._pollBusy = true;
   let room;
-  try { room = await wpDb(wpRoomPath(), 'GET'); } catch (e) { return; }
-  if (!wp.room) return;
-  if (!room) { toast('این روم توسط سازنده حذف شد'); clearInterval(wp.poll); clearInterval(wp.hb); wp.room = ''; renderWpHub(); return; }
+  try { room = await wpDb(wpRoomPath(), 'GET'); } catch (e) { wp._pollBusy = false; return; }
+  if (!wp.room) { wp._pollBusy = false; return; }
+  if (!room) { toast('این روم توسط سازنده حذف شد'); clearInterval(wp.poll); clearInterval(wp.hb); wp.room = ''; renderWpHub(); wp._pollBusy = false; return; }
   const now = Date.now();
   const online = Object.values(room.presence || {}).filter(u => now - (u.at || 0) < 100000).length;
   const onEl = $('#wp-online'); if (onEl) onEl.textContent = online + ' نفر آنلاین';
@@ -8401,6 +8727,7 @@ async function wpPoll() {
     if (src && key) toast('پخش روم: ' + (src.title || ''));
   }
   paintWpChat(room.chat || {});
+  wp._pollBusy = false;
 }
 function renderWpRoomShell() {
   const body = $('#wp-body');
@@ -9210,7 +9537,7 @@ async function dlaPreWaitTakeover() {
    and — if the section is already open — merged into its live list. */
 async function dlaPreLoadPart(step) {
   const key = dlaPreKey(step.src, step.n);
-  const t = await (await fetch(step.base + 'archive-part-' + step.n + '.html')).text();
+  const t = await fnFetchResilient(step.base + 'archive-part-' + step.n + '.html', {}, 8000, 3, 'text');
   const fp = await dlaHashText(t);
   const prev = DLA_PRE.parts[key];
   if (prev && prev.fp === fp) return 'unchanged';
@@ -9314,12 +9641,14 @@ async function initDlArchive() {
   const body = $('#dla-body');
   const entries = [];
   const entryByImdb = new Map();
+  var dlaFailParts = [];
+  var _dlaConsecFails = 0, _dlaAbort = false, _dlaStart = Date.now();
   /* NEW archive first (16 parts), then OLD archive (3 parts): a title
      already in the new archive is NOT skipped in the old one — its old
      links are MERGED into the same entry (deduped by URL), so a title
      with 2 qualities in one archive and 4 in the other shows all 6. */
   const archives = DLA_ARCHIVES;
-  for (const arc of archives) {
+  _dlaArcLoop: for (const arc of archives) {
   for (const n of arc.parts) {
     if (currentView !== 'dlarchive' && dlaEntries) break;
     body.innerHTML = '<div class="state"><div class="spin"></div>در حال بارگذاری آرشیو دانلود Family Night…<br>آرشیو ' + (arc.src === 'new' ? 'جدید' : arc.src === 'ao' ? 'AO' : arc.src === 'mbm' ? 'MBM' : arc.src === 'dn' ? 'DN' : arc.src === 'srm' ? 'SR' : arc.src === 'sm' ? 'SM' : 'قبلی') + ' — بخش ' + n + ' از ' + arc.parts.length + ' — عنوان‌ها و لینک‌های واقعی آرشیو خوانده می‌شوند.</div>';
@@ -9342,7 +9671,7 @@ async function initDlArchive() {
       }
     }
     try {
-      const t = await (await fetch(arc.base + 'archive-part-' + n + '.html')).text();
+      const t = await fnFetchResilient(arc.base + 'archive-part-' + n + '.html', {}, 8000, 3, 'text');
       const fp = await dlaHashText(t);
       const chunks = t.split(/<h3>/i).slice(1);
       const partEntries = [], partByImdb = new Map();
@@ -9353,13 +9682,35 @@ async function initDlArchive() {
       DLA_PRE.parts[key] = { entries: partEntries, byImdb: partByImdb, fp: fp };
       dlaCacheSavePart(key, fp, partEntries);
       partEntries.forEach(function (ent) { dlaAddEntry(ent, arc, n, entries, entryByImdb); });
-    } catch (e) {}
+      _dlaConsecFails = 0;
+    } catch (e) {
+      dlaFailParts.push(arc.src + ':' + n);
+      /* R2: a dead network must not grind through ~24 parts x 26s.
+         Three failed parts in a row (or 40s total) aborts the loop -
+         the terminal error below fires with what (little) loaded. */
+      if (++_dlaConsecFails >= 3 || Date.now() - _dlaStart > 40000) _dlaAbort = true;
+    }
+    if (_dlaAbort) break _dlaArcLoop;
   }
   }
   DLA_PRE.takeover = false;
   dlaEntries = entries;
   dlaLoading = false;
   dlaLoaded = true;
+  if (!entries.length && dlaFailParts.length) {
+    /* every part failed: say so, with a retry - and leave dlaEntries
+       null so re-entering the section retries the load instead of
+       rendering an empty list. */
+    dlaEntries = null;
+    renderDlaFilters();
+    const _db = $('#dla-body');
+    if (_db) {
+      _db.innerHTML = '<div class="state"><b>بارگذاری آرشیو دانلود ممکن نشد.</b><br>اتصال اینترنت را بررسی کنید و دوباره تلاش کنید.<br><button class="btn btn-gold" id="dla-retry" style="margin-top:1rem">تلاش مجدد</button></div>';
+      var _dr2 = $('#dla-retry');
+      if (_dr2) _dr2.onclick = function () { dlaEntries = null; dlaLoading = false; initDlArchive(); };
+    }
+    return;
+  }
   renderDlaFilters();   /* full list arrived — all filters become active */
   dlaHydrateCache();   /* restore every country/year resolved in earlier visits before first paint */
   renderDlaList();
@@ -10077,7 +10428,7 @@ function sxPersonCard(p) {
   const line2 = (fa && en && en !== fa) ? en : '';
   return '<div class="person" data-person="' + p.id + '" role="button" tabindex="0" title="' + esc(line1) + '">'
     + (p.known_for_department === 'Directing' ? '<span class="dirbadge">Dir</span>' : '')
-    + (p.profile_path ? '<img loading="lazy" src="' + IMG(p.profile_path, 'w185') + '" alt="' + esc(line1) + '">' : '<div class="ph">' + esc((line1 || '?').slice(0, 1)) + '</div>')
+    + (p.profile_path ? '<img loading="lazy" onerror="fnImgFail(this)" data-fn-watch src="' + IMG(p.profile_path, 'w185') + '" alt="' + esc(line1) + '">' : '<div class="ph">' + esc((line1 || '?').slice(0, 1)) + '</div>')
     + '<b>' + esc(line1) + '</b>'
     + (line2 ? '<span class="en2">' + esc(line2) + '</span>' : '')
     + '<span>' + esc(deptFa(p.known_for_department)) + '</span></div>';
@@ -10133,7 +10484,7 @@ function sxCompCardCur(c, i) {
   return '<div class="compcard" data-co-cur="' + i + '" data-co-name="' + esc(c.name) + '" role="button" tabindex="0">' + mat + '<b>' + esc(c.fa || c.name) + '</b><span class="en">' + esc(c.name) + '</span><span class="tp">' + esc(CO_TYPE_FA[c.type] || c.type || '') + '</span></div>';
 }
 function sxCompCardTmdb(c) {
-  const mat = c.logo_path ? '<span class="mat"><img loading="lazy" src="' + IMG(c.logo_path, 'w185') + '" alt=""></span>' : '<span class="mat"><span class="ini" style="background:#3a3f52">' + esc((c.name || '?').slice(0, 1)) + '</span></span>';
+  const mat = c.logo_path ? '<span class="mat"><img loading="lazy" onerror="fnImgFail(this)" data-fn-watch src="' + IMG(c.logo_path, 'w185') + '" alt=""></span>' : '<span class="mat"><span class="ini" style="background:#3a3f52">' + esc((c.name || '?').slice(0, 1)) + '</span></span>';
   return '<div class="compcard" data-co-tmdb="' + c.id + '" data-coname="' + esc(c.name || '') + '" role="button" tabindex="0">' + mat + '<b>' + esc(c.name || '') + '</b><span class="en">' + esc(c.origin_country || '') + '</span><span class="tp">کمپانی</span></div>';
 }
 function sxCollCard(coll) {
@@ -10529,14 +10880,14 @@ async function loadPeopleBrowse(cfg, append) {
   try {
     while (added < 12 && guard < 4 && !cfg.done) {
       guard++;
-      const [enD, faD] = await Promise.all([
+      const [enD, faD] = await fnWithDeadline(Promise.all([
         tmdb('person/popular', { page: cfg.page }, 'en-US').catch(() => null),
         tmdb('person/popular', { page: cfg.page }, 'fa-IR').catch(() => null)
-      ]);
+      ]), 12000);
       cfg.page++;
       const d = enD || faD || { results: [], total_pages: 1 };
       const zipped = pnZipPage(enD, faD);
-      await pnFillFa(zipped);
+      await pnFillFaTimed(zipped, 8000);
       const list = zipped.filter(p => p.profile_path && !cfg.seen.has(p.id) && cfg.seen.add(p.id) && (cfg.mode === 'male' ? p.gender === 2 : cfg.mode === 'female' ? p.gender === 1 : p.known_for_department === 'Directing'));
       if (list.length) {
         if (body.querySelector('.state')) body.innerHTML = '<div class="pgrid"></div>';
@@ -10546,8 +10897,8 @@ async function loadPeopleBrowse(cfg, append) {
       }
       if (cfg.page > (d.total_pages || 1) || cfg.page > 25) cfg.done = true;
     }
-  } catch (e) { if (!append) body.innerHTML = '<div class="state">بارگذاری ممکن نشد؛ دوباره تلاش کنید.</div>'; }
-  if (!body.querySelector('.pgrid')) body.innerHTML = '<div class="state">موردی پیدا نشد.</div>';
+  } catch (e) { cfg.failed = true; if (!append) body.innerHTML = '<div class="state">بارگذاری ممکن نشد؛ دوباره تلاش کنید.</div>'; }
+  if (!body.querySelector('.pgrid')) body.innerHTML = cfg.failed ? '<div class="state">بارگذاری ممکن نشد؛ دوباره تلاش کنید.</div>' : '<div class="state">موردی پیدا نشد.</div>';
   more.style.display = cfg.done ? 'none' : 'block';
   more.onclick = () => loadPeopleBrowse(cfg, true);
   cfg.loading = false;
@@ -10618,7 +10969,7 @@ function sxDirCard(p) {
   const line2 = (fa && en && en !== fa) ? en : '';
   return '<div class="person" data-person="' + p.id + '" role="button" tabindex="0" title="' + esc(line1) + '">'
     + '<span class="dirbadge">Dir</span>'
-    + (p.profile_path ? '<img loading="lazy" src="' + IMG(p.profile_path, 'w185') + '" alt="' + esc(line1) + '">' : '<div class="ph">' + esc((line1 || '?').slice(0, 1)) + '</div>')
+    + (p.profile_path ? '<img loading="lazy" onerror="fnImgFail(this)" data-fn-watch src="' + IMG(p.profile_path, 'w185') + '" alt="' + esc(line1) + '">' : '<div class="ph">' + esc((line1 || '?').slice(0, 1)) + '</div>')
     + '<b>' + esc(line1) + '</b>'
     + (line2 ? '<span class="en2">' + esc(line2) + '</span>' : '') + '</div>';
 }
@@ -10655,6 +11006,7 @@ function renderDirGrid(cfg) {
   const q = dirNorm(cfg.query);
   const list = q ? cfg.all.filter(p => dirNorm(p.en).indexOf(q) > -1 || dirNorm(p.fa).indexOf(q) > -1) : cfg.all;
   if (!list.length && q) body.innerHTML = '<div class="state">کارگردانی با این نام پیدا نشد.</div>';
+  else if (!list.length && cfg.failed) body.innerHTML = '<div class="state">بارگذاری کارگردان‌ها ممکن نشد؛ دوباره تلاش کنید.<br><button class="btn btn-gold btn-sm" data-dir-retry type="button" style="margin-top:.6rem">تلاش مجدد</button></div>';
   else if (!list.length && !cfg.done) body.innerHTML = '<div class="state"><div class="spin"></div>در حال بارگذاری کارگردان‌ها…</div>';
   else if (!list.length) body.innerHTML = '<div class="state">موردی پیدا نشد.</div>';
   else body.innerHTML = '<div class="pgrid">' + list.map(sxDirCard).join('') + '</div>';
@@ -10662,6 +11014,8 @@ function renderDirGrid(cfg) {
     more.style.display = (!q && !cfg.done) ? 'block' : 'none';
     more.onclick = () => loadDirectors(cfg, true);
   }
+  var _dr = body.querySelector('[data-dir-retry]');
+  if (_dr) _dr.onclick = function () { cfg.failed = false; cfg.loading = false; loadDirectors(cfg, false); };
 }
 async function loadDirectors(cfg, append) {
   if (cfg.loading || cfg.done) return;
@@ -10670,9 +11024,11 @@ async function loadDirectors(cfg, append) {
     if (cfg.curIdx < FN_GREAT_DIRECTORS.length) {
       /* the curated masters, in order, 36 at a time */
       const chunk = FN_GREAT_DIRECTORS.slice(cfg.curIdx, cfg.curIdx + 36);
-      cfg.curIdx += chunk.length; dirMaster.resolved = cfg.curIdx;
-      const found = await Promise.all(chunk.map(dirResolveOne));
-      found.forEach(p => { if (p && !cfg.seen.has(p.id)) { cfg.seen.add(p.id); cfg.all.push(p); } });
+      const found = await fnWithDeadline(Promise.all(chunk.map(dirResolveOne)), 15000);
+      if (found.filter(Boolean).length) {
+        cfg.curIdx += chunk.length; dirMaster.resolved = cfg.curIdx;
+        found.forEach(p => { if (p && !cfg.seen.has(p.id)) { cfg.seen.add(p.id); cfg.all.push(p); } });
+      } else { cfg.failed = true; }
     } else {
       /* then the rest of the world's directors, in random order,
          names in both languages (en-US and fa-IR pages zipped) */
@@ -10680,10 +11036,10 @@ async function loadDirectors(cfg, append) {
       while (added < 18 && guard < 10 && !cfg.popDone) {
         guard++;
         const pg = cfg.popPage++;
-        const both = await Promise.all([
+        const both = await fnWithDeadline(Promise.all([
           tmdb('person/popular', { page: pg }, 'en-US').catch(() => null),
           tmdb('person/popular', { page: pg }, 'fa-IR').catch(() => null)
-        ]);
+        ]), 12000);
         const en = both[0], fa = both[1];
         if (!en) break;
         const faMap = new Map(((fa && fa.results) || []).map(p => [p.id, p.name]));
@@ -10691,15 +11047,16 @@ async function loadDirectors(cfg, append) {
           .filter(p => p.known_for_department === 'Directing' && p.profile_path && !cfg.seen.has(p.id) && cfg.seen.add(p.id))
           .map(p => { pnNoteOrig(p.id, p.original_name); return { id: p.id, en: pnEnName(p), fa: faMap.get(p.id) || '', profile_path: p.profile_path }; });
         for (let i = batch.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const t = batch[i]; batch[i] = batch[j]; batch[j] = t; }
-        await pnFillFa(batch);
+        await pnFillFaTimed(batch, 8000);
         batch.forEach(p => cfg.all.push(p));
         added += batch.length;
         if (pg >= (en.total_pages || 1) || pg > 80) cfg.popDone = true;
       }
       dirMaster.tailPage = cfg.popPage; dirMaster.tailDone = cfg.popDone;
     }
-  } catch (e) { /* whatever resolved so far stays on the page */ }
+  } catch (e) { cfg.failed = true; /* whatever resolved so far stays on the page */ }
   if (cfg.curIdx >= FN_GREAT_DIRECTORS.length && cfg.popDone) cfg.done = true;
+  if (!cfg.all.length && (cfg.curIdx > 0 || cfg.popPage > 1)) cfg.failed = true;
   cfg.loading = false;
   if (typeof sxBrowse !== 'undefined' && sxBrowse === cfg) renderDirGrid(cfg);
 }
@@ -10825,19 +11182,24 @@ async function loadCollectionsBrowse(cfg, append) {
   const body = $('#browse-body'), more = $('#browse-more');
   if (!append) body.innerHTML = '<div class="state"><div class="spin"></div>در حال بارگذاری کالکشن‌ها…</div>';
   const batch = FN_COLLECTIONS_ALL.slice(cfg.idx, cfg.idx + 12);
-  cfg.idx += batch.length;
   if (!batch.length) cfg.done = true;
   else {
-    const found = await Promise.all(batch.map(q => sxResolveCollection(q)));
-    const list = found.filter(Boolean);
-    if (body.querySelector('.state')) body.innerHTML = '<div class="collgrid"></div>';
-    const g = body.querySelector('.collgrid');
-    if (g && list.length) g.insertAdjacentHTML('beforeend', list.map(sxCollCard).join(''));
-    if (cfg.idx >= FN_COLLECTIONS_ALL.length) cfg.done = true;
+    var _cf = null;
+    try { _cf = await fnWithDeadline(Promise.all(batch.map(q => sxResolveCollection(q))), 15000); } catch (e) { cfg.failed = true; }
+    var _clist = _cf ? _cf.filter(Boolean) : [];
+    if (!cfg.failed) {
+      cfg.idx += batch.length;
+      if (body.querySelector('.state')) body.innerHTML = '<div class="collgrid"></div>';
+      const g = body.querySelector('.collgrid');
+      if (g && _clist.length) g.insertAdjacentHTML('beforeend', _clist.map(sxCollCard).join(''));
+      if (cfg.idx >= FN_COLLECTIONS_ALL.length) cfg.done = true;
+    }
   }
-  if (!body.querySelector('.collgrid')) body.innerHTML = '<div class="state">کالکشنی پیدا نشد.</div>';
+  if (!body.querySelector('.collgrid')) body.innerHTML = cfg.failed ? '<div class="state">بارگذاری کالکشن‌ها ممکن نشد؛ دوباره تلاش کنید.<br><button class="btn btn-gold btn-sm" data-coll-retry type="button" style="margin-top:.6rem">تلاش مجدد</button></div>' : '<div class="state">کالکشنی پیدا نشد.</div>';
   more.style.display = cfg.done ? 'none' : 'block';
   more.onclick = () => loadCollectionsBrowse(cfg, true);
+  var _cr = body.querySelector('[data-coll-retry]');
+  if (_cr) _cr.onclick = function () { cfg.failed = false; cfg.loading = false; loadCollectionsBrowse(cfg, false); };
   cfg.loading = false;
 }
 
@@ -10913,7 +11275,7 @@ async function loadCountryWorks(cfg, append) {
        its page total is zeroed — «نمایش بیشتر» then keeps paging the
        other type until TMDB itself runs out, no cap of our own. */
     const gParts = cfg.genre ? String(cfg.genre).split('|') : ['', ''];
-    const results = await Promise.all(types.map(async type => {
+    const results = await fnWithDeadline(Promise.all(types.map(async type => {
       const isTv = type === 'tv';
       const gid = isTv ? gParts[1] : gParts[0];
       if (cfg.genre && !gid) { if (isTv) cfg.tTotal = 0; else cfg.mTotal = 0; return []; }
@@ -10930,7 +11292,7 @@ async function loadCountryWorks(cfg, append) {
       const d = await tmdb('discover/' + type, params);
       if (isTv) cfg.tTotal = d.total_pages || 1; else cfg.mTotal = d.total_pages || 1;
       return (d.results || []).map(x => Object.assign({}, x, { media_type: type }));
-    }));
+    })), 15000);
     let items = [].concat(...results);
     items = items.filter(x => x.poster_path && !cfg.seen.has(x.media_type + ':' + x.id) && cfg.seen.add(x.media_type + ':' + x.id));
     if (cfg.sort === 'random') { for (let i = items.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const t = items[i]; items[i] = items[j]; items[j] = t; } }
@@ -11017,7 +11379,7 @@ async function sxLoadUpcoming() {
   var noneHtml = '<span style="color:var(--pearl);font-size:.88rem">موردی نیست.</span>';
   var errHtml = '<span style="color:var(--pearl);font-size:.88rem">در دسترس نیست.</span>';
   try {
-    var pages = await Promise.all([1, 2].map(function (pg) { return tmdb('movie/upcoming', { page: pg }).catch(function () { return { results: [] }; }); }));
+    var pages = await fnWithDeadline(Promise.all([1, 2].map(function (pg) { return tmdb('movie/upcoming', { page: pg }).catch(function () { return { results: [] }; }); })), 15000);
     var pool = [];
     var seen = {};
     pages.forEach(function (d) { (d.results || []).forEach(function (x) { if (x && x.id && x.poster_path && !seen[x.id]) { seen[x.id] = 1; pool.push(Object.assign({}, x, { media_type: 'movie' })); } }); });
@@ -11055,13 +11417,13 @@ async function sxInitSearchHome() {
   /* FN-CO-FIXES v1 (Issue 3): the four sections used to run SEQUENTIALLY - people, then directors, then collections, then Coming Soon - so a slow section delayed every section below it. They now run CONCURRENTLY; each paints when its own data is ready. */
   const jobs = [(async () => {
   try {
-    const pages = await Promise.all([1, 2, 3].map(async pg => {
+    const pages = await fnWithDeadline(Promise.all([1, 2, 3].map(async pg => {
       const [en, fa] = await Promise.all([
         tmdb('person/popular', { page: pg }, 'en-US').catch(() => ({ results: [] })),
         tmdb('person/popular', { page: pg }, 'fa-IR').catch(() => ({ results: [] }))
       ]);
       return pnZipPage(en, fa);
-    }));
+    })), 15000);
     const all = pages.flatMap(x => x);
     /* FN-CO-FIXES v1 (Issue 3): paint people IMMEDIATELY with the names in hand; fill Persian names in the background and re-paint only if any name actually changed. */
     const paintSbPeople = () => {
@@ -11079,14 +11441,14 @@ async function sxInitSearchHome() {
   }
   })(), (async () => {
   try {
-    const dirs = await Promise.all(FN_FAMOUS_DIRECTORS.map(async id => {
+    const dirs = await fnWithDeadline(Promise.all(FN_FAMOUS_DIRECTORS.map(async id => {
       const [en, fa] = await Promise.all([
         tmdb('person/' + id, {}, 'en-US').catch(() => null),
         tmdb('person/' + id, {}, 'fa-IR').catch(() => null)
       ]);
       if (!en && !fa) return null;
       return pnNormPerson(en || fa, fa ? fa.name : '');
-    }));
+    })), 15000);
     const list = dirs.filter(Boolean).filter(p => p.profile_path);
     /* FN-CO-FIXES v1 (Issue 3): paint directors IMMEDIATELY; fill Persian names in the background. */
     const paintSbDirs = () => { const de = $('#sb-directors'); if (de) de.innerHTML = list.length ? list.map(p => sxPersonCard(Object.assign({}, p, { known_for_department: 'Directing' }))).join('') : '<span style="color:var(--pearl);font-size:.88rem">موردی نیست.</span>'; };
@@ -11096,7 +11458,7 @@ async function sxInitSearchHome() {
   } catch (e) { const de = $('#sb-directors'); if (de) de.innerHTML = '<span style="color:var(--pearl);font-size:.88rem">در دسترس نیست.</span>'; }
   })(), (async () => {
   try {
-    const found = await Promise.all(FN_FEATURED_COLLECTIONS.map(q => sxResolveCollection(q)));
+    const found = await fnWithDeadline(Promise.all(FN_FEATURED_COLLECTIONS.map(q => sxResolveCollection(q))), 15000);
     const list = found.filter(Boolean);
     const ce = $('#sb-coll-rail'); if (ce) ce.innerHTML = list.length ? list.map(sxCollCard).join('') : '<span style="color:var(--pearl);font-size:.88rem">موردی نیست.</span>';
   } catch (e) { const ce = $('#sb-coll-rail'); if (ce) ce.innerHTML = '<span style="color:var(--pearl);font-size:.88rem">در دسترس نیست.</span>'; }
@@ -11140,7 +11502,7 @@ async function sxSearchMain(q) {
      its sections in when it arrives, never wiping the local rows. */
   fnLocalSearchEnsure();
   fnLocalRenderSearch(res, q, searchType, seq);
-  try { await sxSearchPage(seq, false); }
+  try { await fnWithDeadline(sxSearchPage(seq, false), 15000); }
   catch (e) {
     if (seq !== searchSeq) return;
     /* TMDB failed: the local rows already stand — only mark the online
@@ -11484,6 +11846,8 @@ function fnLocalPosters(container) {
         if (!ph) return;
         var img = document.createElement('img');
         img.loading = 'lazy'; img.decoding = 'async';
+        img.setAttribute('data-fn-watch', '');
+        img.onerror = function () { try { fnImgFail(this); } catch (e) {} };
         img.src = IMG(p, 'w342'); img.alt = e.t || '';
         ph.replaceWith(img);
       });
@@ -11952,7 +12316,7 @@ async function calLoadDay(dateStr) {
       jobs.push(tmdb('discover/movie', { sort_by: 'popularity.desc', with_genres: 16, 'primary_release_date.gte': dateStr, 'primary_release_date.lte': dateStr }).then(d => (d.results || []).map(x => Object.assign({}, x, { media_type: 'movie' }))).catch(() => []));
       jobs.push(tmdb('discover/tv', { sort_by: 'popularity.desc', with_genres: 16, 'first_air_date.gte': dateStr, 'first_air_date.lte': dateStr }).then(d => (d.results || []).map(x => Object.assign({}, x, { media_type: 'tv' }))).catch(() => []));
     }
-    const lists = await Promise.all(jobs);
+    const lists = await fnWithDeadline(Promise.all(jobs), 15000);
     const seen = new Set();
     /* FN-AVAIL-FILTER v1: one day is at most 42 items, so the whole
        day sits inside the first 50 — qualifying first, rest after. */
@@ -12007,11 +12371,11 @@ async function loadCalendar() {
   });
   calLoadDay(today);
   try {
-    const [u1, u2, air] = await Promise.all([
+    const [u1, u2, air] = await fnWithDeadline(Promise.all([
       tmdb('movie/upcoming', { page: 1 }).catch(() => ({ results: [] })),
       tmdb('movie/upcoming', { page: 2 }).catch(() => ({ results: [] })),
       tmdb('tv/airing_today', { page: 1 }).catch(() => ({ results: [] }))
-    ]);
+    ]), 15000);
     const seen = new Set();
     /* live dates only: nothing older than today is ever shown here */
     const items = [].concat(u1.results || [], u2.results || []).filter(x => x.poster_path && x.release_date && x.release_date >= today && !seen.has(x.id) && seen.add(x.id)).map(x => Object.assign({}, x, { media_type: 'movie' }));
@@ -12214,9 +12578,9 @@ async function qzStart(type, level) {
   const body = $('#tests-body');
   body.innerHTML = '<div class="state"><div class="spin"></div>در حال ساخت سؤال‌ها از بانک بزرگ TMDB…</div>';
   try {
-    let pool = await qzFetchPool(type, level);
+    let pool = await fnWithDeadline(qzFetchPool(type, level), 20000);
     if (pool.length < 14 && level !== 'mid') {
-      const extra = await qzFetchPool(type, 'mid').catch(() => []);
+      const extra = await fnWithDeadline(qzFetchPool(type, 'mid'), 20000).catch(() => []);
       const seen = new Set(pool.map(x => x.id));
       extra.forEach(x => { if (!seen.has(x.id)) { seen.add(x.id); pool.push(x); } });
     }
