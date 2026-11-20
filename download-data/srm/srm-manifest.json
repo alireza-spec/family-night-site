@@ -6,8 +6,8 @@
  "live_base_head": "ea91d365ade37dcb473ea2044e1da6148bfb0993",
  "start_num": 11590,
  "counts": {
-  "new_titles": 41,
-  "new_links": 727,
+  "new_titles": 42,
+  "new_links": 735,
   "have_new_titles": 277,
   "have_new_links_added": 3555,
   "have_old_titles": 35,
@@ -15,7 +15,7 @@
   "have_mbm_titles": 2,
   "have_mbm_links_added": 46,
   "total_titles": 355,
-  "total_links_added": 4946,
+  "total_links_added": 4954,
   "by_year": {
    "2011": 1,
    "2018": 2,
@@ -25,22 +25,23 @@
    "2022": 2,
    "2023": 6,
    "2024": 19,
-   "2025": 6
+   "2025": 6,
+   "2017": 1
   },
   "by_resolution": {
    "1080p": 209,
    "540p": 12,
-   "720p": 506
+   "720p": 514
   },
   "by_version": {
    "NoSub": 445,
-   "SoftSub": 282
+   "SoftSub": 290
   },
   "by_type": {
    "movie": 5,
-   "tv": 36
+   "tv": 37
   },
-  "total_bytes_new": 217928380939
+  "total_bytes_new": 221361418760
  },
  "partition": {
   "new": 41,
@@ -1079,6 +1080,15 @@
    "imdb": "tt9619902",
    "tmdb": 574452,
    "nlinks": 2
+  },
+  {
+   "num": 11631,
+   "title": "Actress",
+   "year": 2017,
+   "type": "tv",
+   "imdb": null,
+   "tmdb": 76354,
+   "nlinks": 8
   }
  ],
  "have_new_added": [
