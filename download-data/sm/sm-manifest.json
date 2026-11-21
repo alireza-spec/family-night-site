@@ -211,23 +211,24 @@
  ],
  "counts": {
   "by_resolution": {
-   "1080p": 47,
-   "480p": 132,
-   "720p": 220
+   "1080p": 48,
+   "480p": 133,
+   "720p": 221
   },
   "by_type": {
-   "movie": 10,
+   "movie": 11,
    "series": 21
   },
   "by_version": {
    "Dubbed": 10,
-   "HardSub": 352,
+   "HardSub": 355,
    "SoftSub": 37
   },
   "by_year": {
    "1991": 1,
    "1992": 1,
    "1997": 1,
+   "2012": 1,
    "2015": 1,
    "2016": 1,
    "2018": 3,
@@ -237,18 +238,18 @@
    "2025": 4,
    "2026": 13
   },
-  "new_links": 399,
-  "new_play_rows_expanded": 487,
-  "new_titles": 31,
-  "total_links_added": 399,
-  "total_titles": 31,
-  "variety_links_added": 0,
-  "variety_links_parsed": 0,
-  "variety_play_rows_expanded": 0,
-  "variety_titles": 0
+  "new_links": 402,
+  "new_play_rows_expanded": 490,
+  "new_titles": 32,
+  "total_links_added": 402,
+  "total_titles": 32,
+  "variety_links_added": 79,
+  "variety_links_parsed": 82,
+  "variety_play_rows_expanded": 76,
+  "variety_titles": 12
  },
- "generated": "2026-11-20",
- "live_base_head": "cc1419452bec94ac734b6e13fc9f922405227a39",
+ "generated": "2026-11-21",
+ "live_base_head": "17451e06ee91694133e7a488f0f23187606902cb",
  "new_titles": [
   {
    "imdb": "tt38674953",
@@ -590,6 +591,17 @@
    "tmdb": 1551025,
    "type": "movie",
    "year": 2026
+  },
+  {
+   "imdb": "tt2360334",
+   "nlinks": 3,
+   "note": "twice-daily 2026-11-21 AM; true year 2012 (Simba says 2026)",
+   "num": 12467,
+   "play_rows": 3,
+   "title": "Brawl",
+   "tmdb": 166178,
+   "type": "movie",
+   "year": 2012
   }
  ],
  "nosub_only_new": [],
@@ -734,6 +746,103 @@
   }
  ],
  "url_dupes_in_dn_records": [],
- "variety_added": [],
+ "variety_added": [
+  {
+   "existing_num": 3946,
+   "imdb": "tt14557188",
+   "nlinks_added": 3,
+   "part": "old3",
+   "play_rows_added": 3,
+   "title": "Soft & Quiet"
+  },
+  {
+   "existing_num": 2006,
+   "imdb": "tt0844993",
+   "nlinks_added": 1,
+   "part": "old3",
+   "play_rows_added": 1,
+   "title": "Hoodwinked Too! Hood vs. Evil"
+  },
+  {
+   "existing_num": 9115,
+   "imdb": "tt32375763",
+   "nlinks_added": 5,
+   "part": 4,
+   "play_rows_added": 5,
+   "title": "12 12 12"
+  },
+  {
+   "existing_num": 9131,
+   "imdb": "tt31842126",
+   "nlinks_added": 18,
+   "part": 4,
+   "play_rows_added": 18,
+   "title": "The Good Daughter"
+  },
+  {
+   "existing_num": 19,
+   "imdb": "tt29256561",
+   "nlinks_added": 1,
+   "part": 1,
+   "play_rows_added": 1,
+   "title": "The Beast"
+  },
+  {
+   "existing_num": 5591,
+   "imdb": "tt0055184",
+   "nlinks_added": 2,
+   "part": 3,
+   "play_rows_added": 2,
+   "title": "The Misfits"
+  },
+  {
+   "existing_num": 7293,
+   "imdb": "tt0057091",
+   "nlinks_added": 3,
+   "part": 3,
+   "play_rows_added": 3,
+   "title": "The Leopard"
+  },
+  {
+   "existing_num": 9102,
+   "imdb": "tt37148648",
+   "nlinks_added": 6,
+   "part": 4,
+   "play_rows_added": 6,
+   "title": "Blossom in Darkness"
+  },
+  {
+   "existing_num": 11,
+   "imdb": "tt49241977",
+   "nlinks_added": 3,
+   "part": 1,
+   "play_rows_added": 3,
+   "title": "Wolves Up Close with Bertie Gregory"
+  },
+  {
+   "existing_num": 9,
+   "imdb": "tt47777933",
+   "nlinks_added": 3,
+   "part": 1,
+   "play_rows_added": 3,
+   "title": "Zenigata Heiji"
+  },
+  {
+   "existing_num": 20,
+   "imdb": "tt39850240",
+   "nlinks_added": 3,
+   "part": 1,
+   "play_rows_added": 0,
+   "title": "Angel and the Badman"
+  },
+  {
+   "existing_num": 11239,
+   "imdb": "tt36786185",
+   "nlinks_added": 30,
+   "part": 16,
+   "play_rows_added": 30,
+   "title": "The Altruists"
+  }
+ ],
  "zero_h3_variety": []
 }

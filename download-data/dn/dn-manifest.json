@@ -4,13 +4,13 @@
   "by_resolution": {
    "1080p": 552,
    "360p": 1,
-   "480p": 2899,
+   "480p": 2921,
    "540p": 219,
-   "720p": 4087
+   "720p": 4192
   },
   "by_version_family": {
    "Dubbed": 710,
-   "Subtitled": 6968,
+   "Subtitled": 7095,
    "unknown": 80
   },
   "by_year": {
@@ -54,31 +54,31 @@
    "2011": 6,
    "2012": 10,
    "2013": 12,
-   "2014": 14,
+   "2014": 15,
    "2015": 20,
    "2016": 23,
    "2017": 19,
    "2018": 24,
    "2019": 42,
-   "2020": 31,
-   "2021": 46,
-   "2022": 32,
-   "2023": 42,
+   "2020": 32,
+   "2021": 48,
+   "2022": 33,
+   "2023": 43,
    "2024": 36,
    "2025": 42,
    "2026": 29
   },
   "ext_overlap": 1,
   "films": 302,
-  "play_rows": 7758,
-  "series": 205,
+  "play_rows": 7885,
+  "series": 211,
   "skipped_no_links": 8,
-  "total": 507,
-  "trailer_keys": 444,
+  "total": 513,
+  "trailer_keys": 449,
   "trailers_dropped": 70,
-  "variety_patched": 266,
-  "variety_play_created": 35,
-  "variety_play_rows_added": 3468,
+  "variety_patched": 270,
+  "variety_play_created": 38,
+  "variety_play_rows_added": 3534,
   "variety_stale_links": 531
  },
  "end_num": 11589,
@@ -3417,7 +3417,7 @@
   }
  ],
  "generated": "2026-11-21",
- "live_base_head": "1ce59ef8658ecbdf373a7d0b9b04667b6f56f3a7",
+ "live_base_head": "17451e06ee91694133e7a488f0f23187606902cb",
  "nosub_only_titles": [
   {
    "imdb": "tt1124377",
@@ -7563,6 +7563,72 @@
    "title": "Novoland: The Castle in the Sky",
    "tmdb": 68057,
    "year": 2016
+  },
+  {
+   "title": "Helstrom",
+   "year": 2020,
+   "imdb": "tt10266874",
+   "tmdb": 88987,
+   "num": 12460,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 20
+  },
+  {
+   "title": "Alice Gear Aegis Expansion",
+   "year": 2023,
+   "imdb": "tt27417791",
+   "tmdb": 156098,
+   "num": 12461,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 24
+  },
+  {
+   "title": "Renai Flops",
+   "year": 2022,
+   "imdb": "tt21606344",
+   "tmdb": 195990,
+   "num": 12462,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 12
+  },
+  {
+   "title": "2.43 Seiin Koukou Danshi Volley Bu",
+   "year": 2021,
+   "imdb": "tt13286958",
+   "tmdb": 105004,
+   "num": 12463,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 12
+  },
+  {
+   "title": "Witch Craft Works",
+   "year": 2014,
+   "imdb": "tt3341534",
+   "tmdb": 65614,
+   "num": 12464,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 12
+  },
+  {
+   "title": "Fitoor",
+   "year": 2021,
+   "imdb": "tt14155890",
+   "tmdb": 133860,
+   "num": 12465,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 47
   }
  ],
  "skipped_not_merged": [
@@ -14118,6 +14184,74 @@
    "reclassified_no_h3": true,
    "tmdb": 62110,
    "type": "tv"
+  },
+  {
+   "dn_title": "The Club - Kulüp",
+   "dn_year": 2021,
+   "type": "tv",
+   "imdb": "tt13317582",
+   "tmdb": 136125,
+   "archive_part": 3,
+   "archive_src": "old",
+   "archive_h3_num": 4395,
+   "families": [
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 26,
+   "play_rows_added": 26,
+   "stale_families_skipped": []
+  },
+  {
+   "dn_title": "The Pillars of the Earth",
+   "dn_year": 2010,
+   "type": "tv",
+   "imdb": "tt1453159",
+   "tmdb": 33234,
+   "archive_part": 2,
+   "archive_src": "old",
+   "archive_h3_num": 6130,
+   "families": [
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 16,
+   "play_rows_added": 16,
+   "stale_families_skipped": []
+  },
+  {
+   "dn_title": "Conversations with a Killer The John Wayne Gacy Tapes",
+   "dn_year": 2022,
+   "type": "tv",
+   "imdb": "tt18970124",
+   "tmdb": 197248,
+   "archive_part": 3,
+   "archive_src": "old",
+   "archive_h3_num": 1042,
+   "families": [
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "play_rows_added": 3,
+   "stale_families_skipped": []
+  },
+  {
+   "dn_title": "Asia",
+   "dn_year": 2024,
+   "type": "tv",
+   "imdb": "tt32869282",
+   "tmdb": 271144,
+   "archive_part": 15,
+   "archive_src": "main",
+   "archive_h3_num": 10475,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 21,
+   "play_rows_added": 21,
+   "stale_families_skipped": []
   }
  ],
  "variety_play_created": [
@@ -14898,5 +15032,32 @@
  "check9_repair": {
   "commit_base": "9e63a185",
   "note": "22 DN play rows re-sectioned (20 subtitled, 2 dubbed); 9 titles no longer nosub-only"
+ },
+ "twice_daily_2026_11_21_am": {
+  "live_base_head": "17451e06ee91694133e7a488f0f23187606902cb",
+  "start_num": 12460,
+  "end_num": 12467,
+  "new_titles_merged": [
+   "Helstrom",
+   "Alice Gear Aegis Expansion",
+   "Renai Flops",
+   "2.43 Seiin Koukou Danshi Volley Bu",
+   "Witch Craft Works",
+   "Fitoor"
+  ],
+  "variety_patched": [
+   "The Club - Kulüp",
+   "The Pillars of the Earth",
+   "Conversations with a Killer The John Wayne Gacy Tapes",
+   "Asia"
+  ],
+  "trailers_added": [
+   "tv:105004",
+   "tv:156098",
+   "tv:195990",
+   "tv:197248",
+   "tv:271144"
+  ],
+  "note": "DN slice of the twice-daily AM merge. Blood Sacrifice / Smiling Friends / Unforgotten / Soft & Quiet / Hoodwinked were reclassified from 'new title' to variety on the live head (they already had H3 records there)."
  }
 }

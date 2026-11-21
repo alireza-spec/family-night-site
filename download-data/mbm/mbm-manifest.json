@@ -134,13 +134,13 @@
  "code": "MBM",
  "counts": {
   "by_resolution": {
-   "1080p": 442,
-   "480p": 374,
-   "720p": 540
+   "1080p": 458,
+   "480p": 390,
+   "720p": 556
   },
   "by_version": {
    "Dubbed": 3,
-   "HardSub": 1353
+   "HardSub": 1401
   },
   "by_year": {
    "1959": 1,
@@ -159,21 +159,21 @@
    "2021": 6,
    "2022": 7,
    "2023": 4,
-   "2024": 11,
+   "2024": 12,
    "2025": 4,
    "2026": 22
   },
-  "have_new_links_added": 1948,
+  "have_new_links_added": 2008,
   "have_new_titles": 101,
-  "have_old_play_rows_added": 926,
+  "have_old_play_rows_added": 986,
   "have_old_titles": 42,
-  "new_links": 1356,
-  "new_titles": 76,
-  "total_bytes_new": 669480990139,
-  "total_links_added": 4230,
-  "total_titles": 219
+  "new_links": 1404,
+  "new_titles": 77,
+  "total_bytes_new": 699107572093,
+  "total_links_added": 4398,
+  "total_titles": 220
  },
- "generated": "2026-11-20",
+ "generated": "2026-11-21",
  "have_new_added": [
   {
    "existing_num": 9115,
@@ -1322,7 +1322,7 @@
    "title": "Winning Time: The Rise of the Lakers Dynasty"
   }
  ],
- "live_base_head": "05ca58a7771b16ceedbb185c7d24c74ebea630ef",
+ "live_base_head": "17451e06ee91694133e7a488f0f23187606902cb",
  "near_size_collapses": {
   "per_title": [
    {
@@ -3131,6 +3131,15 @@
    "num": 11238,
    "title": "Wise Guy: David Chase and the Sopranos",
    "tmdb": 260843,
+   "type": "tv",
+   "year": 2024
+  },
+  {
+   "imdb": "tt32840498",
+   "nlinks": 48,
+   "num": 12466,
+   "title": "Good Partner",
+   "tmdb": 243761,
    "type": "tv",
    "year": 2024
   }

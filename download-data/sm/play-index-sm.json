@@ -1678,6 +1678,65 @@
   },
   "year": 2022
  },
+ "tt2360334": {
+  "imdb": "tt2360334",
+  "num": 12467,
+  "part": "sm",
+  "play": [
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Brawl.2026.720p.WEB-DL.YIFY.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Brawl.2026.1080p.WEB-DL.6CH.YIFY.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Brawl.2026.480p.WEB-DL.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Brawl",
+  "tmdb_key": "movie:166178",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2012
+ },
  "tt29668631": {
   "imdb": "tt29668631",
   "num": 11657,
