@@ -89,6 +89,79 @@
   },
   "year": 1992
  },
+ "tt14413964": {
+  "imdb": "tt14413964",
+  "num": 12298,
+  "part": "sm",
+  "play": [
+   {
+    "encoder": "Simba",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Steps.2026.1080p.WEB-DL.6CH.YIFY.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Simba",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Steps.2026.720p.WEB-DL.YIFY.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Simba",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Steps.2026.720p.10bit.WEB-DL.6CH.x265.PSA.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Simba",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Steps.2026.480p.WEB-DL.x264.SoftSub.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Steps",
+  "tmdb_key": "movie:1595124",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
  "tt15252040": {
   "imdb": "tt15252040",
   "num": 11642,
@@ -486,6 +559,65 @@
    "url": null
   },
   "year": 2022
+ },
+ "tt18351090": {
+  "imdb": "tt18351090",
+  "num": 12299,
+  "part": "sm",
+  "play": [
+   {
+    "encoder": "Simba",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Perfectos.Mentirosos.2026.1080p.WEB-DL.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Simba",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Perfectos.Mentirosos.2026.720p.WEB-DL.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Simba",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Perfectos.Mentirosos.2026.480p.WEB-DL.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Perfect Liars",
+  "tmdb_key": "movie:1568060",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
  },
  "tt19868678": {
   "imdb": "tt19868678",
@@ -4262,7 +4394,7 @@
     "group": "SoftSub",
     "join_tier": 1,
     "play_type": "none",
-    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/The.Last.Temptation.of.Becky.2026.1080p.HDCAM.SoftSub.mkv",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/The.Last.Temptation.of.Becky.2026.1080p.WEB-DL.6CH.YIFY.SoftSub.mkv",
     "playit_url": null,
     "quality": "1080p",
     "quality_label": "1080p",
@@ -4276,7 +4408,7 @@
     "group": "SoftSub",
     "join_tier": 1,
     "play_type": "none",
-    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/The.Last.Temptation.of.Becky.2026.720p.HDCAM.SoftSub.mkv",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/The.Last.Temptation.of.Becky.2026.720p.WEB-DL.YIFY.SoftSub.mkv",
     "playit_url": null,
     "quality": "720p",
     "quality_label": "720p",
@@ -4290,7 +4422,52 @@
     "group": "SoftSub",
     "join_tier": 1,
     "play_type": "none",
-    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/The.Last.Temptation.of.Becky.2026.480p.HDCAM.SoftSub.mkv",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/The.Last.Temptation.of.Becky.2026.720p.10bit.WEB-DL.6CH.x265.PSA.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Last Temptation of Becky",
+  "tmdb_key": "movie:1642568",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
+ "tt41740111": {
+  "imdb": "tt41740111",
+  "num": 12297,
+  "part": "sm",
+  "play": [
+   {
+    "encoder": "Simba",
+    "episode": null,
+    "group": "HardSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Chiranjeevi.2026.Telugu.720p.WEBDL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Simba",
+    "episode": null,
+    "group": "HardSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Chiranjeevi.2026.Telugu.480p.WEBDL.HardSub.mkv",
     "playit_url": null,
     "quality": "480p",
     "quality_label": "480p",
@@ -4299,8 +4476,8 @@
     "size_text": ""
    }
   ],
-  "title": "The Last Temptation of Becky",
-  "tmdb_key": "movie:1642568",
+  "title": "Kiku Chiranjeevi",
+  "tmdb_key": "movie:1748499",
   "type": "movie",
   "video_mp4": {
    "is_trailer": false,

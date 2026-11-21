@@ -17389,6 +17389,34 @@
     "season": null,
     "size_bytes": 167353106,
     "size_text": "167 MB"
+   },
+   {
+    "encoder": "MoboMovies",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/The.Hotline.2026.1080p.WEB-DL.6CH.YIFY.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p",
+    "quality_label": "web-dl 1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "MoboMovies",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/The.Hotline.2026.720p.WEB-DL.YIFY.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 720p",
+    "quality_label": "web-dl 720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
    }
   ],
   "title": "The Hotline",
