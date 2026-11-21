@@ -2,22 +2,22 @@
  "code": "FH",
  "source": "FarsiHubz mirror https://monclerjakkejacket.com/ (farsihubby.com: empty splash, 0 titles)",
  "start_num": 12468,
- "end_num": 12482,
+ "end_num": 12483,
  "live_base_head": "8b210e25fc530b1b986b2ddf56438b998eba2ff8",
  "generated": "2026-11-21",
  "counts": {
-  "total_titles": 15,
-  "movies": 9,
+  "total_titles": 16,
+  "movies": 10,
   "series": 6,
-  "total_links": 82,
+  "total_links": 83,
   "by_year": {
    "2024": 3,
    "2025": 6,
-   "2026": 6
+   "2026": 7
   },
   "by_quality": {
    "1080p": 10,
-   "720p": 72
+   "720p": 73
   }
  },
  "films": [
@@ -110,6 +110,16 @@
    "links": 1,
    "quality": "720p",
    "size_bytes": 971867940
+  },
+  {
+   "title": "Napelon Dar Baqre Zardalo",
+   "tmdb": 1755424,
+   "imdb": null,
+   "year": 2026,
+   "num": 12483,
+   "links": 1,
+   "quality": "720p",
+   "size_bytes": 768523880
   }
  ],
  "series": [
@@ -1070,5 +1080,5 @@
   }
  ],
  "nosub_note": "All FH titles are NoSub (Persian audio, no subtitle track) per the AO Iranian-film precedent. They are NOT flagged as needing a Persian subtitle version: the audio is Persian. The standing NoSub flag applies to non-Persian-audio titles that end up subtitle-less — none here.",
- "held_scope_note": "Napoleon (TMDB 1755424, TMDB-only, no IMDb) + the other 12 TMDB-only held titles + the 84 queued identities are NOT merged (evaluation scope; Napoleon needs the user's explicit exception like Actress). YouTube-embedded episodes (e.g. Zane Rooz S3E28) are never merged as play links."
+ "held_scope_note": "Napoleon (TMDB 1755424, TMDB-only, no IMDb) merged 2026-11-21 as H3 #12483 (TMDB-only exception, user-approved). The other 12 TMDB-only held titles + the 84 queued identities are NOT merged (evaluation scope). YouTube-embedded episodes (e.g. Zane Rooz S3E28) are never merged as play links."
 }

@@ -1,4 +1,35 @@
 {
+ "n:12483": {
+  "imdb": null,
+  "num": 12483,
+  "part": "fh",
+  "play": [
+   {
+    "encoder": "farsihubz",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://stream.farsicdn.co/movies2/Napoleon-Zardaloo.mp4",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 768523880,
+    "size_text": "769 MB"
+   }
+  ],
+  "title": "Napelon Dar Baqre Zardalo",
+  "tmdb_key": "movie:1755424",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": 768523880,
+   "size_text": "769 MB",
+   "url": "https://stream.farsicdn.co/movies2/Napoleon-Zardaloo.mp4"
+  },
+  "year": 2026
+ },
  "tt30874724": {
   "imdb": "tt30874724",
   "num": 12473,
