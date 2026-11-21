@@ -1,0 +1,150 @@
+{
+ "code": "RZ",
+ "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv/mp4, no token/expiry in file URLs)",
+ "start_num": 12560,
+ "end_num": 12561,
+ "live_base_head": "c0b03707e843bb45a0178a052d726b75bbcd4d0c (Becky fast-track; H3 max #12559 verified from live fh part-1)",
+ "generated": "2026-11-21 (backfill phase 2 — merge of the 2 definitely-missing titles)",
+ "counts": {
+  "total_titles": 2,
+  "movies": 1,
+  "series": 1,
+  "total_links": 18,
+  "by_year": {
+   "2024": 1,
+   "2026": 1
+  },
+  "by_quality": {
+   "720p": 9,
+   "1080p": 1,
+   "540p": 8
+  }
+ },
+ "films": [
+  {
+   "title": "The Disinvited",
+   "tmdb": 1055783,
+   "imdb": "tt22060390",
+   "year": 2024,
+   "num": 12560,
+   "links": 2,
+   "quality": "720p+1080p",
+   "rezflix_id": 36068,
+   "identity_note": "TMDB+IMDb+OMDb agree on the work (OMDb Title 'The Disinvited', 2024, Devin Lawrence); year 2024 (feed+OMDb) vs TMDB release_date 2025-11-06 (re-release/VOD). Persian name ناخوانده (feed)."
+  },
+  {
+   "title": "The Blue Road",
+   "tmdb": 300523,
+   "imdb": "tt38336631",
+   "year": 2026,
+   "num": 12561,
+   "links": 16,
+   "quality": "540p+720p",
+   "rezflix_id": 36070,
+   "identity_note": "TMDB tv 300523 'The Blue Road' (orig. 푸른길, Netflix, 1 season x 8 eps, first aired 2026-11-20) -> external_ids tt38336631; OMDb tt38336631 Title 'Road' (short title for the same IMDb entry), same cast (Son Sukku, Eita Nagayama, Kim Shin-rock) + same plot (Tokyo/Korea detectives, cryptic messages) as TMDB + feed (جاده آبی, Han Jun Hee, Netflix). AM run queued it on the title string; content evidence (shared tt code + cast + plot + network + episode count) resolves it as the same work. No E9 exists: TMDB 1x8 + feed '8 قسمت' + seasons API (teaser + E1-E8) — the season is complete."
+  }
+ ],
+ "queued_titles": [
+  {
+   "title": "Dance Deewane",
+   "rezflix_id": 35944,
+   "reason": "no IMDb id for 'Dance Deewane' (TMDB 199009); not Iranian - needs user decision"
+  },
+  {
+   "title": "Brawl",
+   "rezflix_id": 35968,
+   "reason": "no IMDb id for 'Brawl' (TMDB 979664); not Iranian - needs user decision"
+  },
+  {
+   "title": "Sai Roong",
+   "rezflix_id": 35991,
+   "reason": "no IMDb id for 'Sai Roong' (TMDB 209341); not Iranian - needs user decision"
+  },
+  {
+   "title": "Northern Storm",
+   "rezflix_id": 35946,
+   "reason": "no IMDb id for 'Northern Storm' (TMDB 318902); not Iranian - needs user decision"
+  },
+  {
+   "title": "squall",
+   "rezflix_id": 35947,
+   "reason": "no IMDb id for 'squall' (TMDB 334321); not Iranian - needs user decision"
+  },
+  {
+   "title": "Wanteez",
+   "rezflix_id": 35960,
+   "reason": "no IMDb id for 'Wanteez' (TMDB 208252); not Iranian - needs user decision"
+  },
+  {
+   "title": "Motherland",
+   "rezflix_id": 35970,
+   "reason": "no IMDb id for 'Motherland' (TMDB 325433); not Iranian - needs user decision"
+  },
+  {
+   "title": "The Silent Killer",
+   "rezflix_id": 35971,
+   "reason": "OMDb silent for tt50016954 (TMDB+IMDb agree)"
+  },
+  {
+   "title": "Cycle of Sin",
+   "rezflix_id": 35974,
+   "reason": "no IMDb id for 'Cycle of Sin' (TMDB 333092); not Iranian - needs user decision"
+  },
+  {
+   "title": "Maybe I Can Hear Love",
+   "rezflix_id": 36002,
+   "reason": "no IMDb id for 'Maybe I Can Hear Love' (TMDB 235749); not Iranian - needs user decision"
+  },
+  {
+   "title": "Treasure Lovers",
+   "rezflix_id": 36017,
+   "reason": "no IMDb id for 'Treasure Lovers' (TMDB 277248); not Iranian - needs user decision"
+  },
+  {
+   "title": "In the Grip of Love",
+   "rezflix_id": 36021,
+   "reason": "no IMDb id for 'In the Grip of Love' (TMDB 272043); not Iranian - needs user decision"
+  },
+  {
+   "title": "Shenkong Bi An",
+   "rezflix_id": 36022,
+   "reason": "no TMDB tv record for 'Shenkong Bi An'"
+  },
+  {
+   "title": "Taming the Husband",
+   "rezflix_id": 36026,
+   "reason": "OMDb silent for tt41400834 (TMDB+IMDb agree)"
+  },
+  {
+   "title": "Thirty Six Stratagems Slay",
+   "rezflix_id": 36028,
+   "reason": "no IMDb id for 'Thirty Six Stratagems Slay' (TMDB 340856); not Iranian - needs user decision"
+  },
+  {
+   "title": "Princess of Lanling King",
+   "rezflix_id": 36030,
+   "reason": "no IMDb id for 'Princess of Lanling King' (TMDB 68163); not Iranian - needs user decision"
+  },
+  {
+   "title": "Her Willing Subject",
+   "rezflix_id": 36054,
+   "reason": "no IMDb id for 'Her Willing Subject' (TMDB 319436); not Iranian - needs user decision"
+  },
+  {
+   "title": "Sound Track",
+   "rezflix_id": 36056,
+   "reason": "no IMDb id for 'Sound Track' (TMDB 342666); not Iranian - needs user decision"
+  },
+  {
+   "title": "The Containment",
+   "rezflix_id": 36061,
+   "reason": "year conflict: feed 2024 / TMDB 2025 / OMDb 2017"
+  },
+  {
+   "title": "Cicekci Kiz",
+   "rezflix_id": 36075,
+   "reason": "OMDb silent for tt48685065 (TMDB+IMDb agree)"
+  }
+ ],
+ "url_dupes_dropped": []
+}
