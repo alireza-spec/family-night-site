@@ -1,4 +1,49 @@
 {
+ "tt19860724": {
+  "imdb": "tt19860724",
+  "num": 12562,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Days.of.Happiness.2023.720p.WEB-DL.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 943718400,
+    "size_text": "900 MB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Days.of.Happiness.2023.480p.WEB-DL.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 448790528,
+    "size_text": "428 MB"
+   }
+  ],
+  "title": "Days of Happiness",
+  "tmdb_key": "movie:848987",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2023
+ },
  "tt22060390": {
   "imdb": "tt22060390",
   "num": 12560,
@@ -12,11 +57,11 @@
     "play_type": "none",
     "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/The.Disinvited.Sub-720.simba.mp4",
     "playit_url": null,
-    "quality": "?",
-    "quality_label": "?",
+    "quality": "720p",
+    "quality_label": "720p",
     "season": null,
-    "size_bytes": null,
-    "size_text": "1.7 GB"
+    "size_bytes": 885104640,
+    "size_text": "844 MB"
    },
    {
     "encoder": "Simba",
@@ -26,8 +71,8 @@
     "play_type": "none",
     "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/The.Disinvited.Sub-1080.simba.mp4",
     "playit_url": null,
-    "quality": "?",
-    "quality_label": "?",
+    "quality": "1080p",
+    "quality_label": "1080p",
     "season": null,
     "size_bytes": null,
     "size_text": "1.7 GB"
@@ -43,6 +88,155 @@
    "url": null
   },
   "year": 2024
+ },
+ "tt32558705": {
+  "imdb": "tt32558705",
+  "num": 12564,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "CinemaCity",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/The.Hunger.Games.Sunrise.on.the.Reaping.2026.1080p.CAM.x264-CinemaCity.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "CAM 1080p",
+    "quality_label": "CAM 1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "CinemaCity",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/The.Hunger.Games.Sunrise.on.the.Reaping.2026.720p.CAM.x264-CinemaCity.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "CAM 720p",
+    "quality_label": "CAM 720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Hunger Games: Sunrise on the Reaping",
+  "tmdb_key": "movie:1300968",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
+ "tt35410859": {
+  "imdb": "tt35410859",
+  "num": 12566,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Fjord.2026.1080p.WEB-DL.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "2.7 GB"
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Fjord.2026.720p.WEB-DL.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.7 GB"
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Fjord.2026.480p.WEB-DL.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 670040064,
+    "size_text": "639 MB"
+   }
+  ],
+  "title": "Fjord",
+  "tmdb_key": "movie:1401459",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
+ "tt35724928": {
+  "imdb": "tt35724928",
+  "num": 12563,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "Simba",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/My.First.of.May.Sub-1080.simba.mp4",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.7 GB"
+   },
+   {
+    "encoder": "Simba",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/My.First.of.May.Sub-720.simba.mp4",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 881852416,
+    "size_text": "841 MB"
+   }
+  ],
+  "title": "My First of May",
+  "tmdb_key": "movie:1071646",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2025
  },
  "tt38336631": {
   "imdb": "tt38336631",
@@ -277,6 +471,51 @@
   "title": "The Blue Road",
   "tmdb_key": "tv:300523",
   "type": "tv",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
+ "tt47739645": {
+  "imdb": "tt47739645",
+  "num": 12565,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Maltratada.2026.1080p.WEBRip.x264.AAC-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.25 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Maltratada.2026.720p.WEBRip.x264.AAC-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 724566016,
+    "size_text": "691 MB"
+   }
+  ],
+  "title": "Maltratada",
+  "tmdb_key": "movie:1787995",
+  "type": "movie",
   "video_mp4": {
    "is_trailer": false,
    "size_bytes": null,

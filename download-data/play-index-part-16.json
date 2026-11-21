@@ -83820,6 +83820,48 @@
     "season": 1,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "ValaMovie",
+    "episode": 8,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Altruists/fasl11080/The.Altruists.S01E08.1080p.WEB-DL.6CH.ValaMovie.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "ValaMovie",
+    "episode": 8,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Altruists/fasl1720/The.Altruists.S01E08.720p.WEB-DL.ValaMovie.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "ValaMovie",
+    "episode": 8,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Altruists/fasl1480/The.Altruists.S01E08.480p.WEB-DL.ValaMovie.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
    }
   ],
   "title": "The Altruists",

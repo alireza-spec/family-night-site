@@ -133478,6 +133478,65 @@
   },
   "year": 2025
  },
+ "tt14129116": {
+  "imdb": "tt14129116",
+  "num": 4,
+  "part": 1,
+  "play": [
+   {
+    "encoder": "YIFY",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/A.Talent.for.Murder.2026.1080p.WEB-DL.YIFY.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.9 GB"
+   },
+   {
+    "encoder": "YIFY",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/A.Talent.for.Murder.2026.720p.WEB-DL.YIFY.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 1013972992,
+    "size_text": "967 MB"
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/A.Talent.for.Murder.2026.480p.WEB-DL.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 597688320,
+    "size_text": "570 MB"
+   }
+  ],
+  "title": "A Talent for Murder",
+  "tmdb_key": "movie:1084409",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
  "tt14142060": {
   "imdb": "tt14142060",
   "num": 1624,
@@ -137321,6 +137380,65 @@
    "url": "https://bvxbbajdhgxd9g87jwb463wx.abrtech.top/yA3f/Film/2024/Shelby.Oaks.2024/SUB/Shelby.Oaks.2024.t.mp4"
   },
   "year": 2024
+ },
+ "tt15095848": {
+  "imdb": "tt15095848",
+  "num": 37,
+  "part": 1,
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Being.Heumann.2026.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "2.35 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Being.Heumann.2026.720p.WEBRip.x264.AAC-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.14 GB"
+   },
+   {
+    "encoder": "ZarFilm",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Being.Heumann.2026.480p.WEB-DL.x264.SoftSub.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 677380096,
+    "size_text": "646 MB"
+   }
+  ],
+  "title": "Being Heumann",
+  "tmdb_key": "movie:1050981",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
  },
  "tt15097358": {
   "imdb": "tt15097358",
@@ -159247,6 +159365,65 @@
    "url": "https://bvxbbajdhgxd9g87jwb463wx.abrtech.top/yA3f/Movie/2025/Resurrection.Road.2025/DUB/Resurrection.Road.2025.Trailer.mp4"
   },
   "year": 2025
+ },
+ "tt27041231": {
+  "imdb": "tt27041231",
+  "num": 16,
+  "part": 1,
+  "play": [
+   {
+    "encoder": "YIFY",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Musk.2026.1080p.WEB-DL.6CH.YIFY.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "3.6 GB"
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Musk.2026.720p.WEB-DL.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "2.1 GB"
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Musk.2026.480p.WEB-DL.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.1 GB"
+   }
+  ],
+  "title": "Musk",
+  "tmdb_key": "movie:1096228",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
  },
  "tt27052428": {
   "imdb": "tt27052428",
@@ -212229,6 +212406,48 @@
     "season": null,
     "size_bytes": null,
     "size_text": "2.10 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Heartland.2026.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "2 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Heartland.2026.720p.WEBRip.x264.AAC-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1 GB"
+   },
+   {
+    "encoder": "ZarFilm",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Heartland.2026.480p.WEB-DL.Pahe.SoftSub.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 524288000,
+    "size_text": "500 MB"
    }
   ],
   "title": "Heartland",
@@ -217622,6 +217841,146 @@
     "season": null,
     "size_bytes": 682746775,
     "size_text": "651.12 MB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Avengers.Endgame.2019.1080p.6CH.RARBG%20.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Avengers.Endgame.Encore.2026.IMAX.1080p.WEB-DL.6CH.Pahe.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/Avengers.Endgame.2019.720p.BluRay.HEVC.x265.RMT.EasyTV.mkv",
+    "playit_url": null,
+    "quality": "720p x265",
+    "quality_label": "720p x265",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Avengers.Endgame.Encore.2026.IMAX.720p.WEB-DL.Pahe.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/Avengers.Endgame.2019.720p.MkvCage.EasyTV.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Avengers.Endgame.2019.720p.BluRay.DUBLE.EasyTV.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Avengers.Endgame.2019.Digital.Extras.720p.WEB-DL.MkvCage.Part2.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Avengers.Endgame.Encore.2026.IMAX.480p.WEB-DL.Pahe.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/morteza_movie/Avengers.Endgame.2019.480p.WEB-DL.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Avengers.Endgame.2019.480p.BluRay.DUBLE.EasyTV.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
    }
   ],
   "title": "Avengers: Endgame",
@@ -218802,6 +219161,65 @@
    "url": "https://bvxbbajdhgxd9g87jwb463wx.abrtech.top/yA3f/Film/2023/Five.Nights.at.Freddys.2023/SUB/Five.Nights.at.Freddys.2023.Trailer.mp4"
   },
   "year": 2023
+ },
+ "tt46082332": {
+  "imdb": "tt46082332",
+  "num": 5,
+  "part": 1,
+  "play": [
+   {
+    "encoder": "YIFY",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Confession.2026.1080p.WEB-DL.YIFY.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "2.2 GB"
+   },
+   {
+    "encoder": "YIFY",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Confession.2026.720p.WEB-DL.YIFY.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.2 GB"
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Confession.2026.480p.WEB-DL.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 664797184,
+    "size_text": "634 MB"
+   }
+  ],
+  "title": "Confession",
+  "tmdb_key": "movie:1772726",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
  },
  "tt4627382": {
   "imdb": "tt4627382",
