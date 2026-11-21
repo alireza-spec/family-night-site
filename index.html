@@ -2680,7 +2680,8 @@ function cardHtml(x, wide, noDl) {
   /* FN-NOIMG-PLACEHOLDER v1: fall back to the backdrop when there is no poster (already in the TMDB response — no extra fetch). */
   const poster = wide ? (x.backdrop_path || x.poster_path) : (x.poster_path || x.backdrop_path);
   const img = poster ? '<img loading="lazy" decoding="async" onerror="fnImgFail(this)" data-fn-watch src="' + IMG(poster, wide ? 'w780' : 'w342') + '" alt="' + esc(t) + '">' : '<div class="noimg"><span class="fn-mark">FN</span><span class="fn-title">' + esc(t) + '</span></div>';
-  const rate = x.vote_average ? '<span class="rate">★ ' + Number(x.vote_average).toFixed(1) + '</span>' : '';
+  const _score = (Number(x.imdb_rating) > 0) ? Number(x.imdb_rating) : x.vote_average;
+  const rate = _score ? '<span class="rate">★ ' + Number(_score).toFixed(1) + '</span>' : '';
   const typ = '<span class="typ">' + (type === 'tv' ? 'سریال' : 'فیلم') + '</span>';
   /* Name order under the poster — ONE rule for every card: line 1
      (h3) is the ENGLISH name, line 2 (.sub .fa-name) is the PERSIAN
@@ -3518,7 +3519,7 @@ function fnWithDeadline(p, ms) {
    rails / sections / app opens), and a hung poster becomes the
    placeholder instead of a dark box. ---------- */
 var FN_RAILS_CACHE_KEY = 'fn-rails-v2';
-var FN_RAILS_CACHE_V = 2;
+var FN_RAILS_CACHE_V = 3;
 function fnRailsCacheSave(rows, hero) {
   try {
     var slim = {};
