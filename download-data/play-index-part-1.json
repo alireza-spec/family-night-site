@@ -43386,6 +43386,21 @@
     "size_text": "3.94 GB"
    },
    {
+    "encoder": "PSA",
+    "episode": null,
+    "group": "SoftSub",
+    "join_ambiguous": 2,
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2026/Spider-Man.Brand.New.Day.2026/RSUB/Spider-Man.Brand.New.Day.2026.IMAX.2160p.10bit.HDR.WEB-DL.6CH.x265.PSA.Farsi.Sub.Film2Media.mkv?v=181559836805",
+    "playit_url": "https://www.myf2ms.top/76906/spider-man-brand-new-day/?playit=5efbab96b58106e5b26969cca676b466&play_type=hardsub&quality=WEB-DL 4K 2160p 10bit HDR&type=movies&id=76906",
+    "quality": "WEB-DL 4K 2160p 10bit HDR",
+    "quality_label": "web-dl 4k 2160p 10bit hdr",
+    "season": null,
+    "size_bytes": 5578483569,
+    "size_text": "5.20 GB"
+   },
+   {
     "encoder": "ETHEL",
     "episode": null,
     "group": "SoftSub",
