@@ -21147,6 +21147,20 @@
     "size_text": ""
    },
    {
+    "encoder": "unknown",
+    "episode": null,
+    "group": null,
+    "join_tier": 0,
+    "play_type": "dubbled",
+    "play_url": null,
+    "playit_url": "https://www.myf2ms.top/86861/heart-of-the-beast-2026/?playit=e3e8d23313bcc2b600e9b862ea1c5057&play_type=dubbled&quality=صوت دوبله فارسی&type=movies&id=86861",
+    "quality": "صوت دوبله فارسی",
+    "quality_label": "صوت دوبله فارسی",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
     "encoder": "KyoGo",
     "episode": null,
     "group": "SoftSub",
@@ -195782,6 +195796,21 @@
     "size_text": "82.07 GB"
    },
    {
+    "encoder": "PSA",
+    "episode": null,
+    "group": "SoftSub",
+    "join_ambiguous": 2,
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2026/The.Odyssey.2026/BluSUB/The.Odyssey.2026.2160p.10bit.HDR.BluRay.6CH.x265.PSA.Farsi.Sub.Film2Media.mkv?v=279315343485",
+    "playit_url": "https://www.myf2ms.top/62388/the-odyssey-2026/?playit=c85289e1e1c146d8316e6c794f73b0cc&play_type=hardsub&quality=BluRay 4K 2160p 10bit HDR&type=movies&id=62388",
+    "quality": "BluRay 4K 2160p 10bit HDR",
+    "quality_label": "bluray 4k 2160p 10bit hdr",
+    "season": null,
+    "size_bytes": 5444000477,
+    "size_text": "5.07 GB"
+   },
+   {
     "encoder": "CiNEPHiLES",
     "episode": null,
     "group": "SoftSub",
@@ -195825,6 +195854,21 @@
     "size_text": "5.10 GB"
    },
    {
+    "encoder": "unknown",
+    "episode": null,
+    "group": "SoftSub",
+    "join_ambiguous": 2,
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2026/The.Odyssey.2026/BluSUB/The.Odyssey.2026.1080p.BluRay.6CH.Farsi.Sub.Film2Media.mkv?v=606634716956",
+    "playit_url": "https://www.myf2ms.top/62388/the-odyssey-2026/?playit=a185318318c25143aefd4096f0bcfdd1&play_type=hardsub&quality=BluRay 1080p&type=movies&id=62388",
+    "quality": "BluRay 1080p",
+    "quality_label": "bluray 1080p",
+    "season": null,
+    "size_bytes": 3611320271,
+    "size_text": "3.36 GB"
+   },
+   {
     "encoder": "PSA",
     "episode": null,
     "group": "SoftSub",
@@ -195854,6 +195898,21 @@
     "size_text": "1.56 GB"
    },
    {
+    "encoder": "unknown",
+    "episode": null,
+    "group": "SoftSub",
+    "join_ambiguous": 2,
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2026/The.Odyssey.2026/BluSUB/The.Odyssey.2026.720p.BluRay.Farsi.Sub.Film2Media.mkv?v=525650804090",
+    "playit_url": "https://www.myf2ms.top/62388/the-odyssey-2026/?playit=ccbba7217c75be93ae945fb141f7cef9&play_type=hardsub&quality=BluRay 720p&type=movies&id=62388",
+    "quality": "BluRay 720p",
+    "quality_label": "bluray 720p",
+    "season": null,
+    "size_bytes": 2169517985,
+    "size_text": "2.02 GB"
+   },
+   {
     "encoder": "PSA",
     "episode": null,
     "group": "SoftSub",
@@ -195881,6 +195940,21 @@
     "season": null,
     "size_bytes": 836080482,
     "size_text": "797.35 MB"
+   },
+   {
+    "encoder": "unknown",
+    "episode": null,
+    "group": "SoftSub",
+    "join_ambiguous": 2,
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2026/The.Odyssey.2026/BluSUB/The.Odyssey.2026.480p.BluRay.Farsi.Sub.Film2Media.mkv?v=824513506547",
+    "playit_url": "https://www.myf2ms.top/62388/the-odyssey-2026/?playit=434c0551c8a8027acf17484af51de2b7&play_type=hardsub&quality=BluRay 480p&type=movies&id=62388",
+    "quality": "BluRay 480p",
+    "quality_label": "bluray 480p",
+    "season": null,
+    "size_bytes": 784301894,
+    "size_text": "747.97 MB"
    },
    {
     "encoder": "Sermovie",
