@@ -25352,6 +25352,34 @@
     "season": null,
     "size_bytes": 2486879269,
     "size_text": "2.5 GB"
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/The.Whole.Truth.2021.720p.WEB-DL.HardSub.DigiMoviez.mp4",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/The.Whole.Truth.2021.480p.WEB-DL.HardSub.DigiMoviez.mp4",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
    }
   ],
   "title": "The Whole Truth",
