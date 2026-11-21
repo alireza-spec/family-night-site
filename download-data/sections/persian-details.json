@@ -1,0 +1,886 @@
+{
+ "1582862": {
+  "tmdb_id": 1582862,
+  "title_en": "Mones",
+  "year": "2026",
+  "imdb": null,
+  "fa_title": "مونز",
+  "fa_title_source": "fa-overrides",
+  "overview_fa": "سی‌سی، یه زن ترنس، تو مهمونی پراید و شوی درگ برادریِ برادر کوچیکش تدی — که خودش با بهترین دوستاش ترتیبش داده — با ناراحتی جنسیتی‌اش روبه‌رو می‌شه. وقتی اجراکننده‌های درگ و بچه‌های برادری و کوئیرها با هم قاطی می‌شن، سی‌سی با یه مرد آشنای جوون برخورد عاشقانه‌ای داره که کمکش می‌کنه از سدهای ذهنی‌اش درباره‌ی زن بودن عبور کنه و آخرش به یه حقیقت جهانی درباره‌ی زن بودن می‌رسه… گاهی فقط سینه‌هات درد می‌کنن. یه کمدی پرانرژی درباره‌ی هویت",
+  "overview_source": "translated",
+  "genres_fa": [
+   "کمدی",
+   "درام"
+  ],
+  "genres_en": [
+   "Comedy",
+   "Drama"
+  ],
+  "director": {
+   "id": 1538806,
+   "name_en": "Zackary Drucker",
+   "name_fa": "زکری دراکر",
+   "name_source": "transliteration"
+  },
+  "cast": [
+   {
+    "id": 3264240,
+    "name_en": "Betti",
+    "name_fa": "بتی",
+    "name_source": "transliteration",
+    "character": "Cici",
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 3708590,
+    "name_en": "Josh Nobida",
+    "name_fa": "جاش نوبیدا",
+    "name_source": "transliteration",
+    "character": "Jay",
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 5979325,
+    "name_en": "Donato Fautesi",
+    "name_fa": "دوناتو فاوتزی",
+    "name_source": "transliteration",
+    "character": "Ashley",
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 5979327,
+    "name_en": "Emily Westheimer",
+    "name_fa": "امیلی وستهایمر",
+    "name_source": "transliteration",
+    "character": "Mina",
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 5979328,
+    "name_en": "Andy Stratton",
+    "name_fa": "اندی استراتون",
+    "name_source": "transliteration",
+    "character": "Teddy",
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 5099027,
+    "name_en": "Acacia Forgot",
+    "name_fa": "آکاسیا فورگات",
+    "name_source": "transliteration",
+    "character": "Acacia Forgot",
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 2090764,
+    "name_en": "Kyle Rezzarday",
+    "name_fa": "کایل رزاردی",
+    "name_source": "transliteration",
+    "character": "Frat Boy",
+    "character_fa": null,
+    "character_source": "en-only"
+   }
+  ],
+  "origin_country": [
+   "US"
+  ],
+  "original_language": "en",
+  "production_countries": []
+ },
+ "1754844": {
+  "tmdb_id": 1754844,
+  "title_en": "Khanom valede",
+  "year": "2026",
+  "imdb": null,
+  "fa_title": "خانوم والده",
+  "fa_title_source": "tmdb-fa",
+  "overview_fa": "داستان دو برادره که از نظر مالی تو تنگنا هستن و یهویی یه ارث بهشون می‌رسه",
+  "overview_source": "translated",
+  "genres_fa": [
+   "کمدی"
+  ],
+  "genres_en": [
+   "Comedy"
+  ],
+  "director": {
+   "id": 2397474,
+   "name_en": "Soheil Movaffagh",
+   "name_fa": "سهیل موفّق",
+   "name_source": "transliteration"
+  },
+  "cast": [
+   {
+    "id": 1277757,
+    "name_en": "Reza Attaran",
+    "name_fa": "رضا عطاران",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 1995630,
+    "name_en": "Abbas Jamshidifar",
+    "name_fa": "عباس جمشیدی‌فر",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 3273422,
+    "name_en": "Shabnam Ghorbani",
+    "name_fa": "شبنم قربانی",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 2330709,
+    "name_en": "Gholamreza Nikkhah",
+    "name_fa": "غلامرضا نیکخواه",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 2407028,
+    "name_en": "Iman Safa",
+    "name_fa": "ایمان صفا",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 1446316,
+    "name_en": "Giti Ghasemi",
+    "name_fa": "گیتی قاسمی",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 1433712,
+    "name_en": "Ali Dehkordi",
+    "name_fa": "علی دهکردی",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   }
+  ],
+  "origin_country": [
+   "IR"
+  ],
+  "original_language": "fa",
+  "production_countries": [
+   "IR"
+  ]
+ },
+ "1755424": {
+  "tmdb_id": 1755424,
+  "title_en": "Napoleon",
+  "year": "2026",
+  "imdb": null,
+  "fa_title": "ناپلئون در باغ زردآلو",
+  "fa_title_source": "tmdb-fa",
+  "overview_fa": "بهمن و یحیی که تو زندانن، نقشه‌ی بزرگ‌ترین سرقت زندگی‌شون رو می‌کشن",
+  "overview_source": "translated",
+  "genres_fa": [
+   "کمدی"
+  ],
+  "genres_en": [
+   "Comedy"
+  ],
+  "director": {
+   "id": 1201640,
+   "name_en": "Hamed Mohammadi",
+   "name_fa": "حامد محمدی",
+   "name_source": "tmdb-fa"
+  },
+  "cast": [
+   {
+    "id": 1530758,
+    "name_en": "Saeed Aghakhani",
+    "name_fa": "سعید آقاخانی",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 1261530,
+    "name_en": "Amir Jafari",
+    "name_fa": "امیر جعفری",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 2330709,
+    "name_en": "Gholamreza Nikkhah",
+    "name_fa": "غلامرضا نیکخواه",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 1505442,
+    "name_en": "Nahid Moslemi",
+    "name_fa": "ناهید مسلمی",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 1666131,
+    "name_en": "Yousef Teymouri",
+    "name_fa": "یوسف تیموری",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 1005695,
+    "name_en": "Omid Roohani",
+    "name_fa": "امید روحانی",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 2742939,
+    "name_en": "Qasem Zare",
+    "name_fa": "قاسم زارع",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   }
+  ],
+  "origin_country": [
+   "IR"
+  ],
+  "original_language": "fa",
+  "production_countries": [
+   "IR"
+  ]
+ },
+ "1797731": {
+  "tmdb_id": 1797731,
+  "title_en": "The Dreamer",
+  "year": "2026",
+  "imdb": "tt46146733",
+  "fa_title": "خواب نما",
+  "fa_title_source": "tmdb-fa",
+  "overview_fa": "واسه اینکه به ارث بابابزرگ برسن، باید جای مامان‌بزرگ رو بگیرن... ولی وقتی مامان‌بزرگ یه خوشگل واقعی از آب درمیاد، چشم بابابزرگ شروع می‌کنه به چرخیدن دور و بر",
+  "overview_source": "translated",
+  "genres_fa": [
+   "کمدی",
+   "خانوادگی"
+  ],
+  "genres_en": [
+   "Comedy",
+   "Family"
+  ],
+  "director": null,
+  "cast": [
+   {
+    "id": 1212650,
+    "name_en": "Javad Razavian",
+    "name_fa": "جواد رضویان",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 1301138,
+    "name_en": "Bahare Kianafshar",
+    "name_fa": "بهاره کیان‌افشار",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 2332651,
+    "name_en": "Bijan Banafshekhah",
+    "name_fa": "بیژن بنفشه‌خواه",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 5225534,
+    "name_en": "Naeimeh Nezamdoost",
+    "name_fa": "نعیمه نظام‌دوست",
+    "name_source": "transliteration",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 2365809,
+    "name_en": "Yousef Sayadi",
+    "name_fa": "یوسف صیادی",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   }
+  ],
+  "origin_country": [
+   "IR"
+  ],
+  "original_language": "fa",
+  "production_countries": [
+   "IR"
+  ]
+ },
+ "1425084": {
+  "tmdb_id": 1425084,
+  "title_en": "Antique",
+  "year": "2025",
+  "imdb": "tt35615501",
+  "fa_title": "آنتیک",
+  "fa_title_source": "tmdb-fa",
+  "overview_fa": "داستان پژمان جمشیدی و ولی (بیژن بنفشه‌خواه)، عتیقه‌فروش پیش از انقلاب، که درِ یه بازی پرپولِ یه امامزاده مسیر زندگی‌شون رو عوض می‌کنه",
+  "overview_source": "translated-low-confidence",
+  "genres_fa": [
+   "کمدی"
+  ],
+  "genres_en": [
+   "Comedy"
+  ],
+  "director": {
+   "id": 2051874,
+   "name_en": "Hadi Naeeji",
+   "name_fa": "هادی نائیجی",
+   "name_source": "transliteration"
+  },
+  "cast": [
+   {
+    "id": 1588076,
+    "name_en": "Pejman Jamshidi",
+    "name_fa": "پژمان جمشیدی",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 2332651,
+    "name_en": "Bijan Banafshekhah",
+    "name_fa": "بیژن بنفشه‌خواه",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 1616960,
+    "name_en": "Setareh Pesyani",
+    "name_fa": "ستاره پسیانی",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 1418885,
+    "name_en": "Anahita Afshar",
+    "name_fa": "آناهیتا افشار",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 2330709,
+    "name_en": "Gholamreza Nikkhah",
+    "name_fa": "غلامرضا نیکخواه",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 3278267,
+    "name_en": "Amir Norouzi",
+    "name_fa": "امیر نوروزی",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 1674849,
+    "name_en": "Farzin Mohades",
+    "name_fa": "فرزین محدث",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 1579114,
+    "name_en": "Ali Bagheri",
+    "name_fa": "علی باقری",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   }
+  ],
+  "origin_country": [
+   "IR"
+  ],
+  "original_language": "fa",
+  "production_countries": [
+   "IR"
+  ]
+ },
+ "1626271": {
+  "tmdb_id": 1626271,
+  "title_en": "Ahmad",
+  "year": "2024",
+  "imdb": "tt30985611",
+  "fa_title": "احمد",
+  "fa_title_source": "tmdb-fa",
+  "overview_fa": "فیلم احمد برای اولین بار قصه‌ای ناگفته از 18 ساعت ابتدایی حادثه تراژیک زلزله بم و اقدامی قهرمانانه در این ساعات پرالتهاب را همزمان با بیستمین سالگرد این اتفاق روایت می‌کند؛ یادی از رشادت‌های شهید احمد کاظمی در زلزله بم…",
+  "overview_source": "tmdb-fa",
+  "genres_fa": [
+   "درام",
+   "ماجراجویی"
+  ],
+  "genres_en": [
+   "Drama",
+   "Adventure"
+  ],
+  "director": {
+   "id": 3418326,
+   "name_en": "Amir Abbas Rabiie",
+   "name_fa": "امیرعباس ربیعی",
+   "name_source": "transliteration"
+  },
+  "cast": [
+   {
+    "id": 4089830,
+    "name_en": "Tinoo Salehi",
+    "name_fa": "تینو صالحی",
+    "name_source": "tmdb-fa",
+    "character": "Ahmad kazemi",
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 2545220,
+    "name_en": "Toomaj Danesh Behzadi",
+    "name_fa": "توماج دانش بهزادی",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 5208869,
+    "name_en": "Sareh Rashidi",
+    "name_fa": "ساره رشیدی",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 5975790,
+    "name_en": "Mahyar shapoori",
+    "name_fa": "مهیار شاپوری",
+    "name_source": "transliteration",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   }
+  ],
+  "origin_country": [
+   "IR"
+  ],
+  "original_language": "fa",
+  "production_countries": [
+   "IR"
+  ]
+ },
+ "1771967": {
+  "tmdb_id": 1771967,
+  "title_en": "Mahoor",
+  "year": "2025",
+  "imdb": "tt31049538",
+  "fa_title": null,
+  "fa_title_source": "missing",
+  "overview_fa": "یه داستان عاشقانه تو دل اتفاقای اجتماعی و جنگ؛ یه روایت ضدجنگ که تأثیر خشونت رو زندگی آدما نشون می‌ده و روی اهمیت صلح تأکید می‌کنه",
+  "overview_source": "translated",
+  "genres_fa": [
+   "درام",
+   "عاشقانه"
+  ],
+  "genres_en": [
+   "Drama",
+   "Romance"
+  ],
+  "director": {
+   "id": 6483308,
+   "name_en": "Majid Niamorad",
+   "name_fa": "مجید نیامراد",
+   "name_source": "tmdb-fa"
+  },
+  "cast": [
+   {
+    "id": 117528,
+    "name_en": "Homayoun Ershadi",
+    "name_fa": "همایون ارشادی",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 1261539,
+    "name_en": "Gohar Kheyrandish",
+    "name_fa": "گوهر خیراندیش",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 1705880,
+    "name_en": "Laleh Eskandari",
+    "name_fa": "لاله اسکندری",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 2468463,
+    "name_en": "Kaveh Samakbashi",
+    "name_fa": "کاوه سماک باشی",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 1574750,
+    "name_en": "Roozbeh Hesari",
+    "name_fa": "روزبه حصاری",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 2549329,
+    "name_en": "Sogol Khaligh",
+    "name_fa": "سوگل خلیق",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 1698968,
+    "name_en": "Maral Farjad",
+    "name_fa": "مارال فرجاد",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   }
+  ],
+  "origin_country": [
+   "IR"
+  ],
+  "original_language": "fa",
+  "production_countries": [
+   "IR"
+  ]
+ },
+ "1243987": {
+  "tmdb_id": 1243987,
+  "title_en": "Majnoon",
+  "year": "2024",
+  "imdb": "tt30874724",
+  "fa_title": "مجنون",
+  "fa_title_source": "tmdb-fa",
+  "overview_fa": "به کارگردانی مهدی شامحمدی و تهیه‌کنندگی سازمان هنری رسانه‌ای اوج، فیلم روی کارهای شجاعانه‌ی مهدی زین‌الدین تمرکز می‌کنه، یکی از شهیدای سرشناس ایران که تو جوونی و وسط جنگ ایران و عراق (۱۹۸۰ تا ۱۹۸۹) به فرماندهی رسید، به‌خصوص تو جزیره‌ی مجنون و عملیات خیبر",
+  "overview_source": "translated",
+  "genres_fa": [
+   "جنگی",
+   "درام"
+  ],
+  "genres_en": [
+   "War",
+   "Drama"
+  ],
+  "director": {
+   "id": 3310625,
+   "name_en": "Mehdi Shamohammadi",
+   "name_fa": "مهدی شامحمدی",
+   "name_source": "transliteration"
+  },
+  "cast": [
+   {
+    "id": 3860763,
+    "name_en": "Sajad Babaei",
+    "name_fa": "سجاد بابایی",
+    "name_source": "tmdb-fa",
+    "character": "Mahdi Zeinoddin",
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 3273422,
+    "name_en": "Shabnam Ghorbani",
+    "name_fa": "شبنم قربانی",
+    "name_source": "tmdb-fa",
+    "character": "Monireh Armaghan",
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 3711803,
+    "name_en": "Behzad Khalaj",
+    "name_fa": "بهزاد خلج",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 2742919,
+    "name_en": "Hesam Manzour",
+    "name_fa": "حسام منظور",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   }
+  ],
+  "origin_country": [
+   "IR"
+  ],
+  "original_language": "fa",
+  "production_countries": [
+   "IR"
+  ]
+ },
+ "1424834": {
+  "tmdb_id": 1424834,
+  "title_en": "Taxidermy",
+  "year": "2025",
+  "imdb": "tt35602810",
+  "fa_title": "تاکسیدرمی",
+  "fa_title_source": "tmdb-fa",
+  "overview_fa": "داستان این فیلم تلاش سه شکارچی، برای شکار گوزن زرد ایرانی در حال انقراض در بحبوحه پیروزی انقلاب اسلامی ۱۳۵۷ ایران است",
+  "overview_source": "tmdb-fa",
+  "genres_fa": [
+   "کمدی",
+   "فانتزی"
+  ],
+  "genres_en": [
+   "Comedy",
+   "Fantasy"
+  ],
+  "director": {
+   "id": 5207679,
+   "name_en": "Mohammad Paydar",
+   "name_fa": "محمد پایدار",
+   "name_source": "transliteration"
+  },
+  "cast": [
+   {
+    "id": 1500441,
+    "name_en": "Majid Salehi",
+    "name_fa": "مجید صالحی",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 1345986,
+    "name_en": "Hasan Ma'juni",
+    "name_fa": "حسن معجونی",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 1226557,
+    "name_en": "Hadi Kazemi",
+    "name_fa": "هادی کاظمی",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 2124881,
+    "name_en": "Anahita Dargahi",
+    "name_fa": "آناهیتا درگاهی",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 1674849,
+    "name_en": "Farzin Mohades",
+    "name_fa": "فرزین محدث",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 2332651,
+    "name_en": "Bijan Banafshekhah",
+    "name_fa": "بیژن بنفشه‌خواه",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 3327621,
+    "name_en": "Javad Khajavi",
+    "name_fa": "جواد خواجوی",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 5711333,
+    "name_en": "Hedieh Hosseininezhad",
+    "name_fa": "هدیه حسینی‌نژاد",
+    "name_source": "transliteration",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   }
+  ],
+  "origin_country": [
+   "IR"
+  ],
+  "original_language": "fa",
+  "production_countries": [
+   "IR"
+  ]
+ },
+ "1699161": {
+  "tmdb_id": 1699161,
+  "title_en": "Tehran 57",
+  "year": "2025",
+  "imdb": "tt40134756",
+  "fa_title": "طهران ۵۷",
+  "fa_title_source": "tmdb-fa",
+  "overview_fa": "دونالد ترامپ جوان به ایران آمده تا کازینویی در شمال راه اندازی کند. دو ستاره هالیوودی، جک نیکلسون و وارن بیتی او را در این سفر همراهی می کنند. خسرو بی‌خبر از اتفاقات غیرمنتظره‌ای که در راه است به کمک دوستش پرویز که مترجم این مهمانان خارجی است، سعی دارد تا در کازینوی ترامپ با او شریک شود. شراکتی که زندگی‌اش را زیر و رو می‌کند...",
+  "overview_source": "tmdb-fa",
+  "genres_fa": [
+   "کمدی"
+  ],
+  "genres_en": [
+   "Comedy"
+  ],
+  "director": null,
+  "cast": [
+   {
+    "id": 3278290,
+    "name_en": "Hamed Ahangi",
+    "name_fa": "حامد آهنگی",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 1512027,
+    "name_en": "Ahmad Mehranfar",
+    "name_fa": "احمد مهران‌فر",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 2124881,
+    "name_en": "Anahita Dargahi",
+    "name_fa": "آناهیتا درگاهی",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 1649705,
+    "name_en": "Siavash Cheraghipour",
+    "name_fa": "سیاوش چراغی‌پور",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 1588076,
+    "name_en": "Pejman Jamshidi",
+    "name_fa": "پژمان جمشیدی",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 1589379,
+    "name_en": "Maryam Saadat",
+    "name_fa": "مریم سعادت",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   },
+   {
+    "id": 2365809,
+    "name_en": "Yousef Sayadi",
+    "name_fa": "یوسف صیادی",
+    "name_source": "tmdb-fa",
+    "character": null,
+    "character_fa": null,
+    "character_source": "en-only"
+   }
+  ],
+  "origin_country": [
+   "IR"
+  ],
+  "original_language": "fa",
+  "production_countries": []
+ }
+}

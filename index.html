@@ -2228,6 +2228,148 @@ async function fnDetailStaticFirst(type, id) {
   return tmdbDetail(type, id);
 }
 
+/* ---------- FN-IRANIAN-PERSIAN v1: Iranian titles show their details in
+   Persian (synopsis, cast, director, genres) ----------
+   Source of truth: download-data/sections/persian-details.json — a curated
+   static map (10 titles at v1: the FH batch + the 2026 TMDB-only ones),
+   built from live TMDB fa-IR/en-US + the bot's fa-overrides.json. Live
+   TMDB fa-IR stays the base; the map only overrides what TMDB leaves
+   English or empty (a translated overview where fa-IR has none, person
+   names from the TMDB fa-IR person record or careful transliteration).
+   DETECTION RULE (coordinator 2026-11-21; audit-validated 10/10 in-scope,
+   both regressions excluded): a title is in scope iff it is TMDB-Iranian
+   (origin_country includes IR, or original_language == 'fa', or
+   production_countries includes Iran) OR it has a curated entry in this
+   map. The map-entry clause is the site-side form of the fa-overrides
+   clause (the bot's fa-overrides.json is not readable from the site):
+   Mones (TMDB 1582862) is US/en by every TMDB field and enters ONLY via
+   curation (fa_title 'مونز', source fa-overrides) — it stays labelled as
+   curated, never re-described as an Iranian film. Mahoor (1771967) has
+   fa_title null in the map: no Persian title is invented for it; the
+   Latin title 'Mahoor' stays (coordinator decision).
+   Fail-open throughout: a missing/unreachable/malformed map changes
+   nothing — the detail page renders exactly as before (live TMDB fa-IR
+   + automatic translation). */
+var fnPersianDetailsPromise = null;
+var fnPersianNamesMap = null;
+function fnPersianDetails() {
+  if (!fnPersianDetailsPromise) {
+    fnPersianDetailsPromise = fnStaticJson('persian-details.json', 2).then(function (m) {
+      if (!m || typeof m !== 'object') return null;
+      try {
+        var names = {};
+        Object.keys(m).forEach(function (k) {
+          var e = m[k] || {};
+          if (e.director && e.director.id && e.director.name_fa) names[e.director.id] = e.director.name_fa;
+          (e.cast || []).forEach(function (p) { if (p && p.id && p.name_fa) names[p.id] = p.name_fa; });
+        });
+        fnPersianNamesMap = names;
+      } catch (e2) { fnPersianNamesMap = {}; }
+      return m;
+    }).catch(function () { return null; });
+  }
+  return fnPersianDetailsPromise;
+}
+function fnPersianDetailsFor(type, id) {
+  return fnPersianDetails().then(function (m) {
+    if (!m) return null;
+    var k = (type ? type + ':' : '') + id;
+    return m[k] || m[String(id)] || null;
+  }).catch(function () { return null; });
+}
+/* the decided detection rule — see the block comment above */
+function fnIsIranianTitle(d, pdEntry) {
+  if (pdEntry) return true; /* curated entry (fa-overrides clause, site-side form) */
+  if (!d) return false;
+  if ((d.origin_country || []).indexOf('IR') !== -1) return true;
+  if (d.original_language === 'fa') return true;
+  var pcs = d.production_countries || [];
+  for (var i = 0; i < pcs.length; i++) if (pcs[i] && pcs[i].iso_3166_1 === 'IR') return true;
+  return false;
+}
+/* a real IMDb rating: a number > 0. 'N/A', '', null, '0' and '0.0' are all
+   "no rating" — the whole IMDb line is suppressed for those. */
+function fnHasRealImdbRate(r) {
+  if (r == null) return false;
+  var n = parseFloat(String(r).replace(',', '.'));
+  return isFinite(n) && n > 0;
+}
+/* FN-IRANIAN-FOR-TMDB v1 — the full two-part detection rule for a title
+   known only by type+id (play list, archive entry, ext note): the curated
+   map entry first (covers Mones + all 10 map titles, no network), else the
+   live TMDB detail's origin_country / original_language /
+   production_countries. d is an optional already-fetched detail (avoids a
+   network call when the caller has one). The TMDB fetch is raced 1500 ms;
+   fail-open false. */
+async function fnIranianForTmdb(type, id, d) {
+  try {
+    var pd = await fnPersianDetailsFor(type, id);
+    if (pd) return true;
+  } catch (e) {}
+  try {
+    /* a real TMDB detail always carries all three fields (even as empty
+       arrays); a card/cache item carries none of them — an empty or
+       partial object is NOT a detail, so fetch the real one. */
+    var hasDetail = d && (d.origin_country !== undefined || d.original_language !== undefined || d.production_countries !== undefined);
+    if (!hasDetail) {
+      d = await Promise.race([
+        tmdb(type + '/' + id, {}, 'en-US'),
+        new Promise(function (res) { setTimeout(function () { res(null); }, 1500); })
+      ]);
+    }
+    return fnIsIranianTitle(d, null);
+  } catch (e2) { return false; }
+}
+/* FN-ARCHIVE-IMDB v1: the archive's own IMDb id for a title (Taxidermy:
+   TMDB external_ids is null, but the search-index, the fh archive record
+   H3 12475 and OMDb all agree on tt35602810). Title index first, then the
+   search-index row by TMDB id. Fail-open: '' on any miss/failure. */
+async function fnArchiveImdbId(type, id) {
+  try {
+    var ti = await getTitleIndex();
+    var hit = ti && ti[(type === 'tv' ? 'tv:' : 'movie:') + id];
+    if (hit && hit.imdb_id) return hit.imdb_id;
+  } catch (e) {}
+  try {
+    var idx = await getDlSearchIndex();
+    var kId = Number(id);
+    for (var i = 0; i < (idx || []).length; i++) {
+      var r = idx[i];
+      if (r && r.tmdb === kId && r.type === type && r.imdb) return r.imdb;
+    }
+  } catch (e2) {}
+  return '';
+}
+/* apply a map entry's person names onto a credits object, in place */
+function fnMapPersianNames(credits, pd) {
+  if (!credits || !pd) return;
+  var byId = {};
+  if (pd.director && pd.director.id && pd.director.name_fa) byId[pd.director.id] = pd.director.name_fa;
+  (pd.cast || []).forEach(function (p) { if (p && p.id && p.name_fa) byId[p.id] = p.name_fa; });
+  (credits.cast || []).forEach(function (p) { if (p && byId[p.id]) p.name = byId[p.id]; });
+  (credits.crew || []).forEach(function (p) { if (p && byId[p.id]) p.name = byId[p.id]; });
+}
+/* late-arriving map: patch the Persian title line + overview of an already
+   rendered detail sheet. Never touches anything else. */
+function fnPatchPersianTitleOverview(pd) {
+  try {
+    if (!pd) return;
+    if (pd.fa_title) {
+      var head = document.querySelector('#detail-sheet .detail-head h1');
+      var faLine = document.querySelector('#detail-sheet .detail-head .fa-name');
+      if (head && !faLine) {
+        var div = document.createElement('div');
+        div.className = 'fa-name'; div.dir = 'rtl'; div.textContent = pd.fa_title;
+        head.parentNode.insertBefore(div, head.nextSibling);
+      } else if (faLine && faLine.textContent !== pd.fa_title) {
+        faLine.textContent = pd.fa_title; faLine.classList.remove('endup');
+      }
+    }
+    var ov = document.querySelector('#d-overview');
+    if (ov && pd.overview_fa && ov.textContent !== pd.overview_fa) ov.textContent = pd.overview_fa;
+  } catch (e) {}
+}
+
 
 /* ---------- personal state — persisted in this browser
    (localStorage, key fn-state-v1): profile, favorites, watchlist,
@@ -3926,10 +4068,10 @@ function renderHero() {
   const el = $('#hero');
   if (!heroItems.length) { el.innerHTML = ''; return; }
   el.innerHTML = heroItems.map((h, i) => {
-    /* hero shows title, original name, IMDb score and year only —
+    /* hero shows title, original name, TMDB score and year only —
        NO overview/synopsis on the hero (owner's call) */
     return '<div class="hero-slide' + (i === heroIdx ? ' on' : '') + '"><img class="bg" onerror="fnImgFail(this)" data-fn-watch data-hsrc="' + IMG(h.backdrop_path || h.poster_path, window.innerWidth < 900 ? 'w780' : 'w1280') + '" alt="">'
-    + '<div class="hero-shade"></div><div class="hero-in" data-hero-text><h1>' + esc(titleOf(h)) + '</h1>'  + '<div class="meta">' + (h.vote_average ? '<span class="star">★ IMDb <span class="num">' + Number(h.vote_average).toFixed(1) + '</span></span>' : '') + (yearOf(h) ? '<span>سال <span class="num">' + esc(yearOf(h)) + '</span></span>' : '') + '</div>' + '</div></div>';
+    + '<div class="hero-shade"></div><div class="hero-in" data-hero-text><h1>' + esc(titleOf(h)) + '</h1>'  + '<div class="meta">' + (h.vote_average ? '<span class="star">★ <span class="num">' + Number(h.vote_average).toFixed(1) + '</span></span>' : '') + (yearOf(h) ? '<span>سال <span class="num">' + esc(yearOf(h)) + '</span></span>' : '') + '</div>' + '</div></div>';
   }).join('')
     + '<button class="hero-nav" style="inset-inline-start:1.2rem" id="hero-prev" aria-label="قبلی"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m9 5 7 7-7 7"/></svg></button>'
     + '<button class="hero-nav" style="inset-inline-end:1.2rem" id="hero-next" aria-label="بعدی"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="m15 5-7 7 7 7"/></svg></button>'
@@ -4046,7 +4188,7 @@ function paintHeroText(at) {
     + '<h1>' + esc(faTitle) + '</h1>'
     + (enTitle && !sameName(enTitle, faTitle) ? '<div class="entitle">' + esc(enTitle) + '</div>' : '')
     + '<div class="meta">'
-    + (h.vote_average ? '<span class="star" style="font-size:1.05rem">★ IMDb <span class="num">' + Number(h.vote_average).toFixed(1) + '</span></span>' : '')
+    + (h.vote_average ? '<span class="star" style="font-size:1.05rem">★ <span class="num">' + Number(h.vote_average).toFixed(1) + '</span></span>' : '')
     + (yearOf(h) ? '<span>سال <span class="num">' + esc(yearOf(h)) + '</span></span>' : '')
     + (genreNames.length ? '<span>' + esc(genreNames.join('، ')) + '</span>' : '')
     + '</div>'
@@ -5290,8 +5432,12 @@ function closeOverlay(id){ const coEl = $(id); if (coEl) coEl.classList.remove('
    server-side in the worker and never ships in this page. ---------- */
 const CREW_FA = { Directing: 'کارگردانی', Writing: 'نویسندگی', Production: 'تهیه‌کنندگی', Camera: 'فیلم‌برداری', Editing: 'تدوین', Sound: 'صدا و موسیقی', Art: 'طراحی صحنه و هنری', 'Costume & Make-Up': 'لباس و گریم', 'Visual Effects': 'جلوه‌های ویژه', Lighting: 'نورپردازی', Crew: 'سایر عوامل' };
 function personCard(p, sub) {
-  return '<div class="person" data-person="' + p.id + '" role="button" tabindex="0" title="' + esc(p.name || '') + '">' + (p.profile_path ? '<img loading="lazy" src="' + IMG(p.profile_path, 'w185') + '" alt="' + esc(p.name) + '">' : '<div class="ph">' + esc((p.name || '?').slice(0, 1)) + '</div>')
-    + '<b>' + esc(p.name) + '</b><span>' + esc(sub || '') + '</span></div>';
+  /* FN-IRANIAN-PERSIAN v1: a person with a curated Persian name in the
+     static map renders that name (everywhere this card is used); everyone
+     else renders their TMDB name exactly as before. */
+  var nm = (fnPersianNamesMap && fnPersianNamesMap[p.id]) || p.name;
+  return '<div class="person" data-person="' + p.id + '" role="button" tabindex="0" title="' + esc(nm || '') + '">' + (p.profile_path ? '<img loading="lazy" src="' + IMG(p.profile_path, 'w185') + '" alt="' + esc(nm) + '">' : '<div class="ph">' + esc((nm || '?').slice(0, 1)) + '</div>')
+    + '<b>' + esc(nm) + '</b><span>' + esc(sub || '') + '</span></div>';
 }
 function castPanelHtml(credits) {
   /* Like the FN app title page: actors and the director ONLY — the
@@ -5338,7 +5484,12 @@ function factsHtml(d, type) {
   const add = (k, v) => { if (v) f.push('<div class="fact"><span>' + k + '</span><b>' + esc(v) + '</b></div>'); };
   if (d.tagline) add('شعار اثر', d.tagline);
   add('وضعیت', d.status === 'Released' ? 'منتشر شده' : (d.status === 'Ended' ? 'پایان‌یافته' : (d.status === 'Returning Series' ? 'در حال پخش' : (d.status || ''))));
-  add('زبان اصلی', (d.spoken_languages && d.spoken_languages[0] && (d.spoken_languages[0].english_name || d.spoken_languages[0].name)) || d.original_language || '');
+  /* FN-IRANIAN-PERSIAN v1: the original language shows its Persian name
+     when TMDB supplies one (fa-IR payloads localise it: 'فارسی'); otherwise
+     exactly as before. */
+  var sl0 = (d.spoken_languages && d.spoken_languages[0]) || null;
+  var langName = sl0 ? ((/[؀-ۿ]/.test(sl0.name || '') ? sl0.name : (sl0.english_name || sl0.name))) : '';
+  add('زبان اصلی', langName || d.original_language || '');
   if (type === 'movie') {
     if (d.budget) add('بودجه', '$' + Number(d.budget).toLocaleString('en-US'));
     if (d.revenue) add('فروش جهانی', '$' + Number(d.revenue).toLocaleString('en-US'));
@@ -5630,10 +5781,13 @@ function buildDetailSheet(o) {
     + '<button class="iconaction plain" id="d-share" aria-label="اشتراک‌گذاری" title="اشتراک‌گذاری"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="5.5" r="2.5"/><circle cx="18" cy="18.5" r="2.5"/><path d="m8.2 10.8 7.6-4M8.2 13.2l7.6 4"/></svg><span>اشتراک</span></button>'
     + '<button class="iconaction plain" id="d-compare" aria-label="مقایسه" title="مقایسه"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M5 7l7-4 7 4M5 7l-1.5 6a3.5 3.5 0 0 0 7 0L9 7M19 7l-1.5 6a3.5 3.5 0 0 0 7 0L23 7" transform="scale(.92) translate(1 1)"/></svg><span>مقایسه</span></button>'
     + '</div>'
-    + '<div class="chips genre-chips">'
+    /* RULE 1 (user 2026-11-21): a work with no genres shows NO genre line
+       at all — not an empty chips row, not a guessed genre. The div renders
+       only when at least one genre name exists (after the fa/en fallback). */
+    + ((genreObjs.length || genres.length) ? '<div class="chips genre-chips">'
     + (genreObjs.length ? genreObjs.map(g => '<button class="chip chipbtn" data-genre-chip="' + g.id + '" data-gname="' + esc(g.name) + '" title="مشاهده همه آثار ژانر ' + esc(g.name) + '">' + esc(g.name) + '</button>').join('')
       : genres.map(g => '<span class="chip" style="cursor:default">' + esc(g) + '</span>').join(''))
-    + '</div>'
+    + '</div>' : '')
     + '</div></div>'
     + '<div class="detail-actions2">'
     + '<div class="da-row single"><button class="btn da-btn btn-playlong" id="d-play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg> پخش آنلاین</button></div>'
@@ -5748,6 +5902,10 @@ async function openDetail(type, id) {
      which load fine. The live TMDB detail is an UPGRADE, not a gate:
      it fills the extras in when it arrives (15s deadline); on
      failure the local sheet stays, with its own retry button. */
+  /* FN-IRANIAN-PERSIAN v1: warm the curated Persian-details map in
+     parallel with the detail fetch, so it is usually cached by the time
+     the sheet renders (fail-open: a missing map changes nothing). */
+  try { if (typeof fnPersianDetails === 'function') fnPersianDetails(); } catch (e) {}
   var _cachedDetail = null;
   try { _cachedDetail = itemCache.get(wlKey(type, id)) || null; } catch (e) {}
   if (_cachedDetail) { try { renderLocalDetail(type, id, _cachedDetail, token); } catch (e) {} }
@@ -5765,6 +5923,28 @@ async function openDetail(type, id) {
   }
   if (token !== detailToken) return;
   curDetail = { type, id, data: d };
+  /* FN-IRANIAN-PERSIAN v1: curated Persian details for this title (if in
+     scope — see fnIsIranianTitle). Bounded wait so a slow map fetch never
+     stalls the sheet; if it arrives late, the patch below applies it when
+     it lands (title line + overview + cast panel re-render). */
+  var pdEntry = null;
+  try {
+    pdEntry = await Promise.race([
+      fnPersianDetailsFor(type, id),
+      new Promise(function (res) { setTimeout(function () { res(null); }, 1200); })
+    ]);
+    if (pdEntry && !fnIsIranianTitle(d, pdEntry)) pdEntry = null;
+  } catch (e) { pdEntry = null; }
+  if (pdEntry && pdEntry.overview_fa) d.overview = pdEntry.overview_fa;
+  if (!pdEntry) {
+    fnPersianDetailsFor(type, id).then(function (e2) {
+      if (!e2 || token !== detailToken) return;
+      fnPatchPersianTitleOverview(e2);
+      var cp = document.querySelector('#d-panel-cast');
+      var cr = (curDetail && curDetail.data && (curDetail.data.credits || (curDetail.data._en && curDetail.data._en.credits))) || null;
+      if (cp && cr && ((cr.cast || []).length || (cr.crew || []).length)) cp.innerHTML = castPanelHtml(cr);
+    }).catch(function () {});
+  }
   const en = d._en || d;
   let title = titleOf(d) || titleOf(en);
   const orig = origOf(d) || origOf(en);
@@ -5775,8 +5955,12 @@ async function openDetail(type, id) {
      so clicking still opens exactly that genre's works); a genre with
      no Persian equivalent keeps its original name — and is translated
      in place below — never losing its click behaviour */
-  const genres = (d.genres || []).map(g => (typeof GENRES_FA !== 'undefined' && GENRES_FA[g.id]) || g.name).filter(Boolean);
-  const genreObjs = (d.genres || []).filter(g => g.id).map(g => ({ id: g.id, name: (typeof GENRES_FA !== 'undefined' && GENRES_FA[g.id]) || g.name }));
+  /* FN-IRANIAN-PERSIAN v1: the map's genre names back up GENRES_FA (same
+     mapping; only used when GENRES_FA has no entry for the id). */
+  var pdGenreByEn = {};
+  if (pdEntry && pdEntry.genres_en && pdEntry.genres_fa) pdEntry.genres_en.forEach(function (gn, i) { if (pdEntry.genres_fa[i]) pdGenreByEn[gn] = pdEntry.genres_fa[i]; });
+  const genres = (d.genres || []).map(g => (typeof GENRES_FA !== 'undefined' && GENRES_FA[g.id]) || pdGenreByEn[g.name] || g.name).filter(Boolean);
+  const genreObjs = (d.genres || []).filter(g => g.id).map(g => ({ id: g.id, name: (typeof GENRES_FA !== 'undefined' && GENRES_FA[g.id]) || pdGenreByEn[g.name] || g.name }));
   let cert = '';
   if (type === 'movie' && d.release_dates && d.release_dates.results) {
     const rs = d.release_dates.results;
@@ -5789,6 +5973,9 @@ async function openDetail(type, id) {
   }
   const imdbId = (d.external_ids && d.external_ids.imdb_id) || d.imdb_id || '';
   const credits = d.credits || (en && en.credits) || {};
+  /* FN-IRANIAN-PERSIAN v1: curated Persian person names, in place — the
+     cast panel, the share text and the AI context below all read credits. */
+  if (pdEntry) fnMapPersianNames(credits, pdEntry);
   const videos = [].concat((d.videos && d.videos.results) || [], (en.videos && en.videos.results) || []);
   const seenV = new Set(); const videosU = videos.filter(v => v.key && !seenV.has(v.key) && seenV.add(v.key));
   const images = d.images || (en && en.images) || {};
@@ -5807,7 +5994,12 @@ async function openDetail(type, id) {
      line (o.faTitle, rendered by buildDetailSheet). */
   const mergedTitle = title;
   if (enTitle && !nonLatinScript(enTitle) && !sameName(enTitle, mergedTitle)) title = enTitle;
-  const faTitle = (/[؀-ۿ]/.test(mergedTitle) && !sameName(mergedTitle, title)) ? mergedTitle : '';
+  let faTitle = (/[؀-ۿ]/.test(mergedTitle) && !sameName(mergedTitle, title)) ? mergedTitle : '';
+  /* FN-IRANIAN-PERSIAN v1: the curated Persian title (Mones: 'مونز' — TMDB
+     has no Persian title for it). Mahoor's map fa_title is null, so no
+     override: the Latin title stays and the machine-translation line
+     handles the Persian rendering, as before. */
+  if (pdEntry && pdEntry.fa_title && !sameName(pdEntry.fa_title, title)) faTitle = pdEntry.fa_title;
   const o = { type, id, title, orig, year, vote: d.vote_average, runtime, genres, genreObjs, cert, poster: d.poster_path, backdrop: d.backdrop_path, overview: d.overview || '', imdbId, videos: videosU, enTitle, faTitle };
   sheet.innerHTML = buildDetailSheet(o);
   wireDetailSheet(o, itemForWl);
@@ -5817,7 +6009,7 @@ async function openDetail(type, id) {
      «دانلود رایگان» or «پخش آنلاین» finds the data already there.
      Both loaders are fail-open (a failed preload changes nothing —
      the tap path loads on demand exactly as before). */
-  loadDownloadBox(imdbId, token, d.title || d.name || '', (d.release_date || d.first_air_date || '').slice(0, 4), (type === 'tv' ? 'tv:' : 'movie:') + id, IMG(d.poster_path, 'w342'));
+  loadDownloadBox(imdbId, token, d.title || d.name || '', (d.release_date || d.first_air_date || '').slice(0, 4), (type === 'tv' ? 'tv:' : 'movie:') + id, IMG(d.poster_path, 'w342'), fnIsIranianTitle(d, pdEntry) || undefined);
   try { if (typeof fnPlayPrefetchDetail === 'function') fnPlayPrefetchDetail(type, id); } catch (e) {}
   /* a non-English-language work whose merged payload brought no
      English title gets its REAL English title resolved from TMDB
@@ -5859,10 +6051,21 @@ async function openDetail(type, id) {
   /* a genre chip still showing a Latin name (no GENRES_FA entry) is
      translated in place — its click handler reads only the id */
   $$('#detail-sheet [data-genre-chip]').forEach(b => { const t = (b.textContent || '').trim(); if (t && typeof isLatinTitle === 'function' && isLatinTitle(t)) maybeTranslateEl(b, t, 3); });
-  if (imdbId) fnApiJson(FN_API + '/v1/omdb?i=' + encodeURIComponent(imdbId)).then(om => {
-    if (token !== detailToken) return;
-    if (om && om.imdbRating && om.imdbRating !== 'N/A') { o.imdbRating = om.imdbRating; const el = $('#d-rating'); if (el) el.textContent = 'IMDb ' + om.imdbRating + ' ★'; }
-  }).catch(() => {});
+  /* FN-ARCHIVE-IMDB v1 + FN-IMDB-SUPPRESS v1: the OMDb key is TMDB
+     external_ids first, the archive's own title index second (Taxidermy:
+     external_ids is null, the archive knows tt35602810, OMDb 3.5). The
+     slot becomes an IMDb rating ONLY for a real rating (parseFloat > 0) —
+     'N/A', '', '0' and '0.0' all leave the TMDB vote (or '—') in place. */
+  (function () {
+    var keyP = imdbId ? Promise.resolve(imdbId) : fnArchiveImdbId(type, id);
+    keyP.then(function (key) {
+      if (!key || token !== detailToken) return;
+      return fnApiJson(FN_API + '/v1/omdb?i=' + encodeURIComponent(key)).then(function (om) {
+        if (token !== detailToken) return;
+        if (om && fnHasRealImdbRate(om.imdbRating)) { o.imdbRating = om.imdbRating; var el = $('#d-rating'); if (el) el.textContent = 'IMDb ' + om.imdbRating + ' ★'; }
+      });
+    }).catch(function () {});
+  })();
   if (type === 'tv') loadDetailEpisodes(d, token);
 }
 /* Detail sheet built from the local FN catalog entry (used when the
@@ -5923,18 +6126,24 @@ async function hydrateLocalDetail(type, id, token, item, o) {
   if (item.original_language && item.original_language !== 'en') fnEnsureDetailEnHead(type, id, alive);
   let imdbId = '';
   try { const ex = await tmdb(type + '/' + id + '/external_ids', {}); imdbId = (ex && ex.imdb_id) || ''; } catch (e) {}
+  /* FN-ARCHIVE-IMDB v1: same archive fallback as the full path (Taxidermy). */
+  if (!imdbId) { try { imdbId = await fnArchiveImdbId(type, id); } catch (e2) {} }
   if (!alive()) return;
   /* preload the play links too (the download box loads right below):
      hand the resolved IMDb id to the prefetch through curDetail so
      its resolve uses the same identifier the tap path will use */
   if (imdbId && curDetail && curDetail.data) { try { curDetail.data.imdb_id = imdbId; } catch (e) {} }
   try { if (typeof fnPlayPrefetchDetail === 'function') fnPlayPrefetchDetail(type, id); } catch (e) {}
-  if (imdbId) { loadDownloadBox(imdbId, token, '', '', (type === 'tv' ? 'tv:' : 'movie:') + id, IMG(item.poster_path, 'w342')); return; }
+  if (imdbId) { loadDownloadBox(imdbId, token, '', '', (type === 'tv' ? 'tv:' : 'movie:') + id, IMG(item.poster_path, 'w342'), fnIsIranianTitle(item, null) || undefined); return; }
   const body = $('#d-dl-body'); if (body) body.innerHTML = '<div class="state"><div class="spin"></div>در حال جستجوی این عنوان در آرشیو دانلود Family Night…</div>';
   if (!alive()) return;
   /* loadDownloadBox runs the whole fallback chain itself: archive title
      search, then the TMDB title index, then the "no link" message */
-  loadDownloadBox('', token, origOf(item) || titleOf(item), yearOf(item), (type === 'tv' ? 'tv:' : 'movie:') + id, IMG(item.poster_path, 'w342'));
+  loadDownloadBox('', token, origOf(item) || titleOf(item), yearOf(item), (type === 'tv' ? 'tv:' : 'movie:') + id, IMG(item.poster_path, 'w342'), fnIsIranianTitle(item, null) || undefined);
+  /* FN-IRANIAN-PERSIAN v1 (local path): curated overview + Persian title
+     line when the map has this title. Cast names come via personCard's
+     global Persian-name map (warmed when the detail opened). */
+  fnPersianDetailsFor(type, id).then(function (pd) { if (pd && alive()) fnPatchPersianTitleOverview(pd); }).catch(function () {});
 }
 function normTitle(s) { return String(s || '').toLowerCase().replace(/[^a-z0-9\u0600-\u06FF]+/g, ' ').trim(); }
 async function findImdbByTitle(title, year) {
@@ -6733,7 +6942,7 @@ function dlTilesHtml(rec, opts) {
     + '<span class="fn-dl-hinfo"><b>' + esc(title) + '</b>'
     + faLine
     + (o.meta ? '<span>' + esc(o.meta) + '</span>' : '')
-    + (rec.rate ? '<span>IMDb ' + esc(rec.rate) + ' ★</span>' : '')
+    + (fnHasRealImdbRate(rec.rate) ? '<span>IMDb ' + esc(rec.rate) + ' ★</span>' : '')
     + '</span>'
     + '<span class="fn-dl-tot"><b>' + all.length + '</b><span>لینک دانلود</span></span>'
     + (totalMB ? '<span class="fn-dl-tot"><b>' + faSize(fmtTotalMB(totalMB)) + '</b><span>حجم مجموع</span></span>' : '')
@@ -6746,7 +6955,7 @@ function dlTilesHtml(rec, opts) {
   if (isSeries) {
     out += '<div class="fn-dl-cabox" hidden><div class="fn-dl-ca-title"></div><div class="fn-dl-ca-chips"></div><button class="fn-dl-ca-close">بستن</button></div>';
   }
-  var ctx = { title: title, year: year, isSeries: isSeries, links: [], eps: {}, firstEp: '', allUrls: allUrls, sel: null, epLinks: null, epKey: '', tmdbId: o.tmdbId || '', src: o.src, epMeta: {}, epMetaDone: {} }; /* FN-SM-SRC v1: ctx.src feeds the E7c series-sheet override */
+  var ctx = { title: title, year: year, isSeries: isSeries, iranian: !!o.iranian, links: [], eps: {}, firstEp: '', allUrls: allUrls, sel: null, epLinks: null, epKey: '', tmdbId: o.tmdbId || '', src: o.src, epMeta: {}, epMetaDone: {} }; /* FN-SM-SRC v1: ctx.src feeds the E7c series-sheet override */
   if (isSeries) {
     out += dlSeriesHtml(groups, o.poster || '', title, ctx);
   } else {
@@ -6771,6 +6980,24 @@ function dlTilesHtml(rec, opts) {
        all-qualities bubbles live on the SERIES episode tiles only. */
     out += '<div class="fn-dl-sec"><span>لینک‌های دانلود</span><span class="fn-dl-cnt">' + rows.length + ' لینک</span></div>';
     var presentGroups = groups.filter(function (g) { return byGroup[g.key].length; });
+    if (o.iranian) {
+      /* RULE 2 (user 2026-11-21): an Iranian film shows its encodes with
+         NO subtitle-version line at all — no version filter chips, no
+         per-group sections, no per-tile version label. The tiles keep
+         data-dl-i = their index into ctx.links (copy-all + tap behaviour
+         unchanged); the quality chip and the size stay. */
+      out += '<div class="fn-dl-tiles">';
+      rows.forEach(function (r, i) {
+        out += '<div class="fn-dl-tile" data-dl-i="' + i + '">'
+          + '<span class="fn-dl-thumb">' + dlPosterHtml(o.poster || '', title) + '</span>'
+          + '<span class="fn-dl-tinfo"><b>' + esc(title) + '</b>'
+          + '<span class="fn-dl-tline"><span class="fn-dl-qchip">' + esc(r.sp.res || '—') + '</span></span>'
+          + (r.x.size ? '<span class="fn-dl-tline2" dir="rtl">' + esc(faSize(r.x.size)) + '</span>' : '')
+          + '</span>'
+          + '<span class="fn-dl-chev">' + FN_DL_CHEV_SVG + '</span></div>';
+      });
+      out += '</div>';
+    } else {
     /* version filter chips: «همه» first (rightmost, active by
        default), then one chip per version this work actually has.
        «صوت جدا» appears only when the audio group has files. */
@@ -6793,6 +7020,7 @@ function dlTilesHtml(rec, opts) {
       });
       out += '</div></div>';
     });
+    }
   }
   out += dlSheetHtml(isSeries);
   return { html: out, ctx: ctx };
@@ -6873,7 +7101,9 @@ function dlSeriesHtml(groups, posterUrl, title, ctx) {
       out += '<div class="fn-dl-eptile" data-dl-ep="' + esc(s + '|' + ep.episode) + '">'
         + '<span class="fn-dl-thumb">' + dlPosterHtml(posterUrl, title) + '</span>'
         + '<span class="fn-dl-tinfo"><b>قسمت ' + esc(ep.episode) + '</b>'
-        + '<span class="fn-dl-tline"><span class="fn-dl-ver">' + esc(top.label) + '</span>' + epChips + '</span>'
+        /* RULE 2: an Iranian series' episode tile shows the quality
+           bubbles but no version label. */
+        + '<span class="fn-dl-tline">' + (ctx.iranian ? '' : '<span class="fn-dl-ver">' + esc(top.label) + '</span>') + epChips + '</span>'
         + (epSizes ? '<span class="fn-dl-tline2" dir="rtl">' + esc(epSizes) + '</span>' : '')
         + '</span>'
         + '<span class="fn-dl-chev">' + FN_DL_CHEV_SVG + '</span></div>';
@@ -6960,6 +7190,7 @@ function wireDlTiles(root, ctx) {
       if (typeof fnPlayEnsureListDom === 'function') fnPlayEnsureListDom();
       var p = { play_url: s.url, quality: ((s.source ? s.source + ' ' : '') + (s.res || '')).trim(), group: s.group || '', encoder: s.codec || '', size_text: s.size || '', season: ctx.isSeries ? (parseInt(ctx.season, 10) || 0) : 0, episode: s.epNum || 0 };
       FN_PLAY.ctx = { type: ctx.isSeries ? 'tv' : 'movie', title: ctx.title };
+      if (typeof FN_PLAY_IRANIAN !== 'undefined') FN_PLAY_IRANIAN = !!ctx.iranian;
       FN_PLAY.entry = { title: ctx.title };
       FN_PLAY.key = '';
       FN_PLAY.rows = [p];
@@ -7040,9 +7271,11 @@ function wireDlTiles(root, ctx) {
     var sum = root.querySelector('.fn-dl-sum'), sub = root.querySelector('.fn-dl-sub'), chips = root.querySelector('.fn-dl-qchips');
     /* line 1: title + year. line 2: the details (episode first for series) */
     if (sum) sum.textContent = ctx.title + (ctx.year ? ' • ' + ctx.year : '');
+    /* RULE 2: the sheet sub-line drops the version group (s.group) for an
+       Iranian title — the .filter(Boolean) below drops the empty slot. */
     if (sub) sub.textContent = (ctx.isSeries
-      ? [s.epLabel, s.epRate ? '★ ' + s.epRate : '', s.res, s.size ? faSize(s.size) : '', s.source, s.group, s.codec, s.enc, s.ext]
-      : [s.res, s.size ? faSize(s.size) : '', s.source, s.group, s.codec, s.enc, s.ext]).filter(Boolean).join(' • ');
+      ? [s.epLabel, s.epRate ? '★ ' + s.epRate : '', s.res, s.size ? faSize(s.size) : '', s.source, (ctx.iranian ? '' : s.group), s.codec, s.enc, s.ext]
+      : [s.res, s.size ? faSize(s.size) : '', s.source, (ctx.iranian ? '' : s.group), s.codec, s.enc, s.ext]).filter(Boolean).join(' • ');
     if (chips) {
       if (ctx.epLinks && ctx.epLinks.length > 1) {
         var resList = [];
@@ -7278,9 +7511,14 @@ async function fnExtDlHtml(tmdbKey) {
     const ent = idx[tmdbKey] || {};
     const label = (ent.s1 && ent.s2) ? 'صفحه‌ی دانلود (سرور ۱ و ۲)' : ent.s1 ? 'صفحه‌ی دانلود (سرور ۱)' : 'صفحه‌ی دانلود (سرور ۲)';
     const url = m[1] === 'tv' ? 'https://mediatv.trendingpie.com/?id=' + m[2] : 'https://media.trendingpie.com/?id=' + m[2];
+    /* RULE 2 (user 2026-11-21): an Iranian film is never labelled
+       «بدون زیرنویس» — the external-server note drops the parenthetical
+       for it (the server still opens in a new tab, as before). */
+    var extIranian = false;
+    try { extIranian = await fnIranianForTmdb(m[1], m[2], null); } catch (e) { extIranian = false; }
     return '<div class="fn-ext-dl" data-ext-dl>'
       + '<div class="fn-dl-sec"><span>دانلود از سرور خارجی</span></div>'
-      + '<p class="fn-ext-dl-note">این اثر در آرشیو ما لینک دانلود ندارد؛ دانلود از سرور خارجی (بدون زیرنویس فارسی) در تب جدید باز می‌شود.</p>'
+      + '<p class="fn-ext-dl-note">این اثر در آرشیو ما لینک دانلود ندارد؛ دانلود از سرور خارجی' + (extIranian ? '' : ' (بدون زیرنویس فارسی)') + ' در تب جدید باز می‌شود.</p>'
       + '<a class="fn-ext-dl-btn" href="' + url + '" target="_blank" rel="noopener">' + label + '</a>'
       + '</div>';
   } catch (e) { return ''; }
@@ -7300,7 +7538,14 @@ async function fnDnTrailerUrl(tmdbKey) {
   if (!tmdbKey) return '';
   try { const idx = await getDnTrailerIndex(); const ent = idx[tmdbKey]; if (!ent) return ''; return typeof ent === 'string' ? ent : (ent.url || ''); } catch (e) { return ''; }
 }
-async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUrl) {
+/* RULE 2 (user 2026-11-21): an Iranian film's download box shows its
+   encodes with NO subtitle-version line. `iranian` is a tri-state: true
+   (the caller proved it), or undefined (resolve here from the curated map
+   by tmdbKey — the map lookup is cached, so this costs a microtask once
+   loaded). Callers pass `true` or leave it undefined; they never pass a
+   bare false, because a slow map fetch in the caller would wrongly clear
+   a curated title (Mones). */
+async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUrl, iranian) {
   const body = $('#d-dl-body'); if (!body) return;
   if (!imdbId && fbTitle) {
     /* the worker (TMDB external_ids) is blocked without VPN, so no IMDb
@@ -7367,7 +7612,18 @@ async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUr
     var headTitle = enTitle || faTitle || fbTitle || rec.title;
     var faPending = !faTitle && !!enTitle && typeof translateFa === 'function';
     var hasDnBox = resolved.src === 'dn' || !!resolved.hasDn; /* FN-DN-SRC v1 */
-    var dlBuilt = dlTilesHtml(rec, { poster: posterUrl || '', title: headTitle, faTitle: faTitle, faPending: faPending, meta: dlMeta, tmdbId: (tmdbKey && tmdbKey.indexOf('tv:') === 0) ? tmdbKey.slice(3) : '', src: resolved.src, hasDn: hasDnBox });
+    /* RULE 2: resolve the flag from the curated map when the caller left
+       it undefined (covers the slow-map case for Mones + the local path).
+       The box resolution already took seconds, so awaiting the shared map
+       promise here is free. */
+    if (iranian === undefined && tmdbKey) {
+      try {
+        var im = String(tmdbKey).match(/^(movie|tv):(\d+)$/);
+        if (im) { var ipd = await fnPersianDetailsFor(im[1], im[2]); iranian = !!ipd; }
+      } catch (e) { iranian = false; }
+    }
+    if (token !== detailToken) return;
+    var dlBuilt = dlTilesHtml(rec, { poster: posterUrl || '', title: headTitle, faTitle: faTitle, faPending: faPending, meta: dlMeta, tmdbId: (tmdbKey && tmdbKey.indexOf('tv:') === 0) ? tmdbKey.slice(3) : '', src: resolved.src, hasDn: hasDnBox, iranian: !!iranian });
     body.innerHTML = dlBuilt.html;
     wireDlTiles(body, dlBuilt.ctx);
     if (faPending) {
@@ -7411,6 +7667,13 @@ function openInPlayer(url) {
    v8.6: encoder display abbreviations — Film2Media -> F2M, DonyayeSerial -> DS.
    AO v1: archive.org part (part 'ao', download-data/ao/); encoder AO. */
 var FN_PLAY = { parts: {}, ctx: null, entry: null, key: '', part: 0, sel: null, seasonKey: '', prefetch: null };
+/* RULE 2 (user 2026-11-21) — FN_PLAY_IRANIAN: when true, the play list,
+   option popup and player meta show NO subtitle-version label for the
+   current title (no SoftSub/HardSub/Dubbed/NoSub anywhere). Set by
+   openPlayListOrPlayer (and wpPaintList for the watch-party list) from
+   fnIranianForTmdb; default false. The label helpers below read it, so
+   every surface that prints a version label is covered by the one flag. */
+var FN_PLAY_IRANIAN = false;
 /* real brand icons (v8.2): MX Player + VLC, 96px PNGs from the apps' Google Play pages */
 var FN_PLAY_ICONS = { mx: 'data:image/png;base64,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', vlc: 'data:image/png;base64,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' };
 function fnPlayExtOf(p) { var m = String((p.play_url || '').split('?')[0]).match(/\.([a-z0-9]+)$/i); return m ? m[1].toLowerCase() : ''; }
@@ -7437,15 +7700,17 @@ function fnPlayGroupKey(p) {
   return 'softsub';
 }
 function fnPlayGroupLabel(k) {
+  if (FN_PLAY_IRANIAN) return '';
   return k === 'dubbed' ? 'دوبله فارسی' : k === 'nosub' ? 'بدون زیرنویس' : k === 'audio' ? 'صوت جدا' : 'زیرنویس فارسی';
 }
 function fnPlayVersionLabel(p) {
   if (fnPlayIsCam(p)) return 'کیفیت پرده';
+  if (FN_PLAY_IRANIAN) return '';
   if (p.group === 'Dubbed') return 'دوبله فارسی';
   if (p.group === 'NoSub') return 'بدون زیرنویس';
   return 'زیرنویس فارسی (هاردساب)';
 }
-function fnPlayGroupShort(g) { return g === 'SoftSub' ? 'زیرنویس' : g === 'Dubbed' ? 'دوبله' : g === 'NoSub' ? 'بدون زیرنویس' : 'زیرنویس'; }
+function fnPlayGroupShort(g) { if (FN_PLAY_IRANIAN) return ''; return g === 'SoftSub' ? 'زیرنویس' : g === 'Dubbed' ? 'دوبله' : g === 'NoSub' ? 'بدون زیرنویس' : 'زیرنویس'; }
 /* v8.6: display-only encoder abbreviations. Data keeps the full names. */
 function fnPlayEncShort(e) {
   if (!e) return e;
@@ -7708,6 +7973,10 @@ function fnPlayPrefetchDetail(type, id) {
 async function openPlayListOrPlayer(o) {
   var ctx = fnPlayCtx(o);
   FN_PLAY.ctx = ctx; FN_PLAY.entry = null; FN_PLAY.sel = null;
+  /* RULE 2: resolve the flag early (in parallel with the resolve below —
+     the map is usually already warm from the detail page). */
+  FN_PLAY_IRANIAN = false;
+  var iranianP = (typeof fnIranianForTmdb === 'function') ? fnIranianForTmdb(ctx.type, ctx.id, ctx.item) : Promise.resolve(false);
   fnPlayEnsureListDom();
   /* v8.4: release year next to the title for movies */
   $('#pl-title').textContent = (ctx.title || 'پخش آنلاین') + ((ctx.type !== 'tv' && ctx.year) ? ' (' + fnPlayFa(ctx.year) + ')' : '');
@@ -7773,8 +8042,18 @@ async function openPlayListOrPlayer(o) {
       return;
     }
   }
+  /* RULE 2: the flag must be set before the list renders (raced 1500 ms
+     so a slow lookup never stalls the list); if it lands late and the
+     title turns out Iranian, re-render once. */
+  try {
+    FN_PLAY_IRANIAN = !!(await Promise.race([iranianP, new Promise(function (res) { setTimeout(function () { res(false); }, 1500); })]));
+  } catch (e) { FN_PLAY_IRANIAN = false; }
   FN_PLAY.entry = res.entry; FN_PLAY.key = res.key; FN_PLAY.part = res.part;
   fnPlayRenderList();
+  iranianP.then(function (v) {
+    if (!v) return;
+    try { if (FN_PLAY.ctx && FN_PLAY.ctx.tmdbKey === ctx.tmdbKey && !FN_PLAY_IRANIAN) { FN_PLAY_IRANIAN = true; fnPlayRenderList(); } } catch (e2) {}
+  }).catch(function () {});
 }
 /* ---------- episode play priority (FN-EP-PLAY-FIRST v1) ----------
    An episode's play button (detail page, Episodes section) opens the
@@ -7926,6 +8205,15 @@ function fnPlayRenderList() {
       if (!seen[k]) { seen[k] = 1; opts.push({ season: p.season || 0, group: p.group || 'NoSub' }); }
     });
     opts.sort(function (a, b) { return (a.season - b.season) || (fnPlayGroupRank(a.group) - fnPlayGroupRank(b.group)); });
+    /* RULE 2: an Iranian series has no version distinction — one picker
+       option per season (the group short is hidden by fnPlayGroupShort,
+       so season|group options would otherwise render as identical
+       'فصل X' entries). The rows filter below is season-only. */
+    if (FN_PLAY_IRANIAN) {
+      var seenS = {}, uOpts = [];
+      opts.forEach(function (o) { if (!seenS[o.season]) { seenS[o.season] = 1; uOpts.push(o); } });
+      opts = uOpts;
+    }
     if (!opts.length) { body.innerHTML = '<div class="pl-empty">نسخه‌ای برای پخش این سریال پیدا نشد.</div>'; return; }
     /* FN-EP-PLAY-FIRST v1: opened from a specific episode — position
        the list at that episode's season and the first group that has
@@ -7950,7 +8238,7 @@ function fnPlayRenderList() {
     seasonBox.innerHTML = '<label for="pl-season-sel">فصل</label><select class="sel" id="pl-season-sel">'
       + opts.map(function (o) { return '<option value="' + o.season + '|' + o.group + '"' + ((o.season + '|' + o.group) === FN_PLAY.seasonKey ? ' selected' : '') + '>فصل ' + fnPlayOrd(o.season) + ' ' + fnPlayGroupShort(o.group) + '</option>'; }).join('') + '</select>';
     seasonBox.querySelector('#pl-season-sel').onchange = function (e) { FN_PLAY.seasonKey = e.target.value; fnPlayRenderList(); };
-    var rows = joined.filter(function (p) { return (p.season || 0) === cur.season && (p.group || 'NoSub') === cur.group; });
+    var rows = joined.filter(function (p) { return (p.season || 0) === cur.season && (FN_PLAY_IRANIAN || (p.group || 'NoSub') === cur.group); });
     rows.sort(function (a, b) { return ((a.episode || 0) - (b.episode || 0)) || fnPlaySort(a, b); });
     FN_PLAY.rows = rows;
     body.innerHTML = '<div class="pl-count">' + fnPlayFa(rows.length) + ' نسخه · فصل ' + fnPlayOrd(cur.season) + ' ' + fnPlayGroupShort(cur.group) + '</div>' + dnPlayHint
@@ -7974,7 +8262,18 @@ function fnPlayRenderList() {
     plGroups.forEach(function (k) { plByGroup[k] = []; });
     rows.forEach(function (p) { plByGroup[fnPlayGroupKey(p)].push(p); });
     var plPresent = plGroups.filter(function (k) { return plByGroup[k].length; });
-    body.innerHTML = '<div class="pl-count">' + fnPlayFa(rows.length) + ' نسخه قابل پخش</div>' + dnPlayHint
+    /* RULE 2 (user 2026-11-21): an Iranian film's play list is one flat
+       list of encodes — no version chips, no per-group sections, no
+       per-card version label (fnPlayVersionLabel returns '' above). The
+       cards keep their index into FN_PLAY.rows, so tap behaviour is
+       unchanged. */
+    if (FN_PLAY_IRANIAN) {
+      body.innerHTML = '<div class="pl-count">' + fnPlayFa(rows.length) + ' نسخه قابل پخش</div>' + dnPlayHint
+        + '<div class="pl-list">' + rows.map(function (p) {
+          return fnPlayCardHtml(p, 'کیفیت ' + (fnPlayResFa(p) || '—') + ' ' + fnPlayVersionLabel(p));
+        }).join('') + '</div>';
+    } else {
+      body.innerHTML = '<div class="pl-count">' + fnPlayFa(rows.length) + ' نسخه قابل پخش</div>' + dnPlayHint
       + '<div class="pl-vchips"><button class="pl-vchip on" data-pl-v="all">همه</button>'
       + plPresent.map(function (k) { return '<button class="pl-vchip" data-pl-v="' + k + '">' + esc(fnPlayGroupLabel(k)) + '</button>'; }).join('') + '</div>'
       + plPresent.map(function (k) {
@@ -7984,6 +8283,7 @@ function fnPlayRenderList() {
             return fnPlayCardHtml(p, 'کیفیت ' + (fnPlayResFa(p) || '—') + ' ' + fnPlayVersionLabel(p));
           }).join('') + '</div></div>';
       }).join('');
+    }
   }
   body.querySelectorAll('[data-pl-idx]').forEach(function (b) {
     b.onclick = function () { fnPlayOpenOpt(FN_PLAY.rows[+b.dataset.plIdx]); };
@@ -10333,6 +10633,15 @@ let dlaTmdbHits = null, dlaTmdbQ = '', dlaTmdbBusy = false;
 const DLA_SORTS = [['default', 'برترین‌ها (نمره IMDb)'], ['rate', 'بالاترین نمره'], ['votes', 'بیشترین رأی'], ['new', 'جدیدترین'], ['old', 'قدیمی‌ترین']];
 const DLA_EN2CC = { 'United States': 'US', 'United Kingdom': 'GB', 'Canada': 'CA', 'Australia': 'AU', 'France': 'FR', 'Germany': 'DE', 'West Germany': 'DE', 'Italy': 'IT', 'Spain': 'ES', 'Japan': 'JP', 'South Korea': 'KR', 'Korea': 'KR', 'India': 'IN', 'China': 'CN', 'Hong Kong': 'HK', 'Taiwan': 'TW', 'Russia': 'RU', 'Soviet Union': 'RU', 'Iran': 'IR', 'Turkey': 'TR', 'Brazil': 'BR', 'Mexico': 'MX', 'Argentina': 'AR', 'Netherlands': 'NL', 'Belgium': 'BE', 'Sweden': 'SE', 'Norway': 'NO', 'Denmark': 'DK', 'Finland': 'FI', 'Poland': 'PL', 'Portugal': 'PT', 'Greece': 'GR', 'Czech Republic': 'CZ', 'Czechoslovakia': 'CZ', 'Hungary': 'HU', 'Romania': 'RO', 'Austria': 'AT', 'Switzerland': 'CH', 'Ireland': 'IE', 'Israel': 'IL', 'Egypt': 'EG', 'South Africa': 'ZA', 'New Zealand': 'NZ', 'Thailand': 'TH', 'Indonesia': 'ID', 'Philippines': 'PH', 'Vietnam': 'VN', 'Ukraine': 'UA', 'Pakistan': 'PK', 'Bangladesh': 'BD', 'Sri Lanka': 'LK', 'Malaysia': 'MY', 'Singapore': 'SG', 'Saudi Arabia': 'SA', 'United Arab Emirates': 'AE', 'Qatar': 'QA', 'Lebanon': 'LB', 'Iraq': 'IQ', 'Afghanistan': 'AF', 'Kazakhstan': 'KZ', 'Uzbekistan': 'UZ', 'Azerbaijan': 'AZ', 'Georgia': 'GE', 'Armenia': 'AM', 'Serbia': 'RS', 'Croatia': 'HR', 'Bulgaria': 'BG', 'Iceland': 'IS', 'Estonia': 'EE', 'Latvia': 'LV', 'Lithuania': 'LT', 'Slovakia': 'SK', 'Slovenia': 'SI', 'Bosnia and Herzegovina': 'BA', 'North Macedonia': 'MK', 'Montenegro': 'ME', 'Albania': 'AL', 'Chile': 'CL', 'Colombia': 'CO', 'Peru': 'PE', 'Venezuela': 'VE', 'Uruguay': 'UY', 'Cuba': 'CU', 'Nigeria': 'NG', 'Kenya': 'KE', 'Morocco': 'MA', 'Tunisia': 'TN', 'Algeria': 'DZ' };
 function dlaStatus(e) {
+  /* RULE 2 (user 2026-11-21): an Iranian film shows NO version line in
+     the archive browse list. The only per-entry country signal here is
+     e.cc (OMDb country, resolved by the background enrichment and restored
+     from the persistent cache on repeat visits). The no-IMDb titles
+     (Mones, Khanom valede, Napoleon) never get e.cc, and a row renders
+     before enrichment lands — so this covers repeat visits and
+     post-enrichment repaints for IMDb-carrying Iranian titles; the
+     detail-page download box and the play list are fully covered. */
+  if (e && e.cc === 'IR') return '';
   /* the exact variant line — built only from the download groups
      this record really has in the archive (SoftSub / Dubbed /
      NoSub); the link count is intentionally NOT shown any more */
@@ -10759,7 +11068,7 @@ function renderDlaList() {
     return '<div class="dla-row" data-dla="' + i + '" data-dla-idx="' + i + '" role="button" tabindex="0">'
     + '<span class="dla-poster"><span class="noimg">' + esc((e.title || '?').trim().charAt(0)) + '</span></span>'
     + '<span class="inf"><b data-fa-done="1">' + esc(dlaTitleLine(e)) + '</b>'
-    + '<span class="dla-sub"><span class="dla-fa" data-dla-fa="' + i + '">' + esc(fa) + '</span><span class="dla-ver">' + (fa ? ' · ' : '') + esc(ver) + '</span></span>'
+    + '<span class="dla-sub"><span class="dla-fa" data-dla-fa="' + i + '">' + esc(fa) + '</span><span class="dla-ver">' + (fa && ver ? ' · ' : '') + esc(ver) + '</span></span>'
     + '<span class="dla-enc">' + dlaEncHtml(e) + '</span></span>'
     + '<span class="dla-side">'
     + (e.rate ? '<span class="dla-imdb"><span class="imdb-logo" aria-hidden="true"></span>' + esc(e.rate) + '</span>' : '')
@@ -10846,7 +11155,7 @@ async function openArchiveEntry(entry) {
   openOverlay('#ov-detail');
   sheet.innerHTML = '<button class="xbtn" data-close-detail aria-label="بستن" style="position:fixed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button>'
     + '<div class="sheet-body" style="margin-top:0;padding-top:4.5rem"><h1 style="font-size:1.5rem;font-weight:900;margin:0 0 .4rem">' + esc(entry.title) + '</h1>'
-    + '<div class="detail-meta">' + (entry.rate ? '<span class="star" style="color:#f5c518">IMDb ' + esc(entry.rate) + ' ★</span>' : '') + (entry.imdb ? '<span class="ltr num">' + esc(entry.imdb) + '</span>' : '<span>بدون کد IMDb</span>') + '</div>'
+    + '<div class="detail-meta">' + (fnHasRealImdbRate(entry.rate) ? '<span class="star" style="color:#f5c518">IMDb ' + esc(entry.rate) + ' ★</span>' : '') + (entry.imdb ? '<span class="ltr num">' + esc(entry.imdb) + '</span>' : '<span>بدون کد IMDb</span>') + '</div>'
     + (entry.imdb ? '<div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.2rem"><button class="btn btn-gold" id="dla-info">مشاهده اطلاعات کامل و پخش</button></div>' : '')
     + '<div class="sec"><h2>جعبه دانلود</h2><div id="d-dl-body"><div class="state"><div class="spin"></div>در حال دریافت لینک‌ها از آرشیو…</div></div></div></div>';
   sheet.querySelector('[data-close-detail]').onclick = () => closeOverlay('#ov-detail');
@@ -10873,7 +11182,27 @@ async function openArchiveEntry(entry) {
     const body = $('#d-dl-body'); if (!body) return;
     if (!rec || (!rec.groups.softsub.length && !rec.groups.dubbed.length && !rec.groups.nosub.length && !(rec.groups.audio || []).length)) { body.innerHTML = '<div class="state">لینکی برای این عنوان پیدا نشد.</div>'; return; }
     var posterUrl = await dlPosterP;
-    var dlBuilt = dlTilesHtml(rec, { poster: posterUrl, title: entry.title, meta: (entry.type === 'tv' ? 'سریال' : 'فیلم'), tmdbId: dlTmdbId, src: resolved.src, hasDn: resolved.src === 'dn' }); /* FN-DN-SRC v1 */
+    /* RULE 2 (user 2026-11-21): an Iranian film's archive-entry box shows
+       its encodes with no subtitle-version line. The TMDB id comes from
+       the find-by-IMDb above, else the search-index title fallback (the
+       no-IMDb titles: Mones, Khanom valede, Napoleon). The map lookup
+       covers the curated titles; the TMDB-detail clauses cover any other
+       Iranian title. Fail-open: any miss renders today's box. */
+    var iranianEntry = false;
+    try {
+      var eType = entry.type === 'tv' ? 'tv' : 'movie';
+      var eTid = dlTmdbId;
+      if (!eTid) {
+        var eIdx = await getDlSearchIndex();
+        var eNeedle = normTitle(entry.title);
+        for (var ei = 0; ei < (eIdx || []).length; ei++) {
+          var er = eIdx[ei];
+          if (er && er.type === eType && er.tmdb && normTitle(er.t) === eNeedle && (!entry.year || !er.y || er.y === entry.year)) { eTid = er.tmdb; break; }
+        }
+      }
+      if (eTid) iranianEntry = await fnIranianForTmdb(eType, eTid, null);
+    } catch (e2) { iranianEntry = false; }
+    var dlBuilt = dlTilesHtml(rec, { poster: posterUrl, title: entry.title, meta: (entry.type === 'tv' ? 'سریال' : 'فیلم'), tmdbId: dlTmdbId, src: resolved.src, hasDn: resolved.src === 'dn', iranian: iranianEntry }); /* FN-DN-SRC v1 */
     body.innerHTML = dlBuilt.html;
     wireDlTiles(body, dlBuilt.ctx);
     void tokenSnapshot;
@@ -14127,7 +14456,11 @@ async function shareTitle(o) {
     try { ov = await translateFa(ov); } catch (e) {}
   }
   const imdbId = o.imdbId || (d && d.external_ids && d.external_ids.imdb_id) || '';
-  const rating = o.imdbRating || o.vote;
+  /* FN-IMDB-SUPPRESS v1: this line is labelled IMDb, so it shows ONLY a real
+     IMDb rating (o.imdbRating, set by the OMDb hydrate). A TMDB vote must
+     never wear the IMDb label — with no real IMDb rating the whole line is
+     omitted (the TMDB vote still shows on the detail page, cards, hero). */
+  const rating = fnHasRealImdbRate(o.imdbRating) ? o.imdbRating : '';
   const lines = ['🎬 ' + o.title + (o.year ? ' (' + o.year + ')' : '')];
   if (o.orig && o.orig !== o.title) lines.push('🔤 نام اصلی: ' + o.orig);
   if (rating) lines.push('⭐ امتیاز IMDb: ' + Number(rating).toFixed(1));
@@ -14201,7 +14534,7 @@ function openCompare() {
     + row('امتیاز TMDB', a.facts.vote ? '★ ' + Number(a.facts.vote).toFixed(1) : '', b.facts.vote ? '★ ' + Number(b.facts.vote).toFixed(1) : '', rateWin)
     + row('امتیاز شما', myA ? myA + ' از ۱۰' : 'امتیاز نداده‌اید', myB ? myB + ' از ۱۰' : 'امتیاز نداده‌اید', myWin)
     + row('سال ساخت', a.facts.year, b.facts.year, 0)
-    + row('ژانرها', a.facts.genres, b.facts.genres, 0)
+    + (a.facts.genres || b.facts.genres ? row('ژانرها', a.facts.genres, b.facts.genres, 0) : '')
     + row('مدت / ساختار', a.facts.runtime, b.facts.runtime, 0)
     + row('کشور سازنده', a.facts.countries, b.facts.countries, 0)
     + row('کارگردان', a.facts.directors, b.facts.directors, 0)
@@ -14574,7 +14907,7 @@ async function cmpRun(type2, id2) {
     + row('محبوبیت', A.popularity ? String(Math.round(A.popularity)) : '', B.popularity ? String(Math.round(B.popularity)) : '', win(A.popularity, B.popularity))
     + row('امتیاز شما', myA ? myA + ' از ۱۰' : 'امتیاز نداده‌اید', myB ? myB + ' از ۱۰' : 'امتیاز نداده‌اید', (myA && myB) ? win(myA, myB) : 0)
     + row('سال ساخت', A.year, B.year, 0)
-    + row('ژانرها', A.genres, B.genres, 0)
+    + (A.genres || B.genres ? row('ژانرها', A.genres, B.genres, 0) : '')
     + row('مدت', A.runtime, B.runtime, 0)
     + (A.seasons || B.seasons ? row('فصل و قسمت', A.seasons, B.seasons, 0) : '')
     + row('کشور سازنده', A.countries, B.countries, 0)
@@ -16148,6 +16481,16 @@ sxSearchPage = async function (seq, append) {
   /* the internal list, rendered inside #wp-screen (same rows/helpers as the solo list). */
   function wpPaintList(scr, src, res) {
     var entry = res.entry, ctx = wpRoomCtx(src);
+    /* RULE 2: the room list for an Iranian title shows no version label.
+       The lookup is async; a flip (either way) re-paints once. No reset
+       here — a stale value self-corrects on the lookup below. */
+    if (typeof fnIranianForTmdb === 'function') {
+      fnIranianForTmdb(ctx.type, ctx.id, ctx.item).then(function (v) {
+        if (!!v === FN_PLAY_IRANIAN) return;
+        FN_PLAY_IRANIAN = !!v;
+        try { wpPaintList(scr, src, res); } catch (e2) {}
+      }).catch(function () {});
+    }
     if (typeof fnPlayEnsureListDom === 'function') fnPlayEnsureListDom();
     FN_PLAY.ctx = ctx; FN_PLAY.entry = entry; FN_PLAY.key = res.key; FN_PLAY.part = res.part;
     var joined = fnPlayJoined(entry);
