@@ -1,0 +1,1074 @@
+{
+ "code": "FH",
+ "source": "FarsiHubz mirror https://monclerjakkejacket.com/ (farsihubby.com: empty splash, 0 titles)",
+ "start_num": 12468,
+ "end_num": 12482,
+ "live_base_head": "8b210e25fc530b1b986b2ddf56438b998eba2ff8",
+ "generated": "2026-11-21",
+ "counts": {
+  "total_titles": 15,
+  "movies": 9,
+  "series": 6,
+  "total_links": 82,
+  "by_year": {
+   "2024": 3,
+   "2025": 6,
+   "2026": 6
+  },
+  "by_quality": {
+   "1080p": 10,
+   "720p": 72
+  }
+ },
+ "films": [
+  {
+   "title": "Ahmad",
+   "tmdb": 1626271,
+   "imdb": "tt30985611",
+   "year": 2024,
+   "num": 12468,
+   "links": 1,
+   "quality": "720p",
+   "size_bytes": 1021821313
+  },
+  {
+   "title": "Antique",
+   "tmdb": 1425084,
+   "imdb": "tt35615501",
+   "year": 2025,
+   "num": 12469,
+   "links": 1,
+   "quality": "720p",
+   "size_bytes": 2073790723
+  },
+  {
+   "title": "Two Days Later",
+   "tmdb": 1353036,
+   "imdb": "tt31146329",
+   "year": 2024,
+   "num": 12470,
+   "links": 1,
+   "quality": "720p",
+   "size_bytes": 804577150
+  },
+  {
+   "title": "The Dreamer",
+   "tmdb": 1797731,
+   "imdb": "tt46146733",
+   "year": 2026,
+   "num": 12471,
+   "links": 1,
+   "quality": "720p",
+   "size_bytes": 633613610
+  },
+  {
+   "title": "Mahoor",
+   "tmdb": 1771967,
+   "imdb": "tt31049538",
+   "year": 2025,
+   "num": 12472,
+   "links": 1,
+   "quality": "720p",
+   "size_bytes": 504011763
+  },
+  {
+   "title": "Majnoon",
+   "tmdb": 1243987,
+   "imdb": "tt30874724",
+   "year": 2024,
+   "num": 12473,
+   "links": 1,
+   "quality": "720p",
+   "size_bytes": 1385429308
+  },
+  {
+   "title": "Guardian of the Field",
+   "tmdb": 1425080,
+   "imdb": "tt35376549",
+   "year": 2025,
+   "num": 12474,
+   "links": 1,
+   "quality": "720p",
+   "size_bytes": 1536065637
+  },
+  {
+   "title": "Taxidermy",
+   "tmdb": 1424834,
+   "imdb": "tt35602810",
+   "year": 2025,
+   "num": 12475,
+   "links": 1,
+   "quality": "720p",
+   "size_bytes": 838474811
+  },
+  {
+   "title": "Tehran 57",
+   "tmdb": 1699161,
+   "imdb": "tt40134756",
+   "year": 2025,
+   "num": 12476,
+   "links": 1,
+   "quality": "720p",
+   "size_bytes": 971867940
+  }
+ ],
+ "series": [
+  {
+   "title": "A Load of Trouble",
+   "tmdb": 314798,
+   "imdb": "tt40059335",
+   "year": 2026,
+   "num": 12477,
+   "episodes_listed": 24,
+   "episodes_merged": 24,
+   "tmdb_seasons": {
+    "1": 24
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "The Forgotten",
+   "tmdb": 296050,
+   "imdb": "tt37546794",
+   "year": 2025,
+   "num": 12478,
+   "episodes_listed": 18,
+   "episodes_merged": 18,
+   "tmdb_seasons": {
+    "1": 18
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Ostokhan Sooz",
+   "tmdb": 340334,
+   "imdb": "tt50339876",
+   "year": 2026,
+   "num": 12479,
+   "episodes_listed": 4,
+   "episodes_merged": 4,
+   "tmdb_seasons": {
+    "1": 10
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Shah Gol",
+   "tmdb": 333149,
+   "imdb": "tt44567077",
+   "year": 2026,
+   "num": 12480,
+   "episodes_listed": 14,
+   "episodes_merged": 14,
+   "tmdb_seasons": {
+    "1": 17
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Taxi",
+   "tmdb": 338649,
+   "imdb": "tt49211076",
+   "year": 2026,
+   "num": 12481,
+   "episodes_listed": 7,
+   "episodes_merged": 7,
+   "tmdb_seasons": {
+    "1": 7
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Yal",
+   "tmdb": 336546,
+   "imdb": "tt47616772",
+   "year": 2026,
+   "num": 12482,
+   "episodes_listed": 7,
+   "episodes_merged": 6,
+   "tmdb_seasons": {
+    "1": 8
+   },
+   "episodes_held": [
+    {
+     "slug": "yal-part-7",
+     "season": 1,
+     "episode": 7,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    }
+   ]
+  }
+ ],
+ "held_not_merged": [
+  {
+   "key": "bi-gharar",
+   "kind": "movie",
+   "tmdb": 701286,
+   "imdb": "tt2381107",
+   "title": "Bi-gharar",
+   "year": 1973,
+   "reason": "mirror player source 404s on the CDN (watch-movies path); HEAD 404 + Range 404, with and without Referer",
+   "url": "https://stream.farsicdn.co/watch-movies/Bigharar_720p.mp4"
+  },
+  {
+   "key": "rafigh",
+   "kind": "movie",
+   "tmdb": 822227,
+   "imdb": "tt2385185",
+   "title": "Rafigh",
+   "year": 1976,
+   "reason": "mirror player source 404s on the CDN (watch-movies path); HEAD 404 + Range 404, with and without Referer",
+   "url": "https://stream.farsicdn.co/watch-movies/Rafigh_1354_720p.mp4"
+  },
+  {
+   "key": "zane-rooz",
+   "kind": "tv",
+   "tmdb": 299996,
+   "imdb": "tt38949332",
+   "title": "Zane rooz",
+   "year": 2025,
+   "reason": "no episode verified playable; series HELD entirely",
+   "episodes_held": [
+    {
+     "slug": "zane-rooz-ghesmate-1",
+     "season": 1,
+     "episode": 1,
+     "reason": "YouTube embed only (NNFHNBkiipE) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-ghesmate-2",
+     "season": 1,
+     "episode": 2,
+     "reason": "YouTube embed only (kWbPO4FiJiI) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-ghesmate-3",
+     "season": 1,
+     "episode": 3,
+     "reason": "YouTube embed only (SgskQ-j2SO8) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-ghesmate-4",
+     "season": 1,
+     "episode": 4,
+     "reason": "YouTube embed only (iB5bQgLMw0s) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-ghesmate-5",
+     "season": 1,
+     "episode": 5,
+     "reason": "YouTube embed only (maAyGKmjJ-c) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-ghesmate-6",
+     "season": 1,
+     "episode": 6,
+     "reason": "YouTube embed only (tmjDQ6sMA_E) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-ghesmate-7",
+     "season": 1,
+     "episode": 7,
+     "reason": "YouTube embed only (LhnXdYAPHTU) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-ghesmate-8",
+     "season": 1,
+     "episode": 8,
+     "reason": "YouTube embed only (5kGC18M_LjE) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-ghesmate-9",
+     "season": 1,
+     "episode": 9,
+     "reason": "YouTube embed only (jD5lg_ICcyI) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-ghesmate-10",
+     "season": 1,
+     "episode": 10,
+     "reason": "YouTube embed only (KVQEMWp_Hys) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-ghesmate-11",
+     "season": 1,
+     "episode": 11,
+     "reason": "YouTube embed only (X5p3bPEqLmY) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-ghesmate-12",
+     "season": 1,
+     "episode": 12,
+     "reason": "YouTube embed only (F1QvKIsd95I) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-ghesmate-13",
+     "season": 1,
+     "episode": 13,
+     "reason": "YouTube embed only (o0keDkde9-k) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-ghesmate-14",
+     "season": 1,
+     "episode": 14,
+     "reason": "YouTube embed only (qe3PDTq-IjA) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-ghesmate-15",
+     "season": 1,
+     "episode": 15,
+     "reason": "YouTube embed only (J85-rFPepBg) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-ghesmate-16",
+     "season": 1,
+     "episode": 16,
+     "reason": "YouTube embed only (4Zpvj8BwDGQ) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-ghesmate-17",
+     "season": 1,
+     "episode": 17,
+     "reason": "YouTube embed only (mEBCcGMDx8Q) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-ghesmate-18",
+     "season": 1,
+     "episode": 18,
+     "reason": "YouTube embed only (c9VWu5jrvBw) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-ghesmate-19",
+     "season": 1,
+     "episode": 19,
+     "reason": "YouTube embed only (JaNXcNCrliE) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-ghesmate-20",
+     "season": 1,
+     "episode": 20,
+     "reason": "YouTube embed only (ZXfi8iGKYQw) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-ghesmate-21",
+     "season": 1,
+     "episode": 21,
+     "reason": "YouTube embed only (kCSsG4EJvIE) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-ghesmate-22",
+     "season": 1,
+     "episode": 22,
+     "reason": "YouTube embed only (nQswDOXsAj0) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-ghesmate-23",
+     "season": 1,
+     "episode": 23,
+     "reason": "YouTube embed only (ydBPcrdQh5o) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-ghesmate-24",
+     "season": 1,
+     "episode": 24,
+     "reason": "YouTube embed only (Ribk2Qe4yZE) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-ghesmate-25",
+     "season": 1,
+     "episode": 25,
+     "reason": "YouTube embed only (_MEprk3b4bM) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-ghesmate-26",
+     "season": 1,
+     "episode": 26,
+     "reason": "YouTube embed only (-bVZKXoKaTU) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-ghesmate-27",
+     "season": 1,
+     "episode": 27,
+     "reason": "YouTube embed only (oXbkrnTU4O4) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-ghesmate-28",
+     "season": 1,
+     "episode": 28,
+     "reason": "YouTube embed only (MpZluhVFaFw) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-ghesmate-29",
+     "season": 1,
+     "episode": 29,
+     "reason": "YouTube embed only (OtoV6apOAbU) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-ghesmate-30",
+     "season": 1,
+     "episode": 30,
+     "reason": "YouTube embed only (P3DyE7WQW80) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-1",
+     "season": 2,
+     "episode": 1,
+     "reason": "YouTube embed only (upKTrDshMVs) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-2",
+     "season": 2,
+     "episode": 2,
+     "reason": "YouTube embed only (PXc7LfjH2Fc) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-3",
+     "season": 2,
+     "episode": 3,
+     "reason": "YouTube embed only (30Fq39puLJg) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-4",
+     "season": 2,
+     "episode": 4,
+     "reason": "YouTube embed only (2RVHtJ7Qz-k) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-5",
+     "season": 2,
+     "episode": 5,
+     "reason": "YouTube embed only (Y46jI8SHmr4) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-6",
+     "season": 2,
+     "episode": 6,
+     "reason": "YouTube embed only (pfEpKT9JwGo) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-7",
+     "season": 2,
+     "episode": 7,
+     "reason": "YouTube embed only (n57vslvGJG0) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-8",
+     "season": 2,
+     "episode": 8,
+     "reason": "YouTube embed only (VX-iRQYUHDY) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-9",
+     "season": 2,
+     "episode": 9,
+     "reason": "YouTube embed only (6s4q_lwywYo) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-10",
+     "season": 2,
+     "episode": 10,
+     "reason": "YouTube embed only (tuenoJDKYeU) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-11",
+     "season": 2,
+     "episode": 11,
+     "reason": "YouTube embed only (CEA7q_yTcY0) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-12",
+     "season": 2,
+     "episode": 12,
+     "reason": "YouTube embed only (CP7e20Jg-1A) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-13",
+     "season": 2,
+     "episode": 13,
+     "reason": "YouTube embed only (K8UlvSLUhDI) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-14",
+     "season": 2,
+     "episode": 14,
+     "reason": "YouTube embed only (sMTeBWduOCM) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-15",
+     "season": 2,
+     "episode": 15,
+     "reason": "YouTube embed only (lqwF2u5sj9c) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-16",
+     "season": 2,
+     "episode": 16,
+     "reason": "YouTube embed only (jE6uNQw80ec) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-17",
+     "season": 2,
+     "episode": 17,
+     "reason": "YouTube embed only (lTg-u2sv3sQ) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-18",
+     "season": 2,
+     "episode": 18,
+     "reason": "YouTube embed only (pJsf04Rsjuo) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-19",
+     "season": 2,
+     "episode": 19,
+     "reason": "YouTube embed only (omAl5gt8xQQ) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-20",
+     "season": 2,
+     "episode": 20,
+     "reason": "YouTube embed only (Dw85Rzj-MIM) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-21",
+     "season": 2,
+     "episode": 21,
+     "reason": "YouTube embed only (-I6chZ2rpdI) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-22",
+     "season": 2,
+     "episode": 22,
+     "reason": "YouTube embed only (dhxYnESkc2U) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-23",
+     "season": 2,
+     "episode": 23,
+     "reason": "YouTube embed only (a7m3L_QFea0) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-24",
+     "season": 2,
+     "episode": 24,
+     "reason": "YouTube embed only (JrXMv8cHEeg) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-25",
+     "season": 2,
+     "episode": 25,
+     "reason": "YouTube embed only (U24K6GpsQig) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-26",
+     "season": 2,
+     "episode": 26,
+     "reason": "YouTube embed only (kl8gPjqBWog) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-27",
+     "season": 2,
+     "episode": 27,
+     "reason": "YouTube embed only (ov5kUFsIfEY) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-28",
+     "season": 2,
+     "episode": 28,
+     "reason": "YouTube embed only (Qpr5UX-L-gk) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-29",
+     "season": 2,
+     "episode": 29,
+     "reason": "YouTube embed only (ySwescEt8pY) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-30",
+     "season": 2,
+     "episode": 30,
+     "reason": "YouTube embed only (Wo9zrrPIYPQ) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-31",
+     "season": 2,
+     "episode": 31,
+     "reason": "YouTube embed only (mS3_yN0X1JM) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-32",
+     "season": 2,
+     "episode": 32,
+     "reason": "YouTube embed only (YkZd8UyrpkI) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-33",
+     "season": 2,
+     "episode": 33,
+     "reason": "YouTube embed only (mveaufDCs6I) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-34",
+     "season": 2,
+     "episode": 34,
+     "reason": "YouTube embed only (hR1biMLdbVY) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-35",
+     "season": 2,
+     "episode": 35,
+     "reason": "YouTube embed only (ktdXB19rp4o) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-36",
+     "season": 2,
+     "episode": 36,
+     "reason": "YouTube embed only (48x9KvV3TvE) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-37",
+     "season": 2,
+     "episode": 37,
+     "reason": "YouTube embed only (ry21MhO6jUw) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-38",
+     "season": 2,
+     "episode": 38,
+     "reason": "YouTube embed only (OJI-AycM3sQ) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-39",
+     "season": 2,
+     "episode": 39,
+     "reason": "YouTube embed only (Q79CNUj1eBY) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s2-ghesmate-40",
+     "season": 2,
+     "episode": 40,
+     "reason": "YouTube embed only (z_s3ouqeCX0) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-1",
+     "season": 3,
+     "episode": 1,
+     "reason": "YouTube embed only (5lGAMLx7-nA) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-2",
+     "season": 3,
+     "episode": 2,
+     "reason": "YouTube embed only (vPk2PRF7aL0) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-3",
+     "season": 3,
+     "episode": 3,
+     "reason": "YouTube embed only (NnkWuS37ozA) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-4",
+     "season": 3,
+     "episode": 4,
+     "reason": "YouTube embed only (D_IRKQ6c-U4) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-5",
+     "season": 3,
+     "episode": 5,
+     "reason": "YouTube embed only (CsQeNXuwNPE) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-6",
+     "season": 3,
+     "episode": 6,
+     "reason": "YouTube embed only (hQC7Pcps3wc) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-7",
+     "season": 3,
+     "episode": 7,
+     "reason": "YouTube embed only (I4vbOWECg_g) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-8",
+     "season": 3,
+     "episode": 8,
+     "reason": "YouTube embed only (8e8EptQXBpM) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-9",
+     "season": 3,
+     "episode": 9,
+     "reason": "YouTube embed only (oXBSDjgPftg) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-10",
+     "season": 3,
+     "episode": 10,
+     "reason": "YouTube embed only (foQ2xPIiZzk) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-11",
+     "season": 3,
+     "episode": 11,
+     "reason": "YouTube embed only (ao4dneFSfUY) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-12",
+     "season": 3,
+     "episode": 12,
+     "reason": "YouTube embed only (n4NEew_I9k8) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-13",
+     "season": 3,
+     "episode": 13,
+     "reason": "YouTube embed only (_tw8gezMeYI) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-14",
+     "season": 3,
+     "episode": 14,
+     "reason": "YouTube embed only (bqxg_0XN72A) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-15",
+     "season": 3,
+     "episode": 15,
+     "reason": "YouTube embed only (7yXJeCjKBkA) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-16",
+     "season": 3,
+     "episode": 16,
+     "reason": "YouTube embed only (sZI6jmLoESo) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-17",
+     "season": 3,
+     "episode": 17,
+     "reason": "YouTube embed only (upZxXKQgpRE) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-18",
+     "season": 3,
+     "episode": 18,
+     "reason": "YouTube embed only (OfNwL7vbUmw) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-19",
+     "season": 3,
+     "episode": 19,
+     "reason": "YouTube embed only (4P3wojzBfXg) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-20",
+     "season": 3,
+     "episode": 20,
+     "reason": "YouTube embed only (mSp9H373zeI) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-21",
+     "season": 3,
+     "episode": 21,
+     "reason": "YouTube embed only (VDYXNYzVSiU) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-22",
+     "season": 3,
+     "episode": 22,
+     "reason": "YouTube embed only (m7SYk1Z0zTY) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-23",
+     "season": 3,
+     "episode": 23,
+     "reason": "YouTube embed only (-U9-DPi5kYk) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-24",
+     "season": 3,
+     "episode": 24,
+     "reason": "YouTube embed only (iszPlnaTq5M) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-25",
+     "season": 3,
+     "episode": 25,
+     "reason": "YouTube embed only (mYn42-juPCk) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-26",
+     "season": 3,
+     "episode": 26,
+     "reason": "YouTube embed only (JYz7CtVFURA) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-27",
+     "season": 3,
+     "episode": 27,
+     "reason": "YouTube embed only (wWnycbQdCts) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-28",
+     "season": 3,
+     "episode": 28,
+     "reason": "YouTube embed only (csu6bussMdk) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-29",
+     "season": 3,
+     "episode": 29,
+     "reason": "YouTube embed only (MAvEH6bLZpU) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s3-ghesmate-30",
+     "season": 3,
+     "episode": 30,
+     "reason": "YouTube embed only (tiK6G-STOAw) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-1",
+     "season": 4,
+     "episode": 1,
+     "reason": "YouTube embed only (OlsjkZQ10ys) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-2",
+     "season": 4,
+     "episode": 2,
+     "reason": "YouTube embed only (OXW8-NquPrA) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-3",
+     "season": 4,
+     "episode": 3,
+     "reason": "YouTube embed only (IX6ylZU0AWA) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-4",
+     "season": 4,
+     "episode": 4,
+     "reason": "YouTube embed only (N9xtrwqelS4) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-5",
+     "season": 4,
+     "episode": 5,
+     "reason": "YouTube embed only (1mvBlqSKDW0) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-6",
+     "season": 4,
+     "episode": 6,
+     "reason": "YouTube embed only (9VXiHrV8iUg) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-7",
+     "season": 4,
+     "episode": 7,
+     "reason": "YouTube embed only (HPPS13JjOV0) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-8",
+     "season": 4,
+     "episode": 8,
+     "reason": "YouTube embed only (vr9Gmte5y08) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-9",
+     "season": 4,
+     "episode": 9,
+     "reason": "YouTube embed only (dJskTQ12AUY) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-10",
+     "season": 4,
+     "episode": 10,
+     "reason": "YouTube embed only (T322NGv0VYM) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-11",
+     "season": 4,
+     "episode": 11,
+     "reason": "YouTube embed only (DoV6TEYWGxc) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-12",
+     "season": 4,
+     "episode": 12,
+     "reason": "YouTube embed only (UGtDWeuWVkw) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-13",
+     "season": 4,
+     "episode": 13,
+     "reason": "YouTube embed only (gE74AHu4Mto) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-14",
+     "season": 4,
+     "episode": 14,
+     "reason": "YouTube embed only (mAN95Ra1v1M) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-15",
+     "season": 4,
+     "episode": 15,
+     "reason": "YouTube embed only (psMIPtOxv0Q) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-16",
+     "season": 4,
+     "episode": 16,
+     "reason": "YouTube embed only (P5wpGIEUuvc) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-17",
+     "season": 4,
+     "episode": 17,
+     "reason": "YouTube embed only (aUGDbXeq1Qk) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-18",
+     "season": 4,
+     "episode": 18,
+     "reason": "YouTube embed only (6RFV8tE8wFc) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-19",
+     "season": 4,
+     "episode": 19,
+     "reason": "YouTube embed only (Gn18HbIA_2w) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-20",
+     "season": 4,
+     "episode": 20,
+     "reason": "YouTube embed only (eVXW36ei2PQ) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-21",
+     "season": 4,
+     "episode": 21,
+     "reason": "YouTube embed only (2ejQU3Iyp-I) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-22",
+     "season": 4,
+     "episode": 22,
+     "reason": "YouTube embed only (zAprDsxB_ec) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-23",
+     "season": 4,
+     "episode": 23,
+     "reason": "YouTube embed only (VkQLdeXHAks) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-24",
+     "season": 4,
+     "episode": 24,
+     "reason": "YouTube embed only (UNXRTX-0nss) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-25",
+     "season": 4,
+     "episode": 25,
+     "reason": "YouTube embed only (wFaRNNCt87Y) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-26",
+     "season": 4,
+     "episode": 26,
+     "reason": "YouTube embed only (gvJglEukQTw) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-27",
+     "season": 4,
+     "episode": 27,
+     "reason": "YouTube embed only (-dYbeCxDBsQ) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-28",
+     "season": 4,
+     "episode": 28,
+     "reason": "YouTube embed only (V1oDw7bvypI) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-29",
+     "season": 4,
+     "episode": 29,
+     "reason": "YouTube embed only (2B3lcnuj0RI) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s4-ghesmate-30",
+     "season": 4,
+     "episode": 30,
+     "reason": "YouTube embed only (Z4UOjm1AnVE) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s5-ghesmate-1",
+     "season": 5,
+     "episode": 1,
+     "reason": "YouTube embed only (aKYbx_jmOWw) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s5-ghesmate-2",
+     "season": 5,
+     "episode": 2,
+     "reason": "YouTube embed only (lxfL_9btH58) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s5-ghesmate-3",
+     "season": 5,
+     "episode": 3,
+     "reason": "YouTube embed only (XmW_cnin2MA) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s5-ghesmate-4",
+     "season": 5,
+     "episode": 4,
+     "reason": "YouTube embed only (3gpmg33Mw_4) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "zane-rooz-s5-ghesmate-5",
+     "season": 5,
+     "episode": 5,
+     "reason": "YouTube embed only (zC3fcCGiVMI) — needs VPN, never merged as a play link"
+    }
+   ],
+   "listed": 135,
+   "tmdb_seasons": {
+    "1": 35,
+    "2": 40,
+    "3": 30,
+    "4": 30,
+    "5": 30
+   }
+  }
+ ],
+ "variety": [
+  {
+   "title": "The Traveler",
+   "tmdb": 54001,
+   "imdb": "tt0071859",
+   "mirror_url": "https://monclerjakkejacket.com/movie/mosafer-kiarostami/",
+   "mirror_mp4": "https://stream.farsicdn.co/watch-movies/Mosafer_1353_720p.mp4",
+   "probe": "HEAD 404 + Range 404 (with and without Referer) — dead on the CDN; keeps its existing archive.org play link, nothing added"
+  },
+  {
+   "title": "The Deer",
+   "tmdb": 268028,
+   "imdb": "tt0074565",
+   "mirror_url": "https://monclerjakkejacket.com/movie/gavaznhaa/",
+   "mirror_mp4": "https://stream.farsicdn.co/watch-movies/Gavaznha_1353_720p.mp4",
+   "probe": "HEAD 404 + Range 404 — dead on the CDN; also: no H3 record for this title exists anywhere in the archive (avail movie:268028 [1,0] is an orphan key with no search row, download-index entry or H3 block), so there was no record to attach a play link to even if the mp4 had lived",
+   "note": "all four /watch-movies/ old-film sources probed (Bi Gharar, Rafigh, Traveler, Deer) are 404 — that CDN path looks dead for pre-1353-era files"
+  }
+ ],
+ "nosub_note": "All FH titles are NoSub (Persian audio, no subtitle track) per the AO Iranian-film precedent. They are NOT flagged as needing a Persian subtitle version: the audio is Persian. The standing NoSub flag applies to non-Persian-audio titles that end up subtitle-less — none here.",
+ "held_scope_note": "Napoleon (TMDB 1755424, TMDB-only, no IMDb) + the other 12 TMDB-only held titles + the 84 queued identities are NOT merged (evaluation scope; Napoleon needs the user's explicit exception like Actress). YouTube-embedded episodes (e.g. Zane Rooz S3E28) are never merged as play links."
+}
