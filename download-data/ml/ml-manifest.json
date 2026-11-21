@@ -1,8 +1,8 @@
 {
  "code": "ML",
  "source": "Movielandz",
- "entries": 566,
- "links": 1408,
+ "entries": 564,
+ "links": 1404,
  "nosub_only_titles": [
   {
    "imdb": "tt10570100",
@@ -348,24 +348,10 @@
    "note": "NoSub only — needs a Persian-subtitle version"
   },
   {
-   "imdb": "tt34471850",
-   "title": "Protector",
-   "year": 2026,
-   "nlinks": 3,
-   "note": "NoSub only — needs a Persian-subtitle version"
-  },
-  {
    "imdb": "tt10499502",
    "title": "سفر اضطراري",
    "year": 2019,
    "nlinks": 3,
-   "note": "NoSub only — needs a Persian-subtitle version"
-  },
-  {
-   "imdb": "tt9378950",
-   "title": "Ghost",
-   "year": 2019,
-   "nlinks": 4,
    "note": "NoSub only — needs a Persian-subtitle version"
   },
   {
@@ -3198,5 +3184,5 @@
   }
  ],
  "cam_only_titles": [],
- "generated_at": "2026-11-20T23:33:52Z"
+ "generated_at": "2026-11-21T00:23:38Z"
 }
