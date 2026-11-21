@@ -134,13 +134,13 @@
  "code": "MBM",
  "counts": {
   "by_resolution": {
-   "1080p": 458,
-   "480p": 390,
-   "720p": 556
+   "1080p": 471,
+   "480p": 402,
+   "720p": 569
   },
   "by_version": {
    "Dubbed": 3,
-   "HardSub": 1401
+   "HardSub": 1439
   },
   "by_year": {
    "1959": 1,
@@ -163,14 +163,14 @@
    "2025": 4,
    "2026": 22
   },
-  "have_new_links_added": 2008,
+  "have_new_links_added": 2046,
   "have_new_titles": 101,
-  "have_old_play_rows_added": 986,
+  "have_old_play_rows_added": 1024,
   "have_old_titles": 42,
   "new_links": 1404,
   "new_titles": 77,
-  "total_bytes_new": 699107572093,
-  "total_links_added": 4398,
+  "total_bytes_new": 719336804823,
+  "total_links_added": 4474,
   "total_titles": 220
  },
  "generated": "2026-11-21",
@@ -1322,7 +1322,7 @@
    "title": "Winning Time: The Rise of the Lakers Dynasty"
   }
  ],
- "live_base_head": "17451e06ee91694133e7a488f0f23187606902cb",
+ "live_base_head": "41edc227d8fcb0de04bae1cc6e082fbb0b7f7846",
  "near_size_collapses": {
   "per_title": [
    {

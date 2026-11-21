@@ -243,13 +243,13 @@
   "new_titles": 32,
   "total_links_added": 402,
   "total_titles": 32,
-  "variety_links_added": 79,
-  "variety_links_parsed": 82,
-  "variety_play_rows_expanded": 76,
-  "variety_titles": 12
+  "variety_links_added": 81,
+  "variety_links_parsed": 86,
+  "variety_play_rows_expanded": 78,
+  "variety_titles": 14
  },
  "generated": "2026-11-21",
- "live_base_head": "17451e06ee91694133e7a488f0f23187606902cb",
+ "live_base_head": "41edc227d8fcb0de04bae1cc6e082fbb0b7f7846",
  "new_titles": [
   {
    "imdb": "tt38674953",
@@ -842,6 +842,22 @@
    "part": 16,
    "play_rows_added": 30,
    "title": "The Altruists"
+  },
+  {
+   "existing_num": 11241,
+   "imdb": "tt31841170",
+   "nlinks_added": 0,
+   "part": 16,
+   "play_rows_added": 0,
+   "title": "Don't Trouble the Trouble"
+  },
+  {
+   "existing_num": 11022,
+   "imdb": "tt27801204",
+   "nlinks_added": 2,
+   "part": 16,
+   "play_rows_added": 2,
+   "title": "Tainá"
   }
  ],
  "zero_h3_variety": []

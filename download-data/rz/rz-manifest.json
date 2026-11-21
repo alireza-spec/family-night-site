@@ -3,22 +3,22 @@
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv/mp4, no token/expiry in file URLs)",
  "start_num": 12562,
  "end_num": 12566,
- "live_base_head": "dd8228c509690161b5035be20231160701146c6e (5h run 20261121T151123Z; H3 max #12561 verified from live rz part-1)",
- "generated": "2026-11-21 (RezFlix 5-hourly run 20261121T151123Z — merge of 5 new titles + 7 encode completions + 14 trailer keys)",
+ "live_base_head": "41edc227d8fcb0de04bae1cc6e082fbb0b7f7846",
+ "generated": "2026-11-21",
  "counts": {
   "total_titles": 5,
   "movies": 5,
   "series": 0,
-  "total_links": 11,
+  "total_links": 14,
   "by_year": {
    "2023": 1,
    "2025": 1,
    "2026": 3
   },
   "by_quality": {
-   "480p": 2,
-   "720p": 4,
-   "1080p": 3,
+   "480p": 3,
+   "720p": 5,
+   "1080p": 4,
    "CAM 720p": 1,
    "CAM 1080p": 1
   }
@@ -369,5 +369,17 @@
   "http://s1.giftmond.ir/Zahra/1405/1405.08.30/The%20Messengers/The.Messengers.S01E11.Sub-720.NextMovie.mp4",
   "http://s1.giftmond.ir/Zahra/1405/1405.08.30/The%20Messengers/The.Messengers.S01E12.Sub-720.NextMovie.mp4",
   "http://s1.giftmond.ir/Zahra/1405/1405.08.30/The%20Messengers/The.Messengers.S01E13.Sub-720.NextMovie.mp4"
- ]
+ ],
+ "twice_daily_2026_11_21_pm": {
+  "live_base_head": "41edc227d8fcb0de04bae1cc6e082fbb0b7f7846",
+  "variety": [
+   {
+    "title": "Fjord",
+    "imdb": "tt35410859",
+    "record": "#12566 rz",
+    "links_added": 3,
+    "source": "zivarnet (not RezFlix; no completions entry)"
+   }
+  ]
+ }
 }

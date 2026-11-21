@@ -17600,6 +17600,48 @@
     "season": 4,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "MoboMovies",
+    "episode": 1,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl1.mobomovies-super-fast-dl-1fd583af617cb0000.ir/v3/tv-show/2021/tt11041332/Season-04/softsub/Yellowjackets.S04E01.1080p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+    "playit_url": null,
+    "quality": "Web-Dl 1080p",
+    "quality_label": "web-dl 1080p",
+    "season": 4,
+    "size_bytes": 1040785005,
+    "size_text": "992.6 MB"
+   },
+   {
+    "encoder": "MoboMovies",
+    "episode": 1,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl1.mobomovies-super-fast-dl-1fd583af617cb0000.ir/v3/tv-show/2021/tt11041332/Season-04/softsub/Yellowjackets.S04E01.720p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+    "playit_url": null,
+    "quality": "Web-Dl 720p",
+    "quality_label": "web-dl 720p",
+    "season": 4,
+    "size_bytes": 508895863,
+    "size_text": "485.3 MB"
+   },
+   {
+    "encoder": "MoboMovies",
+    "episode": 1,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl1.mobomovies-super-fast-dl-1fd583af617cb0000.ir/v3/tv-show/2021/tt11041332/Season-04/softsub/Yellowjackets.S04E01.480p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+    "playit_url": null,
+    "quality": "Web-Dl 480p",
+    "quality_label": "web-dl 480p",
+    "season": 4,
+    "size_bytes": 223513582,
+    "size_text": "213.2 MB"
    }
   ],
   "title": "Yellowjackets",

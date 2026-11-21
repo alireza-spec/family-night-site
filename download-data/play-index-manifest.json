@@ -2,7 +2,7 @@
  "description": "Split by download-archive part because the single play-index.json (118 MB) exceeds GitHub's 100 MB single-file limit.",
  "generated": "2026-11-21",
  "groups": "SoftSub = hardsub files grouped under SoftSub per the archive convention; Dubbed = dubbed; NoSub = no subtitle. Unjoined entries have play_url null and group null.",
- "joined": 216777,
+ "joined": 218239,
  "lookup": "Find the part via download-index.json (IMDb -> part) or download-title-index.json (tmdb -> part), then fetch play-index-part-<part>.json. Part 0 holds the 69 titles with no download-archive record.",
  "mp4_sized": 1122,
  "mp4_total": 10703,
@@ -15,37 +15,37 @@
    "part": 0
   },
   {
-   "bytes": 9394157,
+   "bytes": 9422995,
    "entries": 2194,
    "file": "play-index-part-1.json",
    "part": 1
   },
   {
-   "bytes": 9075960,
+   "bytes": 9101901,
    "entries": 2315,
    "file": "play-index-part-2.json",
    "part": 2
   },
   {
-   "bytes": 8302709,
+   "bytes": 8324230,
    "entries": 2984,
    "file": "play-index-part-3.json",
    "part": 3
   },
   {
-   "bytes": 9135360,
+   "bytes": 9156338,
    "entries": 1594,
    "file": "play-index-part-4.json",
    "part": 4
   },
   {
-   "bytes": 8296265,
+   "bytes": 8347579,
    "entries": 127,
    "file": "play-index-part-5.json",
    "part": 5
   },
   {
-   "bytes": 7578914,
+   "bytes": 7587035,
    "entries": 133,
    "file": "play-index-part-6.json",
    "part": 6
@@ -63,7 +63,7 @@
    "part": 8
   },
   {
-   "bytes": 8916482,
+   "bytes": 8930545,
    "entries": 167,
    "file": "play-index-part-9.json",
    "part": 9
@@ -81,7 +81,7 @@
    "part": 11
   },
   {
-   "bytes": 8862822,
+   "bytes": 8895762,
    "entries": 107,
    "file": "play-index-part-12.json",
    "part": 12
@@ -99,14 +99,14 @@
    "part": 14
   },
   {
-   "bytes": 7983801,
+   "bytes": 7985257,
    "entries": 226,
    "file": "play-index-part-15.json",
    "part": 15
   },
   {
-   "bytes": 3900715,
-   "entries": 347,
+   "bytes": 3932505,
+   "entries": 350,
    "file": "play-index-part-16.json",
    "part": 16
   },
@@ -117,14 +117,14 @@
    "part": "ao"
   },
   {
-   "bytes": 779752,
+   "bytes": 802570,
    "entries": 77,
    "file": "mbm/play-index-mbm.json",
    "part": "mbm"
   },
   {
-   "bytes": 3306476,
-   "entries": 513,
+   "bytes": 3672043,
+   "entries": 607,
    "file": "dn/play-index-dn.json",
    "part": "dn"
   },
@@ -135,13 +135,13 @@
    "part": "srm"
   },
   {
-   "bytes": 175302,
+   "bytes": 181831,
    "entries": 35,
    "file": "sm/play-index-sm.json",
    "part": "sm"
   },
   {
-   "bytes": 627557,
+   "bytes": 629652,
    "entries": 564,
    "file": "ml/play-index-ml.json",
    "part": "ml"
@@ -159,13 +159,13 @@
    "part": "fh"
   },
   {
-   "bytes": 13340,
+   "bytes": 14678,
    "entries": 7,
    "file": "rz/play-index-rz.json",
    "part": "rz"
   }
  ],
- "total_entries": 12381,
- "total_play_entries": 220187,
+ "total_entries": 12580,
+ "total_play_entries": 222063,
  "unjoined": 3824
 }

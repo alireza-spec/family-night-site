@@ -2,20 +2,20 @@
  "source": "SerMovieDown",
  "code": "SR",
  "part": 1,
- "generated": "2026-11-20",
- "live_base_head": "ea91d365ade37dcb473ea2044e1da6148bfb0993",
+ "generated": "2026-11-21",
+ "live_base_head": "41edc227d8fcb0de04bae1cc6e082fbb0b7f7846",
  "start_num": 11590,
  "counts": {
   "new_titles": 42,
   "new_links": 735,
   "have_new_titles": 277,
-  "have_new_links_added": 3555,
+  "have_new_links_added": 3556,
   "have_old_titles": 35,
   "have_old_links_added": 618,
   "have_mbm_titles": 2,
   "have_mbm_links_added": 46,
   "total_titles": 355,
-  "total_links_added": 4954,
+  "total_links_added": 4955,
   "by_year": {
    "2011": 1,
    "2018": 2,
@@ -31,11 +31,11 @@
   "by_resolution": {
    "1080p": 209,
    "540p": 12,
-   "720p": 514
+   "720p": 515
   },
   "by_version": {
    "NoSub": 445,
-   "SoftSub": 290
+   "SoftSub": 291
   },
   "by_type": {
    "movie": 5,
@@ -3030,6 +3030,13 @@
    "part": 5,
    "existing_num": 9169,
    "nlinks_added": 36
+  },
+  {
+   "title": "Gentle Monster",
+   "imdb": "tt37020296",
+   "part": 16,
+   "existing_num": 10927,
+   "nlinks_added": 1
   }
  ],
  "have_old_added": [

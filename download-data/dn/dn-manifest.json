@@ -2,27 +2,28 @@
  "code": "DN",
  "counts": {
   "by_resolution": {
-   "1080p": 552,
+   "1080p": 650,
    "360p": 1,
-   "480p": 2921,
-   "540p": 219,
-   "720p": 4192
+   "480p": 3218,
+   "540p": 231,
+   "720p": 4605
   },
   "by_version_family": {
-   "Dubbed": 710,
-   "Subtitled": 7095,
-   "unknown": 80
+   "Dubbed": 865,
+   "Subtitled": 7755,
+   "unknown": 84,
+   "NoSub": 1
   },
   "by_year": {
    "1929": 1,
    "1941": 1,
-   "1943": 1,
+   "1943": 2,
    "1953": 1,
-   "1955": 1,
+   "1955": 2,
    "1959": 1,
    "1960": 1,
    "1968": 1,
-   "1972": 1,
+   "1972": 2,
    "1973": 1,
    "1974": 1,
    "1975": 1,
@@ -30,11 +31,11 @@
    "1977": 1,
    "1978": 3,
    "1979": 2,
-   "1980": 1,
+   "1980": 2,
    "1981": 4,
    "1985": 1,
    "1990": 2,
-   "1991": 1,
+   "1991": 2,
    "1992": 2,
    "1995": 1,
    "1996": 3,
@@ -42,43 +43,46 @@
    "1999": 2,
    "2000": 3,
    "2001": 1,
-   "2002": 3,
+   "2002": 5,
    "2003": 2,
    "2004": 3,
-   "2005": 6,
-   "2006": 5,
+   "2005": 9,
+   "2006": 7,
    "2007": 1,
-   "2008": 5,
-   "2009": 7,
-   "2010": 6,
+   "2008": 7,
+   "2009": 11,
+   "2010": 7,
    "2011": 6,
    "2012": 10,
-   "2013": 12,
-   "2014": 15,
-   "2015": 20,
-   "2016": 23,
-   "2017": 19,
-   "2018": 24,
-   "2019": 42,
-   "2020": 32,
-   "2021": 48,
-   "2022": 33,
-   "2023": 43,
-   "2024": 36,
-   "2025": 42,
-   "2026": 29
+   "2013": 13,
+   "2014": 19,
+   "2015": 25,
+   "2016": 29,
+   "2017": 27,
+   "2018": 32,
+   "2019": 49,
+   "2020": 38,
+   "2021": 54,
+   "2022": 36,
+   "2023": 49,
+   "2024": 39,
+   "2025": 46,
+   "2026": 33,
+   "1994": 1,
+   "1998": 1,
+   "1971": 2
   },
   "ext_overlap": 1,
-  "films": 302,
-  "play_rows": 7885,
-  "series": 211,
-  "skipped_no_links": 8,
-  "total": 513,
-  "trailer_keys": 449,
+  "films": 385,
+  "play_rows": 9232,
+  "series": 222,
+  "skipped_no_links": 11,
+  "total": 607,
+  "trailer_keys": 543,
   "trailers_dropped": 70,
-  "variety_patched": 270,
-  "variety_play_created": 38,
-  "variety_play_rows_added": 3534,
+  "variety_patched": 394,
+  "variety_play_created": 40,
+  "variety_play_rows_added": 4061,
   "variety_stale_links": 531
  },
  "end_num": 11589,
@@ -3414,10 +3418,923 @@
    "title": " Pickings 2018",
    "tmdb": 457312,
    "year": 2018
+  },
+  {
+   "title": "Rattlesnakes",
+   "year": 2019,
+   "imdb": "tt9144756",
+   "tmdb": 600510,
+   "num": 12567,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Ambition",
+   "year": 2019,
+   "imdb": "tt5603620",
+   "tmdb": 416682,
+   "num": 12568,
+   "nosub_only": true,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "Recovery",
+   "year": 2019,
+   "imdb": "tt5473124",
+   "tmdb": 596767,
+   "num": 12569,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Mo Salah: A Football Fairytale",
+   "year": 2018,
+   "imdb": "tt8535868",
+   "tmdb": 573070,
+   "num": 12570,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "Pandas: The Journey Home",
+   "year": 2014,
+   "imdb": "tt3949644",
+   "tmdb": 341030,
+   "num": 12571,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Rooney: The Man Behind the Goals",
+   "year": 2015,
+   "imdb": "tt5873498",
+   "tmdb": 415662,
+   "num": 12572,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "Beyond the Mask",
+   "year": 2015,
+   "imdb": "tt2433040",
+   "tmdb": 318954,
+   "num": 12573,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "The Last Face",
+   "year": 2016,
+   "imdb": "tt3286560",
+   "tmdb": 287904,
+   "num": 12574,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Quién te cantará",
+   "year": 2018,
+   "imdb": "tt6485304",
+   "tmdb": 438373,
+   "num": 12575,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Draug",
+   "year": 2018,
+   "imdb": "tt6014434",
+   "tmdb": 421285,
+   "num": 12576,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "My Pet Dinosaur",
+   "year": 2017,
+   "imdb": "tt6055082",
+   "tmdb": 449700,
+   "num": 12577,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Cage Dive",
+   "year": 2017,
+   "imdb": "tt4126568",
+   "tmdb": 420707,
+   "num": 12578,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Sniper: Ultimate Kill",
+   "year": 2017,
+   "imdb": "tt6349302",
+   "tmdb": 464889,
+   "num": 12579,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "A Single Rider",
+   "year": 2017,
+   "imdb": "tt5966750",
+   "tmdb": 435603,
+   "num": 12580,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "Come Sunday",
+   "year": 2018,
+   "imdb": "tt1690967",
+   "tmdb": 430446,
+   "num": 12581,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "Transit 17",
+   "year": 2019,
+   "imdb": "tt3709718",
+   "tmdb": 308551,
+   "num": 12582,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "My Little Pony: The Princess Promenade",
+   "year": 2006,
+   "imdb": "tt0490668",
+   "tmdb": 19789,
+   "num": 12583,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "A Call to Spy",
+   "year": 2020,
+   "imdb": "tt7698468",
+   "tmdb": 589612,
+   "num": 12584,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "Anjaam",
+   "year": 1994,
+   "imdb": "tt0109134",
+   "tmdb": 114436,
+   "num": 12585,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "Tokyo Ghoul",
+   "year": 2017,
+   "imdb": "tt5815944",
+   "tmdb": 433945,
+   "num": 12586,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "Hello Ghost",
+   "year": 2010,
+   "imdb": "tt1848926",
+   "tmdb": 62439,
+   "num": 12587,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "The Man Who Sold His Skin",
+   "year": 2021,
+   "imdb": "tt10360862",
+   "tmdb": 669363,
+   "num": 12588,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "Petromax",
+   "year": 2019,
+   "imdb": "tt10987184",
+   "tmdb": 616896,
+   "num": 12589,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "BLACKPINK: Light Up the Sky",
+   "year": 2020,
+   "imdb": "tt13058290",
+   "tmdb": 740996,
+   "num": 12590,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Rose Plays Julie",
+   "year": 2020,
+   "imdb": "tt8917170",
+   "tmdb": 589820,
+   "num": 12591,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "Indrajeet",
+   "year": 1991,
+   "imdb": "tt0102119",
+   "tmdb": 340775,
+   "num": 12592,
+   "nosub_only": true,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "Sarbjit",
+   "year": 2016,
+   "imdb": "tt5120640",
+   "tmdb": 393421,
+   "num": 12593,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "Temps",
+   "year": 2016,
+   "imdb": "tt3900796",
+   "tmdb": 386830,
+   "num": 12594,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "Greater",
+   "year": 2016,
+   "imdb": "tt2950418",
+   "tmdb": 379441,
+   "num": 12595,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "Schneider vs. Bax",
+   "year": 2015,
+   "imdb": "tt3430416",
+   "tmdb": 333555,
+   "num": 12596,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "A Fortunate Man",
+   "year": 2018,
+   "imdb": "tt8436026",
+   "tmdb": 523561,
+   "num": 12597,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "Mars: One Day on the Red Planet",
+   "year": 2020,
+   "imdb": "tt12611334",
+   "tmdb": 664027,
+   "num": 12598,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "WWE Survivor Series 2021",
+   "year": 2021,
+   "imdb": "tt15301916",
+   "tmdb": 866145,
+   "num": 12599,
+   "nosub_only": true,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "Jitterbugs",
+   "year": 1943,
+   "imdb": "tt0036055",
+   "tmdb": 71098,
+   "num": 12600,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "WWE Crown Jewel 2021",
+   "year": 2021,
+   "imdb": "tt15301884",
+   "tmdb": 866144,
+   "num": 12601,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Unacknowledged",
+   "year": 2017,
+   "imdb": "tt6400614",
+   "tmdb": 450594,
+   "num": 12602,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "High & Low The Worst",
+   "year": 2019,
+   "imdb": "tt11135936",
+   "tmdb": 727502,
+   "num": 12603,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Along Came the Devil",
+   "year": 2018,
+   "imdb": "tt3619070",
+   "tmdb": 409056,
+   "num": 12604,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "White Material",
+   "year": 2009,
+   "imdb": "tt1135952",
+   "tmdb": 46207,
+   "num": 12605,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "The Perfect Guy",
+   "year": 2015,
+   "imdb": "tt3862750",
+   "tmdb": 304372,
+   "num": 12606,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Like for Likes",
+   "year": 2016,
+   "imdb": "tt5358570",
+   "tmdb": 379887,
+   "num": 12607,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "Waqt",
+   "year": 2005,
+   "imdb": "tt0390614",
+   "tmdb": 31364,
+   "num": 12608,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "The Great Yokai War",
+   "year": 2005,
+   "imdb": "tt0425661",
+   "tmdb": 42000,
+   "num": 12609,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "Trinity Seven: Eternity Library & Alchemic Girl",
+   "year": 2017,
+   "imdb": "tt6344696",
+   "tmdb": 428292,
+   "num": 12610,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Trinity Seven: Heaven's Library & Crimson Lord",
+   "year": 2019,
+   "imdb": "tt9826484",
+   "tmdb": 570269,
+   "num": 12611,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 4
+  },
+  {
+   "title": "Song One",
+   "year": 2014,
+   "imdb": "tt2182972",
+   "tmdb": 244783,
+   "num": 12612,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Gangster Payday",
+   "year": 2014,
+   "imdb": "tt4141260",
+   "tmdb": 294991,
+   "num": 12613,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Combustion",
+   "year": 2013,
+   "imdb": "tt1899142",
+   "tmdb": 141015,
+   "num": 12614,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "White Spot",
+   "year": 2020,
+   "imdb": "tt8742566",
+   "tmdb": 864694,
+   "num": 12615,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Macross Delta: Passionate Walküre",
+   "year": 2018,
+   "imdb": "tt7986790",
+   "tmdb": 496349,
+   "num": 12616,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "My Girlfriend Is an Agent",
+   "year": 2009,
+   "imdb": "tt1432078",
+   "tmdb": 18374,
+   "num": 12617,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Penguins: Meet the Family",
+   "year": 2020,
+   "imdb": "tt13793084",
+   "tmdb": 781278,
+   "num": 12618,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "35 Shots of Rum",
+   "year": 2008,
+   "imdb": "tt1100048",
+   "tmdb": 26191,
+   "num": 12619,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "Barbie in the 12 Dancing Princesses",
+   "year": 2006,
+   "imdb": "tt0859594",
+   "tmdb": 13002,
+   "num": 12620,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "UFC 291: Poirier vs. Gaethje 2",
+   "year": 2023,
+   "imdb": "tt27716694",
+   "tmdb": 1153129,
+   "num": 12621,
+   "nosub_only": true,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "Bad Boy",
+   "year": 2023,
+   "imdb": "tt10351180",
+   "tmdb": 604198,
+   "num": 12622,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "Life In The Snow",
+   "year": 2016,
+   "imdb": "tt6327846",
+   "tmdb": 544185,
+   "num": 12623,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "Us or Them",
+   "year": 2023,
+   "imdb": "tt20420930",
+   "tmdb": 978419,
+   "num": 12624,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Knife of Ice",
+   "year": 1972,
+   "imdb": "tt0068394",
+   "tmdb": 28488,
+   "num": 12625,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "The Weather Underground",
+   "year": 2002,
+   "imdb": "tt0343168",
+   "tmdb": 14108,
+   "num": 12626,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "RAM: Rapid Action Mission",
+   "year": 2024,
+   "imdb": "tt30850798",
+   "tmdb": 1266678,
+   "num": 12627,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "Kitne Door Kitne Paas",
+   "year": 2002,
+   "imdb": "tt0313395",
+   "tmdb": 210614,
+   "num": 12628,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Nothing Serious",
+   "year": 2021,
+   "imdb": "tt16303830",
+   "tmdb": 736545,
+   "num": 12629,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Popular Theory",
+   "year": 2023,
+   "imdb": "tt21956238",
+   "tmdb": 1163029,
+   "num": 12630,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "HollyBlood",
+   "year": 2022,
+   "imdb": "tt14210720",
+   "tmdb": 821133,
+   "num": 12631,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "Parineeta",
+   "year": 2005,
+   "imdb": "tt0437407",
+   "tmdb": 20651,
+   "num": 12632,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "The Bros",
+   "year": 2017,
+   "imdb": "tt7967580",
+   "tmdb": 485442,
+   "num": 12633,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "What a Man Wants",
+   "year": 2018,
+   "imdb": "tt8108278",
+   "tmdb": 511883,
+   "num": 12634,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Invisible Sister",
+   "year": 2015,
+   "imdb": "tt4420110",
+   "tmdb": 360605,
+   "num": 12635,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Guys and Dolls",
+   "year": 1955,
+   "imdb": "tt0048140",
+   "tmdb": 4825,
+   "num": 12636,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Murphy",
+   "year": 2024,
+   "imdb": "tt14780126",
+   "tmdb": 1372598,
+   "num": 12637,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "An American Tail: The Treasure of Manhattan Island",
+   "year": 1998,
+   "imdb": "tt0166973",
+   "tmdb": 31473,
+   "num": 12638,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "Invasion",
+   "year": 2024,
+   "imdb": "tt21265054",
+   "tmdb": 991610,
+   "num": 12639,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Ayakçı",
+   "year": 2025,
+   "imdb": "tt35979130",
+   "tmdb": 1441607,
+   "num": 12640,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Red Flags",
+   "year": 2025,
+   "imdb": "tt34573452",
+   "tmdb": 1439127,
+   "num": 12641,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "Duel of Fists",
+   "year": 1971,
+   "imdb": "tt0067025",
+   "tmdb": 185885,
+   "num": 12642,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "Bat Without Wings",
+   "year": 1980,
+   "imdb": "tt0080420",
+   "tmdb": 73748,
+   "num": 12643,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "The Anonymous Heroes",
+   "year": 1971,
+   "imdb": "tt0067997",
+   "tmdb": 75844,
+   "num": 12644,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "Valentino: The Last Emperor",
+   "year": 2008,
+   "imdb": "tt1176244",
+   "tmdb": 22774,
+   "num": 12645,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "Jail",
+   "year": 2009,
+   "imdb": "tt1245774",
+   "tmdb": 20130,
+   "num": 12646,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "Kissing Is the Easy Part",
+   "year": 2026,
+   "imdb": "tt36935050",
+   "tmdb": 1515615,
+   "num": 12647,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "A Child of My Own",
+   "year": 2026,
+   "imdb": "tt33565722",
+   "tmdb": 1616131,
+   "num": 12648,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Kattalan",
+   "year": 2026,
+   "imdb": "tt35668756",
+   "tmdb": 1065834,
+   "num": 12649,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
   }
  ],
  "generated": "2026-11-21",
- "live_base_head": "17451e06ee91694133e7a488f0f23187606902cb",
+ "live_base_head": "41edc227d8fcb0de04bae1cc6e082fbb0b7f7846",
  "nosub_only_titles": [
   {
    "imdb": "tt1124377",
@@ -3712,6 +4629,34 @@
    "title": " Pickings 2018",
    "type": "movie",
    "year": 2018
+  },
+  {
+   "title": "Ambition",
+   "year": 2019,
+   "imdb": "tt5603620",
+   "type": "movie",
+   "note": "needs Persian subtitle version"
+  },
+  {
+   "title": "Indrajeet",
+   "year": 1991,
+   "imdb": "tt0102119",
+   "type": "movie",
+   "note": "needs Persian subtitle version"
+  },
+  {
+   "title": "WWE Survivor Series 2021",
+   "year": 2021,
+   "imdb": "tt15301916",
+   "type": "movie",
+   "note": "needs Persian subtitle version"
+  },
+  {
+   "title": "UFC 291: Poirier vs. Gaethje 2",
+   "year": 2023,
+   "imdb": "tt27716694",
+   "type": "movie",
+   "note": "needs Persian subtitle version"
   }
  ],
  "queued_not_merged": [
@@ -7629,6 +8574,141 @@
    "expiring_stripped": 0,
    "skipped_links": {},
    "links": 47
+  },
+  {
+   "title": "The Great Queen Seondeok",
+   "year": 2009,
+   "imdb": "tt1547606",
+   "tmdb": 21771,
+   "num": 12650,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {
+    "duplicate url": 1
+   },
+   "links": 309
+  },
+  {
+   "title": "Maya and the Three",
+   "year": 2021,
+   "imdb": "tt8787772",
+   "tmdb": 132141,
+   "num": 12651,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 18
+  },
+  {
+   "title": "Novoland: Pearl Eclipse",
+   "year": 2021,
+   "imdb": "tt16138306",
+   "tmdb": 103310,
+   "num": 12652,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 99
+  },
+  {
+   "title": "Parallel World Pharmacy",
+   "year": 2022,
+   "imdb": "tt18574004",
+   "tmdb": 129195,
+   "num": 12653,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 24
+  },
+  {
+   "title": "Love of Replica",
+   "year": 2023,
+   "imdb": "tt28543811",
+   "tmdb": 224552,
+   "num": 12654,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {
+    "teaser": 1
+   },
+   "links": 34
+  },
+  {
+   "title": "Wulin Heroes",
+   "year": 2023,
+   "imdb": "tt26542607",
+   "tmdb": 128721,
+   "num": 12655,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {
+    "teaser": 1
+   },
+   "links": 22
+  },
+  {
+   "title": "Romantic Killer",
+   "year": 2022,
+   "imdb": "tt21991254",
+   "tmdb": 208730,
+   "num": 12656,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {
+    "teaser": 1
+   },
+   "links": 12
+  },
+  {
+   "title": "Glasslip",
+   "year": 2014,
+   "imdb": "tt3611294",
+   "tmdb": 69606,
+   "num": 12657,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {
+    "teaser": 1
+   },
+   "links": 13
+  },
+  {
+   "title": "Sadistic Love",
+   "year": 2025,
+   "imdb": "tt36624366",
+   "tmdb": 270719,
+   "num": 12658,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {
+    "teaser": 1
+   },
+   "links": 48
+  },
+  {
+   "title": "Why is He Still Single?",
+   "year": 2025,
+   "imdb": "tt30218039",
+   "tmdb": 262997,
+   "num": 12659,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {
+    "teaser": 1
+   },
+   "links": 32
+  },
+  {
+   "title": "Inherently Kind",
+   "year": 2026,
+   "imdb": "tt43587632",
+   "tmdb": 325577,
+   "num": 12660,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 48
   }
  ],
  "skipped_not_merged": [
@@ -7714,6 +8794,36 @@
     "quality unparseable": 1
    },
    "tmdb": 238674,
+   "type": "movie"
+  },
+  {
+   "dn_title": "Baazi",
+   "dn_year": 1995,
+   "imdb": "tt0121989",
+   "reasons": {
+    "unknown quality": 1
+   },
+   "tmdb": 159657,
+   "type": "movie"
+  },
+  {
+   "dn_title": "The Bridge on the River Kwai: An Appreciation by Filmmaker John Milius",
+   "dn_year": 2000,
+   "imdb": "tt0489663",
+   "reasons": {
+    "mislabeled links (1957 film files)": 3
+   },
+   "tmdb": 447511,
+   "type": "movie"
+  },
+  {
+   "dn_title": "WWE Payback 2023",
+   "dn_year": 2023,
+   "imdb": "tt28091903",
+   "reasons": {
+    "expiring": 1
+   },
+   "tmdb": 1141187,
    "type": "movie"
   }
  ],
@@ -14252,6 +15362,2133 @@
    "h3_links_added": 21,
    "play_rows_added": 21,
    "stale_families_skipped": []
+  },
+  {
+   "archive_h3_num": 6187,
+   "archive_part": 2,
+   "archive_src": "old",
+   "dn_title": "What Men Want",
+   "dn_year": 2019,
+   "families": [
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt7634968",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 487297,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 2657,
+   "archive_part": 3,
+   "archive_src": "old",
+   "dn_title": "Luka Chuppi",
+   "dn_year": 2019,
+   "families": [
+    "720p unknown"
+   ],
+   "h3_links_added": 1,
+   "imdb": "tt8908002",
+   "play_rows_added": 1,
+   "stale_families_skipped": [],
+   "tmdb": 585062,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 8928,
+   "archive_part": 4,
+   "archive_src": "main",
+   "dn_title": "Domino",
+   "dn_year": 2019,
+   "families": [
+    "1080p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt3282076",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 455957,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 4037,
+   "archive_part": 2,
+   "archive_src": "main",
+   "dn_title": "Life Like",
+   "dn_year": 2019,
+   "families": [
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt6547786",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 586707,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 8949,
+   "archive_part": 4,
+   "archive_src": "main",
+   "dn_title": "The Wolf’s Call",
+   "dn_year": 2019,
+   "families": [
+    "720p unknown"
+   ],
+   "h3_links_added": 1,
+   "imdb": "tt7458762",
+   "play_rows_added": 1,
+   "stale_families_skipped": [],
+   "tmdb": 484468,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 8956,
+   "archive_part": 4,
+   "archive_src": "main",
+   "dn_title": "Wonder Park",
+   "dn_year": 2019,
+   "families": [
+    "720p unknown"
+   ],
+   "h3_links_added": 1,
+   "imdb": "tt6428676",
+   "play_rows_added": 1,
+   "stale_families_skipped": [],
+   "tmdb": 400157,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 1139,
+   "archive_part": 3,
+   "archive_src": "old",
+   "dn_title": "Daughter of the Wolf",
+   "dn_year": 2019,
+   "families": [
+    "1080p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt7615052",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 525657,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 9042,
+   "archive_part": 4,
+   "archive_src": "main",
+   "dn_title": "Bomb City",
+   "dn_year": 2017,
+   "families": [
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt4351548",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 396774,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 3781,
+   "archive_part": 3,
+   "archive_src": "old",
+   "dn_title": "Seondal The Man Who Sells the River",
+   "dn_year": 2016,
+   "families": [
+    "720p Dubbed",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt5729246",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 385137,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 1040,
+   "archive_part": 1,
+   "archive_src": "old",
+   "dn_title": "The Beach",
+   "dn_year": 2019,
+   "families": [
+    "720p Subtitled"
+   ],
+   "h3_links_added": 1,
+   "imdb": "tt0163978",
+   "play_rows_added": 1,
+   "stale_families_skipped": [],
+   "tmdb": 1907,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 2371,
+   "archive_part": 2,
+   "archive_src": "main",
+   "dn_title": "The Autopsy of Jane Doe",
+   "dn_year": 2016,
+   "families": [
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt3289956",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 397243,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 4345,
+   "archive_part": 2,
+   "archive_src": "main",
+   "dn_title": "The Truman Show",
+   "dn_year": 1998,
+   "families": [
+    "720p Dubbed",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt0120382",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 37165,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 5293,
+   "archive_part": 2,
+   "archive_src": "old",
+   "dn_title": "The Wife",
+   "dn_year": 2018,
+   "families": [
+    "480p Dubbed",
+    "720p Dubbed",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt3750872",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 340613,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 2593,
+   "archive_part": 2,
+   "archive_src": "main",
+   "dn_title": "The Assassination of Jesse James by the Coward Robert Ford",
+   "dn_year": 2007,
+   "families": [
+    "480p Subtitled",
+    "720p Dubbed",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt0443680",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 4512,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 8356,
+   "archive_part": 4,
+   "archive_src": "main",
+   "dn_title": "Burnt",
+   "dn_year": 2015,
+   "families": [
+    "1080p Dubbed",
+    "720p Dubbed",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 4,
+   "imdb": "tt2503944",
+   "play_rows_added": 4,
+   "stale_families_skipped": [],
+   "tmdb": 295964,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 2723,
+   "archive_part": 3,
+   "archive_src": "old",
+   "dn_title": "Marauders",
+   "dn_year": 2016,
+   "families": [
+    "1080p Dubbed",
+    "720p Dubbed",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt3963816",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 359412,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 3101,
+   "archive_part": 3,
+   "archive_src": "old",
+   "dn_title": "Ninja Shadow of a Tear",
+   "dn_year": 2013,
+   "families": [
+    "1080p Dubbed",
+    "720p Dubbed",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt2458106",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 180894,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 4205,
+   "archive_part": 3,
+   "archive_src": "old",
+   "dn_title": "Terminal",
+   "dn_year": 2018,
+   "families": [
+    "1080p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt4463816",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 385332,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 1450,
+   "archive_part": 1,
+   "archive_src": "old",
+   "dn_title": "Side Effects",
+   "dn_year": 2013,
+   "families": [
+    "1080p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt2053463",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 109421,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 11846,
+   "archive_part": 1,
+   "archive_src": "ml",
+   "dn_title": "Revolt",
+   "dn_year": 2017,
+   "families": [
+    "1080p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt3722614",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 313943,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 958,
+   "archive_part": 1,
+   "archive_src": "main",
+   "dn_title": "Burning",
+   "dn_year": 2018,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt7282468",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 491584,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 4924,
+   "archive_part": 2,
+   "archive_src": "old",
+   "dn_title": "The House",
+   "dn_year": 2017,
+   "families": [
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt4481514",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 345914,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 4279,
+   "archive_part": 2,
+   "archive_src": "main",
+   "dn_title": "The Book of Henry",
+   "dn_year": 2017,
+   "families": [
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt4572792",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 382614,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 8764,
+   "archive_part": 4,
+   "archive_src": "main",
+   "dn_title": "Tangled",
+   "dn_year": 2010,
+   "families": [
+    "720p Dubbed",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt0398286",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 38757,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 8116,
+   "archive_part": 4,
+   "archive_src": "main",
+   "dn_title": "Weathering with You",
+   "dn_year": 2020,
+   "families": [
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt9426210",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 568160,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 6795,
+   "archive_part": 3,
+   "archive_src": "main",
+   "dn_title": "Touch of Evil",
+   "dn_year": null,
+   "families": [
+    "720p Dubbed"
+   ],
+   "h3_links_added": 1,
+   "imdb": "tt0052311",
+   "play_rows_added": 1,
+   "stale_families_skipped": [],
+   "tmdb": 1480,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 7248,
+   "archive_part": 3,
+   "archive_src": "main",
+   "dn_title": "Flatfoot in Hong Kong",
+   "dn_year": 1975,
+   "families": [
+    "720p Dubbed"
+   ],
+   "h3_links_added": 1,
+   "imdb": "tt0073541",
+   "play_rows_added": 1,
+   "stale_families_skipped": [],
+   "tmdb": 11053,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 7688,
+   "archive_part": 4,
+   "archive_src": "main",
+   "dn_title": "Im for the Hippopotamus",
+   "dn_year": 1979,
+   "families": [
+    "720p Dubbed"
+   ],
+   "h3_links_added": 1,
+   "imdb": "tt0079351",
+   "play_rows_added": 1,
+   "stale_families_skipped": [],
+   "tmdb": 9031,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 4822,
+   "archive_part": 3,
+   "archive_src": "old",
+   "dn_title": "The Mummy",
+   "dn_year": 1959,
+   "families": [
+    "720p Dubbed",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt0053085",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 18990,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 3175,
+   "archive_part": 2,
+   "archive_src": "main",
+   "dn_title": "The Devils Own",
+   "dn_year": 1997,
+   "families": [
+    "720p Subtitled"
+   ],
+   "h3_links_added": 1,
+   "imdb": "tt0118972",
+   "play_rows_added": 1,
+   "stale_families_skipped": [],
+   "tmdb": 4477,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 8892,
+   "archive_part": 4,
+   "archive_src": "main",
+   "dn_title": "Chocolat",
+   "dn_year": 2001,
+   "families": [
+    "720p Subtitled"
+   ],
+   "h3_links_added": 1,
+   "imdb": "tt0241303",
+   "play_rows_added": 1,
+   "stale_families_skipped": [],
+   "tmdb": 392,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 7831,
+   "archive_part": 4,
+   "archive_src": "main",
+   "dn_title": "Gran Torino",
+   "dn_year": 2009,
+   "families": [
+    "480p Subtitled",
+    "720p Dubbed",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 4,
+   "imdb": "tt1205489",
+   "play_rows_added": 4,
+   "stale_families_skipped": [],
+   "tmdb": 13223,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 3001,
+   "archive_part": 3,
+   "archive_src": "old",
+   "dn_title": "My Little Pony: Equestria Girls - Friendship Games",
+   "dn_year": 2015,
+   "families": [
+    "720p Dubbed"
+   ],
+   "h3_links_added": 1,
+   "imdb": "tt4450396",
+   "play_rows_added": 1,
+   "stale_families_skipped": [],
+   "tmdb": 349158,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 448,
+   "archive_part": 3,
+   "archive_src": "old",
+   "dn_title": "Axone",
+   "dn_year": 2020,
+   "families": [
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt8747548",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 627072,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 700,
+   "archive_part": 1,
+   "archive_src": "main",
+   "dn_title": "Dead Poets Society",
+   "dn_year": 1989,
+   "families": [
+    "720p Dubbed",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt0097165",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 207,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 2206,
+   "archive_part": 1,
+   "archive_src": "old",
+   "dn_title": "Æon Flux",
+   "dn_year": 2005,
+   "families": [
+    "1080p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt0402022",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 8202,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 8260,
+   "archive_part": 4,
+   "archive_src": "main",
+   "dn_title": "Serenity",
+   "dn_year": 2006,
+   "families": [
+    "720p Dubbed",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt0379786",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 16320,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 2576,
+   "archive_part": 2,
+   "archive_src": "main",
+   "dn_title": "Legally blonde",
+   "dn_year": 2001,
+   "families": [
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt0250494",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 8835,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 5387,
+   "archive_part": 3,
+   "archive_src": "main",
+   "dn_title": "Orphan",
+   "dn_year": 2009,
+   "families": [
+    "1080p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt1148204",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 21208,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 12189,
+   "archive_part": 1,
+   "archive_src": "ml",
+   "dn_title": "Fan",
+   "dn_year": 2019,
+   "families": [
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt10867504",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 715292,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 3964,
+   "archive_part": 3,
+   "archive_src": "old",
+   "dn_title": "Sonchiriya",
+   "dn_year": 2019,
+   "families": [
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt8108200",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 535144,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 6635,
+   "archive_part": 3,
+   "archive_src": "main",
+   "dn_title": "The Matador",
+   "dn_year": 2006,
+   "families": [
+    "720p Subtitled"
+   ],
+   "h3_links_added": 1,
+   "imdb": "tt0365485",
+   "play_rows_added": 1,
+   "stale_families_skipped": [],
+   "tmdb": 9515,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 1770,
+   "archive_part": 1,
+   "archive_src": "main",
+   "dn_title": "The Ultimate Gift",
+   "dn_year": 2007,
+   "families": [
+    "480p Dubbed",
+    "720p Dubbed",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt0482629",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 14624,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 12151,
+   "archive_part": 1,
+   "archive_src": "ml",
+   "dn_title": "For the Sake of Vicious",
+   "dn_year": 2021,
+   "families": [
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt11014390",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 722780,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 7782,
+   "archive_part": 4,
+   "archive_src": "main",
+   "dn_title": "Night in Paradise",
+   "dn_year": 2021,
+   "families": [
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt12792418",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 606523,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 7420,
+   "archive_part": 3,
+   "archive_src": "main",
+   "dn_title": "Confessions",
+   "dn_year": 2010,
+   "families": [
+    "480p unknown",
+    "720p unknown"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt1590089",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 54186,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 2837,
+   "archive_part": 2,
+   "archive_src": "old",
+   "dn_title": "The General",
+   "dn_year": 1926,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Dubbed",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 4,
+   "imdb": "tt0017925",
+   "play_rows_added": 4,
+   "stale_families_skipped": [],
+   "tmdb": 961,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 2339,
+   "archive_part": 1,
+   "archive_src": "old",
+   "dn_title": "Mr. Smith Goes to Washington",
+   "dn_year": 1939,
+   "families": [
+    "480p Subtitled",
+    "720p Dubbed",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt0031679",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 3083,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 2476,
+   "archive_part": 2,
+   "archive_src": "main",
+   "dn_title": "Always",
+   "dn_year": 2011,
+   "families": [
+    "480p unknown",
+    "720p unknown"
+   ],
+   "h3_links_added": 0,
+   "imdb": "tt2082180",
+   "play_rows_added": 0,
+   "stale_families_skipped": [],
+   "tmdb": 86000,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 1665,
+   "archive_part": 3,
+   "archive_src": "old",
+   "dn_title": "France",
+   "dn_year": 2021,
+   "families": [
+    "720p Subtitled"
+   ],
+   "h3_links_added": 1,
+   "imdb": "tt9714030",
+   "play_rows_added": 1,
+   "stale_families_skipped": [],
+   "tmdb": 602334,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 81,
+   "archive_part": 3,
+   "archive_src": "old",
+   "dn_title": "A Christmas Prince",
+   "dn_year": 2017,
+   "families": [
+    "1080p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt7608418",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 483104,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 4055,
+   "archive_part": 2,
+   "archive_src": "main",
+   "dn_title": "Believe Me The Abduction of Lisa McVey",
+   "dn_year": 2018,
+   "families": [
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt9072202",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 550776,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 1088,
+   "archive_part": 3,
+   "archive_src": "old",
+   "dn_title": "Cry Wolf",
+   "dn_year": 2005,
+   "families": [
+    "720p Subtitled"
+   ],
+   "h3_links_added": 1,
+   "imdb": "tt0384286",
+   "play_rows_added": 1,
+   "stale_families_skipped": [],
+   "tmdb": 10092,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 6891,
+   "archive_part": 3,
+   "archive_src": "main",
+   "dn_title": "Rescue Dawn",
+   "dn_year": 2006,
+   "families": [
+    "720p Subtitled"
+   ],
+   "h3_links_added": 1,
+   "imdb": "tt0462504",
+   "play_rows_added": 1,
+   "stale_families_skipped": [],
+   "tmdb": 9952,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 3853,
+   "archive_part": 2,
+   "archive_src": "old",
+   "dn_title": "The Forgotten",
+   "dn_year": 2004,
+   "families": [
+    "480p Dubbed",
+    "720p Dubbed",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt0356618",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 10145,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 2575,
+   "archive_part": 2,
+   "archive_src": "main",
+   "dn_title": "Kites",
+   "dn_year": 2010,
+   "families": [
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt1198101",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 37737,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 7411,
+   "archive_part": 3,
+   "archive_src": "main",
+   "dn_title": "Injustice",
+   "dn_year": 2017,
+   "families": [
+    "480p Dubbed",
+    "720p Dubbed"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt5012504",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 831405,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 6246,
+   "archive_part": 3,
+   "archive_src": "main",
+   "dn_title": "The Novelists Film",
+   "dn_year": 2022,
+   "families": [
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt17146978",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 928713,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 2260,
+   "archive_part": 2,
+   "archive_src": "main",
+   "dn_title": "Downton Abbey A New Era",
+   "dn_year": 2022,
+   "families": [
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt11703710",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 820446,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 2192,
+   "archive_part": 1,
+   "archive_src": "main",
+   "dn_title": "Mean Streets",
+   "dn_year": 1973,
+   "families": [
+    "720p Subtitled"
+   ],
+   "h3_links_added": 1,
+   "imdb": "tt0070379",
+   "play_rows_added": 1,
+   "stale_families_skipped": [],
+   "tmdb": 203,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 4864,
+   "archive_part": 3,
+   "archive_src": "old",
+   "dn_title": "The Only Living Boy in New York",
+   "dn_year": 2017,
+   "families": [
+    "1080p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt0460890",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 95608,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 4672,
+   "archive_part": 3,
+   "archive_src": "old",
+   "dn_title": "The Kindergarten Teacher",
+   "dn_year": 2018,
+   "families": [
+    "1080p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt6952960",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 489927,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 6443,
+   "archive_part": 3,
+   "archive_src": "main",
+   "dn_title": "Robbing Mussolini",
+   "dn_year": 2022,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt14270848",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 873125,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 6458,
+   "archive_part": 3,
+   "archive_src": "main",
+   "dn_title": "The Good Nurse",
+   "dn_year": 2022,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt4273800",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 541134,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 6485,
+   "archive_part": 2,
+   "archive_src": "old",
+   "dn_title": "Raksha Bandhan",
+   "dn_year": 2022,
+   "families": [
+    "1080p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt12834962",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 729700,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 3399,
+   "archive_part": 2,
+   "archive_src": "old",
+   "dn_title": "Rock of Ages",
+   "dn_year": 2012,
+   "families": [
+    "1080p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt1336608",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 80585,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 1766,
+   "archive_part": 3,
+   "archive_src": "old",
+   "dn_title": "Girl Most Likely",
+   "dn_year": 2012,
+   "families": [
+    "1080p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt1698648",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 72890,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 3806,
+   "archive_part": 2,
+   "archive_src": "old",
+   "dn_title": "Blow Up",
+   "dn_year": 1966,
+   "families": [
+    "720p Subtitled"
+   ],
+   "h3_links_added": 1,
+   "imdb": "tt0060176",
+   "play_rows_added": 1,
+   "stale_families_skipped": [],
+   "tmdb": 1052,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 5369,
+   "archive_part": 2,
+   "archive_src": "old",
+   "dn_title": "The To Do List",
+   "dn_year": 2013,
+   "families": [
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt1758795",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 129139,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 5132,
+   "archive_part": 3,
+   "archive_src": "old",
+   "dn_title": "The Vanished",
+   "dn_year": 2020,
+   "families": [
+    "1080p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt9794630",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 718400,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 7157,
+   "archive_part": 3,
+   "archive_src": "main",
+   "dn_title": "The Wages of Fear",
+   "dn_year": 1953,
+   "families": [
+    "720p Subtitled"
+   ],
+   "h3_links_added": 1,
+   "imdb": "tt0046268",
+   "play_rows_added": 1,
+   "stale_families_skipped": [],
+   "tmdb": 204,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 6085,
+   "archive_part": 3,
+   "archive_src": "main",
+   "dn_title": "Surrounded",
+   "dn_year": 2023,
+   "families": [
+    "1080p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt2572212",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 759584,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 942,
+   "archive_part": 1,
+   "archive_src": "main",
+   "dn_title": "Lakadbaggha",
+   "dn_year": 2023,
+   "families": [
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt20319598",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 1069567,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 2443,
+   "archive_part": 2,
+   "archive_src": "main",
+   "dn_title": "Marnie",
+   "dn_year": 1964,
+   "families": [
+    "480p Dubbed",
+    "480p Subtitled",
+    "720p Dubbed",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 4,
+   "imdb": "tt0058329",
+   "play_rows_added": 4,
+   "stale_families_skipped": [],
+   "tmdb": 506,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 5446,
+   "archive_part": 2,
+   "archive_src": "old",
+   "dn_title": "The Red Shoes",
+   "dn_year": 2005,
+   "families": [
+    "1080p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt0040725",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 19542,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 5858,
+   "archive_part": 3,
+   "archive_src": "main",
+   "dn_title": "The Mistress",
+   "dn_year": 2022,
+   "families": [
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt13780990",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 1094713,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 4120,
+   "archive_part": 2,
+   "archive_src": "old",
+   "dn_title": "The Rocketeer",
+   "dn_year": 1991,
+   "families": [
+    "720p Subtitled"
+   ],
+   "h3_links_added": 1,
+   "imdb": "tt0102803",
+   "play_rows_added": 1,
+   "stale_families_skipped": [],
+   "tmdb": 10249,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 5608,
+   "archive_part": 3,
+   "archive_src": "main",
+   "dn_title": "The Hunger Games The Ballad of Songbirds & Snakes",
+   "dn_year": 2023,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 5,
+   "imdb": "tt10545296",
+   "play_rows_added": 5,
+   "stale_families_skipped": [],
+   "tmdb": 695721,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 5595,
+   "archive_part": 3,
+   "archive_src": "main",
+   "dn_title": "Silent Night",
+   "dn_year": 2023,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 4,
+   "imdb": "tt15799866",
+   "play_rows_added": 4,
+   "stale_families_skipped": [],
+   "tmdb": 891699,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 5614,
+   "archive_part": 3,
+   "archive_src": "main",
+   "dn_title": "Ghost Project",
+   "dn_year": 2023,
+   "families": [
+    "1080p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt22486756",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 1161663,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 5604,
+   "archive_part": 3,
+   "archive_src": "main",
+   "dn_title": "Thanksgiving",
+   "dn_year": 2023,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt1448754",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 1071215,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 7065,
+   "archive_part": 3,
+   "archive_src": "main",
+   "dn_title": "The Blind Swordsman Zatoichi",
+   "dn_year": 2003,
+   "families": [
+    "720p Subtitled"
+   ],
+   "h3_links_added": 1,
+   "imdb": "tt0363226",
+   "play_rows_added": 1,
+   "stale_families_skipped": [],
+   "tmdb": null,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 2461,
+   "archive_part": 2,
+   "archive_src": "main",
+   "dn_title": "Musica",
+   "dn_year": 2024,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt19853698",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 968441,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 508,
+   "archive_part": 3,
+   "archive_src": "old",
+   "dn_title": "Barbershop 2 Back in Business",
+   "dn_year": 2004,
+   "families": [
+    "720p Subtitled"
+   ],
+   "h3_links_added": 1,
+   "imdb": "tt0337579",
+   "play_rows_added": 1,
+   "stale_families_skipped": [],
+   "tmdb": 21301,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 5334,
+   "archive_part": 3,
+   "archive_src": "main",
+   "dn_title": "Rest in Peace",
+   "dn_year": 2024,
+   "families": [
+    "1080p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt28769440",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 1106049,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 4940,
+   "archive_part": 3,
+   "archive_src": "main",
+   "dn_title": "Kinds of Kindness",
+   "dn_year": 2024,
+   "families": [
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt22408160",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 1029955,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 4938,
+   "archive_part": 3,
+   "archive_src": "main",
+   "dn_title": "The Duel",
+   "dn_year": 2023,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt26546715",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 1094605,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 4937,
+   "archive_part": 3,
+   "archive_src": "main",
+   "dn_title": "Incoming",
+   "dn_year": 2024,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 4,
+   "imdb": "tt21284218",
+   "play_rows_added": 4,
+   "stale_families_skipped": [],
+   "tmdb": 1008953,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 4373,
+   "archive_part": 2,
+   "archive_src": "main",
+   "dn_title": "82nd Golden Globe Awards",
+   "dn_year": 2025,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 5,
+   "imdb": "tt33058355",
+   "play_rows_added": 5,
+   "stale_families_skipped": [],
+   "tmdb": null,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 4096,
+   "archive_part": 2,
+   "archive_src": "main",
+   "dn_title": "Black Box Diaries",
+   "dn_year": 2024,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt30227076",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 1214499,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 4381,
+   "archive_part": 2,
+   "archive_src": "main",
+   "dn_title": "The Guide",
+   "dn_year": 2014,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt3037582",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 293122,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 4133,
+   "archive_part": 2,
+   "archive_src": "main",
+   "dn_title": "The Last Redemption",
+   "dn_year": 2024,
+   "families": [
+    "1080p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt31797432",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 1233243,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 3329,
+   "archive_part": 2,
+   "archive_src": "main",
+   "dn_title": "Snow White",
+   "dn_year": 2025,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 4,
+   "imdb": "tt6208148",
+   "play_rows_added": 4,
+   "stale_families_skipped": [],
+   "tmdb": 447273,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 3363,
+   "archive_part": 2,
+   "archive_src": "main",
+   "dn_title": "The Merry Gentlemen",
+   "dn_year": 2024,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 4,
+   "imdb": "tt32368345",
+   "play_rows_added": 4,
+   "stale_families_skipped": [],
+   "tmdb": 1290486,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 3052,
+   "archive_part": 2,
+   "archive_src": "main",
+   "dn_title": "Kesari Chapter 2 The Untold Story of Jallianwala Bagh",
+   "dn_year": 2025,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt3562110",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 1137339,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 2687,
+   "archive_part": 2,
+   "archive_src": "main",
+   "dn_title": "A Minecraft Movie",
+   "dn_year": 2025,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt3566834",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 950387,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 3111,
+   "archive_part": 2,
+   "archive_src": "main",
+   "dn_title": "Words Of War",
+   "dn_year": 2025,
+   "families": [
+    "720p Subtitled"
+   ],
+   "h3_links_added": 1,
+   "imdb": "tt8679660",
+   "play_rows_added": 1,
+   "stale_families_skipped": [],
+   "tmdb": 975615,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 7190,
+   "archive_part": 3,
+   "archive_src": "main",
+   "dn_title": "Eternity and a Day",
+   "dn_year": 1998,
+   "families": [
+    "1080p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt0156794",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 24858,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 3865,
+   "archive_part": 2,
+   "archive_src": "old",
+   "dn_title": "Heavenly Creatures",
+   "dn_year": 1994,
+   "families": [
+    "1080p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt0110005",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 1024,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 2663,
+   "archive_part": 2,
+   "archive_src": "main",
+   "dn_title": "Aztec Batman Clash of Empires",
+   "dn_year": 2025,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 4,
+   "imdb": "tt21110654",
+   "play_rows_added": 4,
+   "stale_families_skipped": [],
+   "tmdb": 987400,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 2617,
+   "archive_part": 3,
+   "archive_src": "old",
+   "dn_title": "Love & Gelato",
+   "dn_year": 2022,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt15521050",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 968438,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 2683,
+   "archive_part": 2,
+   "archive_src": "main",
+   "dn_title": "American Sweatshop",
+   "dn_year": 2025,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt32387554",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 1215020,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 2669,
+   "archive_part": 2,
+   "archive_src": "main",
+   "dn_title": "Prisoner of War",
+   "dn_year": 2025,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt33057137",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 1328803,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 1588,
+   "archive_part": 1,
+   "archive_src": "main",
+   "dn_title": "The Myth of Marakuda",
+   "dn_year": 2025,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt33022412",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": null,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 3654,
+   "archive_part": 3,
+   "archive_src": "old",
+   "dn_title": "Rosemead",
+   "dn_year": 2025,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt13109732",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 766520,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 1775,
+   "archive_part": 1,
+   "archive_src": "main",
+   "dn_title": "83rd Golden Globe Awards",
+   "dn_year": 2026,
+   "families": [
+    "720p Subtitled"
+   ],
+   "h3_links_added": 1,
+   "imdb": "tt36153532",
+   "play_rows_added": 1,
+   "stale_families_skipped": [],
+   "tmdb": null,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 1590,
+   "archive_part": 1,
+   "archive_src": "main",
+   "dn_title": "A Woman Called Mother",
+   "dn_year": 2025,
+   "families": [
+    "1080p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt33479841",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 1374462,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 1577,
+   "archive_part": 1,
+   "archive_src": "main",
+   "dn_title": "Red Path",
+   "dn_year": 2024,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 4,
+   "imdb": "tt23782554",
+   "play_rows_added": 4,
+   "stale_families_skipped": [],
+   "tmdb": 1000110,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 1380,
+   "archive_part": 1,
+   "archive_src": "main",
+   "dn_title": "Cosmic Princess Kaguya",
+   "dn_year": 2026,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt38872297",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 1575337,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 1570,
+   "archive_part": 1,
+   "archive_src": "main",
+   "dn_title": "Love Me Love Me",
+   "dn_year": 2026,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 4,
+   "imdb": "tt36331860",
+   "play_rows_added": 4,
+   "stale_families_skipped": [],
+   "tmdb": 1317672,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 520,
+   "archive_part": 1,
+   "archive_src": "main",
+   "dn_title": "Teachers Pet",
+   "dn_year": 2025,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt28362647",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": null,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 521,
+   "archive_part": 1,
+   "archive_src": "main",
+   "dn_title": "Um Pai em Apuros",
+   "dn_year": 2026,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt43475091",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 1315843,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 458,
+   "archive_part": 1,
+   "archive_src": "main",
+   "dn_title": "Facing El Chapo",
+   "dn_year": 2026,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt39390497",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 1621552,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 445,
+   "archive_part": 1,
+   "archive_src": "main",
+   "dn_title": "The Narcissists Playbook",
+   "dn_year": 2026,
+   "families": [
+    "1080p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt28353545",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 1680072,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 123,
+   "archive_part": 3,
+   "archive_src": "old",
+   "dn_title": "A Letter to My Youth",
+   "dn_year": 2026,
+   "families": [
+    "1080p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt39240255",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 1602705,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 532,
+   "archive_part": 1,
+   "archive_src": "main",
+   "dn_title": "Balan The Boy",
+   "dn_year": 2026,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt35254624",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 1410937,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 1429,
+   "archive_part": 1,
+   "archive_src": "main",
+   "dn_title": "Dongji Rescue",
+   "dn_year": 2025,
+   "families": [
+    "1080p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt32634271",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": null,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 11241,
+   "archive_part": 16,
+   "archive_src": "main",
+   "dn_title": "Dont Trouble the Trouble",
+   "dn_year": 2026,
+   "families": [
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt31841170",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 1261763,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 10700,
+   "archive_part": 16,
+   "archive_src": "main",
+   "dn_title": "The Head",
+   "dn_year": 2020,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 44,
+   "imdb": "tt8290362",
+   "play_rows_added": 44,
+   "stale_families_skipped": [],
+   "tmdb": 102434,
+   "type": "tv"
+  },
+  {
+   "archive_h3_num": 10275,
+   "archive_part": 12,
+   "archive_src": "main",
+   "dn_title": "Record of Ragnarok",
+   "dn_year": 2021,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 77,
+   "imdb": "tt13676344",
+   "play_rows_added": 77,
+   "stale_families_skipped": [],
+   "tmdb": 114868,
+   "type": "tv"
+  },
+  {
+   "archive_h3_num": 461,
+   "archive_part": 3,
+   "archive_src": "old",
+   "dn_title": "Baby Daddy",
+   "dn_year": 2012,
+   "families": [
+    "720p Subtitled"
+   ],
+   "h3_links_added": 101,
+   "imdb": "tt2177489",
+   "play_rows_added": 101,
+   "stale_families_skipped": [],
+   "tmdb": 42272,
+   "type": "tv"
+  },
+  {
+   "archive_h3_num": 9740,
+   "archive_part": 9,
+   "archive_src": "main",
+   "dn_title": "Untamed",
+   "dn_year": 2025,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 18,
+   "imdb": "tt31710822",
+   "play_rows_added": 18,
+   "stale_families_skipped": [],
+   "tmdb": 248852,
+   "type": "tv"
+  },
+  {
+   "archive_h3_num": 9830,
+   "archive_part": 9,
+   "archive_src": "main",
+   "dn_title": "The Mighty Nein",
+   "dn_year": 2025,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 13,
+   "imdb": "tt26453092",
+   "play_rows_added": 13,
+   "stale_families_skipped": [],
+   "tmdb": 219080,
+   "type": "tv"
+  },
+  {
+   "archive_h3_num": 7639,
+   "archive_part": 4,
+   "archive_src": "main",
+   "dn_title": "The Bridge on the River Kwai",
+   "dn_year": 1957,
+   "families": [
+    "720p Dubbed"
+   ],
+   "h3_links_added": 1,
+   "imdb": "tt0050212",
+   "play_rows_added": 1,
+   "stale_families_skipped": [],
+   "tmdb": 826,
+   "type": "movie"
   }
  ],
  "variety_play_created": [
@@ -15059,5 +18296,337 @@
    "tv:271144"
   ],
   "note": "DN slice of the twice-daily AM merge. Blood Sacrifice / Smiling Friends / Unforgotten / Soft & Quiet / Hoodwinked were reclassified from 'new title' to variety on the live head (they already had H3 records there)."
+ },
+ "twice_daily_2026_11_21_pm": {
+  "live_base_head": "41edc227d8fcb0de04bae1cc6e082fbb0b7f7846",
+  "start_num": 12567,
+  "end_num": 12662,
+  "new_titles_merged": [
+   "Rattlesnakes",
+   "Ambition",
+   "Recovery",
+   "Mo Salah: A Football Fairytale",
+   "Pandas: The Journey Home",
+   "Rooney: The Man Behind the Goals",
+   "Beyond the Mask",
+   "The Last Face",
+   "Quién te cantará",
+   "Draug",
+   "My Pet Dinosaur",
+   "Cage Dive",
+   "Sniper: Ultimate Kill",
+   "A Single Rider",
+   "Come Sunday",
+   "Transit 17",
+   "My Little Pony: The Princess Promenade",
+   "A Call to Spy",
+   "Anjaam",
+   "Tokyo Ghoul",
+   "Hello Ghost",
+   "The Man Who Sold His Skin",
+   "Petromax",
+   "BLACKPINK: Light Up the Sky",
+   "Rose Plays Julie",
+   "Indrajeet",
+   "Sarbjit",
+   "Temps",
+   "Greater",
+   "Schneider vs. Bax",
+   "A Fortunate Man",
+   "Mars: One Day on the Red Planet",
+   "WWE Survivor Series 2021",
+   "Jitterbugs",
+   "WWE Crown Jewel 2021",
+   "Unacknowledged",
+   "High & Low The Worst",
+   "Along Came the Devil",
+   "White Material",
+   "The Perfect Guy",
+   "Like for Likes",
+   "Waqt",
+   "The Great Yokai War",
+   "Trinity Seven: Eternity Library & Alchemic Girl",
+   "Trinity Seven: Heaven's Library & Crimson Lord",
+   "Song One",
+   "Gangster Payday",
+   "Combustion",
+   "White Spot",
+   "Macross Delta: Passionate Walküre",
+   "My Girlfriend Is an Agent",
+   "Penguins: Meet the Family",
+   "35 Shots of Rum",
+   "Barbie in the 12 Dancing Princesses",
+   "UFC 291: Poirier vs. Gaethje 2",
+   "Bad Boy",
+   "Life In The Snow",
+   "Us or Them",
+   "Knife of Ice",
+   "The Weather Underground",
+   "RAM: Rapid Action Mission",
+   "Kitne Door Kitne Paas",
+   "Nothing Serious",
+   "Popular Theory",
+   "HollyBlood",
+   "Parineeta",
+   "The Bros",
+   "What a Man Wants",
+   "Invisible Sister",
+   "Guys and Dolls",
+   "Murphy",
+   "An American Tail: The Treasure of Manhattan Island",
+   "Invasion",
+   "Ayakçı",
+   "Red Flags",
+   "Duel of Fists",
+   "Bat Without Wings",
+   "The Anonymous Heroes",
+   "Valentino: The Last Emperor",
+   "Jail",
+   "Kissing Is the Easy Part",
+   "A Child of My Own",
+   "Kattalan",
+   "The Great Queen Seondeok",
+   "Maya and the Three",
+   "Novoland: Pearl Eclipse",
+   "Parallel World Pharmacy",
+   "Love of Replica",
+   "Wulin Heroes",
+   "Romantic Killer",
+   "Glasslip",
+   "Sadistic Love",
+   "Why is He Still Single?",
+   "Inherently Kind"
+  ],
+  "variety_patched": [
+   "What Men Want",
+   "Luka Chuppi",
+   "Domino",
+   "Life Like",
+   "The Wolf’s Call",
+   "Wonder Park",
+   "Daughter of the Wolf",
+   "Bomb City",
+   "Seondal The Man Who Sells the River",
+   "The Beach",
+   "The Autopsy of Jane Doe",
+   "The Truman Show",
+   "The Wife",
+   "The Assassination of Jesse James by the Coward Robert Ford",
+   "Burnt",
+   "Marauders",
+   "Ninja Shadow of a Tear",
+   "Terminal",
+   "Side Effects",
+   "Revolt",
+   "Burning",
+   "The House",
+   "The Book of Henry",
+   "Tangled",
+   "Weathering with You",
+   "Touch of Evil",
+   "Flatfoot in Hong Kong",
+   "Im for the Hippopotamus",
+   "The Mummy",
+   "The Devils Own",
+   "Chocolat",
+   "Gran Torino",
+   "My Little Pony: Equestria Girls - Friendship Games",
+   "Axone",
+   "Dead Poets Society",
+   "Æon Flux",
+   "Serenity",
+   "Legally blonde",
+   "Orphan",
+   "Fan",
+   "Sonchiriya",
+   "The Matador",
+   "The Ultimate Gift",
+   "For the Sake of Vicious",
+   "Night in Paradise",
+   "Confessions",
+   "The General",
+   "Mr. Smith Goes to Washington",
+   "Always",
+   "France",
+   "A Christmas Prince",
+   "Believe Me The Abduction of Lisa McVey",
+   "Cry Wolf",
+   "Rescue Dawn",
+   "The Forgotten",
+   "Kites",
+   "Injustice",
+   "The Novelists Film",
+   "Downton Abbey A New Era",
+   "Mean Streets",
+   "The Only Living Boy in New York",
+   "The Kindergarten Teacher",
+   "Robbing Mussolini",
+   "The Good Nurse",
+   "Raksha Bandhan",
+   "Rock of Ages",
+   "Girl Most Likely",
+   "Blow Up",
+   "The To Do List",
+   "The Vanished",
+   "The Wages of Fear",
+   "Surrounded",
+   "Lakadbaggha",
+   "Marnie",
+   "The Red Shoes",
+   "The Mistress",
+   "The Rocketeer",
+   "The Hunger Games The Ballad of Songbirds & Snakes",
+   "Silent Night",
+   "Ghost Project",
+   "Thanksgiving",
+   "The Blind Swordsman Zatoichi",
+   "Musica",
+   "Barbershop 2 Back in Business",
+   "Rest in Peace",
+   "Kinds of Kindness",
+   "The Duel",
+   "Incoming",
+   "82nd Golden Globe Awards",
+   "Black Box Diaries",
+   "The Guide",
+   "The Last Redemption",
+   "Snow White",
+   "The Merry Gentlemen",
+   "Kesari Chapter 2 The Untold Story of Jallianwala Bagh",
+   "A Minecraft Movie",
+   "Words Of War",
+   "Eternity and a Day",
+   "Heavenly Creatures",
+   "Aztec Batman Clash of Empires",
+   "Love & Gelato",
+   "American Sweatshop",
+   "Prisoner of War",
+   "The Myth of Marakuda",
+   "Rosemead",
+   "83rd Golden Globe Awards",
+   "A Woman Called Mother",
+   "Red Path",
+   "Cosmic Princess Kaguya",
+   "Love Me Love Me",
+   "Teachers Pet",
+   "Um Pai em Apuros",
+   "Facing El Chapo",
+   "The Narcissists Playbook",
+   "A Letter to My Youth",
+   "Balan The Boy",
+   "Dongji Rescue",
+   "Dont Trouble the Trouble",
+   "The Head",
+   "Record of Ragnarok",
+   "Baby Daddy",
+   "Untamed",
+   "The Mighty Nein",
+   "The Bridge on the River Kwai"
+  ],
+  "trailers_added": [
+   "movie:1008953",
+   "movie:1024",
+   "movie:10249",
+   "movie:1029955",
+   "movie:1065834",
+   "movie:1071215",
+   "movie:1094605",
+   "movie:1106049",
+   "movie:1137339",
+   "movie:1152312",
+   "movie:1161663",
+   "movie:1163029",
+   "movie:1214499",
+   "movie:1215020",
+   "movie:1233243",
+   "movie:1261763",
+   "movie:1266678",
+   "movie:1290486",
+   "movie:13002",
+   "movie:1315843",
+   "movie:1317672",
+   "movie:1328803",
+   "movie:1372598",
+   "movie:1374462",
+   "movie:141015",
+   "movie:14108",
+   "movie:1410937",
+   "movie:1515615",
+   "movie:1551025",
+   "movie:1575337",
+   "movie:1602705",
+   "movie:1616131",
+   "movie:1621552",
+   "movie:18374",
+   "movie:19542",
+   "movie:20130",
+   "movie:21301",
+   "movie:22774",
+   "movie:244783",
+   "movie:24858",
+   "movie:26191",
+   "movie:28488",
+   "movie:293122",
+   "movie:31473",
+   "movie:428292",
+   "movie:447273",
+   "movie:4825",
+   "movie:485442",
+   "movie:496349",
+   "movie:511883",
+   "movie:555850",
+   "movie:570269",
+   "movie:604198",
+   "movie:695721",
+   "movie:736545",
+   "movie:759584",
+   "movie:766520",
+   "movie:781278",
+   "movie:821133",
+   "movie:864694",
+   "movie:891699",
+   "movie:950387",
+   "movie:968438",
+   "movie:968441",
+   "movie:975615",
+   "movie:978419",
+   "movie:987400",
+   "movie:991610",
+   "tv:128721",
+   "tv:208730",
+   "tv:219080",
+   "tv:224552",
+   "tv:248852",
+   "tv:262997",
+   "tv:270719",
+   "tv:69606"
+  ],
+  "skipped": [
+   {
+    "title": "Baazi",
+    "year": 1995,
+    "imdb": "tt0121989",
+    "reasons": {
+     "quality unparseable": 1
+    }
+   },
+   {
+    "title": "The Bridge on the River Kwai: An Appreciation by Filmmaker John Milius",
+    "year": 2000,
+    "imdb": "tt0489663",
+    "reasons": {
+     "mislabeled links (1957 film files)": 3
+    }
+   },
+   {
+    "title": "WWE Payback 2023",
+    "year": 2023,
+    "imdb": "tt28091903",
+    "reasons": {
+     "expiring": 1
+    }
+   }
+  ],
+  "note": "DN slice of the twice-daily PM merge. 94 new titles (83 films + 11 series, 820 links), 124 variety titles (527 links applied of 529 parsed — Always added 0, its 2 links were already live), 76 trailer keys. WWE Payback skipped (expiring-only); Baazi skipped (only link has no parseable quality); the Kwai documentary entry skipped (its 3 links are the 1957 feature film's files — 1 new encode rescued as variety into Kwai #7639). Guarding Stars DN file went to the SM record (source dn-guard), not into dn variety counts."
  }
 }

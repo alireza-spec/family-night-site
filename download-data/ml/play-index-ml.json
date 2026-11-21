@@ -11427,6 +11427,34 @@
     "season": null,
     "size_bytes": 587737435,
     "size_text": "588 MB"
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Revolt_2017_720p_MkvCage_ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Revolt_2017_1080p_MkvCage_ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
    }
   ],
   "title": "Revolt",
@@ -23840,6 +23868,34 @@
     "season": null,
     "size_bytes": 778801923,
     "size_text": "779 MB"
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/3345.480.mp4",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/3345.720.mp4",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
    }
   ],
   "title": "For the Sake of Vicious",
@@ -24902,6 +24958,34 @@
     "season": null,
     "size_bytes": 1307394283,
     "size_text": "1.3 GB"
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/Fan.2019.480p.WEB-DL..mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/Fan.2019.720p.WEB-DL..mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
    }
   ],
   "title": "Fan",

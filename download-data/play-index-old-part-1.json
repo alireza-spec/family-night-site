@@ -464,6 +464,48 @@
     "season": null,
     "size_bytes": 1224065679,
     "size_text": "1.14 GB"
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tct.146.giftmond.ir/film/Mr..Smith.Goes.To.Washington.1939.480p.BluRay.HardSub.DigiMoviez.mp4",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tct.146.giftmond.ir/film/Mr..Smith.Goes.To.Washington.1939.720p.BluRay.HardSub.DigiMoviez.mp4",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://peer.tct.146.giftmond.ir/film/Mr.Smith.Goes.to..Washington.1939.720p.Farsi.Dubbed-[My-Film].mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
    }
   ],
   "title": "Mr. Smith Goes to Washington",
@@ -28213,6 +28255,20 @@
     "season": null,
     "size_bytes": 785991598,
     "size_text": "749.58 MB"
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/The.Beach.2000.720p.BRRip.YIFY.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
    }
   ],
   "title": "The Beach",
@@ -48815,6 +48871,48 @@
     "season": null,
     "size_bytes": 1202590843,
     "size_text": "1.12 GB"
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/morteza_movie/1616933768_Aon_Flux_2005_720p_BrRip_Ganool.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/morteza_movie/Aon_Flux_2005_720p_BrRip_Ganool.EasyTV.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/morteza_movie/Aon_Flux_2005_1080p_BrRip_RARBG.EasyTV.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
    }
   ],
   "title": "Æon Flux",
@@ -105526,6 +105624,34 @@
     "season": null,
     "size_bytes": 995140567,
     "size_text": "949.04 MB"
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Side.Effects.2013.720p.Ganool_.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Side.Effects.2013.1080p.Ganool_.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
    }
   ],
   "title": "Side Effects",
