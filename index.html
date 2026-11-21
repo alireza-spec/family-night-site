@@ -2350,6 +2350,41 @@ function fnIranianNoTmdbLetter(x) {
   return archLetter === '#' ? (c >= '0' && c <= '9') : c === archLetter;
 }
 fnIranianNoTmdb(); /* kick off the load at boot so category pages can merge it */
+/* FN-CASEB-RAIL v1 — the 65 Iranian case-b titles (no TMDB/IMDb) on the
+   HOME 'iran' rail. Why here and not in the snapshot: the home rows come
+   from the FN snapshot (snapshot/home.json), which the hourly workflow
+   builds by SCRAPING the rendered cards of the old app — every scraped
+   card carries a numeric TMDB id (openDetail(<id>, '<type>')), so a title
+   with NO TMDB id can never be IN the snapshot, and the worker does not
+   serve the snapshot at all (jsDelivr serves it straight from the FN
+   repo). The merge therefore lives in the site's home-rail assembly,
+   next to the other static merges in loadHome (curator.json / top250.json
+   / trending.json / newest.json): it re-applies from the static
+   iranian-no-tmdb.json every time the home rows are built, so it survives
+   every snapshot regeneration by construction — it never depends on
+   snapshot content. Idempotent: a second call finds the n-items already
+   present and appends nothing. TMDB order is preserved (case-b appended
+   after the snapshot's 20). The rail cap is lifted for 'iran' only
+   (fnRailCap), so all 65 render instead of the first 4. */
+function fnRailCap(key) { return key === 'iran' ? 200 : 24; }
+function fnIranianRailMergeSync(rows) {
+  if (!rows || !rows.iran || !rows.iran.length || !FN_CASEB.data) return false;
+  var items = fnIranianNoTmdbItems();
+  if (!items.length) return false;
+  var have = {};
+  rows.iran.forEach(function (x) { have[(x.media_type || x.type || 'movie') + ':' + x.id] = 1; });
+  var add = items.filter(function (x) { return !have[(x.media_type || 'movie') + ':' + x.id]; });
+  if (!add.length) return false;
+  rows.iran = rows.iran.concat(add);
+  return true;
+}
+async function fnIranianRailMerge(rows) {
+  try {
+    var d = await Promise.race([fnIranianNoTmdb(), fnSleep(2000).then(function () { return null; })]);
+    if (!d) return false;
+    return fnIranianRailMergeSync(rows);
+  } catch (e) { return false; }
+}
 /* a real IMDb rating: a number > 0. 'N/A', '', null, '0' and '0.0' are all
    "no rating" — the whole IMDb line is suppressed for those. */
 function fnHasRealImdbRate(r) {
@@ -3488,7 +3523,7 @@ function fnRailsCacheSave(rows, hero) {
   try {
     var slim = {};
     Object.keys(rows || {}).forEach(function (k) {
-      slim[k] = (rows[k] || []).slice(0, 24).map(function (x) { return x; });
+      slim[k] = (rows[k] || []).slice(0, fnRailCap(k)).map(function (x) { return x; });
     });
     localStorage.setItem(FN_RAILS_CACHE_KEY, JSON.stringify({ v: FN_RAILS_CACHE_V, saved_at: Date.now(), day: new Date().toISOString().slice(0, 10), rows: slim, hero: (hero || []).slice(0, 20) }));
   } catch (e) {}
@@ -3761,7 +3796,7 @@ function fnPaintHomeRailsDelta(rows) {
     Array.prototype.forEach.call(track.querySelectorAll('article[data-card]'), function (a) { byKey[a.getAttribute('data-card')] = a; });
     var frag = document.createDocumentFragment();
     var seen = {};
-    (rows[k] || []).slice(0, 24).forEach(function (x) {
+    (rows[k] || []).slice(0, fnRailCap(k)).forEach(function (x) {
       var key = fnRailCardKey(x);
       seen[key] = 1;
       var old = byKey[key];
@@ -3987,6 +4022,17 @@ async function loadHome() {
       if (_t && _t.length === 250 && (!rows.ts || rows.ts.length !== 250 || rows.ts[0].id !== _t[0].id)) { rows.ts = _t; fnPaintHome(rows); }
     } catch (e) {}
   }).catch(function () {});
+  /* FN-CASEB-RAIL v1: merge the 65 Iranian case-b titles into the home
+     'iran' rail (awaited only up to 2s so it never delays the first
+     paint; a late loader arrival swaps them in below). */
+  try { await fnIranianRailMerge(rows); } catch (e) {}
+  /* late static arrival: if iranian-no-tmdb.json lands after the 2s race
+     and the rail still lacks the case-b titles, merge them in (delta). */
+  try {
+    FN_CASEB.p.then(function () {
+      try { if (fnIranianRailMergeSync(rows)) fnPaintHome(rows); } catch (e2) {}
+    }).catch(function () {});
+  } catch (e) {}
   /* FN-NO-VPN-RESILIENCE v1: FIRST PAINT — snapshot rails now,
      before any live call. The old code awaited all four live
      upgrades SEQUENTIALLY before painting anything, so one stalled
@@ -4112,7 +4158,7 @@ function railHtml(key, list) {
      order 2026-11-20) - the yellow IMDb mark, same as the see-all page. */
   var _imdbH = (key === 'tm' || key === 'ts') ? FN_IMDB_BADGE : '';
   return '<section class="rail" data-rail="' + esc(key) + '"><div class="rail-head"><h2>' + _imdbH + esc(ROW_LABELS[key] || key) + '</h2><button data-viewall="' + esc(key) + '" type="button">مشاهده همه <span aria-hidden="true">‹</span></button></div>'
-    + '<div class="rail-track">' + list.slice(0, 24).map(x => cardHtml(x)).join('') + '</div></section>';
+    + '<div class="rail-track">' + list.slice(0, fnRailCap(key)).map(x => cardHtml(x)).join('') + '</div></section>';
 }
 document.addEventListener('click', e => {
   const va = e.target.closest('[data-viewall]');
