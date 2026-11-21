@@ -6291,7 +6291,7 @@ async function findImdbByTitle(title, year) {
      old one (3 parts). Previously this only searched new parts 1-3, so
      most titles were never found when the worker could not supply an
      IMDb id (worker blocked without VPN) and the box stayed empty. */
-  const archives = [{ parts: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], which: undefined }, { parts: [1], which: 'ao' }, { parts: [1], which: 'mbm' }, { parts: [1, 2], which: 'dn' }, { parts: [1], which: 'srm' }, { parts: [1], which: 'sm' }, { parts: [1], which: 'ml' }, { parts: [1], which: 'bf' }, /* FN-MBM-SRC v1; FN-SRM-SRC v1; FN-SM-SRC v1; FN-ML-SRC v1; FN-BF-SRC v1 */ { parts: [1], which: 'fh' }, /* FN-FH-SRC v1 */{ parts: [1, 2, 3], which: 'old' }]; /* FN-AO-SRC v1: AO part added; FN-DN-SRC v1: DN parts added */
+  const archives = [{ parts: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], which: undefined }, { parts: [1], which: 'ao' }, { parts: [1], which: 'mbm' }, { parts: [1, 2], which: 'dn' }, { parts: [1], which: 'srm' }, { parts: [1], which: 'sm' }, { parts: [1], which: 'ml' }, { parts: [1], which: 'bf' }, /* FN-MBM-SRC v1; FN-SRM-SRC v1; FN-SM-SRC v1; FN-ML-SRC v1; FN-BF-SRC v1 */ { parts: [1], which: 'fh' }, /* FN-FH-SRC v1 */ { parts: [1], which: 'rz' }, /* FN-RZ-SRC v1 */{ parts: [1, 2, 3], which: 'old' }]; /* FN-AO-SRC v1: AO part added; FN-DN-SRC v1: DN parts added */
   for (const arc of archives) {
   for (const part of arc.parts) {
     let doc;
@@ -6515,7 +6515,7 @@ function paintFrame() {
 }
 
 /* ================= downloads — FN archive (same logic as the app) ================= */
-let fnDlIndex = null, fnDlIndexPromise = null; const fnDlParts = {}; const aoDlParts = {}; const mbmDlParts = {}; const dnDlParts = {}; const srmDlParts = {}; const smDlParts = {}; const mlDlParts = {}; const bfDlParts = {}; const fhDlParts = {}; /* FN-AO-SRC v1; FN-MBM-SRC v1; FN-DN-SRC v1 adds dn; FN-SRM-SRC v1; FN-SM-SRC v1; FN-ML-SRC v1; FN-BF-SRC v1; FN-FH-SRC v1 */
+let fnDlIndex = null, fnDlIndexPromise = null; const fnDlParts = {}; const aoDlParts = {}; const mbmDlParts = {}; const dnDlParts = {}; const srmDlParts = {}; const smDlParts = {}; const mlDlParts = {}; const bfDlParts = {}; const fhDlParts = {}; const rzDlParts = {}; /* FN-AO-SRC v1; FN-MBM-SRC v1; FN-DN-SRC v1 adds dn; FN-SRM-SRC v1; FN-SM-SRC v1; FN-ML-SRC v1; FN-BF-SRC v1; FN-FH-SRC v1; FN-RZ-SRC v1 adds rz */
 let oldDlIndex = null, oldDlIndexPromise = null; const oldDlParts = {};
 function getOldDlIndex() {
   if (oldDlIndex) return Promise.resolve(oldDlIndex);
@@ -6631,7 +6631,7 @@ function loadDlPart(part, which) {
     return fetch(DL_BASE + 'fh/archive-part-' + n + '.html').then(r => { if (!r.ok) throw new Error('archive'); return r.text(); })
       .then(t => { const d = new DOMParser().parseFromString(t, 'text/html'); fhDlParts[n] = d; return d; });
   }
-  const isOld = which === 'old';
+  /* FN-RZ-SRC v1: RezFlix part — the RZ H3 file lives in      download-data/rz/archive-part-1.html; the global download-index      maps RZ titles to part 'rz'. */   if (part === 'rz' || which === 'rz') {     const n = Number(part) >= 1 ? Number(part) : 1;     if (rzDlParts[n]) return Promise.resolve(rzDlParts[n]);     return fetch(DL_BASE + 'rz/archive-part-' + n + '.html').then(r => { if (!r.ok) throw new Error('archive'); return r.text(); })       .then(t => { const d = new DOMParser().parseFromString(t, 'text/html'); rzDlParts[n] = d; return d; });   }   const isOld = which === 'old';
   const cache = isOld ? oldDlParts : fnDlParts;
   const base = isOld ? OLD_DL_BASE : DL_BASE;
   const maxPart = isOld ? 3 : 16;
@@ -6662,7 +6662,7 @@ async function resolveDlRecord(imdbId, num) {
       const part = index[imdbId];
       if (part) {
         const rec = recordFromArchive(await loadDlPart(part), imdbId);
-        if (dlRecHasLinks(rec)) { main = rec; mainSrc = (part === 'ao' ? 'ao' : part === 'mbm' ? 'mbm' : (part === 'dn1' || part === 'dn2') ? 'dn' : part === 'srm' ? 'srm' : part === 'sm' ? 'sm' : part === 'ml' ? 'ml' : part === 'bf' ? 'bf' : part === 'fh' ? 'fh' : 'new'); } /* FN-MBM-SRC v1; FN-DN-SRC v1 adds dn; FN-SRM-SRC v1; FN-SM-SRC v1; FN-ML-SRC v1; FN-BF-SRC v1; FN-FH-SRC v1 */
+        if (dlRecHasLinks(rec)) { main = rec; mainSrc = (part === 'ao' ? 'ao' : part === 'mbm' ? 'mbm' : (part === 'dn1' || part === 'dn2') ? 'dn' : part === 'srm' ? 'srm' : part === 'sm' ? 'sm' : part === 'ml' ? 'ml' : part === 'bf' ? 'bf' : part === 'fh' ? 'fh' : part === 'rz' ? 'rz' : 'new'); } /* FN-MBM-SRC v1; FN-DN-SRC v1 adds dn; FN-SRM-SRC v1; FN-SM-SRC v1; FN-ML-SRC v1; FN-BF-SRC v1; FN-FH-SRC v1; FN-RZ-SRC v1 adds rz */
       }
     } catch (e) {}
     try {
@@ -6692,7 +6692,7 @@ async function resolveDlRecord(imdbId, num) {
   return null;
 }
 async function resolveDlRecordByPart(imdbId, num, part, which) {
-  const base = which === 'old' ? 'old' : which === 'ao' ? 'ao' : which === 'mbm' ? 'mbm' : which === 'dn' ? 'dn' : which === 'srm' ? 'srm' : which === 'sm' ? 'sm' : which === 'ml' ? 'ml' : which === 'bf' ? 'bf' : which === 'fh' ? 'fh' : 'new'; /* FN-AO-SRC v1; FN-MBM-SRC v1 adds mbm; FN-DN-SRC v1 adds dn; FN-SRM-SRC v1 adds srm; FN-SM-SRC v1 adds sm; FN-ML-SRC v1 adds ml; FN-BF-SRC v1 adds bf; FN-FH-SRC v1 adds fh */
+  const base = which === 'old' ? 'old' : which === 'ao' ? 'ao' : which === 'mbm' ? 'mbm' : which === 'dn' ? 'dn' : which === 'srm' ? 'srm' : which === 'sm' ? 'sm' : which === 'ml' ? 'ml' : which === 'bf' ? 'bf' : which === 'fh' ? 'fh' : which === 'rz' ? 'rz' : 'new'; /* FN-AO-SRC v1; FN-MBM-SRC v1 adds mbm; FN-DN-SRC v1 adds dn; FN-SRM-SRC v1 adds srm; FN-SM-SRC v1 adds sm; FN-ML-SRC v1 adds ml; FN-BF-SRC v1 adds bf; FN-FH-SRC v1 adds fh; FN-RZ-SRC v1 adds rz */
   const rec = recordFromArchive(await loadDlPart(part, base), imdbId || '', num);
   if (rec && (rec.groups.softsub.length || rec.groups.dubbed.length || rec.groups.nosub.length)) return { rec, src: base };
   return null;
@@ -7914,8 +7914,10 @@ async function fnPlayFetchPart(part) {
        FN-BF-SRC v1: the Babak Film play-index lives in
        download-data/bf/play-index-bf.json (part 'bf').
        FN-FH-SRC v1: the FarsiHubz play-index lives in
-       download-data/fh/play-index-fh.json (part 'fh'). */
-    var url = part === 'ao' ? DL_BASE + 'ao/play-index-ao.json' : part === 'mbm' ? DL_BASE + 'mbm/play-index-mbm.json' : part === 'srm' ? DL_BASE + 'srm/play-index-srm.json' : part === 'sm' ? DL_BASE + 'sm/play-index-sm.json' : part === 'ml' ? DL_BASE + 'ml/play-index-ml.json' : part === 'bf' ? DL_BASE + 'bf/play-index-bf.json' : part === 'fh' ? DL_BASE + 'fh/play-index-fh.json' : (part === 'dn1' || part === 'dn2') ? DL_BASE + 'dn/play-index-dn.json' : DL_BASE + 'play-index-part-' + part + '.json';
+       download-data/fh/play-index-fh.json (part 'fh').
+       FN-RZ-SRC v1: the RezFlix play-index lives in
+       download-data/rz/play-index-rz.json (part 'rz'). */
+    var url = part === 'ao' ? DL_BASE + 'ao/play-index-ao.json' : part === 'mbm' ? DL_BASE + 'mbm/play-index-mbm.json' : part === 'srm' ? DL_BASE + 'srm/play-index-srm.json' : part === 'sm' ? DL_BASE + 'sm/play-index-sm.json' : part === 'ml' ? DL_BASE + 'ml/play-index-ml.json' : part === 'bf' ? DL_BASE + 'bf/play-index-bf.json' : part === 'fh' ? DL_BASE + 'fh/play-index-fh.json' : part === 'rz' ? DL_BASE + 'rz/play-index-rz.json' : (part === 'dn1' || part === 'dn2') ? DL_BASE + 'dn/play-index-dn.json' : DL_BASE + 'play-index-part-' + part + '.json';
     var r = await fetch(url, { signal: ctl.signal });
     if (!r.ok) throw new Error('play part');
     var j = await r.json(); FN_PLAY.parts[part] = j; return j;
@@ -10322,7 +10324,7 @@ let dlaListCurrent = [];   /* the filtered list currently rendered (row index ->
 /* FN-DN-SRC v1: DarkNama parts — same H3 format, own folder
    (download-data/dn/); the section loader and the background preload
    both read this one list. */
-const DLA_ARCHIVES = [{ base: DL_BASE, parts: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], src: 'new' }, { base: DL_BASE + 'ao/', parts: [1], src: 'ao' }, { base: DL_BASE + 'mbm/', parts: [1], src: 'mbm' }, { base: DL_BASE + 'dn/', parts: [1, 2], src: 'dn' }, { base: DL_BASE + 'srm/', parts: [1], src: 'srm' }, { base: DL_BASE + 'sm/', parts: [1], src: 'sm' }, { base: DL_BASE + 'ml/', parts: [1], src: 'ml' }, { base: DL_BASE + 'bf/', parts: [1], src: 'bf' }, /* FN-MBM-SRC v1; FN-SRM-SRC v1; FN-SM-SRC v1; FN-ML-SRC v1; FN-BF-SRC v1 */ { base: DL_BASE + 'fh/', parts: [1], src: 'fh' }, /* FN-FH-SRC v1 */{ base: OLD_DL_BASE, parts: [1, 2, 3], src: 'old' }];
+const DLA_ARCHIVES = [{ base: DL_BASE, parts: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16], src: 'new' }, { base: DL_BASE + 'ao/', parts: [1], src: 'ao' }, { base: DL_BASE + 'mbm/', parts: [1], src: 'mbm' }, { base: DL_BASE + 'dn/', parts: [1, 2], src: 'dn' }, { base: DL_BASE + 'srm/', parts: [1], src: 'srm' }, { base: DL_BASE + 'sm/', parts: [1], src: 'sm' }, { base: DL_BASE + 'ml/', parts: [1], src: 'ml' }, { base: DL_BASE + 'bf/', parts: [1], src: 'bf' }, /* FN-MBM-SRC v1; FN-SRM-SRC v1; FN-SM-SRC v1; FN-ML-SRC v1; FN-BF-SRC v1 */ { base: DL_BASE + 'fh/', parts: [1], src: 'fh' }, /* FN-FH-SRC v1 */ { base: DL_BASE + 'rz/', parts: [1], src: 'rz' }, /* FN-RZ-SRC v1 */{ base: OLD_DL_BASE, parts: [1, 2, 3], src: 'old' }];
 
 /* ---------- FN-DLA-PRELOAD v1: shared chunk ingestion ----------
    dlaIngestChunk is the exact parse initDlArchive used to do inline,
@@ -10394,7 +10396,7 @@ function dlaIngestChunk(ch, arc, n, entries, entryByImdb) {
      H3 title's year (AO H3 titles carry the real year).
      FN-DN-SRC v1: same for DN series URLs (film URLs carry the year in
      the file name; series URLs do not). */
-  const hym = (arc.src === 'ao' || arc.src === 'mbm' || arc.src === 'dn' || arc.src === 'srm' || arc.src === 'sm' || arc.src === 'ml' || arc.src === 'bf' || arc.src === 'fh') ? /* FN-MBM-SRC v1: MBM H3 titles carry the real year, like AO; FN-SRM-SRC v1: SRM too; FN-SM-SRC v1: SM too; FN-ML-SRC v1: ML too; FN-BF-SRC v1: BF too; FN-FH-SRC v1: FH too */ (ch.split(/<\/h3>/i)[0] || '').match(/\b((?:19|20)\d{2})\b/) : null;
+  const hym = (arc.src === 'ao' || arc.src === 'mbm' || arc.src === 'dn' || arc.src === 'srm' || arc.src === 'sm' || arc.src === 'ml' || arc.src === 'bf' || arc.src === 'fh' || arc.src === 'rz') ? /* FN-MBM-SRC v1: MBM H3 titles carry the real year, like AO; FN-SRM-SRC v1: SRM too; FN-SM-SRC v1: SM too; FN-ML-SRC v1: ML too; FN-BF-SRC v1: BF too; FN-FH-SRC v1: FH too; FN-RZ-SRC v1: RZ too */ (ch.split(/<\/h3>/i)[0] || '').match(/\b((?:19|20)\d{2})\b/) : null;
   const year = ym ? +ym[1] : hym ? +hym[1] : 0;
   const ent = { title, imdb: imdbNoCode, num: numNoCode, rate, votes, year, type, links, soft: /<b>(SoftSub|HardSub)<\/b>/i.test(ch), /* FN-MBM-SRC v1 */ dub: /<b>Dubbed<\/b>/i.test(ch), nosub: /<b>NoSub<\/b>/i.test(ch), part: n, src: arc.src, _hrefs: new Set(hrefs) };
   dlaAddEntry(ent, arc, n, entries, entryByImdb);
@@ -10751,7 +10753,7 @@ async function initDlArchive() {
   _dlaArcLoop: for (const arc of archives) {
   for (const n of arc.parts) {
     if (currentView !== 'dlarchive' && dlaEntries) break;
-    body.innerHTML = '<div class="state"><div class="spin"></div>در حال بارگذاری آرشیو دانلود Family Night…<br>آرشیو ' + (arc.src === 'new' ? 'جدید' : arc.src === 'ao' ? 'AO' : arc.src === 'mbm' ? 'MBM' : arc.src === 'dn' ? 'DN' : arc.src === 'srm' ? 'SR' : arc.src === 'sm' ? 'SM' : arc.src === 'ml' ? 'ML' : arc.src === 'bf' ? 'BF' : arc.src === 'fh' ? 'FH' : 'قبلی') + ' — بخش ' + n + ' از ' + arc.parts.length + ' — عنوان‌ها و لینک‌های واقعی آرشیو خوانده می‌شوند.</div>';
+    body.innerHTML = '<div class="state"><div class="spin"></div>در حال بارگذاری آرشیو دانلود Family Night…<br>آرشیو ' + (arc.src === 'new' ? 'جدید' : arc.src === 'ao' ? 'AO' : arc.src === 'mbm' ? 'MBM' : arc.src === 'dn' ? 'DN' : arc.src === 'srm' ? 'SR' : arc.src === 'sm' ? 'SM' : arc.src === 'ml' ? 'ML' : arc.src === 'bf' ? 'BF' : arc.src === 'fh' ? 'FH' : arc.src === 'rz' ? 'RZ' : 'قبلی') + ' — بخش ' + n + ' از ' + arc.parts.length + ' — عنوان‌ها و لینک‌های واقعی آرشیو خوانده می‌شوند.</div>';
     const key = dlaPreKey(arc.src, n);
     const pre = DLA_PRE.parts[key];
     if (pre && pre.entries) {
