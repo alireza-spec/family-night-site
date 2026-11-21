@@ -7716,7 +7716,7 @@
   {
    "expiring_stripped": 0,
    "imdb": "tt38734657",
-   "links": 8,
+   "links": 12,
    "nosub_only": false,
    "num": 12388,
    "skipped_links": {},
@@ -18628,5 +18628,17 @@
    }
   ],
   "note": "DN slice of the twice-daily PM merge. 94 new titles (83 films + 11 series, 820 links), 124 variety titles (527 links applied of 529 parsed — Always added 0, its 2 links were already live), 76 trailer keys. WWE Payback skipped (expiring-only); Baazi skipped (only link has no parseable quality); the Kwai documentary entry skipped (its 3 links are the 1957 feature film's files — 1 new encode rescued as variety into Kwai #7639). Guarding Stars DN file went to the SM record (source dn-guard), not into dn variety counts."
+ },
+ "rezflix_queue_sweep_2026_11_22": {
+  "live_base_head": "1aeee1956ea1558c6cd67934db92c8fca1ed80ca",
+  "completions": [
+   {
+    "title": "River of No Return",
+    "imdb": "tt38734657",
+    "record": "#12388 dn2",
+    "links_added": 4,
+    "note": "S01E05-E06 480p/720p BaroMoviz SoftSub -> SoftSub/none like E01-E04; dn-manifest series[] links 8 -> 12 (DN-origin links only; the 9 F2M links were never counted there). counts.* left untouched: live totals (8715 H3 links) already differ from the manifest's stale by_resolution sum (8705), so a +4 there would compound a stale baseline."
+   }
+  ]
  }
 }
