@@ -1,385 +1,54 @@
 {
  "code": "RZ",
- "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv/mp4, no token/expiry in file URLs)",
- "start_num": 12562,
- "end_num": 12566,
- "live_base_head": "41edc227d8fcb0de04bae1cc6e082fbb0b7f7846",
- "generated": "2026-11-21",
+ "source": "RezFlix APK API http://server-win-iran.info (poster feed + movie detail, static mkv/mp4, no token/expiry in file URLs)",
+ "start_num": 12567,
+ "end_num": 12567,
+ "live_base_head": "3b5c33bab2766e8c9dbad555d34afc2e46bf37d0 (queued-two merge 2026-11-21 ~23:55; H3 max verified from live rz part-1)",
+ "generated": "2026-11-21 (RezFlix queued-two merge — Son Yemek new; Dont Trouble the Trouble proven duplicate)",
  "counts": {
-  "total_titles": 5,
-  "movies": 5,
+  "total_titles": 1,
+  "movies": 1,
   "series": 0,
-  "total_links": 14,
+  "total_links": 3,
   "by_year": {
-   "2023": 1,
-   "2025": 1,
-   "2026": 3
+   "2026": 1
   },
   "by_quality": {
-   "480p": 3,
-   "720p": 5,
-   "1080p": 4,
-   "CAM 720p": 1,
-   "CAM 1080p": 1
+   "1080p": 1,
+   "720p": 1,
+   "480p": 1
   }
  },
  "films": [
   {
-   "title": "Days of Happiness",
-   "tmdb": 848987,
-   "imdb": "tt19860724",
-   "year": 2023,
-   "num": 12562,
-   "links": 2,
-   "quality": "480p+720p",
-   "rezflix_id": 36078,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 2023, TMDB 848987, tt19860724). Persian name روزهای خوشبختی (feed)."
-  },
-  {
-   "title": "My First of May",
-   "tmdb": 1071646,
-   "imdb": "tt35724928",
-   "year": 2025,
-   "num": 12563,
-   "links": 2,
-   "quality": "1080p+720p",
-   "rezflix_id": 36082,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 2025, TMDB 1071646, tt35724928). Persian name اولین ماه مه من (feed)."
-  },
-  {
-   "title": "The Hunger Games: Sunrise on the Reaping",
-   "tmdb": 1300968,
-   "imdb": "tt32558705",
+   "title": "Son Yemek",
+   "tmdb": 1561834,
+   "imdb": "tt50016818",
    "year": 2026,
-   "num": 12564,
-   "links": 2,
-   "quality": "CAM 1080p+CAM 720p",
-   "rezflix_id": 36083,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 1300968, tt32558705). Persian name بازی‌های گرسنگی طلوع در روز برداشت (feed)."
-  },
-  {
-   "title": "Maltratada",
-   "tmdb": 1787995,
-   "imdb": "tt47739645",
-   "year": 2026,
-   "num": 12565,
-   "links": 2,
-   "quality": "1080p+720p",
-   "rezflix_id": 36085,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 1787995, tt47739645). Persian name بد رفتاری‌شده (feed)."
-  },
-  {
-   "title": "Fjord",
-   "tmdb": 1401459,
-   "imdb": "tt35410859",
-   "year": 2026,
-   "num": 12566,
+   "num": 12567,
    "links": 3,
    "quality": "1080p+480p+720p",
-   "rezflix_id": 36086,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 1401459, tt35410859). Persian name فیورد (feed)."
+   "rezflix_id": 36080,
+   "identity_note": "TMDB+IMDb agree (TMDB 1561834, tt50016818 via external_ids); OMDb silent, not disagreeing. TMDB English title 'Last Meal', original_title 'Son Yemek' (feed title). Persian name شام آخر (feed)."
   }
  ],
- "completions": [
-  {
-   "title": "A Talent for Murder",
-   "rezflix_id": 36011,
-   "imdb": "tt14129116",
-   "record": "#4 part 1",
-   "links_added": 3,
-   "note": "Farsi.Sub files -> hardsub like the record"
-  },
-  {
-   "title": "Confession",
-   "rezflix_id": 36003,
-   "imdb": "tt46082332",
-   "record": "#5 part 1",
-   "links_added": 3,
-   "note": "Farsi.Sub files -> hardsub like the record"
-  },
-  {
-   "title": "Musk",
-   "rezflix_id": 35984,
-   "imdb": "tt27041231",
-   "record": "#16 part 1",
-   "links_added": 3,
-   "note": "Farsi.Sub files -> hardsub like the record"
-  },
-  {
-   "title": "Being Heumann",
-   "rezflix_id": 35935,
-   "imdb": "tt15095848",
-   "record": "#37 part 1",
-   "links_added": 3,
-   "note": "YTS SoftSub files -> SoftSub/none"
-  },
-  {
-   "title": "Heartland",
-   "rezflix_id": 35936,
-   "imdb": "tt38213251",
-   "record": "#35 part 1",
-   "links_added": 3,
-   "note": "YTS SoftSub files -> SoftSub/none"
-  },
-  {
-   "title": "Avengers: Endgame",
-   "rezflix_id": 35942,
-   "imdb": "tt4154796",
-   "record": "#18 part 1",
-   "links_added": 10,
-   "note": "3 Encore Farsi.Sub -> hardsub; 4 plain 2019 -> SoftSub/none (DESIGN worked example); 2 Dubbed; 1 behind-the-scenes -> new NoSub section"
-  },
-  {
-   "title": "The Altruists",
-   "rezflix_id": 36050,
-   "imdb": "tt36786185",
-   "record": "#11239 part 16",
-   "links_added": 3,
-   "note": "S01E08 480p/720p/1080p ValaMovie SoftSub -> SoftSub/none like E01-E07 in the same record"
-  }
- ],
- "trailer_keys_added": [
-  "movie:1050981",
-  "movie:1543469",
-  "movie:1443151",
-  "movie:299534",
-  "movie:11536",
-  "movie:1537518",
-  "movie:1238735",
-  "movie:1096228",
-  "movie:1336166",
-  "movie:1772726",
-  "movie:848987",
-  "movie:1300968",
-  "movie:1787995",
-  "movie:1401459"
- ],
- "repairs_included": [
-  "Disinvited #12560 live defect: link text '? RZ SoftSub' -> '720p RZ SoftSub' / '1080p RZ SoftSub'; sizes '844 MB' / '1.7 GB'; play rows quality '?' -> 720p/1080p, size_bytes 885104640 for 720p (description حجم 844 MB + 1.7 GB).",
-  "Search rows imdb filled (was None): Being Heumann tt15095848, Musk tt27041231, A Talent for Murder tt14129116 (DTI already had them).",
-  "DTI entries added for existing records: movie:1543469 Heartland #35/1, movie:299534 Endgame #18/1, tv:308007 Altruists #11239/16.",
-  "Avail imdb keys added for the 4 titles that gained a play entry: tt15095848, tt27041231, tt14129116, tt46082332."
- ],
- "queued_titles": [
-  {
-   "title": "The Beast",
-   "rezflix_id": 35950,
-   "reason": "OMDb title 'Heart of the Beast' disagrees with 'The Beast'"
-  },
-  {
-   "title": "Ebenezer ( نسخه پرده ای )",
-   "rezflix_id": 35975,
-   "reason": "no TMDB movie record for 'Ebenezer ( نسخه پرده ای )'"
-  },
-  {
-   "title": "Ghost Soldier ( نسخه پرده ای )",
-   "rezflix_id": 35976,
-   "reason": "no TMDB movie record for 'Ghost Soldier ( نسخه پرده ای )'"
-  },
-  {
-   "title": "Wolves Up Close with Bertie Gregory",
-   "rezflix_id": 35985,
-   "reason": "OMDb silent for tt49241977 (TMDB+IMDb agree)"
-  },
-  {
-   "title": "Guarding Stars",
-   "rezflix_id": 36047,
-   "reason": "OMDb title 'The Bodyguard' disagrees with 'Guarding Stars'"
-  },
-  {
-   "title": "Sound Track",
-   "rezflix_id": 36056,
-   "reason": "no IMDb id for 'Sound Track' (TMDB 342666); not Iranian - needs user decision"
-  },
-  {
-   "title": "The Containment",
-   "rezflix_id": 36061,
-   "reason": "year conflict: feed 2024 / TMDB 2025 / OMDb 2017"
-  },
-  {
-   "title": "River of No Return",
-   "rezflix_id": 36071,
-   "reason": "OMDb silent for tt38734657 (TMDB+IMDb agree)"
-  },
-  {
-   "title": "Perfect Liars",
-   "rezflix_id": 36073,
-   "reason": "OMDb title 'Perfectos mentirosos' disagrees with 'Perfect Liars'"
-  },
-  {
-   "title": "Cicekci Kiz",
-   "rezflix_id": 36075,
-   "reason": "OMDb silent for tt48685065 (TMDB+IMDb agree)"
-  },
+ "duplicates": [
   {
    "title": "Dont Trouble the Trouble",
    "rezflix_id": 36079,
-   "reason": "OMDb title \"Don't Trouble the Trouble\" disagrees with 'Dont Trouble the Trouble'"
-  },
-  {
-   "title": "Son Yemek",
-   "rezflix_id": 36080,
-   "reason": "OMDb silent for tt50016818 (TMDB+IMDb agree)"
-  },
-  {
-   "title": "Taina e os Guardioes da Amazonia Em Busca da Flecha Azul",
-   "rezflix_id": 36081,
-   "reason": "OMDb title 'Tainá e a Flecha Azul' disagrees with 'Taina e os Guardioes da Amazonia Em Busca da Flecha Azul'"
-  },
-  {
-   "title": "My Wife Cries",
-   "rezflix_id": 36084,
-   "reason": "OMDb title 'Meine Frau weint' disagrees with 'My Wife Cries'"
-  },
-  {
-   "title": "نسخه جدید هورتون",
-   "rezflix_id": 36087,
-   "reason": "no TMDB movie record for 'نسخه جدید هورتون'"
-  },
-  {
-   "title": "نسخه جدید ملودی باکس",
-   "rezflix_id": 36088,
-   "reason": "no TMDB movie record for 'نسخه جدید ملودی باکس'"
-  },
-  {
-   "title": "به روزرسانی(نصب کنار نسخه قبلی)",
-   "rezflix_id": 36089,
-   "reason": "no TMDB movie record for 'به روزرسانی(نصب کنار نسخه قبلی)'"
+   "tmdb": 1261763,
+   "imdb": "tt31841170",
+   "reason": "Already in archive as H3 #11241 part 16 (3 Dubbed + 2 HardSub DN links); both RezFlix film URLs already live there; teaser URL already in dn-trailer-index (movie:1261763). 0 new links, 0 new trailers."
   }
  ],
- "url_dupes_dropped": [
-  "http://drive3.google.dl175m.info/tizer/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF%20%D9%81%DB%8C%D9%84%D9%85%20Angel%20and%20the%20Badman%202026%20%D9%81%D8%B1%D8%B4%D8%AA%D9%87%20%D9%88%20%D9%85%D8%B1%D8%AF%20%D8%B4%D8%B1%D9%88%D8%B1%20%D8%A8%D8%AF%D9%88%D9%86%20%D8%B3%D8%A7%D9%86%D8%B3%D9%88%D8%B1.mp4",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Angel.and.the.Badman.2026.1080p.WEB-DL.6CH.ValaMovie.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Angel.and.the.Badman.2026.480p.WEB-DL.ValaMovie.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Angel.and.the.Badman.2026.720p.WEB-DL.ValaMovie.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Appofeniacs.2025.1080p.WEB-DL.6CH.YIFY.Farsi.Sub.Film2Media.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Appofeniacs.2025.480p.WEB-DL.Farsi.Sub.Film2Media.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Appofeniacs.2025.720p.WEB-DL.YIFY.Farsi.Sub.Film2Media.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Chiranjeevi.2026.Telugu.480p.WEBDL.HardSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Chiranjeevi.2026.Telugu.720p.WEBDL.HardSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Double.Exposure.Sub-1080.simba.mp4",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Double.Exposure.Sub-720.simba.mp4",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Double.Trouble.2026.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Double.Trouble.2026.720p.WEBRip.x264.AAC-YTS.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Empire.of.the.Wolves.2005.1080p.BluRay.Dubbed.ZarFilm.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Empire.of.the.Wolves.2005.480p.BluRay.Dubbed.ZarFilm.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Empire.of.the.Wolves.2005.720p.BluRay.Dubbed.ZarFilm.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Hoodwinked.Too.Hood.vs.Evil.2011.1080p.BrRip.YIFY.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Hoodwinked.Too.Hood.vs.Evil.2011.480p.BrRip.Dubbed.ZarFilm.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Hoodwinked.Too.Hood.vs.Evil.2011.720p.BrRip.Dubbed.ZarFilm.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Hoodwinked.Too.Hood.vs.Evil.2011.720p.BrRip.YIFY.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Long.Haired.Businessmen.2026.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.simba.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Long.Haired.Businessmen.2026.720p.WEBRip.x264.AAC-YTS.SoftSub.simba.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Love.Me.Tender.2025.480p.WEB-DL.x264.SoftSub.ZarFilm.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Love.Me.Tender.2025.720p.WEB-DL.x264.YIFY.SoftSub.ZarFilm.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Madden.2026.1080p.WEB-DL.6CH.Pahe.Farsi.Sub.Film2Media.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Madden.2026.480p.WEB-DL.Pahe.Farsi.Sub.Film2Media.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Madden.2026.720p.WEB-DL.Pahe.Farsi.Sub.Film2Media.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/My-friend-Is-A-Serial-Killer-1080-simba.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/My-friend-Is-A-Serial-Killer-480-simba.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/My-friend-Is-A-Serial-Killer-720-simba.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Rolling.Loud.2026.1080p.WEB-DL.YIFY.Farsi.Sub.Film2Media.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Rolling.Loud.2026.480p.WEB-DL.Farsi.Sub.Film2Media.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Rolling.Loud.2026.720p.WEB-DL.YIFY.Farsi.Sub.Film2Media.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Soft.and.Quiet.2022.1080p.WEB-DL.YIFY.SoftSub.ZarFilm.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Soft.and.Quiet.2022.480p.WEB-DL.SoftSub.ZarFilm.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Soft.and.Quiet.2022.720p.WEB-DL.YIFY.SoftSub.ZarFilm.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Steps.2026.1080p.WEB-DL.6CH.YIFY.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Steps.2026.480p.WEB-DL.x264.SoftSub.ZarFilm.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Steps.2026.720p.10bit.WEB-DL.6CH.x265.PSA.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Steps.2026.720p.WEB-DL.YIFY.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Swordsman.Sub-1080.simba.mp4",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Swordsman.Sub-720.simba.mp4",
-  "http://peer.tci.cdn.146.dl150m.info/film1/The.Cycle.Of.Love.2025.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/The.Cycle.Of.Love.2025.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/The.Cycle.Of.Love.2025.720p.WEBRip.x264.AAC-YTS.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/The.Disinvited.Sub-1080.simba.mp4",
-  "http://peer.tci.cdn.146.dl150m.info/film1/The.Disinvited.Sub-720.simba.mp4",
-  "http://peer.tci.cdn.146.dl150m.info/film1/The.Floaters.2025.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/The.Floaters.2025.720p.WEBRip.x264.AAC-YTS.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/The.Hotline.2026.1080p.WEB-DL.6CH.YIFY.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/The.Hotline.2026.720p.WEB-DL.YIFY.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/The.Last.Temptation.of.Becky.2026.1080p.WEB-DL.6CH.YIFY.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/The.Last.Temptation.of.Becky.2026.480p.WEB-DL.Farsi.Sub.Film2Media.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/The.Last.Temptation.of.Becky.2026.720p.10bit.WEB-DL.6CH.x265.PSA.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/The.Last.Temptation.of.Becky.2026.720p.WEB-DL.YIFY.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/The_Misfits_1961_1080p_BrRip_YIFY.ZarFilm.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/The_Misfits_1961_720p_BrRip_YIFY.ZarFilm.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Vittoria.Sub-1080.simba.mp4",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Vittoria.Sub-720.simba.mp4",
-  "http://peer.tci.cdn.146.dl150m.info/tizer/%D8%AF%D8%A7%D9%86%D9%84%D9%88%D8%AF%20%D9%81%DB%8C%D9%84%D9%85%20The%20Last%20Temptation%20of%20Becky%202026%20%D8%A2%D8%AE%D8%B1%DB%8C%D9%86%20%D9%88%D8%B3%D9%88%D8%B3%D9%87%20%D8%A8%DA%A9%DB%8C%20%D8%A8%D8%AF%D9%88%D9%86%20%D8%B3%D8%A7%D9%86%D8%B3%D9%88%D8%B1.mp4",
-  "http://peer.tci.cdn.146.dl150m.info/tizer/A.Talent.for.Murder.2026.t.mp4",
-  "http://peer.tci.cdn.146.dl150m.info/tizer/Appofeniacs.2025_t.mp4",
-  "http://peer.tci.cdn.146.dl150m.info/tizer/Chiranjeevi%20-%20Trailer.mp4",
-  "http://peer.tci.cdn.146.dl150m.info/tizer/Hoodwinked.Too.Hood.vs.Evil.2011.Trailer.mp4",
-  "http://peer.tci.cdn.146.dl150m.info/tizer/Love.Me.Tender.2025.mp4",
-  "http://peer.tci.cdn.146.dl150m.info/tizer/Madden.2026_t.mp4",
-  "http://peer.tci.cdn.146.dl150m.info/tizer/STEPS%20_%20Official%20Trailer%20_%20Netflix%20%282%29.mp4",
-  "http://peer.tci.cdn.146.dl150m.info/tizer/Soft.and.Quiet.2022.Trailer.mp4",
-  "http://peer.tci.cdn.146.dl150m.info/tizer/The.Blue.Road.2026.Teaser.mp4",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Altruists/fasl11080/The.Altruists.S01E01.1080p.WEB-DL.6CH.ValaMovie.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Altruists/fasl11080/The.Altruists.S01E02.1080p.WEB-DL.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Altruists/fasl11080/The.Altruists.S01E03.1080p.WEB-DL.6CH.ValaMovie.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Altruists/fasl11080/The.Altruists.S01E06.1080p.WEB-DL.6CH.ValaMovie.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Altruists/fasl11080/The.Altruists.S01E07.1080p.WEB-DL.6CH.ValaMovie.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Altruists/fasl1480/The.Altruists.S01E01.480p.WEB-DL.ValaMovie.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Altruists/fasl1480/The.Altruists.S01E02.480p.WEB-DL.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Altruists/fasl1480/The.Altruists.S01E03.480p.WEB-DL.ValaMovie.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Altruists/fasl1480/The.Altruists.S01E04.480p.WEB-DL.ValaMovie.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Altruists/fasl1480/The.Altruists.S01E05.480p.WEB-DL.ValaMovie.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Altruists/fasl1480/The.Altruists.S01E06.480p.WEB-DL.ValaMovie.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Altruists/fasl1480/The.Altruists.S01E07.480p.WEB-DL.ValaMovie.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Altruists/fasl1720/The.Altruists.S01E01.720p.WEB-DL.ValaMovie.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Altruists/fasl1720/The.Altruists.S01E02.720p.WEB-DL.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Altruists/fasl1720/The.Altruists.S01E03.720p.WEB-DL.ValaMovie.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Altruists/fasl1720/The.Altruists.S01E04.720p.WEB-DL.ValaMovie.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Altruists/fasl1720/The.Altruists.S01E05.720p.WEB-DL.ValaMovie.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Altruists/fasl1720/The.Altruists.S01E06.720p.WEB-DL.ValaMovie.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Altruists/fasl1720/The.Altruists.S01E07.720p.WEB-DL.ValaMovie.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Blue%20Road/fasl1540/The.Blue.Road.S01E01.540p.NF.WEB-DL.SS.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Blue%20Road/fasl1540/The.Blue.Road.S01E02.540p.NF.WEB-DL.SS.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Blue%20Road/fasl1540/The.Blue.Road.S01E03.540p.NF.WEB-DL.SS.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Blue%20Road/fasl1540/The.Blue.Road.S01E04.540p.NF.WEB-DL.SS.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Blue%20Road/fasl1540/The.Blue.Road.S01E05.540p.NF.WEB-DL.SS.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Blue%20Road/fasl1540/The.Blue.Road.S01E06.540p.NF.WEB-DL.SS.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Blue%20Road/fasl1540/The.Blue.Road.S01E07.540p.NF.WEB-DL.SS.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Blue%20Road/fasl1540/The.Blue.Road.S01E08.540p.NF.WEB-DL.SS.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Blue%20Road/fasl1720/The.Blue.Road.S01E01.720p.NF.WEB-DL.SS.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Blue%20Road/fasl1720/The.Blue.Road.S01E02.720p.NF.WEB-DL.SS.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Blue%20Road/fasl1720/The.Blue.Road.S01E03.720p.NF.WEB-DL.SS.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Blue%20Road/fasl1720/The.Blue.Road.S01E04.720p.NF.WEB-DL.SS.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Blue%20Road/fasl1720/The.Blue.Road.S01E05.720p.NF.WEB-DL.SS.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Blue%20Road/fasl1720/The.Blue.Road.S01E06.720p.NF.WEB-DL.SS.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Blue%20Road/fasl1720/The.Blue.Road.S01E07.720p.NF.WEB-DL.SS.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Blue%20Road/fasl1720/The.Blue.Road.S01E08.720p.NF.WEB-DL.SS.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Countess%20of%20Monte%20Cristo/fasl11080/The.Countess.of.Monte.Cristo.S01E01.1080p.NF.WEB-DL.x264.HardSub.simba.mp4",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Countess%20of%20Monte%20Cristo/fasl11080/The.Countess.of.Monte.Cristo.S01E02.1080p.NF.WEB-DL.x264.HardSub.simba.mp4",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Countess%20of%20Monte%20Cristo/fasl1720/The.Countess.of.Monte.Cristo.S01E01.720p.NF.WEB-DL.x264.HardSub.simba.mp4",
-  "http://peer.tci.cdn.146.dl150m.info/tv2/The%20Countess%20of%20Monte%20Cristo/fasl1720/The.Countess.of.Monte.Cristo.S01E02.720p.NF.WEB-DL.x264.HardSub.simba.mp4",
-  "http://s1.giftmond.ir/Zahra/1405/1405.08.30/The%20Messengers/The.Messengers.S01E01.Sub-720.NextMovie.mp4",
-  "http://s1.giftmond.ir/Zahra/1405/1405.08.30/The%20Messengers/The.Messengers.S01E02.Sub-720.NextMovie.mp4",
-  "http://s1.giftmond.ir/Zahra/1405/1405.08.30/The%20Messengers/The.Messengers.S01E03.Sub-720.NextMovie.mp4",
-  "http://s1.giftmond.ir/Zahra/1405/1405.08.30/The%20Messengers/The.Messengers.S01E04.Sub-720.NextMovie.mp4",
-  "http://s1.giftmond.ir/Zahra/1405/1405.08.30/The%20Messengers/The.Messengers.S01E05.Sub-720.NextMovie.mp4",
-  "http://s1.giftmond.ir/Zahra/1405/1405.08.30/The%20Messengers/The.Messengers.S01E06.Sub-720.NextMovie.mp4",
-  "http://s1.giftmond.ir/Zahra/1405/1405.08.30/The%20Messengers/The.Messengers.S01E07.Sub-720.NextMovie.mp4",
-  "http://s1.giftmond.ir/Zahra/1405/1405.08.30/The%20Messengers/The.Messengers.S01E08.Sub-720.NextMovie.mp4",
-  "http://s1.giftmond.ir/Zahra/1405/1405.08.30/The%20Messengers/The.Messengers.S01E09.Sub-720.NextMovie.mp4",
-  "http://s1.giftmond.ir/Zahra/1405/1405.08.30/The%20Messengers/The.Messengers.S01E10.Sub-720.NextMovie.mp4",
-  "http://s1.giftmond.ir/Zahra/1405/1405.08.30/The%20Messengers/The.Messengers.S01E11.Sub-720.NextMovie.mp4",
-  "http://s1.giftmond.ir/Zahra/1405/1405.08.30/The%20Messengers/The.Messengers.S01E12.Sub-720.NextMovie.mp4",
-  "http://s1.giftmond.ir/Zahra/1405/1405.08.30/The%20Messengers/The.Messengers.S01E13.Sub-720.NextMovie.mp4"
+ "trailer_keys_added": [],
+ "repairs_included": [
+  "DTI fill: movie:1261763 -> {imdb_id tt31841170, num 11241, part 16} — Dont Trouble was indexed in search/download-index/avail but missing from DTI (bot TMDB path)."
  ],
- "twice_daily_2026_11_21_pm": {
-  "live_base_head": "41edc227d8fcb0de04bae1cc6e082fbb0b7f7846",
-  "variety": [
-   {
-    "title": "Fjord",
-    "imdb": "tt35410859",
-    "record": "#12566 rz",
-    "links_added": 3,
-    "source": "zivarnet (not RezFlix; no completions entry)"
-   }
-  ]
- }
+ "queued_titles": [],
+ "url_dupes_dropped": [
+  "http://peer.tci.cdn.146.dl150m.info/tizer/Don%27t%20Trouble%20the%20Trouble%20-%20Trailer.mp4",
+  "http://peer.tci.cdn.146.dl150m.info/film1/Dont.Trouble.the.Trouble.2026.Telugu.480p.WEBDL.HardSub.mkv",
+  "http://peer.tci.cdn.146.dl150m.info/film1/Dont.Trouble.the.Trouble.2026.Telugu.720p.WEBDL.HardSub.mkv"
+ ]
 }

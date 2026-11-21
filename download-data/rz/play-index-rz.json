@@ -565,5 +565,64 @@
    "url": null
   },
   "year": 2026
+ },
+ "tt50016818": {
+  "imdb": "tt50016818",
+  "num": 12567,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "HardSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Son%20Yemek-HardSub-WebDL-1080p.mp4",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.37 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "HardSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Son%20Yemek-HardSub-WebDL-720p.mp4",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 716177408,
+    "size_text": "683 MB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "HardSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Son%20Yemek-HardSub-WebDL-480p.mp4",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 434110464,
+    "size_text": "414 MB"
+   }
+  ],
+  "title": "Son Yemek",
+  "tmdb_key": "movie:1561834",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
  }
 }
