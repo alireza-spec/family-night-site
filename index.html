@@ -1727,10 +1727,11 @@ html.tg .bottomnav{display:flex}
           <select class="sel" id="arch-letter"><option value="">حرف اول (همه)</option><option value="#">اعداد (0-9)</option></select></span>
           <span class="fgrp"><label for="arch-sort">مرتب‌سازی</label>
           <select class="sel" id="arch-sort">
-            <option value="popularity.desc">محبوب‌ترین</option>
-            <option value="vote_average.desc">بالاترین امتیاز</option>
+            <option value="default">پیش‌فرض (ترتیب فهرست)</option>
             <option value="primary_release_date.desc">جدیدترین</option>
-            <option value="revenue.desc">پرفروش‌ترین</option>
+            <option value="primary_release_date.asc">قدیمی‌ترین</option>
+            <option value="vote_count.desc">بیشترین رأی</option>
+            <option value="vote_average.desc">بالاترین امتیاز</option>
           </select></span>
         </div>
       </div>
@@ -2035,7 +2036,7 @@ const TV_PROXY = 'https://iran-tv-proxy-v3.alirezadoe8.workers.dev/proxy?url=';
 const IMG = (p, s) => p ? 'https://image.tmdb.org/t/p/' + (s || 'w500') + p : '';
 
 const GENRES_FA = {28:'اکشن',12:'ماجراجویی',16:'انیمیشن',35:'کمدی',80:'جنایی',99:'مستند',18:'درام',10751:'خانوادگی',14:'فانتزی',36:'تاریخی',27:'ترسناک',10402:'موسیقی',9648:'معمایی',10749:'عاشقانه',878:'علمی‌تخیلی',10770:'فیلم تلویزیونی',53:'هیجان‌انگیز',10752:'جنگ',37:'وسترن',10759:'اکشن و ماجراجویی',10762:'کودک',10763:'اخبار',10764:'ریالیتی',10765:'علمی‌تخیلی و فانتزی',10766:'سریال روزانه',10767:'تاک‌شو',10768:'جنگ و سیاست'};
-const ROW_LABELS = {trending_now:'ترندهای روز',newM25:'فیلم‌های جدید',updates:'سریال‌های جدید و به‌روز شده',tm:'برترین فیلم‌های تاریخ',ts:'برترین سریال‌های تاریخ',miniseries:'مینی‌سریال‌های برتر',emmy:'برندگان جایزه امی',oscar:'برندگان اسکار',golden_globe:'برندگان گلدن گلوب',academy_award:'جوایز آکادمی',survival:'بقا و نجات',act:'اکشن',com:'کمدی',hor:'ترسناک',dra:'درام',sci:'علمی‌تخیلی',ani:'انیمیشن',anime:'انیمه',rom:'عاشقانه',fam:'خانوادگی',sports:'ورزشی',war:'جنگ',bio:'زندگینامه',book:'اقتباس از کتاب',docs:'مستند',romcom:'کمدی رمانتیک',parody:'پارودی',christmas_time:'کریسمس',apocalypse:'آخرالزمانی',iran:'سینمای ایران',iran_pre1978:'آثار ایران قدیم (پیش از ۱۹۷۸)',india:'سینمای هند',asia:'سینمای آسیا',a24:'برگزیده‌های A24',marvel:'دنیای مارول',marvelTV:'سریال‌های مارول',dc:'دنیای دی‌سی',adult:'ویژه بزرگسالان',curator:'پیشنهاد سردبیر',fan:'فانتزی',mental:'روان‌شناختی',heartbreak_loss:'غم و فقدان','20s':'دهه ۱۹۲۰','30s':'دهه ۱۹۳۰','40s':'دهه ۱۹۴۰','50s':'دهه ۱۹۵۰','60s':'دهه ۱۹۶۰','70s':'دهه ۱۹۷۰','80s':'دهه ۱۹۸۰','90s':'دهه ۱۹۹۰','00s':'دهه ۲۰۰۰','10s':'دهه ۲۰۱۰'};
+const ROW_LABELS = {trending_now:'ترندهای روز',newM25:'فیلم‌های جدید',updates:'سریال‌های جدید و به‌روز شده',tm:'برترین فیلم‌های تاریخ',ts:'برترین سریال‌های تاریخ',miniseries:'مینی‌سریال‌های برتر',emmy:'برندگان جایزه امی',oscar:'برندگان اسکار',golden_globe:'برندگان گلدن گلوب',survival:'بقا و نجات',act:'اکشن',com:'کمدی',hor:'ترسناک',dra:'درام',sci:'علمی‌تخیلی',ani:'انیمیشن',anime:'انیمه',rom:'عاشقانه',fam:'خانوادگی',sports:'ورزشی',war:'جنگ',bio:'زندگینامه',book:'اقتباس از کتاب',docs:'مستند',romcom:'کمدی رمانتیک',parody:'پارودی',christmas_time:'کریسمس',apocalypse:'آخرالزمانی',iran:'سینمای ایران',iran_pre1978:'آثار ایران قدیم (پیش از ۱۹۷۸)',india:'سینمای هند',asia:'سینمای آسیا',a24:'برگزیده‌های A24',marvel:'دنیای مارول',marvelTV:'سریال‌های مارول',dc:'دنیای دی‌سی',adult:'ویژه بزرگسالان',curator:'پیشنهاد سردبیر',fan:'فانتزی',mental:'روان‌شناختی',heartbreak_loss:'غم و فقدان','20s':'دهه ۱۹۲۰','30s':'دهه ۱۹۳۰','40s':'دهه ۱۹۴۰','50s':'دهه ۱۹۵۰','60s':'دهه ۱۹۶۰','70s':'دهه ۱۹۷۰','80s':'دهه ۱۹۸۰','90s':'دهه ۱۹۹۰','00s':'دهه ۲۰۰۰','10s':'دهه ۲۰۱۰'};
 const HOME_ORDER = ['trending_now','curator','newM25','updates','tm','ts','miniseries','act','ani','anime','iran','com','oscar','sci','fam','hor','romcom','docs','marvel','dc','war'];
 /* ================= FN-CURATOR-PICKS v2 =================
    «پیشنهاد سردبیر» — the old repo's CURATOR'S PICK list (483 movies,
@@ -2763,7 +2764,7 @@ function collectionStreams(key) {
 }
 function catalogItems() { return [...itemCache.values()]; }
 function buildSidebar() {
-  const colKeys = ['trending_now', 'newM25', 'updates', 'tm', 'ts', 'miniseries', 'oscar', 'emmy', 'golden_globe', 'academy_award', 'iran', 'iran_pre1978', 'india', 'asia', 'a24', 'marvel', 'marvelTV', 'dc', 'survival', 'apocalypse', 'christmas_time', 'curator'];
+  const colKeys = ['trending_now', 'newM25', 'updates', 'tm', 'ts', 'miniseries', 'oscar', 'emmy', 'golden_globe', 'iran', 'iran_pre1978', 'india', 'asia', 'a24', 'marvel', 'marvelTV', 'dc', 'survival', 'apocalypse', 'christmas_time', 'curator'];
   const rows = (homeSnap && homeSnap.rows) || {};
   const cols = colKeys.filter(k => rows[k] && rows[k].length);
   $('#sb-collections').innerHTML = cols.length
@@ -2784,6 +2785,101 @@ function activateArchiveView() {
   const rcBtn = $('#arch-recent-clear'); if (rcBtn) rcBtn.style.display = (arch && arch.localKey === 'recent' && store.recent.length) ? '' : 'none';
   window.scrollTo({ top: 0 });
 }
+/* ================= FN-AWARDS v1 (2026-11-21) =================
+   Complete award-winner lists (back to the first ceremony) from the
+   static download-data/sections/awards.json — 727 verified winners
+   in 10 categories, enriched with TMDB vote_average / vote_count /
+   poster_path / release_date. The site's only award data used to be
+   the snapshot's 20-item rows; the see-all page could never show
+   more than 20. Home rails still show at most 20 (they are previews).
+   - Site keys map to dataset categories (FN_AWARD_CATS below).
+   - A work that won in several ceremonies (or categories) appears
+     ONCE in the see-all grid: fnAwardsItems dedupes by type:id,
+     keeping the latest win; the list is newest-release-first, the
+     same default order the snapshot rows used.
+   - Year floors are the collections' oldest RELEASE years (the year
+     the cards display and the filters compare): Oscar 1927, Emmy
+     1948, Golden Globes 1943. FN_YEAR_FLOOR (1927) is the floor for
+     the shared builders, which serve every collection.
+   - Award see-all pages are linked-only (fnAvailStrict, d||p — the
+     same rule as trending_now/newM25/updates): a winner with no
+     download row and no play rows never appears. NOTE: download-only
+     [1,0] winners DO appear (they have a download link); only truly
+     absent winners are dropped. If the rule must become [1,1]-only,
+     that is a one-line change in renderLocalArch's strict branch. */
+var FN_AWARD_KEYS = ['oscar', 'emmy', 'golden_globe'];
+var FN_AWARD_CATS = { oscar: ['oscar_best_picture', 'oscar_international'], emmy: ['emmy_drama', 'emmy_comedy', 'emmy_limited'], golden_globe: ['gg_drama', 'gg_musical_comedy', 'gg_foreign', 'gg_animated', 'gg_tv_comedy'] };
+var FN_AWARD_MIN_YEAR = { oscar: 1927, emmy: 1948, golden_globe: 1943 };
+var FN_YEAR_FLOOR = 1927;
+var _fnAwardsData = null;
+var _fnAwardsP = null;
+function fnAwardsLoad() {
+  if (!_fnAwardsP) {
+    _fnAwardsP = fnStaticJson('awards.json').then(function (d) {
+      if (d && d.categories && d.categories.oscar_best_picture && d.categories.oscar_international && d.categories.emmy_drama && d.categories.emmy_comedy && d.categories.emmy_limited && d.categories.gg_drama && d.categories.gg_musical_comedy && d.categories.gg_foreign && d.categories.gg_animated && d.categories.gg_tv_comedy) { _fnAwardsData = d; return d; }
+      return null;
+    }).catch(function () { return null; });
+  }
+  return _fnAwardsP;
+}
+/* deterministic title order (plain string compare — identical in
+   every JS engine, unlike localeCompare) */
+function fnTitleCmp(a, b) {
+  var ta = String(titleOf(a) || ''), tb = String(titleOf(b) || '');
+  return ta < tb ? -1 : (ta > tb ? 1 : 0);
+}
+/* the full deduped winner list for one site key (newest release
+   first), or null while awards.json is not in hand yet */
+function fnAwardsItems(key) {
+  if (!_fnAwardsData) return null;
+  var cats = FN_AWARD_CATS[key] || [];
+  var out = [];
+  cats.forEach(function (c) {
+    var w = ((_fnAwardsData.categories || {})[c] || {}).winners || [];
+    w.forEach(function (r) { out.push(r); });
+  });
+  out.sort(function (a, b) { var ya = +yearOf(a) || 0, yb = +yearOf(b) || 0; if (ya !== yb) return yb - ya; return fnTitleCmp(a, b); });
+  var seen = {}, ded = [];
+  out.forEach(function (r) { var k = (r.media_type || r.type || 'movie') + ':' + r.id; if (!seen[k]) { seen[k] = 1; ded.push(r); } });
+  return ded;
+}
+/* fill one year select down to a floor, rebuilding only when the
+   floor in the DOM is wrong — the old `options.length <= 1` guard
+   froze the first floor ever built, so a collection opened second
+   could never reach its own oldest year. A picked value survives
+   the rebuild (it always still exists: the floor only ever moves
+   down to 1927). */
+function fnFillYearsTo(sel, floor) {
+  if (!sel) return;
+  var last = sel.options.length ? +sel.options[sel.options.length - 1].value : null;
+  if (sel.options.length > 1 && last === floor) return;
+  var cur = sel.value;
+  sel.innerHTML = '<option value="">همه</option>';
+  var now = new Date().getFullYear();
+  for (var yr = now; yr >= floor; yr--) { var o = document.createElement('option'); o.value = yr; o.textContent = yr; sel.appendChild(o); }
+  if (cur) sel.value = cur;
+}
+/* the honest sort list for local (snapshot/static) pages. Snapshot
+   rows carry no popularity and no revenue, so محبوب‌ترین
+   (popularity.desc) was really a vote_average sort and پرفروش‌ترین
+   (revenue.desc) silently fell through to the default branch — both
+   labels lied. Local pages offer only sorts the data can actually
+   do: list order (default), newest, oldest, most votes, highest
+   rating. Curator/Top250 keep their own list (their items DO carry
+   popularity). */
+function buildLocalSort() {
+  var sort = $('#arch-sort');
+  if (!sort) return;
+  sort.innerHTML = '<option value="default">پیش‌فرض (ترتیب فهرست)</option><option value="primary_release_date.desc">جدیدترین</option><option value="primary_release_date.asc">قدیمی‌ترین</option><option value="vote_count.desc">بیشترین رأی</option><option value="vote_average.desc">بالاترین امتیاز</option>';
+  sort.value = 'default';
+}
+/* first significant word of the displayed title — a leading article
+   is stripped before taking the first letter, so "The Shape of
+   Water" groups under S and "A Fantastic Woman" under F. */
+function fnLetterTitle(x) {
+  var t = String(titleOf(x) || origOf(x) || '').trim();
+  return t.replace(/^(the|a|an)\s+/i, '');
+}
 function openCollection(key) {
   /* FN-CURATOR-PICKS v2: the curator list is a resolved static list
      (FN_CURATOR_DATA), not a discover stream and not the snapshot's
@@ -2795,8 +2891,13 @@ function openCollection(key) {
   if (key === 'tm' || key === 'ts') { openTop250(key); return; }
   const spec = collectionStreams(key);
   if (spec) { openCollectionApi(key, spec); return; }
-  const list = (homeSnap && homeSnap.rows && homeSnap.rows[key]) || [];
-  arch = { title: ROW_LABELS[key] || key, type: '', genre: '', page: 1, loading: false, done: true, qualCount: 0, availPending: [], mode: 'local', localKey: key, localList: list.slice() };
+  /* FN-AWARDS v1: award keys open the full list from awards.json
+     (snapshot row = offline fallback only). Any other local key
+     keeps the snapshot row exactly as before. */
+  var _isAward = FN_AWARD_KEYS.indexOf(key) > -1;
+  var _awList = _isAward ? fnAwardsItems(key) : null;
+  const list = _awList || (homeSnap && homeSnap.rows && homeSnap.rows[key]) || [];
+  arch = { title: ROW_LABELS[key] || key, type: '', genre: '', page: 1, loading: false, done: true, qualCount: 0, availPending: [], mode: 'local', localKey: key, localList: list.slice(), _awardsApplied: !!_awList };
   cacheItems(list);
   $('#archive-title').textContent = arch.title;
   $('#archive-sub').textContent = 'مجموعه‌ای از آرشیو Family Night — با فیلتر سال، امتیاز و مرتب‌سازی؛ روی هر عنوان بزنید تا اطلاعات کامل، گزینه پخش و دانلود (در صورت وجود) نمایش داده شود';
@@ -2804,21 +2905,17 @@ function openCollection(key) {
   const grow = $('#arch-genre-row'); if (grow) grow.style.display = 'none';
   if (flt) flt.classList.add('flt-local');
   resetArchFilters();
-  const ysel = $('#arch-year');
-  if (ysel && ysel.options.length <= 1) { const nowY = new Date().getFullYear(); for (let yr = nowY; yr >= 1950; yr--) { const o = document.createElement('option'); o.value = yr; o.textContent = yr; ysel.appendChild(o); } }
+  /* year range reaches the collection's oldest release year — and
+     BOTH ends of the range are filled (تا سال used to stay empty
+     until some other view happened to fill it) */
+  var _yFloor = _isAward ? (FN_AWARD_MIN_YEAR[key] || FN_YEAR_FLOOR) : FN_YEAR_FLOOR;
+  fnFillYearsTo($('#arch-year'), _yFloor);
+  fnFillYearsTo($('#arch-yearto'), _yFloor);
+  buildLocalSort();
   $('#arch-more').style.display = 'none';
-  /* FN-CAT-FIRST50 v1: the local see-all used to render the snapshot
-     list unfiltered on first paint (only a later sort change went
-     through renderLocalArch). Filter here too — list order kept,
-     link-less works dropped when fewer than 50 qualify (strict50);
-     re-render filtered once the index arrives if it is late. */
-  var _lcItems = list.slice();
-  if (FN_AVAIL.loaded) { arch.qualCount = 0; arch.availPending = []; _lcItems = fnAvailFirst50(_lcItems, arch, true, true); }
-  else if (!FN_AVAIL.failed) { var _lcK = arch.localKey; fnAvailEnsure().then(function () { if (arch.mode === 'local' && arch.localKey === _lcK && FN_AVAIL.loaded) renderLocalArch(); }); }
-  const grid = $('#arch-grid');
-  grid.innerHTML = _lcItems.length
-    ? _lcItems.map(x => cardHtml(x)).join('')
-    : '<div class="state" style="grid-column:1/-1">این مجموعه در حال حاضر خالی است.</div>';
+  /* first paint goes through renderLocalArch like every later change
+     (same filters, same sort) — never a raw list-order render */
+  renderLocalArch();
   activateArchiveView();
 }
 /* FN-CURATOR-PICKS v2: «پیشنهاد سردبیر» view-all page. Same path as
@@ -2862,8 +2959,7 @@ function openTop250(key) {
   activateArchiveView();
 }
 function buildCuratorFilters() {
-  const fillYears = sel => { if (sel && sel.options.length <= 1) { const now = new Date().getFullYear(); for (let yr = now; yr >= 1950; yr--) { const o = document.createElement('option'); o.value = yr; o.textContent = yr; sel.appendChild(o); } } };
-  fillYears($('#arch-year')); fillYears($('#arch-yearto'));
+  fnFillYearsTo($('#arch-year'), FN_YEAR_FLOOR); fnFillYearsTo($('#arch-yearto'), FN_YEAR_FLOOR);
   buildArchCountryDd();
   fillArchLetters();
   const sort = $('#arch-sort');
@@ -2907,8 +3003,7 @@ function buildCollFilters(keepSort) {
     arch.streams = spec.filter(s => arch.collType === 'all' || s.type === arch.collType).map(s => ({ type: s.type, extra: Object.assign({}, s.extra), page: 1, done: false }));
     buildCollFilters(true); resetArchPaging(true); loadArchPage();
   });
-  const fillYears = sel => { if (sel && sel.options.length <= 1) { const now = new Date().getFullYear(); for (let yr = now; yr >= 1950; yr--) { const o = document.createElement('option'); o.value = yr; o.textContent = yr; sel.appendChild(o); } } };
-  fillYears($('#arch-year')); fillYears($('#arch-yearto'));
+  fnFillYearsTo($('#arch-year'), FN_YEAR_FLOOR); fnFillYearsTo($('#arch-yearto'), FN_YEAR_FLOOR);
   buildArchCountryDd();
   fillArchLetters();
   const sort = $('#arch-sort');
@@ -2918,7 +3013,7 @@ function buildCollFilters(keepSort) {
      fresh collection open the three home categories still default
      to newest-first (user rule). */
   var _keepSort = (keepSort && sort) ? sort.value : '';
-  if (sort) sort.innerHTML = '<option value="popularity.desc">محبوب‌ترین</option><option value="vote_average.desc">بالاترین امتیاز</option><option value="primary_release_date.desc">جدیدترین</option>';
+  if (sort) sort.innerHTML = '<option value="popularity.desc">محبوب‌ترین</option><option value="vote_average.desc">بالاترین امتیاز</option><option value="primary_release_date.desc">جدیدترین</option><option value="primary_release_date.asc">قدیمی‌ترین</option>';
   /* Trending / updates / newest open newest-first (user rule): the sort
      dropdown keeps working afterwards (extra never overrides sort_by). */
   if (sort) {
@@ -3440,7 +3535,9 @@ function fnPaintHomeRailsDelta(rows) {
   var prev = _fnHomePrevRows || {};
   var keys = [];
   if (typeof HOME_ORDER !== 'undefined') HOME_ORDER.forEach(function (k) { if (rows[k] && rows[k].length) keys.push(k); });
-  Object.keys(rows).forEach(function (k) { if (keys.indexOf(k) < 0 && rows[k] && rows[k].length) keys.push(k); });
+  /* FN-AWARDS v2: same skip as paintHomeRails — a delta repaint
+     must not resurrect the duplicate Oscar rail either. */
+  Object.keys(rows).forEach(function (k) { if (k !== 'academy_award' && keys.indexOf(k) < 0 && rows[k] && rows[k].length) keys.push(k); });
   var anyNewRail = false;
   keys.forEach(function (k) {
     var sec = railsEl.querySelector('section[data-rail="' + k + '"]');
@@ -3525,7 +3622,12 @@ function paintHomeRails(rows) {
      stays light and smooth instead of building ~50 rails at once. */
   const railKeys = [];
   HOME_ORDER.forEach(k => { if (rows[k] && rows[k].length) railKeys.push(k); });
-  Object.keys(rows).forEach(k => { if (!HOME_ORDER.includes(k) && rows[k] && rows[k].length) railKeys.push(k); });
+  /* FN-AWARDS v2: the duplicate Oscar home rail goes too — the
+     sidebar lost it in v1, but this loop appends every snapshot
+     row not in HOME_ORDER, so the rail survived. The snapshot
+     still carries the row (repo FN); the site just never
+     paints it. */
+  Object.keys(rows).forEach(k => { if (k !== 'academy_award' && !HOME_ORDER.includes(k) && rows[k] && rows[k].length) railKeys.push(k); });
   const railsEl = $('#home-rails');
   if (!railKeys.length) { railsEl.innerHTML = '<div class="wrap"><div class="state">فهرستی برای نمایش وجود ندارد.</div></div>'; renderContinue(); return; }
   if (railsEl._fnRailObs) { try { railsEl._fnRailObs.disconnect(); } catch (e) {} railsEl._fnRailObs = null; }
@@ -3561,6 +3663,10 @@ async function loadHome() {
   /* FN-TOP250 v1: start the static Top 250 fetch early (same-origin) -
      it resolves alongside the snapshot fetch below. */
   var _top250P = fnTop250Load();
+  /* FN-AWARDS v1: start the static awards fetch early (same-origin) —
+     it resolves alongside the snapshot fetch below, so award
+     collections usually open straight from the full list. */
+  var _awardsP = fnAwardsLoad();
   /* FN-NO-VPN-R2: paint from the PERSISTENT rails cache first - the
      rails (and, through the browser HTTP cache, their posters) are
      already on this device, so home paints instantly with zero
@@ -4017,11 +4123,12 @@ function openRecentAll() {
   const flt = document.querySelector('#view-archive .filters'); if (flt) { flt.style.display = ''; flt.classList.add('flt-local'); }
   const grow = $('#arch-genre-row'); if (grow) grow.style.display = 'none';
   resetArchFilters();
+  buildLocalSort();
   $('#arch-more').style.display = 'none';
-  const grid = $('#arch-grid');
-  grid.innerHTML = list.length
-    ? list.map(x => cardHtml(x)).join('')
-    : '<div class="state" style="grid-column:1/-1">تاریخچه تماشا خالی است.</div>';
+  if (!list.length) { $('#arch-grid').innerHTML = '<div class="state" style="grid-column:1/-1">تاریخچه تماشا خالی است.</div>'; activateArchiveView(); return; }
+  /* FN-AWARDS v1: first paint goes through renderLocalArch like every
+     later change (same filters, same sort) */
+  renderLocalArch();
   activateArchiveView();
 }
 const arcRecentClearEl = $('#arch-recent-clear'); if (arcRecentClearEl) arcRecentClearEl.onclick = () => fnAskClearRecent();
@@ -4241,10 +4348,8 @@ function buildArchFilters() {
   $('#arch-genres').innerHTML = '<button class="chip' + (!arch.genre ? ' on' : '') + '" data-ag="">همه</button>'
     + ids.map(id => '<button class="chip' + (arch.genre == id ? ' on' : '') + '" data-ag="' + id + '">' + GENRES_FA[id] + '</button>').join('');
   $$('#arch-genres [data-ag]').forEach(b => b.onclick = () => { arch.genre = b.dataset.ag; arch.streams = [{ type: arch.type, extra: arch.genre ? { with_genres: arch.genre } : {}, page: 1, done: false }]; arch.done = false; arch.qualCount = 0; arch.availPending = []; buildArchFilters(); $('#arch-grid').innerHTML = ''; loadArchPage(); });
-  const y = $('#arch-year');
-  if (y.options.length <= 1) { const now = new Date().getFullYear(); for (let yr = now; yr >= 1950; yr--) { const o = document.createElement('option'); o.value = yr; o.textContent = yr; y.appendChild(o); } }
-  const yt = $('#arch-yearto');
-  if (yt && yt.options.length <= 1) { const now2 = new Date().getFullYear(); for (let yr = now2; yr >= 1950; yr--) { const o = document.createElement('option'); o.value = yr; o.textContent = yr; yt.appendChild(o); } }
+  fnFillYearsTo($('#arch-year'), FN_YEAR_FLOOR);
+  fnFillYearsTo($('#arch-yearto'), FN_YEAR_FLOOR);
   buildArchCountryDd();
   const certSel = $('#arch-cert'); if (certSel) certSel.value = arch.cert || '';
   /* TMDB discover has no certification filter for TV — hide it there
@@ -4274,7 +4379,11 @@ function fillArchLetters() {
 }
 function letterMatch(x) {
   if (!archLetter) return true;
-  const t = String(x.original_title || x.original_name || x.title || x.name || '').trim();
+  /* FN-AWARDS v1: match the displayed (English) title, with a leading
+     article stripped (see fnLetterTitle) — the old code read
+     original_title, which snapshot/static rows do not carry. Persian
+     letters cannot match: the dataset carries no Persian titles. */
+  const t = fnLetterTitle(x);
   const c = t.charAt(0).toUpperCase();
   return archLetter === '#' ? (c >= '0' && c <= '9') : c === archLetter;
 }
@@ -4285,6 +4394,15 @@ function letterMatch(x) {
 let archCountry = '';
 function resetArchFilters() {
   ['arch-year', 'arch-yearto', 'arch-vote', 'arch-votecount', 'arch-letter'].forEach(id => { const s = $('#' + id); if (s) s.value = ''; });
+  /* FN-AWARDS v1: the sort and the age-rating leaked between sections —
+     the sort control kept the previous category's value while the new
+     page rendered in list order. Sort resets to the per-view default
+     ('default' where the list offers it; the opener's own builder sets
+     the real default right after). Cert resets to this view's cert
+     (arch.cert, set by the opener — e.g. a PG-13 page keeps PG-13;
+     every other view gets ''). */
+  var _ss = $('#arch-sort'); if (_ss) _ss.value = _ss.querySelector('option[value="default"]') ? 'default' : '';
+  var _cs = $('#arch-cert'); if (_cs) _cs.value = (typeof arch !== 'undefined' && arch && arch.cert) || '';
   archCountry = '';
   if (typeof archLetter !== 'undefined') archLetter = '';
   syncArchCountryBtn();
@@ -4316,18 +4434,49 @@ function buildArchCountryDd() {
 function renderLocalArch() {
   syncArchSearchBox();
   const grid = $('#arch-grid'); if (!grid) return;
+  /* FN-AWARDS v1: an award page opened (or restored with Back) before
+     awards.json landed shows the snapshot fallback — swap in the full
+     list the moment it arrives, same listing still open. */
+  if (arch.localKey && FN_AWARD_KEYS.indexOf(arch.localKey) > -1 && !arch._awardsApplied && !arch._awardsPending && !arch._awardsFailed) {
+    var _awNow = fnAwardsItems(arch.localKey);
+    if (_awNow) { arch.localList = _awNow.slice(); arch._awardsApplied = true; cacheItems(arch.localList); }
+    else {
+      arch._awardsPending = true;
+      var _awK = arch.localKey;
+      fnAwardsLoad().then(function () {
+        arch._awardsPending = false;
+        if (arch.mode === 'local' && arch.localKey === _awK && !arch._awardsApplied) {
+          var _w2 = fnAwardsItems(_awK);
+          if (_w2) { arch.localList = _w2.slice(); arch._awardsApplied = true; cacheItems(arch.localList); renderLocalArch(); }
+          else arch._awardsFailed = true;
+        }
+      });
+    }
+  }
   let items = (arch.localList || []).slice();
   const yr = $('#arch-year').value, yr2 = ($('#arch-yearto') || {}).value || '';
   if (yr) items = items.filter(x => { const y = +yearOf(x); return y && y >= +yr; });
   if (yr2) items = items.filter(x => { const y = +yearOf(x); return y && y <= +yr2; });
   const vote = $('#arch-vote').value; if (vote) items = items.filter(x => (x.vote_average || 0) >= +vote);
-  const vcnt = ($('#arch-votecount') || {}).value || ''; if (vcnt) items = items.filter(x => x.vote_count == null || x.vote_count >= +vcnt);
+  const vcnt = ($('#arch-votecount') || {}).value || ''; if (vcnt) items = items.filter(x => x.vote_count != null && x.vote_count >= +vcnt); /* FN-AWARDS v1: a row without vote_count FAILS a min-votes filter — the old == null arm passed everything, so the control filtered nothing */
   if (archLetter) items = items.filter(letterMatch);
   const sort = $('#arch-sort').value;
-  if (sort !== 'default') items.sort((a, b) => sort === 'vote_average.desc' ? (b.vote_average || 0) - (a.vote_average || 0)
-    : sort === 'vote_count.desc' ? (b.vote_count || 0) - (a.vote_count || 0)
-    : sort.indexOf('date') > -1 ? (sort.slice(-4) === '.asc' ? String(a.release_date || a.first_air_date || '').localeCompare(String(b.release_date || b.first_air_date || '')) : String(b.release_date || b.first_air_date || '').localeCompare(String(a.release_date || a.first_air_date || '')))
-    : (b.popularity || b.vote_average || 0) - (a.popularity || a.vote_average || 0));
+  /* FN-AWARDS v1: date sorts compare the RELEASE year (the year the
+     cards display) with a deterministic title tie-break; dateless
+     items sort LAST in both directions, never first. */
+  if (sort !== 'default') items.sort(function (a, b) {
+    if (sort === 'vote_average.desc') return (b.vote_average || 0) - (a.vote_average || 0);
+    if (sort === 'vote_count.desc') return (b.vote_count || 0) - (a.vote_count || 0);
+    if (sort.indexOf('date') > -1) {
+      var _ya = +yearOf(a) || 0, _yb = +yearOf(b) || 0, _asc = sort.slice(-4) === '.asc';
+      if (!_ya && !_yb) return fnTitleCmp(a, b);
+      if (!_ya) return 1;
+      if (!_yb) return -1;
+      if (_ya !== _yb) return _asc ? _ya - _yb : _yb - _ya;
+      return fnTitleCmp(a, b);
+    }
+    return (b.popularity || b.vote_average || 0) - (a.popularity || a.vote_average || 0);
+  });
   if (sort === 'random') { for (let i = items.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const tmp = items[i]; items[i] = items[j]; items[j] = tmp; } }
   /* FN-AVAIL-FILTER v1: first 50 qualifying (in this sorted order),
      the rest unfiltered after them. The index loads lazily: if it is
@@ -4336,7 +4485,7 @@ function renderLocalArch() {
   /* FN-TOP250 v1: tm/ts keep exact IMDb rank order - no avail reorder
      or filter here either (see paintHomeRails). */
   if (arch.localKey !== 'tm' && arch.localKey !== 'ts') {
-    if (FN_AVAIL.loaded) { arch.qualCount = 0; arch.availPending = []; if (arch.localKey && FN_STRICT_CATS.indexOf(arch.localKey) > -1) { items = fnAvailStrict(items); arch.qualCount = items.length; } else items = fnAvailFirst50(items, arch, true, true); }
+    if (FN_AVAIL.loaded) { arch.qualCount = 0; arch.availPending = []; if (arch.localKey && (FN_STRICT_CATS.indexOf(arch.localKey) > -1 || FN_AWARD_KEYS.indexOf(arch.localKey) > -1)) { items = fnAvailStrict(items); arch.qualCount = items.length; } else items = fnAvailFirst50(items, arch, true, true); } /* FN-AWARDS v1: award see-all pages are linked-only (fnAvailStrict) — with complete lists the old strict50 rule would leak unlinked winners past the 50th qualifier */
     else if (!FN_AVAIL.failed) { var _rlk = arch.localKey; fnAvailEnsure().then(function () { if (arch.mode === 'local' && arch.localKey === _rlk && FN_AVAIL.loaded) renderLocalArch(); }); }
   }
   cacheItems(items);
@@ -15448,8 +15597,7 @@ function buildKwFilters() {
     arch.streams = kwStreams(arch.kwId, arch.collType);
     buildKwFilters(); resetArchPaging(true); loadArchPage();
   });
-  const fillYears = sel => { if (sel && sel.options.length <= 1) { const now = new Date().getFullYear(); for (let yr = now; yr >= 1950; yr--) { const o = document.createElement('option'); o.value = yr; o.textContent = yr; sel.appendChild(o); } } };
-  fillYears($('#arch-year')); fillYears($('#arch-yearto'));
+  fnFillYearsTo($('#arch-year'), FN_YEAR_FLOOR); fnFillYearsTo($('#arch-yearto'), FN_YEAR_FLOOR);
   buildArchCountryDd();
   if (typeof fillArchLetters === 'function') fillArchLetters();
   const sort = $('#arch-sort');
