@@ -140682,10 +140682,38 @@
     "season": null,
     "size_bytes": 791150592,
     "size_text": "754.50 MB"
+   },
+   {
+    "encoder": "MoboMovies",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl1.mobomovies-super-fast-dl-1fd583af617cb0000.ir/v3/movies/2013/tt2292959/softsub/The.Canyons.2013.1080p.BluRay.x264.8-Bit.SoftSub(MoboMovies).mkv",
+    "playit_url": null,
+    "quality": "BluRay 1080p",
+    "quality_label": "bluray 1080p",
+    "season": null,
+    "size_bytes": 1547270769,
+    "size_text": "1.5 GB"
+   },
+   {
+    "encoder": "MoboMovies",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl1.mobomovies-super-fast-dl-1fd583af617cb0000.ir/v3/movies/2013/tt2292959/softsub/The.Canyons.2013.720p.BluRay.x264.8-Bit.SoftSub(MoboMovies).mkv",
+    "playit_url": null,
+    "quality": "BluRay 720p",
+    "quality_label": "bluray 720p",
+    "season": null,
+    "size_bytes": 792555751,
+    "size_text": "793 MB"
    }
   ],
   "title": "The Canyons 2013",
-  "tmdb_key": null,
+  "tmdb_key": "movie:109729",
   "type": "movie",
   "video_mp4": {
    "is_trailer": false,
@@ -190471,10 +190499,38 @@
     "season": null,
     "size_bytes": 1471026299,
     "size_text": "1.37 GB"
+   },
+   {
+    "encoder": "MoboMovies",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl1.mobomovies-super-fast-dl-1fd583af617cb0000.ir/v3/movies/2004/tt6019206/softsub/Kill.Bill.The.Whole.Bloody.Affair.2004.1080p.BluRay.x264.8-Bit.SoftSub(MoboMovies).mkv",
+    "playit_url": null,
+    "quality": "BluRay 1080p",
+    "quality_label": "bluray 1080p",
+    "season": null,
+    "size_bytes": 4719762854,
+    "size_text": "4.7 GB"
+   },
+   {
+    "encoder": "MoboMovies",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl1.mobomovies-super-fast-dl-1fd583af617cb0000.ir/v3/movies/2004/tt6019206/softsub/Kill.Bill.The.Whole.Bloody.Affair.2004.720p.BluRay.x264.8-Bit.SoftSub(MoboMovies).mkv",
+    "playit_url": null,
+    "quality": "BluRay 720p",
+    "quality_label": "bluray 720p",
+    "season": null,
+    "size_bytes": 2297171057,
+    "size_text": "2.3 GB"
    }
   ],
   "title": "Kill Bill: The Whole Bloody Affair 2006",
-  "tmdb_key": null,
+  "tmdb_key": "movie:414419",
   "type": "movie",
   "video_mp4": {
    "is_trailer": false,

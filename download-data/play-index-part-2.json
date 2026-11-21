@@ -29599,10 +29599,24 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "MoboMovies",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl1.mobomovies-super-fast-dl-1fd583af617cb0000.ir/v3/movies/1946/tt0038650/softsub/Its.A.Wonderful.Life.1946.1080p.BluRay.x264.8-Bit.SoftSub(MoboMovies).mkv",
+    "playit_url": null,
+    "quality": "BluRay 1080p",
+    "quality_label": "bluray 1080p",
+    "season": null,
+    "size_bytes": 2678503255,
+    "size_text": "2.7 GB"
    }
   ],
   "title": "It’s a Wonderful Life",
-  "tmdb_key": null,
+  "tmdb_key": "movie:1585",
   "type": "movie",
   "video_mp4": {
    "is_trailer": true,
@@ -119739,10 +119753,24 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "MoboMovies",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl1.mobomovies-super-fast-dl-1fd583af617cb0000.ir/v3/movies/2013/tt2166834/softsub/Batman.The.Dark.Knight.Returns.Part.2.2013.1080p.BluRay.x264.8-Bit.SoftSub(MoboMovies).mkv",
+    "playit_url": null,
+    "quality": "BluRay 1080p",
+    "quality_label": "bluray 1080p",
+    "season": null,
+    "size_bytes": 1183645909,
+    "size_text": "1.2 GB"
    }
   ],
   "title": "Batman: The Dark Knight Returns, Part 2",
-  "tmdb_key": null,
+  "tmdb_key": "movie:142061",
   "type": "movie",
   "video_mp4": {
    "is_trailer": true,

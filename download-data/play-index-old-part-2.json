@@ -2701,10 +2701,38 @@
     "season": null,
     "size_bytes": 1406601789,
     "size_text": "1.31 GB"
+   },
+   {
+    "encoder": "MoboMovies",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl1.mobomovies-super-fast-dl-1fd583af617cb0000.ir/v3/movies/1961/tt0055031/softsub/Judgment.At.Nuremberg.1961.1080p.BluRay.x264.8-Bit.SoftSub(MoboMovies).mkv",
+    "playit_url": null,
+    "quality": "BluRay 1080p",
+    "quality_label": "bluray 1080p",
+    "season": null,
+    "size_bytes": 2545988554,
+    "size_text": "2.5 GB"
+   },
+   {
+    "encoder": "MoboMovies",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl1.mobomovies-super-fast-dl-1fd583af617cb0000.ir/v3/movies/1961/tt0055031/softsub/Judgment.At.Nuremberg.1961.720p.BluRay.x264.8-Bit.SoftSub(MoboMovies).mkv",
+    "playit_url": null,
+    "quality": "BluRay 720p",
+    "quality_label": "bluray 720p",
+    "season": null,
+    "size_bytes": 1286283430,
+    "size_text": "1.3 GB"
    }
   ],
   "title": "Judgment at Nuremberg",
-  "tmdb_key": null,
+  "tmdb_key": "movie:821",
   "type": "movie",
   "video_mp4": {
    "is_trailer": false,
@@ -38345,10 +38373,38 @@
     "season": null,
     "size_bytes": 854914499,
     "size_text": "815.31 MB"
+   },
+   {
+    "encoder": "MoboMovies",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl1.mobomovies-super-fast-dl-1fd583af617cb0000.ir/v3/movies/2003/tt0328589/softsub/Under.The.Tuscan.Sun.2003.1080p.BluRay.x264.8-Bit.SoftSub(MoboMovies).mkv",
+    "playit_url": null,
+    "quality": "BluRay 1080p",
+    "quality_label": "bluray 1080p",
+    "season": null,
+    "size_bytes": 1769678287,
+    "size_text": "1.8 GB"
+   },
+   {
+    "encoder": "MoboMovies",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl1.mobomovies-super-fast-dl-1fd583af617cb0000.ir/v3/movies/2003/tt0328589/softsub/Under.The.Tuscan.Sun.2003.720p.BluRay.x264.8-Bit.SoftSub(MoboMovies).mkv",
+    "playit_url": null,
+    "quality": "BluRay 720p",
+    "quality_label": "bluray 720p",
+    "season": null,
+    "size_bytes": 854947657,
+    "size_text": "855 MB"
    }
   ],
   "title": "Under the Tuscan Sun",
-  "tmdb_key": null,
+  "tmdb_key": "movie:10934",
   "type": "movie",
   "video_mp4": {
    "is_trailer": false,
@@ -120978,10 +121034,24 @@
     "season": null,
     "size_bytes": 1181116006,
     "size_text": "1.10 GB"
+   },
+   {
+    "encoder": "MoboMovies",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl1.mobomovies-super-fast-dl-1fd583af617cb0000.ir/v3/movies/2019/tt3833480/softsub/The.Outpost.2019.1080p.BluRay.x264.8-Bit.SoftSub(MoboMovies).mkv",
+    "playit_url": null,
+    "quality": "BluRay 1080p",
+    "quality_label": "bluray 1080p",
+    "season": null,
+    "size_bytes": 2519613250,
+    "size_text": "2.5 GB"
    }
   ],
   "title": "The Outpost",
-  "tmdb_key": null,
+  "tmdb_key": "movie:531876",
   "type": "movie",
   "video_mp4": {
    "is_trailer": false,
@@ -121251,10 +121321,38 @@
     "season": null,
     "size_bytes": 1664299827,
     "size_text": "1.55 GB"
+   },
+   {
+    "encoder": "MoboMovies",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl1.mobomovies-super-fast-dl-1fd583af617cb0000.ir/v3/movies/2015/tt3863552/softsub/Bajrangi.Bhaijaan.2015.1080p.BluRay.x264.8-Bit.SoftSub(MoboMovies).mkv",
+    "playit_url": null,
+    "quality": "BluRay 1080p",
+    "quality_label": "bluray 1080p",
+    "season": null,
+    "size_bytes": 2694556482,
+    "size_text": "2.7 GB"
+   },
+   {
+    "encoder": "MoboMovies",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl1.mobomovies-super-fast-dl-1fd583af617cb0000.ir/v3/movies/2015/tt3863552/softsub/Bajrangi.Bhaijaan.2015.720p.BluRay.x264.8-Bit.SoftSub(MoboMovies).mkv",
+    "playit_url": null,
+    "quality": "BluRay 720p",
+    "quality_label": "bluray 720p",
+    "season": null,
+    "size_bytes": 1500968742,
+    "size_text": "1.5 GB"
    }
   ],
   "title": "Bajrangi Bhaijaan",
-  "tmdb_key": null,
+  "tmdb_key": "movie:348892",
   "type": "movie",
   "video_mp4": {
    "is_trailer": false,

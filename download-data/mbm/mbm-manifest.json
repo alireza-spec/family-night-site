@@ -1,4 +1,1467 @@
 {
+ "batch2": {
+  "avail_flips": [
+   {
+    "imdb": "tt23849204",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "12th Fail"
+   },
+   {
+    "imdb": "tt34964205",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "2000 Meters to Andriivka"
+   },
+   {
+    "imdb": "tt1187043",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "3 Idiots"
+   },
+   {
+    "imdb": "tt2166834",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "Batman: The Dark Knight Returns, Part 2"
+   },
+   {
+    "imdb": "tt32315584",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "Black Box"
+   },
+   {
+    "imdb": "tt1657507",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "Colombiana"
+   },
+   {
+    "imdb": "tt13086266",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "Concrete Utopia"
+   },
+   {
+    "imdb": "tt31116756",
+    "kind": "tmdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "Cruel Hands"
+   },
+   {
+    "imdb": "tt35854741",
+    "kind": "tmdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "Flies"
+   },
+   {
+    "imdb": "tt1028532",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "Hachi: A Dog's Tale"
+   },
+   {
+    "imdb": "tt0395169",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "Hotel Rwanda"
+   },
+   {
+    "imdb": "tt0343818",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "I, Robot"
+   },
+   {
+    "imdb": "tt36893729",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "Ice Cream Man"
+   },
+   {
+    "imdb": "tt6628920",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "Idiots"
+   },
+   {
+    "imdb": "tt6341826",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "In the Blink of an Eye"
+   },
+   {
+    "imdb": "tt35519455",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "It Ends"
+   },
+   {
+    "imdb": "tt0038650",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "It's a Wonderful Life"
+   },
+   {
+    "imdb": "tt0266697",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "Kill Bill: Vol. 1"
+   },
+   {
+    "imdb": "tt0056172",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "Lawrence of Arabia"
+   },
+   {
+    "imdb": "tt26548265",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "Maharaja"
+   },
+   {
+    "imdb": "tt35695538",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "My Father's Shadow"
+   },
+   {
+    "imdb": "tt28035641",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "Once Upon a Studio"
+   },
+   {
+    "imdb": "tt0064116",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "Once Upon a Time in the West"
+   },
+   {
+    "imdb": "tt0105236",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "Reservoir Dogs"
+   },
+   {
+    "imdb": "tt27844906",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "Rosebush Pruning"
+   },
+   {
+    "imdb": "tt0988045",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "Sherlock Holmes"
+   },
+   {
+    "imdb": "tt35298123",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "Teenage Sex and Death at Camp Miasma"
+   },
+   {
+    "imdb": "tt33451014",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "The Beloved"
+   },
+   {
+    "imdb": "tt0118715",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "The Big Lebowski"
+   },
+   {
+    "imdb": "tt36980182",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "The Incomer"
+   },
+   {
+    "imdb": "tt37654096",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "The Last Sunrise"
+   },
+   {
+    "imdb": "tt0093779",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "The Princess Bride"
+   },
+   {
+    "imdb": "tt33305621",
+    "kind": "tmdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "The Souffleur"
+   },
+   {
+    "imdb": "tt1655413",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "The Suicide Shop"
+   },
+   {
+    "imdb": "tt1316540",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "The Turin Horse"
+   },
+   {
+    "imdb": "tt5027774",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "Three Billboards Outside Ebbing, Missouri"
+   },
+   {
+    "imdb": "tt0056592",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "To Kill a Mockingbird"
+   },
+   {
+    "imdb": "tt0051201",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "Witness for the Prosecution"
+   },
+   {
+    "imdb": "tt9174724",
+    "kind": "tmdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": [
+     1,
+     0
+    ],
+    "title": "Beacon 23"
+   },
+   {
+    "imdb": "tt13309742",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": [
+     1,
+     0
+    ],
+    "title": "Blue Eye Samurai"
+   },
+   {
+    "imdb": "tt13309742",
+    "kind": "tmdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": [
+     1,
+     0
+    ],
+    "title": "Blue Eye Samurai"
+   },
+   {
+    "imdb": "tt30413181",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "Flex x Cop"
+   },
+   {
+    "imdb": "tt28480255",
+    "kind": "tmdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": [
+     1,
+     0
+    ],
+    "title": "Ninja Kamui"
+   },
+   {
+    "imdb": "tt8806524",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": [
+     1,
+     0
+    ],
+    "title": "Star Trek: Picard"
+   },
+   {
+    "imdb": "tt8806524",
+    "kind": "tmdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": [
+     1,
+     0
+    ],
+    "title": "Star Trek: Picard"
+   },
+   {
+    "imdb": "tt21200366",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": [
+     1,
+     0
+    ],
+    "title": "The Assassins"
+   },
+   {
+    "imdb": "tt21200366",
+    "kind": "tmdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": [
+     1,
+     0
+    ],
+    "title": "The Assassins"
+   },
+   {
+    "imdb": "tt17543592",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": [
+     1,
+     0
+    ],
+    "title": "Will Trent"
+   },
+   {
+    "imdb": "tt17543592",
+    "kind": "tmdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": [
+     1,
+     0
+    ],
+    "title": "Will Trent"
+   },
+   {
+    "imdb": "tt0090605",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "Aliens"
+   },
+   {
+    "imdb": "tt3863552",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "Bajrangi Bhaijaan"
+   },
+   {
+    "imdb": "tt0055031",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "Judgment at Nuremberg"
+   },
+   {
+    "imdb": "tt0043014",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "Sunset Boulevard"
+   },
+   {
+    "imdb": "tt2292959",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "The Canyons"
+   },
+   {
+    "imdb": "tt3833480",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "The Outpost"
+   },
+   {
+    "imdb": "tt0117951",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "Trainspotting"
+   },
+   {
+    "imdb": "tt0328589",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "Under the Tuscan Sun"
+   }
+  ],
+  "borderline_kept": [
+   {
+    "decision": "KEPT — different codec = different encode",
+    "existing_codec": "x264",
+    "existing_label": "WEB-DL 1080p YIFY Hardsub",
+    "existing_size": 1880000000,
+    "file": "Flies.2026.1080p.Web-Dl.x265.10-Bit.SoftSub(MoboMovies).mkv",
+    "imdb": "tt35854741",
+    "mbm_size": 1825303663,
+    "title": "Flies"
+   },
+   {
+    "decision": "KEPT — different codec = different encode",
+    "existing_codec": "x264",
+    "existing_label": "WEB-DL 1080p YIFY Hardsub",
+    "existing_size": 1750000000,
+    "file": "Rosebush.Pruning.2026.1080p.Web-Dl.x265.10-Bit.SoftSub(MoboMovies).mkv",
+    "imdb": "tt27844906",
+    "mbm_size": 1716227940,
+    "title": "Rosebush Pruning"
+   }
+  ],
+  "counts": {
+   "have_new_links_added": 521,
+   "have_new_titles": 67,
+   "have_old_play_rows_added": 15,
+   "have_old_titles": 9,
+   "skipped_fully_duplicate_titles": 4,
+   "skipped_links": 16,
+   "total_links_added": 536
+  },
+  "duplicate_records_untouched": [
+   {
+    "imdb": "tt36834010",
+    "records": [
+     {
+      "num": 539,
+      "part": "new-1",
+      "title": "Gail Daughtry and the Celebrity Sx Pass start_year"
+     }
+    ],
+    "title": "Gail Daughtry and the Celebrity Sex Pass"
+   },
+   {
+    "imdb": "tt41178575",
+    "records": [
+     {
+      "num": 295,
+      "part": "new-1",
+      "title": "I’ll Hold You Always start_year"
+     }
+    ],
+    "title": "I'll Hold You Always"
+   },
+   {
+    "imdb": "tt6019206",
+    "records": [
+     {
+      "num": 2372,
+      "part": "old-3",
+      "title": "Kill Bill The Whole Bloody Affair 2006 2006"
+     },
+     {
+      "num": 2373,
+      "part": "old-3",
+      "title": "Kill Bill: The Whole Bloody Affair 2006"
+     }
+    ],
+    "title": "Kill Bill: The Whole Bloody Affair"
+   }
+  ],
+  "generated": "2026-11-21",
+  "have_new_added": [
+   {
+    "existing_num": 5561,
+    "imdb": "tt23849204",
+    "ndropped": 0,
+    "nlinks_added": 2,
+    "part": 3,
+    "title": "12th Fail"
+   },
+   {
+    "existing_num": 2019,
+    "imdb": "tt34964205",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 1,
+    "title": "2000 Meters to Andriivka"
+   },
+   {
+    "existing_num": 8587,
+    "imdb": "tt1187043",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 4,
+    "title": "3 Idiots"
+   },
+   {
+    "existing_num": 91,
+    "imdb": "tt18259538",
+    "ndropped": 0,
+    "nlinks_added": 5,
+    "part": 1,
+    "title": "Avatar Aang: The Last Airbender"
+   },
+   {
+    "existing_num": 141,
+    "imdb": "tt29714073",
+    "ndropped": 0,
+    "nlinks_added": 2,
+    "part": 1,
+    "title": "Bad Apples"
+   },
+   {
+    "existing_num": 3897,
+    "imdb": "tt2166834",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 2,
+    "title": "Batman: The Dark Knight Returns, Part 2"
+   },
+   {
+    "existing_num": 789,
+    "imdb": "tt32315584",
+    "ndropped": 0,
+    "nlinks_added": 2,
+    "part": 1,
+    "title": "Black Box"
+   },
+   {
+    "existing_num": 1842,
+    "imdb": "tt1657507",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 1,
+    "title": "Colombiana"
+   },
+   {
+    "existing_num": 5762,
+    "imdb": "tt13086266",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 3,
+    "title": "Concrete Utopia"
+   },
+   {
+    "existing_num": 422,
+    "imdb": "tt31116756",
+    "ndropped": 0,
+    "nlinks_added": 2,
+    "part": 1,
+    "title": "Cruel Hands"
+   },
+   {
+    "existing_num": 5380,
+    "imdb": "tt13818368",
+    "ndropped": 0,
+    "nlinks_added": 2,
+    "part": 3,
+    "title": "Fighter"
+   },
+   {
+    "existing_num": 345,
+    "imdb": "tt35854741",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 1,
+    "title": "Flies"
+   },
+   {
+    "existing_num": 10925,
+    "imdb": "tt36834010",
+    "ndropped": 0,
+    "nlinks_added": 4,
+    "part": 16,
+    "title": "Gail Daughtry and the Celebrity Sex Pass"
+   },
+   {
+    "existing_num": 7831,
+    "imdb": "tt1205489",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 4,
+    "title": "Gran Torino"
+   },
+   {
+    "existing_num": 7413,
+    "imdb": "tt1028532",
+    "ndropped": 0,
+    "nlinks_added": 2,
+    "part": 3,
+    "title": "Hachi: A Dog's Tale"
+   },
+   {
+    "existing_num": 8051,
+    "imdb": "tt0056058",
+    "ndropped": 0,
+    "nlinks_added": 3,
+    "part": 4,
+    "title": "Harakiri"
+   },
+   {
+    "existing_num": 7333,
+    "imdb": "tt0395169",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 3,
+    "title": "Hotel Rwanda"
+   },
+   {
+    "existing_num": 8893,
+    "imdb": "tt0343818",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 4,
+    "title": "I, Robot"
+   },
+   {
+    "existing_num": 331,
+    "imdb": "tt36893729",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 1,
+    "title": "Ice Cream Man"
+   },
+   {
+    "existing_num": 303,
+    "imdb": "tt6628920",
+    "ndropped": 0,
+    "nlinks_added": 2,
+    "part": 1,
+    "title": "Idiots"
+   },
+   {
+    "existing_num": 981,
+    "imdb": "tt6341826",
+    "ndropped": 0,
+    "nlinks_added": 2,
+    "part": 1,
+    "title": "In the Blink of an Eye"
+   },
+   {
+    "existing_num": 105,
+    "imdb": "tt35519455",
+    "ndropped": 0,
+    "nlinks_added": 2,
+    "part": 1,
+    "title": "It Ends"
+   },
+   {
+    "existing_num": 2414,
+    "imdb": "tt0038650",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 2,
+    "title": "It's a Wonderful Life"
+   },
+   {
+    "existing_num": 8572,
+    "imdb": "tt0266697",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 4,
+    "title": "Kill Bill: Vol. 1"
+   },
+   {
+    "existing_num": 7702,
+    "imdb": "tt0056172",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 4,
+    "title": "Lawrence of Arabia"
+   },
+   {
+    "existing_num": 4877,
+    "imdb": "tt26548265",
+    "ndropped": 0,
+    "nlinks_added": 3,
+    "part": 3,
+    "title": "Maharaja"
+   },
+   {
+    "existing_num": 382,
+    "imdb": "tt35695538",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 1,
+    "title": "My Father's Shadow"
+   },
+   {
+    "existing_num": 5714,
+    "imdb": "tt28035641",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 3,
+    "title": "Once Upon a Studio"
+   },
+   {
+    "existing_num": 7986,
+    "imdb": "tt0064116",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 4,
+    "title": "Once Upon a Time in the West"
+   },
+   {
+    "existing_num": 7135,
+    "imdb": "tt0050825",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 3,
+    "title": "Paths of Glory"
+   },
+   {
+    "existing_num": 7555,
+    "imdb": "tt0105236",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 4,
+    "title": "Reservoir Dogs"
+   },
+   {
+    "existing_num": 525,
+    "imdb": "tt27844906",
+    "ndropped": 0,
+    "nlinks_added": 2,
+    "part": 1,
+    "title": "Rosebush Pruning"
+   },
+   {
+    "existing_num": 8795,
+    "imdb": "tt0988045",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 4,
+    "title": "Sherlock Holmes"
+   },
+   {
+    "existing_num": 330,
+    "imdb": "tt35298123",
+    "ndropped": 0,
+    "nlinks_added": 2,
+    "part": 1,
+    "title": "Teenage Sex and Death at Camp Miasma"
+   },
+   {
+    "existing_num": 319,
+    "imdb": "tt33451014",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 1,
+    "title": "The Beloved"
+   },
+   {
+    "existing_num": 8755,
+    "imdb": "tt0118715",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 4,
+    "title": "The Big Lebowski"
+   },
+   {
+    "existing_num": 7200,
+    "imdb": "tt0017925",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 3,
+    "title": "The General"
+   },
+   {
+    "existing_num": 197,
+    "imdb": "tt36980182",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 1,
+    "title": "The Incomer"
+   },
+   {
+    "existing_num": 8332,
+    "imdb": "tt0012349",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 4,
+    "title": "The Kid"
+   },
+   {
+    "existing_num": 468,
+    "imdb": "tt37654096",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 1,
+    "title": "The Last Sunrise"
+   },
+   {
+    "existing_num": 8468,
+    "imdb": "tt0093779",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 4,
+    "title": "The Princess Bride"
+   },
+   {
+    "existing_num": 603,
+    "imdb": "tt33305621",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 1,
+    "title": "The Souffleur"
+   },
+   {
+    "existing_num": 5311,
+    "imdb": "tt1655413",
+    "ndropped": 0,
+    "nlinks_added": 3,
+    "part": 3,
+    "title": "The Suicide Shop"
+   },
+   {
+    "existing_num": 6957,
+    "imdb": "tt1316540",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 3,
+    "title": "The Turin Horse"
+   },
+   {
+    "existing_num": 8677,
+    "imdb": "tt5027774",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 4,
+    "title": "Three Billboards Outside Ebbing, Missouri"
+   },
+   {
+    "existing_num": 7856,
+    "imdb": "tt0056592",
+    "ndropped": 0,
+    "nlinks_added": 3,
+    "part": 4,
+    "title": "To Kill a Mockingbird"
+   },
+   {
+    "existing_num": 7391,
+    "imdb": "tt0051201",
+    "ndropped": 0,
+    "nlinks_added": 1,
+    "part": 3,
+    "title": "Witness for the Prosecution"
+   },
+   {
+    "existing_num": 9966,
+    "imdb": "tt13016388",
+    "ndropped": 0,
+    "nlinks_added": 8,
+    "part": 10,
+    "title": "3 Body Problem"
+   },
+   {
+    "existing_num": 9512,
+    "imdb": "tt26450613",
+    "ndropped": 0,
+    "nlinks_added": 16,
+    "part": 7,
+    "title": "A Shop for Killers"
+   },
+   {
+    "existing_num": 10475,
+    "imdb": "tt32869282",
+    "ndropped": 0,
+    "nlinks_added": 21,
+    "part": 15,
+    "title": "Asia"
+   },
+   {
+    "existing_num": 10709,
+    "imdb": "tt9174724",
+    "ndropped": 0,
+    "nlinks_added": 24,
+    "part": 16,
+    "title": "Beacon 23"
+   },
+   {
+    "existing_num": 10771,
+    "imdb": "tt13309742",
+    "ndropped": 0,
+    "nlinks_added": 16,
+    "part": 16,
+    "title": "Blue Eye Samurai"
+   },
+   {
+    "existing_num": 9301,
+    "imdb": "tt1267295",
+    "ndropped": 0,
+    "nlinks_added": 10,
+    "part": 6,
+    "title": "Cowboy Bebop"
+   },
+   {
+    "existing_num": 9842,
+    "imdb": "tt30217403",
+    "ndropped": 0,
+    "nlinks_added": 36,
+    "part": 9,
+    "title": "Dandadan"
+   },
+   {
+    "existing_num": 9396,
+    "imdb": "tt30413181",
+    "ndropped": 0,
+    "nlinks_added": 48,
+    "part": 6,
+    "title": "Flex x Cop"
+   },
+   {
+    "existing_num": 10600,
+    "imdb": "tt30446769",
+    "ndropped": 0,
+    "nlinks_added": 48,
+    "part": 15,
+    "title": "Love Next Door"
+   },
+   {
+    "existing_num": 10721,
+    "imdb": "tt28480255",
+    "ndropped": 0,
+    "nlinks_added": 39,
+    "part": 16,
+    "title": "Ninja Kamui"
+   },
+   {
+    "existing_num": 9885,
+    "imdb": "tt21030032",
+    "ndropped": 0,
+    "nlinks_added": 33,
+    "part": 10,
+    "title": "Oshi No Ko"
+   },
+   {
+    "existing_num": 9214,
+    "imdb": "tt0118421",
+    "ndropped": 0,
+    "nlinks_added": 8,
+    "part": 5,
+    "title": "Oz"
+   },
+   {
+    "existing_num": 9276,
+    "imdb": "tt33184638",
+    "ndropped": 0,
+    "nlinks_added": 8,
+    "part": 5,
+    "title": "Paris Has Fallen"
+   },
+   {
+    "existing_num": 10855,
+    "imdb": "tt8806524",
+    "ndropped": 0,
+    "nlinks_added": 30,
+    "part": 16,
+    "title": "Star Trek: Picard"
+   },
+   {
+    "existing_num": 9715,
+    "imdb": "tt8622160",
+    "ndropped": 0,
+    "nlinks_added": 3,
+    "part": 9,
+    "title": "Star Trek: Starfleet Academy"
+   },
+   {
+    "existing_num": 9600,
+    "imdb": "tt11218290",
+    "ndropped": 0,
+    "nlinks_added": 18,
+    "part": 8,
+    "title": "Sweetpea"
+   },
+   {
+    "existing_num": 10719,
+    "imdb": "tt21200366",
+    "ndropped": 0,
+    "nlinks_added": 20,
+    "part": 16,
+    "title": "The Assassins"
+   },
+   {
+    "existing_num": 9349,
+    "imdb": "tt27187054",
+    "ndropped": 0,
+    "nlinks_added": 36,
+    "part": 6,
+    "title": "The Elusive Samurai"
+   },
+   {
+    "existing_num": 10484,
+    "imdb": "tt15007172",
+    "ndropped": 0,
+    "nlinks_added": 12,
+    "part": 15,
+    "title": "Those Who Read the Hearts of Evil"
+   },
+   {
+    "existing_num": 10820,
+    "imdb": "tt17543592",
+    "ndropped": 0,
+    "nlinks_added": 14,
+    "part": 16,
+    "title": "Will Trent"
+   }
+  ],
+  "have_old_play_only": [
+   {
+    "existing_num": 149,
+    "imdb": "tt0090605",
+    "note": "H3 download links NOT added — FN-token block; play rows only",
+    "nplay_rows": 1,
+    "part": 1,
+    "title": "Aliens"
+   },
+   {
+    "existing_num": 2728,
+    "imdb": "tt3863552",
+    "note": "H3 download links NOT added — FN-token block; play rows only",
+    "nplay_rows": 2,
+    "part": 2,
+    "title": "Bajrangi Bhaijaan"
+   },
+   {
+    "existing_num": 3070,
+    "imdb": "tt0055031",
+    "note": "H3 download links NOT added — FN-token block; play rows only",
+    "nplay_rows": 2,
+    "part": 2,
+    "title": "Judgment at Nuremberg"
+   },
+   {
+    "existing_num": 2372,
+    "imdb": "tt6019206",
+    "note": "H3 download links NOT added — FN-token block; play rows only",
+    "nplay_rows": 2,
+    "part": 3,
+    "title": "Kill Bill: The Whole Bloody Affair"
+   },
+   {
+    "existing_num": 1072,
+    "imdb": "tt0043014",
+    "note": "H3 download links NOT added — FN-token block; play rows only",
+    "nplay_rows": 2,
+    "part": 1,
+    "title": "Sunset Boulevard"
+   },
+   {
+    "existing_num": 4365,
+    "imdb": "tt2292959",
+    "note": "H3 download links NOT added — FN-token block; play rows only",
+    "nplay_rows": 2,
+    "part": 3,
+    "title": "The Canyons"
+   },
+   {
+    "existing_num": 5125,
+    "imdb": "tt3833480",
+    "note": "H3 download links NOT added — FN-token block; play rows only",
+    "nplay_rows": 1,
+    "part": 2,
+    "title": "The Outpost"
+   },
+   {
+    "existing_num": 183,
+    "imdb": "tt0117951",
+    "note": "H3 download links NOT added — FN-token block; play rows only",
+    "nplay_rows": 1,
+    "part": 1,
+    "title": "Trainspotting"
+   },
+   {
+    "existing_num": 4150,
+    "imdb": "tt0328589",
+    "note": "H3 download links NOT added — FN-token block; play rows only",
+    "nplay_rows": 2,
+    "part": 2,
+    "title": "Under the Tuscan Sun"
+   }
+  ],
+  "live_base_head": "a1dd7ab056586f0b860519e60c17e84c956b027b",
+  "near_size_collapses": {
+   "per_title": [
+    {
+     "files": [
+      "72.Hours.2026.1080p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "72.Hours.2026.720p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "72.Hours.2026.480p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv"
+     ],
+     "imdb": "tt36304003",
+     "n": 3,
+     "title": "72 Hours"
+    },
+    {
+     "files": [
+      "Dont.Look.Back.In.Anger.2026.1080p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "Dont.Look.Back.In.Anger.2026.720p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "Dont.Look.Back.In.Anger.2026.480p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "Dont.Look.Back.In.Anger.2026.1080p.Web-Dl.x265.10-Bit.SoftSub(MoboMovies).mkv",
+      "Dont.Look.Back.In.Anger.2026.720p.Web-Dl.x265.10-Bit.SoftSub(MoboMovies).mkv"
+     ],
+     "imdb": "tt36150957",
+     "n": 5,
+     "title": "Don't Look Back in Anger"
+    },
+    {
+     "files": [
+      "Home.2026.1080p.BluRay.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "Home.2026.720p.BluRay.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "Home.2026.480p.BluRay.x264.8-Bit.SoftSub(MoboMovies).mkv"
+     ],
+     "imdb": "tt39379299",
+     "n": 3,
+     "title": "Home"
+    },
+    {
+     "files": [
+      "Ill.Hold.You.Always.2026.1080p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "Ill.Hold.You.Always.2026.720p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "Ill.Hold.You.Always.2026.480p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "Ill.Hold.You.Always.2026.1080p.Web-Dl.x265.10-Bit.SoftSub(MoboMovies).mkv",
+      "Ill.Hold.You.Always.2026.720p.Web-Dl.x265.10-Bit.SoftSub(MoboMovies).mkv"
+     ],
+     "imdb": "tt41178575",
+     "n": 5,
+     "title": "I'll Hold You Always"
+    }
+   ],
+   "total_dropped": 16
+  },
+  "partition": {
+   "have_new": 71,
+   "have_old_only": 9,
+   "new": 0
+  },
+  "search_index": {
+   "rows_added": [],
+   "rows_repaired_in_place": [
+    {
+     "imdb": "tt32315584",
+     "kind": "fill imdb",
+     "title": "Black Box"
+    },
+    {
+     "imdb": "tt31116756",
+     "kind": "fill tmdb",
+     "title": "Cruel Hands"
+    },
+    {
+     "imdb": "tt35854741",
+     "kind": "fill tmdb",
+     "title": "Flies"
+    },
+    {
+     "imdb": "tt36893729",
+     "kind": "fill imdb",
+     "title": "Ice Cream Man"
+    },
+    {
+     "imdb": "tt6341826",
+     "kind": "fill imdb",
+     "title": "In the Blink of an Eye"
+    },
+    {
+     "imdb": "tt35695538",
+     "kind": "fill imdb",
+     "title": "My Father's Shadow"
+    },
+    {
+     "imdb": "tt27844906",
+     "kind": "fill imdb",
+     "title": "Rosebush Pruning"
+    },
+    {
+     "imdb": "tt35298123",
+     "kind": "fill imdb",
+     "title": "Teenage Sex and Death at Camp Miasma"
+    },
+    {
+     "imdb": "tt33451014",
+     "kind": "fill imdb",
+     "title": "The Beloved"
+    },
+    {
+     "imdb": "tt36980182",
+     "kind": "fill imdb",
+     "title": "The Incomer"
+    },
+    {
+     "imdb": "tt37654096",
+     "kind": "fill imdb",
+     "title": "The Last Sunrise"
+    },
+    {
+     "imdb": "tt33305621",
+     "kind": "fill imdb+tmdb",
+     "title": "The Souffleur"
+    },
+    {
+     "imdb": "tt30217403",
+     "kind": "fill tmdb",
+     "title": "Dandadan"
+    },
+    {
+     "imdb": "tt30413181",
+     "kind": "fill imdb",
+     "title": "Flex x Cop"
+    },
+    {
+     "imdb": "tt33184638",
+     "kind": "fill tmdb",
+     "title": "Paris Has Fallen"
+    },
+    {
+     "imdb": "tt15007172",
+     "kind": "fill tmdb",
+     "title": "Those Who Read the Hearts of Evil"
+    },
+    {
+     "imdb": "tt17543592",
+     "kind": "fill imdb",
+     "title": "Will Trent"
+    }
+   ]
+  },
+  "skipped": [
+   {
+    "existing_num": 634,
+    "imdb": "tt36304003",
+    "part": 1,
+    "reason": "all new_files already live (exact-URL or near-size duplicates)",
+    "title": "72 Hours"
+   },
+   {
+    "existing_num": 11168,
+    "imdb": "tt36150957",
+    "part": 0,
+    "reason": "all new_files already live (exact-URL or near-size duplicates)",
+    "title": "Don't Look Back in Anger"
+   },
+   {
+    "existing_num": 11172,
+    "imdb": "tt39379299",
+    "part": 0,
+    "reason": "all new_files already live (exact-URL or near-size duplicates)",
+    "title": "Home"
+   },
+   {
+    "existing_num": 11173,
+    "imdb": "tt41178575",
+    "part": 0,
+    "reason": "all new_files already live (exact-URL or near-size duplicates)",
+    "title": "I'll Hold You Always"
+   }
+  ]
+ },
  "borderline_kept": [
   {
    "decision": "KEPT — different codec = different encode",
@@ -163,14 +1626,14 @@
    "2025": 4,
    "2026": 22
   },
-  "have_new_links_added": 2046,
+  "have_new_links_added": 2567,
   "have_new_titles": 101,
-  "have_old_play_rows_added": 1024,
+  "have_old_play_rows_added": 1039,
   "have_old_titles": 42,
   "new_links": 1404,
   "new_titles": 77,
   "total_bytes_new": 719336804823,
-  "total_links_added": 4474,
+  "total_links_added": 5010,
   "total_titles": 220
  },
  "generated": "2026-11-21",

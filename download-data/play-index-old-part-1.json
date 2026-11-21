@@ -1338,10 +1338,38 @@
     "season": null,
     "size_bytes": 420111974,
     "size_text": "400.65 MB"
+   },
+   {
+    "encoder": "MoboMovies",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl1.mobomovies-super-fast-dl-1fd583af617cb0000.ir/v3/movies/1950/tt0043014/softsub/Sunset.Boulevard.1950.1080p.BluRay.x264.8-Bit.SoftSub(MoboMovies).mkv",
+    "playit_url": null,
+    "quality": "BluRay 1080p",
+    "quality_label": "bluray 1080p",
+    "season": null,
+    "size_bytes": 1575118144,
+    "size_text": "1.6 GB"
+   },
+   {
+    "encoder": "MoboMovies",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl1.mobomovies-super-fast-dl-1fd583af617cb0000.ir/v3/movies/1950/tt0043014/softsub/Sunset.Boulevard.1950.720p.BluRay.x264.8-Bit.SoftSub(MoboMovies).mkv",
+    "playit_url": null,
+    "quality": "BluRay 720p",
+    "quality_label": "bluray 720p",
+    "season": null,
+    "size_bytes": 892354572,
+    "size_text": "892 MB"
    }
   ],
   "title": "Sunset Boulevard",
-  "tmdb_key": null,
+  "tmdb_key": "movie:599",
   "type": "movie",
   "video_mp4": {
    "is_trailer": false,
@@ -9702,10 +9730,24 @@
     "season": null,
     "size_bytes": 1320702444,
     "size_text": "1.23 GB"
+   },
+   {
+    "encoder": "MoboMovies",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl1.mobomovies-super-fast-dl-1fd583af617cb0000.ir/v3/movies/1986/tt0090605/softsub/Aliens.1986.1080p.BluRay.x264.8-Bit.SoftSub(MoboMovies).mkv",
+    "playit_url": null,
+    "quality": "BluRay 1080p",
+    "quality_label": "bluray 1080p",
+    "season": null,
+    "size_bytes": 3159363273,
+    "size_text": "3.2 GB"
    }
   ],
   "title": "Aliens",
-  "tmdb_key": null,
+  "tmdb_key": "movie:679",
   "type": "movie",
   "video_mp4": {
    "is_trailer": false,
@@ -20475,10 +20517,24 @@
     "season": null,
     "size_bytes": 367966290,
     "size_text": "350.92 MB"
+   },
+   {
+    "encoder": "MoboMovies",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl1.mobomovies-super-fast-dl-1fd583af617cb0000.ir/v3/movies/1996/tt0117951/softsub/Trainspotting.1996.1080p.BluRay.x264.8-Bit.SoftSub(MoboMovies).mkv",
+    "playit_url": null,
+    "quality": "BluRay 1080p",
+    "quality_label": "bluray 1080p",
+    "season": null,
+    "size_bytes": 1398595803,
+    "size_text": "1.4 GB"
    }
   ],
   "title": "Trainspotting",
-  "tmdb_key": null,
+  "tmdb_key": "movie:627",
   "type": "movie",
   "video_mp4": {
    "is_trailer": false,
