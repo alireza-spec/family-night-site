@@ -7803,6 +7803,43 @@ function fnPlayOldFetchTitles() {
   return fnPlayOldTitlesPromise;
 }
 function fnPlayNormTitle(t) { return String(t || '').toLowerCase().replace(/[^a-z0-9]/g, ''); }
+
+/* FN-PLAY-NOTMDB v1 helper: H3 number for a title inside one part file.
+   The scan mirrors recordFromArchiveByTitle exactly (strip the number,
+   strip a trailing year / start_year, normTitle compare, the H3 year
+   must agree when present, exactly one match or null). loadDlPart is
+   the page's own part loader (folder parts included); the direct fetch
+   below only covers numbered parts when the loader is unavailable
+   (module run standalone). */
+async function fnPlayH3NumByTitle(part, title, year) {
+  try {
+    var doc = null;
+    if (typeof loadDlPart === 'function') doc = await loadDlPart(part);
+    else {
+      var r = await fetch(DL_BASE + 'archive-part-' + part + '.html');
+      if (!r.ok) return null;
+      doc = new DOMParser().parseFromString(await r.text(), 'text/html');
+    }
+    if (!doc) return null;
+    var needle = normTitle(title);
+    if (!needle) return null;
+    var heads = doc.querySelectorAll('h3'), num = null, n = 0;
+    for (var i = 0; i < heads.length; i++) {
+      var raw = heads[i].textContent || '';
+      var m = raw.match(/^\s*(\d+)\./);
+      if (!m) continue;
+      var rest = raw.replace(/^\s*\d+\.\s*/, '');
+      var h3Year = null;
+      var sy = rest.match(/\s+start_year\s*$/i);
+      if (sy) rest = rest.slice(0, sy.index);
+      else { var ym = rest.match(/\s+(\d{4})\s*$/); if (ym) { h3Year = +ym[1]; rest = rest.slice(0, ym.index); } }
+      if (normTitle(rest) !== needle) continue;
+      if (h3Year && year && h3Year !== +year) continue;
+      num = +m[1]; n++;
+    }
+    return n === 1 ? num : null;
+  } catch (e) { return null; }
+}
 /* FN-PLAY-OLD-FAST v1: resolve one IMDb id to a joined play entry — new
    archive first (download-index -> play part), old archive second
    (old download-index -> old play part). Returns the {entry,key,part}
@@ -7863,6 +7900,29 @@ async function fnPlayResolve(ctx) {
   }
   if (!key && ctx.title) {
     try { var im = await findImdbByTitle(ctx.title, ctx.year); if (im) { var hit3 = await fnPlayResolveImdb(im); if (hit3) return hit3; } } catch (e) {}
+  }
+  /* FN-PLAY-NOTMDB v1: no IMDb AND no TMDB id — resolve by title alone.
+     The search index carries the part for every row (including id-less
+     ones); the H3 number comes from the part file via the same
+     exactly-one-match rule the download box uses (recordFromArchiveByTitle).
+     Ambiguity or a missing part means no resolve — never guess. */
+  if (!key && ctx.title) {
+    try {
+      var si2 = await getDlSearchIndex();
+      var snt2 = fnPlayNormTitle(ctx.title);
+      var cand = null, candN = 0;
+      for (var q2 = 0; q2 < si2.length; q2++) {
+        var sr2 = si2[q2];
+        if (sr2.imdb || sr2.tmdb) continue; /* id-carrying rows use the steps above */
+        if (fnPlayNormTitle(sr2.t) !== snt2) continue;
+        if (ctx.year && sr2.y && String(sr2.y) !== String(ctx.year)) continue;
+        cand = sr2; candN++;
+      }
+      if (candN === 1 && cand) {
+        var h3num = await fnPlayH3NumByTitle(cand.part, ctx.title, ctx.year);
+        if (h3num) { part = cand.part; key = 'n:' + h3num; }
+      }
+    } catch (e) {}
   }
   /* ---- old-archive (Donyaye Serial) MOVIES fallback (DS-OLD-MOVIES v1) ----
      Only reached when the new archive has no play data for this title.
@@ -12787,7 +12847,7 @@ function fnLocalSearchEnsure() {
     .then(function (r) { if (!r.ok) throw new Error('idx ' + r.status); return r.json(); })
     .then(function (arr) {
       FN_LSEARCH.idx = (arr || []).map(function (e, i) {
-        return { t: e[0], y: e[1], type: e[2], imdb: e[3], tmdb: e[4], part: e[5], old: e[6], i: i, w: fnLocalNormTitle(e[0]).split(' ').filter(Boolean) };
+        return { t: e[0], y: e[1], type: e[2], imdb: e[3], tmdb: e[4], part: e[5], old: e[6], i: i, w: fnLocalNormTitle(e[0]).split(' ').filter(Boolean), fa: e[7] || '', wfa: e[7] ? fnLocalNormTitle(e[7]).split(' ').filter(Boolean) : [] }; /* FN-FA-SEARCH v1: stored Persian title (search-index element [7]) becomes a matchable word list */
       });
       FN_LSEARCH.loaded = true; FN_LSEARCH.loading = false;
       /* the index arrived after a search already rendered from the
@@ -12810,7 +12870,7 @@ function fnLocalSearch(q, type) {
   for (var i = 0; i < FN_LSEARCH.idx.length; i++) {
     var e = FN_LSEARCH.idx[i];
     if (type && type !== 'all' && e.type !== type) continue;
-    var r = fnLocalMatchWords(e.w, qw);
+    var r = fnLocalMatchWords(e.w, qw) || fnLocalMatchWords(e.wfa, qw);
     if (r === 2) starts.push(e);
     else if (r === 1) contains.push(e);
   }
@@ -12869,10 +12929,10 @@ function fnLocalDedupTmdbDom(lr) {
    recognisable. */
 function fnLocalCardHtml(e) {
   var yr = e.y ? '<span class="yr">' + e.y + '</span>' : '';
-  return '<article class="card" data-ls="' + e.i + '" data-ls-tmdb="' + (e.tmdb || '') + '" data-ls-title="' + esc(fnLocalNormTitle(e.t)) + '" data-ls-year="' + (e.y || '') + '" tabindex="0" role="button" aria-label="' + esc(e.t) + ' — مشاهده جزئیات">'
+  return /* FN-FA-SEARCH v1: stored Persian title renders directly, no machine translation */ '<article class="card' + (e.fa ? ' hasfa' : '') + '" data-ls="' + e.i + '" data-ls-tmdb="' + (e.tmdb || '') + '" data-ls-title="' + esc(fnLocalNormTitle(e.t)) + '" data-ls-year="' + (e.y || '') + '" tabindex="0" role="button" aria-label="' + esc(e.t) + ' — مشاهده جزئیات">'
     + '<div class="poster"><div class="noimg"><span class="fn-mark">FN</span><span class="fn-title">' + esc(e.t) + '</span></div><span class="typ">' + (e.type === 'tv' ? 'سریال' : 'فیلم') + '</span>' + (fnDlIconHas(e) ? fnDlBadgeHtml() : '') + '</div>'
     + '<h3>' + esc(e.t) + ' ' + yr + '</h3>'
-    + '<div class="sub"><span class="fa-name endup">' + esc(e.t) + '</span><span class="ls-badge">در فهرست</span></div></article>';
+    + (e.fa ? '<div class="sub"><span class="fa-name">' + esc(e.fa) + '</span><span class="ls-badge">در فهرست</span></div>' : '<div class="sub"><span class="fa-name endup">' + esc(e.t) + '</span><span class="ls-badge">در فهرست</span></div>') + '</article>';
 }
 
 /* Local search cards are text-only by design (instant, no API call) —
