@@ -9,9 +9,9 @@
    "720p": 4087
   },
   "by_version_family": {
-   "Dubbed": 708,
-   "Subtitled": 6948,
-   "unknown": 102
+   "Dubbed": 710,
+   "Subtitled": 6968,
+   "unknown": 80
   },
   "by_year": {
    "1929": 1,
@@ -2451,7 +2451,7 @@
    "expiring_stripped": 0,
    "imdb": "tt39371602",
    "links": 2,
-   "nosub_only": true,
+   "nosub_only": false,
    "num": 12300,
    "skipped_links": {},
    "title": "Double Exposure",
@@ -2462,7 +2462,7 @@
    "expiring_stripped": 0,
    "imdb": "tt32038799",
    "links": 2,
-   "nosub_only": true,
+   "nosub_only": false,
    "num": 12301,
    "skipped_links": {},
    "title": "Vittoria",
@@ -2484,7 +2484,7 @@
    "expiring_stripped": 0,
    "imdb": "tt0100973",
    "links": 2,
-   "nosub_only": true,
+   "nosub_only": false,
    "num": 12303,
    "skipped_links": {},
    "title": "Swordsman",
@@ -2583,7 +2583,7 @@
    "expiring_stripped": 0,
    "imdb": "tt39308381",
    "links": 3,
-   "nosub_only": true,
+   "nosub_only": false,
    "num": 12312,
    "skipped_links": {},
    "title": "Disneyland Handcrafted",
@@ -2913,7 +2913,7 @@
    "expiring_stripped": 0,
    "imdb": "tt5791094",
    "links": 2,
-   "nosub_only": true,
+   "nosub_only": false,
    "num": 12342,
    "skipped_links": {},
    "title": "Tori Girl",
@@ -2957,7 +2957,7 @@
    "expiring_stripped": 0,
    "imdb": "tt25363184",
    "links": 2,
-   "nosub_only": true,
+   "nosub_only": false,
    "num": 12346,
    "skipped_links": {},
    "title": "Stan Lee",
@@ -2990,7 +2990,7 @@
    "expiring_stripped": 0,
    "imdb": "tt1708537",
    "links": 2,
-   "nosub_only": true,
+   "nosub_only": false,
    "num": 12349,
    "skipped_links": {},
    "title": "The Whale",
@@ -3034,7 +3034,7 @@
    "expiring_stripped": 0,
    "imdb": "tt12771540",
    "links": 3,
-   "nosub_only": true,
+   "nosub_only": false,
    "num": 12353,
    "skipped_links": {},
    "title": "Audible",
@@ -3100,7 +3100,7 @@
    "expiring_stripped": 0,
    "imdb": "tt10443324",
    "links": 2,
-   "nosub_only": true,
+   "nosub_only": false,
    "num": 12359,
    "skipped_links": {},
    "title": "Nuts",
@@ -3476,39 +3476,11 @@
    "year": 2019
   },
   {
-   "imdb": "tt39371602",
-   "note": "needs Persian subtitle version",
-   "title": "Double Exposure",
-   "type": "movie",
-   "year": 2024
-  },
-  {
-   "imdb": "tt32038799",
-   "note": "needs Persian subtitle version",
-   "title": "Vittoria",
-   "type": "movie",
-   "year": 2024
-  },
-  {
-   "imdb": "tt0100973",
-   "note": "needs Persian subtitle version",
-   "title": "Swordsman",
-   "type": "movie",
-   "year": 1990
-  },
-  {
    "imdb": "tt10589508",
    "note": "needs Persian subtitle version",
    "title": "My Girlfriend Is a Serial Killer",
    "type": "movie",
    "year": 2019
-  },
-  {
-   "imdb": "tt39308381",
-   "note": "needs Persian subtitle version",
-   "title": "Disneyland Handcrafted",
-   "type": "movie",
-   "year": 2026
   },
   {
    "imdb": "tt8239736",
@@ -3595,20 +3567,6 @@
    "year": 2023
   },
   {
-   "imdb": "tt5791094",
-   "note": "needs Persian subtitle version",
-   "title": "Tori Girl",
-   "type": "movie",
-   "year": 2017
-  },
-  {
-   "imdb": "tt25363184",
-   "note": "needs Persian subtitle version",
-   "title": "Stan Lee",
-   "type": "movie",
-   "year": 2023
-  },
-  {
    "imdb": "tt1918965",
    "note": "needs Persian subtitle version",
    "title": "Murder 2",
@@ -3621,13 +3579,6 @@
    "title": "Murder",
    "type": "movie",
    "year": 2004
-  },
-  {
-   "imdb": "tt1708537",
-   "note": "needs Persian subtitle version",
-   "title": "The Whale",
-   "type": "movie",
-   "year": 2011
   },
   {
    "imdb": "tt9203832",
@@ -3644,13 +3595,6 @@
    "year": 2012
   },
   {
-   "imdb": "tt12771540",
-   "note": "needs Persian subtitle version",
-   "title": "Audible",
-   "type": "movie",
-   "year": 2021
-  },
-  {
    "imdb": "tt18938676",
    "note": "needs Persian subtitle version",
    "title": "WWE Hell in a Cell",
@@ -3663,13 +3607,6 @@
    "title": "Vendetta",
    "type": "movie",
    "year": 2015
-  },
-  {
-   "imdb": "tt10443324",
-   "note": "needs Persian subtitle version",
-   "title": "Nuts",
-   "type": "movie",
-   "year": 2018
   },
   {
    "imdb": "tt5447140",
@@ -14957,5 +14894,9 @@
    "reason": "family already present in the live record",
    "type": "movie"
   }
- ]
+ ],
+ "check9_repair": {
+  "commit_base": "9e63a185",
+  "note": "22 DN play rows re-sectioned (20 subtitled, 2 dubbed); 9 titles no longer nosub-only"
+ }
 }
