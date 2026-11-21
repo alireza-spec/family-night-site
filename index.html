@@ -2287,6 +2287,69 @@ function fnIsIranianTitle(d, pdEntry) {
   for (var i = 0; i < pcs.length; i++) if (pcs[i] && pcs[i].iso_3166_1 === 'IR') return true;
   return false;
 }
+/* FN-CASEB-FULL v1 — the 65 Iranian case-b titles (FH batch, H3 #12485-12559,
+   folder fh) have NEITHER a TMDB id NOR an IMDb id, so no TMDB/IMDb-keyed
+   lookup can ever find them. They live in the static file
+   download-data/sections/iranian-no-tmdb.json (single source of truth, shared
+   with the bot) and are addressed by H3 number as id 'n<NNNN>'. The loader
+   mirrors fnStaticJson's cached-promise pattern, fail-open. */
+var FN_CASEB = { p: null, data: null };
+function fnIranianNoTmdb() {
+  if (FN_CASEB.p) return FN_CASEB.p;
+  FN_CASEB.p = fnStaticJson('iranian-no-tmdb.json').then(function (d) {
+    var list = (d && d.titles) || [];
+    FN_CASEB.data = { byN: {}, byTitle: {} };
+    list.forEach(function (t) {
+      var e = { n: t.n, part: t.part || 'fh', title: t.title, fa_title: t.fa_title, year: t.year, type: t.type, duration_min: t.duration_min, links: t.links };
+      FN_CASEB.data.byN[t.n] = e;
+      var k = fnLocalNormTitle(t.title) + '|' + t.year;
+      if (!FN_CASEB.data.byTitle[k]) FN_CASEB.data.byTitle[k] = e;
+    });
+    try { fnIranianNoTmdbAttachN(); } catch (e) {}
+    try { fnDlIconApply(); } catch (e) {}
+    return FN_CASEB.data;
+  }).catch(function () { FN_CASEB.data = { byN: {}, byTitle: {} }; return FN_CASEB.data; });
+  return FN_CASEB.p;
+}
+/* synthetic TMDB-shaped items for the category page: title is the Persian
+   name, so cardHtml's naming rule (fnNameParts) shows the ENGLISH name on
+   line 1 and the Persian name on line 2. vote_average 0 renders no score;
+   poster null renders the FN placeholder. */
+function fnIranianNoTmdbItems() {
+  var d = FN_CASEB.data; if (!d) return [];
+  return Object.keys(d.byN).sort(function (a, b) { return a - b; }).map(function (k) {
+    var e = d.byN[k];
+    return { id: 'n' + e.n, n: e.n, part: e.part, media_type: e.type, type: e.type,
+      title: e.fa_title, original_title: e.title, name: e.fa_title,
+      release_date: String(e.year), first_air_date: String(e.year),
+      vote_average: 0, vote_count: 0, popularity: 0, poster_path: null, backdrop_path: null };
+  });
+}
+function fnIranianNoTmdbByTitle(title, year) {
+  var d = FN_CASEB.data; if (!d || !title) return null;
+  return d.byTitle[fnLocalNormTitle(title) + '|' + year] || null;
+}
+function fnIranianNoTmdbByNum(n) {
+  var d = FN_CASEB.data; if (!d) return null;
+  return d.byN[n] || null;
+}
+function fnIranianNoTmdbAttachN() {
+  if (!FN_CASEB.data || !FN_LSEARCH.idx) return;
+  FN_LSEARCH.idx.forEach(function (e) {
+    if (e.n != null) return;
+    if (e.imdb || e.tmdb || e.part !== 'fh') return;
+    var hit = FN_CASEB.data.byTitle[fnLocalNormTitle(e.t) + '|' + e.y];
+    if (hit) e.n = hit.n;
+  });
+}
+/* letter filter on the ENGLISH name: fnLetterTitle reads titleOf (Persian
+   here), so the shared letterMatch cannot match these items. */
+function fnIranianNoTmdbLetter(x) {
+  if (!x || !x.original_title) return false;
+  var c = String(x.original_title).trim().charAt(0).toUpperCase();
+  return archLetter === '#' ? (c >= '0' && c <= '9') : c === archLetter;
+}
+fnIranianNoTmdb(); /* kick off the load at boot so category pages can merge it */
 /* a real IMDb rating: a number > 0. 'N/A', '', null, '0' and '0.0' are all
    "no rating" — the whole IMDb line is suppressed for those. */
 function fnHasRealImdbRate(r) {
@@ -2618,7 +2681,9 @@ document.addEventListener('click', e => {
   const card = e.target.closest('[data-open]');
   if (card) {
     if (card.closest('#wp-pick-results')) return; /* watch-party picker handles its own taps */
-    const [t, id] = card.dataset.open.split(':'); openDetail(t, +id);
+    const [t, id] = card.dataset.open.split(':');
+    if (typeof id === 'string' && /^n\d+$/.test(id)) { openLocalDetailByNum(t, +id.slice(1)); return; }
+    openDetail(t, +id);
   }
 });
 /* ---------- English names for cards still headed by a non-Latin
@@ -2849,7 +2914,7 @@ $('#scrim').addEventListener('click', () => setDrawer(false));
   document.addEventListener('touchcancel', () => { docY = null; }, { passive: true });
 })();
 document.addEventListener('keydown', e => {
-  if (e.key === 'Enter' && e.target.matches && e.target.matches('[data-open]')) { const [t, id] = e.target.dataset.open.split(':'); openDetail(t, +id); }
+  if (e.key === 'Enter' && e.target.matches && e.target.matches('[data-open]')) { const [t, id] = e.target.dataset.open.split(':'); if (typeof id === 'string' && /^n\d+$/.test(id)) { openLocalDetailByNum(t, +id.slice(1)); return; } openDetail(t, +id); }
 });
 
 /* ---------- home ---------- */
@@ -4380,6 +4445,7 @@ function fnAvailTypeOf(x) {
 }
 function fnAvailQualifies(x) {
   var idx = FN_AVAIL.idx; if (!idx || !x) return false;
+  if (x.n != null) return true; /* FN-CASEB-FULL v1: a case-b title (H3 number, no TMDB/IMDb) qualifies by construction — its download links are in the archive */
   var t = idx.tmdb && x.id != null ? fnAvailTmdbEntry(idx, fnAvailTypeOf(x), x.id) : null;
   if (t) return !!(t[0] || t[1]);
   var im = x.imdb_id || x.imdb || '';
@@ -4396,6 +4462,8 @@ var FN_DL_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAIAAAC1
 function fnDlBadgeHtml() { return '<span class="dlbadge" aria-hidden="true"><img src="' + FN_DL_ICON + '" alt=""></span>'; }
 function fnDlIconHas(x) {
   var idx = FN_AVAIL.idx; if (!idx || !x) return false;
+  if (x.n != null) return true; /* FN-CASEB-FULL v1: case-b title — badge by construction */
+  if (typeof x.id === 'string' && /^n\d+$/.test(x.id)) return !!(FN_CASEB.data && FN_CASEB.data.byN[+x.id.slice(1)]); /* FN-CASEB-FULL v1: synthetic 'n<NNNN>' card id — only a KNOWN case-b number qualifies */
   var tid = x.id != null ? x.id : (x.tmdb != null && x.tmdb !== '' ? x.tmdb : null);
   var t = idx.tmdb && tid != null ? fnAvailTmdbEntry(idx, fnAvailTypeOf(x), tid) : null;
   if (t) return t[0] === 1;
@@ -4636,6 +4704,7 @@ function renderLocalArch() {
 }
 function resetArchPaging(clearGrid) {
   arch.done = false; arch.page = 1; arch.searchPage = 1;
+  arch._iranLocalDone = false; /* FN-CASEB-FULL v1: local case-b merge runs once per page load */
   arch.qualCount = 0; arch.availPending = [];
   (arch.streams || []).forEach(s => { s.page = 1; s.done = false; });
   if (clearGrid) { const g = $('#arch-grid'); if (g) g.innerHTML = ''; }
@@ -4859,6 +4928,28 @@ async function loadArchPage() {
     /* حروف و اعداد: keep only titles whose original name starts
        with the picked letter (or a digit) */
     if (archLetter) items = items.filter(letterMatch);
+    /* FN-CASEB-FULL v1: merge the 65 Iranian case-b titles (no TMDB/IMDb)
+       into the Iranian films category only, once per page load. Their
+       reader filters apply: year range, vote floor (0 passes), vote-count
+       floor (0 passes), English-name letter, and country ('' or 'IR');
+       a picked genre drops them (no genre is known for them). */
+    if (arch.collKey === 'iran' && FN_CASEB.data && !arch._iranLocalDone) {
+      arch._iranLocalDone = true;
+      var _yr0 = yr ? +yr : 0, _yr1 = yr2 ? +yr2 : 9999;
+      var _vf = vote ? +vote : 0, _vcf = vcSel ? +vcSel : 0;
+      var _locals = fnIranianNoTmdbItems().filter(function (lx) {
+        var y = +lx.release_date;
+        if (_yr0 && y < _yr0) return false;
+        if (_yr1 && y > _yr1) return false;
+        if (_vf && (lx.vote_average || 0) < _vf) return false;
+        if (_vcf && (lx.vote_count || 0) < _vcf) return false;
+        if (archLetter && !fnIranianNoTmdbLetter(lx)) return false;
+        if (archCountry && archCountry !== 'IR') return false;
+        if (arch.genre) return false;
+        return true;
+      });
+      items = items.concat(_locals);
+    }
     if (sortUi === 'popularity.desc') items.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
     else if (sortUi === 'primary_release_date.desc' || sortUi === 'first_air_date.desc') items.sort((a, b) => String((b.media_type === 'tv' ? b.first_air_date : b.release_date) || '').localeCompare(String((a.media_type === 'tv' ? a.first_air_date : a.release_date) || '')));
     else if (sortUi === 'vote_average.desc') items.sort((a, b) => (b.vote_average || 0) - (a.vote_average || 0));
@@ -7995,7 +8086,8 @@ function fnPlayCtx(o) {
     year: o.year || String((it.release_date || it.first_air_date || '').slice(0, 4) || ''),
     poster: o.poster || it.poster_path || '',
     season: o.season || 0,
-    episode: o.episode || 0
+    episode: o.episode || 0,
+    iranian: !!o.iranian
   };
 }
 function fnPlayTimeout(ms) { return new Promise(function (res) { setTimeout(function () { res(null); }, ms); }); }
@@ -8036,7 +8128,7 @@ async function openPlayListOrPlayer(o) {
   /* RULE 2: resolve the flag early (in parallel with the resolve below —
      the map is usually already warm from the detail page). */
   FN_PLAY_IRANIAN = false;
-  var iranianP = (typeof fnIranianForTmdb === 'function') ? fnIranianForTmdb(ctx.type, ctx.id, ctx.item) : Promise.resolve(false);
+  var iranianP = ctx.iranian ? Promise.resolve(true) : ((typeof fnIranianForTmdb === 'function') ? fnIranianForTmdb(ctx.type, ctx.id, ctx.item) : Promise.resolve(false));
   fnPlayEnsureListDom();
   /* v8.4: release year next to the title for movies */
   $('#pl-title').textContent = (ctx.title || 'پخش آنلاین') + ((ctx.type !== 'tv' && ctx.year) ? ' (' + fnPlayFa(ctx.year) + ')' : '');
@@ -12850,6 +12942,7 @@ function fnLocalSearchEnsure() {
         return { t: e[0], y: e[1], type: e[2], imdb: e[3], tmdb: e[4], part: e[5], old: e[6], i: i, w: fnLocalNormTitle(e[0]).split(' ').filter(Boolean), fa: e[7] || '', wfa: e[7] ? fnLocalNormTitle(e[7]).split(' ').filter(Boolean) : [] }; /* FN-FA-SEARCH v1: stored Persian title (search-index element [7]) becomes a matchable word list */
       });
       FN_LSEARCH.loaded = true; FN_LSEARCH.loading = false;
+      try { fnIranianNoTmdbAttachN(); } catch (e) {} /* FN-CASEB-FULL v1: search rows gain their H3 number for the download badge */
       /* the index arrived after a search already rendered from the
          home-rail fallback: re-render the local rows for the query
          still on screen, if it is still the current one. */
@@ -13125,6 +13218,22 @@ function fnLocalOpen(e) {
     });
     return;
   }
+  /* FN-CASEB-FULL v1: a case-b title (no TMDB/IMDb) opens its LOCAL detail
+     sheet (download box + play) straight away — no TMDB search, which can
+     never resolve it. Every other no-id row keeps the old path. */
+  var _cb = fnIranianNoTmdbByTitle(e.t, e.y);
+  if (_cb) { openLocalDetail(_cb); return; }
+  if (!FN_CASEB.data) {
+    fnIranianNoTmdb().then(function () {
+      var hit = fnIranianNoTmdbByTitle(e.t, e.y);
+      if (hit) { openLocalDetail(hit); return; }
+      fnLocalOpenNoId(e);
+    });
+    return;
+  }
+  fnLocalOpenNoId(e);
+}
+function fnLocalOpenNoId(e) {
   /* FN-LOCAL-RESOLVE v1: no ids at all — resolve the TMDB id by exact
      title search, then open the DETAIL page (with its download box +
      play section), never straight to the play list. Only if nothing
@@ -13154,6 +13263,53 @@ function fnLocalOpenPlayer(e) {
   try {
     openPlayListOrPlayer({ id: 0, type: e.type, item: {}, imdbId: e.imdb || '', title: e.t, year: String(e.y || ''), poster: '' });
   } catch (err) { toast('پخش این اثر ممکن نشد'); }
+}
+
+/* FN-CASEB-FULL v1: local detail sheet for a case-b title (no TMDB id, no
+   IMDb id) — modeled on openArchiveEntry, but with NO rating element at all
+   (there is no IMDb score for these titles) and NO TMDB fetch. The download
+   box resolves the H3 record by number; the play button opens the play list
+   with the Iranian flag set, so no subtitle-version line is shown. */
+async function openLocalDetail(e) {
+  if (!e) return;
+  const sheet = $('#detail-sheet');
+  curDetail = null; /* a local record, not a TMDB title page */
+  openOverlay('#ov-detail');
+  var typeFa = e.type === 'tv' ? 'سریال' : 'فیلم';
+  var metaLine = esc(String(e.year || '')) + ' • ' + typeFa + (e.duration_min ? ' • ' + esc(String(e.duration_min)) + ' دقیقه' : '');
+  sheet.innerHTML = '<button class="xbtn" data-close-detail aria-label="بستن" style="position:fixed"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button>'
+    + '<div class="sheet-body" style="margin-top:0;padding-top:4.5rem"><h1 dir="ltr" style="text-align:left;font-size:1.5rem;font-weight:900;margin:0 0 .2rem">' + esc(e.title) + '</h1>'
+    + '<div class="fa-name" dir="rtl" style="font-size:1.1rem;margin-bottom:.6rem">' + esc(e.fa_title) + '</div>'
+    + '<div class="detail-meta"><span>' + metaLine + '</span></div>'
+    + '<div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.2rem"><button class="btn btn-gold" id="d-play-local">پخش آنلاین</button><button class="btn" id="d-dl-local">دانلود رایگان</button></div>'
+    + '<div class="sec"><h2>جعبه دانلود</h2><div id="d-dl-body"><div class="state"><div class="spin"></div>در حال دریافت لینک‌ها از آرشیو…</div></div></div></div>';
+  sheet.querySelector('[data-close-detail]').onclick = () => closeOverlay('#ov-detail');
+  var playBtn = $('#d-play-local');
+  if (playBtn) playBtn.onclick = function () {
+    openPlayListOrPlayer({ id: 0, type: e.type, item: {}, imdbId: '', title: e.title, year: String(e.year || ''), poster: '', iranian: true });
+  };
+  var dlBtn = $('#d-dl-local');
+  if (dlBtn) dlBtn.onclick = function () { var b = $('#d-dl-body'); if (b) b.scrollIntoView({ behavior: 'smooth', block: 'start' }); };
+  try {
+    const resolved = await resolveDlRecordByPart('', e.n, e.part || 'fh', 'new');
+    let rec = resolved ? resolved.rec : null;
+    const body = $('#d-dl-body'); if (!body) return;
+    if (!rec || (!rec.groups.softsub.length && !rec.groups.dubbed.length && !rec.groups.nosub.length && !(rec.groups.audio || []).length)) { body.innerHTML = '<div class="state">لینکی برای این عنوان پیدا نشد.</div>'; return; }
+    var dlBuilt = dlTilesHtml(rec, { poster: '', title: e.title, meta: String(e.year || '') + ' • ' + typeFa, tmdbId: '', src: resolved.src, hasDn: false, iranian: true });
+    body.innerHTML = dlBuilt.html;
+    wireDlTiles(body, dlBuilt.ctx);
+  } catch (err) {
+    const body = $('#d-dl-body'); if (body) body.innerHTML = '<div class="state">دریافت لینک‌های دانلود ممکن نشد؛ دوباره تلاش کنید.</div>';
+  }
+}
+function openLocalDetailByNum(type, num) {
+  var e = fnIranianNoTmdbByNum(num);
+  if (e) { openLocalDetail(e); return; }
+  fnIranianNoTmdb().then(function () {
+    var hit = fnIranianNoTmdbByNum(num);
+    if (hit) openLocalDetail(hit);
+    else toast('صفحه این اثر پیدا نشد');
+  });
 }
 
 /* tap on a local taste-picker card: resolve to a real TMDB item, then

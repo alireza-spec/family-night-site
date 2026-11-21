@@ -1,0 +1,657 @@
+{
+ "generated": "2026-11-21T18:00:00+03:30",
+ "source": "FH batch case-b (H3 #12485-12559, folder fh) — Iranian films with neither TMDB nor IMDb id; every link probed at merge time (commit 20d756dc)",
+ "count": 65,
+ "titles": [
+  {
+   "n": 12485,
+   "part": "fh",
+   "title": "Adam Foroosh",
+   "fa_title": "آدم فروش",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 101,
+   "links": 1
+  },
+  {
+   "n": 12507,
+   "part": "fh",
+   "title": "Almas",
+   "fa_title": "الماس",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 97,
+   "links": 1
+  },
+  {
+   "n": 12508,
+   "part": "fh",
+   "title": "An Digari",
+   "fa_title": "آن دیگری",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 84,
+   "links": 1
+  },
+  {
+   "n": 12552,
+   "part": "fh",
+   "title": "Aqaye Ghazi",
+   "fa_title": "آقای قاضی",
+   "year": 2026,
+   "type": "tv",
+   "duration_min": null,
+   "links": 23
+  },
+  {
+   "n": 12509,
+   "part": "fh",
+   "title": "Aqaye Zaloo",
+   "fa_title": "آقای زالو",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 104,
+   "links": 1
+  },
+  {
+   "n": 12510,
+   "part": "fh",
+   "title": "Ashe Khanoom Jaan",
+   "fa_title": "آش خانم جان",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 96,
+   "links": 1
+  },
+  {
+   "n": 12549,
+   "part": "fh",
+   "title": "Bache Mardom",
+   "fa_title": "بچه مردم",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 117,
+   "links": 1
+  },
+  {
+   "n": 12511,
+   "part": "fh",
+   "title": "Balit",
+   "fa_title": "بلیط",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 84,
+   "links": 1
+  },
+  {
+   "n": 12553,
+   "part": "fh",
+   "title": "Bamdade Khomar",
+   "fa_title": "بامداد خمار",
+   "year": 2026,
+   "type": "tv",
+   "duration_min": null,
+   "links": 27
+  },
+  {
+   "n": 12512,
+   "part": "fh",
+   "title": "Baraye Yek Zendegie Mamooli",
+   "fa_title": "برای یک زندگی معمولی",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 85,
+   "links": 1
+  },
+  {
+   "n": 12513,
+   "part": "fh",
+   "title": "Bazi Khooni",
+   "fa_title": "بازی خونی",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 114,
+   "links": 1
+  },
+  {
+   "n": 12514,
+   "part": "fh",
+   "title": "Chand Daghighe Bad",
+   "fa_title": "چند دقیقه بعد",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 16,
+   "links": 1
+  },
+  {
+   "n": 12515,
+   "part": "fh",
+   "title": "Dokhtare Barqi",
+   "fa_title": "دختر برقی",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 89,
+   "links": 1
+  },
+  {
+   "n": 12516,
+   "part": "fh",
+   "title": "Dooste Man Bachan",
+   "fa_title": "دوست من باچان",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 104,
+   "links": 1
+  },
+  {
+   "n": 12517,
+   "part": "fh",
+   "title": "Goozan Haye Ootooban",
+   "fa_title": "گوزن های اتوبان",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 95,
+   "links": 1
+  },
+  {
+   "n": 12554,
+   "part": "fh",
+   "title": "Ham Kalam",
+   "fa_title": "هم کلام",
+   "year": 2026,
+   "type": "tv",
+   "duration_min": null,
+   "links": 12
+  },
+  {
+   "n": 12518,
+   "part": "fh",
+   "title": "Kamion",
+   "fa_title": "کامیون",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 99,
+   "links": 1
+  },
+  {
+   "n": 12519,
+   "part": "fh",
+   "title": "Kefayate Mozakerat",
+   "fa_title": "کفایت مذاکرات",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 98,
+   "links": 1
+  },
+  {
+   "n": 12520,
+   "part": "fh",
+   "title": "Khar va Khak",
+   "fa_title": "خار و خاک",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 90,
+   "links": 1
+  },
+  {
+   "n": 12521,
+   "part": "fh",
+   "title": "Lak Posht",
+   "fa_title": "لاک پشت",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 96,
+   "links": 1
+  },
+  {
+   "n": 12522,
+   "part": "fh",
+   "title": "Lebas Shaksi",
+   "fa_title": "لباس شخصی",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 114,
+   "links": 1
+  },
+  {
+   "n": 12523,
+   "part": "fh",
+   "title": "Majarajooi Dar Jazire Jamesbond",
+   "fa_title": "ماجراجویی در جزیره جیمز باند",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 88,
+   "links": 1
+  },
+  {
+   "n": 12524,
+   "part": "fh",
+   "title": "Manesh",
+   "fa_title": "مانش",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 65,
+   "links": 1
+  },
+  {
+   "n": 12555,
+   "part": "fh",
+   "title": "Marde Se Hezar Chehre",
+   "fa_title": "مرد ۳ هزار چهره",
+   "year": 2026,
+   "type": "tv",
+   "duration_min": null,
+   "links": 10
+  },
+  {
+   "n": 12525,
+   "part": "fh",
+   "title": "Mardi ke asb shod",
+   "fa_title": "مردی که اسب شد",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 113,
+   "links": 1
+  },
+  {
+   "n": 12526,
+   "part": "fh",
+   "title": "Marjan",
+   "fa_title": "مرجان",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 80,
+   "links": 1
+  },
+  {
+   "n": 12527,
+   "part": "fh",
+   "title": "Mashqe emshab",
+   "fa_title": "مشق امشب",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 78,
+   "links": 1
+  },
+  {
+   "n": 12556,
+   "part": "fh",
+   "title": "Maymoone Mast",
+   "fa_title": "میمون مست",
+   "year": 2026,
+   "type": "tv",
+   "duration_min": null,
+   "links": 2
+  },
+  {
+   "n": 12528,
+   "part": "fh",
+   "title": "Morde Khor",
+   "fa_title": "مرده خور",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 16,
+   "links": 1
+  },
+  {
+   "n": 12529,
+   "part": "fh",
+   "title": "Musa Kalimollah",
+   "fa_title": "موسی کلیم",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 136,
+   "links": 1
+  },
+  {
+   "n": 12530,
+   "part": "fh",
+   "title": "New Jersey",
+   "fa_title": "نیوجرسی",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 72,
+   "links": 1
+  },
+  {
+   "n": 12557,
+   "part": "fh",
+   "title": "Nim Rokh",
+   "fa_title": "نیم رخ",
+   "year": 2026,
+   "type": "tv",
+   "duration_min": null,
+   "links": 10
+  },
+  {
+   "n": 12531,
+   "part": "fh",
+   "title": "Nime Shab",
+   "fa_title": "نیمه شب",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 114,
+   "links": 1
+  },
+  {
+   "n": 12532,
+   "part": "fh",
+   "title": "Parkandane Parandeh Koshteh Nashodeh",
+   "fa_title": "پرکندن پرنده کشته نشده",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 119,
+   "links": 1
+  },
+  {
+   "n": 12533,
+   "part": "fh",
+   "title": "Qarize",
+   "fa_title": "غریزه",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 123,
+   "links": 1
+  },
+  {
+   "n": 12534,
+   "part": "fh",
+   "title": "Qostantaniye",
+   "fa_title": "قسطنطنیه",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 103,
+   "links": 1
+  },
+  {
+   "n": 12535,
+   "part": "fh",
+   "title": "Rafie",
+   "fa_title": "رفیع",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 68,
+   "links": 1
+  },
+  {
+   "n": 12536,
+   "part": "fh",
+   "title": "Rokh Nilo",
+   "fa_title": "رخ نیلو",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 85,
+   "links": 1
+  },
+  {
+   "n": 12537,
+   "part": "fh",
+   "title": "Sad Sal Be In Salha",
+   "fa_title": "صد سال به این سال‌ها",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 106,
+   "links": 1
+  },
+  {
+   "n": 12538,
+   "part": "fh",
+   "title": "Saddam Ra Bokosh",
+   "fa_title": "صدام را بکش",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 58,
+   "links": 1
+  },
+  {
+   "n": 12539,
+   "part": "fh",
+   "title": "Safar Be Limoonia",
+   "fa_title": "سفر به لیمونیا",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 79,
+   "links": 1
+  },
+  {
+   "n": 12540,
+   "part": "fh",
+   "title": "Sar-riz",
+   "fa_title": "کوتاه سرریز",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 19,
+   "links": 1
+  },
+  {
+   "n": 12541,
+   "part": "fh",
+   "title": "Shahre Doodi",
+   "fa_title": "شهر دودی",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 104,
+   "links": 1
+  },
+  {
+   "n": 12558,
+   "part": "fh",
+   "title": "Shefroni",
+   "fa_title": "شفرونی",
+   "year": 2026,
+   "type": "tv",
+   "duration_min": null,
+   "links": 24
+  },
+  {
+   "n": 12559,
+   "part": "fh",
+   "title": "Sorkh va Siyah",
+   "fa_title": "سرخ و سیاه",
+   "year": 2026,
+   "type": "tv",
+   "duration_min": null,
+   "links": 6
+  },
+  {
+   "n": 12542,
+   "part": "fh",
+   "title": "Tamina",
+   "fa_title": "تامینا",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 15,
+   "links": 1
+  },
+  {
+   "n": 12543,
+   "part": "fh",
+   "title": "Tars Az Ashkhaye Vaqei",
+   "fa_title": "ترس از اشکهای واقعی",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 91,
+   "links": 1
+  },
+  {
+   "n": 12544,
+   "part": "fh",
+   "title": "Too faghat madare man bash",
+   "fa_title": "تو فقط مادر من باش",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 16,
+   "links": 1
+  },
+  {
+   "n": 12545,
+   "part": "fh",
+   "title": "Vahshi",
+   "fa_title": "وحشی",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 82,
+   "links": 1
+  },
+  {
+   "n": 12546,
+   "part": "fh",
+   "title": "Yooz",
+   "fa_title": "انیمیشن یوز",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 80,
+   "links": 1
+  },
+  {
+   "n": 12547,
+   "part": "fh",
+   "title": "Zabet",
+   "fa_title": "ضابط",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 79,
+   "links": 1
+  },
+  {
+   "n": 12548,
+   "part": "fh",
+   "title": "Zano Bache",
+   "fa_title": "زن و بچه",
+   "year": 2026,
+   "type": "movie",
+   "duration_min": 143,
+   "links": 1
+  },
+  {
+   "n": 12504,
+   "part": "fh",
+   "title": "Ghomar Baz",
+   "fa_title": "قُمارباز",
+   "year": 2025,
+   "type": "movie",
+   "duration_min": 86,
+   "links": 1
+  },
+  {
+   "n": 12505,
+   "part": "fh",
+   "title": "Harchi To Begi",
+   "fa_title": "هر چی تو بگی",
+   "year": 2025,
+   "type": "movie",
+   "duration_min": 75,
+   "links": 1
+  },
+  {
+   "n": 12550,
+   "part": "fh",
+   "title": "Kankel",
+   "fa_title": "کنکل",
+   "year": 2025,
+   "type": "tv",
+   "duration_min": null,
+   "links": 14
+  },
+  {
+   "n": 12551,
+   "part": "fh",
+   "title": "Sarzamine Gomshodeh",
+   "fa_title": "سرزمین گم شده",
+   "year": 2025,
+   "type": "tv",
+   "duration_min": null,
+   "links": 9
+  },
+  {
+   "n": 12506,
+   "part": "fh",
+   "title": "Yazdah Yazdah",
+   "fa_title": "یازده یازده",
+   "year": 2025,
+   "type": "movie",
+   "duration_min": 92,
+   "links": 1
+  },
+  {
+   "n": 12503,
+   "part": "fh",
+   "title": "Rooze Sheshom",
+   "fa_title": "روز ششم",
+   "year": 2024,
+   "type": "movie",
+   "duration_min": 107,
+   "links": 1
+  },
+  {
+   "n": 12498,
+   "part": "fh",
+   "title": "Aradatmand Nazanin Bahare Tina",
+   "fa_title": "ارادتمند، نازنین بهاره تینا",
+   "year": 2023,
+   "type": "movie",
+   "duration_min": 83,
+   "links": 1
+  },
+  {
+   "n": 12499,
+   "part": "fh",
+   "title": "Bi Roya",
+   "fa_title": "بی رویا",
+   "year": 2023,
+   "type": "movie",
+   "duration_min": 106,
+   "links": 1
+  },
+  {
+   "n": 12500,
+   "part": "fh",
+   "title": "Kote Charmi",
+   "fa_title": "کت چرمی",
+   "year": 2023,
+   "type": "movie",
+   "duration_min": 100,
+   "links": 1
+  },
+  {
+   "n": 12501,
+   "part": "fh",
+   "title": "Naboodan",
+   "fa_title": "نبودن",
+   "year": 2023,
+   "type": "movie",
+   "duration_min": 98,
+   "links": 1
+  },
+  {
+   "n": 12502,
+   "part": "fh",
+   "title": "Tafrigh",
+   "fa_title": "تفریق",
+   "year": 2023,
+   "type": "movie",
+   "duration_min": 108,
+   "links": 1
+  },
+  {
+   "n": 12496,
+   "part": "fh",
+   "title": "Mardeh Bazande",
+   "fa_title": "مرده بازنده",
+   "year": 2022,
+   "type": "movie",
+   "duration_min": 115,
+   "links": 1
+  },
+  {
+   "n": 12497,
+   "part": "fh",
+   "title": "Shabe Hamoon",
+   "fa_title": "شب هامون",
+   "year": 2022,
+   "type": "movie",
+   "duration_min": 73,
+   "links": 1
+  }
+ ]
+}
