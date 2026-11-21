@@ -23002,6 +23002,107 @@
   },
   "year": 2018
  },
+ "tt8741648": {
+  "imdb": "tt8741648",
+  "num": 12666,
+  "part": "mbm",
+  "play": [
+   {
+    "encoder": "MoboMovies",
+    "episode": 1,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl1.mobomovies-super-fast-dl-1fd583af617cb0000.ir/v3/tv-show/2020/tt8741648/Season-01/softsub/The.Letter.For.The.King.S01E01.1080p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p",
+    "quality_label": "web-dl 1080p",
+    "season": 1,
+    "size_bytes": 850324050,
+    "size_text": "850 MB"
+   },
+   {
+    "encoder": "MoboMovies",
+    "episode": 2,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl1.mobomovies-super-fast-dl-1fd583af617cb0000.ir/v3/tv-show/2020/tt8741648/Season-01/softsub/The.Letter.For.The.King.S01E02.1080p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p",
+    "quality_label": "web-dl 1080p",
+    "season": 1,
+    "size_bytes": 851665444,
+    "size_text": "852 MB"
+   },
+   {
+    "encoder": "MoboMovies",
+    "episode": 3,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl1.mobomovies-super-fast-dl-1fd583af617cb0000.ir/v3/tv-show/2020/tt8741648/Season-01/softsub/The.Letter.For.The.King.S01E03.1080p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p",
+    "quality_label": "web-dl 1080p",
+    "season": 1,
+    "size_bytes": 753002282,
+    "size_text": "753 MB"
+   },
+   {
+    "encoder": "MoboMovies",
+    "episode": 4,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl1.mobomovies-super-fast-dl-1fd583af617cb0000.ir/v3/tv-show/2020/tt8741648/Season-01/softsub/The.Letter.For.The.King.S01E04.1080p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p",
+    "quality_label": "web-dl 1080p",
+    "season": 1,
+    "size_bytes": 677775935,
+    "size_text": "678 MB"
+   },
+   {
+    "encoder": "MoboMovies",
+    "episode": 5,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl1.mobomovies-super-fast-dl-1fd583af617cb0000.ir/v3/tv-show/2020/tt8741648/Season-01/softsub/The.Letter.For.The.King.S01E05.1080p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p",
+    "quality_label": "web-dl 1080p",
+    "season": 1,
+    "size_bytes": 777186020,
+    "size_text": "777 MB"
+   },
+   {
+    "encoder": "MoboMovies",
+    "episode": 6,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://dl1.mobomovies-super-fast-dl-1fd583af617cb0000.ir/v3/tv-show/2020/tt8741648/Season-01/softsub/The.Letter.For.The.King.S01E06.1080p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p",
+    "quality_label": "web-dl 1080p",
+    "season": 1,
+    "size_bytes": 819359594,
+    "size_text": "819 MB"
+   }
+  ],
+  "title": "The Letter for the King",
+  "tmdb_key": "tv:99356",
+  "type": "series",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2020
+ },
  "tt9471404": {
   "imdb": "tt9471404",
   "num": 11228,

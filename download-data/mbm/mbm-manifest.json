@@ -1462,6 +1462,229 @@
    }
   ]
  },
+ "batch3": {
+  "avail_flips": [
+   {
+    "imdb": "tt1051220",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": [
+     1,
+     0
+    ],
+    "title": "The Shannara Chronicles"
+   },
+   {
+    "imdb": "tt10482370",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": [
+     1,
+     0
+    ],
+    "title": "The Third Day"
+   },
+   {
+    "imdb": "tt10482370",
+    "kind": "tmdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": [
+     1,
+     0
+    ],
+    "title": "The Third Day"
+   },
+   {
+    "imdb": "tt8741648",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "The Letter for the King"
+   },
+   {
+    "imdb": "tt8741648",
+    "kind": "tmdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "The Letter for the King"
+   }
+  ],
+  "borderline_kept": [],
+  "counts": {
+   "have_new_links_added": 38,
+   "have_new_titles": 2,
+   "have_old_play_rows_added": 0,
+   "have_old_titles": 0,
+   "new_links": 6,
+   "new_titles": 1,
+   "skipped_fully_duplicate_titles": 4,
+   "skipped_links": 16,
+   "total_links_added": 44
+  },
+  "duplicate_records_untouched": [
+   {
+    "imdb": "tt41178575",
+    "records": [
+     {
+      "num": 295,
+      "part": "new-1",
+      "title": "I’ll Hold You Always start_year"
+     }
+    ],
+    "title": "I'll Hold You Always"
+   }
+  ],
+  "generated": "2026-11-21",
+  "have_new_added": [
+   {
+    "existing_num": 9554,
+    "imdb": "tt1051220",
+    "ndropped": 0,
+    "nlinks_added": 20,
+    "part": 7,
+    "title": "The Shannara Chronicles"
+   },
+   {
+    "existing_num": 10868,
+    "imdb": "tt10482370",
+    "ndropped": 0,
+    "nlinks_added": 18,
+    "part": 16,
+    "title": "The Third Day"
+   }
+  ],
+  "have_old_play_only": [],
+  "live_base_head": "ec946f86d255009235c6fbecb1db432c6bf9546c",
+  "near_size_collapses": {
+   "per_title": [
+    {
+     "files": [
+      "72.Hours.2026.1080p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "72.Hours.2026.720p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "72.Hours.2026.480p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv"
+     ],
+     "imdb": "tt36304003",
+     "n": 3,
+     "title": "72 Hours"
+    },
+    {
+     "files": [
+      "Dont.Look.Back.In.Anger.2026.1080p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "Dont.Look.Back.In.Anger.2026.720p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "Dont.Look.Back.In.Anger.2026.480p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "Dont.Look.Back.In.Anger.2026.1080p.Web-Dl.x265.10-Bit.SoftSub(MoboMovies).mkv",
+      "Dont.Look.Back.In.Anger.2026.720p.Web-Dl.x265.10-Bit.SoftSub(MoboMovies).mkv"
+     ],
+     "imdb": "tt36150957",
+     "n": 5,
+     "title": "Don't Look Back in Anger"
+    },
+    {
+     "files": [
+      "Home.2026.1080p.BluRay.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "Home.2026.720p.BluRay.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "Home.2026.480p.BluRay.x264.8-Bit.SoftSub(MoboMovies).mkv"
+     ],
+     "imdb": "tt39379299",
+     "n": 3,
+     "title": "Home"
+    },
+    {
+     "files": [
+      "Ill.Hold.You.Always.2026.1080p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "Ill.Hold.You.Always.2026.720p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "Ill.Hold.You.Always.2026.480p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "Ill.Hold.You.Always.2026.1080p.Web-Dl.x265.10-Bit.SoftSub(MoboMovies).mkv",
+      "Ill.Hold.You.Always.2026.720p.Web-Dl.x265.10-Bit.SoftSub(MoboMovies).mkv"
+     ],
+     "imdb": "tt41178575",
+     "n": 5,
+     "title": "I'll Hold You Always"
+    }
+   ],
+   "total_dropped": 16
+  },
+  "new_added": [
+   {
+    "imdb": "tt8741648",
+    "nlinks_added": 6,
+    "num": 12666,
+    "part": "mbm",
+    "title": "The Letter for the King",
+    "tmdb": 99356
+   }
+  ],
+  "partition": {
+   "have_new": 6,
+   "have_old_only": 0,
+   "new": 1
+  },
+  "search_index": {
+   "rows_added": [],
+   "rows_repaired_in_place": [
+    {
+     "imdb": "tt8741648",
+     "kind": "new title row part 0 -> mbm",
+     "title": "The Letter for the King"
+    },
+    {
+     "imdb": "tt1051220",
+     "kind": "fill imdb",
+     "title": "The Shannara Chronicles"
+    },
+    {
+     "imdb": "tt10482370",
+     "kind": "fill imdb",
+     "title": "The Third Day"
+    }
+   ]
+  },
+  "skipped": [
+   {
+    "existing_num": 634,
+    "imdb": "tt36304003",
+    "part": 1,
+    "reason": "all new_files already live (exact-URL or near-size duplicates)",
+    "title": "72 Hours"
+   },
+   {
+    "existing_num": 11168,
+    "imdb": "tt36150957",
+    "part": 0,
+    "reason": "all new_files already live (exact-URL or near-size duplicates)",
+    "title": "Don't Look Back in Anger"
+   },
+   {
+    "existing_num": 11172,
+    "imdb": "tt39379299",
+    "part": 0,
+    "reason": "all new_files already live (exact-URL or near-size duplicates)",
+    "title": "Home"
+   },
+   {
+    "existing_num": 11173,
+    "imdb": "tt41178575",
+    "part": 0,
+    "reason": "all new_files already live (exact-URL or near-size duplicates)",
+    "title": "I'll Hold You Always"
+   }
+  ]
+ },
  "borderline_kept": [
   {
    "decision": "KEPT — different codec = different encode",
@@ -1626,14 +1849,14 @@
    "2025": 4,
    "2026": 22
   },
-  "have_new_links_added": 2567,
+  "have_new_links_added": 2605,
   "have_new_titles": 101,
   "have_old_play_rows_added": 1039,
   "have_old_titles": 42,
-  "new_links": 1404,
-  "new_titles": 77,
+  "new_links": 1410,
+  "new_titles": 78,
   "total_bytes_new": 719336804823,
-  "total_links_added": 5010,
+  "total_links_added": 5054,
   "total_titles": 220
  },
  "generated": "2026-11-21",
