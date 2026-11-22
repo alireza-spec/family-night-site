@@ -1,90 +1,37 @@
 {
  "code": "RZ",
- "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv/mp4, no token/expiry in file URLs)",
- "start_num": 12666,
- "end_num": 12669,
- "live_base_head": "26a02aca6b6b0e70b03964dc2f6ced8545ca76e5 (5h run 20261122T111058Z; rebased from 7047b694 — v2-data Kill Bill fix 26a02aca changed download-index.json only; H3 max #12698, RZ part-1 max #12665)",
- "generated": "2026-11-22 (RezFlix 5-hourly run 20261122T111058Z — merge of 4 new titles + 4 trailer keys)",
+ "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
+ "start_num": 12699,
+ "end_num": 12699,
+ "live_base_head": "2809fb03d336b058c8f3368f3036fadc35c52805 (RezFlix series full extraction batch 1 — The Musketeers proof case)",
+ "generated": "2026-11-22 (RezFlix series full extraction, batch 1: The Musketeers)",
  "counts": {
-  "total_titles": 4,
-  "movies": 3,
+  "total_titles": 1,
+  "movies": 0,
   "series": 1,
-  "total_links": 10,
+  "total_links": 30,
   "by_year": {
-   "2026": 4
+   "2014": 1
   },
   "by_quality": {
-   "480p": 3,
-   "720p": 4,
-   "1080p": 3
+   "720p": 30
   }
  },
  "films": [
   {
-   "title": "Space Gen Chandrayaan",
-   "tmdb": 311632,
-   "imdb": "tt39313294",
-   "year": 2026,
-   "num": 12666,
-   "links": 2,
-   "quality": "480p+720p",
-   "rezflix_id": 36108,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt39313294). Persian name نسل فضایی چاندرایان (feed)."
-  },
-  {
-   "title": "Ranabaali",
-   "tmdb": 1389379,
-   "imdb": "tt32324552",
-   "year": 2026,
-   "num": 12667,
-   "links": 3,
-   "quality": "1080p+480p+720p",
-   "rezflix_id": 36110,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt32324552). Persian name رانابالی (feed)."
-  },
-  {
-   "title": "Wrangler",
-   "tmdb": 1208271,
-   "imdb": "tt38448241",
-   "year": 2026,
-   "num": 12668,
-   "links": 3,
-   "quality": "1080p+480p+720p",
-   "rezflix_id": 36112,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 2025, TMDB 2026, tt38448241). Persian name رام کننده (feed)."
-  },
-  {
-   "title": "The Twin Who Lived",
-   "tmdb": 1739450,
-   "imdb": "tt38574367",
-   "year": 2026,
-   "num": 12669,
-   "links": 2,
-   "quality": "1080p+720p",
-   "rezflix_id": 36113,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt38574367). Persian name دوقلویی که زنده ماند (feed)."
+   "title": "The Musketeers",
+   "tmdb": 57736,
+   "imdb": "tt2733252",
+   "year": 2014,
+   "num": 12699,
+   "links": 30,
+   "quality": "720p",
+   "rezflix_id": 18591,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2014, TMDB 2014, OMDb 2014-2016, tt2733252). Persian name تفنگداران (feed 'تفنگدار ها')."
   }
  ],
- "trailer_keys_added": [
-  "tv:311632",
-  "movie:1389379",
-  "movie:1208271",
-  "movie:1739450"
- ],
- "trailer_fix": [
-  "Space Gen Chandrayaan 36108: the Hotstar trailer URL was classified kind=film by the puller (filename lacks trailer.mp4) — the seasons response confirms it is the 'تیزر' episode inside seasons, so it goes to the trailer slot ONLY (key tv:311632), never an H3 link. The 2 film links carry the bundled range S01E01-E05 (filename E01.E05, seasons ep 'قسمت 1')."
- ],
- "queued_titles": [
-  {
-   "title": "11 2017",
-   "rezflix_id": 36109,
-   "reason": "OMDb title 'NJPW Dominion 6.11' disagrees with '11 2017'"
-  },
-  {
-   "title": "Battle Through the Heavens Movie Duel of the Two Dou Emperors",
-   "rezflix_id": 36111,
-   "reason": "OMDb silent for tt51165610 (TMDB+IMDb agree)"
-  }
- ],
- "url_dupes_dropped": []
+ "trailer_keys_added": [],
+ "queued_titles": [],
+ "url_dupes_dropped": [],
+ "note": "Section SoftSub per filename markers (IranFlix .SoftSub.); the description footer 'زیرنویس چسبیده پارسی' is the generic app footer and does not set play_type (DESIGN §4). No per-file sizes: description gives only a 238-688 MB range across episodes. NOTE: old-archive H3 #4826 (old part 3) already holds the same work (tt2733252, series, SoftSub) with 3 DonyayeSerial bare-directory links and no play rows, no search row, no DTI — dir links are not files and cannot take play rows (archive invariant: 0 play rows without a media extension), so the 30 file links merge as a new RZ record #12699 per the established RezFlix flow; #4826 stays untouched for the pending general old+new dedupe decision."
 }
