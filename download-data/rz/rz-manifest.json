@@ -2,14 +2,14 @@
  "code": "RZ",
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
  "start_num": 12560,
- "end_num": 12884,
- "live_base_head": "53d9e5c8e713b28b982f051d8707c820c4341014 (RezFlix series full extraction 1980s+unknown-quality-5)",
- "generated": "2026-11-22 (RezFlix series full extraction, 1980s+unknown-quality-5)",
+ "end_num": 12883,
+ "live_base_head": "51649e1b9d2fb2179b72e8b775246f5bb74cb0f4",
+ "generated": "2026-11-22 (RezFlix series full extraction, 1980s+unknown-quality-4 — correction of 625112cb: Little Prince deferred, Katri label fix)",
  "counts": {
-  "total_titles": 109,
+  "total_titles": 108,
   "movies": 13,
-  "series": 96,
-  "total_links": 5996,
+  "series": 95,
+  "total_links": 5995,
   "by_year": {
    "2024": 1,
    "2026": 11,
@@ -31,7 +31,7 @@
    "1975": 6,
    "1976": 3,
    "1977": 6,
-   "1978": 4,
+   "1978": 3,
    "1979": 3,
    "2015": 1,
    "1980": 2,
@@ -59,7 +59,7 @@
    "720p x265": 37,
    "544p": 114,
    "576p": 6,
-   "نامشخص": 167
+   "نامشخص": 166
   }
  },
  "films": [
@@ -875,7 +875,7 @@
    "links": 48,
    "quality": "1080p,720p",
    "rezflix_id": 6865,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1984, tmdb 43702, tt0168346). Persian name (none found)."
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1984, tmdb 43702, tt0168346). Persian name (none found). S01E06 file covers episodes 6-7 (combined file)."
   },
   {
    "title": "Miss Marple: The Body in the Library",
@@ -1208,22 +1208,11 @@
    "identity_note": "TMDB+IMDb+OMDb agree (feed 1983, tmdb 7246, tt0084988). Persian name (none found)."
   },
   {
-   "title": "The Adventures of the Little Prince",
-   "tmdb": 27436,
-   "imdb": "tt2383929",
-   "year": 1978,
-   "num": 12880,
-   "links": 1,
-   "quality": "نامشخص",
-   "rezflix_id": 19484,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1978, tmdb 27436, tt2383929). Persian name شازده کوچولو. Quality «نامشخص» (unknown — real size/quality to be corrected later; exact URLs + SxxExx mapping in the batch build report). AUDIO-ONLY (single mp3 file, no video)."
-  },
-  {
    "title": "Don Chuck Beaver",
    "tmdb": 71149,
    "imdb": "tt0813691",
    "year": 1975,
-   "num": 12881,
+   "num": 12880,
    "links": 51,
    "quality": "نامشخص",
    "rezflix_id": 7604,
@@ -1234,7 +1223,7 @@
    "tmdb": 37557,
    "imdb": "tt0352037",
    "year": 1975,
-   "num": 12882,
+   "num": 12881,
    "links": 21,
    "quality": "نامشخص",
    "rezflix_id": 7869,
@@ -1245,7 +1234,7 @@
    "tmdb": 2677,
    "imdb": "tt0075579",
    "year": 1977,
-   "num": 12883,
+   "num": 12882,
    "links": 43,
    "quality": "نامشخص",
    "rezflix_id": 7209,
@@ -1256,7 +1245,7 @@
    "tmdb": 43951,
    "imdb": "tt0168362",
    "year": 1978,
-   "num": 12884,
+   "num": 12883,
    "links": 51,
    "quality": "نامشخص",
    "rezflix_id": 7339,
@@ -1302,8 +1291,15 @@
    "tmdb": 4035,
    "imdb": "tt0085033",
    "reason": "0 new links (no sources, or all URLs already live)"
+  },
+  {
+   "rezflix_id": 19484,
+   "title": "The Adventures of the Little Prince",
+   "tmdb": 27436,
+   "imdb": "tt2383929",
+   "reason": "audio-only mp3 record — site resolve gate (dlRecHasLinks / resolveDlRecordByPart) drops audio-only records; deferred pending a site-shell fix. Detail (exact URL + SxxExx) in build-report-2b-v1-little-prince.json."
   }
  ],
  "url_dupes_dropped": [],
- "note": "Section per filename markers (DESIGN §4); description footer 'زیرنویس چسبیده پارسی' is generic and does not set play_type. MANIFEST REBUILT from the live rz play-index (authoritative): the old manifest files were incomplete (batch 1 kept only Musketeers; the twice-daily counts did not match its films list), so films + counts here are derived from the play rows."
+ "note": "Section per filename markers (DESIGN §4); description footer 'زیرنویس چسبیده پارسی' is generic and does not set play_type. MANIFEST REBUILT from the live rz play-index (authoritative): the old manifest files were incomplete (batch 1 kept only Musketeers; the twice-daily counts did not match its films list), so films + counts here are derived from the play rows. CORRECTION 2026-11-22 (on HEAD 346f971d): Little Prince H3 #12880 removed (audio-only; site cannot resolve audio-only records yet); the 4 other unknown-quality series renumbered #12881-12884 -> #12880-12883; Katri S01E06-07 label -> S01E06 (site expands range labels)."
 }

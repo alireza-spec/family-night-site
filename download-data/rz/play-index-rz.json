@@ -21873,7 +21873,7 @@
  },
  "tt0075579": {
   "imdb": "tt0075579",
-  "num": 12883,
+  "num": 12882,
   "part": "rz",
   "play": [
    {
@@ -61697,7 +61697,7 @@
    },
    {
     "encoder": "RezFlix",
-    "episode": "S01E06-07",
+    "episode": "S01E06",
     "group": "NoSub",
     "join_tier": 1,
     "play_type": "none",
@@ -63280,7 +63280,7 @@
  },
  "tt0168362": {
   "imdb": "tt0168362",
-  "num": 12884,
+  "num": 12883,
   "part": "rz",
   "play": [
    {
@@ -76435,7 +76435,7 @@
  },
  "tt0352037": {
   "imdb": "tt0352037",
-  "num": 12882,
+  "num": 12881,
   "part": "rz",
   "play": [
    {
@@ -79345,7 +79345,7 @@
  },
  "tt0813691": {
   "imdb": "tt0813691",
-  "num": 12881,
+  "num": 12880,
   "part": "rz",
   "play": [
    {
@@ -83843,37 +83843,6 @@
    "url": null
   },
   "year": 2024
- },
- "tt2383929": {
-  "imdb": "tt2383929",
-  "num": 12880,
-  "part": "rz",
-  "play": [
-   {
-    "encoder": "RezFlix",
-    "episode": "S01E01",
-    "group": "NoSub",
-    "join_tier": 1,
-    "play_type": "none",
-    "play_url": "http://peer.tci.229.giftmond.ir/ketab%20soti/D1737724T17142910%28Web%29.mp3",
-    "playit_url": null,
-    "quality": "نامشخص",
-    "quality_label": "نامشخص",
-    "season": 1,
-    "size_bytes": null,
-    "size_text": ""
-   }
-  ],
-  "title": "The Adventures of the Little Prince",
-  "tmdb_key": "tv:27436",
-  "type": "series",
-  "video_mp4": {
-   "is_trailer": false,
-   "size_bytes": null,
-   "size_text": "",
-   "url": null
-  },
-  "year": 1978
  },
  "tt2733252": {
   "imdb": "tt2733252",
