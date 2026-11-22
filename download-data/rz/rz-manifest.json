@@ -1,109 +1,90 @@
 {
  "code": "RZ",
- "source": "RezFlix APK API http://server-win-iran.info (poster feed + movie detail, static mkv/mp4, no token/expiry in file URLs)",
- "start_num": 12663,
- "end_num": 12664,
- "live_base_head": "1aeee1956ea1558c6cd67934db92c8fca1ed80ca (queue-sweep merge base; H3 max #12662 verified from live parts)",
- "generated": "2026-11-22 (RezFlix queue-sweep merge — Cicekci Kiz #12663 + Valentina and the 12 Signs #12664 new series, River of No Return #12388 E05-E06 completion, 3 teaser-only trailer keys)",
+ "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv/mp4, no token/expiry in file URLs)",
+ "start_num": 12666,
+ "end_num": 12669,
+ "live_base_head": "26a02aca6b6b0e70b03964dc2f6ced8545ca76e5 (5h run 20261122T111058Z; rebased from 7047b694 — v2-data Kill Bill fix 26a02aca changed download-index.json only; H3 max #12698, RZ part-1 max #12665)",
+ "generated": "2026-11-22 (RezFlix 5-hourly run 20261122T111058Z — merge of 4 new titles + 4 trailer keys)",
  "counts": {
-  "total_titles": 3,
-  "movies": 1,
-  "series": 2,
-  "total_links": 15,
+  "total_titles": 4,
+  "movies": 3,
+  "series": 1,
+  "total_links": 10,
   "by_year": {
-   "2026": 3
+   "2026": 4
   },
   "by_quality": {
-   "1080p": 4,
-   "720p": 7,
-   "480p": 4
+   "480p": 3,
+   "720p": 4,
+   "1080p": 3
   }
  },
  "films": [
   {
-   "title": "Son Yemek",
-   "tmdb": 1561834,
-   "imdb": "tt50016818",
+   "title": "Space Gen Chandrayaan",
+   "tmdb": 311632,
+   "imdb": "tt39313294",
    "year": 2026,
-   "num": 12665,
+   "num": 12666,
+   "links": 2,
+   "quality": "480p+720p",
+   "rezflix_id": 36108,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt39313294). Persian name نسل فضایی چاندرایان (feed)."
+  },
+  {
+   "title": "Ranabaali",
+   "tmdb": 1389379,
+   "imdb": "tt32324552",
+   "year": 2026,
+   "num": 12667,
    "links": 3,
    "quality": "1080p+480p+720p",
-   "rezflix_id": 36080,
-   "identity_note": "TMDB+IMDb agree (TMDB 1561834, tt50016818 via external_ids); OMDb silent, not disagreeing. TMDB English title 'Last Meal', original_title 'Son Yemek' (feed title). Persian name شام آخر (feed)."
+   "rezflix_id": 36110,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt32324552). Persian name رانابالی (feed)."
   },
   {
-   "title": "Çiçekçi Kız",
-   "tmdb": 339362,
-   "imdb": "tt48685065",
+   "title": "Wrangler",
+   "tmdb": 1208271,
+   "imdb": "tt38448241",
    "year": 2026,
-   "num": 12663,
-   "links": 6,
-   "quality": "480p+720p",
-   "rezflix_id": 36075,
-   "identity_note": "TMDB tv 339362 'Çiçekçi Kız' (TR, TOD, 1 season x 3 eps, first aired 2026-11-19) -> external_ids tt48685065; OMDb silent (TMDB+IMDb agree). Persian name دختر گل فروش (feed). No Persian-title search element: TMDB fa name is the Turkish original."
+   "num": 12668,
+   "links": 3,
+   "quality": "1080p+480p+720p",
+   "rezflix_id": 36112,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2025, TMDB 2026, tt38448241). Persian name رام کننده (feed)."
   },
   {
-   "title": "Valentina and the 12 Signs",
-   "tmdb": 318420,
-   "imdb": "tt39161219",
+   "title": "The Twin Who Lived",
+   "tmdb": 1739450,
+   "imdb": "tt38574367",
    "year": 2026,
-   "num": 12664,
-   "links": 6,
-   "quality": "720p+1080p",
-   "rezflix_id": 36077,
-   "identity_note": "TMDB+IMDb+OMDb agree (TMDB tv 318420, OMDb 'Os 12 Signos de Valentina', 2026, tt39161219). TMDB says 8 episodes total; RZ feed has E1-E3 only — this record covers E1-E3. Persian name دوازده نشان زودیاک والنتینا (feed). No Persian-title search element: TMDB fa name is the Portuguese original."
-  }
- ],
- "duplicates": [
-  {
-   "title": "Dont Trouble the Trouble",
-   "rezflix_id": 36079,
-   "tmdb": 1261763,
-   "imdb": "tt31841170",
-   "reason": "Already in archive as H3 #11241 part 16 (3 Dubbed + 2 HardSub DN links); both RezFlix film URLs already live there; teaser URL already in dn-trailer-index (movie:1261763). 0 new links, 0 new trailers."
+   "num": 12669,
+   "links": 2,
+   "quality": "1080p+720p",
+   "rezflix_id": 36113,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt38574367). Persian name دوقلویی که زنده ماند (feed)."
   }
  ],
  "trailer_keys_added": [
-  "movie:1263337",
-  "movie:1567605",
-  "movie:1798383"
+  "tv:311632",
+  "movie:1389379",
+  "movie:1208271",
+  "movie:1739450"
  ],
- "repairs_included": [
-  "DTI fill: movie:1261763 -> {imdb_id tt31841170, num 11241, part 16} — Dont Trouble was indexed in search/download-index/avail but missing from DTI (bot TMDB path)."
+ "trailer_fix": [
+  "Space Gen Chandrayaan 36108: the Hotstar trailer URL was classified kind=film by the puller (filename lacks trailer.mp4) — the seasons response confirms it is the 'تیزر' episode inside seasons, so it goes to the trailer slot ONLY (key tv:311632), never an H3 link. The 2 film links carry the bundled range S01E01-E05 (filename E01.E05, seasons ep 'قسمت 1')."
  ],
- "queued_titles": [],
- "url_dupes_dropped": [
-  "http://peer.tci.cdn.146.dl150m.info/tizer/Don%27t%20Trouble%20the%20Trouble%20-%20Trailer.mp4",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Dont.Trouble.the.Trouble.2026.Telugu.480p.WEBDL.HardSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Dont.Trouble.the.Trouble.2026.Telugu.720p.WEBDL.HardSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/The.Beast.2026.480p.WEB-DL.x264.SoftSub.ZarFilm.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Ebenezer.2026.720p.CAM.x264-CinemaCity.SoftSub.simba.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Ebenezer.2026.1080p.CAM.x264-CinemaCity.SoftSub.simba.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Ghost.Soldier.2026.720p.CAM.H264-CinemaCity.SoftSub.simba.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Ghost.Soldier.2026.1080p.CAM.H264-CinemaCity.SoftSub.simba.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Wolves-Up-Close-with-Bertie-Gregory-2026_480.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Wolves-Up-Close-with-Bertie-Gregory-2026_720.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Wolves-Up-Close-with-Bertie-Gregory-2026_1080.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Guarding.Stars.2026.720p.WEBRip.x264.AAC-YTS.SoftSub.simba.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Guarding.Stars.2026.720p.10bit.WEBRip.6CH.x265.HEVC-PSA.simba.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Guarding.Stars.2026.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.simba.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Guarding.Stars.2026.480p.WEB-DL.HardSub.Film2Media.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Perfectos.Mentirosos.2026.480p.WEB-DL.Farsi.Sub.Film2Media.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Perfectos.Mentirosos.2026.720p.WEB-DL.Farsi.Sub.Film2Media.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Perfectos.Mentirosos.2026.1080p.WEB-DL.Farsi.Sub.Film2Media.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Tain.e.os.Guardi.es.da.Amaz.nia.Em.Buscas.da.Flecha.Azul.Sub-720.simba.mp4",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Tain.e.os.Guardi.es.da.Amaz.nia.Em.Buscas.da.Flecha.Azul.Sub-1080.simba.mp4",
-  "http://peer.tci.cdn.146.dl150m.info/film1/My.Wife.Cries.2026.480p.WEB-DL.ValaMovie.SoftSub.mkv",
-  "http://peer.tci.cdn.146.dl150m.info/film1/My.Wife.Cries.2026.720p.WEB-DL.ValaMovie.SoftSub.mkv"
- ],
- "completions": [
+ "queued_titles": [
   {
-   "title": "River of No Return",
-   "rezflix_id": 36071,
-   "imdb": "tt38734657",
-   "record": "#12388 dn2",
-   "links_added": 4,
-   "note": "S01E05-E06 480p/720p BaroMoviz SoftSub -> SoftSub/none like E01-E04 in the same record"
+   "title": "11 2017",
+   "rezflix_id": 36109,
+   "reason": "OMDb title 'NJPW Dominion 6.11' disagrees with '11 2017'"
+  },
+  {
+   "title": "Battle Through the Heavens Movie Duel of the Two Dou Emperors",
+   "rezflix_id": 36111,
+   "reason": "OMDb silent for tt51165610 (TMDB+IMDb agree)"
   }
- ]
+ ],
+ "url_dupes_dropped": []
 }

@@ -89,6 +89,65 @@
   },
   "year": 2024
  },
+ "tt32324552": {
+  "imdb": "tt32324552",
+  "num": 12667,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "HardSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Ranabaali.2026.Tamil.1080p.WEBDL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "2.53 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "HardSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Ranabaali.2026.Tamil.720p.WEBDL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.53 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "HardSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Ranabaali.2026.Tamil.480p.WEBDL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 830472192,
+    "size_text": "792 MB"
+   }
+  ],
+  "title": "Ranabaali",
+  "tmdb_key": "movie:1389379",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
  "tt32558705": {
   "imdb": "tt32558705",
   "num": 12564,
@@ -521,6 +580,110 @@
   },
   "year": 2026
  },
+ "tt38448241": {
+  "imdb": "tt38448241",
+  "num": 12668,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Wrangler.2025.1080p.WEB-DL.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.1 GB"
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Wrangler.2025.720p.WEB-DL.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 779091968,
+    "size_text": "743 MB"
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Wrangler.2025.480p.WEB-DL.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 314572800,
+    "size_text": "300 MB"
+   }
+  ],
+  "title": "Wrangler",
+  "tmdb_key": "movie:1208271",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
+ "tt38574367": {
+  "imdb": "tt38574367",
+  "num": 12669,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/The.Twin.Who.Lived.2026.1080p.WEBRip.x264.AAC-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.36 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/The.Twin.Who.Lived.2026.720p.WEBRip.x264.AAC-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 782237696,
+    "size_text": "746 MB"
+   }
+  ],
+  "title": "The Twin Who Lived",
+  "tmdb_key": "movie:1739450",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
  "tt39161219": {
   "imdb": "tt39161219",
   "num": 12664,
@@ -614,6 +777,51 @@
   "title": "Valentina and the 12 Signs",
   "tmdb_key": "tv:318420",
   "type": "tv",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
+ "tt39313294": {
+  "imdb": "tt39313294",
+  "num": 12666,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": "S01E01-E05",
+    "group": "HardSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/tv2/Space%20Gen%20Chandrayaan/fasl1720/Space.Gen.Chandrayaan.S01.E01.E05.Hindi.720p.WEBDL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": "1.5 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": "S01E01-E05",
+    "group": "HardSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/tv2/Space%20Gen%20Chandrayaan/fasl1480/Space.Gen.Chandrayaan.S01.E01.E05.Hindi.480p.WEBDL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": 1,
+    "size_bytes": 1007681536,
+    "size_text": "961 MB"
+   }
+  ],
+  "title": "Space Gen Chandrayaan",
+  "tmdb_key": "tv:311632",
+  "type": "series",
   "video_mp4": {
    "is_trailer": false,
    "size_bytes": null,
