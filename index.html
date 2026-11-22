@@ -6381,10 +6381,20 @@ async function hydrateLocalDetail(type, id, token, item, o) {
   fnPersianDetailsFor(type, id).then(function (pd) { if (pd && alive()) fnPatchPersianTitleOverview(pd); }).catch(function () {});
 }
 function normTitle(s) { return String(s || '').toLowerCase().replace(/[^a-z0-9\u0600-\u06FF]+/g, ' ').trim(); }
-async function findImdbByTitle(title, year) {
+async function findImdbByTitle(title, year, type) {
   const needle = normTitle(title);
   if (!needle) return '';
-  let fallback = ''; /* exact title match whose record carries no year */
+  /* FN-TYPECONF-P0-2 v1: exactly-one semantics. The old code returned the
+     FIRST title match (any type, any year) — a series row could supply the
+     download box / play list of a same-name movie (and vice versa). Now
+     ALL exact title matches are collected first; the type (when supplied)
+     and the year filter them; ambiguity returns '' (not-found), never a
+     guess. Type comes from the <b>Title Type:</b> line of each H3 record
+     (live values literally "movie"/"series"; measured 2026-11-22: all
+     24,933 H3 records across the 29 live part files carry one, so a
+     type-less record is excluded whenever a type is requested). */
+  const wantType = type === 'tv' ? 'series' : (type === 'movie' || type === 'series' ? type : '');
+  let matches = []; /* {imdb, recType, hasYear} */
   /* BOTH archives, every part: the new archive (16 parts) first, then the
      old one (3 parts). Previously this only searched new parts 1-3, so
      most titles were never found when the worker could not supply an
@@ -6398,23 +6408,34 @@ async function findImdbByTitle(title, year) {
     for (let i = 0; i < heads.length; i++) {
       const ht = normTitle(heads[i].textContent.replace(/^\s*\d+\.\s*/, '').replace(/\s+start_year\s*$/i, '').replace(/\s+\d{4}\s*$/, ''));
       if (ht !== needle) continue;
-      let n = heads[i].nextElementSibling, imdb = '', hasYear = !year;
+      let n = heads[i].nextElementSibling, imdb = '', recType = '', hasYear = !year;
       while (n && n.tagName !== 'H3') {
         const t = n.textContent || '';
         const m = t.match(/imdb code:\s*(tt\d+)/i); if (m) imdb = m[1].toLowerCase();
+        const tm = t.match(/title type:\s*(movie|series)/i); if (tm) recType = tm[1].toLowerCase();
         /* the year lives only in the download URLs (href attributes),
            never in the visible text — check both, or no title ever matches */
         const hrefs = n.querySelectorAll ? Array.prototype.map.call(n.querySelectorAll('a'), a => a.getAttribute('href') || '').join(' ') : '';
         if (year && (t.indexOf('/' + year + '/') > -1 || hrefs.indexOf('/' + year + '/') > -1)) hasYear = true;
         n = n.nextElementSibling;
       }
-      if (imdb && hasYear) return imdb;
-      if (imdb && !year) return imdb;
-      if (imdb && !fallback) fallback = imdb; /* year-less record: keep as fallback */
+      if (imdb) matches.push({ imdb: imdb, recType: recType, hasYear: hasYear });
     }
   }
   }
-  return fallback;
+  if (wantType) matches = matches.filter(function (c) { return c.recType === wantType; });
+  if (!matches.length) return '';
+  /* Year: prefer records that carry the requested year; year-less records
+     count only when they are the SOLE remaining candidate of the right type. */
+  const withYear = matches.filter(function (c) { return c.hasYear; });
+  const cands = withYear.length ? withYear : matches;
+  /* Exactly one DISTINCT IMDb among the remaining candidates wins; zero
+     or more than one means ambiguous — return '' (the not-found value
+     callers already handle). Two records sharing one IMDb are one identity. */
+  const seen = {};
+  cands.forEach(function (c) { seen[c.imdb] = true; });
+  const ids = Object.keys(seen);
+  return ids.length === 1 ? ids[0] : '';
 }
 function openLightbox(src) {
   const lb = $('#ov-lightbox'); if (!lb || !src) return;
@@ -7854,7 +7875,7 @@ async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUr
     /* the worker (TMDB external_ids) is blocked without VPN, so no IMDb
        id arrived — search the download archive itself by title+year */
     body.innerHTML = '<div class="state"><div class="spin"></div>در حال جستجوی این عنوان در آرشیو دانلود Family Night…</div>';
-    try { imdbId = await findImdbByTitle(fbTitle, fbYear); } catch (e) { imdbId = ''; }
+    try { imdbId = await findImdbByTitle(fbTitle, fbYear, tmdbKey ? (String(tmdbKey).indexOf('tv:') === 0 ? 'tv' : (String(tmdbKey).indexOf('movie:') === 0 ? 'movie' : undefined)) : undefined); } catch (e) { imdbId = ''; }
     if (token !== detailToken) return;
   }
   /* Fallback chain for the download box: IMDb index first, then the
@@ -8197,21 +8218,24 @@ async function fnPlayResolve(ctx) {
     try {
       var si = await getDlSearchIndex();
       var snt = fnPlayNormTitle(ctx.title);
-      var sFb = null;
+      /* FN-TYPECONF-P0-4 v1: type-filtered title scan. A row of the wrong
+         type never resolves here (a series detail page must not play a
+         same-name movie's files), and the old year-mismatched fallback
+         is deleted entirely: a year-mismatched row is skipped,
+         never kept — no match means no playback, not the wrong film. */
       for (var q = 0; q < si.length; q++) {
         var sr = si[q];
         if (!sr.imdb || fnPlayNormTitle(sr.t) !== snt) continue;
+        if (ctx.type && sr.type && sr.type !== ctx.type) continue;
         var sExact = !ctx.year || !sr.y || String(sr.y) === String(ctx.year);
-        if (!sExact) { if (!sFb) sFb = sr; continue; }
+        if (!sExact) continue;
         var sHit = await fnPlayResolveImdb(sr.imdb);
         if (sHit) return sHit;
-        if (!sFb) sFb = sr;
       }
-      if (sFb) { var sHit2 = await fnPlayResolveImdb(sFb.imdb); if (sHit2) return sHit2; }
     } catch (e) {}
   }
   if (!key && ctx.title) {
-    try { var im = await findImdbByTitle(ctx.title, ctx.year); if (im) { var hit3 = await fnPlayResolveImdb(im); if (hit3) return hit3; } } catch (e) {}
+    try { var im = await findImdbByTitle(ctx.title, ctx.year, ctx.type); if (im) { var hit3 = await fnPlayResolveImdb(im); if (hit3) return hit3; } } catch (e) {}
   }
   /* FN-PLAY-NOTMDB v1: no IMDb AND no TMDB id — resolve by title alone.
      The search index carries the part for every row (including id-less
@@ -8226,6 +8250,7 @@ async function fnPlayResolve(ctx) {
       for (var q2 = 0; q2 < si2.length; q2++) {
         var sr2 = si2[q2];
         if (sr2.imdb || sr2.tmdb) continue; /* id-carrying rows use the steps above */
+        if (ctx.type && sr2.type && sr2.type !== ctx.type) continue; /* FN-TYPECONF-P0-4 v1: type filter */
         if (fnPlayNormTitle(sr2.t) !== snt2) continue;
         if (ctx.year && sr2.y && String(sr2.y) !== String(ctx.year)) continue;
         cand = sr2; candN++;
@@ -13467,7 +13492,7 @@ function fnLocalOpenNoId(e) {
        IMDb the title search could not match (e.g. a transliterated
        title). */
     if (typeof findImdbByTitle === 'function') {
-      findImdbByTitle(e.t, e.y).then(function (im) {
+      findImdbByTitle(e.t, e.y, e.type).then(function (im) {
         if (!im) { fnLocalOpenPlayer(e); return; }
         fnLocalResolveTmdb({ imdb: im, type: e.type, tmdb: 0 }).then(function (id) {
           if (id) openDetail(e.type, id);
