@@ -57,8 +57,8 @@
    "part": 7
   },
   {
-   "bytes": 8984951,
-   "entries": 134,
+   "bytes": 8984689,
+   "entries": 133,
    "file": "play-index-part-8.json",
    "part": 8
   },
@@ -165,7 +165,7 @@
    "part": "rz"
   }
  ],
- "total_entries": 12585,
+ "total_entries": 12584,
  "total_play_entries": 223909,
  "unjoined": 3824
 }
