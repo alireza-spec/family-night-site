@@ -3333,7 +3333,9 @@ async function fnFillHomeRail(fetchPage, keep) {
    with the SAME rule as the trending rail: RELEASED + last-3-months +
    notable (being in the trending/week response IS the trending signal),
    newest-first. ARCHIVE-FIRST: works WITH a download link (avail d==1,
-   fnDlIconHas) come first, in newest-first order — so when a very popular
+   fnHasDownloadAny — incl. the external fallback, so ext-only titles
+   keep their first-group position here) come first, in newest-first
+   order — so when a very popular
    work's download link is added, it enters the hero at the top. The rest
    follow in the same order, so the hero is always 20 when enough trending
    works pass the date filter. If the live fetch fails/empty, the snapshot
@@ -3457,7 +3459,7 @@ async function fnHeroLiveItems(today, g3s, dtFn) {
   })();
   out.sort((a, b) => dtFn(b).localeCompare(dtFn(a)));
   var dl = [], rest = [];
-  out.forEach(x => { (fnDlIconHas(x) ? dl : rest).push(x); });
+  out.forEach(x => { (fnHasDownloadAny(x) ? dl : rest).push(x); });
   /* FN-HERO-PINNED: a pinned work ALWAYS takes one of the 20 slots (user
      order 2026-11-19 19:48) — the ordered list is truncated to 20, but a
      pinned work is never truncated out: it displaces the last non-pinned
@@ -4499,15 +4501,47 @@ function fnAvailQualifies(x) {
   if (im && idx.imdb) { var m = idx.imdb[String(im)]; if (m) return !!(m[0] || m[1]); }
   return false;
 }
-/* ---------- download badge (FN-DL-ICON v1) ----------
-   The badge on a card means exactly one thing: the title has a DOWNLOAD
-   row in the archive. The ONLY source of truth is the live avail-index:
-   d==1 shows the badge, anything else (d==0, no entry, index not loaded)
-   shows nothing. No guessing, no fallback. The lookup mirrors
-   fnAvailQualifies (tmdb first, then imdb) but tests d alone, not d||p. */
+/* ---------- download badge (FN-DL-ICON v1, FN-EXT-ICON v1) ----------
+   The badge on a card means exactly one thing: the title has a REAL
+   DOWNLOAD row in the archive (direct files, H3 record). The source of
+   truth is the live avail-index: d==1 AND NOT ext-only shows the badge;
+   anything else (d==0, ext-only, no entry, index not loaded) shows
+   nothing. No guessing, no fallback. "Ext-only" is the third element
+   of the avail entry ([d, p, 1] — see fnAvailIsExtOnly): a title whose
+   only download is the external fallback (trendingpie/vidsrc landing
+   page, ext-index) keeps d==1 — so it stays in categories and in the
+   archive-first order — but shows NO badge. A title that later gains
+   real links is rewritten [1,1] by the merge (marker cleared), so the
+   badge appears on its own. The lookup mirrors fnAvailQualifies
+   (tmdb first, then imdb) but tests d alone, not d||p. */
 var FN_DL_ICON = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAIAAAC1JZyVAAAFg0lEQVR42n1XS6ssVxld69u7uqqrc07n5kYnGkGNEAcJGQgOFORmIKITR0pmChLzT5wYFH+FAwMOhAhKSExG1xd4J0kGOlAQMffenHtPd1d31d7LwX5U9dFY9Ktqv77H+ta3mtsnnwYAQBIJkAAQBQKCAABE+VKaICg9zY+QJqbHaYezlfB5nkRAym/S0nZlWrkIgsgDzDMhwMopkiJJkJDqOX6xBSE559Zt73xjTOcm2zCvKIaWBzqzQxqncTjuQwhk9RW+LleMq7bbbC4cTSphkXJwchAEQDlw9agzS5z37ap9vHs0jsfiKy2fQTjvN/0lwRCjAEGSAEhIPwBJkKAajnyTrhwyxUjYE5utcyUjhFVn121vZipJZjaenK2tYWOyIznJ/ErJSJ5HZ+zaPtunBAGBMO8bKDLfFujMCBMJZ6xPg5gAqXQAMy4pJg+99yzR8hk9LEhlmc9qf/ZwnPBwCCnYAjadrXx24AyLUEIjSRYPfYlZ3lZ5kmY3QCOGk77w6eblO/1plIC24c/f2r3/j7FbUVGsGEGtnxJTCKAvhUlBlqpmGTAYICOOI579lP/hdy6wEyBs7A8fnO797dS3DICgJfaY0RiLsfAJLfWyxV2pZgkkNU4ar8LjgwBeTHGcRICqeOeihkhVlhBAr2rAx16sReEdnQmQd5lTSmjFG+ekj5jGZP8V1gKI+QBFxOKkztmKi225qFapmkYQNBU88SZ/WFlJg2Mu2GqwOGdbC5qtxAVR1RhfPdXNQMX0yxmdoTGrRZPXGpzBORIIEQta1qKW8/YeJGcUVF9zrYSAj66j97i6jruDmDIuALo+xAePYxSmCRe9eZe7x1luMiUuGbqyNAHBiHHC7a377p31YQjDqBc/vxqnXMhTwNde6C5761bsW/vNH4cPr2LjbRFWFkYCefMYCZU14Bwe7eJLL7bfuLMOVwHSblBqJcMJr37rCUHu0v/67f0vfrf3rjIsM6fOrCXXdX1qeeu2n0EKEDBimvj6O/tnP+G++Jnm4XX0rkCH3A3qW/fLt/Y/eO0+AecSg8yoi9LxOKSzXNuuE/90bZf6whKq3tHIX909PP/Z1fOfW+0Pco4ApoCnLu23fzq9+rMHK8fGMypTWTVT0PE0pM2N5Bm5nDerIDkPQq/85P47fzneurRx0hRw68LevXd65acfmuQ9Y6HcZXEtzbXFrnZWEWUgRqwajFP83o//ffe903Zj297uvnf6/mv3x0lNwxCzhMgBnXvS3DVc1/XJr7ZdW0lODbHLPYZdY8cRb/z+8PUvrT/a6eUf3T8M2nQWIWdYyKClCtLxODD1hMvt7XTMk5dPGW2RRpDYD3F/khESnLPrQ3jmk57E3/8VNmuGKJCS+oZ9x1iARgFgULi6epjI2n8MXYrE4aivvtB988vr40mpQTnDaRSANseKgtrG3rh7ePfecd0ySjdUlwRCS7LRkmONNk7huWeab39lfb2LZgu2ApPEoBAiLjb213+Ob/552HS5PAXOQjF956CB2+0tM1d7XppynKJ3rGhE4fwldCVMAZ03IRZtJRIh6urRgyRmc9ZVnAGlRWdoGyMoxSJflORoghFT0smuYchgm5EsRSlxIC1zWNQ4nUjWLFZhBsLRyCQhSIqGJH5JGBMIxKUMEghO05TXQ1Z4DofhEKIMrCIw2TUrudzbUUQhBEQQYhXuaYS0qHgY9lUYWa4gMoTpenclwcySrK//D2a7EzhApkEyExzLIGlmgB7vHoUw0Yob2+1tZN2EKHnvu65vXINZaZemO3dx/U+dTjBC0zgOw36aJjNWvcPL7W0WnGY5nO1kBRYX/wf0/+WJFGNqFlxK1lI3KrsVJ1LzyCg8q6jZowSz6mqywJwtO0/6/A90LTeLu3vkugAAAABJRU5ErkJggg==';
 function fnDlBadgeHtml() { return '<span class="dlbadge" aria-hidden="true"><img src="' + FN_DL_ICON + '" alt=""></span>'; }
+/* ---------- FN-EXT-ICON v1: ext-only marker test ----------
+   The avail-index marks a title whose ONLY download is the external
+   fallback with a third element: [d, p, 1]. d and p keep their old
+   meaning (d==1 = has a download of some kind, incl. ext; p==1 = has
+   an internal play entry). Readers that do not know the marker (bot,
+   gate) read [0]/[1] only and behave exactly as before. */
+function fnAvailIsExtOnly(t) {
+  return !!(t && t.length > 2 && t[2] === 1);
+}
 function fnDlIconHas(x) {
+  var idx = FN_AVAIL.idx; if (!idx || !x) return false;
+  if (x.n != null) return true; /* FN-CASEB-FULL v1: case-b title — badge by construction */
+  if (typeof x.id === 'string' && /^n\d+$/.test(x.id)) return !!(FN_CASEB.data && FN_CASEB.data.byN[+x.id.slice(1)]); /* FN-CASEB-FULL v1: synthetic 'n<NNNN>' card id — only a KNOWN case-b number qualifies */
+  var tid = x.id != null ? x.id : (x.tmdb != null && x.tmdb !== '' ? x.tmdb : null);
+  var t = idx.tmdb && tid != null ? fnAvailTmdbEntry(idx, fnAvailTypeOf(x), tid) : null;
+  if (t) return t[0] === 1 && !fnAvailIsExtOnly(t);
+  var im = x.imdb_id || x.imdb || '';
+  if (im && idx.imdb) { var m = idx.imdb[String(im)]; if (m) return m[0] === 1 && !fnAvailIsExtOnly(m); }
+  return false;
+}
+/* ---------- FN-EXT-ICON v1: "has a download of any kind" ----------
+   The OLD fnDlIconHas test (d==1, incl. the external fallback), kept
+   ONLY for the hero archive-first order (fnHeroLiveItems): ext-only
+   titles keep their first-group position there (user order: the icon
+   goes, the order stays). Never use this for the badge. */
+function fnHasDownloadAny(x) {
   var idx = FN_AVAIL.idx; if (!idx || !x) return false;
   if (x.n != null) return true; /* FN-CASEB-FULL v1: case-b title — badge by construction */
   if (typeof x.id === 'string' && /^n\d+$/.test(x.id)) return !!(FN_CASEB.data && FN_CASEB.data.byN[+x.id.slice(1)]); /* FN-CASEB-FULL v1: synthetic 'n<NNNN>' card id — only a KNOWN case-b number qualifies */
@@ -7630,7 +7664,10 @@ function admDownload(url) {
    Every ext title is NoSub (vidsrc files carry no Persian subtitles)
    and stays flagged "needs Persian subtitle version". The button is NOT
    an archive link (no H3 record, no download-index entry); the download
-   icon comes from the avail-index d=1 set at build time. If the
+   icon ALSO comes from the avail-index — but only for titles that are
+   NOT marked ext-only (third element 1): an ext-only title keeps d==1
+   (so it stays in categories and in the archive-first order) yet shows
+   no badge (FN-EXT-ICON v1, user order 2026-11-22). If the
    ext-index fails to load, the section renders nothing - never an
    error, never a guess. */
 let fnExtIndex = null, fnExtIndexPromise = null;
