@@ -7719,7 +7719,11 @@ function wireDlTiles(root, ctx) {
     } else {
       /* film: everything archive, size largest-first, no questions —
          Server 1 rows (s1:true) stay out of copy-all */
-      copyText(ctx.links.filter(function (r) { return !r.s1; }).map(function (r) { return r.x.url; }).join('\n'));
+      var archLinks = ctx.links.filter(function (r) { return !r.s1; });
+  /* FN-S1-FULL v1: copy-all stays archive-only when archive links
+     exist; in an ext-only box (every link is Server 1) it copies the
+     Server 1 links instead of copying nothing. */
+  copyText((archLinks.length ? archLinks : ctx.links).map(function (r) { return r.x.url; }).join('\n'));
     }
   };
   var caClose = root.querySelector('.fn-dl-ca-close');
@@ -7795,33 +7799,77 @@ async function fnExtDlHtml(tmdbKey) {
       + '</div>';
   } catch (e) { return ''; }
 }
-/* FN-S1-DL v1 — Server 1 rows INSIDE the normal download box, for the
-   21 DUAL titles only (real archive links AND ext coverage). Static
-   data only: download-data/ext/dual-s1.json maps "movie:<tmdb>" ->
-   {q: [qualities highest-first], sz: {q: bytes}, fa: Persian .fa
-   subtitle files listed on the server page}. The video URL is
-   deterministic (dl.braflix.dev/download/movie/{tmdb}?quality={q}) —
-   no Braflix page is ever fetched at runtime. The rows reuse the
-   archive tile markup + the sheet (copy / ADM / browser), so a tap
-   behaves exactly like a main link — except Play: Server 1 429s on
-   streaming, so the Play action is hidden for S1 rows (see
-   updateSheet). Copy-all stays archive-only (S1 rows carry s1:true
-   and are filtered there). The note says the files usually have NO
-   Persian subtitles (the videos are NoSub); for an Iranian title the
-   parenthetical is dropped, like fnExtDlHtml (RULE 2). */
+/* FN-S1-FULL v1 — Server 1 rows INSIDE the normal download box, for
+   ALL ext-covered movies (oldest first, decade by decade). Static
+   data only: download-data/ext/ext-s1-{decade}s.json maps
+   "movie:<tmdb>" -> {q: [qualities highest-first], sz: {q: bytes},
+   fa: Persian .fa subtitle files listed on the server page}.
+   download-data/ext/dual-s1.json stays as a fallback for dual titles
+   whose decade has not shipped yet. The video URL is deterministic
+   (dl.braflix.dev/download/movie/{tmdb}?quality={q}) — no Braflix
+   page is ever fetched at runtime. The rows reuse the archive tile
+   markup + the sheet (copy / ADM / browser), so a tap behaves exactly
+   like a main link — except Play: Server 1 429s on streaming, so the
+   Play action is hidden for S1 rows (see updateSheet). Copy-all stays
+   archive-only when archive links exist; in an ext-only box (no
+   archive links) it copies the Server 1 links instead. The section
+   header is «سرور خارجی» (user design 13:41) and the block carries
+   data-dl-vgroup="s1ext" so the version chips filter it like any
+   other group. The note says the files usually have NO Persian
+   subtitles (the videos are NoSub); for an Iranian title the
+   parenthetical is dropped, like fnExtDlHtml (RULE 2).
+   ANTI-BUG (FN-DL-REWIRE v1, live 7ae8acdc): the box can render twice
+   on the same #d-dl-body; every fetch here has a timeout and every
+   step is try/catch, so a slow or failed S1 load can NEVER leave the
+   box unopened — the caller falls back to the landing-page button. */
+function fetchJsonTimeout(url, ms) {
+  return Promise.race([
+    fetch(url).then(function (r) { if (!r.ok) throw new Error('http ' + r.status); return r.json(); }),
+    new Promise(function (_, rej) { setTimeout(function () { rej(new Error('timeout')); }, ms || 6000); })
+  ]);
+}
+function pTimeoutNull(p, ms) {
+  return Promise.race([p, new Promise(function (res) { setTimeout(function () { res(null); }, ms || 5000); })]).catch(function () { return null; });
+}
+let fnS1DecadeCache = {};
+function getS1Decade(decade) {
+  var key = String(decade);
+  if (fnS1DecadeCache[key]) return Promise.resolve(fnS1DecadeCache[key]);
+  if (!fnS1DecadeCache[key + ':p']) {
+    fnS1DecadeCache[key + ':p'] = fetchJsonTimeout(DL_BASE + 'ext/ext-s1-' + key + 's.json', 6000)
+      .then(function (x) { fnS1DecadeCache[key] = x || {}; return fnS1DecadeCache[key]; })
+      .catch(function () { fnS1DecadeCache[key] = {}; return fnS1DecadeCache[key]; });
+  }
+  return fnS1DecadeCache[key + ':p'];
+}
 let fnDualS1 = null, fnDualS1Promise = null;
 function getDualS1() {
   if (fnDualS1) return Promise.resolve(fnDualS1);
   if (!fnDualS1Promise) fnDualS1Promise = fetch(DL_BASE + 'ext/dual-s1.json').then(r => { if (!r.ok) throw new Error('dual s1'); return r.json(); }).then(x => { fnDualS1 = x || {}; return fnDualS1; }).catch(e => { fnDualS1 = {}; return fnDualS1; });
   return fnDualS1Promise;
 }
-async function fnS1DlHtml(tmdbKey, posterUrl, title, ctx) {
+async function getS1For(tmdbKey, year) {
+  if (!tmdbKey) return null;
+  try {
+    var y = parseInt(year, 10);
+    if (y) {
+      var dec = Math.floor(y / 10) * 10;
+      var map = await getS1Decade(dec);
+      if (map && map[tmdbKey]) return map[tmdbKey];
+    }
+  } catch (e) { /* decade file missing/slow — fall through to dual */ }
+  try {
+    var dual = await getDualS1();
+    if (dual && dual[tmdbKey]) return dual[tmdbKey];
+  } catch (e) {}
+  return null;
+}
+async function fnS1DlHtml(tmdbKey, posterUrl, title, ctx, year) {
   if (!tmdbKey || !ctx) return '';
   var m = String(tmdbKey).match(/^movie:(\d+)$/);
   if (!m) return '';
   try {
-    var map = await getDualS1();
-    var ent = map && map[tmdbKey];
+    var ent = await getS1For(tmdbKey, year);
     if (!ent || !ent.q || !ent.q.length) return '';
     var s1Iranian = false;
     try { s1Iranian = await fnIranianForTmdb('movie', m[1], null); } catch (e) { s1Iranian = false; }
@@ -7840,12 +7888,57 @@ async function fnS1DlHtml(tmdbKey, posterUrl, title, ctx) {
         + '</span>'
         + '<span class="fn-dl-chev">' + FN_DL_CHEV_SVG + '</span></div>';
     });
-    return '<div class="fn-ext-dl" data-s1-dl>'
-      + '<div class="fn-dl-sec"><span>دانلود از سرور ۱</span><span class="fn-dl-cnt">' + ent.q.length + ' لینک</span></div>'
+    return '<div class="fn-ext-dl fn-dl-vgroup" data-s1-dl data-dl-vgroup="s1ext">'
+      + '<div class="fn-dl-sec"><span>سرور خارجی</span><span class="fn-dl-cnt">' + ent.q.length + ' لینک</span></div>'
       + '<p class="fn-ext-dl-note">دانلود مستقیم از سرور ۱' + (s1Iranian ? '' : ' — این فایل‌ها معمولاً زیرنویس فارسی ندارند') + '.</p>'
       + '<div class="fn-dl-tiles">' + rows + '</div>'
       + '</div>';
   } catch (e) { return ''; }
+}
+/* FN-S1-FULL v1 — the ext-only box: a title with NO archive links but
+   with Server 1 rows gets the SAME box as a normal title (header card
+   + «لینک‌های دانلود» + chips + S1 section + sheet), instead of the
+   «no free links» state + landing-page button. Returns {html, ctx} or
+   null when no S1 rows exist (caller falls back to the old state +
+   button). Never throws, never hangs: every fetch has a timeout, so
+   the box always opens. Movies only (series keep the old path). */
+async function fnExtOnlyBox(tmdbKey, posterUrl, fbTitle, fbYear, iranian) {
+  try {
+    var m = String(tmdbKey || '').match(/^movie:(\d+)$/);
+    if (!m) return null;
+    var isFa = function (s) { return /[؀-ۿ]/.test(s || ''); };
+    var isLat = function (s) { return typeof isLatinTitle === 'function' ? isLatinTitle(s) : (/[A-Za-z]/.test(s || '') && !isFa(s)); };
+    var enTitle = (fbTitle && isLat(fbTitle)) ? fbTitle : '';
+    var faTitle = (fbTitle && isFa(fbTitle)) ? fbTitle : '';
+    if (!enTitle && !faTitle) {
+      try {
+        var enDet = await pTimeoutNull(tmdb(tmdbKey.replace(':', '/'), {}, 'en-US'), 5000);
+        var enT = (enDet && (enDet.title || enDet.name)) || '';
+        if (enT && isLat(enT)) enTitle = enT;
+      } catch (e) {}
+    }
+    var title = enTitle || faTitle || fbTitle || '';
+    var ctx = { title: title, year: fbYear || '', isSeries: false, iranian: !!iranian, links: [], eps: {}, firstEp: '', allUrls: [], sel: null, epLinks: null, epKey: '', tmdbId: m[1], src: 'ext', epMeta: {}, epMetaDone: {} };
+    var secHtml = await fnS1DlHtml(tmdbKey, posterUrl, title, ctx, fbYear);
+    if (!secHtml || !ctx.links.length) return null;
+    ctx.allUrls = ctx.links.map(function (r) { return r.x.url; });
+    var totalMB = ctx.links.reduce(function (s, r) { try { return s + sizeToMB(r.x.size); } catch (e) { return s; } }, 0);
+    var faLine = (faTitle && !sameName(faTitle, title)) ? '<span class="fn-dl-fa">' + esc(faTitle) + '</span>' : '';
+    var meta = [fbYear || '', 'فیلم'].filter(Boolean).join(' • ');
+    var head = '<div class="fn-dl-head">'
+      + '<span class="fn-dl-poster">' + dlPosterHtml(posterUrl || '', title) + '</span>'
+      + '<span class="fn-dl-hinfo"><b>' + esc(title) + '</b>' + faLine
+      + (meta ? '<span>' + esc(meta) + '</span>' : '')
+      + '</span>'
+      + '<span class="fn-dl-tot"><b>' + ctx.links.length + '</b><span>لینک دانلود</span></span>'
+      + (totalMB ? '<span class="fn-dl-tot"><b>' + faSize(fmtTotalMB(totalMB)) + '</b><span>حجم مجموع</span></span>' : '')
+      + '<button class="fn-dl-copyall" data-dl-copyall>کپی همه لینک‌ها</button>'
+      + '</div>';
+    var chips = '<div class="fn-dl-sec"><span>لینک‌های دانلود</span><span class="fn-dl-cnt">' + ctx.links.length + ' لینک</span></div>'
+      + '<div class="fn-dl-vchips"><button class="fn-dl-vchip on" data-dl-v="all">همه</button>'
+      + '<button class="fn-dl-vchip" data-dl-v="s1ext">سرور خارجی</button></div>';
+    return { html: head + chips + secHtml + dlSheetHtml(false), ctx: ctx };
+  } catch (e) { return null; }
 }
 /* FN-DN-TRAILER v1 — direct-mp4 trailer index (download-data/dn/
    dn-trailer-index.json, keyed "movie:<tmdb>"/"tv:<tmdb>"). Only the
@@ -7895,7 +7988,17 @@ async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUr
     }
     if (!resolved) resolved = await fnDlTitleFallback(imdbId, tmdbKey, fbTitle, fbYear);
     if (token !== detailToken) return;
-    if (!resolved) { body.innerHTML = '<div class="state"><b>فعلاً لینک دانلود رایگانی برای این اثر نیست.</b><br>از «پخش آنلاین» می‌توانید همین حالا تماشا کنید.</div>' + await fnExtDlHtml(tmdbKey); return; }
+    if (!resolved) { /* FN-S1-FULL v1: ext-only titles with Server 1 rows get the SAME
+       box as dual titles (header + chips + S1 section) instead of the
+       landing-page button; the button stays only when no S1 rows were
+       found. fnExtOnlyBox never throws and never hangs (timeouts
+       inside), so a failure here can only fall through to the old
+       state + button — the box always opens. */
+    var extBox = null;
+    try { extBox = await fnExtOnlyBox(tmdbKey, posterUrl, fbTitle, fbYear, iranian); } catch (e) { extBox = null; }
+    if (token !== detailToken) return;
+    if (extBox) { body.innerHTML = extBox.html; wireDlTiles(body, extBox.ctx); return; }
+    body.innerHTML = '<div class="state"><b>فعلاً لینک دانلود رایگانی برای این اثر نیست.</b><br>از «پخش آنلاین» می‌توانید همین حالا تماشا کنید.</div>' + await fnExtDlHtml(tmdbKey); return; }
   } catch (e) {
     if (token === detailToken) body.innerHTML = '<div class="state">دریافت لینک‌های دانلود از آرشیو ممکن نشد؛ اتصال را بررسی و دوباره تلاش کنید.</div>';
     return;
@@ -7903,7 +8006,17 @@ async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUr
   try {
     const rec = resolved.rec;
     const srcNote = resolved.src === 'old' ? ' <span style="color:var(--gold2)">(از آرشیو قبلی)</span>' : resolved.src === 'both' ? ' <span style="color:var(--gold2)">(آرشیو جدید + قبلی)</span>' : '';
-    if (!rec || (!rec.groups.softsub.length && !rec.groups.dubbed.length && !rec.groups.nosub.length)) { body.innerHTML = '<div class="state"><b>فعلاً لینک دانلود رایگانی برای این اثر نیست.</b><br>از «پخش آنلاین» می‌توانید همین حالا تماشا کنید.</div>' + await fnExtDlHtml(tmdbKey); return; }
+    if (!rec || (!rec.groups.softsub.length && !rec.groups.dubbed.length && !rec.groups.nosub.length)) { /* FN-S1-FULL v1: ext-only titles with Server 1 rows get the SAME
+       box as dual titles (header + chips + S1 section) instead of the
+       landing-page button; the button stays only when no S1 rows were
+       found. fnExtOnlyBox never throws and never hangs (timeouts
+       inside), so a failure here can only fall through to the old
+       state + button — the box always opens. */
+    var extBox = null;
+    try { extBox = await fnExtOnlyBox(tmdbKey, posterUrl, fbTitle, fbYear, iranian); } catch (e) { extBox = null; }
+    if (token !== detailToken) return;
+    if (extBox) { body.innerHTML = extBox.html; wireDlTiles(body, extBox.ctx); return; }
+    body.innerHTML = '<div class="state"><b>فعلاً لینک دانلود رایگانی برای این اثر نیست.</b><br>از «پخش آنلاین» می‌توانید همین حالا تماشا کنید.</div>' + await fnExtDlHtml(tmdbKey); return; }
     var srcLabel = resolved.src === 'old' ? 'آرشیو قبلی' : resolved.src === 'both' ? 'آرشیو جدید + قبلی' : '';
     var dlMeta = [fbYear || '', (tmdbKey && tmdbKey.indexOf('tv:') === 0) ? 'سریال' : 'فیلم', srcLabel].filter(Boolean).join(' • ');
     /* FN-DLBOX-TITLE-FA v1 — the header follows the ONE naming rule
@@ -7953,9 +8066,10 @@ async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUr
        a real-only title gets '' and an ext-only title never reaches
        here. */
     var s1Html = '';
-    try { s1Html = await fnS1DlHtml(tmdbKey, posterUrl, headTitle, dlBuilt.ctx); } catch (e) { s1Html = ''; }
+    try { s1Html = await fnS1DlHtml(tmdbKey, posterUrl, headTitle, dlBuilt.ctx, fbYear); } catch (e) { s1Html = ''; }
     if (token !== detailToken) return;
     body.innerHTML = dlBuilt.html + s1Html;
+    if (s1Html) { var s1vch = body.querySelector('.fn-dl-vchips'); if (s1vch && !s1vch.querySelector('[data-dl-v="s1ext"]')) { var s1cb = document.createElement('button'); s1cb.className = 'fn-dl-vchip'; s1cb.setAttribute('data-dl-v', 's1ext'); s1cb.textContent = 'سرور خارجی'; s1vch.appendChild(s1cb); } }
     wireDlTiles(body, dlBuilt.ctx);
     if (faPending) {
       var trSrc = enTitle;
