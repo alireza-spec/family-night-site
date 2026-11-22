@@ -8184,8 +8184,13 @@ async function fnPlayH3NumByTitle(part, title, year) {
 function fnPlayOldTypeOK(entry, type) {
   if (!type) return true;
   if (!entry || !entry.type) return true;
-  var want = type === 'tv' ? 'series' : type;
-  return entry.type === want;
+  /* P2: normalize BOTH sides — live data has 2 play entries typed 'tv'
+     (Once Upon a Time tt1843230, 763 rows; Wuthering Heights tt1238834,
+     2 rows). All other entries are 'movie'/'series', so this changes
+     nothing for P1's cases and un-blocks the 'tv' entries for a 'tv'
+     ctx instead of newly breaking them. */
+  var norm = function (t) { return t === 'tv' ? 'series' : t; };
+  return norm(entry.type) === norm(type);
 }
 /* FN-PLAY-OLD-FAST v1: resolve one IMDb id to a joined play entry — new
    archive first (download-index -> play part), old archive second
@@ -8198,7 +8203,16 @@ async function fnPlayResolveImdb(imdb, type) {
     if (p) {
       var d = await fnPlayFetchPart(p);
       var e = d[imdb];
-      if (e && fnPlayJoined(e).length) return { entry: e, key: imdb, part: p };
+      /* FN-TYPECONF-P2 v1: type-guard the new-archive branch — new play
+         entries carry type too (measured 2026-11-22: 2193/2193 in part 1,
+         350/350 in part 16, 1594/1594 in part 4; only 2 entries in the
+         whole archive are typed 'tv', normalized in the helper above).
+         Same fail-open check as P1's old branch. On a mismatch the entry
+         is skipped and execution falls through to the old branch, then
+         null — never the wrong film. No live cross-type duplicate exists
+         today (0/36 duplicate-IMDb pairs); this is the site-side net for
+         a future duplicate-IMDb data error. */
+      if (e && fnPlayJoined(e).length && fnPlayOldTypeOK(e, type)) return { entry: e, key: imdb, part: p };
     }
   } catch (e1) {}
   try {
