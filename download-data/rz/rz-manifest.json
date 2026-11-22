@@ -2,14 +2,14 @@
  "code": "RZ",
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
  "start_num": 12560,
- "end_num": 12994,
- "live_base_head": "fcfc526f16290bfcd30eef184e03707859bad096 (5h run 20261122T211416Z; rebased onto fcfc526f RZ classifier retro-fix; H3 max #12990 verified from live files, RZ part-1 max #12990)",
- "generated": "2026-11-23 (RezFlix 5-hourly run 20261122T211416Z — merge of 4 new titles + 3 trailer keys; cumulative manifest)",
+ "end_num": 13012,
+ "live_base_head": "e06dcdf0992734f1f6c57679bfd7f093a462929f (36117 Ceux qui comptent merge; H3 max #13011 verified from live DTI, next free #13012)",
+ "generated": "2026-11-23 (RezFlix 36117 merge — 1 new title + 1 trailer key; cumulative manifest)",
  "counts": {
-  "total_titles": 151,
-  "movies": 16,
+  "total_titles": 152,
+  "movies": 17,
   "series": 135,
-  "total_links": 8694,
+  "total_links": 8696,
   "by_year": {
    "1955": 2,
    "1960": 3,
@@ -47,14 +47,14 @@
    "2023": 1,
    "2024": 1,
    "2014": 1,
-   "2026": 13,
+   "2026": 14,
    "2015": 1,
    "2025": 2,
    "2020": 1
   },
   "by_quality": {
-   "720p": 4219,
-   "1080p": 835,
+   "720p": 4220,
+   "1080p": 836,
    "480p": 2938,
    "نامشخص": 464,
    "576p": 14,
@@ -1731,20 +1731,26 @@
    "quality": "1080p,720p",
    "rezflix_id": 36118,
    "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt37438659). Persian name کتاب‌ های جذاب (feed)."
+  },
+  {
+   "title": "Whatever It Takes",
+   "tmdb": 1421963,
+   "imdb": "tt35404853",
+   "year": 2026,
+   "num": 13012,
+   "links": 2,
+   "quality": "1080p,720p",
+   "rezflix_id": 36117,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt35404853). Persian name به هر قیمتی که شده (feed). OMDb Title 'Ceux qui comptent' == TMDB original_title (checker fix 2026-11-23)."
   }
  ],
  "trailer_keys_added": [
   "movie:1574367",
   "movie:1415360",
-  "movie:1548008"
+  "movie:1548008",
+  "movie:1421963"
  ],
- "queued_titles": [
-  {
-   "title": "Whatever It Takes",
-   "rezflix_id": 36117,
-   "reason": "OMDb title 'Ceux qui comptent' disagrees with 'Whatever It Takes'"
-  }
- ],
+ "queued_titles": [],
  "url_dupes_dropped": [
   "http://s1.giftmond.ir/Zahra/1405/1405.08.30/1SoftSub/The%20Secret%20of%20Skinwalker%20Ranch/S01/720/The.Secret.of.Skinwalker.Ranch.S01E08.720p.WEBRip.SoftSub.SigmaFa.mkv"
  ],

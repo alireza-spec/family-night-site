@@ -122683,6 +122683,51 @@
   },
   "year": 1981
  },
+ "tt35404853": {
+  "imdb": "tt35404853",
+  "num": 13012,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Whatever.It.Takes.2026.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.79 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Whatever.It.Takes.2026.720p.WEBRip.x264.AAC-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 935329792,
+    "size_text": "892 MB"
+   }
+  ],
+  "title": "Whatever It Takes",
+  "tmdb_key": "movie:1421963",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
  "tt35410859": {
   "imdb": "tt35410859",
   "num": 12566,
