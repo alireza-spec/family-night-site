@@ -2,14 +2,14 @@
  "code": "RZ",
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
  "start_num": 12560,
- "end_num": 12883,
- "live_base_head": "51649e1b9d2fb2179b72e8b775246f5bb74cb0f4",
- "generated": "2026-11-22 (RezFlix series full extraction, 1980s+unknown-quality-4 — correction of 625112cb: Little Prince deferred, Katri label fix)",
+ "end_num": 12983,
+ "live_base_head": "cc07b24193049009baf3854dc2e895090ee82ece (RezFlix series full extraction 1990-1994)",
+ "generated": "2026-11-22 (RezFlix series full extraction, 1990-1994)",
  "counts": {
-  "total_titles": 108,
+  "total_titles": 142,
   "movies": 13,
-  "series": 95,
-  "total_links": 5995,
+  "series": 129,
+  "total_links": 8273,
   "by_year": {
    "2024": 1,
    "2026": 11,
@@ -36,20 +36,26 @@
    "2015": 1,
    "1980": 2,
    "1981": 4,
-   "1982": 6,
+   "1982": 7,
    "1983": 6,
    "1984": 6,
    "1985": 6,
    "1986": 6,
    "1987": 4,
    "1988": 4,
-   "1989": 4
+   "1989": 4,
+   "1990": 7,
+   "1998": 1,
+   "1991": 5,
+   "1992": 4,
+   "1993": 7,
+   "1994": 9
   },
   "by_quality": {
-   "720p": 2938,
-   "1080p": 638,
-   "540p": 8,
-   "480p": 2071,
+   "720p": 4133,
+   "1080p": 748,
+   "540p": 53,
+   "480p": 2854,
    "CAM 1080p": 1,
    "CAM 720p": 9,
    "Cam 1080p": 1,
@@ -58,8 +64,9 @@
    "WEB-DL 480p": 2,
    "720p x265": 37,
    "544p": 114,
-   "576p": 6,
-   "نامشخص": 166
+   "576p": 14,
+   "نامشخص": 300,
+   "CAM ?": 3
   }
  },
  "films": [
@@ -687,8 +694,8 @@
    "num": 12832,
    "links": 38,
    "quality": "1080p,720p",
-   "rezflix_id": 24777,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1980, tmdb 10491, tt0179584). Persian name بلفی و لی‌لی‌ بیت."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Shōgun",
@@ -698,8 +705,8 @@
    "num": 12833,
    "links": 4,
    "quality": "720p",
-   "rezflix_id": 25046,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1980, tmdb 13862, tt0080274). Persian name شوگان."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "The Swiss Family Robinson: Flone of the Mysterious Island",
@@ -709,8 +716,8 @@
    "num": 12834,
    "links": 50,
    "quality": "480p",
-   "rezflix_id": 8013,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1981, tmdb 37799, tt0168341). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Smuggler",
@@ -720,8 +727,8 @@
    "num": 12835,
    "links": 16,
    "quality": "1080p,720p",
-   "rezflix_id": 18923,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1981, tmdb 22639, tt0081932). Persian name جک وینسنت."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "From the Northern Country",
@@ -731,8 +738,8 @@
    "num": 12836,
    "links": 47,
    "quality": "720p",
-   "rezflix_id": 34846,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1981, tmdb 74492, tt0081889). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Silas",
@@ -742,8 +749,8 @@
    "num": 12837,
    "links": 12,
    "quality": "720p",
-   "rezflix_id": 25965,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1981, tmdb 41987, tt0081929). Persian name سیلاس."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Lucy-May of the Southern Rainbow",
@@ -753,8 +760,8 @@
    "num": 12838,
    "links": 68,
    "quality": "480p,720p",
-   "rezflix_id": 12372,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1982, tmdb 19656, tt0168351). Persian name مهاجران."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Super Dimension Fortress Macross",
@@ -764,8 +771,8 @@
    "num": 12839,
    "links": 36,
    "quality": "720p",
-   "rezflix_id": 20591,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1982, tmdb 21734, tt0142183). Persian name دژ فضایی با ابعاد فوق العاده."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Call of the Wild",
@@ -775,8 +782,8 @@
    "num": 12840,
    "links": 50,
    "quality": "480p,720p",
-   "rezflix_id": 24929,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1982, tmdb 205745, tt10946030). Persian name خانواده وحوش."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Jack Holborn",
@@ -786,8 +793,8 @@
    "num": 12841,
    "links": 4,
    "quality": "720p",
-   "rezflix_id": 34125,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1982, tmdb 6902, tt0081879). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Space Cobra",
@@ -797,8 +804,8 @@
    "num": 12842,
    "links": 93,
    "quality": "1080p,480p,720p",
-   "rezflix_id": 34319,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1982, tmdb 8880, tt0235138). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Police Squad!",
@@ -808,8 +815,8 @@
    "num": 12843,
    "links": 18,
    "quality": "1080p,480p,720p",
-   "rezflix_id": 35548,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1982, tmdb 6024, tt0083466). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Serendipity The Pink Dragon",
@@ -819,8 +826,8 @@
    "num": 12844,
    "links": 26,
    "quality": "720p",
-   "rezflix_id": 7013,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1983, tmdb 42945, tt0305104). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Captain Tsubasa",
@@ -830,8 +837,8 @@
    "num": 12845,
    "links": 12,
    "quality": "480p",
-   "rezflix_id": 7992,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1983, tmdb 25707, tt0294023). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Oshin",
@@ -841,8 +848,8 @@
    "num": 12846,
    "links": 108,
    "quality": "480p,720p",
-   "rezflix_id": 17746,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1983, tmdb 6231, tt0367380). Persian name اوشین."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Lucky Luke",
@@ -852,8 +859,8 @@
    "num": 12847,
    "links": 57,
    "quality": "720p",
-   "rezflix_id": 24840,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1983, tmdb 65392, tt0175863). Persian name لوک خوش شانس."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "The Thorn Birds",
@@ -863,8 +870,8 @@
    "num": 12848,
    "links": 8,
    "quality": "480p,720p",
-   "rezflix_id": 25797,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1983, tmdb 13780, tt0085101). Persian name پرندگان خارزار."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Katri: Girl of the Meadows",
@@ -874,8 +881,8 @@
    "num": 12849,
    "links": 48,
    "quality": "1080p,720p",
-   "rezflix_id": 6865,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1984, tmdb 43702, tt0168346). Persian name (none found). S01E06 file covers episodes 6-7 (combined file)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Miss Marple: The Body in the Library",
@@ -885,8 +892,8 @@
    "num": 12850,
    "links": 6,
    "quality": "480p,720p",
-   "rezflix_id": 9395,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1984, tmdb 76459, tt0088833). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Little Memole",
@@ -896,8 +903,8 @@
    "num": 12851,
    "links": 98,
    "quality": "480p,720p",
-   "rezflix_id": 28044,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1984, tmdb 43715, tt0303554). Persian name ممول کوچولو."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Sherlock Holmes",
@@ -907,8 +914,8 @@
    "num": 12852,
    "links": 59,
    "quality": "720p",
-   "rezflix_id": 14107,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1984, tmdb 799, tt0086661). Persian name ماجراهای شرلوک هلمز."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Fist of the North Star",
@@ -918,8 +925,8 @@
    "num": 12853,
    "links": 151,
    "quality": "480p",
-   "rezflix_id": 32048,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1984, tmdb 56387, tt0091211). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Sherlock Hound",
@@ -929,8 +936,8 @@
    "num": 12854,
    "links": 78,
    "quality": "1080p,480p,720p",
-   "rezflix_id": 33198,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1984, tmdb 21296, tt0088109). Persian name شرلوک هوند."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Miss Marple: A Murder Is Announced",
@@ -940,8 +947,8 @@
    "num": 12855,
    "links": 6,
    "quality": "480p,720p",
-   "rezflix_id": 9397,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1985, tmdb 76462, tt0087756). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Edge of Darkness",
@@ -951,8 +958,8 @@
    "num": 12856,
    "links": 6,
    "quality": "480p",
-   "rezflix_id": 18060,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1985, tmdb 13865, tt0090424). Persian name لبه تاریکی."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Robotech",
@@ -962,8 +969,8 @@
    "num": 12857,
    "links": 69,
    "quality": "720p",
-   "rezflix_id": 28507,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1985, tmdb 2192, tt0088595). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Kimagure Orange Road",
@@ -973,8 +980,8 @@
    "num": 12858,
    "links": 48,
    "quality": "1080p",
-   "rezflix_id": 29892,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1985, tmdb 9103, tt0092386). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Princess Sarah",
@@ -984,8 +991,8 @@
    "num": 12859,
    "links": 138,
    "quality": "1080p,480p,720p",
-   "rezflix_id": 32247,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1985, tmdb 35579, tt0168375). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Mobile Suit Zeta Gundam",
@@ -995,8 +1002,8 @@
    "num": 12860,
    "links": 150,
    "quality": "1080p,480p,720p",
-   "rezflix_id": 34196,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1985, tmdb 13674, tt0159186). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "The Return of Sherlock Holmes",
@@ -1006,8 +1013,8 @@
    "num": 12861,
    "links": 12,
    "quality": "480p",
-   "rezflix_id": 16979,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1986, tmdb 325386, tt0090509). Persian name بازگشت شرلوک هلمز."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Jimbo and the Jet Set",
@@ -1017,8 +1024,8 @@
    "num": 12862,
    "links": 23,
    "quality": "720p",
-   "rezflix_id": 28269,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1986, tmdb 273, tt0472955). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Saint Seiya",
@@ -1028,8 +1035,8 @@
    "num": 12863,
    "links": 114,
    "quality": "544p",
-   "rezflix_id": 19214,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1986, tmdb 42444, tt0161952). Persian name شوالیه های زودیاک."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Mobile Suit Gundam ZZ",
@@ -1039,8 +1046,8 @@
    "num": 12864,
    "links": 94,
    "quality": "480p,720p",
-   "rezflix_id": 32208,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1986, tmdb 5660, tt0159184). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Maison Ikkoku",
@@ -1050,8 +1057,8 @@
    "num": 12865,
    "links": 192,
    "quality": "480p,720p",
-   "rezflix_id": 32370,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1986, tmdb 43018, tt0090479). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Yes, Prime Minister",
@@ -1061,8 +1068,8 @@
    "num": 12866,
    "links": 14,
    "quality": "720p",
-   "rezflix_id": 35405,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1986, tmdb 12597, tt0086831). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Tales of Little Women",
@@ -1072,8 +1079,8 @@
    "num": 12867,
    "links": 48,
    "quality": "480p",
-   "rezflix_id": 7126,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1987, tmdb 21618, tt0168283). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Teenage Mutant Ninja Turtles",
@@ -1083,8 +1090,8 @@
    "num": 12868,
    "links": 244,
    "quality": "720p",
-   "rezflix_id": 28525,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1987, tmdb 160, tt0131613). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Once Upon a Time... Life",
@@ -1094,8 +1101,8 @@
    "num": 12869,
    "links": 26,
    "quality": "720p",
-   "rezflix_id": 29859,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1987, tmdb 2632, tt0284735). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "City Hunter",
@@ -1105,8 +1112,8 @@
    "num": 12870,
    "links": 127,
    "quality": "720p",
-   "rezflix_id": 32251,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1987, tmdb 36046, tt0159208). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Hannay",
@@ -1116,8 +1123,8 @@
    "num": 12871,
    "links": 15,
    "quality": "480p,720p",
-   "rezflix_id": 28256,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1988, tmdb 4799, tt0094474). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Count Duckula",
@@ -1127,8 +1134,8 @@
    "num": 12872,
    "links": 69,
    "quality": "480p,720p",
-   "rezflix_id": 28268,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1988, tmdb 2416, tt0088500). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Legend of the Galactic Heroes",
@@ -1138,8 +1145,8 @@
    "num": 12873,
    "links": 215,
    "quality": "480p,720p",
-   "rezflix_id": 32244,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1988, tmdb 27660, tt0096633). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Patlabor: Early Days",
@@ -1149,8 +1156,8 @@
    "num": 12874,
    "links": 141,
    "quality": "1080p,480p,720p",
-   "rezflix_id": 34224,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1988, tmdb 21738, tt0160423). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Lonesome Dove",
@@ -1160,8 +1167,8 @@
    "num": 12875,
    "links": 4,
    "quality": "480p",
-   "rezflix_id": 6518,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1989, tmdb 41692, tt0096639). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Navarro",
@@ -1171,8 +1178,8 @@
    "num": 12876,
    "links": 107,
    "quality": "480p,720p",
-   "rezflix_id": 28224,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1989, tmdb 42456, tt0096658). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Campion",
@@ -1182,8 +1189,8 @@
    "num": 12877,
    "links": 8,
    "quality": "CAM 720p",
-   "rezflix_id": 28272,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1989, tmdb 19824, tt0094430). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Ranma ½",
@@ -1193,8 +1200,8 @@
    "num": 12878,
    "links": 161,
    "quality": "720p",
-   "rezflix_id": 29350,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1989, tmdb 57706, tt0096686). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Blackadder",
@@ -1204,8 +1211,8 @@
    "num": 12879,
    "links": 6,
    "quality": "576p",
-   "rezflix_id": 34056,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1983, tmdb 7246, tt0084988). Persian name (none found)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Don Chuck Beaver",
@@ -1215,8 +1222,8 @@
    "num": 12880,
    "links": 51,
    "quality": "نامشخص",
-   "rezflix_id": 7604,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1975, tmdb 71149, tt0813691). Persian name (none found). Quality «نامشخص» (unknown — real size/quality to be corrected later; exact URLs + SxxExx mapping in the batch build report)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "The Adventures of Pepero, Son of the Andes",
@@ -1226,8 +1233,8 @@
    "num": 12881,
    "links": 21,
    "quality": "نامشخص",
-   "rezflix_id": 7869,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1975, tmdb 37557, tt0352037). Persian name (none found). Quality «نامشخص» (unknown — real size/quality to be corrected later; exact URLs + SxxExx mapping in the batch build report)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "Secret Army",
@@ -1237,8 +1244,8 @@
    "num": 12882,
    "links": 43,
    "quality": "نامشخص",
-   "rezflix_id": 7209,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1977, tmdb 2677, tt0075579). Persian name (none found). Quality «نامشخص» (unknown — real size/quality to be corrected later; exact URLs + SxxExx mapping in the batch build report)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
   },
   {
    "title": "The Story of Perrine",
@@ -1248,58 +1255,389 @@
    "num": 12883,
    "links": 51,
    "quality": "نامشخص",
-   "rezflix_id": 7339,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 1978, tmdb 43951, tt0168362). Persian name (none found). Quality «نامشخص» (unknown — real size/quality to be corrected later; exact URLs + SxxExx mapping in the batch build report)."
+   "rezflix_id": null,
+   "identity_note": "Pre-existing live rz title (in play-index before this batch)."
+  },
+  {
+   "title": "Road to Avonlea",
+   "tmdb": 10860,
+   "imdb": "tt0098900",
+   "year": 1990,
+   "num": 12950,
+   "links": 168,
+   "quality": "720p",
+   "rezflix_id": 5737,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1990, tmdb 10860, tt0098900). Persian name (none found)."
+  },
+  {
+   "title": "My Daddy Long Legs",
+   "tmdb": 8727,
+   "imdb": "tt0168436",
+   "year": 1990,
+   "num": 12951,
+   "links": 40,
+   "quality": "480p",
+   "rezflix_id": 6870,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1990, tmdb 8727, tt0168436). Persian name بابا لنگ دراز."
+  },
+  {
+   "title": "Robin Hood's Big Adventure",
+   "tmdb": 37578,
+   "imdb": "tt0305094",
+   "year": 1990,
+   "num": 12952,
+   "links": 52,
+   "quality": "480p",
+   "rezflix_id": 8559,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1990, tmdb 37578, tt0305094). Persian name (none found)."
+  },
+  {
+   "title": "Master Eder and his Pumuckl",
+   "tmdb": 30688,
+   "imdb": "tt0082732",
+   "year": 1982,
+   "num": 12953,
+   "links": 33,
+   "quality": "720p",
+   "rezflix_id": 28217,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1982, tmdb 30688, tt0082732). Persian name (none found)."
+  },
+  {
+   "title": "The Civil War",
+   "tmdb": 9693,
+   "imdb": "tt0098769",
+   "year": 1990,
+   "num": 12954,
+   "links": 9,
+   "quality": "720p",
+   "rezflix_id": 19987,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1990, tmdb 9693, tt0098769). Persian name جنگ داخلی."
+  },
+  {
+   "title": "The Adventures of the Black Stallion",
+   "tmdb": 1244,
+   "imdb": "tt0098754",
+   "year": 1990,
+   "num": 12955,
+   "links": 25,
+   "quality": "720p",
+   "rezflix_id": 28233,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1990, tmdb 1244, tt0098754). Persian name (none found)."
+  },
+  {
+   "title": "Record of Lodoss War: Chronicles of the Heroic Knight",
+   "tmdb": 72041,
+   "imdb": "tt0247128",
+   "year": 1998,
+   "num": 12956,
+   "links": 13,
+   "quality": "720p",
+   "rezflix_id": 32047,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1998, tmdb 72041, tt0247128). Persian name (none found)."
+  },
+  {
+   "title": "Record of Lodoss War",
+   "tmdb": 42713,
+   "imdb": "tt0100044",
+   "year": 1990,
+   "num": 12957,
+   "links": 39,
+   "quality": "1080p,480p,720p",
+   "rezflix_id": 33009,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1990, tmdb 42713, tt0100044). Persian name (none found)."
+  },
+  {
+   "title": "Nadia: The Secret of Blue Water",
+   "tmdb": 24710,
+   "imdb": "tt0096591",
+   "year": 1990,
+   "num": 12958,
+   "links": 117,
+   "quality": "1080p,480p,720p",
+   "rezflix_id": 34211,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1990, tmdb 24710, tt0096591). Persian name (none found)."
+  },
+  {
+   "title": "Romance of the Three Kingdoms",
+   "tmdb": 43853,
+   "imdb": "tt0421486",
+   "year": 1991,
+   "num": 12959,
+   "links": 3,
+   "quality": "480p",
+   "rezflix_id": 6180,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1991, tmdb 43853, tt0421486). Persian name (none found)."
+  },
+  {
+   "title": "The Twins of Destiny",
+   "tmdb": 11659,
+   "imdb": "tt0435998",
+   "year": 1991,
+   "num": 12960,
+   "links": 50,
+   "quality": "نامشخص",
+   "rezflix_id": 7650,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1991, tmdb 11659, tt0435998). Persian name (none found). Quality «نامشخص» (unknown — real size/quality to be corrected later; exact URLs + SxxExx mapping in the batch build report)."
+  },
+  {
+   "title": "The Adventures of Tintin",
+   "tmdb": 1570,
+   "imdb": "tt0179552",
+   "year": 1991,
+   "num": 12961,
+   "links": 78,
+   "quality": "720p",
+   "rezflix_id": 7974,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1991, tmdb 1570, tt0179552). Persian name (none found)."
+  },
+  {
+   "title": "Trapp Family Story",
+   "tmdb": 43938,
+   "imdb": "tt0168393",
+   "year": 1991,
+   "num": 12962,
+   "links": 40,
+   "quality": "540p",
+   "rezflix_id": 24708,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1991, tmdb 43938, tt0168393). Persian name داستان خانواده ترپ."
+  },
+  {
+   "title": "Dear Brother",
+   "tmdb": 36588,
+   "imdb": "tt0159901",
+   "year": 1991,
+   "num": 12963,
+   "links": 78,
+   "quality": "480p,720p",
+   "rezflix_id": 32243,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1991, tmdb 36588, tt0159901). Persian name (none found)."
+  },
+  {
+   "title": "Sailor Moon",
+   "tmdb": 3570,
+   "imdb": "tt0103369",
+   "year": 1992,
+   "num": 12964,
+   "links": 89,
+   "quality": "480p,720p",
+   "rezflix_id": 16049,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1992, tmdb 3570, tt0103369). Persian name ملوان ماه."
+  },
+  {
+   "title": "CUTTLAS MICROFILMS",
+   "tmdb": 75414,
+   "imdb": "tt7699238",
+   "year": 1992,
+   "num": 12965,
+   "links": 13,
+   "quality": "480p",
+   "rezflix_id": 28168,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1992, tmdb 75414, tt7699238). Persian name (none found)."
+  },
+  {
+   "title": "Yu Yu Hakusho",
+   "tmdb": 30669,
+   "imdb": "tt0185133",
+   "year": 1992,
+   "num": 12966,
+   "links": 224,
+   "quality": "480p,720p",
+   "rezflix_id": 32079,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1992, tmdb 30669, tt0185133). Persian name (none found)."
+  },
+  {
+   "title": "Bastard!!",
+   "tmdb": 43798,
+   "imdb": "tt0103775",
+   "year": 1992,
+   "num": 12967,
+   "links": 39,
+   "quality": "1080p,720p",
+   "rezflix_id": 32656,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1992, tmdb 43798, tt0103775). Persian name (none found)."
+  },
+  {
+   "title": "Adventures of Sonic the Hedgehog",
+   "tmdb": 44,
+   "imdb": "tt0222518",
+   "year": 1993,
+   "num": 12968,
+   "links": 100,
+   "quality": "480p,720p",
+   "rezflix_id": 10340,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1993, tmdb 44, tt0222518). Persian name (none found). Combined RezFlix records 10340+28503 (same tmdb/imdb, zero URL overlap)."
+  },
+  {
+   "title": "Slam Dunk",
+   "tmdb": 42573,
+   "imdb": "tt0965547",
+   "year": 1993,
+   "num": 12969,
+   "links": 101,
+   "quality": "720p",
+   "rezflix_id": 19109,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1993, tmdb 42573, tt0965547). Persian name اسلم دانک."
+  },
+  {
+   "title": "The Legends of Treasure Island",
+   "tmdb": 13264,
+   "imdb": "tt0341973",
+   "year": 1993,
+   "num": 12970,
+   "links": 63,
+   "quality": "1080p,480p,720p",
+   "rezflix_id": 25045,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1993, tmdb 13264, tt0341973). Persian name افسانه های جزیره گنج."
+  },
+  {
+   "title": "Frasier",
+   "tmdb": 3452,
+   "imdb": "tt0106004",
+   "year": 1993,
+   "num": 12971,
+   "links": 256,
+   "quality": "720p,CAM ?",
+   "rezflix_id": 28453,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1993, tmdb 3452, tt0106004). Persian name (none found)."
+  },
+  {
+   "title": "Rocky Rackat",
+   "tmdb": 201973,
+   "imdb": "tt0320922",
+   "year": 1993,
+   "num": 12972,
+   "links": 76,
+   "quality": "720p",
+   "rezflix_id": 29863,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1993, tmdb 201973, tt0320922). Persian name (none found)."
+  },
+  {
+   "title": "Power Rangers",
+   "tmdb": 2328,
+   "imdb": "tt0106064",
+   "year": 1993,
+   "num": 12973,
+   "links": 155,
+   "quality": "480p",
+   "rezflix_id": 35569,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1993, tmdb 2328, tt0106064). Persian name پاور رنجرز جنگجویان دگرگون‌ شونده."
+  },
+  {
+   "title": "The Legend of Snow White",
+   "tmdb": 44377,
+   "imdb": "tt0296416",
+   "year": 1994,
+   "num": 12974,
+   "links": 14,
+   "quality": "نامشخص",
+   "rezflix_id": 6132,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1994, tmdb 44377, tt0296416). Persian name (none found). Quality «نامشخص» (unknown — real size/quality to be corrected later; exact URLs + SxxExx mapping in the batch build report)."
+  },
+  {
+   "title": "Mega Man",
+   "tmdb": 1323,
+   "imdb": "tt0165046",
+   "year": 1994,
+   "num": 12975,
+   "links": 23,
+   "quality": "720p",
+   "rezflix_id": 7440,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1994, tmdb 1323, tt0165046). Persian name (none found)."
+  },
+  {
+   "title": "The Kingdom",
+   "tmdb": 4267,
+   "imdb": "tt0108906",
+   "year": 1994,
+   "num": 12976,
+   "links": 13,
+   "quality": "576p,720p",
+   "rezflix_id": 17393,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1994, tmdb 4267, tt0108906). Persian name قلمرو."
+  },
+  {
+   "title": "Genocyber",
+   "tmdb": 80237,
+   "imdb": "tt0158634",
+   "year": 1994,
+   "num": 12977,
+   "links": 5,
+   "quality": "540p",
+   "rezflix_id": 27896,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1994, tmdb 80237, tt0158634). Persian name جنوسایبر."
+  },
+  {
+   "title": "Inspector Rex",
+   "tmdb": 994,
+   "imdb": "tt0108829",
+   "year": 1994,
+   "num": 12978,
+   "links": 188,
+   "quality": "480p",
+   "rezflix_id": 28170,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1994, tmdb 994, tt0108829). Persian name (none found)."
+  },
+  {
+   "title": "Tabaluga",
+   "tmdb": 47424,
+   "imdb": "tt0193549",
+   "year": 1994,
+   "num": 12979,
+   "links": 43,
+   "quality": "720p",
+   "rezflix_id": 28218,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1994, tmdb 47424, tt0193549). Persian name (none found)."
+  },
+  {
+   "title": "Scarlett",
+   "tmdb": 15724,
+   "imdb": "tt0108915",
+   "year": 1994,
+   "num": 12980,
+   "links": 4,
+   "quality": "نامشخص",
+   "rezflix_id": 29270,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1994, tmdb 15724, tt0108915). Persian name (none found). Quality «نامشخص» (unknown — real size/quality to be corrected later; exact URLs + SxxExx mapping in the batch build report)."
+  },
+  {
+   "title": "Due South",
+   "tmdb": 1527,
+   "imdb": "tt0108756",
+   "year": 1994,
+   "num": 12981,
+   "links": 66,
+   "quality": "نامشخص",
+   "rezflix_id": 28234,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1994, tmdb 1527, tt0108756). Persian name (none found). Quality «نامشخص» (unknown — real size/quality to be corrected later; exact URLs + SxxExx mapping in the batch build report)."
+  },
+  {
+   "title": "Macross 7",
+   "tmdb": 21735,
+   "imdb": "tt0156220",
+   "year": 1994,
+   "num": 12982,
+   "links": 48,
+   "quality": "480p",
+   "rezflix_id": 32785,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1994, tmdb 21735, tt0156220). Persian name (none found)."
+  },
+  {
+   "title": "From Today, It's My Turn!!",
+   "tmdb": 66041,
+   "imdb": "tt0204443",
+   "year": 1993,
+   "num": 12983,
+   "links": 13,
+   "quality": "1080p",
+   "rezflix_id": 33010,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1993, tmdb 66041, tt0204443). Persian name (none found)."
   }
  ],
  "trailer_keys_added": [
-  "tv:13862",
-  "tv:13780"
+  "tv:43938",
+  "tv:80237"
  ],
- "queued_titles": [
-  {
-   "rezflix_id": 7210,
-   "title": "Belle and Sebastian",
-   "tmdb": 10108,
-   "imdb": "tt0283710",
-   "reason": "0 new links (no sources, or all URLs already live)"
-  },
-  {
-   "rezflix_id": 7413,
-   "title": "Manga Mito Kômon",
-   "tmdb": 71134,
-   "imdb": "tt3462310",
-   "reason": "0 new links (no sources, or all URLs already live)"
-  },
-  {
-   "rezflix_id": 21906,
-   "title": "Blackadder",
-   "tmdb": 7246,
-   "imdb": "tt0084988",
-   "reason": "0 new links (no sources, or all URLs already live)"
-  },
-  {
-   "rezflix_id": 6901,
-   "title": "Story of the Alps: My Annette",
-   "tmdb": 44257,
-   "imdb": "tt0168297",
-   "reason": "0 new links (no sources, or all URLs already live)"
-  },
-  {
-   "rezflix_id": 7700,
-   "title": "Inspector Gadget",
-   "tmdb": 4035,
-   "imdb": "tt0085033",
-   "reason": "0 new links (no sources, or all URLs already live)"
-  },
-  {
-   "rezflix_id": 19484,
-   "title": "The Adventures of the Little Prince",
-   "tmdb": 27436,
-   "imdb": "tt2383929",
-   "reason": "audio-only mp3 record — site resolve gate (dlRecHasLinks / resolveDlRecordByPart) drops audio-only records; deferred pending a site-shell fix. Detail (exact URL + SxxExx) in build-report-2b-v1-little-prince.json."
-  }
- ],
+ "queued_titles": [],
  "url_dupes_dropped": [],
- "note": "Section per filename markers (DESIGN §4); description footer 'زیرنویس چسبیده پارسی' is generic and does not set play_type. MANIFEST REBUILT from the live rz play-index (authoritative): the old manifest files were incomplete (batch 1 kept only Musketeers; the twice-daily counts did not match its films list), so films + counts here are derived from the play rows. CORRECTION 2026-11-22 (on HEAD 346f971d): Little Prince H3 #12880 removed (audio-only; site cannot resolve audio-only records yet); the 4 other unknown-quality series renumbered #12881-12884 -> #12880-12883; Katri S01E06-07 label -> S01E06 (site expands range labels)."
+ "note": "Section per filename markers (DESIGN §4); description footer 'زیرنویس چسبیده پارسی' is generic and does not set play_type. MANIFEST REBUILT from the live rz play-index (authoritative): the old manifest files were incomplete (batch 1 kept only Musketeers; the twice-daily counts did not match its films list), so films + counts here are derived from the play rows."
 }
