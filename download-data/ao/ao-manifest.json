@@ -2,11 +2,11 @@
  "code": "AO",
  "counts": {
   "by_resolution": {
-   "1080p": 9,
-   "360p": 14,
-   "480p": 10,
-   "576p": 5,
-   "720p": 25
+   "1080p": 44,
+   "360p": 18,
+   "480p": 54,
+   "576p": 15,
+   "720p": 63
   },
   "by_year": {
    "1963": 1,
@@ -38,7 +38,7 @@
    "2004": 2,
    "2006": 1,
    "2008": 1,
-   "2011": 1,
+   "2011": 2,
    "2013": 1,
    "2015": 1,
    "2016": 1,
@@ -47,8 +47,8 @@
    "2021": 1,
    "2022": 1
   },
-  "total": 61,
-  "total_bytes": 82428578721,
+  "total": 62,
+  "total_bytes": 156799289497,
   "with_srt": 34
  },
  "films": [
@@ -1537,6 +1537,65 @@
      "note": "Japanese-BD-derived mp4; audio language undetermined (Tamil or Japanese)"
     }
    ]
+  },
+  {
+   "title": "Paytakht",
+   "title_fa": "پایتخت",
+   "imdb": "tt8188114",
+   "tmdb": 100754,
+   "tmdb_key": "tv:100754",
+   "type": "tv",
+   "year": 2011,
+   "num": 12700,
+   "links": 131,
+   "episodes": 87,
+   "seasons": {
+    "2": 15,
+    "3": 13,
+    "4": 24,
+    "5": 18,
+    "6": 17
+   },
+   "by_resolution": {
+    "1080p": 35,
+    "360p": 4,
+    "480p": 44,
+    "576p": 10,
+    "720p": 38
+   },
+   "total_bytes": 74370710776,
+   "ao_items": [
+    "paytakht-s02",
+    "paytakht-s03",
+    "paytakht-s04",
+    "paytakht-s05",
+    "paytakht-s06",
+    "Paytakht.412TopArchive.IR",
+    "Paytakht.414TopArchive.IR",
+    "Paytakht.415TopArchive.IR",
+    "Paytakht.417TopArchive.IR",
+    "Paytakht.418TopArchive.IR",
+    "Paytakht.419TopArchive.IR",
+    "Paytakht.421TopArchive.IR",
+    "Paytakht.423TopArchive.IR"
+   ],
+   "identity_note": "TMDB 100754 Paytakht 2011-03-21 fa + IMDb tt8188114 + OMDb 'Capital' 2011 series agree (year/type/Persian/Iran).",
+   "coverage_note": "S1 0/15 and S7 0/22 absent from AO; S3 13/19, S4 24/25 (missing E25), S5 18/20 partial — merged as found.",
+   "second_encodes_note": "S4 singles E12, E14-E22 are second encodes of episodes the S4 season item covers (different resolutions); E23/E24 are unique to the singles.",
+   "alternates_dropped": [
+    {
+     "filename": "Paytakht.4-12_TopArchive.IR.mkv",
+     "item": "Paytakht.412TopArchive.IR",
+     "size_bytes": 229424436,
+     "reason": "same 360p encode as the mp4 twin (same episode, same resolution, same duration within seconds), different container only — collapsed to the mp4"
+    },
+    {
+     "filename": "Paytakht.4-14_TopArchive.IR.mkv",
+     "item": "Paytakht.414TopArchive.IR",
+     "size_bytes": 193262522,
+     "reason": "same 360p encode as the mp4 twin (same episode, same resolution, same duration within seconds), different container only — collapsed to the mp4"
+    }
+   ]
   }
  ],
  "generated": "2026-11-22",
@@ -1637,7 +1696,7 @@
   }
  ],
  "have_films_left_alone": [],
- "live_base_head": "4d8b57b96ebcd0a5961c4ae15848d3d78d1b7922",
+ "live_base_head": "5a49029d9dafed0a79cfd6358f20337e8ed451d5",
  "part": 1,
  "queued": [
   {
@@ -1645,6 +1704,48 @@
    "reason": "",
    "title": "The Key",
    "year": 1987
+  },
+  {
+   "key": "ao-series:calori_mamnoo",
+   "title": "Calori Mamnoo",
+   "year": null,
+   "reason": "QUEUED, not merged: no TMDB entry (search tv 'Calori Mamnoo', 'Calorie Mamnoo', 'Kalori Mamnoo', fa 'کالری ممنوع' all empty), no OMDb title match. Best lead is IMDb tt6129074 'Guilty Secrets' (2016, series, Language Persian, Country Turkey) whose plot (fashion company near bankruptcy vs plus-size agency) closely matches the series' story, but TMDB /find/tt6129074 returns zero results — no TMDB record exists — so the three-source agreement rule cannot be met and the IMDb link is plot-similarity only, not proven. AO files themselves map cleanly (eps 1-30 mkv+mp4, (30) Final, + tiny intro file) and are ready to merge the moment a TMDB entry (or a proven IMDb match) exists. Web evidence: YouTube 'کالری ممنوع قسمت ۲۲', writer/director Nima Hassan Nia, GEM TV upload 2016-02-21."
+  },
+  {
+   "key": "ao-series:cinematic_e3",
+   "title": "Cinematic E-3 (سینماتیک)",
+   "year": null,
+   "reason": "QUEUED, not merged: work now IDENTIFIED from AO description as 'سینماتیک' (Cinematic), a weekly Iranian-cinema talk/analysis show from Brightlight Studio (director Amir Saraei-Moghaddam), episode 3, 5.66 GB mp4 — but it is a talk show, not a drama series, with no TMDB entry and no IMDb entry found; a single episode of a talk show cannot take a series H3 record under the archive's tv rules. Queue until/unless the show gains a TMDB/IMDb identity and more episodes are wanted."
+  },
+  {
+   "key": "ao-series:dorhami",
+   "title": "Dorhami",
+   "year": 2016,
+   "reason": "QUEUED, not merged: identity resolves (TMDB 83933 Dorehami 2016-03-18 fa, IMDb tt6609270) BUT the single AO file dor-hami.mp4 is 3,413,975 bytes (~3.4 MB) — a clip/promo, not a full talk-show episode (a 45+ min episode is hundreds of MB). No full episode exists on AO by these queries. Also a talk show, not a drama series, so its type against the archive's tv records is uncertain."
+  },
+  {
+   "key": "ao-series:heyula",
+   "title": "Heyula (Monster)",
+   "year": 2019,
+   "reason": "QUEUED, not merged: identity resolves (TMDB 90751 'The Monster' 2019-04-29 fa 'هیولا', IMDb tt10294164, 1 season 19 eps) BUT the single AO file (58324250_2339770732946878_7080610370389278720_n.mp4) is 2,949,652 bytes (~2.9 MB) — a clip, not a full episode. No season-1 episode files exist on AO by these queries."
+  },
+  {
+   "key": "ao-series:jeyran",
+   "title": "Jeyran",
+   "year": 2022,
+   "reason": "QUEUED, not merged: identity fully resolves (TMDB 155613 Jeyran 2022-01-21, IMDb tt14471602, OMDb Jeyran 2022 series) BUT the AO files are not episodes: ep46 video_2023-02-01_21-52-25.mp4 is 9,099,874 bytes (~9 MB) and ep47 Jeyran.mp4 is 3,292,430 bytes (~3.3 MB) — clips/promos, not 45-min episodes (plus .ia.mp4 dupes of the same tiny files). A 52-episode series cannot be represented by two 3-9 MB clips."
+  },
+  {
+   "key": "ao-series:mannequin",
+   "title": "Mannequin",
+   "year": 2019,
+   "reason": "QUEUED, not merged: identity resolves (TMDB 92625 Mannequin 2019-08-24 fa 'مانکن', IMDb tt10860278, 1 season 26 eps) BUT the AO files are not episodes: item 20190918_20190918_0554 holds one 2,556,752-byte mp4 titled 'دانلود سریال مانکن + همه قسمت ها خلاصه داستان و اسامی بازیگران' (a promo/synopsis clip), and mankan-episod-2.mp4 is 2,144,060 bytes (~2.1 MB) — a clip, not a full episode."
+  },
+  {
+   "key": "ao-series:moochin",
+   "title": "Moochin",
+   "year": 2020,
+   "reason": "QUEUED, not merged: identity resolves (TMDB 105487 'Mochin' 2020-07-01 fa 'موچین', IMDb tt12622908, 1 season 17 eps) BUT the single AO file serialmoochin.mp4 is 1,794,758 bytes (~1.8 MB) — a clip, not a full episode."
   }
  ],
  "source": "archive.org"
