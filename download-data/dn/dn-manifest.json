@@ -2,15 +2,15 @@
  "code": "DN",
  "counts": {
   "by_resolution": {
-   "1080p": 802,
+   "1080p": 825,
    "360p": 1,
-   "480p": 5551,
-   "540p": 372,
-   "720p": 7649
+   "480p": 5828,
+   "540p": 375,
+   "720p": 8004
   },
   "by_version_family": {
    "Dubbed": 1754,
-   "Subtitled": 12532,
+   "Subtitled": 13190,
    "unknown": 88,
    "NoSub": 1
   },
@@ -50,7 +50,7 @@
    "2006": 8,
    "2007": 3,
    "2008": 7,
-   "2009": 13,
+   "2009": 14,
    "2010": 11,
    "2011": 9,
    "2012": 13,
@@ -58,16 +58,16 @@
    "2014": 23,
    "2015": 29,
    "2016": 32,
-   "2017": 32,
+   "2017": 33,
    "2018": 41,
    "2019": 57,
    "2020": 43,
    "2021": 66,
-   "2022": 52,
-   "2023": 69,
-   "2024": 48,
-   "2025": 70,
-   "2026": 37,
+   "2022": 53,
+   "2023": 70,
+   "2024": 49,
+   "2025": 73,
+   "2026": 49,
    "1994": 2,
    "1998": 2,
    "1971": 2,
@@ -78,11 +78,11 @@
   },
   "ext_overlap": 1,
   "films": 425,
-  "play_rows": 15266,
-  "series": 338,
+  "play_rows": 15924,
+  "series": 358,
   "skipped_no_links": 11,
-  "total": 763,
-  "trailer_keys": 618,
+  "total": 783,
+  "trailer_keys": 624,
   "trailers_dropped": 71,
   "variety_patched": 401,
   "variety_play_created": 42,
@@ -4778,7 +4778,7 @@
   }
  ],
  "generated": "2026-11-22",
- "live_base_head": "2b149e456f824a99d2e2e628ff11a8eb4d6b3b5a",
+ "live_base_head": "346f971d1f8fabb468d9174f576298ea95cf552d",
  "nosub_only_titles": [
   {
    "imdb": "tt1124377",
@@ -10458,6 +10458,226 @@
    "expiring_stripped": 0,
    "skipped_links": {},
    "links": 63
+  },
+  {
+   "title": "Back as Immortal Lord",
+   "year": 2025,
+   "imdb": null,
+   "tmdb": 303881,
+   "num": 12925,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 38
+  },
+  {
+   "title": "Delicious Destiny",
+   "year": 2017,
+   "imdb": null,
+   "tmdb": 74733,
+   "num": 12926,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 56
+  },
+  {
+   "title": "Returning Pearl",
+   "year": 2025,
+   "imdb": null,
+   "tmdb": 292152,
+   "num": 12927,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 31
+  },
+  {
+   "title": "Police Tactical Unit",
+   "year": 2025,
+   "imdb": null,
+   "tmdb": 304451,
+   "num": 12928,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 37
+  },
+  {
+   "title": "Wonder Wall",
+   "year": 2026,
+   "imdb": "tt31922391",
+   "tmdb": 282497,
+   "num": 12929,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 40
+  },
+  {
+   "title": "Salvation, Swallowed by the Nest",
+   "year": 2026,
+   "imdb": "tt39845031",
+   "tmdb": 311844,
+   "num": 12930,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 18
+  },
+  {
+   "title": "Above Myriads",
+   "year": 2026,
+   "imdb": null,
+   "tmdb": 325040,
+   "num": 12931,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 42
+  },
+  {
+   "title": "Kumusta",
+   "year": 2026,
+   "imdb": null,
+   "tmdb": 316111,
+   "num": 12932,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 20
+  },
+  {
+   "title": "Yawm Shoftak",
+   "year": 2026,
+   "imdb": null,
+   "tmdb": 309540,
+   "num": 12933,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 30
+  },
+  {
+   "title": "The Age of Fire",
+   "year": 2026,
+   "imdb": null,
+   "tmdb": 325368,
+   "num": 12934,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 48
+  },
+  {
+   "title": "If Only You Weren't the One",
+   "year": 2026,
+   "imdb": "tt39320147",
+   "tmdb": 308275,
+   "num": 12935,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 16
+  },
+  {
+   "title": "WANTEEZ",
+   "year": 2022,
+   "imdb": null,
+   "tmdb": 208252,
+   "num": 12936,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 49
+  },
+  {
+   "title": "Motherland",
+   "year": 2026,
+   "imdb": null,
+   "tmdb": 325433,
+   "num": 12937,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 10
+  },
+  {
+   "title": "The Silent Killer",
+   "year": 2026,
+   "imdb": "tt50016954",
+   "tmdb": 338846,
+   "num": 12938,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 10
+  },
+  {
+   "title": "Cycle of Sin",
+   "year": 2026,
+   "imdb": null,
+   "tmdb": 333092,
+   "num": 12939,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 20
+  },
+  {
+   "title": "Maybe I Can Hear Love",
+   "year": 2023,
+   "imdb": null,
+   "tmdb": 235749,
+   "num": 12940,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 48
+  },
+  {
+   "title": "Treasure Lovers",
+   "year": 2026,
+   "imdb": null,
+   "tmdb": 277248,
+   "num": 12941,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 16
+  },
+  {
+   "title": "In The Grip of Love",
+   "year": 2024,
+   "imdb": null,
+   "tmdb": 272043,
+   "num": 12942,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 58
+  },
+  {
+   "title": "Umineko: When They Cry",
+   "year": 2009,
+   "imdb": "tt1450620",
+   "tmdb": 25499,
+   "num": 12943,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 51
+  },
+  {
+   "title": "Taming the Husband",
+   "year": 2026,
+   "imdb": "tt41400834",
+   "tmdb": 318349,
+   "num": 12944,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 20
   }
  ],
  "skipped_not_merged": [
@@ -21273,5 +21493,42 @@
    "tv:86640"
   ],
   "note": "DN slice of the all-sources series audit, batch 4: 20 new series, 997 links; partials completed by episode-level diff."
+ },
+ "all_sources_series_audit_dn_batch_5": {
+  "live_base_head": "346f971d1f8fabb468d9174f576298ea95cf552d",
+  "start_num": 12925,
+  "end_num": 12944,
+  "new_titles_merged": [
+   "Back as Immortal Lord",
+   "Delicious Destiny",
+   "Returning Pearl",
+   "Police Tactical Unit",
+   "Wonder Wall",
+   "Salvation, Swallowed by the Nest",
+   "Above Myriads",
+   "Kumusta",
+   "Yawm Shoftak",
+   "The Age of Fire",
+   "If Only You Weren't the One",
+   "WANTEEZ",
+   "Motherland",
+   "The Silent Killer",
+   "Cycle of Sin",
+   "Maybe I Can Hear Love",
+   "Treasure Lovers",
+   "In The Grip of Love",
+   "Umineko: When They Cry",
+   "Taming the Husband"
+  ],
+  "partials_completed": [],
+  "trailers_added": [
+   "tv:292152",
+   "tv:304451",
+   "tv:318349",
+   "tv:325368",
+   "tv:325433",
+   "tv:338846"
+  ],
+  "note": "DN slice of the all-sources series audit, batch 5: 20 new series, 658 links; partials completed by episode-level diff."
  }
 }
