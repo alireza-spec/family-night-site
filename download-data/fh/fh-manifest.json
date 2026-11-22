@@ -2,24 +2,27 @@
  "code": "FH",
  "source": "FarsiHubz mirror https://monclerjakkejacket.com/ (farsihubby.com: empty splash, 0 titles)",
  "start_num": 12468,
- "end_num": 12559,
- "live_base_head": "8b210e25fc530b1b986b2ddf56438b998eba2ff8",
- "generated": "2026-11-21",
+ "end_num": 13011,
+ "live_base_head": "24b5840b6d13308372d90af29fee20770edddd9a",
+ "generated": "2026-11-22",
  "counts": {
-  "total_titles": 92,
+  "total_titles": 109,
   "movies": 70,
-  "series": 22,
-  "total_links": 348,
+  "series": 39,
+  "total_links": 662,
   "by_year": {
    "2024": 4,
-   "2025": 13,
-   "2026": 68,
-   "2022": 2,
-   "2023": 5
+   "2025": 16,
+   "2026": 77,
+   "2022": 3,
+   "2023": 5,
+   "2021": 2,
+   "2018": 1,
+   "2019": 1
   },
   "by_quality": {
-   "1080p": 74,
-   "720p": 271,
+   "1080p": 158,
+   "720p": 501,
    "534p": 1,
    "536p": 1,
    "600p": 1
@@ -1127,7 +1130,7 @@
      "slug": "jazr-va-mad-part-25",
      "season": 1,
      "episode": 25,
-     "reason": "empty player (no mp4, no YouTube)"
+     "reason": "episode page has no mp4 source and no YouTube embed"
     }
    ],
    "duration_sec": 2573.088,
@@ -1198,7 +1201,7 @@
    "year": 2026,
    "num": 12495,
    "episodes_listed": 11,
-   "episodes_merged": 11,
+   "episodes_merged": 12,
    "episodes_held": [],
    "duration_sec": 3058.138,
    "case": "a",
@@ -1257,16 +1260,17 @@
    "episodes_merged": 27,
    "episodes_held": [
     {
+     "slug": "bamdad-khamar-s2-part",
+     "season": 2,
+     "episode": 0,
+     "url": "https://stream.farsicdn.co/serials/bamdade/Khomar-S2E00.mp4",
+     "reason": "episode-0 file (teaser/special, not a TMDB episode): Khomar-S2E00.mp4"
+    },
+    {
      "slug": "bamdad-khamar-s2-part-15",
      "season": 2,
      "episode": 15,
-     "reason": "empty player (no mp4, no YouTube) on saved page"
-    },
-    {
-     "slug": "bamdad-khamar-s2-part",
-     "season": 2,
-     "episode": null,
-     "reason": "episode number unparsable from slug"
+     "reason": "episode page has no mp4 source and no YouTube embed"
     }
    ],
    "duration_sec": 3380.292,
@@ -1356,6 +1360,314 @@
    "duration_sec": 2960.0155,
    "case": "b",
    "fa_title_source": "Mirror show page https://monclerjakkejacket.com/tv-show/sorkh-va-siyah/ description: 'The Red and the Black (Sorkh va Siyah) (سریال سرخ و سیاه) is an Iranian historical romantic drama series directed by Ida Panahandeh and written by Panahandeh and Arsalan Amiri.'"
+  },
+  {
+   "title": "Once Upon a Time in Iran",
+   "tmdb": 129540,
+   "imdb": "tt15157576",
+   "year": 2021,
+   "num": 12995,
+   "episodes_listed": 23,
+   "episodes_merged": 22,
+   "tmdb_seasons": {
+    "1": 23
+   },
+   "episodes_held": [
+    {
+     "slug": "khatoon-serial-episode-13",
+     "season": 1,
+     "episode": 11,
+     "url": "https://stream.farsicdn.co/serials/khatoon/Khatoon-E11.mp4",
+     "reason": "duplicate file URL (same file already merged as S1E11)"
+    }
+   ]
+  },
+  {
+   "title": "Hezarto",
+   "tmdb": 316570,
+   "imdb": null,
+   "year": 2026,
+   "num": 12996,
+   "episodes_listed": 13,
+   "episodes_merged": 13,
+   "tmdb_seasons": {
+    "1": 13
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Crow",
+   "tmdb": 324647,
+   "imdb": "tt43562869",
+   "year": 2026,
+   "num": 12997,
+   "episodes_listed": 11,
+   "episodes_merged": 11,
+   "tmdb_seasons": {
+    "1": 11
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Backstream Boys",
+   "tmdb": 335915,
+   "imdb": null,
+   "year": 2026,
+   "num": 12998,
+   "episodes_listed": 17,
+   "episodes_merged": 17,
+   "tmdb_seasons": {
+    "1": 17
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Golshifteh",
+   "tmdb": 77569,
+   "imdb": "tt8469938",
+   "year": 2018,
+   "num": 12999,
+   "episodes_listed": 16,
+   "episodes_merged": 16,
+   "tmdb_seasons": {
+    "1": 16
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Salhae Door Az Khane",
+   "tmdb": 88676,
+   "imdb": "tt10224596",
+   "year": 2019,
+   "num": 13000,
+   "episodes_listed": 15,
+   "episodes_merged": 15,
+   "tmdb_seasons": {
+    "1": 15,
+    "2": 15
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Notorious",
+   "tmdb": 316596,
+   "imdb": "tt43588311",
+   "year": 2026,
+   "num": 13001,
+   "episodes_listed": 27,
+   "episodes_merged": 27,
+   "tmdb_seasons": {
+    "1": 27
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Criminal Persian Style",
+   "tmdb": 332660,
+   "imdb": "tt44123117",
+   "year": 2026,
+   "num": 13002,
+   "episodes_listed": 10,
+   "episodes_merged": 10,
+   "tmdb_seasons": {
+    "1": 10
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Delroba",
+   "tmdb": 318228,
+   "imdb": null,
+   "year": 2026,
+   "num": 13003,
+   "episodes_listed": 17,
+   "episodes_merged": 17,
+   "tmdb_seasons": {
+    "1": 1
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Gole Sang",
+   "tmdb": 320358,
+   "imdb": "tt42415992",
+   "year": 2026,
+   "num": 13004,
+   "episodes_listed": 10,
+   "episodes_merged": 10,
+   "tmdb_seasons": {
+    "1": 10
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "The Heartless",
+   "tmdb": 315956,
+   "imdb": "tt32645659",
+   "year": 2026,
+   "num": 13005,
+   "episodes_listed": 15,
+   "episodes_merged": 15,
+   "tmdb_seasons": {
+    "1": 15
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Manshoor",
+   "tmdb": 317744,
+   "imdb": null,
+   "year": 2026,
+   "num": 13006,
+   "episodes_listed": 15,
+   "episodes_merged": 15,
+   "tmdb_seasons": {
+    "1": 1
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Anjoman Ashbah",
+   "tmdb": 303539,
+   "imdb": null,
+   "year": 2025,
+   "num": 13007,
+   "episodes_listed": 24,
+   "episodes_merged": 24,
+   "tmdb_seasons": {
+    "1": 12,
+    "2": 12
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Azaazil",
+   "tmdb": 281735,
+   "imdb": "tt34246030",
+   "year": 2025,
+   "num": 13008,
+   "episodes_listed": 14,
+   "episodes_merged": 13,
+   "tmdb_seasons": {
+    "1": 13
+   },
+   "episodes_held": [
+    {
+     "slug": "azazil-teaser",
+     "season": 1,
+     "episode": 1,
+     "url": "https://stream.farsicdn.co/serials/azazil/Azazil-E00.mp4",
+     "reason": "episode-0 file (teaser/special, not a TMDB episode): Azazil-E00.mp4"
+    }
+   ]
+  },
+  {
+   "title": "Aban",
+   "tmdb": 282786,
+   "imdb": "tt35183225",
+   "year": 2025,
+   "num": 13009,
+   "episodes_listed": 18,
+   "episodes_merged": 17,
+   "tmdb_seasons": {
+    "1": 17
+   },
+   "episodes_held": [
+    {
+     "slug": "aban-teaser",
+     "season": 1,
+     "episode": 1,
+     "url": "https://stream.farsicdn.co/serials/aban/Aban-E00.mp4",
+     "reason": "episode-0 file (teaser/special, not a TMDB episode): Aban-E00.mp4"
+    }
+   ]
+  },
+  {
+   "title": "Mortal Wound",
+   "tmdb": 126552,
+   "imdb": "tt14781024",
+   "year": 2021,
+   "num": 13010,
+   "episodes_listed": 57,
+   "episodes_merged": 51,
+   "tmdb_seasons": {
+    "1": 15,
+    "2": 13,
+    "3": 14,
+    "4": 9
+   },
+   "episodes_held": [
+    {
+     "slug": "zakhme-kari-2-teaser",
+     "season": 2,
+     "episode": 1,
+     "url": "https://stream.farsicdn.co/serials/zakhme-kari-2/Zakhme-Kari-S2-Teaser-New.mp4",
+     "reason": "non-episode file (teaser/trailer/summary/movie/behind-the-scenes): Zakhme-Kari-S2-Teaser-New.mp4"
+    },
+    {
+     "slug": "zakhme-kari-summary",
+     "season": 2,
+     "episode": 2,
+     "url": "https://stream.farsicdn.co/serials/zakhme-kari-2/Zakhme-Kari-movie.mp4",
+     "reason": "non-episode file (teaser/trailer/summary/movie/behind-the-scenes): Zakhme-Kari-movie.mp4"
+    },
+    {
+     "slug": "zakhme-kari-s2-summary",
+     "season": 3,
+     "episode": 1,
+     "url": "https://stream.farsicdn.co/serials/zakhme-kari-3/Zakhme-Kari-2-Summary.mp4",
+     "reason": "non-episode file (teaser/trailer/summary/movie/behind-the-scenes): Zakhme-Kari-2-Summary.mp4"
+    },
+    {
+     "slug": "zakhme-kari-s3-teaser",
+     "season": 3,
+     "episode": 2,
+     "url": "https://stream.farsicdn.co/serials/zakhme-kari-3/Zakhme-Kari-S3E00.mp4",
+     "reason": "episode-0 file (teaser/special, not a TMDB episode): Zakhme-Kari-S3E00.mp4"
+    },
+    {
+     "slug": "zakhme-kari-s3-summary",
+     "season": 4,
+     "episode": 1,
+     "url": "https://stream.farsicdn.co/serials/zakhme-kari-4/Zakhme-Kari-3-Summary.mp4",
+     "reason": "non-episode file (teaser/trailer/summary/movie/behind-the-scenes): Zakhme-Kari-3-Summary.mp4"
+    },
+    {
+     "slug": "zakhme-kari-s4-teaser",
+     "season": 4,
+     "episode": 2,
+     "url": "https://stream.farsicdn.co/serials/zakhme-kari-4/Zakhme-Kari-4-teaser.mp4",
+     "reason": "non-episode file (teaser/trailer/summary/movie/behind-the-scenes): Zakhme-Kari-4-teaser.mp4"
+    }
+   ]
+  },
+  {
+   "title": "The Rebel",
+   "tmdb": 202353,
+   "imdb": "tt17074560",
+   "year": 2022,
+   "num": 13011,
+   "episodes_listed": 22,
+   "episodes_merged": 20,
+   "tmdb_seasons": {
+    "1": 20
+   },
+   "episodes_held": [
+    {
+     "slug": "yaghi-posht-sahneh-part-1",
+     "season": 1,
+     "episode": 1,
+     "url": "https://stream.farsicdn.co/serials/yaghi/Yaghi-Posht-E01.mp4",
+     "reason": "non-episode file (teaser/trailer/summary/movie/behind-the-scenes): Yaghi-Posht-E01.mp4"
+    },
+    {
+     "slug": "yaghi-posht-sahneh-2",
+     "season": 1,
+     "episode": 22,
+     "url": "https://stream.farsicdn.co/serials/yaghi/Yaghi-Posht-E02.mp4",
+     "reason": "non-episode file (teaser/trailer/summary/movie/behind-the-scenes): Yaghi-Posht-E02.mp4"
+    }
+   ]
   }
  ],
  "held_not_merged": [
@@ -2207,6 +2519,18 @@
     "4": 30,
     "5": 30
    }
+  },
+  {
+   "slug": "zane-rooz-serial",
+   "title": "Zane Rooz Serial",
+   "tmdb": 299996,
+   "reason": "re-checked 2026-11-22: S1E1 + S5E7 (newest) both YouTube embeds only, no mp4 — same as the Nov-21 hold; needs a non-YouTube source, never merge YouTube links as download links"
+  },
+  {
+   "slug": "eshghe-abadi-serial",
+   "title": "Eshghe Abadi Serial",
+   "tmdb": 291471,
+   "reason": "309 episodes listed (S1 100 + S2 104 + S3 105); episode fetch deferred to batch 2 (volume)"
   }
  ],
  "variety": [
