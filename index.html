@@ -8173,11 +8173,25 @@ async function fnPlayH3NumByTitle(part, title, year) {
     return n === 1 ? num : null;
   } catch (e) { return null; }
 }
+/* FN-TYPECONF-P1 v1: old-archive play entries carry type ('movie' /
+   'series'; measured 2026-11-22: all 10,657 entries in old parts 1-3
+   have one, 0 missing). The old-titles lookup is keyed by title|year
+   only, so a same-name same-year series could otherwise be served a
+   movie's play list (live cases: Primeval 2007, Good Boy 2025,
+   Death Note 2006, Pulse 2001 — series rows with no new play data
+   whose old entry is a movie). Fail-open when either side is untyped,
+   exactly like the P0-4 search-index filter. */
+function fnPlayOldTypeOK(entry, type) {
+  if (!type) return true;
+  if (!entry || !entry.type) return true;
+  var want = type === 'tv' ? 'series' : type;
+  return entry.type === want;
+}
 /* FN-PLAY-OLD-FAST v1: resolve one IMDb id to a joined play entry — new
    archive first (download-index -> play part), old archive second
    (old download-index -> old play part). Returns the {entry,key,part}
    record (old:true for old-archive entries) or null. */
-async function fnPlayResolveImdb(imdb) {
+async function fnPlayResolveImdb(imdb, type) {
   try {
     var ix = await getDlIndex();
     var p = ix[imdb] || 0;
@@ -8193,7 +8207,7 @@ async function fnPlayResolveImdb(imdb) {
     if (op) {
       var od = await fnPlayOldFetchPart(op);
       var oe = od[imdb];
-      if (oe && fnPlayJoined(oe).length) return { entry: oe, key: imdb, part: op, old: true };
+      if (oe && fnPlayJoined(oe).length && fnPlayOldTypeOK(oe, type)) return { entry: oe, key: imdb, part: op, old: true };
     }
   } catch (e2) {}
   return null;
@@ -8204,7 +8218,7 @@ async function fnPlayResolve(ctx) {
     /* FN-PLAY-OLD-FAST v1: resolve the IMDb at once — new archive first,
        old archive second — instead of only the new index here and the
        old one after the 24-file title scan below. */
-    try { var hit0 = await fnPlayResolveImdb(ctx.imdbId); if (hit0) return hit0; } catch (e) {}
+    try { var hit0 = await fnPlayResolveImdb(ctx.imdbId, ctx.type); if (hit0) return hit0; } catch (e) {}
   }
   if (!key && ctx.tmdbKey) {
     try { var ti = await getTitleIndex(); var hit = ti[ctx.tmdbKey]; if (hit && hit.part && hit.num) { part = hit.part; key = 'n:' + hit.num; } } catch (e) {}
@@ -8229,13 +8243,13 @@ async function fnPlayResolve(ctx) {
         if (ctx.type && sr.type && sr.type !== ctx.type) continue;
         var sExact = !ctx.year || !sr.y || String(sr.y) === String(ctx.year);
         if (!sExact) continue;
-        var sHit = await fnPlayResolveImdb(sr.imdb);
+        var sHit = await fnPlayResolveImdb(sr.imdb, ctx.type);
         if (sHit) return sHit;
       }
     } catch (e) {}
   }
   if (!key && ctx.title) {
-    try { var im = await findImdbByTitle(ctx.title, ctx.year, ctx.type); if (im) { var hit3 = await fnPlayResolveImdb(im); if (hit3) return hit3; } } catch (e) {}
+    try { var im = await findImdbByTitle(ctx.title, ctx.year, ctx.type); if (im) { var hit3 = await fnPlayResolveImdb(im, ctx.type); if (hit3) return hit3; } } catch (e) {}
   }
   /* FN-PLAY-NOTMDB v1: no IMDb AND no TMDB id — resolve by title alone.
      The search index carries the part for every row (including id-less
@@ -8273,7 +8287,7 @@ async function fnPlayResolve(ctx) {
       if (opart) {
         var odata = await fnPlayOldFetchPart(opart);
         var oentry = odata[ctx.imdbId];
-        if (oentry && fnPlayJoined(oentry).length) return { entry: oentry, key: ctx.imdbId, part: opart, old: true };
+        if (oentry && fnPlayJoined(oentry).length && fnPlayOldTypeOK(oentry, ctx.type)) return { entry: oentry, key: ctx.imdbId, part: opart, old: true };
       }
     } catch (e) {}
   }
@@ -8285,7 +8299,7 @@ async function fnPlayResolve(ctx) {
       if (ohit && ohit.part && ohit.key) {
         var odata2 = await fnPlayOldFetchPart(ohit.part);
         var oentry2 = odata2[ohit.key];
-        if (oentry2 && fnPlayJoined(oentry2).length) return { entry: oentry2, key: ohit.key, part: ohit.part, old: true };
+        if (oentry2 && fnPlayJoined(oentry2).length && fnPlayOldTypeOK(oentry2, ctx.type)) return { entry: oentry2, key: ohit.key, part: ohit.part, old: true };
       }
     } catch (e) {}
   }
