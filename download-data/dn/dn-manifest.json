@@ -4,13 +4,13 @@
   "by_resolution": {
    "1080p": 694,
    "360p": 1,
-   "480p": 4076,
-   "540p": 234,
-   "720p": 5560
+   "480p": 4597,
+   "540p": 268,
+   "720p": 5918
   },
   "by_version_family": {
-   "Dubbed": 1272,
-   "Subtitled": 9204,
+   "Dubbed": 1687,
+   "Subtitled": 9702,
    "unknown": 88,
    "NoSub": 1
   },
@@ -47,42 +47,43 @@
    "2003": 2,
    "2004": 3,
    "2005": 9,
-   "2006": 7,
+   "2006": 8,
    "2007": 3,
    "2008": 7,
-   "2009": 12,
+   "2009": 13,
    "2010": 10,
    "2011": 8,
    "2012": 13,
-   "2013": 16,
-   "2014": 22,
+   "2013": 17,
+   "2014": 23,
    "2015": 28,
    "2016": 32,
-   "2017": 28,
-   "2018": 37,
+   "2017": 30,
+   "2018": 38,
    "2019": 55,
-   "2020": 40,
-   "2021": 60,
-   "2022": 43,
-   "2023": 57,
+   "2020": 41,
+   "2021": 63,
+   "2022": 45,
+   "2023": 61,
    "2024": 43,
    "2025": 48,
    "2026": 36,
-   "1994": 1,
+   "1994": 2,
    "1998": 1,
    "1971": 2,
    "1989": 1,
    "1967": 1,
-   "1969": 1
+   "1969": 1,
+   "1983": 1
   },
   "ext_overlap": 1,
   "films": 425,
-  "play_rows": 11456,
-  "series": 259,
+  "play_rows": 12369,
+  "series": 278,
   "skipped_no_links": 11,
-  "total": 684,
-  "trailer_keys": 578,
-  "trailers_dropped": 70,
+  "total": 703,
+  "trailer_keys": 585,
+  "trailers_dropped": 71,
   "variety_patched": 401,
   "variety_play_created": 42,
   "variety_play_rows_added": 4425,
@@ -4777,7 +4778,7 @@
   }
  ],
  "generated": "2026-11-22",
- "live_base_head": "8a1f16830b79cdf3cae288cc5b88b064d07fbfb8",
+ "live_base_head": "0508cd0abd0307716609e8c559c0b4daf942334b",
  "nosub_only_titles": [
   {
    "imdb": "tt1124377",
@@ -9582,6 +9583,219 @@
    "expiring_stripped": 0,
    "skipped_links": {},
    "links": 56
+  },
+  {
+   "title": "Around the World with Willy Fog",
+   "year": 1983,
+   "imdb": "tt0135114",
+   "tmdb": 5150,
+   "num": 12793,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {
+    "quality unparseable": 5
+   },
+   "links": 5
+  },
+  {
+   "title": "Mr. Wrong",
+   "year": 2020,
+   "imdb": "tt12453442",
+   "tmdb": 105052,
+   "num": 12794,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 28
+  },
+  {
+   "title": "Masha and the Bear",
+   "year": 2009,
+   "imdb": "tt1884856",
+   "tmdb": 46080,
+   "num": 12795,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 9
+  },
+  {
+   "title": "Simon Schama's Power of Art",
+   "year": 2006,
+   "imdb": "tt0887235",
+   "tmdb": 14131,
+   "num": 12796,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 8
+  },
+  {
+   "title": "Witch's Love",
+   "year": 2018,
+   "imdb": "tt8689936",
+   "tmdb": 80965,
+   "num": 12797,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 12
+  },
+  {
+   "title": "Bride of Istanbul",
+   "year": 2017,
+   "imdb": "tt6462806",
+   "tmdb": 70798,
+   "num": 12798,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 481
+  },
+  {
+   "title": "Sofia the First",
+   "year": 2013,
+   "imdb": "tt2136138",
+   "tmdb": 46928,
+   "num": 12799,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 52
+  },
+  {
+   "title": "The Veil",
+   "year": 2021,
+   "imdb": "tt14482296",
+   "tmdb": 127358,
+   "num": 12800,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {
+    "unplaced episode": 4
+   },
+   "links": 24
+  },
+  {
+   "title": "S.O.Z: Soldiers or Zombies",
+   "year": 2021,
+   "imdb": "tt7636244",
+   "tmdb": 95281,
+   "num": 12801,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 8
+  },
+  {
+   "title": "Young Lady and Gentleman",
+   "year": 2021,
+   "imdb": "tt15514606",
+   "tmdb": 129473,
+   "num": 12802,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 104
+  },
+  {
+   "title": "Essence of Emeril",
+   "year": 1994,
+   "imdb": "tt0285362",
+   "tmdb": 1001,
+   "num": 12803,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 20
+  },
+  {
+   "title": "Man on Pause",
+   "year": 2022,
+   "imdb": "tt14486722",
+   "tmdb": 209793,
+   "num": 12804,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 6
+  },
+  {
+   "title": "Super Senses: The Secret Power of Animals",
+   "year": 2014,
+   "imdb": "tt4012354",
+   "tmdb": 61253,
+   "num": 12805,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 24
+  },
+  {
+   "title": "Richard Hammond's Crazy Contraptions",
+   "year": 2022,
+   "imdb": "tt18953020",
+   "tmdb": 200895,
+   "num": 12806,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 14
+  },
+  {
+   "title": "The Search",
+   "year": 2023,
+   "imdb": "tt21308714",
+   "tmdb": 226675,
+   "num": 12807,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 6
+  },
+  {
+   "title": "Modern Tales Of The East",
+   "year": 2023,
+   "imdb": "tt21268600",
+   "tmdb": 226056,
+   "num": 12808,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 8
+  },
+  {
+   "title": "Miraculous Brothers",
+   "year": 2023,
+   "imdb": "tt27906926",
+   "tmdb": 208834,
+   "num": 12809,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 32
+  },
+  {
+   "title": "WorldEnd: What are you doing at the end of the world? Are you busy? Will you save us?",
+   "year": 2017,
+   "imdb": "tt6819736",
+   "tmdb": 70639,
+   "num": 12810,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 24
+  },
+  {
+   "title": "I May Love You",
+   "year": 2023,
+   "imdb": "tt30137313",
+   "tmdb": 240231,
+   "num": 12811,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 48
   }
  ],
  "skipped_not_merged": [
@@ -20169,5 +20383,110 @@
    }
   ],
   "note": "DN slice of the twice-daily PM merge. 48 new titles (40 movies, 8 series; 605 links), 5 variety titles (34 links), 15 trailer keys (13 new-title + 2 variety). 19 titles queued (identity unresolved / year mismatch / no IMDb). Ruzgarli Tepe merged 386 of 390 links (4 opaque filenames, no parseable quality). Fatih is 6 episodes x 2 qualities (12 rows), season 1 only."
+ },
+ "all_sources_series_audit_dn_batch_1": {
+  "live_base_head": "0508cd0abd0307716609e8c559c0b4daf942334b",
+  "start_num": 12793,
+  "end_num": 12811,
+  "new_titles_merged": [
+   "Around the World with Willy Fog",
+   "Mr. Wrong",
+   "Masha and the Bear",
+   "Simon Schama's Power of Art",
+   "Witch's Love",
+   "Bride of Istanbul",
+   "Sofia the First",
+   "The Veil",
+   "S.O.Z: Soldiers or Zombies",
+   "Young Lady and Gentleman",
+   "Essence of Emeril",
+   "Man on Pause",
+   "Super Senses: The Secret Power of Animals",
+   "Richard Hammond's Crazy Contraptions",
+   "The Search",
+   "Modern Tales Of The East",
+   "Miraculous Brothers",
+   "WorldEnd: What are you doing at the end of the world? Are you busy? Will you save us?",
+   "I May Love You"
+  ],
+  "partials_completed": [
+   {
+    "dn": 19682,
+    "title": "The Founder of Diabolism",
+    "num": 11484,
+    "added": 0,
+    "play_added": 0
+   },
+   {
+    "dn": 22622,
+    "title": "Free Rein",
+    "num": 11509,
+    "added": 0,
+    "play_added": 0
+   },
+   {
+    "dn": 22659,
+    "title": "Renai Flops",
+    "num": 12462,
+    "added": 0,
+    "play_added": 0
+   },
+   {
+    "dn": 22664,
+    "title": "Shinobi no Ittoki",
+    "num": 12682,
+    "added": 0,
+    "play_added": 0
+   },
+   {
+    "dn": 25242,
+    "title": "Glasslip",
+    "num": 12657,
+    "added": 0,
+    "play_added": 0
+   },
+   {
+    "dn": 27618,
+    "title": "Big Shot",
+    "num": 11529,
+    "added": 0,
+    "play_added": 0
+   },
+   {
+    "dn": 27645,
+    "title": "You Cannot Hide",
+    "num": 11535,
+    "added": 0,
+    "play_added": 0
+   },
+   {
+    "dn": 27748,
+    "title": "Who Killed Robert Wone",
+    "num": 12687,
+    "added": 0,
+    "play_added": 0
+   },
+   {
+    "dn": 27749,
+    "title": "Crime Scene Berlin Nightlife Killer",
+    "num": 12688,
+    "added": 0,
+    "play_added": 0
+   },
+   {
+    "dn": 36012,
+    "title": "Badalte Rishton Ki Dastaan",
+    "num": 12696,
+    "added": 0,
+    "play_added": 0
+   }
+  ],
+  "trailers_added": [
+   "tv:208834",
+   "tv:226675",
+   "tv:240231",
+   "tv:70639"
+  ],
+  "note": "DN slice of the all-sources series audit, batch 1: 19 new series, 913 links; partials completed by episode-level diff."
  }
 }
