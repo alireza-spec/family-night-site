@@ -2,7 +2,7 @@
  "description": "Playable versions for old-archive MOVIE titles, built from the live old archive parts (alireza-spec/FN download-data). Each play_url is the direct download file URL itself (the old archive has no playit tokens). Split by old archive part (1-3). Series are NOT in this index — their old links are folder URLs, not files.",
  "generated": "2026-11-20",
  "groups": "SoftSub = hardsub files; Dubbed = dubbed; NoSub = no subtitle. Sizes come from the archive's own size text after each link (e.g. '2.71 GB'); missing sizes are '' and are filled by the site's lazy client-side probe.",
- "joined": 24075,
+ "joined": 24561,
  "lookup": "Find the part via the old download-index.json (IMDb -> part 1-3) or play-index-old-titles.json (normalized title[|year] -> {part, key}), then fetch play-index-old-part-<part>.json. Used ONLY as a fallback when the new-archive play-index has no joined play data for the title.",
  "name": "Family Night play index (old archive / Donyaye Serial, movies only)",
  "parts": [
@@ -13,19 +13,19 @@
    "part": 1
   },
   {
-   "bytes": 3879684,
+   "bytes": 3979698,
    "entries": 3415,
    "file": "play-index-old-part-2.json",
    "part": 2
   },
   {
-   "bytes": 5740092,
+   "bytes": 5877492,
    "entries": 4984,
    "file": "play-index-old-part-3.json",
    "part": 3
   }
  ],
  "total_entries": 10654,
- "total_play_entries": 24075,
+ "total_play_entries": 24561,
  "unjoined": 0
 }

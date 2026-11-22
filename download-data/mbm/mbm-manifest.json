@@ -1685,6 +1685,672 @@
    }
   ]
  },
+ "batch4": {
+  "avail_flips": [
+   {
+    "imdb": "tt33550053",
+    "kind": "imdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": null,
+    "title": "9-1-1: Nashville"
+   },
+   {
+    "imdb": "tt13720112",
+    "kind": "tmdb",
+    "new": [
+     1,
+     1
+    ],
+    "old": [
+     1,
+     0
+    ],
+    "title": "The Empress"
+   }
+  ],
+  "borderline_kept": [
+   {
+    "decision": "KEPT — different codec = different encode",
+    "existing_codec": "x264",
+    "existing_label": "WEB-DL 1080p Film2Media Hardsub S03E02",
+    "existing_size": 309760000,
+    "file": "Link.Click.S03E02.1080p.Web-Dl.x265.10-Bit.SoftSub(MoboMovies).mkv",
+    "imdb": "tt14976292",
+    "mbm_size": 320009937,
+    "title": "Link Click"
+   },
+   {
+    "decision": "KEPT — different codec = different encode",
+    "existing_codec": "x264",
+    "existing_label": "WEB-DL 1080p Film2Media Hardsub S03E03",
+    "existing_size": 269020000,
+    "file": "Link.Click.S03E03.1080p.Web-Dl.x265.10-Bit.SoftSub(MoboMovies).mkv",
+    "imdb": "tt14976292",
+    "mbm_size": 295824903,
+    "title": "Link Click"
+   },
+   {
+    "decision": "KEPT — different codec = different encode",
+    "existing_codec": "x264",
+    "existing_label": "WEB-DL 1080p Film2Media Hardsub S03E04",
+    "existing_size": 303430000,
+    "file": "Link.Click.S03E04.1080p.Web-Dl.x265.10-Bit.SoftSub(MoboMovies).mkv",
+    "imdb": "tt14976292",
+    "mbm_size": 311000560,
+    "title": "Link Click"
+   },
+   {
+    "decision": "KEPT — different codec = different encode",
+    "existing_codec": "x264",
+    "existing_label": "WEB-DL 1080p Film2Media Hardsub S03E01",
+    "existing_size": 470410000,
+    "file": "Nobody.Wants.This.S03E01.1080p.Web-Dl.x265.10-Bit.SoftSub(MoboMovies).mkv",
+    "imdb": "tt26933824",
+    "mbm_size": 425540825,
+    "title": "Nobody Wants This"
+   },
+   {
+    "decision": "KEPT — different codec = different encode",
+    "existing_codec": "x264",
+    "existing_label": "WEB-DL 1080p Film2Media Hardsub S03E06",
+    "existing_size": 535890000,
+    "file": "Nobody.Wants.This.S03E06.1080p.Web-Dl.x265.10-Bit.SoftSub(MoboMovies).mkv",
+    "imdb": "tt26933824",
+    "mbm_size": 545621752,
+    "title": "Nobody Wants This"
+   },
+   {
+    "decision": "KEPT — different codec = different encode",
+    "existing_codec": "x264",
+    "existing_label": "WEB-DL 1080p Film2Media Hardsub S02E01",
+    "existing_size": 564600000,
+    "file": "Stick.S02E01.1080p.Web-Dl.x265.10-Bit.SoftSub(MoboMovies).mkv",
+    "imdb": "tt31710249",
+    "mbm_size": 518348607,
+    "title": "Stick"
+   },
+   {
+    "decision": "KEPT — different codec = different encode",
+    "existing_codec": "x264",
+    "existing_label": "WEB-DL 1080p Film2Media Hardsub S02E02",
+    "existing_size": 683910000,
+    "file": "Stick.S02E02.1080p.Web-Dl.x265.10-Bit.SoftSub(MoboMovies).mkv",
+    "imdb": "tt31710249",
+    "mbm_size": 645051462,
+    "title": "Stick"
+   }
+  ],
+  "counts": {
+   "have_new_links_added": 1272,
+   "have_new_titles": 36,
+   "have_old_play_rows_added": 486,
+   "have_old_titles": 9,
+   "new_links": 0,
+   "new_titles": 0,
+   "skipped_fully_duplicate_titles": 4,
+   "skipped_links": 15,
+   "total_links_added": 1758
+  },
+  "duplicate_records_untouched": [],
+  "generated": "2026-11-22",
+  "have_new_added": [
+   {
+    "existing_num": 9138,
+    "imdb": "tt33550053",
+    "ndropped": 0,
+    "nlinks_added": 10,
+    "part": 4,
+    "title": "9-1-1: Nashville"
+   },
+   {
+    "existing_num": 11188,
+    "imdb": "tt13567344",
+    "ndropped": 0,
+    "nlinks_added": 130,
+    "part": "mbm",
+    "title": "Acapulco"
+   },
+   {
+    "existing_num": 9275,
+    "imdb": "tt32603995",
+    "ndropped": 0,
+    "nlinks_added": 40,
+    "part": 5,
+    "title": "Adventure Time: Side Quests"
+   },
+   {
+    "existing_num": 9366,
+    "imdb": "tt4378376",
+    "ndropped": 0,
+    "nlinks_added": 47,
+    "part": 6,
+    "title": "Babylon Berlin"
+   },
+   {
+    "existing_num": 9174,
+    "imdb": "tt7441658",
+    "ndropped": 0,
+    "nlinks_added": 77,
+    "part": 5,
+    "title": "Black Clover"
+   },
+   {
+    "existing_num": 9525,
+    "imdb": "tt14168162",
+    "ndropped": 0,
+    "nlinks_added": 40,
+    "part": 7,
+    "title": "Bosch: Legacy"
+   },
+   {
+    "existing_num": 11191,
+    "imdb": "tt35826715",
+    "ndropped": 0,
+    "nlinks_added": 30,
+    "part": "mbm",
+    "title": "Boston Blue"
+   },
+   {
+    "existing_num": 9452,
+    "imdb": "tt31449991",
+    "ndropped": 0,
+    "nlinks_added": 12,
+    "part": 7,
+    "title": "Chad Powers"
+   },
+   {
+    "existing_num": 11197,
+    "imdb": "tt32117300",
+    "ndropped": 0,
+    "nlinks_added": 6,
+    "part": "mbm",
+    "title": "Crash"
+   },
+   {
+    "existing_num": 9198,
+    "imdb": "tt33043892",
+    "ndropped": 3,
+    "nlinks_added": 2,
+    "part": 5,
+    "title": "Dexter: Resurrection"
+   },
+   {
+    "existing_num": 9194,
+    "imdb": "tt31589662",
+    "ndropped": 3,
+    "nlinks_added": 2,
+    "part": 5,
+    "title": "Georgie & Mandy's First Marriage"
+   },
+   {
+    "existing_num": 12466,
+    "imdb": "tt32840498",
+    "ndropped": 0,
+    "nlinks_added": 3,
+    "part": "mbm",
+    "title": "Good Partner"
+   },
+   {
+    "existing_num": 9323,
+    "imdb": "tt0472954",
+    "ndropped": 0,
+    "nlinks_added": 76,
+    "part": 6,
+    "title": "It's Always Sunny in Philadelphia"
+   },
+   {
+    "existing_num": 9287,
+    "imdb": "tt14976292",
+    "ndropped": 0,
+    "nlinks_added": 66,
+    "part": 6,
+    "title": "Link Click"
+   },
+   {
+    "existing_num": 9371,
+    "imdb": "tt27846061",
+    "ndropped": 0,
+    "nlinks_added": 12,
+    "part": 6,
+    "title": "Ludwig"
+   },
+   {
+    "existing_num": 9282,
+    "imdb": "tt26933824",
+    "ndropped": 0,
+    "nlinks_added": 20,
+    "part": 5,
+    "title": "Nobody Wants This"
+   },
+   {
+    "existing_num": 9885,
+    "imdb": "tt21030032",
+    "ndropped": 0,
+    "nlinks_added": 39,
+    "part": 10,
+    "title": "Oshi No Ko"
+   },
+   {
+    "existing_num": 9214,
+    "imdb": "tt0118421",
+    "ndropped": 0,
+    "nlinks_added": 40,
+    "part": 5,
+    "title": "Oz"
+   },
+   {
+    "existing_num": 9756,
+    "imdb": "tt12324366",
+    "ndropped": 3,
+    "nlinks_added": 7,
+    "part": 9,
+    "title": "Percy Jackson and the Olympians"
+   },
+   {
+    "existing_num": 9357,
+    "imdb": "tt5607616",
+    "ndropped": 0,
+    "nlinks_added": 72,
+    "part": 6,
+    "title": "Re: Zero - Starting Life in Another World"
+   },
+   {
+    "existing_num": 9572,
+    "imdb": "tt17069148",
+    "ndropped": 0,
+    "nlinks_added": 33,
+    "part": 8,
+    "title": "Sakamoto Days"
+   },
+   {
+    "existing_num": 11218,
+    "imdb": "tt32268630",
+    "ndropped": 0,
+    "nlinks_added": 30,
+    "part": "mbm",
+    "title": "Sheriff Country"
+   },
+   {
+    "existing_num": 10855,
+    "imdb": "tt8806524",
+    "ndropped": 0,
+    "nlinks_added": 50,
+    "part": 16,
+    "title": "Star Trek: Picard"
+   },
+   {
+    "existing_num": 9218,
+    "imdb": "tt31710249",
+    "ndropped": 0,
+    "nlinks_added": 8,
+    "part": 5,
+    "title": "Stick"
+   },
+   {
+    "existing_num": 9488,
+    "imdb": "tt13759970",
+    "ndropped": 0,
+    "nlinks_added": 16,
+    "part": 7,
+    "title": "Taxi Driver"
+   },
+   {
+    "existing_num": 11229,
+    "imdb": "tt32544507",
+    "ndropped": 0,
+    "nlinks_added": 35,
+    "part": "mbm",
+    "title": "The Creep Tapes"
+   },
+   {
+    "existing_num": 11230,
+    "imdb": "tt11755260",
+    "ndropped": 0,
+    "nlinks_added": 96,
+    "part": "mbm",
+    "title": "The Daily Life of the Immortal King"
+   },
+   {
+    "existing_num": 9639,
+    "imdb": "tt13720112",
+    "ndropped": 0,
+    "nlinks_added": 18,
+    "part": 8,
+    "title": "The Empress"
+   },
+   {
+    "existing_num": 9236,
+    "imdb": "tt10946316",
+    "ndropped": 0,
+    "nlinks_added": 5,
+    "part": 5,
+    "title": "The Institute"
+   },
+   {
+    "existing_num": 9173,
+    "imdb": "tt31289994",
+    "ndropped": 3,
+    "nlinks_added": 2,
+    "part": 5,
+    "title": "The Lowdown"
+   },
+   {
+    "existing_num": 9125,
+    "imdb": "tt6151526",
+    "ndropped": 0,
+    "nlinks_added": 10,
+    "part": 4,
+    "title": "The Rainmaker"
+   },
+   {
+    "existing_num": 9191,
+    "imdb": "tt13196080",
+    "ndropped": 3,
+    "nlinks_added": 52,
+    "part": 5,
+    "title": "Tokyo Revengers"
+   },
+   {
+    "existing_num": 9116,
+    "imdb": "tt13875494",
+    "ndropped": 0,
+    "nlinks_added": 40,
+    "part": 4,
+    "title": "Tracker"
+   },
+   {
+    "existing_num": 9203,
+    "imdb": "tt29011445",
+    "ndropped": 0,
+    "nlinks_added": 3,
+    "part": 5,
+    "title": "Where's Wanda?"
+   },
+   {
+    "existing_num": 11237,
+    "imdb": "tt29780951",
+    "ndropped": 0,
+    "nlinks_added": 69,
+    "part": "mbm",
+    "title": "Wild Cards"
+   },
+   {
+    "existing_num": 10820,
+    "imdb": "tt17543592",
+    "ndropped": 0,
+    "nlinks_added": 74,
+    "part": 16,
+    "title": "Will Trent"
+   }
+  ],
+  "have_old_play_only": [
+   {
+    "existing_num": 550,
+    "imdb": "tt11043632",
+    "note": "H3 download links NOT added — FN-token block; play rows only",
+    "nplay_rows": 64,
+    "part": 3,
+    "title": "Beastars"
+   },
+   {
+    "existing_num": 3786,
+    "imdb": "tt14986406",
+    "note": "H3 download links NOT added — FN-token block; play rows only",
+    "nplay_rows": 111,
+    "part": 2,
+    "title": "Bleach: Thousand-Year Blood War"
+   },
+   {
+    "existing_num": 1586,
+    "imdb": "tt0481256",
+    "note": "H3 download links NOT added — FN-token block; play rows only",
+    "nplay_rows": 80,
+    "part": 3,
+    "title": "Fighting Spirit"
+   },
+   {
+    "existing_num": 5178,
+    "imdb": "tt9184994",
+    "note": "H3 download links NOT added — FN-token block; play rows only",
+    "nplay_rows": 34,
+    "part": 2,
+    "title": "How to Sell Drugs Online (Fast)"
+   },
+   {
+    "existing_num": 5298,
+    "imdb": "tt4181172",
+    "note": "H3 download links NOT added — FN-token block; play rows only",
+    "nplay_rows": 21,
+    "part": 2,
+    "title": "Shooter"
+   },
+   {
+    "existing_num": 3921,
+    "imdb": "tt12074628",
+    "note": "H3 download links NOT added — FN-token block; play rows only",
+    "nplay_rows": 36,
+    "part": 3,
+    "title": "Smiling Friends"
+   },
+   {
+    "existing_num": 4310,
+    "imdb": "tt1515193",
+    "note": "H3 download links NOT added — FN-token block; play rows only",
+    "nplay_rows": 92,
+    "part": 3,
+    "title": "The Big C"
+   },
+   {
+    "existing_num": 4482,
+    "imdb": "tt5014882",
+    "note": "H3 download links NOT added — FN-token block; play rows only",
+    "nplay_rows": 12,
+    "part": 3,
+    "title": "The Durrells"
+   },
+   {
+    "existing_num": 5977,
+    "imdb": "tt4192812",
+    "note": "H3 download links NOT added — FN-token block; play rows only",
+    "nplay_rows": 36,
+    "part": 2,
+    "title": "Unforgotten"
+   }
+  ],
+  "live_base_head": "605834c967075b01aaa31a7bed5e354f177045cc",
+  "near_size_collapses": {
+   "per_title": [
+    {
+     "files": [
+      "Dexter.Resurrection.S02E04.1080p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "Dexter.Resurrection.S02E04.720p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "Dexter.Resurrection.S02E04.480p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv"
+     ],
+     "imdb": "tt33043892",
+     "n": 3,
+     "title": "Dexter: Resurrection"
+    },
+    {
+     "files": [
+      "Doc.S03E08.1080p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "Doc.S03E08.720p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "Doc.S03E08.480p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv"
+     ],
+     "imdb": "tt26748321",
+     "n": 3,
+     "title": "Doc"
+    },
+    {
+     "files": [
+      "Georgie.Mandys.First.Marriage.S03E07.1080p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "Georgie.Mandys.First.Marriage.S03E07.720p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "Georgie.Mandys.First.Marriage.S03E07.480p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv"
+     ],
+     "imdb": "tt31589662",
+     "n": 3,
+     "title": "Georgie & Mandy's First Marriage"
+    },
+    {
+     "files": [
+      "Percy.Jackson.And.The.Olympians.S03E02.1080p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "Percy.Jackson.And.The.Olympians.S03E02.720p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "Percy.Jackson.And.The.Olympians.S03E02.480p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv"
+     ],
+     "imdb": "tt12324366",
+     "n": 3,
+     "title": "Percy Jackson and the Olympians"
+    },
+    {
+     "files": [
+      "The.Apothecary.Diaries.S03E08.1080p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "The.Apothecary.Diaries.S03E08.720p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "The.Apothecary.Diaries.S03E08.480p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv"
+     ],
+     "imdb": "tt26743760",
+     "n": 3,
+     "title": "The Apothecary Diaries"
+    },
+    {
+     "files": [
+      "The.Black.Dagger.Brotherhood.S02E03.1080p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "The.Black.Dagger.Brotherhood.S02E03.720p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "The.Black.Dagger.Brotherhood.S02E03.480p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "The.Black.Dagger.Brotherhood.S02E04.1080p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "The.Black.Dagger.Brotherhood.S02E04.720p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "The.Black.Dagger.Brotherhood.S02E04.480p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv"
+     ],
+     "imdb": "tt33095092",
+     "n": 6,
+     "title": "The Black Dagger Brotherhood"
+    },
+    {
+     "files": [
+      "The.Lowdown.S02E07.1080p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "The.Lowdown.S02E07.720p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "The.Lowdown.S02E07.480p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv"
+     ],
+     "imdb": "tt31289994",
+     "n": 3,
+     "title": "The Lowdown"
+    },
+    {
+     "files": [
+      "Tokyo.Revengers.S04E08.1080p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "Tokyo.Revengers.S04E08.720p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "Tokyo.Revengers.S04E08.480p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv"
+     ],
+     "imdb": "tt13196080",
+     "n": 3,
+     "title": "Tokyo Revengers"
+    },
+    {
+     "files": [
+      "Tougen.Anki.Dark.Demon.Of.Paradise.S02E08.1080p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "Tougen.Anki.Dark.Demon.Of.Paradise.S02E08.720p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv",
+      "Tougen.Anki.Dark.Demon.Of.Paradise.S02E08.480p.Web-Dl.x264.8-Bit.SoftSub(MoboMovies).mkv"
+     ],
+     "imdb": "tt32344704",
+     "n": 3,
+     "title": "Tougen Anki: Dark Demon of Paradise"
+    }
+   ],
+   "total_dropped": 30
+  },
+  "new_added": [],
+  "partition": {
+   "have_new": 40,
+   "have_old_only": 9,
+   "new": 0
+  },
+  "search_index": {
+   "rows_added": [],
+   "rows_repaired_in_place": [
+    {
+     "imdb": "tt33550053",
+     "kind": "fill imdb",
+     "title": "9-1-1: Nashville"
+    },
+    {
+     "imdb": "tt32603995",
+     "kind": "fill year",
+     "title": "Adventure Time: Side Quests"
+    },
+    {
+     "imdb": "tt7441658",
+     "kind": "fill year",
+     "title": "Black Clover"
+    },
+    {
+     "imdb": "tt0472954",
+     "kind": "fill year",
+     "title": "It's Always Sunny in Philadelphia"
+    },
+    {
+     "imdb": "tt14976292",
+     "kind": "fill year",
+     "title": "Link Click"
+    },
+    {
+     "imdb": "tt27846061",
+     "kind": "fill year",
+     "title": "Ludwig"
+    },
+    {
+     "imdb": "tt5607616",
+     "kind": "fill year",
+     "title": "Re: Zero - Starting Life in Another World"
+    },
+    {
+     "imdb": "tt13720112",
+     "kind": "fill tmdb",
+     "title": "The Empress"
+    },
+    {
+     "imdb": "tt13196080",
+     "kind": "fill imdb+year",
+     "title": "Tokyo Revengers"
+    },
+    {
+     "imdb": "tt14986406",
+     "kind": "fill tmdb",
+     "title": "Bleach: Thousand-Year Blood War"
+    }
+   ]
+  },
+  "skipped": [
+   {
+    "existing_num": 9210,
+    "imdb": "tt26748321",
+    "part": 5,
+    "reason": "all new_files already live (exact-URL or near-size duplicates)",
+    "title": "Doc"
+   },
+   {
+    "existing_num": 9111,
+    "imdb": "tt26743760",
+    "part": 4,
+    "reason": "all new_files already live (exact-URL or near-size duplicates)",
+    "title": "The Apothecary Diaries"
+   },
+   {
+    "existing_num": 9106,
+    "imdb": "tt33095092",
+    "part": 4,
+    "reason": "all new_files already live (exact-URL or near-size duplicates)",
+    "title": "The Black Dagger Brotherhood"
+   },
+   {
+    "existing_num": 9112,
+    "imdb": "tt32344704",
+    "part": 4,
+    "reason": "all new_files already live (exact-URL or near-size duplicates)",
+    "title": "Tougen Anki: Dark Demon of Paradise"
+   }
+  ]
+ },
  "borderline_kept": [
   {
    "decision": "KEPT — different codec = different encode",
@@ -1849,14 +2515,14 @@
    "2025": 4,
    "2026": 22
   },
-  "have_new_links_added": 2605,
+  "have_new_links_added": 3877,
   "have_new_titles": 101,
-  "have_old_play_rows_added": 1039,
+  "have_old_play_rows_added": 1525,
   "have_old_titles": 42,
   "new_links": 1410,
   "new_titles": 78,
   "total_bytes_new": 719336804823,
-  "total_links_added": 5054,
+  "total_links_added": 6812,
   "total_titles": 220
  },
  "generated": "2026-11-21",
