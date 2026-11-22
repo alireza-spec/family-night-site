@@ -4,13 +4,13 @@
   "by_resolution": {
    "1080p": 676,
    "360p": 1,
-   "480p": 3849,
+   "480p": 3847,
    "540p": 234,
-   "720p": 5205
+   "720p": 5202
   },
   "by_version_family": {
    "Dubbed": 1241,
-   "Subtitled": 8639,
+   "Subtitled": 8634,
    "unknown": 84,
    "NoSub": 1
   },
@@ -74,7 +74,7 @@
   },
   "ext_overlap": 1,
   "films": 385,
-  "play_rows": 10823,
+  "play_rows": 10817,
   "series": 251,
   "skipped_no_links": 11,
   "total": 636,
@@ -82,7 +82,7 @@
   "trailers_dropped": 70,
   "variety_patched": 396,
   "variety_play_created": 42,
-  "variety_play_rows_added": 4392,
+  "variety_play_rows_added": 4391,
   "variety_stale_links": 531
  },
  "end_num": 11589,
@@ -8719,7 +8719,7 @@
    "nosub_only": false,
    "expiring_stripped": 0,
    "skipped_links": {},
-   "links": 548
+   "links": 544
   },
   {
    "title": "When Time Stopped",
@@ -8785,7 +8785,7 @@
    "nosub_only": false,
    "expiring_stripped": 0,
    "skipped_links": {},
-   "links": 31
+   "links": 30
   },
   {
    "title": "Web of Make Believe: Death, Lies and the Internet",
@@ -17897,9 +17897,9 @@
     "480p unknown",
     "720p unknown"
    ],
-   "h3_links_added": 315,
+   "h3_links_added": 314,
    "imdb": "tt0983983",
-   "play_rows_added": 315,
+   "play_rows_added": 314,
    "stale_families_skipped": [],
    "tmdb": 3902,
    "type": "tv"
@@ -19160,5 +19160,9 @@
    }
   ],
   "note": "DN slice of the twice-daily AM merge. 29 new series (1,260 links), 2 old-record variety titles (331 links: The Shrink Next Door 16 + Shaun the Sheep 315), 13 trailer keys. 6 titles queued (Rurouni Kenshin Tsuioku Hen, Ultimate Predators, Love Formula, The Generals Youngest Son, Cardcaptor Sakura, Asiye — identity unresolved or no IMDb). A Discovery of Witches is NOT a DN new title: it merged as ZV variety into old2 #3741."
+ },
+ "twice_daily_2026_11_22_am_fixup": {
+  "live_base_head": "e2fc5678583a3bbd5dfe9d06e5cb5a1131777623",
+  "note": "Dedupe fix-up: removed 2nd-occurrence lines/rows for duplicate URLs in the DN evidence (Time Goes By 4, Daniel Spellbound 1, Shaun the Sheep 1). Total links 1898 -> 1892. Self-check was 885/4 before the fix."
  }
 }

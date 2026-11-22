@@ -58903,20 +58903,6 @@
    },
    {
     "encoder": "darknama",
-    "episode": 36,
-    "group": "NoSub",
-    "join_tier": 1,
-    "play_type": "none",
-    "play_url": "http://exchange.port.sn.giftmond.ir/tv2/Shaun%20the%20Sheep/fasl21080/2812730-0-ShauntheSheepS02E36-1080.mp4",
-    "playit_url": null,
-    "quality": "1080p",
-    "quality_label": "1080p",
-    "season": 2,
-    "size_bytes": null,
-    "size_text": ""
-   },
-   {
-    "encoder": "darknama",
     "episode": 37,
     "group": "NoSub",
     "join_tier": 1,
