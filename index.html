@@ -3325,28 +3325,33 @@ async function fnFillHomeRail(fetchPage, keep) {
   }
   return out;
 }
-/* ---------- FN-HERO-LIVE v1: the hero is LIVE trending, not the stale snapshot ----------
-   The snapshot hero (snap.hero + snap.rows.trending_now) is only the first
-   paint / fallback — it never knows about the archive and only changes
-   when the snapshot workflow rebuilds. The live hero is rebuilt here from
-   the TMDB trending endpoint (the same proxy path the trending rail uses),
-   with the SAME rule as the trending rail: RELEASED + last-3-months +
-   notable (being in the trending/week response IS the trending signal),
-   newest-first. ARCHIVE-FIRST: works WITH a download link (avail d==1,
-   fnHasDownloadAny — incl. the external fallback, so ext-only titles
-   keep their first-group position here) come first, in newest-first
-   order — so when a very popular
-   work's download link is added, it enters the hero at the top. The rest
-   follow in the same order, so the hero is always 20 when enough trending
-   works pass the date filter. If the live fetch fails/empty, the snapshot
-   hero stays (fail-open). The fetch re-runs on every home load (no long
-   cache — fnApiJson only caches within the session, and loadHome re-runs
-   the fetch each time it is called), so a newly-added popular download
-   work appears in the hero on the next visit. */
-/* FN-HERO-TREND-VOTES: vote gates for the Hero + the trending rail /
-   see-all (user orders 2026-11-19 19:25 + 19:44 + 19:48; TRENDING rule
-   CORRECTED 2026-11-20 on the user's word, with phone screenshots:
-   new films go to newM25 and new series to updates — NOT into trending.
+/* ---------- FN-HERO-TRENDING v1 (user order 2026-11-22 19:40): the hero IS the trending category ----------
+   The hero follows download-data/sections/trending.json in file order,
+   so every new trending addition goes to the hero top and hero #1 is
+   always the trending head. The old live-TMDB rebuild (FN-HERO-LIVE v1)
+   is gone: it read a DIFFERENT pool (TMDB trending/week) with a
+   DIFFERENT vote gate (>= 300), so a trending #1 under 300 votes could
+   be dropped from the hero entirely — and when the TMDB proxy stalled
+   (no VPN, 30s job deadline) the hero fell back to the stale snapshot
+   hero. Proven 2026-11-22: Sunrise on the Reaping (1300968) was
+   trending #1 in trending.json but never entered snap.hero (snapshot
+   2026-11-22T07:03Z predates it), so the hero showed Godzilla Minus
+   Zero first while the rail showed Sunrise first. The static file is
+   same-origin (no VPN), paints like the trending rail does, and is
+   regenerated with the category — a new trending head reaches the hero
+   on the next visit. Order is STRICT file order: no archive-first
+   reorder (the top 20 all have downloads anyway) and no vote/date
+   re-filter — the file IS the category. The image gate stays: a slide
+   with neither backdrop nor poster cannot render (all 48 file items
+   have backdrops as of this change). If the static file fails/empty,
+   the snapshot hero stays (fail-open, same as the rail). The pinned
+   list is gone with the old builder — its only entry,
+   East of Eden (tv 258165), is IN trending.json, so it still enters
+   the hero in file order. */
+/* FN-TREND-VOTES: vote gate for the trending rail / see-all (user
+   orders 2026-11-19 19:25 + 19:44 + 19:48; TRENDING rule CORRECTED
+   2026-11-20 on the user's word, with phone screenshots: new films
+   go to newM25 and new series to updates — NOT into trending.
    Trending is ONLY for famous / popular / anticipated works. The 14-day
    download-link exemption (2026-11-19: a newly-released work WITH a
    download link bypassed the vote floor) was REMOVED 2026-11-20:
@@ -3357,119 +3362,17 @@ async function fnFillHomeRail(fetchPage, keep) {
    movies and series): a work needs vote_count >= 100, no exceptions —
    having a download link or being newly released does not bypass the
    floor. New works belong in newM25 / updates until they earn votes.
-   HERO (see fnHeroLiveItems):
-   7-month window (not the rail's 3 months); the 3 most popular TRENDING
-   candidates (highest `popularity`) enter regardless of votes ("two or
-   three important trends"); every other non-pinned work needs
-   vote_count >= 300; PINNED works (FN_HERO_PINNED below) always enter —
-   they bypass the trending-pool gate and the vote gate but must still
-   pass the date + image gates. Both gates are ADDITIONAL filters on
-   top of the existing released + has-image (+ archive for the rail)
-   rules; they never replace them. If fewer than 20 qualify, the Hero/rail
-   shows what qualifies — never padded. */
+   The HERO no longer has its own vote gate (FN-HERO-TRENDING v1,
+   2026-11-22): it follows trending.json, whose own rule already
+   applies the trending criteria — the hero never re-filters the
+   category. If fewer than 20 qualify, the rail shows what qualifies
+   — never padded. */
 function fnTrendVoteOk(x, todayStr) {
   /* FN-TREND-VOTE-FIX v1 (2026-11-20): no exemption — vote_count >= 100
      for everyone. todayStr kept only so the two call sites need no change. */
   return (x.vote_count || 0) >= 100;
 }
 
-/* FN-HERO-PINNED (user order 2026-11-19 19:48): works that ALWAYS enter
-   the Hero, taking one of the 20 slots each. Fetched directly by TMDB id
-   (not from the trending endpoint), so they bypass the trending-pool gate
-   and the vote gate — but they MUST still pass the date gate (within 7
-   months) and the image gate, or they drop out on their own. Extend or
-   remove entries HERE only; the Hero logic reads this list, never a
-   hardcoded id. Current entries:
-   - East of Eden — tv 258165, first_air_date 2026-10-01, 166 votes (below
-     the 300 floor, not in trending/week) — pinned so the Hero completes
-     to 20 (19 qualifying trending works + this one). */
-const FN_HERO_PINNED = [{ type: 'tv', id: 258165 }];
-async function fnHeroLiveItems(today, g3s, dtFn) {
-  var out = [], seen = {};
-  /* FN-HERO-TREND-VOTES: the HERO window is 7 months (user order 2026-11-19
-     19:44), not the 3 months the trending rail uses — the rail still gets
-     `g3s` from its caller, so the Hero computes its own cutoff here from
-     `today` (same calendar-month style as the caller's _g3s). */
-  var _g7d = new Date(today + 'T00:00:00Z'); _g7d.setUTCMonth(_g7d.getUTCMonth() - 7);
-  var _g7s = _g7d.toISOString().slice(0, 10);
-  for (var page = 1; page <= 3; page++) {
-    var batch;
-    try {
-      const [_tm, _tt] = await Promise.all([tmdb('trending/movie/week', { page: page }), tmdb('trending/tv/week', { page: page })]);
-      batch = [].concat((_tm.results || []).map(x => Object.assign({}, x, { media_type: 'movie' })))
-        .concat((_tt.results || []).map(x => Object.assign({}, x, { media_type: 'tv' })));
-    } catch (e) { break; }
-    if (!batch || !batch.length) break;
-    for (var i = 0; i < batch.length; i++) {
-      var x = batch[i];
-      if (!x || x.id == null) continue;
-      var k = (x.media_type || 'movie') + ':' + x.id;
-      if (seen[k]) continue;
-      seen[k] = 1;
-      var dt = dtFn(x);
-      if (!dt || dt > today || dt < _g7s) continue;
-      if (!x.backdrop_path && !x.poster_path) continue;
-      out.push(x);
-    }
-  }
-  /* FN-HERO-PINNED (user order 2026-11-19 19:48): fetch the pinned works
-     directly by TMDB id (NOT from the trending endpoint). They bypass the
-     trending-pool gate and the vote gate below, but MUST still pass the
-     date gate (within 7 months) and the image gate — a pinned work that
-     fails either drops out on its own. A pinned work already in the
-     trending pool is marked, never duplicated. Pins are best-effort: a
-     failed fetch never breaks the Hero. */
-  try {
-    var _pins = await Promise.all(FN_HERO_PINNED.map(async function (p) {
-      try {
-        var d = await tmdb(p.type + '/' + p.id);
-        if (!d || d.id == null) return null;
-        var x = Object.assign({}, d, { media_type: p.type });
-        var dtp = dtFn(x);
-        if (!dtp || dtp > today || dtp < _g7s) return null;
-        if (!x.backdrop_path && !x.poster_path) return null;
-        return x;
-      } catch (e) { return null; }
-    }));
-    _pins.forEach(function (x) {
-      if (!x) return;
-      var k = (x.media_type || 'movie') + ':' + x.id;
-      if (seen[k]) {
-        var _ex = out.find(function (y) { return (y.media_type || 'movie') + ':' + y.id === k; });
-        if (_ex) _ex._pinned = 1;
-        return;
-      }
-      seen[k] = 1;
-      x._pinned = 1;
-      out.push(x);
-    });
-  } catch (e) { /* pins are best-effort; the trending Hero still stands */ }
-  /* FN-HERO-TREND-VOTES: Hero vote gate — the 3 most popular TRENDING
-     candidates (highest `popularity`, pinned works excluded — they bypass
-     the gate by design) enter regardless of votes ("two or three important
-     trends"); every other non-pinned work needs vote_count >= 300. Pinned
-     works always pass. Never padded: if fewer qualify, the Hero shows
-     what qualifies. */
-  (function () {
-    var _pool = out.filter(function (x) { return !x._pinned; });
-    var _top = _pool.slice().sort(function (a, b) { return (b.popularity || 0) - (a.popularity || 0); }).slice(0, 3);
-    var _topIds = {};
-    _top.forEach(function (x) { _topIds[(x.media_type || 'movie') + ':' + x.id] = 1; });
-    out = out.filter(function (x) { return x._pinned || _topIds[(x.media_type || 'movie') + ':' + x.id] || (x.vote_count || 0) >= 300; });
-  })();
-  out.sort((a, b) => dtFn(b).localeCompare(dtFn(a)));
-  var dl = [], rest = [];
-  out.forEach(x => { (fnHasDownloadAny(x) ? dl : rest).push(x); });
-  /* FN-HERO-PINNED: a pinned work ALWAYS takes one of the 20 slots (user
-     order 2026-11-19 19:48) — the ordered list is truncated to 20, but a
-     pinned work is never truncated out: it displaces the last non-pinned
-     work instead. The order itself (archive-first, newest-first) is
-     unchanged; a pinned work keeps its natural position in it. */
-  var _heroAll = dl.concat(rest);
-  var _heroPins = _heroAll.filter(function (x) { return x._pinned; });
-  var _heroOthers = _heroAll.filter(function (x) { return !x._pinned; }).slice(0, Math.max(0, 20 - _heroPins.length));
-  return _heroAll.filter(function (x) { return x._pinned || _heroOthers.indexOf(x) !== -1; }).slice(0, 20);
-}
 /* FN-EDITORS-PICK-RAIL: «پیشنهاد سردبیر» home rail — the curator list
    is a resolved static list (FN_CURATOR_DATA, 482 movies). Shuffle it
    on EVERY home load (Fisher-Yates) so the rail is different each
@@ -3902,6 +3805,11 @@ function paintHomeRails(rows) {
 }
 async function loadHome() {
   fnAvailEnsure(); /* FN-DL-ICON v1: load the avail-index early so home cards get their download badge */
+  /* FN-HERO-TRENDING v1: start the static trending fetch early
+     (same-origin) — the hero IS the trending category, so it reads
+     the same file the trending rail paints from; started here so it
+     is usually resolved by the time the hero job runs. */
+  var _trendStaticP = fnStaticJson('trending.json');
   /* FN-NO-VPN-R3: start the static curator fetch early (same-origin) -
      it resolves alongside the snapshot fetch below. */
   var _curStaticP = fnStaticJson('curator.json');
@@ -4068,25 +3976,26 @@ async function loadHome() {
       } catch (e) { if (!_hadStaticTrend) _trendFallback(); }
     })(),
     (async () => {
-      /* FN-HERO-LIVE v1: rebuild the hero from the LIVE trending
-         data — the snapshot hero above is only the first paint /
-         fallback. Same rule as the trending rail (released +
-         last-3-months + notable, newest-first), ARCHIVE-FIRST. If
-         the live list is empty, the snapshot hero stays. */
+      /* FN-HERO-TRENDING v1: the hero IS the trending category —
+         build it from the SAME static trending.json the rail paints
+         from, in file order. The snapshot hero above is only the
+         first paint / fallback. If the static list is empty, the
+         snapshot hero stays. */
       try {
-        const _heroLive = await fnHeroLiveItems(_today, _g3s, _dt);
-        if (_heroLive.length) {
-          /* R2: rebuild the hero only when its list actually changed
-             - a re-render recreates every backdrop <img>, so an
-             identical live list must not churn the hero. */
-          const _hFp = _heroLive.map(function (hh) { return (hh.media_type || 'movie') + ':' + hh.id + '|' + (hh.backdrop_path || hh.poster_path || ''); }).join(',');
-          const _hCur = (heroItems || []).map(function (hh) { return (hh.media_type || 'movie') + ':' + hh.id + '|' + (hh.backdrop_path || hh.poster_path || ''); }).join(',');
-          if (_hFp !== _hCur) {
-            heroItems = _heroLive;
-            heroIdx = 0;
-            cacheItems(heroItems);
-            renderHero();
-          }
+        const _stH = await _trendStaticP;
+        if (!_stH || !(_stH.results || []).length) return;
+        const _heroTrend = _stH.results.filter(function (x) { return x && (x.backdrop_path || x.poster_path); }).slice(0, 20);
+        if (!_heroTrend.length) return;
+        /* R2: rebuild the hero only when its list actually changed
+           - a re-render recreates every backdrop <img>, so an
+           identical list must not churn the hero. */
+        const _hFp = _heroTrend.map(function (hh) { return (hh.media_type || 'movie') + ':' + hh.id + '|' + (hh.backdrop_path || hh.poster_path || ''); }).join(',');
+        const _hCur = (heroItems || []).map(function (hh) { return (hh.media_type || 'movie') + ':' + hh.id + '|' + (hh.backdrop_path || hh.poster_path || ''); }).join(',');
+        if (_hFp !== _hCur) {
+          heroItems = _heroTrend;
+          heroIdx = 0;
+          cacheItems(heroItems);
+          renderHero();
         }
       } catch (e) { /* keep the snapshot hero */ }
     })(),
@@ -4195,7 +4104,7 @@ function renderHero() {
      overview) so the corner info is always there, on every slide */
   heroItems.forEach((_, i) => paintHeroText(i));
   /* swipe support on touch devices — bound ONCE: renderHero runs again
-     when the live hero replaces the snapshot hero, and re-adding the
+     when the hero is rebuilt after the first paint, and re-adding the
      listeners would make one swipe step two slides. */
   if (!el._heroTouchBound) {
     el._heroTouchBound = true;
@@ -4224,7 +4133,7 @@ function paintHeroText(at) {
     h._faLoaded = true;
     tmdb(type + '/' + h.id, {}, 'fa-IR').then(d => {
       if (!d) return;
-      if (heroItems[ix] !== h) return; /* FN-HERO-LIVE: the hero was rebuilt from live data — this detail belongs to the old snapshot slide, never swap its backdrop/text into the new slide */
+      if (heroItems[ix] !== h) return; /* FN-HERO-TRENDING: the hero was rebuilt — this detail belongs to the old slide, never swap its backdrop/text into the new slide */
       if (d.title || d.name) h._faTitle = d.title || d.name;
       if (d.overview) h._faOverview = d.overview;
       /* trending snapshot rows ship no backdrop/overview: adopt the
@@ -4534,22 +4443,6 @@ function fnDlIconHas(x) {
   if (t) return t[0] === 1 && !fnAvailIsExtOnly(t);
   var im = x.imdb_id || x.imdb || '';
   if (im && idx.imdb) { var m = idx.imdb[String(im)]; if (m) return m[0] === 1 && !fnAvailIsExtOnly(m); }
-  return false;
-}
-/* ---------- FN-EXT-ICON v1: "has a download of any kind" ----------
-   The OLD fnDlIconHas test (d==1, incl. the external fallback), kept
-   ONLY for the hero archive-first order (fnHeroLiveItems): ext-only
-   titles keep their first-group position there (user order: the icon
-   goes, the order stays). Never use this for the badge. */
-function fnHasDownloadAny(x) {
-  var idx = FN_AVAIL.idx; if (!idx || !x) return false;
-  if (x.n != null) return true; /* FN-CASEB-FULL v1: case-b title — badge by construction */
-  if (typeof x.id === 'string' && /^n\d+$/.test(x.id)) return !!(FN_CASEB.data && FN_CASEB.data.byN[+x.id.slice(1)]); /* FN-CASEB-FULL v1: synthetic 'n<NNNN>' card id — only a KNOWN case-b number qualifies */
-  var tid = x.id != null ? x.id : (x.tmdb != null && x.tmdb !== '' ? x.tmdb : null);
-  var t = idx.tmdb && tid != null ? fnAvailTmdbEntry(idx, fnAvailTypeOf(x), tid) : null;
-  if (t) return t[0] === 1;
-  var im = x.imdb_id || x.imdb || '';
-  if (im && idx.imdb) { var m = idx.imdb[String(im)]; if (m) return m[0] === 1; }
   return false;
 }
 function fnDlIconApply() {
