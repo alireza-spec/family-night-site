@@ -2,8 +2,8 @@
  "source": "SerMovieDown",
  "code": "SR",
  "part": 1,
- "generated": "2026-11-21",
- "live_base_head": "41edc227d8fcb0de04bae1cc6e082fbb0b7f7846",
+ "generated": "2026-11-22",
+ "live_base_head": "8a1f16830b79cdf3cae288cc5b88b064d07fbfb8",
  "start_num": 11590,
  "counts": {
   "new_titles": 42,
@@ -11,11 +11,11 @@
   "have_new_titles": 277,
   "have_new_links_added": 3556,
   "have_old_titles": 35,
-  "have_old_links_added": 618,
+  "have_old_links_added": 619,
   "have_mbm_titles": 2,
   "have_mbm_links_added": 46,
   "total_titles": 355,
-  "total_links_added": 4955,
+  "total_links_added": 4956,
   "by_year": {
    "2011": 1,
    "2018": 2,
@@ -31,10 +31,10 @@
   "by_resolution": {
    "1080p": 209,
    "540p": 12,
-   "720p": 515
+   "720p": 516
   },
   "by_version": {
-   "NoSub": 445,
+   "NoSub": 446,
    "SoftSub": 291
   },
   "by_type": {
@@ -3284,6 +3284,13 @@
    "part": 3,
    "existing_num": 439,
    "nlinks_added": 0
+  },
+  {
+   "title": "Elsbeth",
+   "imdb": "tt26591110",
+   "part": 3,
+   "existing_num": 1435,
+   "nlinks_added": 1
   }
  ],
  "have_mbm_added": [

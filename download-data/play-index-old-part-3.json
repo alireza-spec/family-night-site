@@ -156053,6 +156053,20 @@
     "season": 4,
     "size_bytes": 300521881,
     "size_text": "301 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": 6,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl2.sermoviedown.pw/Series/2024/Elsbeth/S04/720x265/Elsbeth.S04E06.720p.10bit.WEBRip.2CH.x265.HEVC-PSA.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": 4,
+    "size_bytes": 234544037,
+    "size_text": "235 MB"
    }
   ],
   "title": "Elsbeth",

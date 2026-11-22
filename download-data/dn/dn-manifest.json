@@ -2,16 +2,16 @@
  "code": "DN",
  "counts": {
   "by_resolution": {
-   "1080p": 676,
+   "1080p": 694,
    "360p": 1,
-   "480p": 3847,
+   "480p": 4076,
    "540p": 234,
-   "720p": 5202
+   "720p": 5560
   },
   "by_version_family": {
-   "Dubbed": 1241,
-   "Subtitled": 8634,
-   "unknown": 84,
+   "Dubbed": 1272,
+   "Subtitled": 9204,
+   "unknown": 88,
    "NoSub": 1
   },
   "by_year": {
@@ -25,21 +25,21 @@
    "1968": 1,
    "1972": 2,
    "1973": 1,
-   "1974": 1,
+   "1974": 2,
    "1975": 1,
    "1976": 1,
    "1977": 1,
-   "1978": 3,
+   "1978": 4,
    "1979": 2,
-   "1980": 2,
-   "1981": 4,
+   "1980": 3,
+   "1981": 5,
    "1985": 1,
    "1990": 2,
-   "1991": 2,
+   "1991": 4,
    "1992": 2,
    "1995": 1,
    "1996": 3,
-   "1997": 1,
+   "1997": 2,
    "1999": 2,
    "2000": 3,
    "2001": 1,
@@ -48,41 +48,44 @@
    "2004": 3,
    "2005": 9,
    "2006": 7,
-   "2007": 2,
+   "2007": 3,
    "2008": 7,
-   "2009": 11,
-   "2010": 9,
-   "2011": 6,
-   "2012": 11,
-   "2013": 14,
-   "2014": 20,
-   "2015": 25,
-   "2016": 30,
-   "2017": 27,
-   "2018": 34,
-   "2019": 50,
+   "2009": 12,
+   "2010": 10,
+   "2011": 8,
+   "2012": 13,
+   "2013": 16,
+   "2014": 22,
+   "2015": 28,
+   "2016": 32,
+   "2017": 28,
+   "2018": 37,
+   "2019": 55,
    "2020": 40,
-   "2021": 58,
-   "2022": 40,
-   "2023": 53,
-   "2024": 42,
-   "2025": 47,
-   "2026": 34,
+   "2021": 60,
+   "2022": 43,
+   "2023": 57,
+   "2024": 43,
+   "2025": 48,
+   "2026": 36,
    "1994": 1,
    "1998": 1,
-   "1971": 2
+   "1971": 2,
+   "1989": 1,
+   "1967": 1,
+   "1969": 1
   },
   "ext_overlap": 1,
-  "films": 385,
-  "play_rows": 10817,
-  "series": 251,
+  "films": 425,
+  "play_rows": 11456,
+  "series": 259,
   "skipped_no_links": 11,
-  "total": 636,
-  "trailer_keys": 559,
+  "total": 684,
+  "trailer_keys": 578,
   "trailers_dropped": 70,
-  "variety_patched": 396,
+  "variety_patched": 401,
   "variety_play_created": 42,
-  "variety_play_rows_added": 4391,
+  "variety_play_rows_added": 4425,
   "variety_stale_links": 531
  },
  "end_num": 11589,
@@ -4331,10 +4334,450 @@
    "expiring_stripped": 0,
    "skipped_links": {},
    "links": 3
+  },
+  {
+   "title": "Dauntless: The Battle of Midway",
+   "year": 2019,
+   "imdb": "tt8685520",
+   "tmdb": 604837,
+   "num": 12704,
+   "nosub_only": true,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "Them That Follow",
+   "year": 2019,
+   "imdb": "tt7313348",
+   "tmdb": 486832,
+   "num": 12705,
+   "nosub_only": true,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "Amundsen",
+   "year": 2019,
+   "imdb": "tt6054846",
+   "tmdb": 545836,
+   "num": 12706,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Killing Hasselhoff",
+   "year": 2017,
+   "imdb": "tt2967226",
+   "tmdb": 353440,
+   "num": 12707,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "My Little Pony: Equestria Girls - Legend of Everfree",
+   "year": 2016,
+   "imdb": "tt5474644",
+   "tmdb": 405314,
+   "num": 12708,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "The Fox and the Child",
+   "year": 2007,
+   "imdb": "tt0756648",
+   "tmdb": 5139,
+   "num": 12709,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "No One Would Tell",
+   "year": 2018,
+   "imdb": "tt8883456",
+   "tmdb": 548682,
+   "num": 12710,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "Bounty Hunters",
+   "year": 2016,
+   "imdb": "tt5243900",
+   "tmdb": 388764,
+   "num": 12711,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "The Jönsson Gang - The Master Plan",
+   "year": 2015,
+   "imdb": "tt3220192",
+   "tmdb": 308160,
+   "num": 12712,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Monday",
+   "year": 2021,
+   "imdb": "tt8884906",
+   "tmdb": 550524,
+   "num": 12713,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Ajooba",
+   "year": 1991,
+   "imdb": "tt0101283",
+   "tmdb": 146255,
+   "num": 12714,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Cat Funeral",
+   "year": 2015,
+   "imdb": "tt5218784",
+   "tmdb": 349109,
+   "num": 12715,
+   "nosub_only": true,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Gupt: The Hidden Truth",
+   "year": 1997,
+   "imdb": "tt0119239",
+   "tmdb": 21906,
+   "num": 12716,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "The Inventor: Out for Blood in Silicon Valley",
+   "year": 2019,
+   "imdb": "tt8488126",
+   "tmdb": 566228,
+   "num": 12717,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "A Common Man",
+   "year": 2013,
+   "imdb": "tt2104837",
+   "tmdb": 108726,
+   "num": 12718,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "Francesco",
+   "year": 1989,
+   "imdb": "tt0097383",
+   "tmdb": 84981,
+   "num": 12719,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "One Piece Film: Z",
+   "year": 2012,
+   "imdb": "tt2375379",
+   "tmdb": 176983,
+   "num": 12720,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "Dig",
+   "year": 2022,
+   "imdb": "tt14830582",
+   "tmdb": 816956,
+   "num": 12721,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Goliyon Ki Raasleela Ram-Leela",
+   "year": 2013,
+   "imdb": "tt2215477",
+   "tmdb": 235984,
+   "num": 12722,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Gangnam Zombie",
+   "year": 2023,
+   "imdb": "tt21109552",
+   "tmdb": 996525,
+   "num": 12723,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Wheat Grain",
+   "year": 2022,
+   "imdb": "tt23142586",
+   "tmdb": 1128513,
+   "num": 12724,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "Implanted",
+   "year": 2021,
+   "imdb": "tt9786896",
+   "tmdb": 871812,
+   "num": 12725,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Cassadaga",
+   "year": 2011,
+   "imdb": "tt1747967",
+   "tmdb": 92398,
+   "num": 12726,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Aftershock",
+   "year": 2010,
+   "imdb": "tt1393746",
+   "tmdb": 44560,
+   "num": 12727,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Where the Trail Ends",
+   "year": 2012,
+   "imdb": "tt2509922",
+   "tmdb": 133786,
+   "num": 12728,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Kadak Singh",
+   "year": 2023,
+   "imdb": "tt23865712",
+   "tmdb": 1072758,
+   "num": 12729,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "Don't Look Back",
+   "year": 2009,
+   "imdb": "tt1075113",
+   "tmdb": 18897,
+   "num": 12730,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Isoroku Yamamoto, the Commander-in-Chief of the Combined Fleet",
+   "year": 2011,
+   "imdb": "tt1932695",
+   "tmdb": 131739,
+   "num": 12731,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 1
+  },
+  {
+   "title": "The War Wagon",
+   "year": 1967,
+   "imdb": "tt0062472",
+   "tmdb": 27277,
+   "num": 12732,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Catch Hell",
+   "year": 2014,
+   "imdb": "tt2403558",
+   "tmdb": 293633,
+   "num": 12733,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "Rise of the Footsoldier: Part II",
+   "year": 2015,
+   "imdb": "tt3150966",
+   "tmdb": 373321,
+   "num": 12734,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "Rise of the Footsoldier: Vengeance",
+   "year": 2023,
+   "imdb": "tt21628198",
+   "tmdb": 1034065,
+   "num": 12735,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "Para Konuşur",
+   "year": 2023,
+   "imdb": "tt28620337",
+   "tmdb": 1461090,
+   "num": 12736,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Dragon Swamp",
+   "year": 1969,
+   "imdb": "tt0064258",
+   "tmdb": 75699,
+   "num": 12737,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "Clan of the White Lotus",
+   "year": 1980,
+   "imdb": "tt0080905",
+   "tmdb": 41377,
+   "num": 12738,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "Five Shaolin Masters",
+   "year": 1974,
+   "imdb": "tt0072991",
+   "tmdb": 41383,
+   "num": 12739,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "Martial Club",
+   "year": 1981,
+   "imdb": "tt0083343",
+   "tmdb": 64994,
+   "num": 12740,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Flying Guillotine II",
+   "year": 1978,
+   "imdb": "tt0075802",
+   "tmdb": 66160,
+   "num": 12741,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "Sanam Bewafa",
+   "year": 1991,
+   "imdb": "tt0102835",
+   "tmdb": 161396,
+   "num": 12742,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Beneath the Light",
+   "year": 2026,
+   "imdb": "tt30807329",
+   "tmdb": 1564449,
+   "num": 12743,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
   }
  ],
  "generated": "2026-11-22",
- "live_base_head": "b3972b60877577c4625b4b4d3a9d0d266b090602",
+ "live_base_head": "8a1f16830b79cdf3cae288cc5b88b064d07fbfb8",
  "nosub_only_titles": [
   {
    "imdb": "tt1124377",
@@ -4655,6 +5098,27 @@
    "title": "UFC 291: Poirier vs. Gaethje 2",
    "year": 2023,
    "imdb": "tt27716694",
+   "type": "movie",
+   "note": "needs Persian subtitle version"
+  },
+  {
+   "title": "Dauntless: The Battle of Midway",
+   "year": 2019,
+   "imdb": "tt8685520",
+   "type": "movie",
+   "note": "needs Persian subtitle version"
+  },
+  {
+   "title": "Them That Follow",
+   "year": 2019,
+   "imdb": "tt7313348",
+   "type": "movie",
+   "note": "needs Persian subtitle version"
+  },
+  {
+   "title": "Cat Funeral",
+   "year": 2015,
+   "imdb": "tt5218784",
    "type": "movie",
    "note": "needs Persian subtitle version"
   }
@@ -9028,6 +9492,96 @@
    "expiring_stripped": 0,
    "skipped_links": {},
    "links": 34
+  },
+  {
+   "title": "Mehmed: The Conqueror",
+   "year": 2018,
+   "imdb": "tt7428834",
+   "tmdb": 78203,
+   "num": 12744,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 12
+  },
+  {
+   "title": "Angels of Death",
+   "year": 2018,
+   "imdb": "tt8670784",
+   "tmdb": 80477,
+   "num": 12745,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 16
+  },
+  {
+   "title": "The Bastard Son & the Devil Himself",
+   "year": 2022,
+   "imdb": "tt13649396",
+   "tmdb": 210235,
+   "num": 12746,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 8
+  },
+  {
+   "title": "World on Fire",
+   "year": 2019,
+   "imdb": "tt8001092",
+   "tmdb": 83015,
+   "num": 12747,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 32
+  },
+  {
+   "title": "Rüzgarlı Tepe",
+   "year": 2024,
+   "imdb": "tt30690005",
+   "tmdb": 242551,
+   "num": 12748,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {
+    "quality unparseable": 4
+   },
+   "links": 386
+  },
+  {
+   "title": "Inari Kon Kon",
+   "year": 2014,
+   "imdb": "tt3417860",
+   "tmdb": 67143,
+   "num": 12749,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 10
+  },
+  {
+   "title": "Fred and Rose West: A British Horror Story",
+   "year": 2025,
+   "imdb": "tt36590949",
+   "tmdb": 289123,
+   "num": 12750,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 6
+  },
+  {
+   "title": "The Epoch of Miyu",
+   "year": 2026,
+   "imdb": "tt35288198",
+   "tmdb": 281231,
+   "num": 12751,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 56
   }
  ],
  "skipped_not_merged": [
@@ -9204,6 +9758,136 @@
    },
    "tmdb": 340683,
    "type": "tv"
+  },
+  {
+   "dn_title": "Detention",
+   "dn_year": 2019,
+   "imdb": null,
+   "reasons": {
+    "queued": "year-mismatch: DN 2019 vs archive Detention 2011 (tt1701990) — different films"
+   },
+   "tmdb": null,
+   "type": "movie"
+  },
+  {
+   "dn_title": "Message from the King",
+   "dn_year": 2017,
+   "imdb": null,
+   "reasons": {
+    "queued": "year-mismatch: DN 2017 vs archive 2016 (tt1712192) — likely same film, year off by one; not merged per brief"
+   },
+   "tmdb": null,
+   "type": "movie"
+  },
+  {
+   "dn_title": "The Last of Us",
+   "dn_year": 2013,
+   "imdb": null,
+   "reasons": {
+    "queued": "identity-suspect: DN 2013 dubbed 480/720 — the 2013 work is the video game; archive has The Last of Us 2018 (tt6589330); likely a mislabel"
+   },
+   "tmdb": null,
+   "type": "movie"
+  },
+  {
+   "dn_title": "WWE WrestleMania 36",
+   "dn_year": 2020,
+   "imdb": null,
+   "reasons": {
+    "queued": "no-tmdb-record: no title-matching search hit"
+   },
+   "tmdb": null,
+   "type": "movie"
+  },
+  {
+   "dn_title": "Trust",
+   "dn_year": 2021,
+   "imdb": null,
+   "reasons": {
+    "queued": "year-mismatch: DN 2021 vs archive 2025/2010/1990 — different film"
+   },
+   "tmdb": null,
+   "type": "movie"
+  },
+  {
+   "dn_title": "I Love You",
+   "dn_year": 2023,
+   "imdb": null,
+   "reasons": {
+    "queued": "in dn-manifest queued_not_merged (no-tmdb-record)"
+   },
+   "tmdb": null,
+   "type": "movie"
+  },
+  {
+   "dn_title": "Baby",
+   "dn_year": 2023,
+   "imdb": null,
+   "reasons": {
+    "queued": "year-mismatch: DN 2023 vs archive Baby 2015 — different film"
+   },
+   "tmdb": null,
+   "type": "movie"
+  },
+  {
+   "dn_title": "Quicksand",
+   "dn_year": 2003,
+   "imdb": null,
+   "reasons": {
+    "queued": "year-mismatch: DN 2003 vs archive Quicksand 2023 — different films"
+   },
+   "tmdb": null,
+   "type": "movie"
+  },
+  {
+   "dn_title": "Paradox Effect",
+   "dn_year": 2023,
+   "imdb": null,
+   "reasons": {
+    "queued": "year-mismatch: DN 2023 vs archive 2024 (tt14416430) — likely same film; not merged per brief"
+   },
+   "tmdb": null,
+   "type": "movie"
+  },
+  {
+   "dn_title": "Police Tactical Unit",
+   "dn_year": 2025,
+   "imdb": null,
+   "reasons": {
+    "queued": "tmdb has no imdb_id and OMDb has no entry (single-source TMDB only)"
+   },
+   "tmdb": 304451,
+   "type": "tv"
+  },
+  {
+   "dn_title": "11",
+   "dn_year": 2017,
+   "imdb": null,
+   "reasons": {
+    "queued": "identity-disagree: DN filename embeds tt6474850 (OMDb 'NJPW Dominion 6.11', a 2017 wrestling event); TMDB's only title-match is 'Conquest 11' (1107168, no imdb_id) — no agreed film identity; event class, same as WWE"
+   },
+   "tmdb": 1107168,
+   "type": "movie"
+  },
+  {
+   "dn_title": "Battle Through the Heavens Movie Duel of the Two Dou Emperors",
+   "dn_year": 2026,
+   "imdb": "tt51165610",
+   "reasons": {
+    "queued": "omdb-no-entry and vote does not corroborate (vote_diff=1.5, year_diff=False)"
+   },
+   "tmdb": 1599184,
+   "type": "movie"
+  },
+  {
+   "dn_title": "Wrangler",
+   "dn_year": 2025,
+   "imdb": null,
+   "reasons": {
+    "queued": "year-mismatch: DN 2025 vs archive 2026 (tt38448241, live RZ #12668 'Wrangler 2026') — likely same film; not merged per brief"
+   },
+   "tmdb": null,
+   "type": "movie"
   }
  ],
  "source": "darknama",
@@ -17903,6 +18587,93 @@
    "stale_families_skipped": [],
    "tmdb": 3902,
    "type": "tv"
+  },
+  {
+   "archive_h3_num": 5215,
+   "archive_part": 3,
+   "archive_src": "main",
+   "dn_title": "The Aftermath",
+   "dn_year": 2019,
+   "families": [
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt5977276",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 433502,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 7201,
+   "archive_part": 3,
+   "archive_src": "main",
+   "dn_title": "Pil’s Adventures",
+   "dn_year": 2021,
+   "families": [
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 2,
+   "imdb": "tt15091284",
+   "play_rows_added": 2,
+   "stale_families_skipped": [],
+   "tmdb": 676705,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 6264,
+   "archive_part": 3,
+   "archive_src": "main",
+   "dn_title": "Die Hart",
+   "dn_year": 2023,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt27116016",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 1077280,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 6090,
+   "archive_part": 3,
+   "archive_src": "main",
+   "dn_title": "The Legend & Butterfly",
+   "dn_year": 2023,
+   "families": [
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 3,
+   "imdb": "tt21192216",
+   "play_rows_added": 3,
+   "stale_families_skipped": [],
+   "tmdb": 990365,
+   "type": "movie"
+  },
+  {
+   "archive_h3_num": 10674,
+   "archive_part": 15,
+   "archive_src": "main",
+   "dn_title": "Long Bright River",
+   "dn_year": 2025,
+   "families": [
+    "1080p Subtitled",
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 24,
+   "imdb": "tt8332798",
+   "play_rows_added": 24,
+   "stale_families_skipped": [],
+   "tmdb": 244628,
+   "type": "tv"
   }
  ],
  "variety_play_created": [
@@ -19164,5 +19935,239 @@
  "twice_daily_2026_11_22_am_fixup": {
   "live_base_head": "e2fc5678583a3bbd5dfe9d06e5cb5a1131777623",
   "note": "Dedupe fix-up: removed 2nd-occurrence lines/rows for duplicate URLs in the DN evidence (Time Goes By 4, Daniel Spellbound 1, Shaun the Sheep 1). Total links 1898 -> 1892. Self-check was 885/4 before the fix."
+ },
+ "twice_daily_2026_11_22_pm": {
+  "live_base_head": "8a1f16830b79cdf3cae288cc5b88b064d07fbfb8",
+  "start_num": 12704,
+  "end_num": 12751,
+  "new_titles_merged": [
+   "Dauntless: The Battle of Midway",
+   "Them That Follow",
+   "Amundsen",
+   "Killing Hasselhoff",
+   "My Little Pony: Equestria Girls - Legend of Everfree",
+   "The Fox and the Child",
+   "Mehmed: The Conqueror",
+   "No One Would Tell",
+   "Bounty Hunters",
+   "The Jönsson Gang - The Master Plan",
+   "Monday",
+   "Ajooba",
+   "Cat Funeral",
+   "Gupt: The Hidden Truth",
+   "Angels of Death",
+   "The Inventor: Out for Blood in Silicon Valley",
+   "A Common Man",
+   "Francesco",
+   "One Piece Film: Z",
+   "Dig",
+   "Goliyon Ki Raasleela Ram-Leela",
+   "The Bastard Son & the Devil Himself",
+   "Gangnam Zombie",
+   "Wheat Grain",
+   "Implanted",
+   "Cassadaga",
+   "World on Fire",
+   "Aftershock",
+   "Where the Trail Ends",
+   "Kadak Singh",
+   "Rüzgarlı Tepe",
+   "Don't Look Back",
+   "Inari Kon Kon",
+   "Isoroku Yamamoto, the Commander-in-Chief of the Combined Fleet",
+   "The War Wagon",
+   "Catch Hell",
+   "Rise of the Footsoldier: Part II",
+   "Rise of the Footsoldier: Vengeance",
+   "Para Konuşur",
+   "Fred and Rose West: A British Horror Story",
+   "Dragon Swamp",
+   "Clan of the White Lotus",
+   "Five Shaolin Masters",
+   "Martial Club",
+   "Flying Guillotine II",
+   "Sanam Bewafa",
+   "The Epoch of Miyu",
+   "Beneath the Light"
+  ],
+  "variety_patched": [
+   "The Aftermath",
+   "Pil’s Adventures",
+   "Die Hart",
+   "The Legend & Butterfly",
+   "Long Bright River"
+  ],
+  "trailers_added": [
+   "movie:1034065",
+   "movie:1072758",
+   "movie:1128513",
+   "movie:1461090",
+   "movie:1564449",
+   "movie:18897",
+   "movie:27277",
+   "movie:293633",
+   "movie:373321",
+   "movie:871812",
+   "movie:92398",
+   "movie:990365",
+   "tv:244628",
+   "tv:289123",
+   "tv:83015"
+  ],
+  "skipped": [
+   {
+    "title": "Detention",
+    "year": 2019,
+    "imdb": null,
+    "reasons": {
+     "queued": "year-mismatch: DN 2019 vs archive Detention 2011 (tt1701990) — different films"
+    }
+   },
+   {
+    "title": "Message from the King",
+    "year": 2017,
+    "imdb": null,
+    "reasons": {
+     "queued": "year-mismatch: DN 2017 vs archive 2016 (tt1712192) — likely same film, year off by one; not merged per brief"
+    }
+   },
+   {
+    "title": "The Last of Us",
+    "year": 2013,
+    "imdb": null,
+    "reasons": {
+     "queued": "identity-suspect: DN 2013 dubbed 480/720 — the 2013 work is the video game; archive has The Last of Us 2018 (tt6589330); likely a mislabel"
+    }
+   },
+   {
+    "title": "WWE WrestleMania 36",
+    "year": 2020,
+    "imdb": null,
+    "reasons": {
+     "queued": "no-tmdb-record: no title-matching search hit"
+    }
+   },
+   {
+    "title": "Trust",
+    "year": 2021,
+    "imdb": null,
+    "reasons": {
+     "queued": "year-mismatch: DN 2021 vs archive 2025/2010/1990 — different film"
+    }
+   },
+   {
+    "title": "I Love You",
+    "year": 2023,
+    "imdb": null,
+    "reasons": {
+     "queued": "in dn-manifest queued_not_merged (no-tmdb-record)"
+    }
+   },
+   {
+    "title": "Baby",
+    "year": 2023,
+    "imdb": null,
+    "reasons": {
+     "queued": "year-mismatch: DN 2023 vs archive Baby 2015 — different film"
+    }
+   },
+   {
+    "title": "Quicksand",
+    "year": 2003,
+    "imdb": null,
+    "reasons": {
+     "queued": "year-mismatch: DN 2003 vs archive Quicksand 2023 — different films"
+    }
+   },
+   {
+    "title": "Paradox Effect",
+    "year": 2023,
+    "imdb": null,
+    "reasons": {
+     "queued": "year-mismatch: DN 2023 vs archive 2024 (tt14416430) — likely same film; not merged per brief"
+    }
+   },
+   {
+    "title": "Police Tactical Unit",
+    "year": 2025,
+    "imdb": null,
+    "reasons": {
+     "queued": "tmdb has no imdb_id and OMDb has no entry (single-source TMDB only)"
+    }
+   },
+   {
+    "title": "11",
+    "year": 2017,
+    "imdb": null,
+    "reasons": {
+     "queued": "identity-disagree: DN filename embeds tt6474850 (OMDb 'NJPW Dominion 6.11', a 2017 wrestling event); TMDB's only title-match is 'Conquest 11' (1107168, no imdb_id) — no agreed film identity; event class, same as WWE"
+    }
+   },
+   {
+    "title": "Battle Through the Heavens Movie Duel of the Two Dou Emperors",
+    "year": 2026,
+    "imdb": "tt51165610",
+    "reasons": {
+     "queued": "omdb-no-entry and vote does not corroborate (vote_diff=1.5, year_diff=False)"
+    }
+   },
+   {
+    "title": "Wrangler",
+    "year": 2025,
+    "imdb": null,
+    "reasons": {
+     "queued": "year-mismatch: DN 2025 vs archive 2026 (tt38448241, live RZ #12668 'Wrangler 2026') — likely same film; not merged per brief"
+    }
+   },
+   {
+    "title": "Rurouni Kenshin: Meiji Kenkaku Romantan: Tsuioku Hen",
+    "year": 1999,
+    "imdb": null,
+    "reasons": {
+     "queued": "no-tmdb-record: no title-matching search hit"
+    }
+   },
+   {
+    "title": "Ultimate Predators",
+    "year": 2016,
+    "imdb": null,
+    "reasons": {
+     "queued": "no-tmdb-record: no title-matching search hit"
+    }
+   },
+   {
+    "title": "Love Formula",
+    "year": 2025,
+    "imdb": null,
+    "reasons": {
+     "queued": "OMDb imdb tt37730889 does not round-trip to tmdb 295994"
+    }
+   },
+   {
+    "title": "The Generals Youngest Son",
+    "year": 2025,
+    "imdb": null,
+    "reasons": {
+     "queued": "no-tmdb-record: no title-matching search hit"
+    }
+   },
+   {
+    "title": "Cardcaptor Sakura",
+    "year": 1998,
+    "imdb": "tt0221735",
+    "reasons": {
+     "queued": "find/tt0221735 does not round-trip to tmdb 35790 (got {'adult': False, 'backdrop_path': '/5Ic6hJJAlAagKcb7sxEKycaZ5iT.jpg', 'genre_ids': [16, 35], 'id': 496676, 'title': \"Tomoyo's Cardcaptor Sakura Video Diary!\", 'original_language': 'ja', 'original_title': 'すてきですわ、さくらちゃん！ 知世のカードキャプターさくら活躍ビデオ日記！', 'overview': 'The first OVA of the anime series of Cardcaptor Sakura. This is a video of Tomoyo Daidouji previewing the making of the first opening video of Cardcaptor Sakura (the Catch You Catch Me video).', 'popularity': 0.7708, 'poster_path': '/2TqClTRPRNspy1UiKbbT9QNeF9a.jpg', 'release_date': '1998-10-25', 'softcore': False, 'video': False, 'vote_average': 8.0, 'vote_count': 5, 'media_type': 'movie'})"
+    }
+   },
+   {
+    "title": "Asiye",
+    "year": 2026,
+    "imdb": null,
+    "reasons": {
+     "queued": "tmdb has no imdb_id and OMDb has no entry (single-source TMDB only)"
+    }
+   }
+  ],
+  "note": "DN slice of the twice-daily PM merge. 48 new titles (40 movies, 8 series; 605 links), 5 variety titles (34 links), 15 trailer keys (13 new-title + 2 variety). 19 titles queued (identity unresolved / year mismatch / no IMDb). Ruzgarli Tepe merged 386 of 390 links (4 opaque filenames, no parseable quality). Fatih is 6 episodes x 2 qualities (12 rows), season 1 only."
  }
 }

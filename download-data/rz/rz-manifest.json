@@ -3,18 +3,20 @@
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
  "start_num": 12699,
  "end_num": 12699,
- "live_base_head": "2809fb03d336b058c8f3368f3036fadc35c52805 (RezFlix series full extraction batch 1 — The Musketeers proof case)",
- "generated": "2026-11-22 (RezFlix series full extraction, batch 1: The Musketeers)",
+ "live_base_head": "8a1f16830b79cdf3cae288cc5b88b064d07fbfb8",
+ "generated": "2026-11-22",
  "counts": {
   "total_titles": 1,
   "movies": 0,
   "series": 1,
-  "total_links": 30,
+  "total_links": 34,
   "by_year": {
    "2014": 1
   },
   "by_quality": {
-   "720p": 30
+   "720p": 31,
+   "1080p": 2,
+   "480p": 1
   }
  },
  "films": [
@@ -33,5 +35,24 @@
  "trailer_keys_added": [],
  "queued_titles": [],
  "url_dupes_dropped": [],
- "note": "Section SoftSub per filename markers (IranFlix .SoftSub.); the description footer 'زیرنویس چسبیده پارسی' is the generic app footer and does not set play_type (DESIGN §4). No per-file sizes: description gives only a 238-688 MB range across episodes. NOTE: old-archive H3 #4826 (old part 3) already holds the same work (tt2733252, series, SoftSub) with 3 DonyayeSerial bare-directory links and no play rows, no search row, no DTI — dir links are not files and cannot take play rows (archive invariant: 0 play rows without a media extension), so the 30 file links merge as a new RZ record #12699 per the established RezFlix flow; #4826 stays untouched for the pending general old+new dedupe decision."
+ "note": "Section SoftSub per filename markers (IranFlix .SoftSub.); the description footer 'زیرنویس چسبیده پارسی' is the generic app footer and does not set play_type (DESIGN §4). No per-file sizes: description gives only a 238-688 MB range across episodes. NOTE: old-archive H3 #4826 (old part 3) already holds the same work (tt2733252, series, SoftSub) with 3 DonyayeSerial bare-directory links and no play rows, no search row, no DTI — dir links are not files and cannot take play rows (archive invariant: 0 play rows without a media extension), so the 30 file links merge as a new RZ record #12699 per the established RezFlix flow; #4826 stays untouched for the pending general old+new dedupe decision.",
+ "twice_daily_2026_11_22_pm": {
+  "live_base_head": "8a1f16830b79cdf3cae288cc5b88b064d07fbfb8",
+  "variety": [
+   {
+    "title": "Wrangler",
+    "imdb": "tt38448241",
+    "record": "#12668 rz",
+    "links_added": 3,
+    "source": "zivarnet encode completion (not RezFlix)"
+   },
+   {
+    "title": "The Hunger Games: Sunrise on the Reaping",
+    "imdb": "tt32558705",
+    "record": "#12564 rz",
+    "links_added": 1,
+    "source": "zivarnet encode completion (CAM HardSub; not RezFlix)"
+   }
+  ]
+ }
 }

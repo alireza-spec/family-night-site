@@ -617,6 +617,20 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2026/The.Hunger.Games.Sunrise.on.the.Reaping.2026/CAMNOSUB/The.Hunger.Games.Sunrise.on.the.Reaping.2026.1080p.CamRip.Film2Media.mkv?v=621758389213",
+    "playit_url": null,
+    "quality": "Cam 1080p",
+    "quality_label": "cam 1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
    }
   ],
   "title": "The Hunger Games: Sunrise on the Reaping",
@@ -1063,6 +1077,48 @@
     "season": null,
     "size_bytes": 314572800,
     "size_text": "300 MB"
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2025/Wrangler.2025/SUB/Wrangler.2025.1080p.WEB-DL.Farsi.Sub.Film2Media.mkv?v=428160484021",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p",
+    "quality_label": "web-dl 1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2025/Wrangler.2025/SUB/Wrangler.2025.720p.WEB-DL.Farsi.Sub.Film2Media.mkv?v=341225537269",
+    "playit_url": null,
+    "quality": "WEB-DL 720p",
+    "quality_label": "web-dl 720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2025/Wrangler.2025/SUB/Wrangler.2025.480p.WEB-DL.Farsi.Sub.Film2Media.mkv?v=164298525839",
+    "playit_url": null,
+    "quality": "WEB-DL 480p",
+    "quality_label": "web-dl 480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
    }
   ],
   "title": "Wrangler",
