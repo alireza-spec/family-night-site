@@ -7294,7 +7294,7 @@ function dlSeriesHtml(groups, posterUrl, title, ctx) {
 function dlSheetHtml(isSeries) {
   /* the sheet starts CLOSED in both modes — it opens under the tile
      the user taps, and tapping that same tile again closes it */
-  var inner = '<span class="fn-dl-grip"></span><div class="fn-dl-sum"></div><div class="fn-dl-sub"></div><div class="fn-dl-qchips" hidden></div><div class="fn-dl-acts">';
+  var inner = '<span class="fn-dl-grip"></span><div class="fn-dl-s1top" hidden><div class="fn-dl-s1still" style="position:relative;width:100%;aspect-ratio:16/9;background:#0b0b10;overflow:hidden;border-radius:.8rem;margin-bottom:.6rem"><img class="fn-dl-s1still-img" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none"><div class="fn-dl-still-loader" style="position:absolute;inset:0;display:none;align-items:center;justify-content:center"><span class="spin"></span></div></div><div class="fn-dl-s1title" style="font-weight:800;font-size:1rem;margin-bottom:.4rem"></div><div class="fn-dl-s1chips" style="margin-bottom:.4rem"></div><div class="fn-dl-s1syn" style="font-size:.88rem;line-height:1.7;color:var(--pearl2);white-space:pre-wrap;margin-bottom:.6rem"></div></div><div class="fn-dl-sum"></div><div class="fn-dl-sub"></div><div class="fn-dl-qchips" hidden></div><div class="fn-dl-acts">';
   if (isSeries) {
     /* copy is the hero (universal); ADM is a plain row (optional app) */
     inner += '<button class="fn-dl-hero" data-dl-act="copy"><span class="fn-dl-hero-ic">' + FN_DL_COPY_SVG + '</span><span>کپی لینک</span></button>'
@@ -7343,6 +7343,7 @@ function wireDlTiles(root, ctx) {
   function closeSheet() {
     var sh = root.querySelector('.fn-dl-sheet');
     if (sh) sh.hidden = true;
+    hideS1SheetTop();
     root.querySelectorAll('.fn-dl-tile.sel, .fn-dl-eptile.sel').forEach(function (t) { t.classList.remove('sel'); });
     markAction(null);
     hidePick();
@@ -7492,6 +7493,7 @@ function wireDlTiles(root, ctx) {
   }
   function selectFilm(i) {
     if (!ctx.links[i]) return;
+    hideS1SheetTop();
     var tile = root.querySelector('.fn-dl-tile[data-dl-i="' + i + '"]');
     /* tapping the already-open tile closes the drawer */
     if (tile && tile.classList.contains('sel')) { closeSheet(); return; }
@@ -7507,7 +7509,8 @@ function wireDlTiles(root, ctx) {
   /* series copy-all: distinct (res, codec) options of one season */
   function caOptions(season) {
     var eps = [];
-    Object.keys(ctx.eps).forEach(function (k) { if (ctx.eps[k].season === String(season)) eps.push(ctx.eps[k]); });
+    var s1Store = (ctx.s1Only && ctx.s1Eps) ? ctx.s1Eps : ctx.eps;
+    Object.keys(s1Store).forEach(function (k) { if (s1Store[k].season === String(season)) eps.push(s1Store[k]); });
     var byRes = {};
     eps.forEach(function (ep) {
       ep.links.forEach(function (l) {
@@ -7526,7 +7529,8 @@ function wireDlTiles(root, ctx) {
   }
   function seasonEps(season) {
     var eps = [];
-    Object.keys(ctx.eps).forEach(function (k) { if (ctx.eps[k].season === String(season)) eps.push(ctx.eps[k]); });
+    var s1Store = (ctx.s1Only && ctx.s1Eps) ? ctx.s1Eps : ctx.eps;
+    Object.keys(s1Store).forEach(function (k) { if (s1Store[k].season === String(season)) eps.push(s1Store[k]); });
     eps.sort(function (a, b) { return (parseInt(a.episode, 10) || 0) - (parseInt(b.episode, 10) || 0); });
     return eps;
   }
@@ -7542,18 +7546,20 @@ function wireDlTiles(root, ctx) {
   }
   function refreshCaBox() {
     var box = root.querySelector('.fn-dl-cabox'); if (!box) return;
+    var effSeason = (ctx.s1Only ? ctx.s1Season : ctx.season);
     var title = box.querySelector('.fn-dl-ca-title');
-    if (title) title.textContent = 'کپی همه قسمت‌های فصل ' + ctx.season + ' — کیفیت را انتخاب کنید:';
+    if (title) title.textContent = 'کپی همه قسمت‌های فصل ' + effSeason + ' — کیفیت را انتخاب کنید:';
     var chips = box.querySelector('.fn-dl-ca-chips');
-    chips.innerHTML = caOptions(ctx.season).map(function (o) {
+    chips.innerHTML = caOptions(effSeason).map(function (o) {
       return '<button class="fn-dl-ca-chip" data-dl-ca-res="' + esc(o.res) + '" data-dl-ca-codec="' + esc(o.codec) + '">' + esc(o.label) + '</button>';
     }).join('');
     chips.querySelectorAll('[data-dl-ca-res]').forEach(function (b) {
-      b.onclick = function () { copySeason(ctx.season, b.dataset.dlCaRes, b.dataset.dlCaCodec); box.hidden = true; };
+      b.onclick = function () { copySeason(effSeason, b.dataset.dlCaRes, b.dataset.dlCaCodec); box.hidden = true; };
     });
   }
   function selectEp(key) {
     var ep = ctx.eps[key]; if (!ep || !ep.links.length) return;
+    hideS1SheetTop();
     var tile = root.querySelector('.fn-dl-eptile[data-dl-ep="' + key + '"]');
     /* tapping the already-open tile closes the drawer */
     if (tile && tile.classList.contains('sel')) { closeSheet(); return; }
@@ -7573,17 +7579,158 @@ function wireDlTiles(root, ctx) {
     updateSheet();
     showSheet();
   }
+  /* FN-S1-TV v1 — Server 1 series episodes: own selection (never
+     touches ctx.eps), own sheet top (big still + info chips +
+     Persian synopsis), own season pills. Archive selection calls
+     hideS1SheetTop first, so the two never mix. */
+  var s1StillToken = 0;
+  function hideS1SheetTop() {
+    s1StillToken++;
+    var sh = root.querySelector('.fn-dl-sheet');
+    if (sh) { sh.style.maxHeight = ''; sh.style.overflowY = ''; sh.style.borderRadius = ''; try { sh.scrollTop = 0; } catch (e) {} }
+    var top = root.querySelector('.fn-dl-s1top');
+    if (top) top.hidden = true;
+  }
+  /* v3 still swap, preload-gated: the old still hides instantly, the
+     site's own .spin loader shows in the middle until the new still
+     is fully loaded, then drops at once. Poster fallback on failure
+     or when the episode has no still. A newer tap wins (token guard). */
+  function loadS1Still(ep) {
+    var img = root.querySelector('.fn-dl-s1still-img');
+    var ld = root.querySelector('.fn-dl-still-loader');
+    if (!img || !ld) return;
+    var tok = ++s1StillToken;
+    var src = ep.still ? IMG(ep.still, 'w780') : '';
+    img.style.display = 'none';
+    img.removeAttribute('src');
+    if (!src) {
+      ld.style.display = 'none';
+      if (ctx.s1Poster) { img.src = ctx.s1Poster; img.style.display = ''; }
+      return;
+    }
+    ld.style.display = 'flex';
+    var pre = new Image();
+    pre.onload = function () { if (tok !== s1StillToken) return; img.src = src; img.style.display = ''; ld.style.display = 'none'; };
+    pre.onerror = function () {
+      if (tok !== s1StillToken) return;
+      ld.style.display = 'none';
+      if (ctx.s1Poster) { img.src = ctx.s1Poster; img.style.display = ''; }
+    };
+    pre.src = src;
+  }
+  /* Persian synopsis: the EMBEDDED text (written at probe time) is
+     shown immediately; the live Google gtx call is only an upgrade
+     attempt — it was PROVEN not to return on the user's phone, so the
+     embedded text is the real source and a failed live call changes
+     nothing. A stale episode (user tapped another one meanwhile)
+     never overwrites the current synopsis. */
+  function translateS1Syn(ep, synEl) {
+    if (!synEl) return;
+    var key = ctx.s1Key || '';
+    if (ep.ov_fa) synEl.textContent = ep.ov_fa;
+    if (!ep.ov_en) { if (!ep.ov_fa) synEl.textContent = ''; return; }
+    try {
+      var u = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=fa&dt=t&q=' + encodeURIComponent(ep.ov_en);
+      var ctl = new AbortController();
+      var to = setTimeout(function () { try { ctl.abort(); } catch (e) {} }, 3500);
+      fetch(u, { signal: ctl.signal }).then(function (r) { clearTimeout(to); if (!r.ok) throw new Error('gtx'); return r.json(); }).then(function (j) {
+        if (ctx.s1Key !== key) return;
+        var t = '';
+        try { (j[0] || []).forEach(function (row) { if (row && row[0]) t += row[0]; }); } catch (e) {}
+        if (t && t !== ep.ov_en) synEl.textContent = t;
+      }).catch(function () { /* embedded text stays */ });
+    } catch (e) { /* embedded text stays */ }
+  }
+  function updateS1SheetTop(ep) {
+    var sh = root.querySelector('.fn-dl-sheet');
+    var top = root.querySelector('.fn-dl-s1top');
+    if (!sh || !top) return;
+    /* v4 (user verdict 20:44 — the v3 pin was WRONG): NOTHING inside
+       the sheet is pinned. The whole sheet scrolls as ONE unit — grip,
+       still, title, chips, synopsis, download block. The sheet itself
+       is the scroller (max-height 92vh); when the user scrolls it
+       EXPANDS to full height (100dvh, corners square off) so the photo
+       never slides under a top bar and the text never slides under the
+       photo; scrolled back to the top it returns to 92vh. Threshold
+       and reset mirror the verified demo v4 exactly (scrollTop > 10;
+       scrollTop = 0 + collapsed on open). The listener is bound once
+       per sheet element and stays inert for archive sheets (the S1
+       top is hidden and the sheet has no inline scroller styles). */
+    if (!sh._fnS1Scroll) {
+      sh._fnS1Scroll = true;
+      sh.addEventListener('scroll', function () {
+        var t = root.querySelector('.fn-dl-s1top');
+        if (!t || t.hidden) return;
+        var ex = sh.scrollTop > 10;
+        sh.style.maxHeight = ex ? '100dvh' : '92vh';
+        sh.style.borderRadius = ex ? '0' : '';
+      });
+    }
+    sh.style.maxHeight = '92vh'; sh.style.overflowY = 'auto'; sh.style.borderRadius = '';
+    try { sh.scrollTop = 0; } catch (e) {}
+    top.hidden = false;
+    var titleEl = root.querySelector('.fn-dl-s1title');
+    if (titleEl) {
+      var nm = ep.name_fa ? esc(ep.name_fa) : (ep.name ? '<span data-trtxt="' + esc(ep.name) + '">' + esc(ep.name) + '</span>' : '');
+      titleEl.innerHTML = 'قسمت ' + esc(ep.episode) + (nm ? ' (' + nm + ')' : '');
+      if (typeof fnSweepTrTxt === 'function') { try { fnSweepTrTxt(root); } catch (e) {} }
+    }
+    var chipsEl = root.querySelector('.fn-dl-s1chips');
+    if (chipsEl) {
+      var cs = 'display:inline-block;padding:.2rem .6rem;border:1px solid var(--line);border-radius:99px;font-size:.8rem;font-weight:700;margin:.15rem .25rem 0 0';
+      var c = '';
+      if (ep.imdb && ep.imdb.r > 0) c += '<span style="' + cs + '"><span style="background:#f5c518;color:#111;font-weight:800;border-radius:2px;padding:0 3px">IMDb</span> ' + ep.imdb.r.toFixed(1) + ' (' + (ep.imdb.v || 0).toLocaleString('en-US') + ' رای)</span>';
+      if (ep.runtime > 0) c += '<span style="' + cs + '">⏱ ' + ep.runtime + ' دقیقه</span>';
+      if (ep.rating > 0) c += '<span style="' + cs + '">★ ' + ep.rating.toFixed(1) + '</span>';
+      chipsEl.innerHTML = c;
+    }
+    var synEl = root.querySelector('.fn-dl-s1syn');
+    if (synEl) translateS1Syn(ep, synEl);
+    loadS1Still(ep);
+  }
+  function selectS1Ep(key) {
+    var ep = (ctx.s1Eps || {})[key]; if (!ep || !ep.links.length) return;
+    var tile = root.querySelector('.fn-dl-s1eptile[data-dl-s1ep="' + key + '"]');
+    /* tapping the already-open tile closes the drawer */
+    if (tile && tile.classList.contains('sel')) { closeSheet(); return; }
+    ctx.s1Key = key;
+    ctx.epKey = key;
+    ctx.epLinks = ep.links.slice().sort(dlSortLinksDesc);
+    ctx.sel = dlLinkSel(ctx.epLinks[0]);
+    ctx.sel.epLabel = 'قسمت ' + ep.episode;
+    ctx.sel.epNum = parseInt(ep.episode, 10) || 0;
+    ctx.sel.epRate = (ep.rating > 0) ? ep.rating.toFixed(1) : '';
+    root.querySelectorAll('.fn-dl-s1eptile').forEach(function (t) { t.classList.toggle('sel', t.dataset.dlS1ep === key); });
+    root.querySelectorAll('.fn-dl-eptile:not(.fn-dl-s1eptile)').forEach(function (t) { t.classList.remove('sel'); });
+    markAction(null);
+    hidePick();
+    updateS1SheetTop(ep);
+    placeSheet(tile);
+    updateSheet();
+    showSheet();
+  }
   root.querySelectorAll('.fn-dl-tile').forEach(function (t) {
     t.onclick = function () { selectFilm(+t.dataset.dlI); };
   });
   root.querySelectorAll('.fn-dl-eptile').forEach(function (t) {
     t.onclick = function () { selectEp(t.dataset.dlEp); };
   });
+  root.querySelectorAll('.fn-dl-s1eptile').forEach(function (t) {
+    t.onclick = function () { selectS1Ep(t.dataset.dlS1ep); };
+  });
+  root.querySelectorAll('[data-dl-s1season]').forEach(function (b) {
+    b.onclick = function () {
+      ctx.s1Season = b.dataset.dlS1season;
+      root.querySelectorAll('[data-dl-s1season]').forEach(function (x) { x.classList.toggle('on', x === b); });
+      root.querySelectorAll('.fn-dl-s1eplist').forEach(function (g) { g.hidden = g.dataset.dlS1eps !== b.dataset.dlS1season; });
+      closeSheet();
+    };
+  });
   root.querySelectorAll('[data-dl-season]').forEach(function (b) {
     b.onclick = function () {
       ctx.season = b.dataset.dlSeason;
       root.querySelectorAll('[data-dl-season]').forEach(function (x) { x.classList.toggle('on', x === b); });
-      root.querySelectorAll('.fn-dl-eplist').forEach(function (g) { g.hidden = g.dataset.dlEps !== b.dataset.dlSeason; });
+      root.querySelectorAll('.fn-dl-eplist:not(.fn-dl-s1eplist)').forEach(function (g) { g.hidden = g.dataset.dlEps !== b.dataset.dlSeason; });
       loadEpMeta(b.dataset.dlSeason);
       var caBox = root.querySelector('.fn-dl-cabox');
       if (caBox && !caBox.hidden) refreshCaBox();
@@ -7604,6 +7751,21 @@ function wireDlTiles(root, ctx) {
       var v = b.dataset.dlV;
       root.querySelectorAll('[data-dl-v]').forEach(function (x) { x.classList.toggle('on', x === b); });
       root.querySelectorAll('.fn-dl-vgroup').forEach(function (g) { g.hidden = v !== 'all' && g.dataset.dlVgroup !== v; });
+      /* FN-S1-TV v1: a dual series' archive block is NOT a .fn-dl-vgroup
+         (dlSeriesHtml emits no vgroup wrapper), so the generic hide
+         above leaves it visible under «سرور خارجی». Hide the archive
+         seasons/lists/headers (everything outside .fn-dl-s1tv) when
+         the S1 tab is active; «همه» restores the season-aware state. */
+      if (ctx.isSeries && ctx.s1Eps && Object.keys(ctx.s1Eps).length) {
+        var s1Tab = (v === 's1ext');
+        root.querySelectorAll('.fn-dl-seasons:not(.fn-dl-s1seasons), .fn-dl-eplist:not(.fn-dl-s1eplist)').forEach(function (g) { g.hidden = s1Tab; });
+        root.querySelectorAll('.fn-dl-sec').forEach(function (g) { if (!g.closest('.fn-dl-s1tv')) g.hidden = s1Tab; });
+        var s1Ca = root.querySelector('.fn-dl-cabox');
+        if (s1Ca && s1Tab) s1Ca.hidden = true;
+        if (!s1Tab) {
+          root.querySelectorAll('.fn-dl-eplist:not(.fn-dl-s1eplist)').forEach(function (g) { g.hidden = g.dataset.dlEps !== ctx.season; });
+        }
+      }
       closeSheet();
     };
   });
@@ -7653,7 +7815,7 @@ function wireDlTiles(root, ctx) {
   if (caClose) caClose.onclick = function () { var box = root.querySelector('.fn-dl-cabox'); if (box) box.hidden = true; };
   /* the sheet starts closed in both modes — no auto-select on open */
   /* fetch this season's episode stills + names (the box opens on it) */
-  if (ctx.isSeries) loadEpMeta(ctx.season);
+  if (ctx.isSeries && !ctx.s1Only) loadEpMeta(ctx.season);
 }
 
 function admDownload(url) {
@@ -7863,6 +8025,192 @@ async function fnExtOnlyBox(tmdbKey, posterUrl, fbTitle, fbYear, iranian) {
     return { html: head + chips + secHtml + dlSheetHtml(false), ctx: ctx };
   } catch (e) { return null; }
 }
+/* FN-S1-TV v1 — Server 1 rows for SERIES (Braflix), oldest first,
+   decade by decade. Static data only: download-data/ext/
+   ext-s1-tv-{decade}s.json maps "tv:<tmdb>" -> {year, title_en,
+   seasons: {"1": [{n, name, name_fa, rating, runtime, ov_en, ov_fa,
+   imdb: {r, v} | null, still: "/tmdb/path.jpg" | "", q: [qualities
+   highest-first], sz: {q: bytes}, fa: bool}]}, total_links,
+   total_bytes}. The video URL is deterministic
+   (dl.braflix.dev/download/tv/{tmdb}/{s}/{e}?quality={q}) — no
+   Braflix page is ever fetched at runtime. Episode stills, names,
+   ratings, runtimes, overviews and IMDb episode scores are all
+   embedded at probe time (TMDB season data + the IMDb daily dataset
+   matched by each episode's real IMDb id from TMDB external_ids);
+   the Persian synopsis is embedded too — the live Google gtx call
+   is only a first attempt, because it was PROVEN not to return on
+   the user's phone (v2 sheet showed the embedded text verbatim).
+   The S1 section carries data-dl-vgroup="s1ext" and is appended
+   LAST (the ordering rule: once archive links exist, «سرور خارجی»
+   sits at the bottom and the top becomes «زیرنویس فارسی» / «دوبله
+   فارسی»). Tapping an S1 episode opens the site's own accordion
+   sheet with the v3 info section on top: big still (16:9 w780,
+   preload-gated — the old still hides instantly, the site's own
+   .spin loader shows until the new still is fully loaded, poster
+   fallback), episode title, info chips [IMDb badge + score + votes]
+   [runtime] [TMDB rating], Persian synopsis, then the download
+   block (detail line with only proven tokens — quality, real size,
+   MP4, no WEB-DL/x264 claims — quality switcher hidden when the
+   episode has one quality, big «کپی لینک», ADM / browser rows, NO
+   «پخش آنلاین» — Server 1 is download-only). ANTI-BUG (FN-DL-REWIRE
+   v1): the box can render twice on the same #d-dl-body; every fetch
+   here has a timeout and every step is try/catch, so a slow or
+   failed S1 load can NEVER leave the box unopened — the caller
+   falls back to the landing-page button. */
+let fnS1TvDecadeCache = {};
+function getS1TvDecade(decade) {
+  var key = String(decade);
+  if (fnS1TvDecadeCache[key]) return Promise.resolve(fnS1TvDecadeCache[key]);
+  if (!fnS1TvDecadeCache[key + ':p']) {
+    fnS1TvDecadeCache[key + ':p'] = fetchJsonTimeout(DL_BASE + 'ext/ext-s1-tv-' + key + 's.json', 6000)
+      .then(function (x) { fnS1TvDecadeCache[key] = x || {}; return fnS1TvDecadeCache[key]; })
+      .catch(function () { fnS1TvDecadeCache[key] = {}; return fnS1TvDecadeCache[key]; });
+  }
+  return fnS1TvDecadeCache[key + ':p'];
+}
+async function getS1TvFor(tmdbKey, year) {
+  if (!tmdbKey) return null;
+  try {
+    var y = parseInt(year, 10);
+    if (y) {
+      var dec = Math.floor(y / 10) * 10;
+      var map = await getS1TvDecade(dec);
+      if (map && map[tmdbKey]) return map[tmdbKey];
+    }
+  } catch (e) { /* decade file missing/slow — no S1 rows */ }
+  return null;
+}
+/* sizes row, demo rule: the FIRST and LAST values carry their unit,
+   middle values are bare — "232 مگابایت - 181 مگابایت" /
+   "1.1 گیگابایت - 496 - 226 مگابایت". */
+function s1TvSizesRow(links) {
+  var parts = links.map(function (l) { return dlSizeParts(l.x.size); });
+  if (!parts.some(function (p) { return !!p; })) return '';
+  var bits = parts.map(function (p, i) {
+    if (!p) return '—';
+    var showUnit = (i === 0 || i === parts.length - 1) && !!p.unit;
+    return p.num + (showUnit ? ' ' + p.unit : '');
+  });
+  return '<span class="fn-dl-tline2" dir="rtl">' + esc(bits.join(' - ')) + '</span>';
+}
+function s1TvRateColor(r) { return r < 6 ? '#ff5c5c' : (r < 8 ? '#f5b942' : '#4ade80'); }
+/* The «سرور خارجی» section for a series WITH archive links (dual).
+   Registers the episodes into ctx.s1Eps (never touches ctx.eps) and
+   returns the section HTML, or '' when the series has no S1 rows. */
+async function fnS1TvSection(tmdbKey, posterUrl, title, ctx, year, iranian) {
+  if (!tmdbKey || !ctx) return '';
+  var m = String(tmdbKey).match(/^tv:(\d+)$/);
+  if (!m) return '';
+  try {
+    var ent = await getS1TvFor(tmdbKey, year);
+    if (!ent || !ent.seasons) return '';
+    var eps = {};
+    var totalLinks = 0;
+    var seasons = Object.keys(ent.seasons).sort(function (a, b) { return (parseInt(a, 10) || 0) - (parseInt(b, 10) || 0); });
+    seasons.forEach(function (s) {
+      var list = (ent.seasons[s] || []).slice().sort(function (a, b) { return (a.n || 0) - (b.n || 0); });
+      list.forEach(function (ep) {
+        if (!ep.q || !ep.q.length) return;
+        var links = [];
+        ep.q.forEach(function (q) {
+          var bytes = (ep.sz && ep.sz[q]) || 0;
+          var sizeStr = bytes ? fmtTotalMB(bytes / 1048576) : '';
+          var url = 'https://dl.braflix.dev/download/tv/' + m[1] + '/' + s + '/' + ep.n + '?quality=' + q;
+          links.push({ x: { url: url, size: sizeStr }, label: 'بدون زیرنویس فارسی', sp: { res: q, source: '', codec: '', enc: '', ext: 'mp4' }, s1: true });
+        });
+        links.sort(function (a, b) { return sizeToMB(b.x.size) - sizeToMB(a.x.size) || resRank(b.sp.res) - resRank(a.sp.res); });
+        if (!links.length) return;
+        var key = s + '|' + ep.n;
+        eps[key] = { season: String(s), episode: String(ep.n), links: links, name: ep.name || '', name_fa: ep.name_fa || '', rating: (typeof ep.rating === 'number' ? ep.rating : 0), runtime: ep.runtime || 0, ov_en: ep.ov_en || '', ov_fa: ep.ov_fa || '', imdb: ep.imdb || null, still: ep.still || '' };
+        totalLinks += links.length;
+      });
+    });
+    var keys = Object.keys(eps);
+    if (!keys.length) return '';
+    ctx.s1Eps = ctx.s1Eps || {};
+    keys.forEach(function (k) { ctx.s1Eps[k] = eps[k]; });
+    ctx.s1Poster = posterUrl || ctx.s1Poster || '';
+    var s1Seasons = seasons.filter(function (s) { return keys.some(function (k) { return eps[k].season === String(s); }); });
+    var out = '<div class="fn-dl-s1tv fn-dl-vgroup" data-dl-vgroup="s1ext">'
+      + '<div class="fn-dl-sec"><span>سرور خارجی</span><span class="fn-dl-cnt">' + totalLinks + ' لینک</span></div>'
+      + '<p class="fn-ext-dl-note">توجه: نسخه‌های سرور خارجی' + (iranian ? ' فقط فایل تصویری‌اند.' : ' زیرنویس فارسی ندارند — فقط فایل تصویری‌اند.') + '</p>'
+      + '<div class="fn-dl-sec"><span>قسمت‌ها</span></div>'
+      + '<div class="fn-dl-seasons fn-dl-s1seasons">';
+    s1Seasons.forEach(function (s, i) {
+      out += '<button class="fn-dl-season fn-dl-s1season' + (i === 0 ? ' on' : '') + '" data-dl-s1season="' + esc(s) + '">فصل ' + esc(s) + '</button>';
+    });
+    out += '</div>';
+    s1Seasons.forEach(function (s, si) {
+      var list = keys.filter(function (k) { return eps[k].season === String(s); }).map(function (k) { return eps[k]; }).sort(function (a, b) { return (parseInt(a.episode, 10) || 0) - (parseInt(b.episode, 10) || 0); });
+      out += '<div class="fn-dl-eplist fn-dl-s1eplist" data-dl-s1eps="' + esc(s) + '"' + (si === 0 ? '' : ' hidden') + '>';
+      list.forEach(function (ep) {
+        var cls = dlRateClass(ep.rating);
+        var chips = ep.links.map(function (l) { return '<span class="fn-dl-qchip">' + esc(l.sp.res) + '</span>'; }).join('');
+        var thumb = ep.still ? '<img loading="lazy" decoding="async" src="' + esc(IMG(ep.still, 'w300')) + '" alt="">' : dlPosterHtml(posterUrl || '', title);
+        var nm = ep.name_fa ? esc(ep.name_fa) : (ep.name ? '<span data-trtxt="' + esc(ep.name) + '">' + esc(ep.name) + '</span>' : '');
+        out += '<div class="fn-dl-eptile fn-dl-s1eptile' + (cls ? ' fn-dl-rate-' + cls : '') + '" data-dl-s1ep="' + esc(ep.season + '|' + ep.episode) + '">'
+          + '<span class="fn-dl-thumb">' + thumb + '</span>'
+          + '<span class="fn-dl-tinfo"><b>قسمت ' + esc(ep.episode) + (nm ? ' (' + nm + ')' : '') + (ep.rating > 0 ? '<span class="fn-dl-rate" style="color:' + s1TvRateColor(ep.rating) + '">★ ' + ep.rating + '</span>' : '') + '</b>'
+          + '<span class="fn-dl-tline"><span class="fn-dl-ver">سرور خارجی</span>' + chips + '</span>'
+          + s1TvSizesRow(ep.links)
+          + '</span>'
+          + '<span class="fn-dl-chev">' + FN_DL_CHEV_SVG + '</span></div>';
+      });
+      out += '</div>';
+    });
+    out += '</div>';
+    return out;
+  } catch (e) { return ''; }
+}
+/* FN-S1-TV v1 — the ext-only series box: a series with NO archive
+   links but with Server 1 episode rows gets the SAME box as a normal
+   series (header card + «کپی همه قسمت‌ها» + chips + S1 section +
+   sheet), instead of the «no free links» state + landing-page
+   button. Returns {html, ctx} or null when no S1 rows exist. Never
+   throws, never hangs. */
+async function fnS1TvExtOnlyBox(tmdbKey, posterUrl, fbTitle, fbYear, iranian) {
+  try {
+    var m = String(tmdbKey || '').match(/^tv:(\d+)$/);
+    if (!m) return null;
+    var isFa = function (s) { return /[؀-ۿ]/.test(s || ''); };
+    var isLat = function (s) { return typeof isLatinTitle === 'function' ? isLatinTitle(s) : (/[A-Za-z]/.test(s || '') && !isFa(s)); };
+    var enTitle = (fbTitle && isLat(fbTitle)) ? fbTitle : '';
+    var faTitle = (fbTitle && isFa(fbTitle)) ? fbTitle : '';
+    if (!enTitle && !faTitle) {
+      try {
+        var enDet = await pTimeoutNull(tmdb(tmdbKey.replace(':', '/'), {}, 'en-US'), 5000);
+        var enT = (enDet && (enDet.title || enDet.name)) || '';
+        if (enT && isLat(enT)) enTitle = enT;
+      } catch (e) {}
+    }
+    var title = enTitle || faTitle || fbTitle || '';
+    var ctx = { title: title, year: fbYear || '', isSeries: true, iranian: !!iranian, links: [], eps: {}, firstEp: '', allUrls: [], sel: null, epLinks: null, epKey: '', tmdbId: m[1], src: 'ext', epMeta: {}, epMetaDone: {}, s1Eps: {}, s1Only: true, s1Season: '', s1Key: '', s1Poster: posterUrl || '' };
+    var secHtml = await fnS1TvSection(tmdbKey, posterUrl, title, ctx, fbYear, !!iranian);
+    if (!secHtml || !Object.keys(ctx.s1Eps).length) return null;
+    var totalLinks = 0, totalMB = 0;
+    Object.keys(ctx.s1Eps).forEach(function (k) {
+      ctx.s1Eps[k].links.forEach(function (l) { totalLinks++; ctx.allUrls.push(l.x.url); try { totalMB += sizeToMB(l.x.size); } catch (e) {} });
+    });
+    ctx.s1Season = (Object.keys(ctx.s1Eps).map(function (k) { return ctx.s1Eps[k].season; }).sort(function (a, b) { return (parseInt(a, 10) || 0) - (parseInt(b, 10) || 0); })[0]) || '';
+    ctx.season = ctx.s1Season;
+    var faLine = (faTitle && !sameName(faTitle, title)) ? '<span class="fn-dl-fa">' + esc(faTitle) + '</span>' : '';
+    var meta = [fbYear || '', 'سریال'].filter(Boolean).join(' • ');
+    var head = '<div class="fn-dl-head">'
+      + '<span class="fn-dl-poster">' + dlPosterHtml(posterUrl || '', title) + '</span>'
+      + '<span class="fn-dl-hinfo"><b>' + esc(title) + '</b>' + faLine
+      + (meta ? '<span>' + esc(meta) + '</span>' : '')
+      + '</span>'
+      + '<span class="fn-dl-tot"><b>' + totalLinks + '</b><span>لینک دانلود</span></span>'
+      + (totalMB ? '<span class="fn-dl-tot"><b>' + faSize(fmtTotalMB(totalMB)) + '</b><span>حجم مجموع</span></span>' : '')
+      + '<button class="fn-dl-copyall" data-dl-copyall>کپی همه قسمت‌ها</button>'
+      + '</div>';
+    var cabox = '<div class="fn-dl-cabox" hidden><div class="fn-dl-ca-title"></div><div class="fn-dl-ca-chips"></div><button class="fn-dl-ca-close">بستن</button></div>';
+    var chips = '<div class="fn-dl-vchips"><button class="fn-dl-vchip on" data-dl-v="all">همه</button>'
+      + '<button class="fn-dl-vchip" data-dl-v="s1ext">سرور خارجی</button></div>';
+    return { html: head + cabox + chips + secHtml + dlSheetHtml(true), ctx: ctx };
+  } catch (e) { return null; }
+}
+
 /* FN-DN-TRAILER v1 — direct-mp4 trailer index (download-data/dn/
    dn-trailer-index.json, keyed "movie:<tmdb>"/"tv:<tmdb>"). Only the
    249 films + 137 series with an extracted DarkNama trailer are in
@@ -7919,6 +8267,7 @@ async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUr
        state + button — the box always opens. */
     var extBox = null;
     try { extBox = await fnExtOnlyBox(tmdbKey, posterUrl, fbTitle, fbYear, iranian); } catch (e) { extBox = null; }
+    if (!extBox) { try { extBox = await fnS1TvExtOnlyBox(tmdbKey, posterUrl, fbTitle, fbYear, iranian); } catch (e) { extBox = null; } }
     if (token !== detailToken) return;
     if (extBox) { body.innerHTML = extBox.html; wireDlTiles(body, extBox.ctx); return; }
     body.innerHTML = '<div class="state"><b>فعلاً لینک دانلود رایگانی برای این اثر نیست.</b><br>از «پخش آنلاین» می‌توانید همین حالا تماشا کنید.</div>' + await fnExtDlHtml(tmdbKey); return; }
@@ -7937,6 +8286,7 @@ async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUr
        state + button — the box always opens. */
     var extBox = null;
     try { extBox = await fnExtOnlyBox(tmdbKey, posterUrl, fbTitle, fbYear, iranian); } catch (e) { extBox = null; }
+    if (!extBox) { try { extBox = await fnS1TvExtOnlyBox(tmdbKey, posterUrl, fbTitle, fbYear, iranian); } catch (e) { extBox = null; } }
     if (token !== detailToken) return;
     if (extBox) { body.innerHTML = extBox.html; wireDlTiles(body, extBox.ctx); return; }
     body.innerHTML = '<div class="state"><b>فعلاً لینک دانلود رایگانی برای این اثر نیست.</b><br>از «پخش آنلاین» می‌توانید همین حالا تماشا کنید.</div>' + await fnExtDlHtml(tmdbKey); return; }
@@ -7990,8 +8340,26 @@ async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUr
        here. */
     var s1Html = '';
     try { s1Html = await fnS1DlHtml(tmdbKey, posterUrl, headTitle, dlBuilt.ctx, fbYear); } catch (e) { s1Html = ''; }
+    var s1TvHtml = '';
+    /* FN-S1-TV v1: the record year is the fallback when the caller
+       passed no fbYear (the harness + any year-less caller) — the H3
+       title carries a trailing year ("The Piano Forest 2018"). */
+    var s1TvYear = fbYear || (String(rec.title || '').match(/(\d{4})\s*$/) || [])[1] || '';
+    try { s1TvHtml = await fnS1TvSection(tmdbKey, posterUrl, headTitle, dlBuilt.ctx, s1TvYear, !!iranian); } catch (e) { s1TvHtml = ''; }
     if (token !== detailToken) return;
-    body.innerHTML = dlBuilt.html + s1Html;
+    body.innerHTML = dlBuilt.html + s1Html + s1TvHtml;
+    if (s1TvHtml && dlBuilt.ctx.isSeries) {
+      var s1tvch = body.querySelector('.fn-dl-vchips');
+      if (!s1tvch) {
+        s1tvch = document.createElement('div');
+        s1tvch.className = 'fn-dl-vchips';
+        s1tvch.innerHTML = '<button class="fn-dl-vchip on" data-dl-v="all">همه</button><button class="fn-dl-vchip" data-dl-v="s1ext">سرور خارجی</button>';
+        var s1tvAnchor = body.querySelector('.fn-dl-cabox') || body.querySelector('.fn-dl-head');
+        if (s1tvAnchor && s1tvAnchor.parentNode) s1tvAnchor.insertAdjacentElement('afterend', s1tvch);
+      } else if (!s1tvch.querySelector('[data-dl-v="s1ext"]')) {
+        var s1tvcb = document.createElement('button'); s1tvcb.className = 'fn-dl-vchip'; s1tvcb.setAttribute('data-dl-v', 's1ext'); s1tvcb.textContent = 'سرور خارجی'; s1tvch.appendChild(s1tvcb);
+      }
+    }
     if (s1Html) { var s1vch = body.querySelector('.fn-dl-vchips'); if (s1vch && !s1vch.querySelector('[data-dl-v="s1ext"]')) { var s1cb = document.createElement('button'); s1cb.className = 'fn-dl-vchip'; s1cb.setAttribute('data-dl-v', 's1ext'); s1cb.textContent = 'سرور خارجی'; s1vch.appendChild(s1cb); } }
     wireDlTiles(body, dlBuilt.ctx);
     if (faPending) {
