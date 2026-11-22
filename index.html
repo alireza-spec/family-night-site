@@ -8491,6 +8491,41 @@ function fnPlaySort(a, b) {
   return String(a.quality || '').localeCompare(String(b.quality || ''));
 }
 function fnPlayJoined(entry) { return (entry.play || []).filter(function (p) { return !!p.play_url; }); }
+/* FN-CAM-HIDE-PLAY v1 (2026-11-22): the play list hides CAM rows the
+   same way the download box hides CAM encodes — when a title (movie)
+   or an episode (series) has a good play row, its CAM play rows are
+   not shown, so nobody plays a CAM by mistake. CAM-only titles /
+   episodes keep their CAM rows. Display-only: the resolve and the row
+   URLs are untouched, and cards keep their index into FN_PLAY.rows
+   (the filter runs before FN_PLAY.rows is assigned), so taps keep
+   opening the exact row. CAM = the source token in quality+URL is
+   CAM or HDTS; HDCAM is covered explicitly (the word-boundary source
+   regex misses CAM inside HDCAM). HDTS (telesync) is cam-quality. */
+function fnPlayIsCamRow(p) {
+  var m = (String(p.quality || '') + ' ' + String(p.play_url || '')).match(/\b(BluRay|WEB-DL|WEBRip|HDTV|HDRip|DVDRip|BDRip|CAM|HDTS)\b/i);
+  if (m) { var s = m[1].toUpperCase(); return s === 'CAM' || s === 'HDTS'; }
+  return /^HDCAM([\s\-]|$)/i.test(String(p.quality || ''));
+}
+function fnPlayVisibleRows(rows) {
+  var list = Array.isArray(rows) ? rows : [];
+  /* Series: group by (season, episode) — a CAM row hides only when
+     THAT episode has a good row; a CAM-only episode keeps its CAM.
+     Movies (no season/episode): the whole list is one group. */
+  var groups = {}, order = [], keep = {}, i, x, k, gi, g, hasGood;
+  for (i = 0; i < list.length; i++) {
+    x = list[i]; k = (x.season || '') + '|' + (x.episode || '');
+    if (!groups[k]) { groups[k] = []; order.push(k); }
+    groups[k].push(i);
+  }
+  for (gi = 0; gi < order.length; gi++) {
+    g = groups[order[gi]]; hasGood = false;
+    for (i = 0; i < g.length; i++) if (!fnPlayIsCamRow(list[g[i]])) { hasGood = true; break; }
+    for (i = 0; i < g.length; i++) if (!hasGood || !fnPlayIsCamRow(list[g[i]])) keep[g[i]] = 1;
+  }
+  var out = [];
+  for (i = 0; i < list.length; i++) if (keep[i]) out.push(list[i]);
+  return out;
+}
 /* ---------- resolve a title to its play-index entry ---------- */
 async function fnPlayFetchPart(part) {
   if (FN_PLAY.parts[part]) return FN_PLAY.parts[part];
@@ -9024,7 +9059,7 @@ function fnPlayLazySizes() {
 function fnPlayRenderList() {
   var entry = FN_PLAY.entry, ctx = FN_PLAY.ctx;
   var body = $('#pl-body'), seasonBox = $('#pl-season');
-  var joined = fnPlayJoined(entry);
+  var joined = fnPlayVisibleRows(fnPlayJoined(entry)); // FN-CAM-HIDE-PLAY v1
   /* FN-DN-SRC v1 — the VPN hint shows when the list holds DarkNama
      rows (encoder 'darknama'): some DN links need VPN off, some on. */
   var hasDnPlay = joined.some(function (p) { return String(p.encoder || '').toLowerCase() === 'darknama'; });
@@ -17388,7 +17423,7 @@ sxSearchPage = async function (seq, append) {
     }
     if (typeof fnPlayEnsureListDom === 'function') fnPlayEnsureListDom();
     FN_PLAY.ctx = ctx; FN_PLAY.entry = entry; FN_PLAY.key = res.key; FN_PLAY.part = res.part;
-    var joined = fnPlayJoined(entry);
+    var joined = fnPlayVisibleRows(fnPlayJoined(entry)); // FN-CAM-HIDE-PLAY v1
     var rows = [], html = '<div class="wp-plist"><div class="pl-count">' + esc(src.title || entry.title || '') + ' — ' + fnPlayFa(joined.length) + ' نسخه قابل پخش</div>';
     if (ctx.type === 'tv') {
       var opts = [], seen = {};
