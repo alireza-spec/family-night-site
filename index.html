@@ -4130,7 +4130,7 @@ async function loadHome() {
          refresh below only MERGES into it. */
       try {
         var _stU = await fnStaticJson('newest.json', null, DL_BASE);
-        if (_stU && (_stU.series || {}).results && _stU.series.results.length) { rows.updates = _stU.series.results.slice(0, 20); try { fnPaintHome(rows); } catch (e2) {} }
+        if (_stU && (_stU.series || {}).results && _stU.series.results.length) { rows.updates = _stU.series.results.slice().sort(function (a, b) { return String((b.last_air_date || b.first_air_date) || '').localeCompare(String((a.last_air_date || a.first_air_date) || '')); }).slice(0, 20); try { fnPaintHome(rows); } catch (e2) {} }
       } catch (e) {}
       /* updates rail: live TMDB discover/tv — SERIES only, new
          episode within 3 months, no talk/news/reality, most popular
@@ -4139,11 +4139,11 @@ async function loadHome() {
          fetch that returns fewer titles must never shrink the rail). */
       try {
         const _upLive = await fnFillHomeRail(page => tmdb('discover/tv', { 'air_date.gte': _g3s, 'air_date.lte': _today, without_genres: '10767,10763,10764', sort_by: 'popularity.desc', page: page }).then(d => (d.results || []).map(x => Object.assign({}, x, { media_type: 'tv' }))), null);
-        _upLive.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
+        _upLive.sort((a, b) => String((b.last_air_date || b.first_air_date) || '').localeCompare(String((a.last_air_date || a.first_air_date) || '')));
         if (_upLive.length) {
           var _upMerged = (rows.updates || []).slice();
           _upLive.forEach(function (x) { if (!_upMerged.some(function (y) { return y.id === x.id; })) _upMerged.push(x); });
-          _upMerged.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
+          _upMerged.sort((a, b) => String((b.last_air_date || b.first_air_date) || '').localeCompare(String((a.last_air_date || a.first_air_date) || '')));
           _upLive = _upMerged.slice(0, 20);
           rows.updates = _upLive;
         }
@@ -4924,17 +4924,16 @@ async function loadArchPage() {
       let sort = sortUi;
       if (sort === 'random') sort = 'popularity.desc';
       if (isTv && sort.indexOf('primary_release_date') === 0) sort = sort.replace('primary_release_date', 'first_air_date');
-      /* Updates (user rule): a series with a new episode must come first.
-         first_air_date is the series premiere (wrong for updates); sort the
-         TV stream by popularity when the default newest-first sort is in
-         effect — a new episode spikes popularity, so the most recently
-         updated popular series lead. An explicit user sort pick is respected. */
-      if (arch.collKey === 'updates' && isTv && sort === 'first_air_date.desc') sort = 'popularity.desc';
+      /* FN-NEWEST-SORT v3: the updates popularity conversion is GONE.
+         first_air_date.desc now reaches the discover fetch as-is, and the
+         final sort below orders tv by (last_air_date || first_air_date)
+         desc — the static newest.json series carry last_air_date
+         (generator v2), so new series come first along with updated
+         series. An explicit user sort pick is still respected. */
       /* FN-NO-VPN-R3 (NO-FLOOR WALL, parent-measured 2026-11-20 ~19:30):
          a date-desc discover with NO vote floor returns only obscure
          zero-vote releases (0/60 linked in pages 1-3) - the floor was
-         load-bearing for the pool. Like updates above (which maps
-         first_air_date.desc to popularity.desc for tv), newM25 fetches
+         load-bearing for the pool. newM25 fetches
          its pool by popularity and the batch is sorted newest-first
          below, so linked low-vote titles still appear and the listing
          never goes empty. The no-floor rule itself lives in the daily
@@ -5009,6 +5008,23 @@ async function loadArchPage() {
         if (_seedMovies.length) items = _seedMovies.map(function (x) { return Object.assign({}, x, { media_type: 'movie' }); }).concat(items);
       } catch (e) {}
     }
+    /* FN-NEWEST-SORT v3 (series): seed the see-all pool with the static
+       newest.json series on EVERY loadArchPage call (same pattern as the
+       movies seed above). The live discover/tv pool is popularity-sorted
+       and buries long-running series with new episodes (American Horror
+       Story, 2011, sat #2 by popularity); the static list is walked
+       until 100 archive-linked, no vote floor, and now carries
+       last_air_date per series. Seeding happens BEFORE the seen-dedup
+       below, so already-shown cards are still removed and re-seeding
+       needs no flag. The final sort below orders updates by
+       (last_air_date || first_air_date) desc. */
+    if (arch.collKey === 'updates') {
+      try {
+        var _stSeedU = await fnStaticJson('newest.json', null, DL_BASE);
+        var _seedSeries = (_stSeedU && (_stSeedU.series || {}).results) || [];
+        if (_seedSeries.length) items = _seedSeries.map(function (x) { return Object.assign({}, x, { media_type: 'tv' }); }).concat(items);
+      } catch (e) {}
+    }
     const seen = new Set([...grid.querySelectorAll('[data-open]')].map(el => el.dataset.open));
     items = items.filter(x => { const k = (x.media_type || 'movie') + ':' + x.id; if (seen.has(k)) return false; seen.add(k); return true; });
     /* Trending (user rule): only RELEASED + last-3-months + notable
@@ -5048,6 +5064,7 @@ async function loadArchPage() {
       items = items.concat(_locals);
     }
     if (sortUi === 'popularity.desc') items.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
+    else if (arch.collKey === 'updates' && (sortUi === 'primary_release_date.desc' || sortUi === 'first_air_date.desc')) items.sort((a, b) => String((b.last_air_date || b.first_air_date) || '').localeCompare(String((a.last_air_date || a.first_air_date) || '')));
     else if (sortUi === 'primary_release_date.desc' || sortUi === 'first_air_date.desc') items.sort((a, b) => String((b.media_type === 'tv' ? b.first_air_date : b.release_date) || '').localeCompare(String((a.media_type === 'tv' ? a.first_air_date : a.release_date) || '')));
     else if (sortUi === 'vote_average.desc') items.sort((a, b) => (b.vote_average || 0) - (a.vote_average || 0));
     else if (sortUi === 'vote_count.desc') items.sort((a, b) => (b.vote_count || 0) - (a.vote_count || 0));
