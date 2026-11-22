@@ -2,9 +2,9 @@
  "code": "AO",
  "counts": {
   "by_resolution": {
-   "1080p": 8,
+   "1080p": 9,
    "360p": 14,
-   "480p": 8,
+   "480p": 10,
    "576p": 5,
    "720p": 25
   },
@@ -27,7 +27,7 @@
    "1991": 1,
    "1992": 1,
    "1994": 1,
-   "1995": 3,
+   "1995": 4,
    "1996": 1,
    "1997": 1,
    "1998": 3,
@@ -47,8 +47,8 @@
    "2021": 1,
    "2022": 1
   },
-  "total": 60,
-  "total_bytes": 77627155317,
+  "total": 61,
+  "total_bytes": 82428578721,
   "with_srt": 34
  },
  "films": [
@@ -1448,9 +1448,98 @@
    "url": "https://archive.org/download/abbas-kiarostami_complete-films/Where-Is-The-Friends-House_Abbas-Kiarostami_1987.mp4",
    "width": 1792,
    "year": 1987
+  },
+  {
+   "alternates_dropped": [
+    {
+     "filename": "MUTHU.JPN.BD50.UNTOUCHED ISO.TAM & JPN[DTS HDMA - 5.1] - BCU DISQ.ISO",
+     "size_bytes": 44847464448,
+     "reason": "Blu-ray ISO (42 GB disc image), not a playable/downloadable video file"
+    },
+    {
+     "filename": "MUTHU.JPN.BD50.UNTOUCHED ISO.TAM & JPN[DTS HDMA - 5.1] - BCU DISQ3.mp4",
+     "size_bytes": 967713973,
+     "reason": "byte-identical audio + identical video frames to DISQ.mp4 (same encode), collapsed to one"
+    },
+    {
+     "filename": "MUTHU.JPN.BD50.UNTOUCHED ISO.TAM & JPN[DTS HDMA - 5.1] - BCU DISQ2.mp4",
+     "size_bytes": 902876,
+     "reason": "24s clip (BD extra), not the feature"
+    },
+    {
+     "filename": "MUTHU.JPN.BD50.UNTOUCHED ISO.TAM & JPN[DTS HDMA - 5.1] - BCU DISQ4.mp4",
+     "size_bytes": 8826110,
+     "reason": "92s clip (BD extra), not the feature"
+    },
+    {
+     "filename": "MUTHU.JPN.BD50.UNTOUCHED ISO.TAM & JPN[DTS HDMA - 5.1] - BCU DISQ5.mp4",
+     "size_bytes": 14321253,
+     "reason": "144s clip (BD extra), not the feature"
+    },
+    {
+     "filename": "MUTHU.JPN.BD50.UNTOUCHED ISO.TAM & JPN[DTS HDMA - 5.1] - BCU DISQ6.mp4",
+     "size_bytes": 2249808,
+     "reason": "29s clip (BD extra), not the feature"
+    },
+    {
+     "filename": "MUTHU.JPN.BD50.UNTOUCHED ISO.TAM & JPN[DTS HDMA - 5.1] - BCU DISQ7.mp4",
+     "size_bytes": 4575394,
+     "reason": "55s clip (BD extra), not the feature"
+    }
+   ],
+   "audio_note": "JPN BD mp4 audio language undetermined (Tamil or Japanese; the BD carries both; derivative metadata language=und, no STT on VM).",
+   "filename": "Muthu Telugu Movie HD Rip 1080p mp4.mkv",
+   "height": 1038,
+   "width": 1920,
+   "imdb": "tt0140399",
+   "item": "muthu-telugu-movie-hd-rip-1080p-mp-4",
+   "key": "new:muthu",
+   "num": 12698,
+   "resolution": "1080p",
+   "size_bytes": 2902524641,
+   "size_text": "2.9 GB",
+   "srt_available": false,
+   "srt_file": null,
+   "srt_item_count": 0,
+   "title": "Muthu",
+   "tmdb": 66247,
+   "tmdb_key": "movie:66247",
+   "url": "https://archive.org/download/muthu-telugu-movie-hd-rip-1080p-mp-4/Muthu%20Telugu%20Movie%20HD%20Rip%201080p%20mp4.mkv",
+   "versions": [
+    {
+     "filename": "Muthu Telugu Movie HD Rip 1080p mp4.mkv",
+     "item": "muthu-telugu-movie-hd-rip-1080p-mp-4",
+     "label": "1080p Telugu Dub",
+     "quality": "1080p",
+     "size_bytes": 2902524641,
+     "size_text": "2.9 GB",
+     "url": "https://archive.org/download/muthu-telugu-movie-hd-rip-1080p-mp-4/Muthu%20Telugu%20Movie%20HD%20Rip%201080p%20mp4.mkv",
+     "note": "Telugu-dubbed version, 1080p"
+    },
+    {
+     "filename": "Muthu Telugu Movie HD Rip 1080p mp4.mp4",
+     "item": "muthu-telugu-movie-hd-rip-1080p-mp-4",
+     "label": "480p Telugu Dub",
+     "quality": "480p",
+     "size_bytes": 931184092,
+     "size_text": "931 MB",
+     "url": "https://archive.org/download/muthu-telugu-movie-hd-rip-1080p-mp-4/Muthu%20Telugu%20Movie%20HD%20Rip%201080p%20mp4.mp4",
+     "note": "Telugu-dubbed version, 480p (AO derivative of the mkv)"
+    },
+    {
+     "filename": "MUTHU.JPN.BD50.UNTOUCHED ISO.TAM & JPN[DTS HDMA - 5.1] - BCU DISQ.mp4",
+     "item": "muthu.-jpn.-bd-50.-untouched-iso.-tam-jpn-dts-hdma-5.1-bcu-disq",
+     "label": "480p JPN BD",
+     "quality": "480p",
+     "size_bytes": 967714671,
+     "size_text": "968 MB",
+     "url": "https://archive.org/download/muthu.-jpn.-bd-50.-untouched-iso.-tam-jpn-dts-hdma-5.1-bcu-disq/MUTHU.JPN.BD50.UNTOUCHED%20ISO.TAM%20%26%20JPN%5BDTS%20HDMA%20-%205.1%5D%20-%20BCU%20DISQ.mp4",
+     "note": "Japanese-BD-derived mp4; audio language undetermined (Tamil or Japanese)"
+    }
+   ]
   }
  ],
- "generated": "2026-11-20",
+ "generated": "2026-11-22",
  "have_films_added": [
   {
    "archive": "old",
@@ -1548,7 +1637,7 @@
   }
  ],
  "have_films_left_alone": [],
- "live_base_head": "9a89e0bc6115dbb34e5ec4220ed949205e480cfa",
+ "live_base_head": "4d8b57b96ebcd0a5961c4ae15848d3d78d1b7922",
  "part": 1,
  "queued": [
   {

@@ -1858,5 +1858,64 @@
    "url": null
   },
   "year": 2018
+ },
+ "tt0140399": {
+  "imdb": "tt0140399",
+  "num": 12698,
+  "part": "ao",
+  "play": [
+   {
+    "encoder": "archive.org",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://archive.org/download/muthu-telugu-movie-hd-rip-1080p-mp-4/Muthu%20Telugu%20Movie%20HD%20Rip%201080p%20mp4.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": 2902524641,
+    "size_text": "2.9 GB"
+   },
+   {
+    "encoder": "archive.org",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://archive.org/download/muthu-telugu-movie-hd-rip-1080p-mp-4/Muthu%20Telugu%20Movie%20HD%20Rip%201080p%20mp4.mp4",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 931184092,
+    "size_text": "931 MB"
+   },
+   {
+    "encoder": "archive.org",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://archive.org/download/muthu.-jpn.-bd-50.-untouched-iso.-tam-jpn-dts-hdma-5.1-bcu-disq/MUTHU.JPN.BD50.UNTOUCHED%20ISO.TAM%20%26%20JPN%5BDTS%20HDMA%20-%205.1%5D%20-%20BCU%20DISQ.mp4",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 967714671,
+    "size_text": "968 MB"
+   }
+  ],
+  "title": "Muthu",
+  "tmdb_key": "movie:66247",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1995
  }
 }
