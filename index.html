@@ -6654,12 +6654,12 @@ function loadDlPart(part, which) {
 }
 /* Merge two download records for the SAME title: every link from b whose
    URL is not already in a is appended to a's groups (dedupe by href). */
-function dlRecHasLinks(rec) { return !!(rec && (rec.groups.softsub.length || rec.groups.dubbed.length || rec.groups.nosub.length)); }
+function dlRecHasLinks(rec) { return !!(rec && (rec.groups.softsub.length || rec.groups.dubbed.length || rec.groups.nosub.length || (rec.groups.audio || []).length)); } /* FN-AUDIO v1: an audio-only record (e.g. The Little Prince mp3) has links too */
 function mergeDlRecs(a, b) {
   if (!b) return a;
   const seen = new Set();
-  ['softsub', 'dubbed', 'nosub'].forEach(k => a.groups[k].forEach(x => seen.add(((x.url || x.href) || '').toLowerCase()))); /* FN-DN-SRC v1: links carry .url, not .href */
-  ['softsub', 'dubbed', 'nosub'].forEach(k => b.groups[k].forEach(x => { const h = ((x.url || x.href) || '').toLowerCase(); if (h && !seen.has(h)) { seen.add(h); a.groups[k].push(x); } }));
+  ['softsub', 'dubbed', 'nosub', 'audio'].forEach(k => a.groups[k].forEach(x => seen.add(((x.url || x.href) || '').toLowerCase()))); /* FN-DN-SRC v1: links carry .url, not .href; FN-AUDIO v1 adds audio */
+  ['softsub', 'dubbed', 'nosub', 'audio'].forEach(k => b.groups[k].forEach(x => { const h = ((x.url || x.href) || '').toLowerCase(); if (h && !seen.has(h)) { seen.add(h); a.groups[k].push(x); } })); /* FN-AUDIO v1 */
   return a;
 }
 /* Resolve one title's download record: BOTH archives are read and their
@@ -6697,7 +6697,7 @@ async function resolveDlRecord(imdbId, num) {
     for (let pn = 1; pn <= 16; pn++) {
       try {
         const rec = recordFromArchive(await loadDlPart(pn), '', num);
-        if (rec && (rec.groups.softsub.length || rec.groups.dubbed.length || rec.groups.nosub.length)) return { rec, src: 'new' };
+        if (rec && (rec.groups.softsub.length || rec.groups.dubbed.length || rec.groups.nosub.length || (rec.groups.audio || []).length)) return { rec, src: 'new' }; /* FN-AUDIO v1 */
       } catch (e) {}
     }
   }
@@ -6706,7 +6706,7 @@ async function resolveDlRecord(imdbId, num) {
 async function resolveDlRecordByPart(imdbId, num, part, which) {
   const base = which === 'old' ? 'old' : which === 'ao' ? 'ao' : which === 'mbm' ? 'mbm' : which === 'dn' ? 'dn' : which === 'srm' ? 'srm' : which === 'sm' ? 'sm' : which === 'ml' ? 'ml' : which === 'bf' ? 'bf' : which === 'fh' ? 'fh' : which === 'rz' ? 'rz' : 'new'; /* FN-AO-SRC v1; FN-MBM-SRC v1 adds mbm; FN-DN-SRC v1 adds dn; FN-SRM-SRC v1 adds srm; FN-SM-SRC v1 adds sm; FN-ML-SRC v1 adds ml; FN-BF-SRC v1 adds bf; FN-FH-SRC v1 adds fh; FN-RZ-SRC v1 adds rz */
   const rec = recordFromArchive(await loadDlPart(part, base), imdbId || '', num);
-  if (rec && (rec.groups.softsub.length || rec.groups.dubbed.length || rec.groups.nosub.length)) return { rec, src: base };
+  if (rec && (rec.groups.softsub.length || rec.groups.dubbed.length || rec.groups.nosub.length || (rec.groups.audio || []).length)) return { rec, src: base }; /* FN-AUDIO v1 */
   return null;
 }
 function recordFromArchive(doc, imdb, num) {
@@ -6841,7 +6841,7 @@ async function fnDlTitleFallback(imdbId, tmdbKey, fbTitle, fbYear) {
     const doc = await loadDlPart(row.part, which === 'old' ? 'old' : undefined);
     const rec = recordFromArchiveByTitle(doc, row.t, row.y);
     if (!rec || !dlRecHasLinks(rec)) return null;
-    console.info('[fn-dl-fallback] title fallback hit: "' + row.t + '" (' + row.y + ') part ' + row.part + (row.old ? ' (old archive)' : '') + ' — ' + (rec.groups.softsub.length + rec.groups.dubbed.length + rec.groups.nosub.length) + ' links');
+    console.info('[fn-dl-fallback] title fallback hit: "' + row.t + '" (' + row.y + ') part ' + row.part + (row.old ? ' (old archive)' : '') + ' — ' + (rec.groups.softsub.length + rec.groups.dubbed.length + rec.groups.nosub.length + (rec.groups.audio || []).length) + ' links'); /* FN-AUDIO v1 */
     /* FN-DN-SRC v1: a DN row resolves through the title fallback too —
        its src is 'dn', not 'new', so the box shows the DN hint. */
     const fbSrc = (row.part === 'dn1' || row.part === 'dn2') ? 'dn' : row.part === 'ml' ? 'ml' : row.part === 'bf' ? 'bf' : which; /* FN-ML-SRC v1; FN-BF-SRC v1: no-IMDb ML/BF titles resolved via the search-index fallback keep their folder src */
@@ -8502,7 +8502,7 @@ async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUr
   try {
     const rec = resolved.rec;
     const srcNote = resolved.src === 'old' ? ' <span style="color:var(--gold2)">(از آرشیو قبلی)</span>' : resolved.src === 'both' ? ' <span style="color:var(--gold2)">(آرشیو جدید + قبلی)</span>' : '';
-    if (!rec || (!rec.groups.softsub.length && !rec.groups.dubbed.length && !rec.groups.nosub.length)) { /* FN-S1-FULL v1: ext-only titles with Server 1 rows get the SAME
+    if (!rec || (!rec.groups.softsub.length && !rec.groups.dubbed.length && !rec.groups.nosub.length && !(rec.groups.audio || []).length)) { /* FN-AUDIO v1: audio-only records show their box, not the ext-only fallback. FN-S1-FULL v1: ext-only titles with Server 1 rows get the SAME
        box as dual titles (header + chips + S1 section) instead of the
        landing-page button; the button stays only when no S1 rows were
        found. fnExtOnlyBox never throws and never hangs (timeouts

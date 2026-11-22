@@ -116115,6 +116115,37 @@
   },
   "year": 2024
  },
+ "tt2383929": {
+  "imdb": "tt2383929",
+  "num": 12986,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": "S01E01",
+    "group": "Audio",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/ketab%20soti/D1737724T17142910%28Web%29.mp3",
+    "playit_url": null,
+    "quality": "نامشخص",
+    "quality_label": "نامشخص",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Adventures of the Little Prince",
+  "tmdb_key": "tv:27436",
+  "type": "series",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1978
+ },
  "tt2733252": {
   "imdb": "tt2733252",
   "num": 12699,
