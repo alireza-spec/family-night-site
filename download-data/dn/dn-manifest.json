@@ -4,13 +4,13 @@
   "by_resolution": {
    "1080p": 802,
    "360p": 1,
-   "480p": 5089,
-   "540p": 344,
-   "720p": 7142
+   "480p": 5551,
+   "540p": 372,
+   "720p": 7649
   },
   "by_version_family": {
    "Dubbed": 1754,
-   "Subtitled": 11535,
+   "Subtitled": 12532,
    "unknown": 88,
    "NoSub": 1
   },
@@ -60,13 +60,13 @@
    "2016": 32,
    "2017": 32,
    "2018": 41,
-   "2019": 56,
+   "2019": 57,
    "2020": 43,
-   "2021": 65,
-   "2022": 51,
+   "2021": 66,
+   "2022": 52,
    "2023": 69,
-   "2024": 47,
-   "2025": 54,
+   "2024": 48,
+   "2025": 70,
    "2026": 37,
    "1994": 2,
    "1998": 2,
@@ -78,11 +78,11 @@
   },
   "ext_overlap": 1,
   "films": 425,
-  "play_rows": 14269,
-  "series": 318,
+  "play_rows": 15266,
+  "series": 338,
   "skipped_no_links": 11,
-  "total": 743,
-  "trailer_keys": 608,
+  "total": 763,
+  "trailer_keys": 618,
   "trailers_dropped": 71,
   "variety_patched": 401,
   "variety_play_created": 42,
@@ -4778,7 +4778,7 @@
   }
  ],
  "generated": "2026-11-22",
- "live_base_head": "625112cbfa04c2eb6ebbc31ccc2c101e12194086",
+ "live_base_head": "2b149e456f824a99d2e2e628ff11a8eb4d6b3b5a",
  "nosub_only_titles": [
   {
    "imdb": "tt1124377",
@@ -10236,6 +10236,228 @@
    "expiring_stripped": 0,
    "skipped_links": {},
    "links": 50
+  },
+  {
+   "title": "The Prisoner of Love",
+   "year": 2025,
+   "imdb": null,
+   "tmdb": 283787,
+   "num": 12905,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 47
+  },
+  {
+   "title": "Cycle of Terror",
+   "year": 2025,
+   "imdb": null,
+   "tmdb": 284910,
+   "num": 12906,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 32
+  },
+  {
+   "title": "Royal Upstart",
+   "year": 2025,
+   "imdb": null,
+   "tmdb": 294462,
+   "num": 12907,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 108
+  },
+  {
+   "title": "Destiny Switch",
+   "year": 2025,
+   "imdb": null,
+   "tmdb": 288089,
+   "num": 12908,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 48
+  },
+  {
+   "title": "Faith & Fire",
+   "year": 2025,
+   "imdb": null,
+   "tmdb": 294003,
+   "num": 12909,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 88
+  },
+  {
+   "title": "A Dream Like the True Love",
+   "year": 2025,
+   "imdb": null,
+   "tmdb": 292808,
+   "num": 12910,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 48
+  },
+  {
+   "title": "Maya",
+   "year": 2025,
+   "imdb": null,
+   "tmdb": 292340,
+   "num": 12911,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {
+    "quality unparseable": 1
+   },
+   "links": 13
+  },
+  {
+   "title": "Saving Grace: The Untold Story",
+   "year": 2025,
+   "imdb": null,
+   "tmdb": 292461,
+   "num": 12912,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 152
+  },
+  {
+   "title": "Possessed",
+   "year": 2019,
+   "imdb": "tt9537306",
+   "tmdb": 86640,
+   "num": 12913,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 32
+  },
+  {
+   "title": "Wild Fire",
+   "year": 2025,
+   "imdb": null,
+   "tmdb": 295786,
+   "num": 12914,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 48
+  },
+  {
+   "title": "Love Formula",
+   "year": 2025,
+   "imdb": null,
+   "tmdb": 295994,
+   "num": 12915,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 48
+  },
+  {
+   "title": "I Have Not Done My Best",
+   "year": 2022,
+   "imdb": null,
+   "tmdb": 156038,
+   "num": 12916,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 24
+  },
+  {
+   "title": "Love & Wish",
+   "year": 2021,
+   "imdb": null,
+   "tmdb": 154054,
+   "num": 12917,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 9
+  },
+  {
+   "title": "Life Like",
+   "year": 2025,
+   "imdb": null,
+   "tmdb": 303255,
+   "num": 12918,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 48
+  },
+  {
+   "title": "Her Phoenix Majesty",
+   "year": 2025,
+   "imdb": null,
+   "tmdb": 303944,
+   "num": 12919,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 42
+  },
+  {
+   "title": "Rise of Her Lady Physician",
+   "year": 2025,
+   "imdb": null,
+   "tmdb": 304261,
+   "num": 12920,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 56
+  },
+  {
+   "title": "The Hunt for the Chameleon Killer",
+   "year": 2024,
+   "imdb": null,
+   "tmdb": 271080,
+   "num": 12921,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "Lust and Lies",
+   "year": 2025,
+   "imdb": null,
+   "tmdb": 294468,
+   "num": 12922,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 48
+  },
+  {
+   "title": "A Mission of the Heart",
+   "year": 2025,
+   "imdb": null,
+   "tmdb": 304513,
+   "num": 12923,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 40
+  },
+  {
+   "title": "Flying Up Without Disturb",
+   "year": 2025,
+   "imdb": "tt39028734",
+   "tmdb": 252321,
+   "num": 12924,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 63
   }
  ],
  "skipped_not_merged": [
@@ -21010,5 +21232,46 @@
    "tv:85420"
   ],
   "note": "DN slice of the all-sources series audit, batch 3: 20 new series, 747 links; partials completed by episode-level diff."
+ },
+ "all_sources_series_audit_dn_batch_4": {
+  "live_base_head": "2b149e456f824a99d2e2e628ff11a8eb4d6b3b5a",
+  "start_num": 12905,
+  "end_num": 12924,
+  "new_titles_merged": [
+   "The Prisoner of Love",
+   "Cycle of Terror",
+   "Royal Upstart",
+   "Destiny Switch",
+   "Faith & Fire",
+   "A Dream Like the True Love",
+   "Maya",
+   "Saving Grace: The Untold Story",
+   "Possessed",
+   "Wild Fire",
+   "Love Formula",
+   "I Have Not Done My Best",
+   "Love & Wish",
+   "Life Like",
+   "Her Phoenix Majesty",
+   "Rise of Her Lady Physician",
+   "The Hunt for the Chameleon Killer",
+   "Lust and Lies",
+   "A Mission of the Heart",
+   "Flying Up Without Disturb"
+  ],
+  "partials_completed": [],
+  "trailers_added": [
+   "tv:283787",
+   "tv:284910",
+   "tv:288089",
+   "tv:292340",
+   "tv:292808",
+   "tv:294003",
+   "tv:294462",
+   "tv:295786",
+   "tv:295994",
+   "tv:86640"
+  ],
+  "note": "DN slice of the all-sources series audit, batch 4: 20 new series, 997 links; partials completed by episode-level diff."
  }
 }
