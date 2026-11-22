@@ -6894,6 +6894,28 @@ if (/babakfilm|iranfilmplus|iranvids/i.test(x.url || '') || /babakfilm|iranfilmp
   const ext = (fn.match(/\.(mkv|mp4|avi)$/i) || [])[1] || '';
   return { res, source, codec: codecBits.join(' · '), enc, ext: ext ? ext.toUpperCase() : '', fn };
 }
+/* FN-CAM-HIDE v1 (user order 2026-11-22 ~20:27): once a title has a
+   main-quality encode, its CAM encodes are no longer SHOWN in the
+   download box — lest someone download a CAM by mistake when the
+   original has arrived. CAM-only titles keep showing CAM. DISPLAY-only:
+   the record keeps every link (the archive data is untouched); only
+   the rendered tiles/list change. CAM = source CAM/HDTS (parseDlSpecs)
+   or an HDCAM token in the label/filename (parseDlSpecs' source regex
+   misses HDCAM — \bCAM\b never matches inside "HDCAM"). HDTS
+   (telesync) is cam-quality too — the same rule the bot's Coming-Soon
+   CAM check uses (/CAM|HDTS/i). */
+function dlIsCam(r) {
+  var s = String((r.sp && r.sp.source) || '').toUpperCase();
+  if (s === 'CAM' || s === 'HDTS') return true;
+  var hay = ((r.x && r.x.quality) || '') + ' ' + ((r.sp && r.sp.fn) || '');
+  return /\bHDCAM\b/i.test(hay);
+}
+function dlHideCam(list) {
+  var hasGood = list.some(function (r) { return !dlIsCam(r); });
+  if (!hasGood) return list;
+  return list.filter(function (r) { return !dlIsCam(r); });
+}
+
 function sizeToMB(s) { const m = String(s || '').match(/([\d.]+)\s*(GB|MB)/i); if (!m) return 0; return m[2].toUpperCase() === 'GB' ? parseFloat(m[1]) * 1024 : parseFloat(m[1]); }
 function fmtTotalMB(mb) { return mb >= 1024 ? (mb / 1024).toFixed(2) + ' GB' : Math.round(mb) + ' MB'; }
 function resRank(r) { return ({ '2160p': 6, '1440p': 5, '1080p': 4, '720p': 3, '576p': 2, '480p': 1, '360p': 0 })[r] != null ? ({ '2160p': 6, '1440p': 5, '1080p': 4, '720p': 3, '576p': 2, '480p': 1, '360p': 0 })[r] : -1; }
@@ -7076,6 +7098,11 @@ function dlTilesHtml(rec, opts) {
      is authoritative when the files share hosts/encoders. */
   if (o.src === 'ml') all.forEach(function (r) { r.sp.enc = 'ML'; });
   if (o.src === 'bf') all.forEach(function (r) { r.sp.enc = 'BF'; });
+  /* FN-CAM-HIDE v1: hide CAM links when a good encode exists (see
+     dlHideCam). Applied here — before the header counts, total size,
+     copy-all list and tiles are built — so every number and every tile
+     sees the same visible set. */
+  all = dlHideCam(all);
   var isSeries = all.some(function (r) { return r.x.season || r.x.episode; });
   var totalMB = all.reduce(function (s, r) { return s + sizeToMB(r.x.size); }, 0);
   var allUrls = all.map(function (r) { return r.x.url; });
@@ -7185,6 +7212,9 @@ function dlSeriesHtml(groups, posterUrl, title, ctx) {
       rec0.links.push({ x: x, label: g.label, sp: parseDlSpecs(x) });
     });
   });
+  /* FN-CAM-HIDE v1: per episode — hide CAM links when THAT episode
+     has a good encode; a CAM-only episode keeps its CAM links. */
+  Object.keys(eps).forEach(function (k) { eps[k].links = dlHideCam(eps[k].links); });
   /* FN-SM-SRC v1: an SM box shows the SM code in the episode sheets, not
      the file's encoder token — the `all` override (E7a) never reaches here:
      dlSeriesHtml parses its own specs per link. */
