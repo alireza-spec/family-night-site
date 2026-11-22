@@ -2,15 +2,15 @@
  "code": "DN",
  "counts": {
   "by_resolution": {
-   "1080p": 650,
+   "1080p": 676,
    "360p": 1,
-   "480p": 3218,
-   "540p": 231,
-   "720p": 4605
+   "480p": 3849,
+   "540p": 234,
+   "720p": 5205
   },
   "by_version_family": {
-   "Dubbed": 865,
-   "Subtitled": 7755,
+   "Dubbed": 1241,
+   "Subtitled": 8639,
    "unknown": 84,
    "NoSub": 1
   },
@@ -48,41 +48,41 @@
    "2004": 3,
    "2005": 9,
    "2006": 7,
-   "2007": 1,
+   "2007": 2,
    "2008": 7,
    "2009": 11,
-   "2010": 7,
+   "2010": 9,
    "2011": 6,
-   "2012": 10,
-   "2013": 13,
-   "2014": 19,
+   "2012": 11,
+   "2013": 14,
+   "2014": 20,
    "2015": 25,
-   "2016": 29,
+   "2016": 30,
    "2017": 27,
-   "2018": 32,
-   "2019": 49,
-   "2020": 38,
-   "2021": 54,
-   "2022": 36,
-   "2023": 49,
-   "2024": 39,
-   "2025": 46,
-   "2026": 33,
+   "2018": 34,
+   "2019": 50,
+   "2020": 40,
+   "2021": 58,
+   "2022": 40,
+   "2023": 53,
+   "2024": 42,
+   "2025": 47,
+   "2026": 34,
    "1994": 1,
    "1998": 1,
    "1971": 2
   },
   "ext_overlap": 1,
   "films": 385,
-  "play_rows": 9232,
-  "series": 222,
+  "play_rows": 10823,
+  "series": 251,
   "skipped_no_links": 11,
-  "total": 607,
-  "trailer_keys": 543,
+  "total": 636,
+  "trailer_keys": 559,
   "trailers_dropped": 70,
-  "variety_patched": 394,
-  "variety_play_created": 40,
-  "variety_play_rows_added": 4061,
+  "variety_patched": 396,
+  "variety_play_created": 42,
+  "variety_play_rows_added": 4392,
   "variety_stale_links": 531
  },
  "end_num": 11589,
@@ -4333,8 +4333,8 @@
    "links": 3
   }
  ],
- "generated": "2026-11-21",
- "live_base_head": "41edc227d8fcb0de04bae1cc6e082fbb0b7f7846",
+ "generated": "2026-11-22",
+ "live_base_head": "b3972b60877577c4625b4b4d3a9d0d266b090602",
  "nosub_only_titles": [
   {
    "imdb": "tt1124377",
@@ -8709,6 +8709,325 @@
    "expiring_stripped": 0,
    "skipped_links": {},
    "links": 48
+  },
+  {
+   "title": "Time Goes By",
+   "year": 2010,
+   "imdb": "tt1784141",
+   "tmdb": 39892,
+   "num": 12668,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 548
+  },
+  {
+   "title": "When Time Stopped",
+   "year": 2018,
+   "imdb": "tt9105344",
+   "tmdb": 83303,
+   "num": 12669,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 12
+  },
+  {
+   "title": "Salamander",
+   "year": 2012,
+   "imdb": "tt2569488",
+   "tmdb": 61839,
+   "num": 12670,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 24
+  },
+  {
+   "title": "Be My Cat",
+   "year": 2021,
+   "imdb": "tt14236206",
+   "tmdb": 118488,
+   "num": 12671,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 17
+  },
+  {
+   "title": "Now, We Are Breaking Up",
+   "year": 2021,
+   "imdb": "tt14408016",
+   "tmdb": 129887,
+   "num": 12672,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 32
+  },
+  {
+   "title": "Darmaduman",
+   "year": 2022,
+   "imdb": "tt21385714",
+   "tmdb": 213059,
+   "num": 12673,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 18
+  },
+  {
+   "title": "Daniel Spellbound",
+   "year": 2022,
+   "imdb": "tt13983670",
+   "tmdb": 156934,
+   "num": 12674,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 31
+  },
+  {
+   "title": "Web of Make Believe: Death, Lies and the Internet",
+   "year": 2022,
+   "imdb": "tt20602042",
+   "tmdb": 202886,
+   "num": 12675,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 12
+  },
+  {
+   "title": "Battle of Changsha",
+   "year": 2014,
+   "imdb": "tt5154322",
+   "tmdb": 71668,
+   "num": 12676,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 64
+  },
+  {
+   "title": "The Iceblade Sorcerer Shall Rule the World",
+   "year": 2023,
+   "imdb": "tt25531288",
+   "tmdb": 200777,
+   "num": 12677,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 45
+  },
+  {
+   "title": "Wanru's Journey",
+   "year": 2023,
+   "imdb": "tt27851635",
+   "tmdb": 227213,
+   "num": 12678,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 25
+  },
+  {
+   "title": "Are You Afraid of the Dark?",
+   "year": 2019,
+   "imdb": "tt10473306",
+   "tmdb": 93693,
+   "num": 12679,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 18
+  },
+  {
+   "title": "Koyu Beyaz",
+   "year": 2023,
+   "imdb": "tt23322920",
+   "tmdb": 226076,
+   "num": 12680,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 8
+  },
+  {
+   "title": "The Age Of Nature",
+   "year": 2020,
+   "imdb": "tt13081012",
+   "tmdb": 112300,
+   "num": 12681,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "Shinobi no Ittoki",
+   "year": 2022,
+   "imdb": "tt21345876",
+   "tmdb": 158293,
+   "num": 12682,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 12
+  },
+  {
+   "title": "Dead of Summer",
+   "year": 2016,
+   "imdb": "tt5210998",
+   "tmdb": 66489,
+   "num": 12683,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 20
+  },
+  {
+   "title": "Human Target",
+   "year": 2010,
+   "imdb": "tt1439741",
+   "tmdb": 18653,
+   "num": 12684,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 25
+  },
+  {
+   "title": "Coffee Prince",
+   "year": 2007,
+   "imdb": "tt1772685",
+   "tmdb": 3215,
+   "num": 12685,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 35
+  },
+  {
+   "title": "You Are My Secret",
+   "year": 2024,
+   "imdb": "tt29476861",
+   "tmdb": 259698,
+   "num": 12686,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 66
+  },
+  {
+   "title": "Who Killed Robert Wone?",
+   "year": 2023,
+   "imdb": "tt26831504",
+   "tmdb": 221089,
+   "num": 12687,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 2
+  },
+  {
+   "title": "Crime Scene Berlin: Nightlife Killer",
+   "year": 2024,
+   "imdb": "tt31592633",
+   "tmdb": 248470,
+   "num": 12688,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 3
+  },
+  {
+   "title": "A Thousand Fangs",
+   "year": 2021,
+   "imdb": "tt9701670",
+   "tmdb": 135385,
+   "num": 12689,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 21
+  },
+  {
+   "title": "Untouchable Lovers",
+   "year": 2018,
+   "imdb": "tt8268134",
+   "tmdb": 77367,
+   "num": 12690,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 58
+  },
+  {
+   "title": "Gunaah",
+   "year": 2024,
+   "imdb": "tt32537124",
+   "tmdb": 255468,
+   "num": 12691,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 25
+  },
+  {
+   "title": "Lincoln Rhyme: Hunt for the Bone Collector",
+   "year": 2020,
+   "imdb": "tt9307990",
+   "tmdb": 95272,
+   "num": 12692,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 28
+  },
+  {
+   "title": "Mouse: The Predator",
+   "year": 2021,
+   "imdb": "tt14515452",
+   "tmdb": 127118,
+   "num": 12693,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 6
+  },
+  {
+   "title": "Kirio Fanclub",
+   "year": 2025,
+   "imdb": "tt37253585",
+   "tmdb": 287492,
+   "num": 12694,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 20
+  },
+  {
+   "title": "Camellias",
+   "year": 2026,
+   "imdb": "tt43608537",
+   "tmdb": 326042,
+   "num": 12695,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 48
+  },
+  {
+   "title": "Badalte Rishton Ki Dastaan",
+   "year": 2013,
+   "imdb": "tt6895862",
+   "tmdb": 59474,
+   "num": 12696,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 34
   }
  ],
  "skipped_not_merged": [
@@ -8825,6 +9144,66 @@
    },
    "tmdb": 1141187,
    "type": "movie"
+  },
+  {
+   "dn_title": "Rurouni Kenshin: Meiji Kenkaku Romantan: Tsuioku Hen",
+   "dn_year": 1999,
+   "imdb": null,
+   "reasons": {
+    "queued": "no-tmdb-record: no title-matching search hit"
+   },
+   "tmdb": null,
+   "type": "tv"
+  },
+  {
+   "dn_title": "Ultimate Predators",
+   "dn_year": 2016,
+   "imdb": null,
+   "reasons": {
+    "queued": "no-tmdb-record: no title-matching search hit"
+   },
+   "tmdb": null,
+   "type": "tv"
+  },
+  {
+   "dn_title": "Love Formula",
+   "dn_year": 2025,
+   "imdb": null,
+   "reasons": {
+    "queued": "OMDb imdb tt37730889 does not round-trip to tmdb 295994"
+   },
+   "tmdb": 295994,
+   "type": "tv"
+  },
+  {
+   "dn_title": "The Generals Youngest Son",
+   "dn_year": 2025,
+   "imdb": null,
+   "reasons": {
+    "queued": "no-tmdb-record: no title-matching search hit"
+   },
+   "tmdb": null,
+   "type": "tv"
+  },
+  {
+   "dn_title": "Cardcaptor Sakura",
+   "dn_year": 1998,
+   "imdb": "tt0221735",
+   "reasons": {
+    "queued": "find/tt0221735 does not round-trip to tmdb 35790 (got {'adult': False, 'backdrop_path': '/5Ic6hJJAlAagKcb7sxEKycaZ5iT.jpg', 'genre_ids': [16, 35], 'id': 496676, 'title': \"Tomoyo's Cardcaptor Sakura Video Diary!\", 'original_language': 'ja', 'original_title': 'すてきですわ、さくらちゃん！ 知世のカードキャプターさくら活躍ビデオ日記！', 'overview': 'The first OVA of the anime series of Cardcaptor Sakura. This is a video of Tomoyo Daidouji previewing the making of the first opening video of Cardcaptor Sakura (the Catch You Catch Me video).', 'popularity': 0.7708, 'poster_path': '/2TqClTRPRNspy1UiKbbT9QNeF9a.jpg', 'release_date': '1998-10-25', 'softcore': False, 'video': False, 'vote_average': 8.0, 'vote_count': 5, 'media_type': 'movie'})"
+   },
+   "tmdb": 35790,
+   "type": "tv"
+  },
+  {
+   "dn_title": "Asiye",
+   "dn_year": 2026,
+   "imdb": null,
+   "reasons": {
+    "queued": "tmdb has no imdb_id and OMDb has no entry (single-source TMDB only)"
+   },
+   "tmdb": 340683,
+   "type": "tv"
   }
  ],
  "source": "darknama",
@@ -17489,6 +17868,41 @@
    "stale_families_skipped": [],
    "tmdb": 826,
    "type": "movie"
+  },
+  {
+   "archive_h3_num": 5026,
+   "archive_part": 3,
+   "archive_src": "old",
+   "dn_title": "The Shrink Next Door",
+   "dn_year": 2021,
+   "families": [
+    "480p Subtitled",
+    "720p Subtitled"
+   ],
+   "h3_links_added": 16,
+   "imdb": "tt11947248",
+   "play_rows_added": 16,
+   "stale_families_skipped": [],
+   "tmdb": 102540,
+   "type": "tv"
+  },
+  {
+   "archive_h3_num": 3812,
+   "archive_part": 3,
+   "archive_src": "old",
+   "dn_title": "Shaun the Sheep",
+   "dn_year": 2007,
+   "families": [
+    "1080p unknown",
+    "480p unknown",
+    "720p unknown"
+   ],
+   "h3_links_added": 315,
+   "imdb": "tt0983983",
+   "play_rows_added": 315,
+   "stale_families_skipped": [],
+   "tmdb": 3902,
+   "type": "tv"
   }
  ],
  "variety_play_created": [
@@ -18640,5 +19054,111 @@
     "note": "S01E05-E06 480p/720p BaroMoviz SoftSub -> SoftSub/none like E01-E04; dn-manifest series[] links 8 -> 12 (DN-origin links only; the 9 F2M links were never counted there). counts.* left untouched: live totals (8715 H3 links) already differ from the manifest's stale by_resolution sum (8705), so a +4 there would compound a stale baseline."
    }
   ]
+ },
+ "twice_daily_2026_11_22_am": {
+  "live_base_head": "b3972b60877577c4625b4b4d3a9d0d266b090602",
+  "start_num": 12668,
+  "end_num": 12697,
+  "new_titles_merged": [
+   "Time Goes By",
+   "When Time Stopped",
+   "Salamander",
+   "Be My Cat",
+   "Now, We Are Breaking Up",
+   "Darmaduman",
+   "Daniel Spellbound",
+   "Web of Make Believe: Death, Lies and the Internet",
+   "Battle of Changsha",
+   "The Iceblade Sorcerer Shall Rule the World",
+   "Wanru's Journey",
+   "Are You Afraid of the Dark?",
+   "Koyu Beyaz",
+   "The Age Of Nature",
+   "Shinobi no Ittoki",
+   "Dead of Summer",
+   "Human Target",
+   "Coffee Prince",
+   "You Are My Secret",
+   "Who Killed Robert Wone?",
+   "Crime Scene Berlin: Nightlife Killer",
+   "A Thousand Fangs",
+   "Untouchable Lovers",
+   "Gunaah",
+   "Lincoln Rhyme: Hunt for the Bone Collector",
+   "Mouse: The Predator",
+   "Kirio Fanclub",
+   "Camellias",
+   "Badalte Rishton Ki Dastaan"
+  ],
+  "variety_patched": [
+   "The Shrink Next Door",
+   "Shaun the Sheep"
+  ],
+  "trailers_added": [
+   "tv:112300",
+   "tv:135385",
+   "tv:158293",
+   "tv:18653",
+   "tv:200777",
+   "tv:221089",
+   "tv:227213",
+   "tv:248470",
+   "tv:255468",
+   "tv:259698",
+   "tv:3902",
+   "tv:77367",
+   "tv:93693"
+  ],
+  "skipped": [
+   {
+    "title": "Rurouni Kenshin: Meiji Kenkaku Romantan: Tsuioku Hen",
+    "year": 1999,
+    "imdb": null,
+    "reasons": {
+     "queued": "no-tmdb-record: no title-matching search hit"
+    }
+   },
+   {
+    "title": "Ultimate Predators",
+    "year": 2016,
+    "imdb": null,
+    "reasons": {
+     "queued": "no-tmdb-record: no title-matching search hit"
+    }
+   },
+   {
+    "title": "Love Formula",
+    "year": 2025,
+    "imdb": null,
+    "reasons": {
+     "queued": "OMDb imdb tt37730889 does not round-trip to tmdb 295994"
+    }
+   },
+   {
+    "title": "The Generals Youngest Son",
+    "year": 2025,
+    "imdb": null,
+    "reasons": {
+     "queued": "no-tmdb-record: no title-matching search hit"
+    }
+   },
+   {
+    "title": "Cardcaptor Sakura",
+    "year": 1998,
+    "imdb": "tt0221735",
+    "reasons": {
+     "queued": "find/tt0221735 does not round-trip to tmdb 35790 (got {'adult': False, 'backdrop_path': '/5Ic6hJJAlAagKcb7sxEKycaZ5iT.jpg', 'genre_ids': [16, 35], 'id': 496676, 'title': \"Tomoyo's Cardcaptor Sakura Video Diary!\", 'original_language': 'ja', 'original_title': 'すてきですわ、さくらちゃん！ 知世のカードキャプターさくら活躍ビデオ日記！', 'overview': 'The first OVA of the anime series of Cardcaptor Sakura. This is a video of Tomoyo Daidouji previewing the making of the first opening video of Cardcaptor Sakura (the Catch You Catch Me video).', 'popularity': 0.7708, 'poster_path': '/2TqClTRPRNspy1UiKbbT9QNeF9a.jpg', 'release_date': '1998-10-25', 'softcore': False, 'video': False, 'vote_average': 8.0, 'vote_count': 5, 'media_type': 'movie'})"
+    }
+   },
+   {
+    "title": "Asiye",
+    "year": 2026,
+    "imdb": null,
+    "reasons": {
+     "queued": "tmdb has no imdb_id and OMDb has no entry (single-source TMDB only)"
+    }
+   }
+  ],
+  "note": "DN slice of the twice-daily AM merge. 29 new series (1,260 links), 2 old-record variety titles (331 links: The Shrink Next Door 16 + Shaun the Sheep 315), 13 trailer keys. 6 titles queued (Rurouni Kenshin Tsuioku Hen, Ultimate Predators, Love Formula, The Generals Youngest Son, Cardcaptor Sakura, Asiye — identity unresolved or no IMDb). A Discovery of Witches is NOT a DN new title: it merged as ZV variety into old2 #3741."
  }
 }

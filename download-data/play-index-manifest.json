@@ -2,20 +2,20 @@
  "description": "Split by download-archive part because the single play-index.json (118 MB) exceeds GitHub's 100 MB single-file limit.",
  "generated": "2026-11-21",
  "groups": "SoftSub = hardsub files grouped under SoftSub per the archive convention; Dubbed = dubbed; NoSub = no subtitle. Unjoined entries have play_url null and group null.",
- "joined": 220088,
+ "joined": 221575,
  "lookup": "Find the part via download-index.json (IMDb -> part) or download-title-index.json (tmdb -> part), then fetch play-index-part-<part>.json. Part 0 holds the 69 titles with no download-archive record.",
  "mp4_sized": 1122,
  "mp4_total": 10703,
  "name": "Family Night play index (Zivarnet archive)",
  "parts": [
   {
-   "bytes": 1000651,
-   "entries": 78,
+   "bytes": 20317,
+   "entries": 69,
    "file": "play-index-part-0.json",
    "part": 0
   },
   {
-   "bytes": 9424366,
+   "bytes": 9434406,
    "entries": 2193,
    "file": "play-index-part-1.json",
    "part": 1
@@ -33,13 +33,13 @@
    "part": 3
   },
   {
-   "bytes": 9194589,
+   "bytes": 9200007,
    "entries": 1594,
    "file": "play-index-part-4.json",
    "part": 4
   },
   {
-   "bytes": 8426946,
+   "bytes": 8473261,
    "entries": 125,
    "file": "play-index-part-5.json",
    "part": 5
@@ -105,8 +105,8 @@
    "part": 15
   },
   {
-   "bytes": 4074753,
-   "entries": 349,
+   "bytes": 4076410,
+   "entries": 350,
    "file": "play-index-part-16.json",
    "part": 16
   },
@@ -117,14 +117,14 @@
    "part": "ao"
   },
   {
-   "bytes": 1000651,
+   "bytes": 1099681,
    "entries": 78,
    "file": "mbm/play-index-mbm.json",
    "part": "mbm"
   },
   {
-   "bytes": 3672043,
-   "entries": 607,
+   "bytes": 4200256,
+   "entries": 636,
    "file": "dn/play-index-dn.json",
    "part": "dn"
   },
@@ -135,7 +135,7 @@
    "part": "srm"
   },
   {
-   "bytes": 181831,
+   "bytes": 185129,
    "entries": 35,
    "file": "sm/play-index-sm.json",
    "part": "sm"
@@ -159,13 +159,13 @@
    "part": "fh"
   },
   {
-   "bytes": 16094,
-   "entries": 8,
+   "bytes": 21547,
+   "entries": 10,
    "file": "rz/play-index-rz.json",
    "part": "rz"
   }
  ],
- "total_entries": 12584,
- "total_play_entries": 223909,
+ "total_entries": 12610,
+ "total_play_entries": 225399,
  "unjoined": 3824
 }

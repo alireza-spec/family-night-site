@@ -84833,6 +84833,65 @@
   },
   "year": 2026
  },
+ "tt34385689": {
+  "imdb": "tt34385689",
+  "num": 12697,
+  "part": 16,
+  "play": [
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2026/Paper.Tiger.2026/CAMDUB/Paper.Tiger.2026.1080p.HDTS.Farsi.Dubbed.Film2Media.mkv?v=694154561910",
+    "playit_url": null,
+    "quality": "HDTS 1080p",
+    "quality_label": "hdts 1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2026/Paper.Tiger.2026/CAMDUB/Paper.Tiger.2026.720p.HDTS.Farsi.Dubbed.Film2Media.mkv?v=889340263513",
+    "playit_url": null,
+    "quality": "HDTS 720p",
+    "quality_label": "hdts 720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2026/Paper.Tiger.2026/CAMDUB/Paper.Tiger.2026.480p.HDTS.Farsi.Dubbed.Film2Media.mkv?v=859341104285",
+    "playit_url": null,
+    "quality": "HDTS 480p",
+    "quality_label": "hdts 480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Paper Tiger",
+  "tmdb_key": "movie:1381273",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
  "tt34570050": {
   "imdb": "tt34570050",
   "num": 10933,
