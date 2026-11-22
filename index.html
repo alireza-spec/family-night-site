@@ -7077,7 +7077,7 @@ function dlPosterHtml(posterUrl, title) {
   return '<span class="fn-dl-initial">' + esc(ch) + '</span>';
 }
 function dlLinkSel(l) {
-  return { url: l.x.url, res: l.sp.res, size: l.x.size, group: l.label, source: l.sp.source, codec: l.sp.codec, enc: l.sp.enc, ext: l.sp.ext };
+  return { url: l.x.url, res: l.sp.res, size: l.x.size, group: l.label, source: l.sp.source, codec: l.sp.codec, enc: l.sp.enc, ext: l.sp.ext, s1: !!l.s1 };
 }
 function dlSortLinksDesc(a, b) {
   return sizeToMB(b.x.size) - sizeToMB(a.x.size)
@@ -7503,6 +7503,10 @@ function wireDlTiles(root, ctx) {
   }
   function updateSheet() {
     var s = ctx.sel; if (!s) return;
+    /* FN-S1-DL v1: Server 1 429s on streaming, so the Play action is
+       hidden while a Server 1 row is selected (copy / ADM / browser
+       still work); re-shown for archive rows. */
+    root.querySelectorAll('[data-dl-act="play"]').forEach(function (b) { b.style.display = s.s1 ? 'none' : ''; });
     var sum = root.querySelector('.fn-dl-sum'), sub = root.querySelector('.fn-dl-sub'), chips = root.querySelector('.fn-dl-qchips');
     /* line 1: title + year. line 2: the details (episode first for series) */
     if (sum) sum.textContent = ctx.title + (ctx.year ? ' • ' + ctx.year : '');
@@ -7684,8 +7688,9 @@ function wireDlTiles(root, ctx) {
       if (box.hidden) { refreshCaBox(); box.hidden = false; }
       else box.hidden = true;
     } else {
-      /* film: everything, size largest-first, no questions */
-      copyText(ctx.links.map(function (r) { return r.x.url; }).join('\n'));
+      /* film: everything archive, size largest-first, no questions —
+         Server 1 rows (s1:true) stay out of copy-all */
+      copyText(ctx.links.filter(function (r) { return !r.s1; }).map(function (r) { return r.x.url; }).join('\n'));
     }
   };
   var caClose = root.querySelector('.fn-dl-ca-close');
@@ -7758,6 +7763,58 @@ async function fnExtDlHtml(tmdbKey) {
       + '<div class="fn-dl-sec"><span>دانلود از سرور خارجی</span></div>'
       + '<p class="fn-ext-dl-note">این اثر در آرشیو ما لینک دانلود ندارد؛ دانلود از سرور خارجی' + (extIranian ? '' : ' (بدون زیرنویس فارسی)') + ' در تب جدید باز می‌شود.</p>'
       + '<a class="fn-ext-dl-btn" href="' + url + '" target="_blank" rel="noopener">' + label + '</a>'
+      + '</div>';
+  } catch (e) { return ''; }
+}
+/* FN-S1-DL v1 — Server 1 rows INSIDE the normal download box, for the
+   21 DUAL titles only (real archive links AND ext coverage). Static
+   data only: download-data/ext/dual-s1.json maps "movie:<tmdb>" ->
+   {q: [qualities highest-first], sz: {q: bytes}, fa: Persian .fa
+   subtitle files listed on the server page}. The video URL is
+   deterministic (dl.braflix.dev/download/movie/{tmdb}?quality={q}) —
+   no Braflix page is ever fetched at runtime. The rows reuse the
+   archive tile markup + the sheet (copy / ADM / browser), so a tap
+   behaves exactly like a main link — except Play: Server 1 429s on
+   streaming, so the Play action is hidden for S1 rows (see
+   updateSheet). Copy-all stays archive-only (S1 rows carry s1:true
+   and are filtered there). The note says the files usually have NO
+   Persian subtitles (the videos are NoSub); for an Iranian title the
+   parenthetical is dropped, like fnExtDlHtml (RULE 2). */
+let fnDualS1 = null, fnDualS1Promise = null;
+function getDualS1() {
+  if (fnDualS1) return Promise.resolve(fnDualS1);
+  if (!fnDualS1Promise) fnDualS1Promise = fetch(DL_BASE + 'ext/dual-s1.json').then(r => { if (!r.ok) throw new Error('dual s1'); return r.json(); }).then(x => { fnDualS1 = x || {}; return fnDualS1; }).catch(e => { fnDualS1 = {}; return fnDualS1; });
+  return fnDualS1Promise;
+}
+async function fnS1DlHtml(tmdbKey, posterUrl, title, ctx) {
+  if (!tmdbKey || !ctx) return '';
+  var m = String(tmdbKey).match(/^movie:(\d+)$/);
+  if (!m) return '';
+  try {
+    var map = await getDualS1();
+    var ent = map && map[tmdbKey];
+    if (!ent || !ent.q || !ent.q.length) return '';
+    var s1Iranian = false;
+    try { s1Iranian = await fnIranianForTmdb('movie', m[1], null); } catch (e) { s1Iranian = false; }
+    var rows = '';
+    ent.q.forEach(function (q) {
+      var bytes = (ent.sz && ent.sz[q]) || 0;
+      var sizeStr = bytes ? fmtTotalMB(bytes / 1048576) : '';
+      var url = 'https://dl.braflix.dev/download/movie/' + m[1] + '?quality=' + q;
+      var idx = ctx.links.length;
+      ctx.links.push({ x: { url: url, size: sizeStr }, label: 'سرور ۱', sp: { res: q, source: '', codec: '', enc: '', ext: 'mp4' }, s1: true });
+      rows += '<div class="fn-dl-tile" data-dl-i="' + idx + '">'
+        + '<span class="fn-dl-thumb">' + dlPosterHtml(posterUrl || '', title) + '</span>'
+        + '<span class="fn-dl-tinfo"><b>' + esc(title) + '</b>'
+        + '<span class="fn-dl-tline"><span class="fn-dl-ver">سرور ۱</span><span class="fn-dl-qchip">' + esc(q) + '</span></span>'
+        + (sizeStr ? '<span class="fn-dl-tline2" dir="rtl">' + esc(faSize(sizeStr)) + '</span>' : '')
+        + '</span>'
+        + '<span class="fn-dl-chev">' + FN_DL_CHEV_SVG + '</span></div>';
+    });
+    return '<div class="fn-ext-dl" data-s1-dl>'
+      + '<div class="fn-dl-sec"><span>دانلود از سرور ۱</span><span class="fn-dl-cnt">' + ent.q.length + ' لینک</span></div>'
+      + '<p class="fn-ext-dl-note">دانلود مستقیم از سرور ۱' + (s1Iranian ? '' : ' — این فایل‌ها معمولاً زیرنویس فارسی ندارند') + '.</p>'
+      + '<div class="fn-dl-tiles">' + rows + '</div>'
       + '</div>';
   } catch (e) { return ''; }
 }
@@ -7862,7 +7919,14 @@ async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUr
     }
     if (token !== detailToken) return;
     var dlBuilt = dlTilesHtml(rec, { poster: posterUrl || '', title: headTitle, faTitle: faTitle, faPending: faPending, meta: dlMeta, tmdbId: (tmdbKey && tmdbKey.indexOf('tv:') === 0) ? tmdbKey.slice(3) : '', src: resolved.src, hasDn: hasDnBox, iranian: !!iranian });
-    body.innerHTML = dlBuilt.html;
+    /* FN-S1-DL v1: Server 1 rows (dual titles only) append after the
+       archive tiles; the no-links branches above already returned, so
+       a real-only title gets '' and an ext-only title never reaches
+       here. */
+    var s1Html = '';
+    try { s1Html = await fnS1DlHtml(tmdbKey, posterUrl, headTitle, dlBuilt.ctx); } catch (e) { s1Html = ''; }
+    if (token !== detailToken) return;
+    body.innerHTML = dlBuilt.html + s1Html;
     wireDlTiles(body, dlBuilt.ctx);
     if (faPending) {
       var trSrc = enTitle;
