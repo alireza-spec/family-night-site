@@ -83060,5 +83060,292 @@
   "part": "dn2",
   "title": "The Epoch of Miyu",
   "year": 2026
+ },
+ "tv:3713": {
+  "imdb_id": "tt0047736",
+  "num": 12752,
+  "part": "rz",
+  "title": "Gunsmoke",
+  "year": 1955
+ },
+ "tv:5273": {
+  "imdb_id": "tt0047708",
+  "num": 12753,
+  "part": "rz",
+  "title": "Alfred Hitchcock Presents",
+  "year": 1955
+ },
+ "tv:1996": {
+  "imdb_id": "tt0053502",
+  "num": 12754,
+  "part": "rz",
+  "title": "The Flintstones",
+  "year": 1960
+ },
+ "tv:8392": {
+  "imdb_id": "tt0145628",
+  "num": 12755,
+  "part": "rz",
+  "title": "Popeye the Sailor",
+  "year": 1960
+ },
+ "tv:317": {
+  "imdb_id": "tt0278180",
+  "num": 12756,
+  "part": "rz",
+  "title": "Courageous Cat and Minute Mouse",
+  "year": 1960
+ },
+ "tv:15179": {
+  "imdb_id": "tt0146370",
+  "num": 12757,
+  "part": "rz",
+  "title": "Bolek and Lolek",
+  "year": 1962
+ },
+ "tv:11161": {
+  "imdb_id": "tt0063863",
+  "num": 12758,
+  "part": "rz",
+  "title": "The Adventures of Gulliver",
+  "year": 1968
+ },
+ "tv:101525": {
+  "imdb_id": "tt1309602",
+  "num": 12759,
+  "part": "rz",
+  "title": "Professor Balthazar",
+  "year": 1967
+ },
+ "tv:14558": {
+  "imdb_id": "tt0062593",
+  "num": 12760,
+  "part": "rz",
+  "title": "The New Adventures of Huckleberry Finn",
+  "year": 1968
+ },
+ "tv:10808": {
+  "imdb_id": "tt0060033",
+  "num": 12761,
+  "part": "rz",
+  "title": "Tarzan",
+  "year": 1966
+ },
+ "tv:4357": {
+  "imdb_id": "tt0060009",
+  "num": 12762,
+  "part": "rz",
+  "title": "Mission: Impossible",
+  "year": 1966
+ },
+ "tv:10762": {
+  "imdb_id": "tt0060025",
+  "num": 12763,
+  "part": "rz",
+  "title": "Skippy the Bush Kangaroo",
+  "year": 1968
+ },
+ "tv:926": {
+  "imdb_id": "tt0063950",
+  "num": 12764,
+  "part": "rz",
+  "title": "Scooby-Doo, Where Are You!",
+  "year": 1969
+ },
+ "tv:25117": {
+  "imdb_id": "tt1690397",
+  "num": 12765,
+  "part": "rz",
+  "title": "Tomorrow's Joe",
+  "year": 1970
+ },
+ "tv:4318": {
+  "imdb_id": "tt0065327",
+  "num": 12766,
+  "part": "rz",
+  "title": "Night Gallery",
+  "year": 1969
+ },
+ "tv:74781": {
+  "imdb_id": "tt0209122",
+  "num": 12767,
+  "part": "rz",
+  "title": "La Maison des bois",
+  "year": 1971
+ },
+ "tv:5021": {
+  "imdb_id": "tt0068149",
+  "num": 12768,
+  "part": "rz",
+  "title": "The Waltons",
+  "year": 1972
+ },
+ "tv:39837": {
+  "imdb_id": "tt0068028",
+  "num": 12769,
+  "part": "rz",
+  "title": "Eight Hours Don’t Make a Day",
+  "year": 1972
+ },
+ "tv:34355": {
+  "imdb_id": "tt0227975",
+  "num": 12770,
+  "part": "rz",
+  "title": "The Water Margin",
+  "year": 1973
+ },
+ "tv:37597": {
+  "imdb_id": "tt0408436",
+  "num": 12771,
+  "part": "rz",
+  "title": "Fables of the Green Forest",
+  "year": 1973
+ },
+ "tv:29452": {
+  "imdb_id": "tt0070968",
+  "num": 12772,
+  "part": "rz",
+  "title": "Heidi: Girl of the Alps",
+  "year": 1974
+ },
+ "tv:14129": {
+  "imdb_id": "tt0190928",
+  "num": 12773,
+  "part": "rz",
+  "title": "These Are the Days",
+  "year": 1974
+ },
+ "tv:954": {
+  "imdb_id": "tt0071042",
+  "num": 12774,
+  "part": "rz",
+  "title": "The Rockford Files",
+  "year": 1974
+ },
+ "tv:7842": {
+  "imdb_id": "tt0130417",
+  "num": 12775,
+  "part": "rz",
+  "title": "The Tom and Jerry Show",
+  "year": 1975
+ },
+ "tv:64035": {
+  "imdb_id": "tt0074024",
+  "num": 12776,
+  "part": "rz",
+  "title": "Michael Strogoff",
+  "year": 1975
+ },
+ "tv:21174": {
+  "imdb_id": "tt0277467",
+  "num": 12777,
+  "part": "rz",
+  "title": "Sindbad the Sailor",
+  "year": 1975
+ },
+ "tv:4929": {
+  "imdb_id": "tt0181923",
+  "num": 12778,
+  "part": "rz",
+  "title": "The Great Grape Ape Show",
+  "year": 1975
+ },
+ "tv:13481": {
+  "imdb_id": "tt0204102",
+  "num": 12779,
+  "part": "rz",
+  "title": "The Adventures of Pinocchio",
+  "year": 1976
+ },
+ "tv:20475": {
+  "imdb_id": "tt0841929",
+  "num": 12780,
+  "part": "rz",
+  "title": "Pat & Mat",
+  "year": 1976
+ },
+ "tv:4459": {
+  "imdb_id": "tt0074028",
+  "num": 12781,
+  "part": "rz",
+  "title": "The Muppet Show",
+  "year": 1976
+ },
+ "tv:13555": {
+  "imdb_id": "tt0075572",
+  "num": 12782,
+  "part": "rz",
+  "title": "Roots",
+  "year": 1977
+ },
+ "tv:19649": {
+  "imdb_id": "tt0075520",
+  "num": 12783,
+  "part": "rz",
+  "title": "Jesus of Nazareth",
+  "year": 1977
+ },
+ "tv:47904": {
+  "imdb_id": "tt0075534",
+  "num": 12784,
+  "part": "rz",
+  "title": "Marie Curie",
+  "year": 1977
+ },
+ "tv:44416": {
+  "imdb_id": "tt0168293",
+  "num": 12785,
+  "part": "rz",
+  "title": "Rascal the Raccoon",
+  "year": 1977
+ },
+ "tv:10502": {
+  "imdb_id": "tt0075543",
+  "num": 12786,
+  "part": "rz",
+  "title": "The New Adventures of Batman",
+  "year": 1977
+ },
+ "tv:19239": {
+  "imdb_id": "tt0077013",
+  "num": 12787,
+  "part": "rz",
+  "title": "Future Boy Conan",
+  "year": 1978
+ },
+ "tv:35430": {
+  "imdb_id": "tt0080297",
+  "num": 12788,
+  "part": "rz",
+  "title": "Tinker Tailor Soldier Spy",
+  "year": 1979
+ },
+ "tv:23956": {
+  "imdb_id": "tt0296435",
+  "num": 12789,
+  "part": "rz",
+  "title": "Treasure Island",
+  "year": 1978
+ },
+ "tv:16047": {
+  "imdb_id": "tt0078560",
+  "num": 12790,
+  "part": "rz",
+  "title": "Anne of Green Gables",
+  "year": 1979
+ },
+ "tv:26399": {
+  "imdb_id": "tt7033000",
+  "num": 12791,
+  "part": "rz",
+  "title": "Nell the Wandering Girl",
+  "year": 1979
+ },
+ "tv:61836": {
+  "imdb_id": "tt3280150",
+  "num": 12792,
+  "part": "rz",
+  "title": "The Saboteurs",
+  "year": 2015
  }
 }
