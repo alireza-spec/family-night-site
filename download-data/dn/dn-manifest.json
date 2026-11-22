@@ -4,13 +4,13 @@
   "by_resolution": {
    "1080p": 825,
    "360p": 1,
-   "480p": 5828,
-   "540p": 375,
-   "720p": 8004
+   "480p": 5914,
+   "540p": 377,
+   "720p": 8092
   },
   "by_version_family": {
    "Dubbed": 1754,
-   "Subtitled": 13190,
+   "Subtitled": 13366,
    "unknown": 88,
    "NoSub": 1
   },
@@ -57,7 +57,7 @@
    "2013": 17,
    "2014": 23,
    "2015": 29,
-   "2016": 32,
+   "2016": 33,
    "2017": 33,
    "2018": 41,
    "2019": 57,
@@ -67,7 +67,7 @@
    "2023": 70,
    "2024": 49,
    "2025": 73,
-   "2026": 49,
+   "2026": 53,
    "1994": 2,
    "1998": 2,
    "1971": 2,
@@ -78,11 +78,11 @@
   },
   "ext_overlap": 1,
   "films": 425,
-  "play_rows": 15924,
-  "series": 358,
+  "play_rows": 16100,
+  "series": 363,
   "skipped_no_links": 11,
-  "total": 783,
-  "trailer_keys": 624,
+  "total": 788,
+  "trailer_keys": 626,
   "trailers_dropped": 71,
   "variety_patched": 401,
   "variety_play_created": 42,
@@ -4778,7 +4778,7 @@
   }
  ],
  "generated": "2026-11-22",
- "live_base_head": "346f971d1f8fabb468d9174f576298ea95cf552d",
+ "live_base_head": "61989d1c6d7ca0a08c0e21e024e35a1996b58459",
  "nosub_only_titles": [
   {
    "imdb": "tt1124377",
@@ -10678,6 +10678,61 @@
    "expiring_stripped": 0,
    "skipped_links": {},
    "links": 20
+  },
+  {
+   "title": "Thirty-Six Stratagems: Slay",
+   "year": 2026,
+   "imdb": null,
+   "tmdb": 340856,
+   "num": 12945,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 58
+  },
+  {
+   "title": "Princess of Lanling King",
+   "year": 2016,
+   "imdb": null,
+   "tmdb": 68163,
+   "num": 12946,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 94
+  },
+  {
+   "title": "Her Willing Subject",
+   "year": 2026,
+   "imdb": null,
+   "tmdb": 319436,
+   "num": 12947,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 16
+  },
+  {
+   "title": "Sound:Track",
+   "year": 2026,
+   "imdb": null,
+   "tmdb": 342666,
+   "num": 12948,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 4
+  },
+  {
+   "title": "Asiye",
+   "year": 2026,
+   "imdb": null,
+   "tmdb": 340683,
+   "num": 12949,
+   "nosub_only": false,
+   "expiring_stripped": 0,
+   "skipped_links": {},
+   "links": 4
   }
  ],
  "skipped_not_merged": [
@@ -21530,5 +21585,23 @@
    "tv:338846"
   ],
   "note": "DN slice of the all-sources series audit, batch 5: 20 new series, 658 links; partials completed by episode-level diff."
+ },
+ "all_sources_series_audit_dn_batch_6": {
+  "live_base_head": "61989d1c6d7ca0a08c0e21e024e35a1996b58459",
+  "start_num": 12945,
+  "end_num": 12949,
+  "new_titles_merged": [
+   "Thirty-Six Stratagems: Slay",
+   "Princess of Lanling King",
+   "Her Willing Subject",
+   "Sound:Track",
+   "Asiye"
+  ],
+  "partials_completed": [],
+  "trailers_added": [
+   "tv:319436",
+   "tv:342666"
+  ],
+  "note": "DN slice of the all-sources series audit, batch 6: 5 new series, 176 links; partials completed by episode-level diff."
  }
 }
