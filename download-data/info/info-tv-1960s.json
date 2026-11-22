@@ -1,0 +1,2125 @@
+{
+ "tv:1660": {
+  "year": 1965,
+  "title_en": "I Dream of Jeannie",
+  "title_fa": "",
+  "poster": "/ljlyB3C3uU8Hd1krfEsYn2BVyaj.jpg",
+  "overview_en": "While on a mission, American astronaut Captain Tony Nelson is forced to make an emergency landing that will forever change his life. On a deserted South Pacific island, Captain Nelson happens upon a bottle containing a beautiful two-thousand-year-old female genie named Jeannie. Rescuing her from the bottle nets Tony the requisite three wishes, and then some, when Jeannie pledges total devotion to her new \"master\".",
+  "overview_fa_tmdb": null,
+  "overview_fa": "کاپیتان تونی نلسون، فضانورد آمریکایی، در حین ماموریت مجبور به فرود اضطراری می‌شود که زندگی‌اش را برای همیشه تغییر می‌دهد. در یک جزیره دورافتاده در جنوب اقیانوس آرام، کاپیتان نلسون به بطری‌ای برمی‌خورد که یک جنّ زن زیبای دوهزارساله به نام جینی در آن است. نجات او از بطری سه آرزوی لازم را برای تونی به ارمغان می‌آورد، و حتی بیشتر، وقتی جینی وفاداری کامل به «صاحب» جدیدش را اعلام می‌کند.",
+  "genres": [
+   "Sci-Fi & Fantasy",
+   "Comedy",
+   "Family"
+  ],
+  "tmdb_rating": 7.8,
+  "tmdb_votes": 859,
+  "imdb": {
+   "r": 7.4,
+   "v": 19633
+  },
+  "imdb_id": "tt0058815",
+  "first_air_date": "1965-09-18",
+  "last_air_date": "1970-05-26",
+  "created_by": [
+   "Sidney Sheldon"
+  ],
+  "seasons": {
+   "1": [
+    {
+     "n": 1,
+     "name": "The Lady in the Bottle",
+     "name_fa": "",
+     "rating": 7.5,
+     "runtime": 25,
+     "ov_en": "The rocket launch for a space mission goes awry and Captain Anthony Nelson finds himself stranded on a desert island.\n\nWhen he opens an antique bottle lying on the beach, he becomes the master of a beautiful, 2,000-year-old genie named Jeannie, who is willing to grant him anything he wishes.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "پرتاب موشک ماموریت فضایی به هم می‌ریزد و کاپیتان آنتونی نلسون در یک جزیره دورافتاده گیر می‌افتد. وقتی یک بطری قدیمی را در ساحل باز می‌کند، صاحب یک جنّ زیبا و دوهزارساله به نام جینی می‌شود که حاضر است هر آرزویی را برایش برآورده کند.",
+     "imdb": {
+      "r": 7.9,
+      "v": 613
+     },
+     "still": "/b8naGKLB57eGUyM8KfmpMsjqWrX.jpg"
+    },
+    {
+     "n": 2,
+     "name": "My Hero?",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie blinks Tony to ancient Persia, where he avenges Jeannie's honor against Ali, the Killer of Giants.\n\nMeanwhile, Jeannie visits her parents and happily announces that she has found in Tony the man she wishes to marry.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی تونی را به ایران باستان می‌برد، جایی که تونی برای دفاع از آبروی جینی با علی، قاتل غول‌ها، می‌جنگد. در همین حال جینی به دیدار پدر و مادرش می‌رود و با خوشحالی خبر می‌دهد که مردی را که می‌خواهد با او ازدواج کند، یعنی تونی، پیدا کرده است.",
+     "imdb": {
+      "r": 7.3,
+      "v": 469
+     },
+     "still": "/mxwIMfh1MoGsIKQyjMCDsTT1LZu.jpg"
+    },
+    {
+     "n": 3,
+     "name": "Guess What Happened on the Way to the Moon?",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Tony is on a survival mission with Roger when Jeannie seems to have followed him.\n\nJeannie proceeds to help him in every way possible by giving him food, shelter, and finally transportation while Roger suffers in the hot, sweltering desert.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "تونی همراه راجر در یک ماموریت بقا در بیابان است و به نظر می‌رسد جینی هم دنبالشان آمده است. جینی با غذا، سرپناه و در نهایت وسیله نقلیه به هر شکل ممکن به او کمک می‌کند، در حالی که راجر در گرمای سوزان بیابان رنج می‌برد.",
+     "imdb": {
+      "r": 7.4,
+      "v": 391
+     },
+     "still": "/2FHvOb65ATbqmaybPa4QqKr4W03.jpg"
+    },
+    {
+     "n": 4,
+     "name": "Jeannie and the Marriage Caper",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "General Stone has accepted an ambassadorship overseas and offers Tony the opportunity to come along to be his military attache.\n\nTony's fiancée Melissa urges Tony to accept the prestigious position and move up their wedding date.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "ژنرال استون سفارت در خارج را پذیرفته و به تونی پیشنهاد می‌کند که به عنوان وابسته نظامی همراه او برود. نامزد تونی، ملیسا، از او می‌خواهد که این سمت مهم را بپذیرد و تاریخ عروسیشان را جلو بیندازد.",
+     "imdb": {
+      "r": 7.4,
+      "v": 377
+     },
+     "still": "/nJAYd2psCfyYR1vdCPx63so6Dyx.jpg"
+    },
+    {
+     "n": 5,
+     "name": "G.I. Jeannie",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie joins the WAF in hopes of becoming Tony's secretary.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی به نیروی هوایی زنان می‌پیوندد به امید اینکه منشی تونی شود.",
+     "imdb": {
+      "r": 7.4,
+      "v": 361
+     },
+     "still": "/q3jTVLqpK436qVKti0Jmwz8E92x.jpg"
+    },
+    {
+     "n": 6,
+     "name": "The Yacht Murder Case",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Tony is suspected of killing Jeannie when she disappears from a yacht after he is seen arguing with her and telling her to go home.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "تونی مظنون به قتل جینی می‌شود؛ وقتی جینی پس از آنکه تونی جلوی چشم همه با او دعوا می‌کند و به او می‌گوید به خانه برود، از روی یک قایق تفریحی ناپدید می‌شود.",
+     "imdb": {
+      "r": 7.4,
+      "v": 353
+     },
+     "still": "/i2FmxrXwEC0KXTTBtZjb0DjqZYW.jpg"
+    },
+    {
+     "n": 7,
+     "name": "Anybody Here Seen Jeannie?",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Concerned about Tony's fitness for a spacewalk, Dr. Bellows orders him to the base for some tests.\n\nWhen Jeannie hears about Tony's mission, fearing he would spin out into space, she decides to sabotages his test.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "دکتر بلوز که نگران آمادگی تونی برای پیاده‌روی فضایی است، او را برای آزمایش به پایگاه می‌فرستد. وقتی جینی از ماموریت تونی باخبر می‌شود، از ترس اینکه در فضا گم شود، تصمیم می‌گیرد آزمایش او را خراب کند.",
+     "imdb": {
+      "r": 7.4,
+      "v": 341
+     },
+     "still": "/o5eu7utEAzfLX65nBjRxCLWSVGH.jpg"
+    },
+    {
+     "n": 8,
+     "name": "The Americanization of Jeannie",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie reads about how to be an American woman in a magazine and takes after it in order to please Tony.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی در یک مجله می‌خواند که زن آمریکایی بودن یعنی چه و برای خوشحال کردن تونی، همان‌طور رفتار می‌کند.",
+     "imdb": {
+      "r": 7.2,
+      "v": 360
+     },
+     "still": "/mAd7DtuFInYmhGJUvdpiMWRRGcN.jpg"
+    },
+    {
+     "n": 9,
+     "name": "The Moving Finger",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Tony goes out to dinner with a famous movie star.\n\nJealous Jeannie decides she wants to be one herself to get Tony's attention.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "تونی با یک ستاره سینمای معروف شام می‌خورد. جینی که حسادت می‌کند، تصمیم می‌گیرد برای جلب توجه تونی، خودش ستاره سینما شود.",
+     "imdb": {
+      "r": 7.4,
+      "v": 349
+     },
+     "still": "/y8YDiXOoydW6RawV4ukCj2cJfUo.jpg"
+    },
+    {
+     "n": 10,
+     "name": "Djinn and Water",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "One of Jeannie's great grandfathers is summoned back by Jeannie in hopes of aiding Tony in making fresh water out of salt water.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی یکی از اجدادش را احضار می‌کند تا به تونی کمک کند آب شور را به آب شیرین تبدیل کند.",
+     "imdb": {
+      "r": 6.8,
+      "v": 342
+     },
+     "still": "/6NRcfJetPmQJMkQnLM2hlBbqRwC.jpg"
+    },
+    {
+     "n": 11,
+     "name": "Whatever Became of Baby Custer?",
+     "name_fa": "",
+     "rating": 9.0,
+     "runtime": 25,
+     "ov_en": "Eight-year-old Custer already idolizes Tony and when he sees Jeannie's magic, he immediately tells his parents.\n\nWorried about Custer, they sends him to therapy with Dr. Bellows.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "کاستر هشت‌ساله که از همین حالا تونی را می‌پرستد، وقتی جادوی جینی را می‌بیند، فوراً به پدر و مادرش می‌گوید. پدر و مادر نگرانش او را پیش دکتر بلوز برای درمان می‌فرستند.",
+     "imdb": {
+      "r": 7.5,
+      "v": 317
+     },
+     "still": "/rCg9Nk8NWLb7eZFzaaLcBvIRXqZ.jpg"
+    },
+    {
+     "n": 12,
+     "name": "Where'd You Go-Go?",
+     "name_fa": "",
+     "rating": 6.0,
+     "runtime": 25,
+     "ov_en": "Tony's ex-girlfriend Diane comes into town and invites him to dinner, making Jeannie jealous.\n\nMeanwhile, Roger accidentally bumps into her and successfully asks her out on date.\n\nA worried and jealous Tony decides to drag Diane all over town in search of Jeannie and her unidentified escort.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "دایان، دوست‌دختر سابق تونی، به شهر می‌آید و او را به شام دعوت می‌کند و جینی حسادت می‌کند. در همین حال راجر تصادفاً با او برخورد می‌کند و موفق می‌شود او را به یک قرار دعوت کند. تونی که نگران و حسود شده، دایان را همه‌جای شهر می‌گرداند تا جینی و همراه ناشناسش را پیدا کند.",
+     "imdb": {
+      "r": 7.6,
+      "v": 321
+     },
+     "still": "/kAUk09Cbe88vwZ6FR5QyBtBcwwg.jpg"
+    },
+    {
+     "n": 13,
+     "name": "Russian Roulette",
+     "name_fa": "",
+     "rating": 2.3,
+     "runtime": 25,
+     "ov_en": "Tony and Roger are assigned to entertain two visiting Russian cosmonauts.\n\nAs a symbol of friendship, Roger unknowingly gives them Jeannie's bottle with Jeannie in it.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "تونی و راجر مامور می‌شوند از دو کیهان‌نورد روسی که مهمان هستند پذیرایی کنند. راجر بی‌خبر به عنوان نشانه دوستی، بطری جینی را با خود جینی داخلش به آنها می‌دهد.",
+     "imdb": {
+      "r": 7.7,
+      "v": 330
+     },
+     "still": "/Pn4kNahD4CvM40BRoU01Z8dWRs.jpg"
+    },
+    {
+     "n": 14,
+     "name": "What House Across the Street?",
+     "name_fa": "",
+     "rating": 4.0,
+     "runtime": 25,
+     "ov_en": "Following her mother's advice, Jeannie tries to make Tony jealous by accepting Roger's marriage proposal.\n\nJeannie blinks a mansion onto a vacant lot across the street from Tony's, along with a set of phony, rich parents.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی به توصیه مادرش سعی می‌کند با قبول پیشنهاد ازدواج راجر، تونی را حسود کند. جینی با جادو یک عمارت در زمین خالی روبه‌روی خانه تونی ظاهر می‌کند، همراه با یک پدر و مادر ثروتمند تقلبی.",
+     "imdb": {
+      "r": 7.9,
+      "v": 323
+     },
+     "still": "/2EWMbr8a3M1Bdt8nVvjZbfkGMuv.jpg"
+    },
+    {
+     "n": 15,
+     "name": "Too Many Tonys",
+     "name_fa": "",
+     "rating": 4.0,
+     "runtime": 25,
+     "ov_en": "Dr. Bellows thinks that married men make better astronauts, so Jeannie once again asks Tony to marry her.\n\nWhen he refuses, Jeannie blinks up more romantic version of Tony.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "دکتر بلوز فکر می‌کند مردان متاهل فضانورد بهتری هستند، پس جینی دوباره از تونی می‌خواهد با او ازدواج کند. وقتی تونی قبول نمی‌کند، جینی نسخه رمانتیک‌تری از تونی را ظاهر می‌کند.",
+     "imdb": {
+      "r": 7.6,
+      "v": 308
+     },
+     "still": "/4lolcYkzrtH1aT8SqAM4CKHZTOV.jpg"
+    },
+    {
+     "n": 16,
+     "name": "Get Me to Mecca on Time",
+     "name_fa": "",
+     "rating": 4.0,
+     "runtime": 25,
+     "ov_en": "It is the day of the Ramdah, which means Jeannie and Tony must make a trip to Mecca and cite the sacred words or else she will lose her powers forever and go into limbo.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "روز رمدا است؛ جینی و تونی باید به مکه بروند و کلمات مقدس را بر زبان بیاورند وگرنه جینی برای همیشه قدرتش را از دست می‌دهد و به برزخ می‌رود.",
+     "imdb": {
+      "r": 7.5,
+      "v": 294
+     },
+     "still": "/AqZF07x4gLaKXKo8NrColn6Yc3Y.jpg"
+    },
+    {
+     "n": 17,
+     "name": "Richest Astronaut in the World",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Roger accidentally discovers the truth about Jeannie and steals her from Tony.\n\nHe then uses Jeannie for his own greedy purposes.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "راجر تصادفاً حقیقت جینی را کشف می‌کند و او را از تونی می‌دزدد. بعد از او برای مقاصد حریصانه خودش استفاده می‌کند.",
+     "imdb": {
+      "r": 8.0,
+      "v": 325
+     },
+     "still": "/yENGd6NTkqyBsOCNsRfEiFhAeOn.jpg"
+    },
+    {
+     "n": 18,
+     "name": "Is There An Extra Jeannie In The House?",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "When Roger keeps Dr. Bellows' niece out too late on a date, he wants to send Roger to a remote island for thirty days.\n\nRoger believes the two stage magicians subletting his apartment are his own personal genies.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "وقتی راجر خواهرزاده دکتر بلوز را از قرار دیر به خانه می‌آورد، دکتر می‌خواهد راجر را سی روز به یک جزیره دورافتاده بفرستد. راجر فکر می‌کند دو شعبده‌بازی که آپارتمانش را اجاره کرده‌اند، جنّ‌های شخصی خودش هستند.",
+     "imdb": {
+      "r": 7.6,
+      "v": 307
+     },
+     "still": "/r9OHZlZWGFO847bhifrP21ektSY.jpg"
+    },
+    {
+     "n": 19,
+     "name": "Never Try To Outsmart A Genie",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Tony has to go on a three-week business trip to Rome.\n\nJeannie begs her master to let her come along.\n\nHe decides to let her come along under the condition that she can legally obtain a passport without using her magic.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "تونی باید برای سه هفته به رم سفر کاری برود. جینی از صاحبش التماس می‌کند که او را هم با خود ببرد. تونی قبول می‌کند به شرطی که جینی بتواند بدون استفاده از جادویش به‌صورت قانونی گذرنامه بگیرد.",
+     "imdb": {
+      "r": 7.2,
+      "v": 289
+     },
+     "still": "/oWGlSmvNZuM2pxlLDBIMVlN7Wdh.jpg"
+    },
+    {
+     "n": 20,
+     "name": "My Master, the Doctor",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "When Tony mentions to Jeannie that his childhood dream was to become a surgeon, she blinks him right into the operating room where Roger is to have his appendix removed.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "وقتی تونی به جینی می‌گوید که آرزوی کودکیش جراح شدن بوده، جینی او را با چشم بر هم زدنی به اتاق عمل می‌برد، جایی که قرار است آپاندیس راجر برداشته شود.",
+     "imdb": {
+      "r": 7.3,
+      "v": 302
+     },
+     "still": "/awInVYBRs8TPkioTDvBYXb6boW3.jpg"
+    },
+    {
+     "n": 21,
+     "name": "Jeannie and the Kidnap Caper",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Frustrated over Jeannie's constant use of magic to help around the house, Tony makes Jeannie swear that she will never help him with her magic powers again.\n\nWhen he is kidnapped by a spy ring shortly thereafter, Jeannie has to watch helplessly.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "تونی که از استفاده مداوم جینی از جادو برای کمک در خانه خسته شده، از جینی قسم می‌گیرد که دیگر هرگز با قدرتش به او کمک نکند. اما وقتی کمی بعد یک باند جاسوسی او را می‌رباید، جینی باید بی‌حرکت تماشا کند.",
+     "imdb": {
+      "r": 7.4,
+      "v": 289
+     },
+     "still": "/srB8BlXMucieXm2wik13qxOXfjD.jpg"
+    },
+    {
+     "n": 22,
+     "name": "How Lucky Can You Get?",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "After giving some lectures locally, Tony and Roger celebrate their promotions to Major in Reno.\n\nAgainst Tony's wish, Roger smuggles Jeannie along on the trip hoping to increase his odds in the casino.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "بعد از سخنرانی‌های محلی، تونی و راجر در رینو ارتقای خود به درجه سرگردی را جشن می‌گیرند. راجر برخلاف میل تونی، جینی را قاچاقی به سفر می‌برد به امید اینکه شانسش را در کازینو بیشتر کند.",
+     "imdb": {
+      "r": 7.4,
+      "v": 292
+     },
+     "still": "/ajWfgOlGYkpOmszKiWAsVV6uHdU.jpg"
+    },
+    {
+     "n": 23,
+     "name": "Watch the Birdie",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Tony becomes General Peterson's golf partner in a Championship game against two Navy man when Jeannie makes him a world-class golf player.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "وقتی جینی تونی را به یک بازیکن گلف درجه‌یک تبدیل می‌کند، تونی شریک ژنرال پیترسون در یک بازی قهرمانی گلف در برابر دو مرد نیروی دریایی می‌شود.",
+     "imdb": {
+      "r": 7.6,
+      "v": 289
+     },
+     "still": "/Au0TY27vqFbnWc64jJSOCKjPTqk.jpg"
+    },
+    {
+     "n": 24,
+     "name": "The Permanent House Guest",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Dr. Bellows sees an elephant in Tony's bedroom, but all is normal when he returns with General Peterson.\n\nRealizing this, the ever suspicious Dr. Bellows moves in with Tony in hopes of actually catching him.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "دکتر بلوز یک فیل در اتاق خواب تونی می‌بیند، اما وقتی با ژنرال پیترسون برمی‌گردد همه‌چیز عادی است. دکتر بلوز که همیشه مشکوک است، با فهمیدن این موضوع به خانه تونی نقل مکان می‌کند به امید اینکه واقعاً او را گیر بیندازد.",
+     "imdb": {
+      "r": 7.7,
+      "v": 282
+     },
+     "still": "/r2vfAm57bV6M1jzB5VJO9zFoTrf.jpg"
+    },
+    {
+     "n": 25,
+     "name": "Bigger Than a Bread Box and Better Than a Genie",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "The new woman in Roger's life Madame Zolta is a clairvoyant fortune teller.\n\nPlanning to reveal her fraud, Tony arranges a seance.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "زن جدید زندگی راجر، مادام زولتا، یک فالگیر و پیشگوست. تونی برای افشای کلاهبرداری او، یک جلسه احضار ارواح ترتیب می‌دهد.",
+     "imdb": {
+      "r": 7.4,
+      "v": 285
+     },
+     "still": "/p8ee8DouB5vsEs4fWgu2gUgzPgD.jpg"
+    },
+    {
+     "n": 26,
+     "name": "My Master, the Great Rembrandt",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "The astronauts paint pictures to be auctioned off at a charity event.\n\nTony copies a Rembrandt masterpiece, which is secretly perfected by Jeannie.\n\nWhen experts consider the picture to be a real Rembrandt, Tony is suspected of stealing it from the museum.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "فضانوردها برای یک حراج خیریه نقاشی می‌کشند. تونی یک شاهکار رمبران را کپی می‌کند که جینی مخفیانه آن را کامل می‌کند. وقتی کارشناسان نقاشی را یک رمبران واقعی می‌دانند، تونی مظنون به دزدیدن آن از موزه می‌شود.",
+     "imdb": {
+      "r": 7.7,
+      "v": 284
+     },
+     "still": "/sRjQaqVMW1fVOAiDI2dpKk2BGku.jpg"
+    },
+    {
+     "n": 27,
+     "name": "My Master, the Thief",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie steals a pair of slippers from a museum exhibition that were hers 2000 years ago.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی یک جفت دمپایی را از یک نمایشگاه موزه می‌دزدد که دو هزار سال پیش مال خودش بوده است.",
+     "imdb": {
+      "r": 7.5,
+      "v": 276
+     },
+     "still": "/5K15HKpv1nSsnfPfJhfZA0ZsqMO.jpg"
+    },
+    {
+     "n": 28,
+     "name": "This Is Murder",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "When Tony is asked to escort a visiting princess, Jeannie announces that because of a family feud she has to kill her.\n\nSo Tony burdens Jeannie with tasks hoping she will miss the princess's visit.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "وقتی از تونی خواسته می‌شود یک شاهزاده خانم مهمان را همراهی کند، جینی اعلام می‌کند که به خاطر یک اختلاف خانوادگی باید او را بکشد. پس تونی جینی را با کارهای مختلف مشغول می‌کند به امید اینکه بازدید شاهزاده خانم را از دست بدهد.",
+     "imdb": {
+      "r": 7.5,
+      "v": 277
+     },
+     "still": "/xSSmZc5WMQErmUlVcsmXgnpZN6C.jpg"
+    },
+    {
+     "n": 29,
+     "name": "My Master, The Magician",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Dr. Bellows insists that Tony puts on a magic show at NASA after catching him floating in his chair in his living room.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "دکتر بلوز پس از اینکه تونی را در اتاق نشیمنش در حال شناور شدن روی صندلی می‌بیند، اصرار می‌کند که تونی در ناسا یک نمایش جادویی اجرا کند.",
+     "imdb": {
+      "r": 7.7,
+      "v": 266
+     },
+     "still": "/lw6lXeeDsh11mIK73JbHhiRTdGU.jpg"
+    },
+    {
+     "n": 30,
+     "name": "I'll Never Forget What's Her Name",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Suffering from amnesia after a vase fell on his head, Tony instantly falls in love with Jeannie, thinking she is an ordinary woman.\n\nHe declares his love and insists they get married.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "تونی پس از اینکه یک گلدان روی سرش می‌افتد، دچار فراموشی می‌شود و فوراً عاشق جینی می‌شود، با این تصور که او یک زن معمولی است. او عشقش را اعلام می‌کند و اصرار می‌کند که ازدواج کنند.",
+     "imdb": {
+      "r": 7.8,
+      "v": 270
+     },
+     "still": "/3jaI6iBOwaVi8oj1Lfuo6gFgLlz.jpg"
+    }
+   ],
+   "2": [
+    {
+     "n": 1,
+     "name": "Happy Anniversary",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "On their one-year-anniversary, Jeannie causes Tony's latest space mission to crash-land on the island of their first meeting.\n\nThere Tony comes upon the bottle of the Blue Djinn who imprisoned Jeannie 2,000 years ago.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "در سالگرد یک‌سالگی‌شان، جینی باعث می‌شود آخرین ماموریت فضایی تونی در جزیره اولین دیدارشان سقوط کند. آنجا تونی به بطری جنّ آبی برمی‌خورد؛ همان جنی که دو هزار سال پیش جینی را زندانی کرده بود.",
+     "imdb": {
+      "r": 7.8,
+      "v": 323
+     },
+     "still": "/31UzU88x3GrgR6ZgTYjstC8NCr3.jpg"
+    },
+    {
+     "n": 2,
+     "name": "Always on Sunday",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie thinks that Tony has been working too hard and decides to give him a break by making every day Sunday.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی فکر می‌کند تونی خیلی سخت کار کرده و تصمیم می‌گیرد با یکشنبه کردن هر روز، به او استراحت بدهد.",
+     "imdb": {
+      "r": 7.9,
+      "v": 308
+     },
+     "still": "/iCBdFH5iKMF1pGAe8eMmxfTiWHL.jpg"
+    },
+    {
+     "n": 3,
+     "name": "My Master, the Rich Tycoon",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "When Jeannie lets in a man into house who derides Tony's taste, she makes several valuable works of art appear. Unfortunately, the man is a representative of the IRS.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "وقتی جینی مردی را به خانه راه می‌دهد که از سلیقه تونی بد می‌گوید، چند اثر هنری ارزشمند ظاهر می‌کند. اما متاسفانه آن مرد نماینده اداره مالیات است.",
+     "imdb": {
+      "r": 8.0,
+      "v": 310
+     },
+     "still": "/i5jqu34Rvw4V8EuKczyfPXyEHv2.jpg"
+    },
+    {
+     "n": 4,
+     "name": "My Master, the Rainmaker",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Tony is amazed that Jeannie can control the weather so he inadvertently wishes it could snow. When Jeannie makes it snow, Dr. Bellows arrives rousing his suspicion and a few people on the base think Tony can control the weather.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "تونی شگفت‌زده می‌شود که جینی می‌تواند آب‌وهوا را کنترل کند، پس بی‌اختیار آرزو می‌کند کاش برف بیاید. وقتی جینی برف می‌بارد، دکتر بلوز سر می‌رسد و مشکوک می‌شود و چند نفر در پایگاه فکر می‌کنند تونی می‌تواند آب‌وهوا را کنترل کند.",
+     "imdb": {
+      "r": 7.7,
+      "v": 288
+     },
+     "still": "/vk6uuzWNt8BeLlNFWuXdOaj46Gl.jpg"
+    },
+    {
+     "n": 5,
+     "name": "My Wild Eyed Master",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Tony has to retake an eye test to go on his next mission. Trying to help him, Jeannie gives him x-ray eyes.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "تونی برای ماموریت بعدیش باید دوباره تست بینایی بدهد. جینی برای کمک به او، چشم‌های اشعه ایکس به او می‌دهد.",
+     "imdb": {
+      "r": 7.6,
+      "v": 282
+     },
+     "still": "/cThPP6swBWtkoMAl3o0Y1jYyg0O.jpg"
+    },
+    {
+     "n": 6,
+     "name": "What's New, Poodle Dog?",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Roger tells Jeannie that he has arranged dates for Tony and himself with two beauty queens. Before Roger can tell Tony, Jeannie turns him into a poodle.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "راجر به جینی می‌گوید که برای تونی و خودش با دو ملکه زیبایی قرار گذاشته است. اما پیش از اینکه راجر به تونی بگوید، جینی او را به یک سگ پشمالو تبدیل می‌کند.",
+     "imdb": {
+      "r": 7.4,
+      "v": 279
+     },
+     "still": "/eGFs6jS9D2Yj5m0kuaMbUwOyOYu.jpg"
+    },
+    {
+     "n": 7,
+     "name": "Fastest Gun in the East",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie sends Tony back to the Old West when he wishes he had lived back then.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "وقتی تونی آرزو می‌کند کاش در آن دوران زندگی می‌کرد، جینی او را به غرب وحشی می‌فرستد.",
+     "imdb": {
+      "r": 7.4,
+      "v": 294
+     },
+     "still": "/wOMhbJeeE6HJtEqEeBQ3PUMP09F.jpg"
+    },
+    {
+     "n": 8,
+     "name": "How to Be a Genie in 10 Easy Lessons",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "A well-meaning Jeannie has tried her best to please Tony, but her magic continues to cause problems. Roger suggests that Tony have Jeannie study Tales of Arabian Nights, claiming it will teach her how to properly use her gifts.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی با نیت خوب همه تلاشش را کرده تا تونی را راضی کند، اما جادویش همچنان دردسر درست می‌کند. راجر پیشنهاد می‌کند تونی از جینی بخواهد «قصه‌های هزار و یک شب» را بخواند، با این ادعا که به او یاد می‌دهد چطور درست از هدیه‌اش استفاده کند.",
+     "imdb": {
+      "r": 7.9,
+      "v": 275
+     },
+     "still": "/oOssTQXWsRVVzpxMYAY4YJlpr71.jpg"
+    },
+    {
+     "n": 9,
+     "name": "Who Needs A Green-Eyed Genie?",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "When Jeannie is jealous of an old friend of Tony's, he gets her to promise to not interfere again. However, the old flame turns out to be a mobster's wife.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "وقتی جینی به یک دوست قدیمی تونی حسادت می‌کند، تونی از او قول می‌گیرد که دیگر دخالت نکند. اما آن عشق قدیمی همسر یک گانگستر از آب درمی‌آید.",
+     "imdb": {
+      "r": 7.2,
+      "v": 269
+     },
+     "still": "/zAzM8n8nyqIE127GKTgCJZ7Tgk.jpg"
+    },
+    {
+     "n": 10,
+     "name": "The Girl Who Never Had a Birthday (Part 1)",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie never had a birthday party because  she doesn't know here birthday. She is so sad she starts to vanish. Tony and Roger promise her that they would find out, using NASA technology.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی هرگز جشن تولد نداشته چون تولدش را نمی‌داند. آن‌قدر ناراحت می‌شود که شروع به محو شدن می‌کند. تونی و راجر قول می‌دهند با فناوری ناسا تولدش را پیدا کنند.",
+     "imdb": {
+      "r": 7.3,
+      "v": 265
+     },
+     "still": "/1kirG5irLOjFZfZq9qPziRiDzO6.jpg"
+    },
+    {
+     "n": 11,
+     "name": "The Girl Who Never Had a Birthday (Part 2)",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Tony attempts to get Jeannie's birth date from Roger who was sent to Alaska before Jeannie disappears forever.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "تونی سعی می‌کند تاریخ تولد جینی را از راجر بگیرد که پیش از ناپدید شدن جینی برای همیشه، به آلاسکا فرستاده شده است.",
+     "imdb": {
+      "r": 7.2,
+      "v": 261
+     },
+     "still": "/yRAodpeZAOUYoBdfpZcTSO3RHMw.jpg"
+    },
+    {
+     "n": 12,
+     "name": "How Do You Beat Superman?",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie feels that Tony is not paying enough attention to her because he is too preoccupied with football.\n\nShe blinks an imaginary man named Tony Millionaire to make Tony jealous.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی حس می‌کند تونی به او توجه نمی‌کند چون خیلی درگیر فوتبال است. او یک مرد خیالی به نام تونی میلیونر ظاهر می‌کند تا تونی را حسود کند.",
+     "imdb": {
+      "r": 7.9,
+      "v": 281
+     },
+     "still": "/rJSVuJr5jw7ynDqOSPDkEkL7Ocu.jpg"
+    },
+    {
+     "n": 13,
+     "name": "My Master, the Great Caruso",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "When General Peterson hears Tony singing with opera, he enters him in the NASA talent contest.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "وقتی ژنرال پیترسون تونی را در حال آواز خواندن با اپرا می‌شنود، او را در مسابقه استعداد ناسا ثبت‌نام می‌کند.",
+     "imdb": {
+      "r": 8.2,
+      "v": 290
+     },
+     "still": "/1NMZ8vtxlSXKlT4Qqy50X04THif.jpg"
+    },
+    {
+     "n": 14,
+     "name": "The Greatest Lover In The World",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Feeling sorry for Roger, Jeannie makes him irresistible to all women.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی که دلش برای راجر می‌سوزد، او را برای همه زنان غیرقابل مقاومت می‌کند.",
+     "imdb": {
+      "r": 7.9,
+      "v": 265
+     },
+     "still": "/shNUA61Y3i4hhdDnFWow304ewux.jpg"
+    },
+    {
+     "n": 15,
+     "name": "Jeannie Breaks the Bank",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Tony draws the authority's attention when Jeannie puts three milliion dollars into his bank account because he is a low-paid astronaut.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "وقتی جینی سه میلیون دلار به حساب بانکی تونی می‌ریزد، چون او فضانورد کم‌درآمدی است، تونی توجه مقامات را جلب می‌کند.",
+     "imdb": {
+      "r": 7.8,
+      "v": 275
+     },
+     "still": "/hWtG09AsDvu33qGACwzSZ6DKsDY.jpg"
+    },
+    {
+     "n": 16,
+     "name": "My Master, the Author",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "After getting Tony's permission, Jeannie Jeannie write a book about child care, sends it to a publisher, and the book becomes a best seller.  However, Jeannie had put Tony's name as the author.  Dr. Bellows puts Tony through a test by making him babysit his prank-loving nephew.  While babysitting, General Peterson drops by and asks him to babysit his quiet niece.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "پس از گرفتن اجازه تونی، جینی کتابی درباره مراقبت از کودک می‌نویسد، آن را به ناشر می‌فرستد و کتاب پرفروش می‌شود. اما جینی نام تونی را به عنوان نویسنده گذاشته بود. دکتر بلوز تونی را آزمایش می‌کند و او را مجبور می‌کند از برادرزاده شیطونش نگهداری کند. در حین نگهداری، ژنرال پیترسون سر می‌رسد و از او می‌خواهد از خواهرزاده آرامش هم نگهداری کند.",
+     "imdb": {
+      "r": 7.4,
+      "v": 268
+     },
+     "still": "/xDXYiPoj33zXw3ii5kqGnYHdW2c.jpg"
+    },
+    {
+     "n": 17,
+     "name": "The Greatest Invention In The World",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Roger convinces Tony to let Jeannie grant him a wish.  Roger accidentally wishes that he hadn't dropped coffee on Tony when he accidentally does.  The result is a fabric that cannot be burned, stained, or cut.  Dr. Bellows witnesses the impossible destruction of the fabric and attempts to find out how Tony had concocted this great invention.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "راجر تونی را قانع می‌کند که بگذارد جینی یک آرزو برایش برآورده کند. راجر تصادفاً آرزو می‌کند که کاش قهوه را روی تونی نریخته بود، وقتی تصادفاً این کار را می‌کند. نتیجه یک پارچه است که نه می‌سوزد، نه لک می‌شود و نه بریده می‌شود. دکتر بلوز شاهد تخریب غیرممکن پارچه می‌شود و تلاش می‌کند بفهمد تونی این اختراع بزرگ را چطور ساخته است.",
+     "imdb": {
+      "r": 8.2,
+      "v": 301
+     },
+     "still": "/pQ3PvqM3Xgn0uVzeJWbsV2y3mcv.jpg"
+    },
+    {
+     "n": 18,
+     "name": "My Master, the Spy",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Dr. Bellows suspects Tony of being a spy when he is at a NASA meeting and is seen in Paris having lunch with Jeannie at the same time.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "دکتر بلوز به تونی مشکوک می‌شود که جاسوس است، وقتی او را در جلسه ناسا می‌بیند و همزمان در پاریس در حال ناهار با جینی دیده می‌شود.",
+     "imdb": {
+      "r": 7.8,
+      "v": 261
+     },
+     "still": "/8YXmqkviYEbiNHn76DnbxykHOV0.jpg"
+    },
+    {
+     "n": 19,
+     "name": "You Can't Arrest Me... I Don't Have a Driver's License",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie drives off with Tony's car and Tony ends up in traffic court.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی با ماشین تونی می‌رود و تونی سر از دادگاه راهنمایی و رانندگی درمی‌آورد.",
+     "imdb": {
+      "r": 7.4,
+      "v": 256
+     },
+     "still": "/7Qo38cevUmY6Rtyj6KMKM6A8hvV.jpg"
+    },
+    {
+     "n": 20,
+     "name": "One of Our Bottles is Missing",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "While Dr. Bellows and his wife make an unannounced visit at Tony's home, Mrs. Bellows spots Jeannie's bottle and insists that she must have the bottle. While getting a copy made, the shop mixes them up and the real bottle ends up with the Bellows, with Jeannie inside.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "در حالی که دکتر بلوز و همسرش بی‌خبر به خانه تونی می‌آیند، خانم بلوز بطری جینی را می‌بیند و اصرار می‌کند که باید آن را داشته باشد. وقتی برای ساخت یک کپی اقدام می‌کنند، فروشگاه آنها را قاطی می‌کند و بطری واقعی با جینی داخلش به دست خانواده بلوز می‌رسد.",
+     "imdb": {
+      "r": 7.1,
+      "v": 269
+     },
+     "still": "/wNqBbrkcsTH8J8muQuzpzIAXgMq.jpg"
+    },
+    {
+     "n": 21,
+     "name": "My Poor Master, The Civilian",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "After Tony reluctantly accepts a job in the private sector, Roger and Jeannie look into his very successful future. They  try to change his mind by letting him think it will be horrible but he still takes the job.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "بعد از اینکه تونی با اکراه یک شغل در بخش خصوصی می‌پذیرد، راجر و جینی به آینده بسیار موفق او نگاه می‌کنند. آنها سعی می‌کنند با این تصور که آینده وحشتناک خواهد بود، نظرش را عوض کنند، اما او باز هم شغل را می‌پذیرد.",
+     "imdb": {
+      "r": 7.6,
+      "v": 259
+     },
+     "still": "/ar66EpeB0pCrbumSFEHGfWmL8gc.jpg"
+    },
+    {
+     "n": 22,
+     "name": "There Goes the Best Genie I Ever Had",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Tony finds out that he can send Jeannie away forever because it's Haji's birthday. He weighs whether Jeannie is worth keeping despite all the trouble she is causing.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "تونی متوجه می‌شود که می‌تواند جینی را برای همیشه بفرستد چون تولد حاجی است. او می‌سنجد که آیا جینی با همه دردسری که درست می‌کند، ارزش نگه داشتن را دارد یا نه.",
+     "imdb": {
+      "r": 6.2,
+      "v": 258
+     },
+     "still": "/gazG5vJ11c3w9iQlFNjuAI6qXiZ.jpg"
+    },
+    {
+     "n": 23,
+     "name": "The Greatest Entertainer in the World",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "General Peterson wants Tony to get Sammy Davis Jr. to entertain at his tenth anniversary at NASA.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "ژنرال پیترسون می‌خواهد تونی سامی دیویس جونیور را برای سرگرمی در دهمین سالگردش در ناسا بیاورد.",
+     "imdb": {
+      "r": 8.2,
+      "v": 299
+     },
+     "still": "/migp2f4JGmJRxzPVOSI2Vqeb7r2.jpg"
+    },
+    {
+     "n": 24,
+     "name": "The Incredible Shrinking Master",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie accidentally shrinks Tony just as a house cat inadvertently sneaks into the house.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی تصادفاً تونی را کوچک می‌کند، درست وقتی که یک گربه خانگی بی‌خبر وارد خانه می‌شود.",
+     "imdb": {
+      "r": 7.0,
+      "v": 246
+     },
+     "still": "/rQvZh264ExRkLvK8ko7kEhhr5X1.jpg"
+    },
+    {
+     "n": 25,
+     "name": "My Master, the Pirate",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Tony is sent back in time to defeat Captain Kidd who holds one of Tony's ancestors prisoner.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "تونی به گذشته فرستاده می‌شود تا کاپیتان کید را شکست دهد؛ کسی که یکی از اجداد تونی را زندانی کرده است.",
+     "imdb": {
+      "r": 6.5,
+      "v": 259
+     },
+     "still": "/pTCLV2bo31oNiMAhz8oNkc3EyBx.jpg"
+    },
+    {
+     "n": 26,
+     "name": "A Secretary is Not a Toy",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie becomes General Peterson's secretary hoping she can convince him to help get Tony promoted.  However, when Jeannie doesn't pass a security check, she is suspected of being a spy.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی منشی ژنرال پیترسون می‌شود به امید اینکه او را قانع کند به ارتقای تونی کمک کند. اما وقتی جینی از بررسی امنیتی رد نمی‌شود، مظنون به جاسوسی می‌شود.",
+     "imdb": {
+      "r": 7.8,
+      "v": 261
+     },
+     "still": "/lnkCznY09IeFbVOd5cwRWQMmvE5.jpg"
+    },
+    {
+     "n": 27,
+     "name": "There Goes the Bride",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie puts a forbidden love spell on Tony. When Haji finds out, he makes Tony have several accidents that can only be undone if the love spell is taken off of him.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی یک طلسم عشق ممنوعه روی تونی می‌گذارد. وقتی حاجی متوجه می‌شود، باعث می‌شود تونی چند حادثه داشته باشد که فقط با برداشتن طلسم عشق از روی او رفع می‌شوند.",
+     "imdb": {
+      "r": 7.7,
+      "v": 249
+     },
+     "still": "/v0sToJobhvwFfwJVl7mdE2MdygG.jpg"
+    },
+    {
+     "n": 28,
+     "name": "My Master, Napoleon's Buddy",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Tony wishes to be able to talk to Napoleon for just an hour, so Jeannie sends them back in time. But Napoleon thinks that Tony is a spy and he plans to kill him.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "تونی آرزو می‌کند که بتواند فقط یک ساعت با ناپلئون صحبت کند، پس جینی آنها را به گذشته می‌فرستد. اما ناپلئون فکر می‌کند تونی جاسوس است و قصد کشتن او را دارد.",
+     "imdb": {
+      "r": 6.8,
+      "v": 263
+     },
+     "still": "/2QTc6QXzezTvHisf081L030xOPc.jpg"
+    },
+    {
+     "n": 29,
+     "name": "The Birds and the Bees Bit",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Tony discovers that genies lose their powers if they marry a mortal and proposes to Jeannie. After Roger and Jeannie learn that their children might get magical powers, Jeannie tries to keep Roger away so that Tony doesn't find out.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "تونی متوجه می‌شود که جنّ‌ها اگر با یک انسان ازدواج کنند قدرتشان را از دست می‌دهند و به جینی پیشنهاد ازدواج می‌دهد. بعد از اینکه راجر و جینی می‌فهمند که فرزندانشان ممکن است قدرت جادویی داشته باشند، جینی سعی می‌کند راجر را دور نگه دارد تا تونی متوجه نشود.",
+     "imdb": {
+      "r": 8.1,
+      "v": 276
+     },
+     "still": "/9VK5BPDmxH5pJQhzgBapdkfvra9.jpg"
+    },
+    {
+     "n": 30,
+     "name": "My Master, the Swinging Bachelor",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie makes a cake for Tony and his dinner guests that makes them act like children again.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی کیکی برای تونی و مهمانان شامش درست می‌کند که باعث می‌شود آنها دوباره مثل بچه‌ها رفتار کنند.",
+     "imdb": {
+      "r": 7.5,
+      "v": 258
+     },
+     "still": "/45iccb87STkDXqDIg10G9ir7HzI.jpg"
+    },
+    {
+     "n": 31,
+     "name": "The Mod Party",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Roger invites Jeannie and Tony to his mod party but forgets that he and Tony have a special NASA meeting that night. So they give Dr. Bellows a phony excuse but things don't turn out as planned when he and his wife make a surprise visit at Roger's.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "راجر جینی و تونی را به مهمانی مدرن خود دعوت می‌کند، اما فراموش می‌کند که او و تونی همان شب یک جلسه ویژه ناسا دارند. پس به دکتر بلوز یک بهانه دروغین می‌دهند، اما وقتی او و همسرش سرزده به خانه راجر می‌آیند، اوضاع طبق برنامه پیش نمی‌رود.",
+     "imdb": {
+      "r": 6.6,
+      "v": 272
+     },
+     "still": "/h9inOYUdqx7OQtPvxkpdQXuiIYc.jpg"
+    }
+   ],
+   "3": [
+    {
+     "n": 1,
+     "name": "Fly Me to the Moon",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Tony and Roger train a chimpanzee to travel to the Moon. Jeannie turns him into a human. But when she tries to turn him back, she accidentally turns Tony into a chimp.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "تونی و راجر یک شامپانزه را برای سفر به ماه آموزش می‌دهند. جینی او را به انسان تبدیل می‌کند. اما وقتی سعی می‌کند او را برگرداند، تصادفاً تونی را به شامپانزه تبدیل می‌کند.",
+     "imdb": {
+      "r": 7.7,
+      "v": 275
+     },
+     "still": "/hLsJg0ddty9wdErvb4EnCWcDunm.jpg"
+    },
+    {
+     "n": 2,
+     "name": "Jeannie or the Tiger?",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "After not seeing her for over 2,000 years, Jeannie invites her sister for a visit. After seeing a picture of Tony, she traps Jeannie in her bottle and take her place as a way to steal Tony from her.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی پس از بیش از دو هزار سال که خواهرش را ندیده، او را به دیدار دعوت می‌کند. خواهر پس از دیدن عکس تونی، جینی را در بطری‌اش زندانی می‌کند و جای او را می‌گیرد تا تونی را از او بگیرد.",
+     "imdb": {
+      "r": 7.7,
+      "v": 267
+     },
+     "still": "/zYmwRwHFy47KmtMxPD1gK8Sx3cz.jpg"
+    },
+    {
+     "n": 3,
+     "name": "The Second Greatest Con Artist in the World",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "While Jeannie and Tony are in Hawaii, a con man tries to get Jeannie's pin given to her by Tutankhamun in exchange for diamonds supposedly found on a beach nearby.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "در حالی که جینی و تونی در هاوایی هستند، یک کلاهبردار سعی می‌کند سنجاق جینی را که توت‌عنخ‌آمون به او داده بود، در برابر الماس‌هایی که ظاهراً در ساحل نزدیک پیدا شده‌اند، بگیرد.",
+     "imdb": {
+      "r": 7.4,
+      "v": 252
+     },
+     "still": "/3NUHz94RVQw6dhkCaLSEmqNFfF5.jpg"
+    },
+    {
+     "n": 4,
+     "name": "My Turned-On Master",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "In order to prove that she can live without her powers, Jeannie transfers them to someone else for twenty-four hours.  Unfortunately, that someone is Tony.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی برای اثبات اینکه می‌تواند بدون قدرتش زندگی کند، قدرت‌هایش را برای بیست‌وچهار ساعت به شخص دیگری منتقل می‌کند. متاسفانه آن شخص تونی است.",
+     "imdb": {
+      "r": 8.2,
+      "v": 263
+     },
+     "still": "/5zhsXSSzfrxpyFqN7G2jr6v3wRG.jpg"
+    },
+    {
+     "n": 5,
+     "name": "My Master, the Weakling",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Tony and Roger meet up with an a navy commander who thinks that all astronauts are soft and runs the two of them ragged as a way of toughening them up.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "تونی و راجر با یک فرمانده نیروی دریایی روبه‌رو می‌شوند که فکر می‌کند همه فضانوردها نرم و تنبل هستند و آن دو را به سختی می‌دواند تا سرسختشان کند.",
+     "imdb": {
+      "r": 7.5,
+      "v": 251
+     },
+     "still": "/3MHlWrRZrrc1Uv46TKJ21Go0Ber.jpg"
+    },
+    {
+     "n": 6,
+     "name": "Jeannie, the Hip Hippie",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Tony is forced to cancel his first vacation in years in order to help Mrs. Bellows find a group to play at a charity bizarre.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "تونی مجبور می‌شود اولین تعطیلاتش پس از سال‌ها را لغو کند تا به خانم بلوز کمک کند گروهی برای یک بازار خیریه پیدا کند.",
+     "imdb": {
+      "r": 7.7,
+      "v": 321
+     },
+     "still": "/xUYUua2oN6CtkOlZCIxQeOc6CRR.jpg"
+    },
+    {
+     "n": 7,
+     "name": "Everybody's a Movie Star",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Tony and Roger are assigned to be in a film about a day in the life of the average astronaut.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "تونی و راجر مامور می‌شوند در فیلمی درباره یک روز از زندگی یک فضانورد معمولی بازی کنند.",
+     "imdb": {
+      "r": 7.2,
+      "v": 230
+     },
+     "still": "/nmfkWMcxoFh6cRiYBKo1b98BvwE.jpg"
+    },
+    {
+     "n": 8,
+     "name": "Who Are You Calling a Genie?",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "While at NASA, Jeannie hits her head and loses her memory. Tony has to rescue her from the authorities.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی در ناسا سرش می‌خورد و حافظه‌اش را از دست می‌دهد. تونی باید او را از دست مقامات نجات دهد.",
+     "imdb": {
+      "r": 7.6,
+      "v": 228
+     },
+     "still": "/kYdo4DSX1y0D15TyTBCzymImPY3.jpg"
+    },
+    {
+     "n": 9,
+     "name": "Meet My Master's Mother",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Tony's mother comes to visit and she would like to see Tony married, much to Jeannie's annoyance.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "مادر تونی به دیدار می‌آید و دوست دارد تونی ازدواج کند، که جینی را خیلی ناراحت می‌کند.",
+     "imdb": {
+      "r": 7.5,
+      "v": 236
+     },
+     "still": "/yRKfcIA2Q2UKgyF6MW187Cfm0LG.jpg"
+    },
+    {
+     "n": 10,
+     "name": "Here Comes Bootsie Nightingale",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie is jealous when movie star Bootsie Nightingale wants to date Tony for publicity purposes.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی حسادت می‌کند وقتی ستاره سینما بوتی نایتینگل می‌خواهد برای تبلیغات با تونی قرار بگذارد.",
+     "imdb": {
+      "r": 7.5,
+      "v": 241
+     },
+     "still": "/uN5TUgXX0ATJ73S3MzmIKEyvCpi.jpg"
+    },
+    {
+     "n": 11,
+     "name": "Tony's Wife",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie's sister arrives and offers to help teach her how to get Tony to marry her.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "خواهر جینی می‌آید و پیشنهاد می‌دهد به او کمک کند تا تونی را وادار به ازدواج کند.",
+     "imdb": {
+      "r": 7.5,
+      "v": 222
+     },
+     "still": "/vgEQbLWTy0XrFDlpamZAPO1yeLf.jpg"
+    },
+    {
+     "n": 12,
+     "name": "Jeannie and the Great Bank Robbery",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "When Tony has an important report to finish, he tells Jeannie to help someone else and she ends up helping bank robbers in a heist.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "وقتی تونی گزارش مهمی برای تمام کردن دارد، به جینی می‌گوید به شخص دیگری کمک کند و جینی سر از کمک به سارقان بانک در یک سرقت درمی‌آورد.",
+     "imdb": {
+      "r": 6.9,
+      "v": 230
+     },
+     "still": "/tc2MtUBpzRIColv2h79rjmo5nkJ.jpg"
+    },
+    {
+     "n": 13,
+     "name": "My Son, the Genie",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie has been assigned to become the training instructor of a new genie.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی مامور می‌شود مربی آموزشی یک جنّ جدید شود.",
+     "imdb": {
+      "r": 6.8,
+      "v": 237
+     },
+     "still": "/iNkmDUw9fux4Rll9U49nTcIKFSL.jpg"
+    },
+    {
+     "n": 14,
+     "name": "Jeannie Goes to Honolulu",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Tony and Roger Healey are sent to Hawaii on Air Force business, but to discourage Jeannie from coming along, they tell her that they are being sent to the North Pole.  During their stay, Tony meets an Admiral's daughter, Eleanor, and they begin seeing each other.  When Jeannie finds out, Tony tries to stifle her temper by lying his way out of it, saying that he and Roger are on a Top Secret Mission and one of his assignments is to protect Eleanor.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "تونی و راجر هیلی برای کار نیروی هوایی به هاوایی فرستاده می‌شوند، اما برای اینکه جینی را از همراهی منصرف کنند، به او می‌گویند به قطب شمال فرستاده می‌شوند. در مدت اقامت، تونی با النور، دختر یک دریاسالار، آشنا می‌شود و با هم دیدار می‌کنند. وقتی جینی متوجه می‌شود، تونی سعی می‌کند با دروغ گفتن خشم او را فرو بنشاند و بگوید که او و راجر در یک ماموریت فوق محرمانه هستند و یکی از وظایفش محافظت از النور است.",
+     "imdb": {
+      "r": 6.1,
+      "v": 279
+     },
+     "still": "/9Bg48CQijprc4ItIQKUw0or7UKn.jpg"
+    },
+    {
+     "n": 15,
+     "name": "The Battle of Waikiki",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie blinks the revered ancient Hawaiian, King Kamehameha, back to life and takes him on a tour of what the Hawaiian Islands now look like in 1967 (when the episode was actually filmed).  He becomes disillusioned when he believes that the Hawaiian people have forgotten all about him and makes plans to re-capture the Islands in his name again.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی پادشاه کهن هاوایی، کامه‌هامه‌ها، را به زندگی برمی‌گرداند و او را به گشت‌وگذاری در جزایر هاوایی می‌برد تا ببیند حالا در سال ۱۹۶۷ چه شکلی شده‌اند. او ناامید می‌شود وقتی فکر می‌کند مردم هاوایی او را کاملاً فراموش کرده‌اند و نقشه می‌کشد که جزایر را دوباره به نام خودش پس بگیرد.",
+     "imdb": {
+      "r": 6.3,
+      "v": 238
+     },
+     "still": "/iatc8vgBYgXihWaejwdodKVmBaG.jpg"
+    },
+    {
+     "n": 16,
+     "name": "Genie, Genie, Who's Got the Genie? (1)",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Tony accidentally locks Jeannie in a moon safe and tries desperately to get her out before it is sent to the moon.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "تونی تصادفاً جینی را در یک گاوصندوق ماه قفل می‌کند و با ناامیدی تلاش می‌کند او را بیرون بیاورد پیش از اینکه به ماه فرستاده شود.",
+     "imdb": {
+      "r": 7.1,
+      "v": 228
+     },
+     "still": "/uiAS2oNSJVj2rBLTVZjWzrriFX4.jpg"
+    },
+    {
+     "n": 17,
+     "name": "Genie, Genie, Who's Got the Genie? (2)",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "After hiring two Safecrackers(Charlie,and the Professor)Tony,and Roger find that they had been double-crossed.They were robbed.Tony's concern is,if the Professor,and Charlie try to open that safe without the right combination the safe will explode.Will Tony,and Roger find the safe with Jeannie inside on time?",
+     "ov_fa_tmdb": null,
+     "ov_fa": "پس از استخدام دو سارق گاوصندوق (چارلی و پروفسور)، تونی و راجر متوجه می‌شوند که به آنها خیانت شده و دزدیده شده‌اند. نگرانی تونی این است که اگر پروفسور و چارلی بدون ترکیب درست سعی کنند گاوصندوق را باز کنند، گاوصندوق منفجر می‌شود. آیا تونی و راجر گاوصندوق با جینی داخلش را به موقع پیدا می‌کنند؟",
+     "imdb": {
+      "r": 7.0,
+      "v": 218
+     },
+     "still": "/2EHkV1CEd8GHRzpL7lyXibnnC7i.jpg"
+    },
+    {
+     "n": 18,
+     "name": "Genie, Genie, Who's Got the Genie? (3)",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie's sister drop's by for a visit,and having not found Jeannie anywhere,enters Tony's bedroom alone,and unprotected.Roger arrive's,and overhearing him say that Jeannie is locked inside the safe,she decide's to snag Tony for herself.She arranges for Tony,and another Airforce officer to switch travel order's so that Tony will go to the Middle East,and the other officer to go take Tony's place.Tony tell's Jeannie that he'll be going away for afew day's,and that she should not worry,because Roger will take of her.Jeannie's Sister seeing an opportunity,disguisis her voice like Jeannie's,and tell's Tony that while he is in Baghdad,he should contact Hadji,the master of all the Jeannie's;he can free her.Having heard that Tony leave's for the Middle East,but he get's to the Place he believe's is the tent of Hadji,he realises it is Jeannie's sister's master's palace.She imprison's Tony in a bird's cage.While back at Nasa Roger having been informed of Tony's arrival in Bagdad,he tell's Jeann",
+     "ov_fa_tmdb": null,
+     "ov_fa": "خواهر جینی برای دیداری سر می‌زند و چون جینی را هیچ‌جا پیدا نمی‌کند، تنها و بدون محافظ وارد اتاق خواب تونی می‌شود. راجر می‌رسد و وقتی می‌شنود که جینی داخل گاوصندوق قفل شده، خواهر تصمیم می‌گیرد تونی را برای خودش بگیرد. او ترتیب می‌دهد که تونی و یک افسر دیگر نیروی هوایی دستور سفرشان را عوض کنند تا تونی به خاورمیانه برود و افسر دیگر جایش را بگیرد. تونی به جینی می‌گوید که چند روزی می‌رود و نگران نباشد چون راجر از او مراقبت می‌کند. خواهر جینی که فرصتی می‌بیند، صدایش را شبیه جینی می‌کند و به تونی می‌گوید وقتی در بغداد است، باید با حاجی، استاد همه جنی‌ها، تماس بگیرد؛ او می‌تواند جینی را آزاد کند. تونی به خاورمیانه می‌رود، اما وقتی به جایی می‌رسد که فکر می‌کند چادر حاجی است، می‌فهمد که قصر استاد خواهر جینی است. او تونی را در یک قفس پرنده زندانی می‌کند.",
+     "imdb": {
+      "r": 7.0,
+      "v": 212
+     },
+     "still": "/i82A8VWZZLCbYzzeWcLtwkaBVm6.jpg"
+    },
+    {
+     "n": 19,
+     "name": "Genie, Genie, Who's Got the Genie? (4)",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "In this,the conclusion of the four parts there is an urgency to getting the safe opened.First,Jeannie informs Tony that when a Genies been locked up for a whole Month,she no longer belong's to her Master.She will be the slave of whomever open's the safe.It's like being trapped in her bottle.So,Tony has to make sure that he be the one to open the safe.Second,there is a timing mechanism on the safe;it has to be opened within 72 hours.Dr Bellow's has sent a Dr.Whitimeyer,a dem. expert.Tony has to make sure he's the the one to defuse the explosive mechinism,and open the safe to become Jeannie's Master,again.Will he succeed with both?",
+     "ov_fa_tmdb": null,
+     "ov_fa": "در این قسمت، پایان این چهار قسمت، باز کردن گاوصندوق فوری است. اول، جینی به تونی خبر می‌دهد که وقتی یک جنّ یک ماه کامل قفل شده باشد، دیگر متعلق به صاحبش نیست؛ برده کسی می‌شود که گاوصندوق را باز کند، درست مثل گیر افتادن در بطری‌اش. پس تونی باید مطمئن شود که خودش گاوصندوق را باز می‌کند. دوم، گاوصندوق یک مکانیسم زمان‌دار دارد و باید ظرف ۷۲ ساعت باز شود. دکتر بلوز دکتر وایتمایر، یک متخصص مواد منفجره، را فرستاده است. تونی باید مطمئن شود که خودش مکانیسم انفجاری را خنثی می‌کند و گاوصندوق را باز می‌کند تا دوباره صاحب جینی شود. آیا در هر دو موفق می‌شود؟",
+     "imdb": {
+      "r": 7.2,
+      "v": 212
+     },
+     "still": "/qfzkWFTKLxk81pTwH0tpjQfoqtf.jpg"
+    },
+    {
+     "n": 20,
+     "name": "Please Don't Feed the Astronauts",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "After Tony and Roger volunteer for a special diet under the care of attractive Swedish nurses, Jeannie isn't impressed. But when they pass the intense physical exercise and training from Commander Porter, with a little \"help\" from Jeannie, he takes them to the wilderness to put his vitamins to the ultimate test...",
+     "ov_fa_tmdb": null,
+     "ov_fa": "پس از اینکه تونی و راجر برای یک رژیم غذایی خاص زیر نظر پرستاران جذاب سوئدی داوطلب می‌شوند، جینی تحت تاثیر قرار نمی‌گیرد. اما وقتی با تمرینات فیزیکی شدید و آموزش‌های فرمانده پورتر و با کمی «کمک» جینی موفق می‌شوند، او آنها را به دل طبیعت می‌برد تا ویتامین‌هایش را در آزمونی نهایی بسنجد.",
+     "imdb": {
+      "r": 7.4,
+      "v": 234
+     },
+     "still": "/zhVwHEZ0TYu4BcSRkYySgef4Dym.jpg"
+    },
+    {
+     "n": 21,
+     "name": "My Master, the Ghostbreaker",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Tony, Jeannie and Roger go to England to check out a mansion that Tony inherited.  When they get there they find out the mansion is haunted.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "تونی، جینی و راجر به انگلستان می‌روند تا عمارتی را که تونی به ارث برده بررسی کنند. وقتی به آنجا می‌رسند، متوجه می‌شوند عمارت تسخیرشده است.",
+     "imdb": {
+      "r": 6.7,
+      "v": 241
+     },
+     "still": "/amUdr9dwvvIed1lIQ58hCSXLuhT.jpg"
+    },
+    {
+     "n": 22,
+     "name": "Divorce, Genie Style",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "ony states his admiration for Mrs. Bellows and Jeannie takes it the wrong way.Jeannie asks Haji to take her powers away. He agrees to do so for one week. While Jeannie tries to cope with housework the old-fashioned way, Tony is wishing for Jeannie's powers back. Amanda Bellows pays Jeannie a visit and decides Jeannie needs a divorce.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "تونی تحسینش را نسبت به خانم بلوز بیان می‌کند و جینی اشتباه برداشت می‌کند. جینی از حاجی می‌خواهد قدرتش را بگیرد. حاجی موافقت می‌کند برای یک هفته این کار را بکند. در حالی که جینی سعی می‌کند به روش قدیمی خانه‌داری کند، تونی آرزوی بازگشت قدرت جینی را می‌کند. آماندا بلوز به دیدار جینی می‌آید و تصمیم می‌گیرد جینی به طلاق نیاز دارد.",
+     "imdb": {
+      "r": 7.7,
+      "v": 226
+     },
+     "still": "/nFvIj5L9VRruCZYh3BAZkHpSIzh.jpg"
+    },
+    {
+     "n": 23,
+     "name": "My Double-Crossing Master",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Tony makes a bet with Roger that Jeannie would never fall for another man. This leads to Tony disguising himself as a British officer. However, things get sticky when Jeannie falls for the \"British\" officer and Tony becomes jealous.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "تونی با راجر شرط می‌بندد که جینی هرگز عاشق مرد دیگری نمی‌شود. این باعث می‌شود تونی خودش را به شکل یک افسر بریتانیایی درآورد. اما وقتی جینی عاشق افسر «بریتانیایی» می‌شود و تونی حسادت می‌کند، اوضاع پیچیده می‌شود.",
+     "imdb": {
+      "r": 7.4,
+      "v": 211
+     },
+     "still": "/yfwZWUxWKEW70IeNxEshYCq2hIT.jpg"
+    },
+    {
+     "n": 24,
+     "name": "Have You Ever Had a Genie Hate You?",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie's sister arrives to give her a birthday present.  She gives her two bottles of lotion, a white one to make her love her master more and a blue one to make her hate her enemies more.  However, big sis changes the bottles and now the white one has the hate lotion and the blue one has the love lotion.  After sprinkling the hate lotion on Tony, she becomes compelled to start torturing him by shrinking him and putting him in the oven.  A few minutes later Roger arrives and accidentally puts the love lotion on causing Jeannie to fall for him.  After some more torturing by Jeannie, her sister then arrives to claim Tony, but not until after she reveals her scheme to Tony.  However, as Tony grabs the bottles, she switches them again.  He then runs to Roger's apartment, which is now filled with expensive furniture and sexy female servants.  When Jeannie sees Tony she puts him on a table reminiscent of the Pit and the Pendulum.  Roger then mistakenly puts the hate lotion on and joins Tony",
+     "ov_fa_tmdb": null,
+     "ov_fa": "خواهر جینی می‌آید تا به او یک هدیه تولد بدهد. او دو بطری لوسیون به او می‌دهد؛ یکی سفید تا عشقش به صاحبش را بیشتر کند و یکی آبی تا نفرتش از دشمنانش را بیشتر کند. اما خواهر بزرگ‌تر بطری‌ها را عوض می‌کند و حالا بطری سفید لوسیون نفرت و بطری آبی لوسیون عشق دارد. پس از پاشیدن لوسیون نفرت روی تونی، جینی مجبور می‌شود با کوچک کردن او و گذاشتنش در فر، شکنجه‌اش کند. چند دقیقه بعد راجر می‌رسد و تصادفاً لوسیون عشق را می‌زند و جینی عاشق او می‌شود. پس از کمی شکنجه بیشتر توسط جینی، خواهرش می‌آید تا تونی را بگیرد، اما نه پیش از اینکه نقشه‌اش را به تونی بگوید. اما وقتی تونی بطری‌ها را می‌گیرد، خواهر دوباره آنها را عوض می‌کند. تونی به آپارتمان راجر می‌دود که حالا پر از مبلمان گران‌قیمت و خدمتکاران زن جذاب است. وقتی جینی تونی را می‌بیند، او را روی میزی شبیه «چاه و آونگ» می‌گذارد. راجر بعد اشتباهی لوسیون نفرت را می‌زند و به تونی می‌پیوندد.",
+     "imdb": {
+      "r": 7.4,
+      "v": 220
+     },
+     "still": "/aalA86JUcnWVk3HLVcQydZTQKkA.jpg"
+    },
+    {
+     "n": 25,
+     "name": "Operation: First Couple on the Moon",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Dr. Bellows is in charge of training the first man and woman to be sent to the moon.  Jeannie is worried about the idea of Tony being alone on the moon with an attractive woman, until Evil Sister Jeannie appears and promises to take care of everything.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "دکتر بلوز مسئول آموزش اولین مرد و زن برای فرستادن به ماه است. جینی نگران این ایده است که تونی با یک زن جذاب در ماه تنها باشد، تا اینکه خواهر شیطان جینی ظاهر می‌شود و قول می‌دهد همه‌چیز را حل کند.",
+     "imdb": {
+      "r": 7.2,
+      "v": 219
+     },
+     "still": "/7kaA9KaOkwmlrqWM6OJrYv9lBQx.jpg"
+    },
+    {
+     "n": 26,
+     "name": "Haven't I Seen Me Someplace Before?",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Its Roger's birthday and Jeannie and Tony throw a small party for him.  Instead of a normal gift Jeannie decides to give Roger something he has always wanted, his very own wish.  As Roger is leaving the house, Tony mentions the fact that the next day he is going on an important space flight and Roger then blurts out that he wishes that he was going on that flight and at that instant, Roger and Tony switch bodies.  When Tony realizes what has happened, he and Jeannie go searching for Roger not only before he goes on the mission, but to keep Dr. Bellows from finding out what happened.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "تولد راجر است و جینی و تونی یک مهمانی کوچک برای او می‌گیرند. جینی به جای یک هدیه معمولی تصمیم می‌گیرد به راجر چیزی بدهد که همیشه می‌خواسته: یک آرزوی خودش. وقتی راجر در حال ترک خانه است، تونی یادآوری می‌کند که فردا یک پرواز فضایی مهم دارد و راجر ناگهان آرزو می‌کند که کاش او در آن پرواز بود و در همان لحظه، راجر و تونی جایشان را عوض می‌کنند. وقتی تونی متوجه می‌شود چه اتفاقی افتاده، او و جینی به دنبال راجر می‌گردند، نه تنها پیش از رفتن او به ماموریت، بلکه برای اینکه دکتر بلوز متوجه نشود.",
+     "imdb": {
+      "r": 7.7,
+      "v": 217
+     },
+     "still": "/AoIobaavqKmVuoFX0v7IqKbr5tr.jpg"
+    }
+   ],
+   "4": [
+    {
+     "n": 1,
+     "name": "U-F-Oh Jeannie",
+     "name_fa": "",
+     "rating": 1.0,
+     "runtime": 25,
+     "ov_en": "While Tony and Roger testing a top secret flying saucer like craft for NASA, Jeannie pops on board and her extra weight causes them to go off course.\n\nThe two land in the middle of hillbilly country and are mistaken for Martians by a family who plans on turning them in for a reward.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "در حالی که تونی و راجر یک وسیله شبیه بشقاب‌پرنده فوق محرمانه را برای ناسا آزمایش می‌کنند، جینی سوار آن می‌شود و وزن اضافه او باعث می‌شود از مسیر خارج شوند. آن دو در وسط یک منطقه روستایی فرود می‌آیند و یک خانواده آنها را با مریخی‌ها اشتباه می‌گیرد و قصد دارد برای جایزه آنها را تحویل دهد.",
+     "imdb": {
+      "r": 7.0,
+      "v": 250
+     },
+     "still": "/6oUYbB8m32XbjJzv65Cz7x5MfB8.jpg"
+    },
+    {
+     "n": 2,
+     "name": "Jeannie and the Wild Pipchicks",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie gives Tony a mysterious candy from her mother called \"\"Pipchicks\"\".\n\nWhen it is discovered that the Pipchicks make Tony stronger, Tony tries to keep them a secret, but soon enough Dr. Bellows eats one and finds out their potential.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی به تونی یک آب‌نبات مرموز از مادرش به نام «پیپ‌چیک» می‌دهد. وقتی معلوم می‌شود پیپ‌چیک‌ها تونی را قوی‌تر می‌کنند، تونی سعی می‌کند آنها را مخفی نگه دارد، اما خیلی زود دکتر بلوز یکی می‌خورد و به توانایی آنها پی می‌برد.",
+     "imdb": {
+      "r": 7.8,
+      "v": 250
+     },
+     "still": "/ffHY2U6sd0tUQf3zwJrgqtaxWAh.jpg"
+    },
+    {
+     "n": 3,
+     "name": "Tomorrow Is Not Another Day",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Its the 16th and no newspaper has arrived at the Nelson home.\n\nSeeing Jeannie upset Roger suggest that she blinks in a newspaper.\n\nShe does, but being informed of the wrong date by Roger, gets the next day's paper.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "روز شانزدهم است و هیچ روزنامه‌ای به خانه نلسون نرسیده است. جینی که ناراحت است، راجر پیشنهاد می‌کند که او با جادو یک روزنامه ظاهر کند. جینی این کار را می‌کند، اما چون راجر تاریخ اشتباه را به او گفته، روزنامه روز بعد را می‌گیرد.",
+     "imdb": {
+      "r": 7.9,
+      "v": 232
+     },
+     "still": "/kUE6fBELWf9WOlYKjEVQuwiHCjV.jpg"
+    },
+    {
+     "n": 4,
+     "name": "Abdullah",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie does her brother a favor by babysitting his son, her nephew Abdullah.\n\nHowever, the baby can't stop crying and the only one who can calm him down is Tony.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی به برادرش لطف می‌کند و از پسرش، برادرزاده‌اش عبدالله، نگهداری می‌کند. اما بچه نمی‌تواند گریه‌اش را متوقف کند و تنها کسی که می‌تواند او را آرام کند تونی است.",
+     "imdb": {
+      "r": 6.7,
+      "v": 233
+     },
+     "still": "/mgd3qOOW6c5Ld6Nwv3InKsWJrdc.jpg"
+    },
+    {
+     "n": 5,
+     "name": "Have You Heard the One About The Used Car Salesman?",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "After Jeannie crashes Tony's car, it's brought to a used car dealer to be repaired.\n\nThe dealer tries to cheat Jeannie by buying the damaged car from her, then making her buy it back at several times the price.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "پس از اینکه جینی ماشین تونی را تصادف می‌کند، آن را به یک فروشنده ماشین‌های دست‌دوم می‌برند تا تعمیر شود. فروشنده سعی می‌کند با خرید ماشین آسیب‌دیده از جینی و بعد فروش دوباره آن به او با چند برابر قیمت، او را فریب دهد.",
+     "imdb": {
+      "r": 7.7,
+      "v": 244
+     },
+     "still": "/geNZ1CDFnQzLIyPktfpiqLc43Qo.jpg"
+    },
+    {
+     "n": 6,
+     "name": "Djinn, Djinn, Go Home",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "A strange dog shows up on Tony's doorstep and immediately turns invisible starts attacking Tony.\n\nJeannie arrives and saves the day and informs Tony that it her dog Djinn Djinn, who she hasn't seen in 2000 years.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "یک سگ عجیب به در خانه تونی می‌آید و فوراً نامرئی می‌شود و به تونی حمله می‌کند. جینی می‌رسد و روز را نجات می‌دهد و به تونی خبر می‌دهد که این سگ او، جین‌جین، است که دو هزار سال است او را ندیده است.",
+     "imdb": {
+      "r": 6.9,
+      "v": 217
+     },
+     "still": "/dKt8bTAzVH6SdkoxWZ5jeI8UKHd.jpg"
+    },
+    {
+     "n": 7,
+     "name": "The Strongest Man in the World",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie's magic makes Tony not only the strongest man but also gets him into trouble at the gym.\n\nTony must compete in a boxing match against a burly Marine, who's the Armed Forces boxing champion.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جادوی جینی تونی را نه تنها به قوی‌ترین مرد تبدیل می‌کند، بلکه او را در باشگاه دچار دردسر می‌کند. تونی باید در یک مسابقه بوکس با یک تفنگدار تنومند که قهرمان بوکس نیروهای مسلح است، رقابت کند.",
+     "imdb": {
+      "r": 7.3,
+      "v": 233
+     },
+     "still": "/3MQV0B1Hc90lshRpOFObWcYdXAt.jpg"
+    },
+    {
+     "n": 8,
+     "name": "The Indispensable Jeannie",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "To prepare for an upcoming mission, Dr. Bellows tests the compatibility of Tony and Roger for one week.\n\nIf they get along, great; but if not, they'll be reassigned to different bases.\n\nThings don't go that well at first, but things go from bad to worse when Jeannie tries to help.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "برای آماده شدن برای یک ماموریت آینده، دکتر بلوز سازگاری تونی و راجر را برای یک هفته آزمایش می‌کند. اگر کنار هم خوب باشند، عالی است؛ اما اگر نه، به پایگاه‌های مختلف منتقل می‌شوند. اول اوضاع خیلی خوب پیش نمی‌رود، اما وقتی جینی سعی می‌کند کمک کند، از بد بدتر می‌شود.",
+     "imdb": {
+      "r": 7.5,
+      "v": 217
+     },
+     "still": "/pvJ3ed4VyQVMGBgwYpCf41UvOD6.jpg"
+    },
+    {
+     "n": 9,
+     "name": "Jeannie and the Top Secret Secret",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "It's been three years since Tony and Jeannie met, and boy has their relationship blossomed. He plans to celebrate their anniversary with a night on the town ... until Dr. Bellows calls, telling him to come to the office. It turns out Tony has been asked to hand-deliver a classified film to Washington, where high-ranking military officials are to view the film documenting NASA's latest projects. Tony (who has been ordered to be tight-lipped about the mission) tries to back out but can't; when he tells Jeannie about the change in plans and that he can't disclose what he's doing, Jeannie is certain she's being let down again and that Tony aims to meet another woman. Scheming to follow along, she blinks herself on the airplane (where Tony is seated next to a young woman) and, disguised as a stewardess, she causes trouble. Dr. Bellows (who is accompanying Tony on the trip as a \"\"stranger\"\") is clueless as to what's going on. Tony eventually has no choice but to take Jeannie aside and explain",
+     "ov_fa_tmdb": null,
+     "ov_fa": "سه سال از آشنایی تونی و جینی گذشته و رابطه‌شان حسابی شکوفا شده است. تونی قصد دارد سالگردشان را با یک شب بیرون جشن بگیرد، تا اینکه دکتر بلوز زنگ می‌زند و به او می‌گوید به دفتر بیاید. معلوم می‌شود از تونی خواسته شده یک فیلم طبقه‌بندی‌شده را شخصاً به واشنگتن تحویل دهد، جایی که مقامات نظامی عالی‌رتبه قرار است فیلم مستند پروژه‌های جدید ناسا را ببینند. تونی که دستور دارد درباره ماموریتش سکوت کند، سعی می‌کند کنار بکشد اما نمی‌تواند؛ وقتی به جینی درباره تغییر برنامه‌ها می‌گوید و اینکه نمی‌تواند بگوید چه کار می‌کند، جینی مطمئن می‌شود که دوباره او را ناامید کرده و تونی قصد دارد با زن دیگری دیدار کند. جینی با نقشه‌ای خودش را به هواپیما می‌رساند، جایی که تونی کنار یک زن جوان نشسته است، و با لباس مهماندار دردسر درست می‌کند. دکتر بلوز که در سفر همراه تونی است و از چیزی خبر ندارد، متوجه نمی‌شود چه خبر است. تونی در نهایت چاره‌ای ندارد جز اینکه جینی را کنار بکشد و توضیح دهد.",
+     "imdb": {
+      "r": 7.3,
+      "v": 221
+     },
+     "still": "/da8njhu6cgKzVqHMDxQOXRmq41G.jpg"
+    },
+    {
+     "n": 10,
+     "name": "How to Marry an Astronaut",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie's sister provides Jeannie lessons in the art of catching a husband. Her quarry: Roger!",
+     "ov_fa_tmdb": null,
+     "ov_fa": "خواهر جینی به او در هنر شکار شوهر درس می‌دهد. هدف: راجر!",
+     "imdb": {
+      "r": 7.0,
+      "v": 209
+     },
+     "still": "/lMUZbspsFB7gpuMxAC7cbkQWM8i.jpg"
+    },
+    {
+     "n": 11,
+     "name": "Dr.  Bellows Goes Sane",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Dr.Bellows has gathered what he believe's is a complete Dossier on Tony.He intends to present it to General Peterson.Tony knows that if General Peterson reads that Dossier,he Tony will be finished in the Space Program.So,he has Jeannie blink up a gust of wind to scatter Dr.Bellows papers so that they'd be lost.This would have worked except,shrewed Dr.Bellows had made copies earlier that he had already sent to General Peterson;which he is now reading in his office.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "دکتر بلوز پرونده‌ای کامل درباره تونی جمع کرده و قصد دارد آن را به ژنرال پیترسون ارائه دهد. تونی می‌داند اگر ژنرال پیترسون آن پرونده را بخواند، کارش در برنامه فضایی تمام است. پس از جینی می‌خواهد بادی بوزد تا مدارک دکتر بلوز پراکنده و گم شوند. این کار جواب می‌داد جز اینکه دکتر بلوز زرنگ زودتر کپی‌هایی گرفته بود که قبلاً به ژنرال پیترسون فرستاده بود؛ ژنرال حالا در دفترش مشغول خواندن آنهاست.",
+     "imdb": {
+      "r": 7.0,
+      "v": 222
+     },
+     "still": "/k3GRlMcubbickh32wEtRnAua1nU.jpg"
+    },
+    {
+     "n": 12,
+     "name": "Jeannie The Guru",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Tony picks up a teen age hitchhiker named Suzy who happens to be the daughter of his new neighbor, General Schaeffer.  Schaeffer is a stickler for efficiency and hates all hippies, including Suzy's boyfriend Harold, a very spaced out one.  Suzy, afraid of having her father see her in her hippy garb, hides out in Tony's house and winds up seeing Jeannie pop in.  Suzy then blackmales Tony into hiding out Harold or else she will spill the beans about Jeannie.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "تونی یک دختر نوجوان مسافر به نام سوزی را سوار می‌کند که دختر همسایه جدیدش، ژنرال شفر، است. شفر سخت‌گیر در کارایی است و از همه هیپی‌ها، از جمله دوست‌پسر سوزی هارولد که خیلی گیج است، متنفر است. سوزی که می‌ترسد پدرش او را در لباس هیپی ببیند، در خانه تونی پنهان می‌شود و جینی را در حال ظاهر شدن می‌بیند. سوزی بعد تونی را تهدید می‌کند که هارولد را پنهان کند وگرنه راز جینی را فاش می‌کند.",
+     "imdb": {
+      "r": 6.9,
+      "v": 242
+     },
+     "still": "/5PAiAI617SXvCO1HT8U9axHqIWk.jpg"
+    },
+    {
+     "n": 13,
+     "name": "The Case of My Vanishing Master (1)",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "NASA, suspecting a leak, sends Tony to a secret location to finish design work on a spacecraft while a lookalike substitutes for Tony at the base and at home where he discovers Jeannie.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "ناسا که به نشت اطلاعات مشکوک است، تونی را به یک مکان مخفی می‌فرستد تا کار طراحی فضاپیما را تمام کند، در حالی که یک بدل تونی در پایگاه و خانه جای او را می‌گیرد و جینی را کشف می‌کند.",
+     "imdb": {
+      "r": 7.7,
+      "v": 220
+     },
+     "still": "/crgle4CBhoJa7s6sUu7InPYiTXX.jpg"
+    },
+    {
+     "n": 14,
+     "name": "The Case of My Vanishing Master (2)",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Roger manages to arrive in time not only to stop the wedding, but he manages to convince Jeannie that the Tony she was about to manage was an impostor.  Later, Tony comes home and is subjected to torture from Jeannie, who thinks that he is the impostor.  Tony eventually convinces her that he is the real one and as he is about to go tell the impostor that the assignment is over when he finds out that the phony Tony is working as a double agent for a foreign power.  Doctor Bellows and Roger then arrive and have a hard time trying to decide which one is the real Tony, until Jeannie causes the impostor's false teeth to fall out.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "راجر به موقع می‌رسد تا نه تنها عروسی را متوقف کند، بلکه جینی را قانع کند که تونی که قرار بود با او ازدواج کند، یک جاعل بوده است. بعد تونی به خانه برمی‌گردد و جینی او را شکنجه می‌کند چون فکر می‌کند او جاعل است. تونی در نهایت او را قانع می‌کند که واقعی است و وقتی می‌خواهد به جاعل بگوید ماموریت تمام شده، متوجه می‌شود که تونی تقلبی برای یک قدرت خارجی به عنوان جاسوس دوجانبه کار می‌کند. دکتر بلوز و راجر می‌رسند و نمی‌توانند تصمیم بگیرند کدام تونی واقعی است، تا اینکه جینی باعث می‌شود دندان‌های مصنوعی جاعل بیفتد.",
+     "imdb": {
+      "r": 7.8,
+      "v": 209
+     },
+     "still": "/v734avCyc9zP4OTOqg5WXhLwO4C.jpg"
+    },
+    {
+     "n": 15,
+     "name": "Ride 'Em Astronaut",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "When Jeannie becomes the 1,000,000th customer at the local supermarket, she wins several prizes including the right to become queen of the Cocoa Beach rodeo.  Now Tony must enter the rodeo to keep an amorous cowboy from winning and staking his claim on Jeannie.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "وقتی جینی یک میلیونمین مشتری سوپرمارکت محلی می‌شود، جوایز زیادی می‌برد، از جمله حق ملکه رودئوی کوکو بیچ شدن. حالا تونی باید وارد رودئو شود تا یک کابوی عاشق را از بردن و ادعای مالکیت جینی باز دارد.",
+     "imdb": {
+      "r": 6.2,
+      "v": 224
+     },
+     "still": "/2aLXPmkSXOIto9fIwuuxgeCMxNX.jpg"
+    },
+    {
+     "n": 16,
+     "name": "Invisible House for Sale",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "After Roger tells Jeannie the reason why Tony cant spend enough time with her, it becomes evident that they have too big a house and Jeannie wants to move into an apartment. She then sells the house to an important military personnel and when Tony finds out, he requests that she doesnt sell the house so she then makes the house invisible so that it cant be bought or even appear to exist.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "پس از اینکه راجر به جینی می‌گوید دلیل اینکه تونی نمی‌تواند وقت کافی با او بگذراند این است که خانه‌شان خیلی بزرگ است، معلوم می‌شود خانه خیلی بزرگ است و جینی می‌خواهد به آپارتمان نقل مکان کند. او بعد خانه را به یک نظامی مهم می‌فروشد و وقتی تونی متوجه می‌شود، از او می‌خواهد خانه را نفروشد؛ پس جینی خانه را نامرئی می‌کند تا نتوان آن را خرید و حتی وجود نداشته باشد.",
+     "imdb": {
+      "r": 7.8,
+      "v": 226
+     },
+     "still": "/slpk07L1Xbssh7NvpF0WU0dxuc6.jpg"
+    },
+    {
+     "n": 17,
+     "name": "Jeannie, the Governor's Wife",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie tries to convince Tony to run for governor, not only because she feels that this will finally convince him to marry her, but because she has an honest face.  Roger then decides to become Tony's campaign manager as well and he and Jeannie do everything he can to get elected.  Just one problem though, Tony is still on active duty and can't run for governor or else he will be kicked out of the astronaut program.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی سعی می‌کند تونی را قانع کند برای فرمانداری نامزد شود، نه تنها چون احساس می‌کند این بالاخره او را به ازدواج متقاعد می‌کند، بلکه چون او چهره‌ای صادق دارد. راجر بعد تصمیم می‌گیرد مدیر کمپین تونی شود و او و جینی همه تلاششان را می‌کنند تا او انتخاب شود. فقط یک مشکل وجود دارد: تونی هنوز در خدمت فعال است و نمی‌تواند برای فرمانداری نامزد شود وگرنه از برنامه فضانوردی اخراج می‌شود.",
+     "imdb": {
+      "r": 7.2,
+      "v": 213
+     },
+     "still": "/78ugUvsa8HIXAK7TwFfMlTxP668.jpg"
+    },
+    {
+     "n": 18,
+     "name": "Is There a Doctor in the House?",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Tony's sudden sleeping sickness causes Jeannie to consult her mother for advice, not realizing that it was Jeannie's mother who caused it.  Jeannie pleads with her mother to come back with her to Cocoa Beach so that she can cure Tony.  After doing this, Mama lays her eyes on Dr. Bellows and it is love at first sight.  She now starts making plans to make him her own Master.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "بیماری خواب ناگهانی تونی باعث می‌شود جینی برای مشاوره به مادرش مراجعه کند، بی‌خبر از اینکه مادر جینی باعث آن شده است. جینی از مادرش التماس می‌کند که با او به کوکو بیچ برگردد تا تونی را درمان کند. پس از انجام این کار، مادر چشمش به دکتر بلوز می‌افتد و در نگاه اول عاشق می‌شود. حالا او شروع به برنامه‌ریزی می‌کند تا او را صاحب خودش کند.",
+     "imdb": {
+      "r": 6.7,
+      "v": 195
+     },
+     "still": "/ybPrictgCwYj71E2iyixiKa6KCy.jpg"
+    },
+    {
+     "n": 19,
+     "name": "The Biggest Star in Hollywood",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie is invited to appear on the hip, 1960s comedy/variety TV show \"\"Laugh-In,\"\" but it's really her off-camera antics that are responsible for making her an instant celebrity.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی دعوت می‌شود در نمایش کمدی/واریته شیک دهه ۱۹۶۰ «لاف-این» ظاهر شود، اما در واقع شیطنت‌های خارج از دوربین اوست که او را به یک ستاره فوری تبدیل می‌کند.",
+     "imdb": {
+      "r": 7.0,
+      "v": 219
+     },
+     "still": "/d0yz5lw8g5b47LjlXUoIYaCDJV0.jpg"
+    },
+    {
+     "n": 20,
+     "name": "The Case of the Porcelain Puppy",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie; reading a genie's magazine; has found a new spell that turns ordinary objects into porcelain. this causes Dr. Bellows and his wife to think Tony is a real artist and Tony then asks jeannie to blink up amateur works of art in his garage. Things go wrong when Djinn Djinn the dog shows up and Jeannie accidentally turns him into porcelain and now she has to find a counter spell or risk losing her dog.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی در حال خواندن یک مجله جنّ‌ها، یک طلسم جدید پیدا کرده که اشیای معمولی را به چینی تبدیل می‌کند. این باعث می‌شود دکتر بلوز و همسرش فکر کنند تونی یک هنرمند واقعی است و تونی بعد از جینی می‌خواهد آثار هنری آماتور را در گاراژش ظاهر کند. وقتی سگ جین‌جین سر می‌رسد و جینی تصادفاً او را به چینی تبدیل می‌کند، اوضاع خراب می‌شود و حالا باید یک طلسم خنثی‌کننده پیدا کند یا سگش را از دست بدهد.",
+     "imdb": {
+      "r": 7.0,
+      "v": 213
+     },
+     "still": "/gMQfK9Es7JGhfMkakR5Cwk0Hjnb.jpg"
+    },
+    {
+     "n": 21,
+     "name": "Jeannie for the Defense",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Tony,and Roger are driving through a small town when they accidently bump into the car in front of them.They barely touch the car when the husband,seeing an opportunity in cash in on a city fellow falls out of the faking in pain.His wife plays along,and Tony is arrested,(not for hitting the man)but sensing that a scam is about to take place tries to leave.He tells Roger to call Dr.Bellows,to explain the situation,and perhaps with some clout he could help.But Tony does not want Roger to contact Jeannie(for fear that she would help...get him worse trouble).Roger contacts Dr.Bellows,and had explained the attemped insurance fraud.Dr.Bellows promises he'll be there.Jeannie eventuaaly does find out,and springs Tony,along with a jailhouse wino.Tony orders her to put he,and the wino back.He intends to fight to prove his innocence in court.Will Jeannie do as her Master says,and let fight this injust on his own?Or will Tony who stands a chance to lose(especilly when the accusers,the lawyer,and t",
+     "ov_fa_tmdb": null,
+     "ov_fa": "تونی و راجر در حال رانندگی در یک شهر کوچک هستند که تصادفاً به ماشین جلویی می‌زنند. به سختی به ماشین می‌خورند که شوهر، با دیدن فرصتی برای پول درآوردن، خودش را به زمین می‌اندازد و درد را جعل می‌کند. همسرش هم بازی می‌کند و تونی دستگیر می‌شود؛ نه برای زدن مرد، بلکه وقتی حس می‌کند کلاهبرداری در راه است سعی می‌کند برود. به راجر می‌گوید به دکتر بلوز زنگ بزند تا وضعیت را توضیح دهد و شاید با نفوذش کمک کند. اما تونی نمی‌خواهد راجر با جینی تماس بگیرد، از ترس اینکه او کمک کند و دردسرش را بیشتر کند. راجر با دکتر بلوز تماس می‌گیرد و کلاهبرداری بیمه را توضیح می‌دهد. دکتر بلوز قول می‌دهد که آنجا باشد. جینی در نهایت متوجه می‌شود و تونی را همراه با یک مست زندان آزاد می‌کند. تونی به او دستور می‌دهد او و مست را برگرداند؛ او قصد دارد در دادگاه بی‌گناهی‌اش را ثابت کند.",
+     "imdb": {
+      "r": 7.6,
+      "v": 222
+     },
+     "still": "/gZmPM5Fioxty9wHd04FW0eQTfRC.jpg"
+    },
+    {
+     "n": 22,
+     "name": "Nobody Loves a Fat Astronaut",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie's Sister returns once again to make trouble for both Tony,and her sister,when finding out that if Tony's weight is notup to the average Astranauts requirements,then he will be washed out of the Space Program.So she set's out to first convince General Schaffer,and Dr Bellows that Tony is unstable mentally,and emotionally.And,then to have his physical changed to enormous to assure that he gets thrown out;to have the entire incident blamed on Jeannie.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "خواهر جینی دوباره برمی‌گردد تا برای تونی و خواهرش دردسر درست کند، وقتی متوجه می‌شود که اگر وزن تونی مطابق میانگین فضانوردها نباشد، از برنامه فضایی اخراج می‌شود. پس او اول سعی می‌کند ژنرال شفر و دکتر بلوز را قانع کند که تونی از نظر روانی و احساسی ناپایدار است و بعد جسم او را به غول‌پیکر تغییر می‌دهد تا مطمئن شود اخراج می‌شود؛ و تمام ماجرا را به گردن جینی بیندازد.",
+     "imdb": {
+      "r": 6.8,
+      "v": 208
+     },
+     "still": "/hBUBicD3ksxTTkvls5MgQmP2hT7.jpg"
+    },
+    {
+     "n": 23,
+     "name": "Around the Moon in 80 Blinks",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Tony goes on a space flight.  Unfortunately, he catches a cold and Jeannie blinks him down to take care of him.  However, she blinks down the wrong astronaut in Commander Les Wingate as well as Tony.  Now Jeannie must try to blink both astronauts up to their capsule before Amanda Bellows catches them back on the ground.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "تونی به یک پرواز فضایی می‌رود. متاسفانه سرما می‌خورد و جینی او را برای مراقبت پایین می‌آورد. اما او اشتباهی فرمانده لس وینگیت را هم همراه تونی پایین می‌آورد. حالا جینی باید هر دو فضانورد را پیش از اینکه آماندا بلوز آنها را روی زمین بگیرد، به کپسول برگرداند.",
+     "imdb": {
+      "r": 7.6,
+      "v": 227
+     },
+     "still": "/jEhV2uNnl2mb294LyrWOlQWByZJ.jpg"
+    },
+    {
+     "n": 24,
+     "name": "Jeannie-Go-Round",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Locking Jeannie in her bottle, her wicked lookalike sister Jeannie II trails Tony to the Cocoa Beach Cabana. In her efforts to win Tony's affections, Jeannie II also replaces the nightclub's regular singer and renders a seductive ballad (\"Electric Days, Electric Nights\"). Alas, from this point forward everything goes wrong, with Tony being publicly embarrassed and Dr. Bellows virtually being hand-delivered enough evidence to wash Tony out of the space program!",
+     "ov_fa_tmdb": null,
+     "ov_fa": "خواهر شرور جینی، جینی دوم، جینی را در بطری‌اش قفل می‌کند و تونی را تا کابانای کوکو بیچ دنبال می‌کند. در تلاش برای جلب محبت تونی، جینی دوم جای خواننده همیشگی کلوپ شبانه را می‌گیرد و یک تصنیف اغواگرانه می‌خواند («روزهای الکتریکی، شب‌های الکتریکی»). اما از آنجا به بعد همه‌چیز خراب می‌شود؛ تونی علناً خجالت می‌کشد و دکتر بلوز تقریباً به اندازه کافی مدرک می‌گیرد تا تونی را از برنامه فضایی بیرون کند!",
+     "imdb": {
+      "r": 7.4,
+      "v": 219
+     },
+     "still": "/UHknwDUa4lDI1AFVSJ3wBcJuiT.jpg"
+    },
+    {
+     "n": 25,
+     "name": "Jeannie and the Secret Weapon",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie turns a top secret project into a scale model, and this model ends up getting into the hands of an amateur toy inventor.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی یک پروژه فوق محرمانه را به یک مدل مقیاس تبدیل می‌کند و این مدل به دست یک مخترع اسباب‌بازی آماتور می‌افتد.",
+     "imdb": {
+      "r": 6.8,
+      "v": 206
+     },
+     "still": "/51DuQpkcZtZM4CnkOsO1PUMS3ql.jpg"
+    },
+    {
+     "n": 26,
+     "name": "Blackmail Order Bride",
+     "name_fa": "",
+     "rating": 10.0,
+     "runtime": 25,
+     "ov_en": "Reporter Charlie Farnum tries to get a hot scoop on the life of Major Tony Nelson.  He goes as far as to rig up a camera and a tape recorder in Tony's house.  However, Tony and Jeannie find out about Farnum's scheme and thwart it.  Farnum then resorts to blackmail when he convinces his wife and kids to lie about Tony's past and claim that they are the wife and kids he abandoned years ago.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "خبرنگار چارلی فارنوم سعی می‌کند یک خبر داغ درباره زندگی سرگرد تونی نلسون بگیرد. او تا آنجا پیش می‌رود که یک دوربین و ضبط‌صوت در خانه تونی نصب می‌کند. اما تونی و جینی از نقشه فارنوم باخبر می‌شوند و آن را خنثی می‌کنند. فارنوم بعد به باج‌گیری روی می‌آورد وقتی همسر و بچه‌هایش را قانع می‌کند درباره گذشته تونی دروغ بگویند و ادعا کنند که آنها همسر و بچه‌هایی هستند که سال‌ها پیش ترکشان کرده است.",
+     "imdb": {
+      "r": 7.5,
+      "v": 218
+     },
+     "still": "/vhUa924lX4N8RqBJsE4JcwsSrga.jpg"
+    }
+   ],
+   "5": [
+    {
+     "n": 1,
+     "name": "Jeannie at the Piano",
+     "name_fa": "",
+     "rating": 7.0,
+     "runtime": 25,
+     "ov_en": "After Jeannie places a hex on a NASA piano so that the player sounds like an expert, Tony feels that only he can play it and ends up on a concert tour.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "پس از اینکه جینی یک طلسم روی پیانوی ناسا می‌گذارد تا نوازنده‌اش مثل یک متخصص صدا بدهد، تونی حس می‌کند فقط او می‌تواند آن را بنوازد و سر از یک تور کنسرت درمی‌آورد.",
+     "imdb": {
+      "r": 7.3,
+      "v": 218
+     },
+     "still": "/rpvsWmKfVpjU1jGOCp3wPwNunIu.jpg"
+    },
+    {
+     "n": 2,
+     "name": "Djinn, Djinn, the Pied Piper",
+     "name_fa": "",
+     "rating": 7.0,
+     "runtime": 25,
+     "ov_en": "Djinn Djinn, the uniform hating dog, returns, wreaking havoc with General Schaeffer's dog.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جین‌جین، سگی که از یونیفرم متنفر است، برمی‌گردد و با سگ ژنرال شفر دردسر درست می‌کند.",
+     "imdb": {
+      "r": 5.9,
+      "v": 212
+     },
+     "still": "/dnNm4P17EWHf8a7tuZ3X0BOpibJ.jpg"
+    },
+    {
+     "n": 3,
+     "name": "Guess Who's Going to Be a Bride? (1)",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "After another rebuff by Tony to marry her, Jeannie takes up her uncle's offer to become queen of a foreign country.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "پس از رد دوباره پیشنهاد ازدواج توسط تونی، جینی پیشنهاد عمویش را می‌پذیرد تا ملکه یک کشور خارجی شود.",
+     "imdb": {
+      "r": 7.2,
+      "v": 213
+     },
+     "still": "/oWzUucOk6AumSR0q30y5K3bOnFc.jpg"
+    },
+    {
+     "n": 4,
+     "name": "Guess Who's Going to Be a Bride? (2)",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "After Jeannie leaves, Tony realizes he can't live without her and goes after Jeannie.\n\nWhen they return to NASA, Tony's announcement that they are engaged is a surprise even to Jeannie.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "پس از رفتن جینی، تونی متوجه می‌شود که بدون او نمی‌تواند زندگی کند و دنبال جینی می‌رود. وقتی به ناسا برمی‌گردند، اعلام نامزدی تونی حتی برای خود جینی هم غافلگیرکننده است.",
+     "imdb": {
+      "r": 7.5,
+      "v": 203
+     },
+     "still": "/rCEdOH6vATXThIBlLAvEpMllmJo.jpg"
+    },
+    {
+     "n": 5,
+     "name": "Jeannie's Beauty Cream",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie gives Amanda Bellows some of her beauty cream that turns her into the most beautiful woman at NASA, but no one recognizes her.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی مقداری از کرم زیبایی‌اش را به آماندا بلوز می‌دهد که او را به زیباترین زن ناسا تبدیل می‌کند، اما هیچ‌کس او را نمی‌شناسد.",
+     "imdb": {
+      "r": 7.9,
+      "v": 234
+     },
+     "still": "/zrR3c2aH6a3dEraRQJvbKQsQxM7.jpg"
+    },
+    {
+     "n": 6,
+     "name": "Jeannie and the Bachelor Party",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Against Tony's wishes, Roger and Dr. Bellows scheme to throw the future groom a bachelor party.  The party must be kept secret from Amada Bellows and the other NASA wives.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "برخلاف میل تونی، راجر و دکتر بلوز نقشه می‌کشند برای داماد آینده یک مهمانی مجردی برگزار کنند. مهمانی باید از آماندا بلوز و دیگر همسران ناسا مخفی بماند.",
+     "imdb": {
+      "r": 7.7,
+      "v": 214
+     },
+     "still": "/m3SQGwfhmqMS1ToLepgxzmKeBqv.jpg"
+    },
+    {
+     "n": 7,
+     "name": "The Blood of a Jeannie",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "When it's discovered that Jeannie has green corpuscles instead of red ones (or so she thinks), Tony tells her to find a substitute for the blood test to get their certificate of perfect health in order to go ahead with their marriage.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "وقتی معلوم می‌شود جینی به جای گلبول‌های قرمز، گلبول سبز دارد (یا او این‌طور فکر می‌کند)، تونی به او می‌گوید برای آزمایش خون یک جایگزین پیدا کند تا گواهی سلامت کامل برای پیشبرد ازدواجشان را بگیرند.",
+     "imdb": {
+      "r": 7.4,
+      "v": 203
+     },
+     "still": "/tve9pVo60X3kEgoWLYkNwTOmy1I.jpg"
+    },
+    {
+     "n": 8,
+     "name": "See You in C-U-B-A",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie blinks Tony off of a plane in order to plan for a party, but when she puts him back in it he mistakenly lands in Havana, Cuba instead of Puerto Rico thanks to Jeannie's guidance of the plane.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی تونی را از هواپیما پایین می‌آورد تا برای یک مهمانی برنامه‌ریزی کند، اما وقتی او را برمی‌گرداند، تونی اشتباهی به جای پورتوریکو به لطف هدایت جینی در هاوانا، کوبا، فرود می‌آید.",
+     "imdb": {
+      "r": 7.3,
+      "v": 215
+     },
+     "still": "/7oRjpWlFMBhYpWpbIDqskUvOcaV.jpg"
+    },
+    {
+     "n": 9,
+     "name": "The Mad Home Wrecker",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "The Bellows' give Tony and Jeannie an early wedding present; a grotesque looking piece of artwork. That's not all, they and others chip in to hire a redecorator to redecorate their home. As it turns out, the redecorator has no taste and Jeannie ends up redecorating their home in the blink of an eye.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "خانواده بلوز به تونی و جینی یک هدیه عروسی زودهنگام می‌دهند؛ یک اثر هنری زشت. این همه ماجرا نیست؛ آنها و دیگران پول جمع می‌کنند تا یک دکوراتور استخدام کنند تا خانه‌شان را دوباره دکور کند. اما معلوم می‌شود دکوراتور سلیقه‌ای ندارد و جینی در چشم بر هم زدنی خانه‌شان را خودش دوباره دکور می‌کند.",
+     "imdb": {
+      "r": 6.8,
+      "v": 216
+     },
+     "still": "/4hFSJnkWprFO5avevqK7LA2Xq2r.jpg"
+    },
+    {
+     "n": 10,
+     "name": "Uncles a Go-Go",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "It is figured out that in order for Jeannie to be married, one of her uncles must approve of the husband to be. Two uncles end up showing; Vasmir and Azmir; and causing a whole heap of trouble for Tony.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "معلوم می‌شود که برای ازدواج جینی، یکی از عموهایش باید شوهر آینده را تایید کند. دو عمو سر می‌رسند؛ واسمیر و ازمیر؛ و برای تونی دردسر زیادی درست می‌کنند.",
+     "imdb": {
+      "r": 6.8,
+      "v": 205
+     },
+     "still": "/p4fjBrZpcJo2msMj0FOCNv0xpMD.jpg"
+    },
+    {
+     "n": 11,
+     "name": "The Wedding",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie and her master's wedding day arrives and NASA wants photos of the wedding. -- only genies don't photograph!",
+     "ov_fa_tmdb": null,
+     "ov_fa": "روز عروسی جینی و صاحبش می‌رسد و ناسا عکس‌های عروسی را می‌خواهد — اما جنّ‌ها عکس نمی‌گیرند!",
+     "imdb": {
+      "r": 7.7,
+      "v": 229
+     },
+     "still": "/dWhM49IzHWd4m6yorQb9KEIKGUR.jpg"
+    },
+    {
+     "n": 12,
+     "name": "My Sister, the Homewrecker",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie's sister returns for a final time to foul things up again. This time, she poses as her sister and makes the others think she is having an affair with another astronaut named Biff Jellico (Played by Eden's real life husband Michael Ansara) all the while Tony and Jeannie are oblivious to it.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "خواهر جینی برای آخرین بار برمی‌گردد تا دوباره همه‌چیز را خراب کند. این بار، او خودش را جای خواهرش جا می‌زند و به دیگران القا می‌کند که با یک فضانورد دیگر به نام بیف جلیکو رابطه دارد، در حالی که تونی و جینی از همه‌چیز بی‌خبرند.",
+     "imdb": {
+      "r": 7.7,
+      "v": 222
+     },
+     "still": "/hHizaEPFrRbgcDADbT0DhPK1G21.jpg"
+    },
+    {
+     "n": 13,
+     "name": "Jeannie, the Matchmaker",
+     "name_fa": "",
+     "rating": 8.0,
+     "runtime": 25,
+     "ov_en": "Jeannie; feeling sorry for Roger; decides to help him out by going to a computer dating agency and setting him up with a girl while Tony is trying to set Roger up with the General's niece.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی که دلش برای راجر می‌سوزد، تصمیم می‌گیرد به او کمک کند؛ به یک آژانس دوست‌یابی کامپیوتری می‌رود و او را با یک دختر آشنا می‌کند، در حالی که تونی سعی می‌کند راجر را با خواهرزاده ژنرال آشنا کند.",
+     "imdb": {
+      "r": 7.7,
+      "v": 221
+     },
+     "still": "/3ViT3N6WJQ1wgpk1CpphLw8ap5p.jpg"
+    },
+    {
+     "n": 14,
+     "name": "Never Put a Genie on a Budget",
+     "name_fa": "",
+     "rating": 8.0,
+     "runtime": 25,
+     "ov_en": "New housewife Jeannie goes overboard when Tony puts her on a budget.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی، زن خانه‌دار تازه، وقتی تونی او را در بودجه قرار می‌دهد، زیاده‌روی می‌کند.",
+     "imdb": {
+      "r": 7.4,
+      "v": 207
+     },
+     "still": "/vseKjyDRzRlXEv0xkJ6LYvSchXt.jpg"
+    },
+    {
+     "n": 15,
+     "name": "Please Don't Give My Jeannie No More Wine",
+     "name_fa": "",
+     "rating": 8.0,
+     "runtime": 25,
+     "ov_en": "At a casual dinner at the Bellows' Household, Jeannie mistakenly gives them wine that makes them invisible.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "در یک شام غیررسمی در خانه بلوزها، جینی اشتباهی به آنها شرابی می‌دهد که آنها را نامرئی می‌کند.",
+     "imdb": {
+      "r": 7.6,
+      "v": 227
+     },
+     "still": "/ndSYEdU2ahDQAGrKAaiuGocDuKo.jpg"
+    },
+    {
+     "n": 16,
+     "name": "One of Our Hotels is Growing",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie, Tony, Roger and the Bellows' go on vacation only to find there are no rooms available in the hotel they wish to stay in. Jeannie then proceeds to blink on a 13th floor.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی، تونی، راجر و خانواده بلوز به تعطیلات می‌روند، اما متوجه می‌شوند هیچ اتاقی در هتلی که می‌خواهند بمانند خالی نیست. جینی بعد یک طبقه سیزدهم ظاهر می‌کند.",
+     "imdb": {
+      "r": 7.8,
+      "v": 227
+     },
+     "still": "/tdU1z8GvyFhfew7s7bhJGpEEg5E.jpg"
+    },
+    {
+     "n": 17,
+     "name": "The Solid Gold Jeannie",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "An overzealous Jeannie blinks herself into Tony's isolation unit after he returns from the moon.\n\nShe turns herself into a solid gold statue to not appear conspicuous, but must she stay that way?",
+     "ov_fa_tmdb": null,
+     "ov_fa": "یک جینی بیش‌ازحد مشتاق پس از بازگشت تونی از ماه، خودش را به واحد قرنطینه او می‌رساند. او خودش را به یک مجسمه طلای جامد تبدیل می‌کند تا جلب توجه نکند، اما آیا باید همین‌طور بماند؟",
+     "imdb": {
+      "r": 7.3,
+      "v": 210
+     },
+     "still": "/7j4v8IhyQ5ZM3mvbISmIAVmkvQV.jpg"
+    },
+    {
+     "n": 18,
+     "name": "Mrs. Djinn Djinn",
+     "name_fa": "",
+     "rating": 7.0,
+     "runtime": 25,
+     "ov_en": "Roger spreads the word to everyone that Jeannie is expecting but all the while its a misunderstanding and the only one that is expecting is Mrs. Djinn Djinn (the dog).",
+     "ov_fa_tmdb": null,
+     "ov_fa": "راجر به همه خبر می‌دهد که جینی باردار است، اما همه‌چیز سوءتفاهم است و تنها کسی که باردار است خانم جین‌جین (سگ) است.",
+     "imdb": {
+      "r": 7.2,
+      "v": 202
+     },
+     "still": "/faa7sDCwwNPdjTGzfsh0SAoL4uB.jpg"
+    },
+    {
+     "n": 19,
+     "name": "Jeannie and the Curious Kid",
+     "name_fa": "",
+     "rating": 8.0,
+     "runtime": 25,
+     "ov_en": "The Bellows' troublesome nephew stays at the Nelson house for a couple days and figures out the truth about Jeannie when he sees her smoke into her bottle.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "برادرزاده دردسرساز خانواده بلوز چند روزی در خانه نلسون می‌ماند و وقتی می‌بیند جینی به داخل بطری‌اش دود می‌شود، حقیقت را درباره جینی می‌فهمد.",
+     "imdb": {
+      "r": 7.5,
+      "v": 209
+     },
+     "still": "/nvFoyqphoPEsPiD64leq7zqGyN8.jpg"
+    },
+    {
+     "n": 20,
+     "name": "Jeannie, the Recording Secretary",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Jeannie has just recently joined a club at NASA and voted recording secretary. She then learns that there is an award competition coming up for the best husband and that the prize is a trip for two to Hawaii. She wants Tony to win so badly that she blinks him off his training and returns him at home in his sleepy state.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "جینی به تازگی به یک باشگاه در ناسا پیوسته و به عنوان منشی ثبت انتخاب شده است. بعد متوجه می‌شود که یک مسابقه برای بهترین شوهر در راه است و جایزه آن سفری دو نفره به هاوایی است. او آن‌قدر می‌خواهد تونی برنده شود که او را از آموزشش می‌رباید و در حالت خواب‌آلود به خانه برمی‌گرداند.",
+     "imdb": {
+      "r": 7.2,
+      "v": 188
+     },
+     "still": "/7j8awtqYjjbqX9qGGk12hadwWT6.jpg"
+    },
+    {
+     "n": 21,
+     "name": "Help, Help, a Shark",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "Tony causes general Schaeffer to lose an important pool match and breaking his hand later on so it seems he can't play in a rematch. Tony then must play for him with the aid of Jeannie.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "تونی باعث می‌شود ژنرال شفر یک مسابقه مهم بیلیارد را ببازد و بعد دستش را بشکند، به نظر می‌رسد که نمی‌تواند در مسابقه برگشت بازی کند. پس تونی باید با کمک جینی به جای او بازی کند.",
+     "imdb": {
+      "r": 7.6,
+      "v": 205
+     },
+     "still": "/sFsj13OjToKz9L9PyH32E6oik1b.jpg"
+    },
+    {
+     "n": 22,
+     "name": "Eternally Yours, Jeannie",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "An old high school sweethart of Tony's sends him a letter saying she will visit him in the upcoming day. Jeannie becomes jealous and poses as her to fool Tony.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "یک عشق قدیمی دبیرستانی تونی نامه‌ای برایش می‌فرستد و می‌گوید که فردا به دیدارش می‌آید. جینی حسادت می‌کند و خودش را جای او جا می‌زند تا تونی را فریب دهد.",
+     "imdb": {
+      "r": 7.5,
+      "v": 212
+     },
+     "still": "/mEEPM9Pfoy8a2TR2Gq9SAs0NXUi.jpg"
+    },
+    {
+     "n": 23,
+     "name": "An Astronaut in Sheep's Clothing",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "On Jeannie and Tony's 6 month wedding anniversary, Jeannie wants desperately to please Tony by knitting him a cashmir sweater while Tony wants to get her a string of pearls. None of which ends up being accomplished.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "در ششمین ماهگرد ازدواج جینی و تونی، جینی می‌خواهد با بافتن یک ژاکت کشمیر تونی را خیلی خوشحال کند، در حالی که تونی می‌خواهد برای او یک گردنبند مروارید بخرد. هیچ‌کدام انجام نمی‌شود.",
+     "imdb": {
+      "r": 7.1,
+      "v": 196
+     },
+     "still": "/ApBRNUMLqoE4Cpq2V20fGCNyPKA.jpg"
+    },
+    {
+     "n": 24,
+     "name": "Hurricane Jeannie",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "A hurricane traps Tony, Jeannie, Roger and Dr. Bellows overnight in the Nelson's house.   Tony dreams Dr. Bellows figures out the real truth about Jeannie and her powers.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "یک توفان تونی، جینی، راجر و دکتر بلوز را یک شب در خانه نلسون گیر می‌اندازد. تونی خواب می‌بیند که دکتر بلوز حقیقت واقعی را درباره جینی و قدرت‌هایش می‌فهمد.",
+     "imdb": {
+      "r": 8.2,
+      "v": 227
+     },
+     "still": "/rX9hQAgyUoACrPvZtcC751jykL5.jpg"
+    },
+    {
+     "n": 25,
+     "name": "One Jeannie Beats Four of a Kind",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "There is a card shark working NASA over.",
+     "ov_fa_tmdb": null,
+     "ov_fa": "یک قمارباز حرفه‌ای ناسا را سر کار گذاشته است.",
+     "imdb": {
+      "r": 7.7,
+      "v": 205
+     },
+     "still": "/ytYXxuT1oVrXb2ZdDIZvkrIlE8o.jpg"
+    },
+    {
+     "n": 26,
+     "name": "My Master, the Chili King",
+     "name_fa": "",
+     "rating": 0,
+     "runtime": 25,
+     "ov_en": "In this final episode of I Dream of Jeannie, Tony's cousin comes to visit and convinces Jeannie to put Tony's face on cans of chili and market them so they can supposedly become rich. The product is called \"Cousin Tony's Texas Chili.\"",
+     "ov_fa_tmdb": null,
+     "ov_fa": "در این قسمت پایانی «رویای جینی»، پسرعموی تونی به دیدار می‌آید و جینی را قانع می‌کند که صورت تونی را روی قوطی‌های چیلی بگذارند و آنها را بفروشند تا ظاهراً ثروتمند شوند. محصول «چیلی تگزاس پسرعموی تونی» نام دارد.",
+     "imdb": {
+      "r": 7.1,
+      "v": 209
+     },
+     "still": "/hd7RKbs3h2FT7ei5c2Wk72wAaR0.jpg"
+    }
+   ]
+  }
+ }
+}
