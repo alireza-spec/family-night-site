@@ -4097,7 +4097,7 @@ async function loadHome() {
          newest-first). The live refresh below only MERGES into it. */
       try {
         var _stN = await fnStaticJson('newest.json', null, DL_BASE);
-        if (_stN && (_stN.movies || {}).results && _stN.movies.results.length) { rows.newM25 = _stN.movies.results.slice(0, 20); try { fnPaintHome(rows); } catch (e2) {} }
+        if (_stN && (_stN.movies || {}).results && _stN.movies.results.length) { rows.newM25 = _stN.movies.results.slice().sort(function (a, b) { return String(b.release_date || '').localeCompare(String(a.release_date || '')); }).slice(0, 20); try { fnPaintHome(rows); } catch (e2) {} }
       } catch (e) {}
       /* newM25 rail: live TMDB discover. NO-FLOOR WALL (parent-measured
          2026-11-20 ~19:30): a date-desc discover with NO vote floor
@@ -4993,6 +4993,22 @@ async function loadArchPage() {
     })), 15000);
     if (!anyOk) throw new Error('streams');
     let items = [].concat(...batches);
+    /* FN-NEWEST-SORT v1 (movies): seed the see-all pool with the static
+       newest.json movies on EVERY loadArchPage call. The live discover
+       pool is popularity-sorted (NO-FLOOR WALL) and never contains the
+       low-vote new releases (Savage Mountain / Steps / Perfect Liars,
+       all 2026-11-20); the static list is deep-walked, archive-linked
+       only, no vote floor. Seeding happens BEFORE the seen-dedup below,
+       so already-shown cards are still removed and re-seeding needs no
+       flag. The final sort below (date-desc default) orders by
+       release_date desc. Series are NOT seeded here (part 3). */
+    if (arch.collKey === 'newM25') {
+      try {
+        var _stSeedN = await fnStaticJson('newest.json', null, DL_BASE);
+        var _seedMovies = (_stSeedN && (_stSeedN.movies || {}).results) || [];
+        if (_seedMovies.length) items = _seedMovies.map(function (x) { return Object.assign({}, x, { media_type: 'movie' }); }).concat(items);
+      } catch (e) {}
+    }
     const seen = new Set([...grid.querySelectorAll('[data-open]')].map(el => el.dataset.open));
     items = items.filter(x => { const k = (x.media_type || 'movie') + ':' + x.id; if (seen.has(k)) return false; seen.add(k); return true; });
     /* Trending (user rule): only RELEASED + last-3-months + notable
