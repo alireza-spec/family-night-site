@@ -15,8 +15,8 @@
    "part": 0
   },
   {
-   "bytes": 9438601,
-   "entries": 2197,
+   "bytes": 9424366,
+   "entries": 2193,
    "file": "play-index-part-1.json",
    "part": 1
   },
@@ -39,8 +39,8 @@
    "part": 4
   },
   {
-   "bytes": 8478195,
-   "entries": 127,
+   "bytes": 8426946,
+   "entries": 125,
    "file": "play-index-part-5.json",
    "part": 5
   },
@@ -105,8 +105,8 @@
    "part": 15
   },
   {
-   "bytes": 4076247,
-   "entries": 350,
+   "bytes": 4074753,
+   "entries": 349,
    "file": "play-index-part-16.json",
    "part": 16
   },
