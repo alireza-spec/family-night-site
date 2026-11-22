@@ -227,51 +227,6 @@
   },
   "year": 2026
  },
- "title:killbillthewholebloodyaffair20062006": {
-  "imdb": null,
-  "num": 2372,
-  "part": 3,
-  "play": [
-   {
-    "encoder": "Sermovie",
-    "episode": null,
-    "group": "SoftSub",
-    "join_tier": 1,
-    "play_type": "hardsub",
-    "play_url": "https://dl5.sermoviedown.pw/Movies/2026/Kill.Bill.The.Whole.Bloody.Affair.2006/Kill.Bill.The.Whole.Bloody.Affair.2006.1080p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
-    "playit_url": null,
-    "quality": "WEBRip 1080p 10bit x265",
-    "quality_label": "webrip 1080p 10bit x265",
-    "season": null,
-    "size_bytes": null,
-    "size_text": ""
-   },
-   {
-    "encoder": "Sermovie",
-    "episode": null,
-    "group": "SoftSub",
-    "join_tier": 1,
-    "play_type": "hardsub",
-    "play_url": "https://dl5.sermoviedown.pw/Movies/2026/Kill.Bill.The.Whole.Bloody.Affair.2006/Kill.Bill.The.Whole.Bloody.Affair.2006.720p.10bit.WEBRip.6CH.x265.HEVC-PSA.SoftSub.Sermovie.mkv",
-    "playit_url": null,
-    "quality": "WEBRip 720p 10bit x265",
-    "quality_label": "webrip 720p 10bit x265",
-    "season": null,
-    "size_bytes": null,
-    "size_text": ""
-   }
-  ],
-  "title": "Kill Bill The Whole Bloody Affair 2006 2006",
-  "tmdb_key": null,
-  "type": "movie",
-  "video_mp4": {
-   "is_trailer": false,
-   "size_bytes": null,
-   "size_text": "",
-   "url": null
-  },
-  "year": 2006
- },
  "title:marceletmonsieurpagnol2025": {
   "imdb": null,
   "num": 2724,
@@ -199085,8 +199040,8 @@
  },
  "tt6019206": {
   "imdb": "tt6019206",
-  "num": 2373,
-  "part": 3,
+  "num": 2372,
+  "part": "old-3",
   "play": [
    {
     "encoder": "Sermovie",
@@ -199159,15 +199114,10 @@
     "size_text": "2.3 GB"
    }
   ],
-  "title": "Kill Bill: The Whole Bloody Affair 2006",
+  "title": "Kill Bill: The Whole Bloody Affair",
   "tmdb_key": "movie:414419",
   "type": "movie",
-  "video_mp4": {
-   "is_trailer": false,
-   "size_bytes": null,
-   "size_text": "",
-   "url": null
-  },
+  "video_mp4": null,
   "year": 2006
  },
  "tt6020800": {

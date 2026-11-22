@@ -15,8 +15,8 @@
    "part": 0
   },
   {
-   "bytes": 9434406,
-   "entries": 2193,
+   "bytes": 9434061,
+   "entries": 2192,
    "file": "play-index-part-1.json",
    "part": 1
   },
@@ -27,13 +27,13 @@
    "part": 2
   },
   {
-   "bytes": 8333428,
-   "entries": 2984,
+   "bytes": 8329850,
+   "entries": 2986,
    "file": "play-index-part-3.json",
    "part": 3
   },
   {
-   "bytes": 9200007,
+   "bytes": 9226205,
    "entries": 1594,
    "file": "play-index-part-4.json",
    "part": 4
@@ -105,8 +105,8 @@
    "part": 15
   },
   {
-   "bytes": 4076410,
-   "entries": 350,
+   "bytes": 4068003,
+   "entries": 349,
    "file": "play-index-part-16.json",
    "part": 16
   },
