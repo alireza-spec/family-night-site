@@ -7382,7 +7382,15 @@ function dlSheetHtml(isSeries) {
   return '<div class="fn-dl-sheet" hidden>' + inner + '</div>';
 }
 function wireDlTiles(root, ctx) {
-  if (!root || !ctx || root._fnDlWired) return;
+  if (!root || !ctx) return;
+  /* FN-DL-REWIRE v1: the download box can be rendered twice on the SAME
+     #d-dl-body element — a second loadDownloadBox call (e.g. the
+     local-detail hydrate racing the main detail load) replaces the tiles
+     after the first wire. The old root-level _fnDlWired guard skipped
+     the re-wire, so the new tiles had NO click handlers: rows rendered
+     fine but taps did nothing (no sheet, no error). All bindings below
+     are onclick assignments (idempotent overwrites), so re-wiring is
+     safe and always binds the CURRENT tiles to the CURRENT ctx. */
   root._fnDlWired = true;
   function showSheet() {
     var sh = root.querySelector('.fn-dl-sheet');
