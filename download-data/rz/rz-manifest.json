@@ -2,14 +2,14 @@
  "code": "RZ",
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
  "start_num": 12560,
- "end_num": 12990,
- "live_base_head": "557cf9b2957c7f9ab05191f851e5a2a99ae9dadb (RezFlix series full extraction unknown-quality-2b5-new)",
- "generated": "2026-11-22 (RezFlix series full extraction, unknown-quality-2b5-new)",
+ "end_num": 12994,
+ "live_base_head": "fcfc526f16290bfcd30eef184e03707859bad096 (5h run 20261122T211416Z; rebased onto fcfc526f RZ classifier retro-fix; H3 max #12990 verified from live files, RZ part-1 max #12990)",
+ "generated": "2026-11-23 (RezFlix 5-hourly run 20261122T211416Z — merge of 4 new titles + 3 trailer keys; cumulative manifest)",
  "counts": {
-  "total_titles": 147,
-  "movies": 13,
-  "series": 134,
-  "total_links": 8437,
+  "total_titles": 151,
+  "movies": 16,
+  "series": 135,
+  "total_links": 8694,
   "by_year": {
    "1955": 2,
    "1960": 3,
@@ -47,14 +47,15 @@
    "2023": 1,
    "2024": 1,
    "2014": 1,
-   "2026": 11,
+   "2026": 13,
    "2015": 1,
-   "2025": 1
+   "2025": 2,
+   "2020": 1
   },
   "by_quality": {
-   "720p": 4133,
-   "1080p": 748,
-   "480p": 2854,
+   "720p": 4219,
+   "1080p": 835,
+   "480p": 2938,
    "نامشخص": 464,
    "576p": 14,
    "CAM 720p": 9,
@@ -1686,10 +1687,66 @@
    "quality": "نامشخص",
    "rezflix_id": 7700,
    "identity_note": "TMDB+IMDb+OMDb agree (feed 1983, tmdb 4035, tt0085033). Persian name (none found). Quality «نامشخص» (unknown — real size/quality to be corrected later; exact URLs + SxxExx mapping in the batch build report)."
+  },
+  {
+   "title": "The Secret of Skinwalker Ranch",
+   "tmdb": 101359,
+   "imdb": "tt10589968",
+   "year": 2020,
+   "num": 12991,
+   "links": 251,
+   "quality": "1080p,480p,720p",
+   "rezflix_id": 36037,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2020, TMDB 2020, tt10589968). Persian name راز مزرعه اسکین‌واکر (feed)."
+  },
+  {
+   "title": "Christmas at Fields Ranch",
+   "tmdb": 1574367,
+   "imdb": "tt37964718",
+   "year": 2025,
+   "num": 12992,
+   "links": 2,
+   "quality": "1080p,720p",
+   "rezflix_id": 36115,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2025, TMDB 2025, tt37964718). Persian name کریسمس در مزرعه فیلدز (feed)."
+  },
+  {
+   "title": "Children of Heaven",
+   "tmdb": 1415360,
+   "imdb": "tt37498793",
+   "year": 2026,
+   "num": 12993,
+   "links": 2,
+   "quality": "1080p,720p",
+   "rezflix_id": 36116,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt37498793). Persian name بچه‌ های آسمان (feed)."
+  },
+  {
+   "title": "Cool Books",
+   "tmdb": 1548008,
+   "imdb": "tt37438659",
+   "year": 2026,
+   "num": 12994,
+   "links": 2,
+   "quality": "1080p,720p",
+   "rezflix_id": 36118,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt37438659). Persian name کتاب‌ های جذاب (feed)."
   }
  ],
- "trailer_keys_added": [],
- "queued_titles": [],
- "url_dupes_dropped": [],
+ "trailer_keys_added": [
+  "movie:1574367",
+  "movie:1415360",
+  "movie:1548008"
+ ],
+ "queued_titles": [
+  {
+   "title": "Whatever It Takes",
+   "rezflix_id": 36117,
+   "reason": "OMDb title 'Ceux qui comptent' disagrees with 'Whatever It Takes'"
+  }
+ ],
+ "url_dupes_dropped": [
+  "http://s1.giftmond.ir/Zahra/1405/1405.08.30/1SoftSub/The%20Secret%20of%20Skinwalker%20Ranch/S01/720/The.Secret.of.Skinwalker.Ranch.S01E08.720p.WEBRip.SoftSub.SigmaFa.mkv"
+ ],
  "note": "Section per filename markers (DESIGN §4); description footer 'زیرنویس چسبیده پارسی' is generic and does not set play_type. MANIFEST REBUILT from the live rz play-index (authoritative): the old manifest files were incomplete (batch 1 kept only Musketeers; the twice-daily counts did not match its films list), so films + counts here are derived from the play rows."
 }

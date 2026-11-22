@@ -84733,5 +84733,33 @@
   "part": "rz",
   "title": "Inspector Gadget",
   "year": 1983
+ },
+ "tv:101359": {
+  "imdb_id": "tt10589968",
+  "num": 12991,
+  "part": "rz",
+  "title": "The Secret of Skinwalker Ranch",
+  "year": 2020
+ },
+ "movie:1574367": {
+  "imdb_id": "tt37964718",
+  "num": 12992,
+  "part": "rz",
+  "title": "Christmas at Fields Ranch",
+  "year": 2025
+ },
+ "movie:1415360": {
+  "imdb_id": "tt37498793",
+  "num": 12993,
+  "part": "rz",
+  "title": "Children of Heaven",
+  "year": 2026
+ },
+ "movie:1548008": {
+  "imdb_id": "tt37438659",
+  "num": 12994,
+  "part": "rz",
+  "title": "Cool Books",
+  "year": 2026
  }
 }
