@@ -7578,6 +7578,46 @@ function wireDlTiles(root, ctx) {
     placeSheet(tile);
     updateSheet();
     showSheet();
+    /* FN-INFO-TV v1: an archive series with an info-tv decade file
+       fills the sheet's info top (same v5 top as an S1 tap) once the
+       file loads; no file / no episode -> the top stays hidden and
+       the sheet is unchanged. */
+    try { fillInfoSheetTop(key); } catch (e) {}
+  }
+  /* FN-INFO-TV v1 — archive-episode fill: the info-tv decade file
+     (per-episode stills/synopses/IMDb/runtime) fills the sheet's info
+     top for an ARCHIVE tap, reusing the v5 machinery (updateS1SheetTop
+     + translateS1Syn + loadS1Still + the shared synopsis cache). The
+     adapted record carries NO links — the archive sheet already holds
+     ctx.epLinks from selectEp. Guards: only series with a tmdbId;
+     the tapped episode must still be the open one when the file
+     lands (ctx.epKey check); ctx.s1Key is namespaced 'info:' so a
+     later S1 tap invalidates the pending translation. No info file
+     or no episode -> the top stays hidden (current behavior). */
+  async function fillInfoSheetTop(key) {
+    if (!ctx.isSeries || !ctx.tmdbId) return;
+    try {
+      var ent = await getInfoTvFor('tv:' + ctx.tmdbId, ctx.year);
+      if (!ent || !ent.seasons) return;
+      if (ctx.epKey !== key) return;
+      var parts = String(key).split('|');
+      var s = parts[0];
+      var n = parseInt(parts[1], 10) || 0;
+      var list = ent.seasons[s] || ent.seasons[String(parseInt(s, 10) || s)] || [];
+      var iep = null;
+      for (var i = 0; i < list.length; i++) { if ((list[i].n | 0) === n) { iep = list[i]; break; } }
+      if (!iep) return;
+      if (ctx.epKey !== key) return;
+      var rec = { season: String(s), episode: String(n), tmdb: 'tv:' + ctx.tmdbId,
+        name: iep.name || '', name_fa: iep.name_fa || '',
+        rating: (typeof iep.rating === 'number' ? iep.rating : 0),
+        runtime: iep.runtime || 0, ov_en: iep.ov_en || '',
+        ov_fa_tmdb: iep.ov_fa_tmdb || '', ov_fa: iep.ov_fa || '',
+        imdb: iep.imdb || null, still: iep.still || '', backdrop: ent.backdrop || '' };
+      ctx.s1Key = 'info:' + rec.tmdb + ':' + rec.season + ':' + rec.episode;
+      if (!ctx.s1Poster && ent.poster) ctx.s1Poster = IMG(ent.poster, 'w500');
+      updateS1SheetTop(rec);
+    } catch (e) { /* no info top — the sheet is unchanged */ }
   }
   /* FN-S1-TV v1 — Server 1 series episodes: own selection (never
      touches ctx.eps), own sheet top (big still + info chips +
@@ -7600,12 +7640,17 @@ function wireDlTiles(root, ctx) {
     var ld = root.querySelector('.fn-dl-still-loader');
     if (!img || !ld) return;
     var tok = ++s1StillToken;
-    var src = ep.still ? IMG(ep.still, 'w780') : '';
+    /* still chain: episode still -> series backdrop -> poster. The
+       poster (last link) shows at once, no loader; a still or a
+       backdrop is a real photo, so it preloads behind the loader and
+       falls back to the poster on error. */
+    var src = s1StillSrc(ep, ctx.s1Poster);
     img.style.display = 'none';
     img.removeAttribute('src');
-    if (!src) {
+    if (!src) { ld.style.display = 'none'; return; }
+    if (!ep.still && !ep.backdrop) {
       ld.style.display = 'none';
-      if (ctx.s1Poster) { img.src = ctx.s1Poster; img.style.display = ''; }
+      img.src = src; img.style.display = '';
       return;
     }
     ld.style.display = 'flex';
@@ -7638,7 +7683,9 @@ function wireDlTiles(root, ctx) {
     /* v5: the embedded (or fa-first) text shows AT ONCE — the live
        attempt only upgrades it. The gtx call races a 2.5s timeout,
        so the loading state can never linger. */
-    if (ep.ov_fa_tmdb) {
+    /* the literal string "None" (a builder bug writing Python None as
+       text) is never a synopsis — it falls through to the embedded text */
+    if (ep.ov_fa_tmdb && ep.ov_fa_tmdb !== 'None') {
       var r0 = { text: ep.ov_fa_tmdb, origin: 'tmdb-fa' };
       s1SynCache[s1SynKey(ep)] = r0;
       show(r0);
@@ -8093,6 +8140,35 @@ async function getS1TvFor(tmdbKey, year) {
   } catch (e) { /* decade file missing/slow — no S1 rows */ }
   return null;
 }
+/* FN-INFO-TV v1 — archive-series info (download-data/info/info-tv-
+   {decade}s.json): per-episode stills, synopses (TMDB fa + embedded
+   Persian), IMDb scores, runtimes — the v5 treatment for archive
+   series, so an archive tap fills the sheet's info top exactly like
+   an S1 tap. Lazy per decade, same shape as the S1 loader (6s
+   timeout, fail-open: a missing/slow file just means no info top). */
+let fnInfoTvDecadeCache = {};
+function getInfoTvDecade(decade) {
+  var key = String(decade);
+  if (fnInfoTvDecadeCache[key]) return Promise.resolve(fnInfoTvDecadeCache[key]);
+  if (!fnInfoTvDecadeCache[key + ':p']) {
+    fnInfoTvDecadeCache[key + ':p'] = fetchJsonTimeout(DL_BASE + 'info/info-tv-' + key + 's.json', 6000)
+      .then(function (x) { fnInfoTvDecadeCache[key] = x || {}; return fnInfoTvDecadeCache[key]; })
+      .catch(function () { fnInfoTvDecadeCache[key] = {}; return fnInfoTvDecadeCache[key]; });
+  }
+  return fnInfoTvDecadeCache[key + ':p'];
+}
+async function getInfoTvFor(tmdbKey, year) {
+  if (!tmdbKey) return null;
+  try {
+    var y = parseInt(year, 10);
+    if (y) {
+      var dec = Math.floor(y / 10) * 10;
+      var map = await getInfoTvDecade(dec);
+      if (map && map[tmdbKey]) return map[tmdbKey];
+    }
+  } catch (e) { /* decade file missing/slow — no info top */ }
+  return null;
+}
 /* sizes row, demo rule: the FIRST and LAST values carry their unit,
    middle values are bare — "232 مگابایت - 181 مگابایت" /
    "1.1 گیگابایت - 496 - 226 مگابایت". */
@@ -8126,8 +8202,22 @@ var s1PrefetchDone = {};
    built episode record with tmdb (V8), so 'tv:57736:1:1' can never
    collide with 'tv:327121:1:1' when the user opens another series. */
 function s1SynKey(ep) { return String(ep.tmdb || '') + ':' + String(ep.season || '') + ':' + String(ep.episode || ''); }
+/* FN-INFO-TV v1 + still chain (user 22:06): the sheet's photo is the
+   episode's own still, else the SERIES BACKDROP (TMDB backdrop_path,
+   w780), else the series poster. The 16:9 slot is object-fit:cover,
+   so the backdrop fills it (cropped, not letterboxed). One helper —
+   loadS1Still, the still prefetch and the archive fill all resolve
+   through it. */
+function s1StillSrc(ep, posterFallback) {
+  if (!ep) return posterFallback || '';
+  if (ep.still) return IMG(ep.still, 'w780');
+  if (ep.backdrop) return IMG(ep.backdrop, 'w780');
+  return posterFallback || '';
+}
 function s1TranslateOne(ep) {
-  if (ep.ov_fa_tmdb) return Promise.resolve({ text: ep.ov_fa_tmdb, origin: 'tmdb-fa' });
+  /* the literal string "None" (a builder bug writing Python None as
+     text) is never a synopsis — it falls through to the embedded text */
+  if (ep.ov_fa_tmdb && ep.ov_fa_tmdb !== 'None') return Promise.resolve({ text: ep.ov_fa_tmdb, origin: 'tmdb-fa' });
   if (!ep.ov_en) return Promise.resolve({ text: ep.ov_fa || '', origin: 'embedded' });
   var url = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=fa&dt=t&q=' + encodeURIComponent(ep.ov_en);
   var timeout = new Promise(function (res) { setTimeout(function () { res(null); }, 2500); });
@@ -8146,10 +8236,10 @@ function s1IdleKick(fn) {
     else setTimeout(fn, 800);
   } catch (e) { setTimeout(fn, 800); }
 }
-function prefetchS1(ctx) {
+function prefetchS1List(ctx, epsMap) {
   try {
-    if (!ctx || !ctx.s1Eps) return;
-    var eps = Object.keys(ctx.s1Eps).map(function (k) { return ctx.s1Eps[k]; });
+    if (!ctx || !epsMap) return;
+    var eps = Object.keys(epsMap).map(function (k) { return epsMap[k]; });
     if (!eps.length) return;
     var cur = String(ctx.s1Season || ctx.season || '');
     eps.sort(function (a, b) {
@@ -8178,7 +8268,7 @@ function prefetchS1(ctx) {
       while (running2 < 2 && j < eps.length) {
         running2++;
         (function (ep) {
-          var src = ep.still ? IMG(ep.still, 'w780') : (ctx.s1Poster || '');
+          var src = s1StillSrc(ep, ctx.s1Poster);
           if (!src) { running2--; stepStill(); return; }
           var im = new Image();
           im.onload = im.onerror = function () { running2--; stepStill(); };
@@ -8188,6 +8278,42 @@ function prefetchS1(ctx) {
     };
     s1IdleKick(stepStill);
   } catch (e) {}
+}
+function prefetchS1(ctx) { try { prefetchS1List(ctx, ctx && ctx.s1Eps); } catch (e) {} }
+function prefetchInfo(ctx) { try { prefetchS1List(ctx, ctx && ctx.infoEps); } catch (e) {} }
+/* FN-INFO-TV v1 — archive prefetch: once the archive box for a series
+   is built, the info-tv decade file loads in the background and every
+   episode's synopsis + big still warms (same pumps as the S1 prefetch:
+   current season first, 2 at a time, idle + visible only), so an
+   archive tap usually finds the text and the still already cached.
+   The map is ctx.infoEps (never ctx.s1Eps — a dual title's S1
+   episodes share the same 's|n' keys); the once-per-series guard is
+   s1PrefetchDone['info:' + tmdbKey], separate from the S1 guard, so a
+   dual title warms BOTH maps. Series only; movies never reach here. */
+async function prefetchInfoFor(ctx, tmdbKey, year) {
+  if (!ctx || !ctx.isSeries || !tmdbKey) return;
+  try {
+    if (s1PrefetchDone['info:' + tmdbKey]) return;
+    s1PrefetchDone['info:' + tmdbKey] = true;
+    var ent = await getInfoTvFor(tmdbKey, year);
+    if (!ent || !ent.seasons) return;
+    if (ctx.infoEps) return;
+    var eps = {};
+    Object.keys(ent.seasons).forEach(function (s) {
+      (ent.seasons[s] || []).forEach(function (iep) {
+        var key = s + '|' + iep.n;
+        eps[key] = { season: String(s), episode: String(iep.n), tmdb: tmdbKey,
+          name: iep.name || '', name_fa: iep.name_fa || '',
+          rating: (typeof iep.rating === 'number' ? iep.rating : 0),
+          runtime: iep.runtime || 0, ov_en: iep.ov_en || '',
+          ov_fa_tmdb: iep.ov_fa_tmdb || '', ov_fa: iep.ov_fa || '',
+          imdb: iep.imdb || null, still: iep.still || '', backdrop: ent.backdrop || '' };
+      });
+    });
+    ctx.infoEps = eps;
+    if (!ctx.s1Poster && ent.poster) ctx.s1Poster = IMG(ent.poster, 'w500');
+    try { prefetchInfo(ctx); } catch (e) {}
+  } catch (e) { /* no prefetch — taps still fill on demand */ }
 }
 async function fnS1TvSection(tmdbKey, posterUrl, title, ctx, year, iranian) {
   if (!tmdbKey || !ctx) return '';
@@ -8213,7 +8339,7 @@ async function fnS1TvSection(tmdbKey, posterUrl, title, ctx, year, iranian) {
         links.sort(function (a, b) { return sizeToMB(b.x.size) - sizeToMB(a.x.size) || resRank(b.sp.res) - resRank(a.sp.res); });
         if (!links.length) return;
         var key = s + '|' + ep.n;
-        eps[key] = { season: String(s), episode: String(ep.n), links: links, tmdb: tmdbKey, name: ep.name || '', name_fa: ep.name_fa || '', rating: (typeof ep.rating === 'number' ? ep.rating : 0), runtime: ep.runtime || 0, ov_en: ep.ov_en || '', ov_fa_tmdb: ep.ov_fa_tmdb || '', ov_fa: ep.ov_fa || '', imdb: ep.imdb || null, still: ep.still || '' };
+        eps[key] = { season: String(s), episode: String(ep.n), links: links, tmdb: tmdbKey, name: ep.name || '', name_fa: ep.name_fa || '', rating: (typeof ep.rating === 'number' ? ep.rating : 0), runtime: ep.runtime || 0, ov_en: ep.ov_en || '', ov_fa_tmdb: ep.ov_fa_tmdb || '', ov_fa: ep.ov_fa || '', imdb: ep.imdb || null, still: ep.still || '', backdrop: ent.backdrop || '' };
         totalLinks += links.length;
       });
     });
@@ -8443,6 +8569,10 @@ async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUr
        passed no fbYear (the harness + any year-less caller) — the H3
        title carries a trailing year ("The Piano Forest 2018"). */
     var s1TvYear = fbYear || (String(rec.title || '').match(/(\d{4})\s*$/) || [])[1] || '';
+    /* FN-INFO-TV v1: the archive ctx year drives the info-tv decade
+       lookup in the archive fill; the record-title year is the
+       fallback when the caller passed no fbYear. */
+    dlBuilt.ctx.year = s1TvYear;
     try { s1TvHtml = await fnS1TvSection(tmdbKey, posterUrl, headTitle, dlBuilt.ctx, s1TvYear, !!iranian); } catch (e) { s1TvHtml = ''; }
     if (token !== detailToken) return;
     body.innerHTML = dlBuilt.html + s1Html + s1TvHtml;
@@ -8460,6 +8590,10 @@ async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUr
     }
     if (s1Html) { var s1vch = body.querySelector('.fn-dl-vchips'); if (s1vch && !s1vch.querySelector('[data-dl-v="s1ext"]')) { var s1cb = document.createElement('button'); s1cb.className = 'fn-dl-vchip'; s1cb.setAttribute('data-dl-v', 's1ext'); s1cb.textContent = 'سرور خارجی'; s1vch.appendChild(s1cb); } }
     wireDlTiles(body, dlBuilt.ctx);
+    /* FN-INFO-TV v1: warm the archive series' info (synopses +
+       stills) in the background — series only, fire-and-forget,
+       never blocks the box. */
+    try { if (dlBuilt.ctx.isSeries) prefetchInfoFor(dlBuilt.ctx, tmdbKey, s1TvYear); } catch (e) {}
     if (faPending) {
       var trSrc = enTitle;
       translateFa(trSrc).then(function (v) {
