@@ -7294,7 +7294,7 @@ function dlSeriesHtml(groups, posterUrl, title, ctx) {
 function dlSheetHtml(isSeries) {
   /* the sheet starts CLOSED in both modes — it opens under the tile
      the user taps, and tapping that same tile again closes it */
-  var inner = '<span class="fn-dl-grip"></span><div class="fn-dl-s1top" hidden><div class="fn-dl-s1still" style="position:relative;width:100%;aspect-ratio:16/9;background:#0b0b10;overflow:hidden;border-radius:.8rem;margin-bottom:.6rem"><img class="fn-dl-s1still-img" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none"><div class="fn-dl-still-loader" style="position:absolute;inset:0;display:none;align-items:center;justify-content:center"><span class="spin"></span></div></div><div class="fn-dl-s1title" style="font-weight:800;font-size:1rem;margin-bottom:.4rem"></div><div class="fn-dl-s1chips" style="margin-bottom:.4rem"></div><div class="fn-dl-s1syn" style="font-size:.88rem;line-height:1.7;color:var(--pearl2);white-space:pre-wrap;margin-bottom:.6rem"></div></div><div class="fn-dl-sum"></div><div class="fn-dl-sub"></div><div class="fn-dl-qchips" hidden></div><div class="fn-dl-acts">';
+  var inner = '<span class="fn-dl-grip"></span><div class="fn-dl-s1top" hidden><div class="fn-dl-s1still" style="position:relative;width:100%;aspect-ratio:16/9;background:#0b0b10;overflow:hidden;border-radius:.8rem;margin-bottom:.6rem"><img class="fn-dl-s1still-img" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none"><div class="fn-dl-still-loader" style="position:absolute;inset:0;display:none;align-items:center;justify-content:center"><span class="spin"></span></div></div><div class="fn-dl-s1title" style="font-weight:800;font-size:1rem;margin-bottom:.4rem"></div><div class="fn-dl-s1chips" style="margin-bottom:.4rem"></div><div class="fn-dl-s1syntag" style="display:none;color:#9aa3b8;font-size:12px;margin-bottom:4px">خلاصه فارسی (اصل)</div><div class="fn-dl-s1syn" style="font-size:.88rem;line-height:1.7;color:var(--pearl2);white-space:pre-wrap;margin-bottom:.6rem"></div></div><div class="fn-dl-sum"></div><div class="fn-dl-sub"></div><div class="fn-dl-qchips" hidden></div><div class="fn-dl-acts">';
   if (isSeries) {
     /* copy is the hero (universal); ADM is a plain row (optional app) */
     inner += '<button class="fn-dl-hero" data-dl-act="copy"><span class="fn-dl-hero-ic">' + FN_DL_COPY_SVG + '</span><span>کپی لینک</span></button>'
@@ -7627,17 +7627,30 @@ function wireDlTiles(root, ctx) {
   function translateS1Syn(ep, synEl) {
     if (!synEl) return;
     var key = ctx.s1Key || '';
+    var tagEl = root.querySelector('.fn-dl-s1syntag');
+    var show = function (res) {
+      if (ctx.s1Key !== key) return;
+      synEl.textContent = res.text;
+      if (tagEl) tagEl.style.display = (res.origin === 'tmdb-fa') ? '' : 'none';
+    };
+    var hit = s1SynCache[s1SynKey(ep)];
+    if (hit) { show(hit); return; }
+    /* v5: the embedded (or fa-first) text shows AT ONCE — the live
+       attempt only upgrades it. The gtx call races a 2.5s timeout,
+       so the loading state can never linger. */
+    if (ep.ov_fa_tmdb) {
+      var r0 = { text: ep.ov_fa_tmdb, origin: 'tmdb-fa' };
+      s1SynCache[s1SynKey(ep)] = r0;
+      show(r0);
+      return;
+    }
     if (ep.ov_fa) synEl.textContent = ep.ov_fa;
+    if (tagEl) tagEl.style.display = 'none';
     if (!ep.ov_en) { if (!ep.ov_fa) synEl.textContent = ''; return; }
     try {
-      var u = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=fa&dt=t&q=' + encodeURIComponent(ep.ov_en);
-      var ctl = new AbortController();
-      var to = setTimeout(function () { try { ctl.abort(); } catch (e) {} }, 3500);
-      fetch(u, { signal: ctl.signal }).then(function (r) { clearTimeout(to); if (!r.ok) throw new Error('gtx'); return r.json(); }).then(function (j) {
-        if (ctx.s1Key !== key) return;
-        var t = '';
-        try { (j[0] || []).forEach(function (row) { if (row && row[0]) t += row[0]; }); } catch (e) {}
-        if (t && t !== ep.ov_en) synEl.textContent = t;
+      s1TranslateOne(ep).then(function (res) {
+        s1SynCache[s1SynKey(ep)] = res;
+        if (res.origin !== 'embedded') show(res);
       }).catch(function () { /* embedded text stays */ });
     } catch (e) { /* embedded text stays */ }
   }
@@ -8025,10 +8038,10 @@ async function fnExtOnlyBox(tmdbKey, posterUrl, fbTitle, fbYear, iranian) {
     return { html: head + chips + secHtml + dlSheetHtml(false), ctx: ctx };
   } catch (e) { return null; }
 }
-/* FN-S1-TV v1 — Server 1 rows for SERIES (Braflix), oldest first,
+/* FN-S1-TV v1 + v5 prefetch — Server 1 rows for SERIES (Braflix), oldest first,
    decade by decade. Static data only: download-data/ext/
    ext-s1-tv-{decade}s.json maps "tv:<tmdb>" -> {year, title_en,
-   seasons: {"1": [{n, name, name_fa, rating, runtime, ov_en, ov_fa,
+   seasons: {"1": [{n, name, name_fa, rating, runtime, ov_en, ov_fa_tmdb, ov_fa,
    imdb: {r, v} | null, still: "/tmdb/path.jpg" | "", q: [qualities
    highest-first], sz: {q: bytes}, fa: bool}]}, total_links,
    total_bytes}. The video URL is deterministic
@@ -8097,6 +8110,85 @@ function s1TvRateColor(r) { return r < 6 ? '#ff5c5c' : (r < 8 ? '#f5b942' : '#4a
 /* The «سرور خارجی» section for a series WITH archive links (dual).
    Registers the episodes into ctx.s1Eps (never touches ctx.eps) and
    returns the section HTML, or '' when the series has no S1 rows. */
+/* FN-S1-TV v5 (user verdict 21:07-21:08 — the v4 scroll is good, only
+   the translation wait lingers): synopsis + still prefetch, fa-first,
+   bounded live attempt. The episode data carries ov_fa_tmdb (the real
+   TMDB Persian overview when it exists; null otherwise) + the embedded
+   ov_fa. From the moment the S1 section is built (fnS1TvSection),
+   translations + big stills warm in the background — current season
+   first, 2 at a time, only when the browser is idle and the tab is
+   visible — so a tap usually finds the text and the still already
+   cached. The live gtx attempt races a 2.5s timeout, then the embedded
+   text stays: the loading state can never linger. */
+var s1SynCache = {};
+var s1PrefetchDone = {};
+/* The cache key is namespaced by series: fnS1TvSection stamps every
+   built episode record with tmdb (V8), so 'tv:57736:1:1' can never
+   collide with 'tv:327121:1:1' when the user opens another series. */
+function s1SynKey(ep) { return String(ep.tmdb || '') + ':' + String(ep.season || '') + ':' + String(ep.episode || ''); }
+function s1TranslateOne(ep) {
+  if (ep.ov_fa_tmdb) return Promise.resolve({ text: ep.ov_fa_tmdb, origin: 'tmdb-fa' });
+  if (!ep.ov_en) return Promise.resolve({ text: ep.ov_fa || '', origin: 'embedded' });
+  var url = 'https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=fa&dt=t&q=' + encodeURIComponent(ep.ov_en);
+  var timeout = new Promise(function (res) { setTimeout(function () { res(null); }, 2500); });
+  var attempt = fetch(url).then(function (r) { if (!r.ok) throw new Error('gtx'); return r.json(); }).then(function (j) {
+    var t = '';
+    try { (j[0] || []).forEach(function (row) { if (row && row[0]) t += row[0]; }); } catch (e) {}
+    return t || null;
+  }).catch(function () { return null; });
+  return Promise.race([attempt, timeout]).then(function (txt) {
+    return txt ? { text: txt, origin: 'live' } : { text: ep.ov_fa || '', origin: 'embedded' };
+  });
+}
+function s1IdleKick(fn) {
+  try {
+    if ('requestIdleCallback' in window) requestIdleCallback(fn, { timeout: 2000 });
+    else setTimeout(fn, 800);
+  } catch (e) { setTimeout(fn, 800); }
+}
+function prefetchS1(ctx) {
+  try {
+    if (!ctx || !ctx.s1Eps) return;
+    var eps = Object.keys(ctx.s1Eps).map(function (k) { return ctx.s1Eps[k]; });
+    if (!eps.length) return;
+    var cur = String(ctx.s1Season || ctx.season || '');
+    eps.sort(function (a, b) {
+      var as = String(a.season || ''), bs = String(b.season || '');
+      if (as === cur && bs !== cur) return -1;
+      if (bs === cur && as !== cur) return 1;
+      if (as !== bs) return (parseInt(as, 10) || 0) - (parseInt(bs, 10) || 0);
+      return (parseInt(a.episode, 10) || 0) - (parseInt(b.episode, 10) || 0);
+    });
+    var i = 0, running = 0;
+    var stepSyn = function () {
+      if (document.hidden) { document.addEventListener('visibilitychange', stepSyn, { once: true }); return; }
+      while (running < 2 && i < eps.length) {
+        running++;
+        (function (ep) {
+          try {
+            s1TranslateOne(ep).then(function (res) { s1SynCache[s1SynKey(ep)] = res; running--; stepSyn(); }).catch(function () { running--; stepSyn(); });
+          } catch (e) { running--; stepSyn(); }
+        })(eps[i++]);
+      }
+    };
+    s1IdleKick(stepSyn);
+    var j = 0, running2 = 0;
+    var stepStill = function () {
+      if (document.hidden) { document.addEventListener('visibilitychange', stepStill, { once: true }); return; }
+      while (running2 < 2 && j < eps.length) {
+        running2++;
+        (function (ep) {
+          var src = ep.still ? IMG(ep.still, 'w780') : (ctx.s1Poster || '');
+          if (!src) { running2--; stepStill(); return; }
+          var im = new Image();
+          im.onload = im.onerror = function () { running2--; stepStill(); };
+          im.src = src;
+        })(eps[j++]);
+      }
+    };
+    s1IdleKick(stepStill);
+  } catch (e) {}
+}
 async function fnS1TvSection(tmdbKey, posterUrl, title, ctx, year, iranian) {
   if (!tmdbKey || !ctx) return '';
   var m = String(tmdbKey).match(/^tv:(\d+)$/);
@@ -8121,7 +8213,7 @@ async function fnS1TvSection(tmdbKey, posterUrl, title, ctx, year, iranian) {
         links.sort(function (a, b) { return sizeToMB(b.x.size) - sizeToMB(a.x.size) || resRank(b.sp.res) - resRank(a.sp.res); });
         if (!links.length) return;
         var key = s + '|' + ep.n;
-        eps[key] = { season: String(s), episode: String(ep.n), links: links, name: ep.name || '', name_fa: ep.name_fa || '', rating: (typeof ep.rating === 'number' ? ep.rating : 0), runtime: ep.runtime || 0, ov_en: ep.ov_en || '', ov_fa: ep.ov_fa || '', imdb: ep.imdb || null, still: ep.still || '' };
+        eps[key] = { season: String(s), episode: String(ep.n), links: links, tmdb: tmdbKey, name: ep.name || '', name_fa: ep.name_fa || '', rating: (typeof ep.rating === 'number' ? ep.rating : 0), runtime: ep.runtime || 0, ov_en: ep.ov_en || '', ov_fa_tmdb: ep.ov_fa_tmdb || '', ov_fa: ep.ov_fa || '', imdb: ep.imdb || null, still: ep.still || '' };
         totalLinks += links.length;
       });
     });
@@ -8159,6 +8251,12 @@ async function fnS1TvSection(tmdbKey, posterUrl, title, ctx, year, iranian) {
       out += '</div>';
     });
     out += '</div>';
+    /* FN-S1-TV v5: warm the synopsis + still caches from the moment the
+       box is built (current season first, 2 at a time, idle + visible).
+       fnS1TvSection runs TWICE per ext-only open (once inside
+       fnS1TvExtOnlyBox, once in the main builder) — prefetch once per
+       series per page load, or the gtx traffic doubles. */
+    if (!s1PrefetchDone[tmdbKey]) { s1PrefetchDone[tmdbKey] = true; try { prefetchS1(ctx); } catch (e) {} }
     return out;
   } catch (e) { return ''; }
 }
