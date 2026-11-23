@@ -398,7 +398,24 @@ box-shadow:0 0 26px rgba(229,169,60,.28),inset 0 0 14px rgba(0,0,0,.65);animatio
 /* ---------- live tv ---------- */
 .tv-layout{display:grid;gap:1.2rem}
 @media(min-width:1000px){.tv-layout{grid-template-columns:1.5fr 1fr;align-items:start}}
-@media(min-width:1000px){.tv-screen{position:sticky;top:5.2rem}}
+/* FN-TV-STICKY v1 (user order 2026-11-23): the live player sticks to the
+   top of the viewport on every screen — the reader stays in the channel
+   list and the player stays visible above him. Desktop keeps the 5.2rem
+   offset under the fixed header; in the app (no header) it sticks at
+   top:0. The solid background keeps the scrolling list from showing
+   through behind the player controls. */
+.tv-screen{position:sticky;top:0;z-index:40;background:var(--bg)}
+@media(min-width:1000px){.tv-screen{top:5.2rem}}
+/* FN-TV-ICONS v1 (user order 2026-11-23): the four TV buttons are
+   icon-only — small, neat, together in one corner above the player.
+   The Persian label stays in the DOM (and in title) for tooltips and
+   screen readers; font-size:0 hides it visually. */
+.tv-tools{display:inline-flex;gap:.35rem;flex-wrap:wrap}
+.tv-tools .tv-tool{padding:.3rem .45rem;min-height:1.7rem;font-size:0;line-height:0}
+.tv-tools .tv-tool svg{vertical-align:middle}
+/* FN-TV-SERVERS v1 (user order 2026-11-23): the per-channel server list
+   is compact — 4–5 servers per row, long names ellipsized. */
+#tv-servers .tv-srv{flex:1 1 calc(20% - .4rem);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center}
 .chan-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(7.6rem,1fr));gap:.7rem}
 .chan{background:var(--surface2);border:1px solid var(--line);border-radius:var(--r-lg);padding:.7rem .5rem .6rem;text-align:center;cursor:pointer;transition:border-color .2s,transform .2s;min-height:6.4rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.45rem}
 .chan:hover{border-color:rgba(229,169,60,.55);transform:translateY(-2px)}
@@ -1750,16 +1767,16 @@ html.tg .bottomnav{display:flex}
       <div class="pagehead"><h1>تلویزیون زنده <span class="live-dot">پخش زنده</span></h1></div>
       <div class="tv-layout">
         <div class="tv-screen">
+          <div style="display:flex;margin-bottom:.5rem"><span class="tv-tools" style="margin-inline-start:auto">
+            <button class="btn btn-glass btn-sm tv-tool" id="tv-fs" type="button" style="display:none" title="تمام‌صفحه افقی"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg> تمام‌صفحه افقی</button>
+            <button class="btn btn-glass btn-sm tv-tool" id="tv-pip" type="button" style="display:none" title="تصویر در تصویر"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" style="vertical-align:-2px"><rect x="3" y="5" width="18" height="14" rx="2"/><rect x="12.5" y="11.5" width="6" height="4.5" rx="1" fill="currentColor" stroke="none"/></svg> تصویر در تصویر</button>
+            <button class="btn btn-glass btn-sm tv-tool" id="tv-ext" type="button" style="display:none" title="باز کردن در مرورگر"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M14 4h6v6"/><path d="M20 4 11 13"/><path d="M19 13.5V19a1.5 1.5 0 0 1-1.5 1.5h-12A1.5 1.5 0 0 1 4 19V7a1.5 1.5 0 0 1 1.5-1.5H11"/></svg> باز کردن در مرورگر</button>
+            <button class="btn btn-glass btn-sm tv-tool" id="tv-share" type="button" style="display:none" title="اشتراک‌گذاری شبکه"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" style="vertical-align:-2px"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="5.5" r="2.5"/><circle cx="18" cy="18.5" r="2.5"/><path d="m8.2 10.8 7.6-4M8.2 13.2l7.6 4"/></svg> اشتراک‌گذاری شبکه</button>
+            </span></div>
           <div class="screen" id="tv-screenbox"><video id="tv-video" playsinline></video><div class="tv-idle">برای شروع پخش زنده، یک شبکه را از فهرست انتخاب کنید</div></div>
           <div style="display:flex;align-items:center;gap:.7rem;margin-top:.7rem;flex-wrap:wrap">
             <h2 id="tv-now" style="margin:0;font-size:1.1rem;font-weight:800">یک شبکه را انتخاب کنید</h2>
             <span class="live-dot" id="tv-status"></span><span class="tv-vpn" id="tv-vpnbadge" style="display:none">نیاز به VPN</span><span class="tv-test" id="tv-testbadge" style="display:none">تست</span>
-            <span style="margin-inline-start:auto;display:inline-flex;gap:.5rem;flex-wrap:wrap">
-            <button class="btn btn-glass btn-sm" id="tv-fs" type="button" style="display:none"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg> تمام‌صفحه افقی</button>
-            <button class="btn btn-glass btn-sm" id="tv-pip" type="button" style="display:none"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" style="vertical-align:-2px"><rect x="3" y="5" width="18" height="14" rx="2"/><rect x="12.5" y="11.5" width="6" height="4.5" rx="1" fill="currentColor" stroke="none"/></svg> تصویر در تصویر</button>
-            <button class="btn btn-glass btn-sm" id="tv-ext" type="button" style="display:none"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M14 4h6v6"/><path d="M20 4 11 13"/><path d="M19 13.5V19a1.5 1.5 0 0 1-1.5 1.5h-12A1.5 1.5 0 0 1 4 19V7a1.5 1.5 0 0 1 1.5-1.5H11"/></svg> باز کردن در مرورگر</button>
-            <button class="btn btn-glass btn-sm" id="tv-share" type="button" style="display:none"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" style="vertical-align:-2px"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="5.5" r="2.5"/><circle cx="18" cy="18.5" r="2.5"/><path d="m8.2 10.8 7.6-4M8.2 13.2l7.6 4"/></svg> اشتراک‌گذاری شبکه</button>
-            </span>
           </div>
           <div id="tv-servers" style="display:none;margin-top:.55rem;flex-wrap:wrap;gap:.4rem"></div>
           <p id="tv-subnote" style="display:none;color:var(--pearl);font-size:.8rem;margin:.35rem 0 0">برای تماشای تمام‌صفحه و افقی، دکمهٔ «تمام‌صفحه افقی» را بزنید؛ اگر شبکه زیرنویس داشته باشد، پیش‌فرض آن فارسی است و در نبود فارسی، انگلیسی.</p>
@@ -4011,7 +4028,7 @@ async function loadHome() {
          newest-first). The live refresh below only MERGES into it. */
       try {
         var _stN = await fnStaticJson('newest.json', null, DL_BASE);
-        if (_stN && (_stN.movies || {}).results && _stN.movies.results.length) { rows.newM25 = _stN.movies.results.slice().sort(function (a, b) { return String(b.release_date || '').localeCompare(String(a.release_date || '')); }).slice(0, 20); try { fnPaintHome(rows); } catch (e2) {} }
+        if (_stN && (_stN.movies || {}).results && _stN.movies.results.length) { rows.newM25 = _stN.movies.results.slice(0, 20); /* FN-NEWEST-ADD-ORDER v1: pins order = archive-addition order, no date re-sort */ try { fnPaintHome(rows); } catch (e2) {} }
       } catch (e) {}
       /* newM25 rail: live TMDB discover. NO-FLOOR WALL (parent-measured
          2026-11-20 ~19:30): a date-desc discover with NO vote floor
@@ -4019,7 +4036,7 @@ async function loadHome() {
          archive-linked titles (gte=40: 48/60). So the live fetch must
          never be a bare floor-less 3-page fetch that wipes the rail:
          (1) it fetches its pool by popularity (like updates does for
-         tv) and the list is sorted newest-first below; (2) it only
+         tv) and the merged list keeps the static pins order first; (2) it only
          MERGES into the static set - a live fetch that returns fewer
          titles never drops static items. The no-floor rule itself
          lives in the daily static precompute (deep-walked
@@ -4027,11 +4044,11 @@ async function loadHome() {
       try {
         const _y = new Date().getFullYear() - 1;
         const _nmLive = await fnFillHomeRail(page => tmdb('discover/movie', { 'primary_release_date.gte': _y + '-01-01', 'primary_release_date.lte': _today, sort_by: 'popularity.desc', page: page }).then(d => (d.results || []).map(x => Object.assign({}, x, { media_type: 'movie' }))), x => { const dt = x.release_date || ''; return dt && dt <= _today; });
-        _nmLive.sort((a, b) => String(b.release_date || '').localeCompare(String(a.release_date || '')));
+        /* FN-NEWEST-ADD-ORDER v1: no date re-sort — live stays in fetch order and appends after the static pins. */
         if (_nmLive.length) {
           var _nmMerged = (rows.newM25 || []).slice();
           _nmLive.forEach(function (x) { if (!_nmMerged.some(function (y) { return y.id === x.id; })) _nmMerged.push(x); });
-          _nmMerged.sort((a, b) => String(b.release_date || '').localeCompare(String(a.release_date || '')));
+          /* FN-NEWEST-ADD-ORDER v1: no date re-sort — merged list keeps static pins first. */
           _nmLive = _nmMerged.slice(0, 20);
           rows.newM25 = _nmLive;
         }
@@ -4044,7 +4061,7 @@ async function loadHome() {
          refresh below only MERGES into it. */
       try {
         var _stU = await fnStaticJson('newest.json', null, DL_BASE);
-        if (_stU && (_stU.series || {}).results && _stU.series.results.length) { rows.updates = _stU.series.results.slice().sort(function (a, b) { return String((b.last_air_date || b.first_air_date) || '').localeCompare(String((a.last_air_date || a.first_air_date) || '')); }).slice(0, 20); try { fnPaintHome(rows); } catch (e2) {} }
+        if (_stU && (_stU.series || {}).results && _stU.series.results.length) { rows.updates = _stU.series.results.slice(0, 20); /* FN-NEWEST-ADD-ORDER v1: pins order = archive-addition order, no date re-sort */ try { fnPaintHome(rows); } catch (e2) {} }
       } catch (e) {}
       /* updates rail: live TMDB discover/tv — SERIES only, new
          episode within 3 months, no talk/news/reality, most popular
@@ -4053,11 +4070,11 @@ async function loadHome() {
          fetch that returns fewer titles must never shrink the rail). */
       try {
         const _upLive = await fnFillHomeRail(page => tmdb('discover/tv', { 'air_date.gte': _g3s, 'air_date.lte': _today, without_genres: '10767,10763,10764', sort_by: 'popularity.desc', page: page }).then(d => (d.results || []).map(x => Object.assign({}, x, { media_type: 'tv' }))), null);
-        _upLive.sort((a, b) => String((b.last_air_date || b.first_air_date) || '').localeCompare(String((a.last_air_date || a.first_air_date) || '')));
+        /* FN-NEWEST-ADD-ORDER v1: no date re-sort — live stays in fetch order and appends after the static pins. */
         if (_upLive.length) {
           var _upMerged = (rows.updates || []).slice();
           _upLive.forEach(function (x) { if (!_upMerged.some(function (y) { return y.id === x.id; })) _upMerged.push(x); });
-          _upMerged.sort((a, b) => String((b.last_air_date || b.first_air_date) || '').localeCompare(String((a.last_air_date || a.first_air_date) || '')));
+          /* FN-NEWEST-ADD-ORDER v1: no date re-sort — merged list keeps static pins first. */
           _upLive = _upMerged.slice(0, 20);
           rows.updates = _upLive;
         }
@@ -4839,6 +4856,11 @@ async function loadArchPage() {
       if (arch.collKey === 'newM25' && !isTv && sort === 'primary_release_date.desc') sort = 'popularity.desc';
       if (isTv && sort === 'revenue.desc') sort = 'popularity.desc';
       if (!isTv && sort.indexOf('first_air_date') === 0) sort = sort.replace('first_air_date', 'primary_release_date');
+      /* FN-ASC-SORT v1 (user report 2026-11-23): an oldest-first discover
+         returns ancient titles with no archive links, so the avail filter
+         starves and the page renders empty. Fetch the pool by popularity
+         (link-rich, same as newM25) and sort the batch oldest-first below. */
+      if (sort.slice(-4) === '.asc') sort = 'popularity.desc';
       /* FN-NO-VPN-R3 (user order 2026-11-20): NO default vote floor
          on ANY category rail - newest needs no floor at all, and a
          linked title must appear in all its categories. The old
@@ -4897,8 +4919,9 @@ async function loadArchPage() {
        all 2026-11-20); the static list is deep-walked, archive-linked
        only, no vote floor. Seeding happens BEFORE the seen-dedup below,
        so already-shown cards are still removed and re-seeding needs no
-       flag. The final sort below (date-desc default) orders by
-       release_date desc. Series are NOT seeded here (part 3). */
+       flag. The final sort below keeps the seed order for the default sort
+       (archive-addition order, FN-NEWEST-ADD-ORDER v1); an explicit pick
+       still re-sorts. Series are NOT seeded here (part 3). */
     if (arch.collKey === 'newM25') {
       try {
         var _stSeedN = await fnStaticJson('newest.json', null, DL_BASE);
@@ -4914,8 +4937,9 @@ async function loadArchPage() {
        until 100 archive-linked, no vote floor, and now carries
        last_air_date per series. Seeding happens BEFORE the seen-dedup
        below, so already-shown cards are still removed and re-seeding
-       needs no flag. The final sort below orders updates by
-       (last_air_date || first_air_date) desc. */
+       needs no flag. The final sort below keeps the seed order for the default sort
+       (archive-addition order, FN-NEWEST-ADD-ORDER v1); an explicit pick
+       still re-sorts. */
     if (arch.collKey === 'updates') {
       try {
         var _stSeedU = await fnStaticJson('newest.json', null, DL_BASE);
@@ -4961,9 +4985,23 @@ async function loadArchPage() {
       });
       items = items.concat(_locals);
     }
-    if (sortUi === 'popularity.desc') items.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
+    /* FN-NEWEST-ADD-ORDER v1 (user pick 2026-11-23 «تازه اضافه‌شده‌ها اول
+       باشن»): the newest lists (newM25/updates) are ordered by ARCHIVE-
+       ADDITION date — the static newest.json seed already arrives in pins
+       order (newest batch first) and the live pool appends after it. With
+       the DEFAULT newest-first sort, skip the date re-sort below so the
+       addition order survives. An explicit sort pick (oldest, votes,
+       popularity, random) still applies through its own branch. */
+    const _nwKeepOrder = (arch.collKey === 'newM25' || arch.collKey === 'updates') && (sortUi === 'primary_release_date.desc' || sortUi === 'first_air_date.desc');
+    if (_nwKeepOrder) { /* keep seed+pool order: archive-addition order */ }
+    else if (sortUi === 'popularity.desc') items.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
     else if (arch.collKey === 'updates' && (sortUi === 'primary_release_date.desc' || sortUi === 'first_air_date.desc')) items.sort((a, b) => String((b.last_air_date || b.first_air_date) || '').localeCompare(String((a.last_air_date || a.first_air_date) || '')));
     else if (sortUi === 'primary_release_date.desc' || sortUi === 'first_air_date.desc') items.sort((a, b) => String((b.media_type === 'tv' ? b.first_air_date : b.release_date) || '').localeCompare(String((a.media_type === 'tv' ? a.first_air_date : a.release_date) || '')));
+    /* FN-ASC-SORT v1: oldest-first — the batch was fetched by popularity
+       (link-rich, see above), so sort it oldest-first locally. Updates
+       sorts by last-episode date, mirroring its newest-first branch. */
+    else if (arch.collKey === 'updates' && (sortUi === 'primary_release_date.asc' || sortUi === 'first_air_date.asc')) items.sort((a, b) => String((a.last_air_date || a.first_air_date) || '').localeCompare(String((b.last_air_date || b.first_air_date) || '')));
+    else if (sortUi === 'primary_release_date.asc' || sortUi === 'first_air_date.asc') items.sort((a, b) => String((a.media_type === 'tv' ? a.first_air_date : a.release_date) || '').localeCompare(String((b.media_type === 'tv' ? b.first_air_date : b.release_date) || '')));
     else if (sortUi === 'vote_average.desc') items.sort((a, b) => (b.vote_average || 0) - (a.vote_average || 0));
     else if (sortUi === 'vote_count.desc') items.sort((a, b) => (b.vote_count || 0) - (a.vote_count || 0));
     else if (sortUi === 'random') { for (let i = items.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); const tmp = items[i]; items[i] = items[j]; items[j] = tmp; } }
@@ -8473,7 +8511,7 @@ async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUr
   }
   /* Fallback chain for the download box: IMDb index first, then the
      TMDB title index (archive titles with no IMDb code, matched by the
-     title-match job), then the search-index title fallback (FN-DL-
+     title-match job) — and upgrades an old-only IMDb hit the same way (FN-DL-DTI-UPGRADE v1) — then the search-index title fallback (FN-DL-
      FALLBACK v1 — finds the H3 record by normalized title when the
      record's IMDb Code field is empty). tmdbKey is "movie:<id>" or
      "tv:<id>". */
@@ -8481,10 +8519,22 @@ async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUr
   try {
     if (token !== detailToken) return;
     if (imdbId) resolved = await resolveDlRecord(imdbId, 0);
-    if (!resolved && tmdbKey) {
+    /* FN-DL-DTI-UPGRADE v1 (Black Mirror, user report 2026-11-23): when
+       the IMDb index has no new-part entry, resolveDlRecord returns the
+       OLD archive alone — and this chain then never consults the TMDB
+       title index, so the old flat list shadows the new part record
+       (31 bare-quality links instead of the 96-link S01E01–S07E06
+       record). An old-only hit is upgraded the same way as a miss:
+       resolve the DTI new-part record by tmdbKey and merge it in front
+       (new first, deduped), so the box shows the new record with the
+       old links kept after it. */
+    if ((!resolved || resolved.src === 'old') && tmdbKey) {
       const ti = await getTitleIndex();
       const hit = ti[tmdbKey];
-      if (hit && hit.part && hit.num) resolved = await resolveDlRecordByPart('', hit.num, hit.part, 'new');
+      if (hit && hit.part && hit.num) {
+        const _dtiRec = await resolveDlRecordByPart('', hit.num, hit.part, 'new');
+        if (_dtiRec) resolved = resolved ? { rec: mergeDlRecs(_dtiRec.rec, resolved.rec), src: 'both', hasDn: hit.part === 'dn1' || hit.part === 'dn2' } : _dtiRec;
+      }
     }
     if (!resolved) resolved = await fnDlTitleFallback(imdbId, tmdbKey, fbTitle, fbYear);
     if (token !== detailToken) return;
@@ -10449,14 +10499,11 @@ function playChannel(ch, el) {
   const tvExtBtn0 = $('#tv-ext'); if (tvExtBtn0) tvExtBtn0.style.display = '';
   const tvSubNote0 = $('#tv-subnote'); if (tvSubNote0) tvSubNote0.style.display = '';
   $$('#tv-grid .chan').forEach(x => x.classList.remove('on')); if (el) el.classList.add('on');
-  /* the player comes DOWN to the channel that was tapped: on narrow
-     screens the screen block moves to just above the channel grid —
-     right where the reader already is — instead of forcing a long
-     scroll back to the top of the page */
-  const scr = document.querySelector('.tv-screen');
-  const grid = $('#tv-grid');
-  if (scr && grid && window.innerWidth < 1000 && scr.parentNode !== grid.parentNode) grid.parentNode.insertBefore(scr, grid);
-  if (scr) requestAnimationFrame(() => scr.scrollIntoView({ behavior: 'smooth', block: 'center' }));
+  /* FN-TV-STICKY v1 (user order 2026-11-23): the player is sticky at the
+     top of the viewport on every screen, so a channel tap moves nothing
+     and scrolls nothing — the reader stays where he is in the channel
+     list and the player stays visible above him. The old narrow-screen
+     move (screen block above the grid) + scrollIntoView are gone. */
   $('#tv-now').textContent = ch.name;
   const tvVpnB = $('#tv-vpnbadge'); if (tvVpnB) tvVpnB.style.display = ch.vpn ? '' : 'none';
   const tvTestB = $('#tv-testbadge'); if (tvTestB) tvTestB.style.display = ch.test ? '' : 'none';
