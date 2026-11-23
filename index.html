@@ -6828,10 +6828,11 @@ async function resolveDlRecordByPart(imdbId, num, part, which) {
 function recordFromArchive(doc, imdb, num) {
   /* Titles with no IMDb code are found by their H3 number instead
      (num = the continuous 1..10876 number in the archive). */
-  let code = null, head = null;
+  let code = null, head = null, recImdb = '';
   if (imdb) {
-    code = Array.prototype.find.call(doc.querySelectorAll('p'), p => { const x = (p.textContent || '').toLowerCase(); return x.indexOf('imdb code:') > -1 && x.indexOf(imdb) > -1; });
+    code = Array.prototype.find.call(doc.querySelectorAll('p'), p => { const m = (p.textContent || '').toLowerCase().match(/imdb code:\s*(tt\d+)/); return !!m && m[1] === String(imdb).toLowerCase(); });
     if (!code) return null;
+    recImdb = String(imdb).toLowerCase();
     head = code.previousElementSibling; while (head && head.tagName !== 'H3') head = head.previousElementSibling;
   } else if (num) {
     head = Array.prototype.find.call(doc.querySelectorAll('h3'), h => new RegExp('^\\s*' + num + '\\.').test(h.textContent || ''));
@@ -6859,6 +6860,7 @@ function recordFromArchive(doc, imdb, num) {
        archive actually carries separate-audio files. */
     else if (/audio|صوت\s*جدا/.test(low) && !n.querySelector('a')) cat = 'audio';
     else if (/^season\s*\d+/i.test(txt)) season = txt.match(/\d+/)[0];
+    else if (/imdb code:/i.test(txt)) recImdb = ((txt.match(/tt\d+/i) || [])[0] || '').toLowerCase();
     else if (cat) Array.prototype.forEach.call(n.querySelectorAll('a'), a => {
       const q = (a.textContent || '').trim(), href = a.getAttribute('href') || '';
       if (!href || !q) return;
@@ -6885,7 +6887,7 @@ function recordFromArchive(doc, imdb, num) {
     });
     n = n.nextElementSibling;
   }
-  return { title, rate, votes, groups };
+  return { title, rate, votes, groups, imdb: recImdb || null };
 }
 /* FN-DL-FALLBACK v1 — find an H3 download record by NORMALIZED TITLE
    inside one archive part. Used ONLY when the IMDb-code lookup found
@@ -6957,6 +6959,9 @@ async function fnDlTitleFallback(imdbId, tmdbKey, fbTitle, fbYear) {
     const doc = await loadDlPart(row.part, which === 'old' ? 'old' : undefined);
     const rec = recordFromArchiveByTitle(doc, row.t, row.y);
     if (!rec || !dlRecHasLinks(rec)) return null;
+    const _fbReqType = String(tmdbKey || '').indexOf('tv:') === 0 ? 'tv' : (String(tmdbKey || '').indexOf('movie:') === 0 ? 'movie' : '');
+    if (_fbReqType && row.type && row.type !== _fbReqType) return null;
+    if (!fnDtiCoordOk({ imdb: rec.imdb, title: rec.title, year: ((rec.title || '').match(/(\d{4})\s*$/) || [])[1] || null }, { imdb: imdbId, title: fbTitle || row.t, year: fbYear || row.y })) return null;
     console.info('[fn-dl-fallback] title fallback hit: "' + row.t + '" (' + row.y + ') part ' + row.part + (row.old ? ' (old archive)' : '') + ' — ' + (rec.groups.softsub.length + rec.groups.dubbed.length + rec.groups.nosub.length + (rec.groups.audio || []).length) + ' links'); /* FN-AUDIO v1 */
     /* FN-DN-SRC v1: a DN row resolves through the title fallback too —
        its src is 'dn', not 'new', so the box shows the DN hint. */
@@ -8573,6 +8578,32 @@ async function fnDnTrailerUrl(tmdbKey) {
    loaded). Callers pass `true` or leave it undefined; they never pass a
    bare false, because a slow map fetch in the caller would wrongly clear
    a curated title (Mones). */
+/* FN-DL-DTI-GATE v2 — combined coord identity check (replaces C2's
+   imdb-only gate). The DTI coord record is accepted when its IMDb
+   code equals the requested one, OR when its title matches the
+   requested title with no positive year conflict. A wrong IMDb line
+   alone never blocks a merge (the Black Mirror bug class: the
+   files were the requested work's files while only the line was
+   wrong); only a title mismatch or a positively conflicting year
+   refuses. coordRec = {imdb, title, year} from the coord record
+   (year = trailing 4-digit year of the H3 title, or null); req =
+   {imdb, title, year} from the request context, falling back to
+   the DTI entry's title/year when the context lacks them. */
+function fnDtiCoordOk(coordRec, req) {
+  if (!coordRec) return false;
+  var cImdb = String(coordRec.imdb || '').toLowerCase();
+  var rImdb = String((req && req.imdb) || '').toLowerCase();
+  if (cImdb && rImdb && cImdb === rImdb) return true;
+  function fnDtiNorm(t) { var s = String(t || '').toLowerCase().replace(/[^a-z0-9\u0600-\u06FF]+/g, ' '); s = s.replace(/^\s*the\s+/, '').replace(/\s+/g, ' ').trim(); return s; }
+  function fnDtiYear(y) { var n = parseInt(y, 10); return isNaN(n) ? null : n; }
+  var cT = fnDtiNorm(coordRec.title), rT = fnDtiNorm(req && req.title);
+  if (!cT || !rT) return false;
+  var titleOk = (cT === rT) || (cT.indexOf(rT) !== -1) || (rT.indexOf(cT) !== -1);
+  if (!titleOk) return false;
+  var cY = fnDtiYear(coordRec.year), rY = fnDtiYear(req && req.year);
+  if (cY !== null && rY !== null && cY !== rY) return false;
+  return true;
+}
 async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUrl, iranian) {
   const body = $('#d-dl-body'); if (!body) return;
   if (!imdbId && fbTitle) {
@@ -8601,12 +8632,14 @@ async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUr
        resolve the DTI new-part record by tmdbKey and merge it in front
        (new first, deduped), so the box shows the new record with the
        old links kept after it. */
-    if ((!resolved || resolved.src === 'old') && tmdbKey) {
+    if ((!resolved || resolved.src === 'old' || resolved.src === 'dn' || resolved.src === 'ao' || resolved.src === 'mbm' || resolved.src === 'srm' || resolved.src === 'sm' || resolved.src === 'ml' || resolved.src === 'bf' || resolved.src === 'fh' || resolved.src === 'rz') && tmdbKey) {
       const ti = await getTitleIndex();
       const hit = ti[tmdbKey];
       if (hit && hit.part && hit.num) {
         const _dtiRec = await resolveDlRecordByPart('', hit.num, hit.part, 'new');
-        if (_dtiRec) resolved = resolved ? { rec: mergeDlRecs(_dtiRec.rec, resolved.rec), src: 'both', hasDn: hit.part === 'dn1' || hit.part === 'dn2' } : _dtiRec;
+        const _dtiIsNew = typeof hit.part === 'number';
+        const _dtiCoordOk = fnDtiCoordOk(_dtiRec && _dtiRec.rec ? { imdb: _dtiRec.rec.imdb, title: _dtiRec.rec.title, year: ((_dtiRec.rec.title || '').match(/(\d{4})\s*$/) || [])[1] || null } : null, { imdb: imdbId || hit.imdb_id, title: fbTitle || hit.title, year: fbYear || hit.year });
+        if (_dtiRec && _dtiCoordOk && (_dtiIsNew || !resolved || resolved.src === 'old')) resolved = resolved ? { rec: mergeDlRecs(_dtiRec.rec, resolved.rec), src: 'both', hasDn: !!resolved.hasDn || hit.part === 'dn1' || hit.part === 'dn2' } : _dtiRec;
       }
     }
     if (!resolved) resolved = await fnDlTitleFallback(imdbId, tmdbKey, fbTitle, fbYear);
@@ -9035,7 +9068,7 @@ async function fnPlayResolve(ctx) {
     try { var hit0 = await fnPlayResolveImdb(ctx.imdbId, ctx.type); if (hit0) return hit0; } catch (e) {}
   }
   if (!key && ctx.tmdbKey) {
-    try { var ti = await getTitleIndex(); var hit = ti[ctx.tmdbKey]; if (hit && hit.part && hit.num) { part = hit.part; key = 'n:' + hit.num; } } catch (e) {}
+    try { var ti = await getTitleIndex(); var hit = ti[ctx.tmdbKey]; if (hit && hit.part && hit.num && fnDtiCoordOk({ imdb: hit.imdb_id, title: hit.title, year: hit.year }, { imdb: ctx.imdbId, title: ctx.title, year: ctx.year })) { part = hit.part; key = 'n:' + hit.num; } } catch (e) {}
   }
   if (!key && ctx.title) {
     /* FN-PLAY-OLD-FAST v1: fast path via the search index (the same data
@@ -9131,7 +9164,7 @@ async function fnPlayResolve(ctx) {
       try {
         var ti2 = await getTitleIndex();
         var hit2 = ti2[ctx.tmdbKey];
-        if (hit2 && hit2.part && hit2.num) {
+        if (hit2 && hit2.part && hit2.num && fnDtiCoordOk({ imdb: hit2.imdb_id, title: hit2.title, year: hit2.year }, { imdb: ctx.imdbId, title: ctx.title, year: ctx.year })) {
           var data2 = await fnPlayFetchPart(hit2.part);
           var entry2 = data2['n:' + hit2.num];
           if (entry2 && fnPlayJoined(entry2).length) return { entry: entry2, key: 'n:' + hit2.num, part: hit2.part };

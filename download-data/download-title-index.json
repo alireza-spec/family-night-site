@@ -203,7 +203,7 @@
   "year": 1938
  },
  "movie:1023732": {
-  "imdb_id": null,
+  "imdb_id": "tt10088984",
   "num": 4219,
   "part": 2,
   "title": "Between Two Worlds",
@@ -1323,7 +1323,7 @@
   "year": 2024
  },
  "movie:1137000": {
-  "imdb_id": null,
+  "imdb_id": "tt21941532",
   "num": 1329,
   "part": 1,
   "title": "The Teacher",
@@ -6384,7 +6384,7 @@
   "year": 2025
  },
  "movie:1475204": {
-  "imdb_id": null,
+  "imdb_id": "tt36302733",
   "num": 698,
   "part": 1,
   "title": "Dies Irae",
@@ -6972,7 +6972,7 @@
   "year": 2026
  },
  "movie:1522838": {
-  "imdb_id": null,
+  "imdb_id": "tt37879318",
   "num": 259,
   "part": 1,
   "title": "For My Country",
@@ -7077,7 +7077,7 @@
   "year": 2025
  },
  "movie:1531394": {
-  "imdb_id": null,
+  "imdb_id": "tt32298366",
   "num": 283,
   "part": 1,
   "title": "Unidentified",
@@ -7441,7 +7441,7 @@
   "year": 2015
  },
  "movie:1579651": {
-  "imdb_id": null,
+  "imdb_id": "tt29549490",
   "num": 808,
   "part": 1,
   "title": "California Schemin’",
@@ -12464,7 +12464,7 @@
   "num": 9191,
   "part": 5,
   "title": "Tokyo Revengers",
-  "year": null
+  "year": 2021
  },
  "tv:10545": {
   "imdb_id": "tt0844441",
@@ -12492,21 +12492,14 @@
   "num": 9966,
   "part": 10,
   "title": "3 Body Problem",
-  "year": null
- },
- "tv:110758": {
-  "imdb_id": "tt10535076",
-  "num": 9855,
-  "part": 9,
-  "title": "Honour",
-  "year": null
+  "year": 2024
  },
  "tv:111803": {
   "imdb_id": "tt13406094",
   "num": 9226,
   "part": 5,
   "title": "The White Lotus",
-  "year": null
+  "year": 2021
  },
  "tv:111980": {
   "imdb_id": "tt12694140",
@@ -12516,18 +12509,18 @@
   "year": 2021
  },
  "tv:112077": {
-  "imdb_id": null,
+  "imdb_id": "tt12682218",
   "num": 11075,
   "part": 16,
   "title": "Scenes from a Marriage",
-  "year": null
+  "year": 2021
  },
  "tv:112888": {
   "imdb_id": "tt13274038",
   "num": 9513,
   "part": 7,
   "title": "True Beauty",
-  "year": null
+  "year": 2020
  },
  "tv:115": {
   "imdb_id": "tt0092339",
@@ -12562,7 +12555,7 @@
   "num": 10662,
   "part": 15,
   "title": "Yellowjackets",
-  "year": null
+  "year": 2021
  },
  "tv:117581": {
   "imdb_id": "tt10813940",
@@ -12590,7 +12583,7 @@
   "num": 10743,
   "part": 16,
   "title": "Ark: The Animated Series",
-  "year": null
+  "year": 2024
  },
  "tv:12447": {
   "imdb_id": "tt0046587",
@@ -12618,21 +12611,21 @@
   "num": 9882,
   "part": 10,
   "title": "Solo Leveling",
-  "year": null
+  "year": 2024
  },
  "tv:128066": {
   "imdb_id": "tt14792896",
   "num": 10814,
   "part": 16,
   "title": "Liaison",
-  "year": null
+  "year": 2023
  },
  "tv:128113": {
   "imdb_id": "tt14923244",
   "num": 10819,
   "part": 16,
   "title": "The Winchesters",
-  "year": null
+  "year": 2022
  },
  "tv:128883": {
   "imdb_id": "tt14518756",
@@ -12653,7 +12646,7 @@
   "num": 10042,
   "part": 11,
   "title": "Twenty Five Twenty One",
-  "year": null
+  "year": 2022
  },
  "tv:12998": {
   "imdb_id": "tt0108800",
@@ -12667,7 +12660,7 @@
   "num": 10810,
   "part": 16,
   "title": "Dead Ringers",
-  "year": null
+  "year": 2023
  },
  "tv:131906": {
   "imdb_id": "tt14753620",
@@ -12688,14 +12681,14 @@
   "num": 10818,
   "part": 16,
   "title": "Wolf Pack",
-  "year": null
+  "year": 2023
  },
  "tv:13561": {
   "imdb_id": "tt1178522",
   "num": 9972,
   "part": 10,
   "title": "Little Dorrit",
-  "year": null
+  "year": 2008
  },
  "tv:135814": {
   "imdb_id": "tt15525658",
@@ -12706,10 +12699,10 @@
  },
  "tv:136283": {
   "imdb_id": "tt21344706",
-  "num": 9783,
-  "part": 9,
-  "title": "Glory",
-  "year": null
+  "num": 10266,
+  "part": 12,
+  "title": "The Glory",
+  "year": 2022
  },
  "tv:137127": {
   "imdb_id": "tt13430420",
@@ -12723,7 +12716,7 @@
   "num": 10811,
   "part": 16,
   "title": "Extrapolations",
-  "year": null
+  "year": 2023
  },
  "tv:139060": {
   "imdb_id": "tt16156736",
@@ -12737,7 +12730,7 @@
   "num": 10821,
   "part": 16,
   "title": "The Consultant",
-  "year": null
+  "year": 2023
  },
  "tv:1395": {
   "imdb_id": "tt0397442",
@@ -12747,39 +12740,39 @@
   "year": 2007
  },
  "tv:139512": {
-  "imdb_id": null,
+  "imdb_id": "tt16255458",
   "num": 11082,
   "part": 16,
   "title": "Trapped in a Dating Sim",
-  "year": null
+  "year": 2022
  },
  "tv:139628": {
   "imdb_id": "tt15233564",
   "num": 9714,
   "part": 9,
   "title": "Love Me",
-  "year": null
+  "year": 2021
  },
  "tv:1407": {
-  "imdb_id": null,
+  "imdb_id": "tt1796960",
   "num": 11077,
   "part": 16,
   "title": "Homeland",
-  "year": null
+  "year": 2011
  },
  "tv:1420": {
   "imdb_id": "tt1826940",
   "num": 9589,
   "part": 8,
   "title": "New Girl",
-  "year": null
+  "year": 2011
  },
  "tv:1421": {
   "imdb_id": "tt1442437",
   "num": 9977,
   "part": 10,
   "title": "Modern Family",
-  "year": null
+  "year": 2009
  },
  "tv:153217": {
   "imdb_id": "tt38939446",
@@ -12793,14 +12786,14 @@
   "num": 10815,
   "part": 16,
   "title": "This Is Going to Hurt",
-  "year": null
+  "year": 2022
  },
  "tv:154385": {
   "imdb_id": "tt14403178",
   "num": 9962,
   "part": 10,
   "title": "Beef",
-  "year": null
+  "year": 2023
  },
  "tv:154743": {
   "imdb_id": "tt19064770",
@@ -12814,7 +12807,7 @@
   "num": 10741,
   "part": 16,
   "title": "The New Look",
-  "year": null
+  "year": 2024
  },
  "tv:157744": {
   "imdb_id": "tt18335752",
@@ -12828,7 +12821,7 @@
   "num": 9565,
   "part": 8,
   "title": "Love You Seven Times",
-  "year": null
+  "year": 2023
  },
  "tv:17635": {
   "imdb_id": "tt1286677",
@@ -12856,14 +12849,14 @@
   "num": 10812,
   "part": 16,
   "title": "The Big Door Prize",
-  "year": null
+  "year": 2023
  },
  "tv:196285": {
-  "imdb_id": null,
+  "imdb_id": "tt19223420",
   "num": 11070,
   "part": 16,
   "title": "Farming Life in Another World",
-  "year": null
+  "year": 2023
  },
  "tv:196950": {
   "imdb_id": "tt32550889",
@@ -12877,7 +12870,7 @@
   "num": 10742,
   "part": 16,
   "title": "Constellation",
-  "year": null
+  "year": 2024
  },
  "tv:199001": {
   "imdb_id": "tt8323628",
@@ -12940,7 +12933,7 @@
   "num": 10630,
   "part": 15,
   "title": "The Walking Dead: The Ones Who Live",
-  "year": null
+  "year": 2024
  },
  "tv:206828": {
   "imdb_id": "tt34385331",
@@ -12954,7 +12947,7 @@
   "num": 9522,
   "part": 7,
   "title": "One Hundred Years of Solitude",
-  "year": null
+  "year": 2024
  },
  "tv:207347": {
   "imdb_id": "tt32639706",
@@ -12968,28 +12961,28 @@
   "num": 10080,
   "part": 11,
   "title": "Five Souls",
-  "year": null
+  "year": 2021
  },
  "tv:208336": {
   "imdb_id": "tt23032890",
   "num": 9517,
   "part": 7,
   "title": "Revenge of Others",
-  "year": null
+  "year": 2022
  },
  "tv:208569": {
   "imdb_id": "tt17543592",
   "num": 10820,
   "part": 16,
   "title": "Will Trent",
-  "year": null
+  "year": 2023
  },
  "tv:208851": {
   "imdb_id": "tt21874900",
   "num": 9695,
   "part": 9,
   "title": "A Thousand Blows",
-  "year": null
+  "year": 2024
  },
  "tv:208921": {
   "imdb_id": "tt21906238",
@@ -13010,21 +13003,21 @@
   "num": 10659,
   "part": 15,
   "title": "Ronja the Robber’s Daughter",
-  "year": null
+  "year": 2024
  },
  "tv:209867": {
   "imdb_id": "tt22248376",
   "num": 9873,
   "part": 10,
   "title": "Frieren: Beyond Journey’s End",
-  "year": null
+  "year": 2023
  },
  "tv:210733": {
   "imdb_id": "tt28076458",
   "num": 9480,
   "part": 7,
   "title": "Hidden Love",
-  "year": null
+  "year": 2023
  },
  "tv:211224": {
   "imdb_id": "tt37439947",
@@ -13045,14 +13038,14 @@
   "num": 10304,
   "part": 13,
   "title": "Mussolini: Son of the Century",
-  "year": null
+  "year": 2024
  },
  "tv:212957": {
   "imdb_id": "tt36808372",
   "num": 10529,
   "part": 15,
   "title": "Shark: The Storm",
-  "year": null
+  "year": 2025
  },
  "tv:213194": {
   "imdb_id": "tt21764074",
@@ -13066,7 +13059,7 @@
   "num": 9682,
   "part": 8,
   "title": "Sausage Party: Foodtopia",
-  "year": null
+  "year": 2024
  },
  "tv:213326": {
   "imdb_id": "tt23132598",
@@ -13096,13 +13089,6 @@
   "title": "Crystal Lake",
   "year": null
  },
- "tv:213608": {
-  "imdb_id": "tt23181168",
-  "num": 10053,
-  "part": 11,
-  "title": "Our Universe",
-  "year": null
- },
  "tv:214079": {
   "imdb_id": "tt15473010",
   "num": 9959,
@@ -13115,7 +13101,7 @@
   "num": 9710,
   "part": 9,
   "title": "Zomvivor",
-  "year": null
+  "year": 2025
  },
  "tv:218274": {
   "imdb_id": "tt26351133",
@@ -13129,7 +13115,7 @@
   "num": 10577,
   "part": 15,
   "title": "Korea-Khitan War",
-  "year": null
+  "year": 2023
  },
  "tv:218428": {
   "imdb_id": "tt21206964",
@@ -13150,14 +13136,14 @@
   "num": 9185,
   "part": 5,
   "title": "South Park",
-  "year": null
+  "year": 1997
  },
  "tv:220074": {
   "imdb_id": "tt30413181",
   "num": 9396,
   "part": 6,
   "title": "Flex x Cop",
-  "year": null
+  "year": 2024
  },
  "tv:220102": {
   "imdb_id": "tt30460310",
@@ -13171,14 +13157,14 @@
   "num": 10578,
   "part": 15,
   "title": "Doctor Slump",
-  "year": null
+  "year": 2024
  },
  "tv:222624": {
   "imdb_id": "tt27182605",
   "num": 9701,
   "part": 9,
   "title": "GINTAMA – Mr.Ginpachi’s Zany Class",
-  "year": null
+  "year": 2025
  },
  "tv:222766": {
   "imdb_id": "tt24053860",
@@ -13192,7 +13178,7 @@
   "num": 10579,
   "part": 15,
   "title": "The Impossible Heir",
-  "year": null
+  "year": 2024
  },
  "tv:223386": {
   "imdb_id": "tt27331527",
@@ -13216,25 +13202,25 @@
   "year": 2025
  },
  "tv:223564": {
-  "imdb_id": null,
+  "imdb_id": "tt28919914",
   "num": 11083,
   "part": 16,
   "title": "The 100 Girlfriends",
-  "year": null
+  "year": 2023
  },
  "tv:223876": {
   "imdb_id": "tt10094546",
   "num": 9719,
   "part": 9,
   "title": "Les Sentinelles",
-  "year": null
+  "year": 2025
  },
  "tv:223896": {
   "imdb_id": "tt26773414",
   "num": 9789,
   "part": 9,
   "title": "Spirit Fingers",
-  "year": null
+  "year": 2025
  },
  "tv:224263": {
   "imdb_id": "tt27486290",
@@ -13248,14 +13234,14 @@
   "num": 10191,
   "part": 12,
   "title": "You and Everything Else",
-  "year": null
+  "year": 2025
  },
  "tv:224819": {
   "imdb_id": "tt27554348",
   "num": 10526,
   "part": 15,
   "title": "Dear Hongrang",
-  "year": null
+  "year": 2025
  },
  "tv:224941": {
   "imdb_id": "tt27557289",
@@ -13276,14 +13262,14 @@
   "num": 10664,
   "part": 15,
   "title": "The Leopard",
-  "year": null
+  "year": 2025
  },
  "tv:225647": {
   "imdb_id": "tt27987047",
   "num": 9699,
   "part": 9,
   "title": "Boots",
-  "year": null
+  "year": 2025
  },
  "tv:225891": {
   "imdb_id": "tt33204276",
@@ -13297,14 +13283,14 @@
   "num": 9625,
   "part": 8,
   "title": "The Queen Who Crowns",
-  "year": null
+  "year": 2025
  },
  "tv:227114": {
   "imdb_id": "tt26672404",
   "num": 10194,
   "part": 12,
   "title": "Butterfly",
-  "year": null
+  "year": 2025
  },
  "tv:227371": {
   "imdb_id": "tt14494938",
@@ -13325,7 +13311,7 @@
   "num": 10648,
   "part": 15,
   "title": "When No One Sees Us",
-  "year": null
+  "year": 2025
  },
  "tv:229544": {
   "imdb_id": "tt28230655",
@@ -13339,14 +13325,14 @@
   "num": 10109,
   "part": 11,
   "title": "Night Has Come",
-  "year": null
+  "year": 2023
  },
  "tv:229958": {
   "imdb_id": "tt29059394",
   "num": 10181,
   "part": 12,
   "title": "Aema",
-  "year": null
+  "year": 2025
  },
  "tv:229962": {
   "imdb_id": "tt22073352",
@@ -13374,21 +13360,21 @@
   "num": 10066,
   "part": 11,
   "title": "Mr. Plankton",
-  "year": null
+  "year": 2024
  },
  "tv:230926": {
   "imdb_id": "tt31472425",
   "num": 9697,
   "part": 9,
   "title": "The Murky Stream",
-  "year": null
+  "year": 2025
  },
  "tv:231462": {
   "imdb_id": "tt32122656",
   "num": 10178,
   "part": 12,
   "title": "Low Life",
-  "year": null
+  "year": 2025
  },
  "tv:231801": {
   "imdb_id": "tt33406999",
@@ -13402,7 +13388,7 @@
   "num": 9624,
   "part": 8,
   "title": "Love Scout",
-  "year": null
+  "year": 2025
  },
  "tv:233349": {
   "imdb_id": "tt33051958",
@@ -13412,25 +13398,25 @@
   "year": 2024
  },
  "tv:233526": {
-  "imdb_id": null,
+  "imdb_id": "tt29921392",
   "num": 11074,
   "part": 16,
   "title": "A Rainha da Persia",
-  "year": null
+  "year": 2024
  },
  "tv:233686": {
   "imdb_id": "tt29921070",
   "num": 10603,
   "part": 15,
   "title": "Karma",
-  "year": null
+  "year": 2025
  },
  "tv:233833": {
   "imdb_id": "tt39369595",
   "num": 10055,
   "part": 11,
   "title": "In Your Radiant Season",
-  "year": null
+  "year": 2026
  },
  "tv:235758": {
   "imdb_id": "tt31131295",
@@ -13444,7 +13430,7 @@
   "num": 9363,
   "part": 6,
   "title": "The Gentlemen",
-  "year": null
+  "year": 2024
  },
  "tv:237150": {
   "imdb_id": "tt31975847",
@@ -13465,35 +13451,35 @@
   "num": 9811,
   "part": 9,
   "title": "Cashero",
-  "year": null
+  "year": 2025
  },
  "tv:238673": {
   "imdb_id": "tt32132603",
   "num": 10149,
   "part": 11,
   "title": "The Defects",
-  "year": null
+  "year": 2025
  },
  "tv:238680": {
   "imdb_id": "tt27960886",
   "num": 9650,
   "part": 8,
   "title": "Moonlight Mystique",
-  "year": null
+  "year": 2025
  },
  "tv:239077": {
   "imdb_id": "tt33578048",
   "num": 10414,
   "part": 14,
   "title": "Way Back Love",
-  "year": null
+  "year": 2025
  },
  "tv:239362": {
   "imdb_id": "tt28529513",
   "num": 10660,
   "part": 15,
   "title": "Krank: Berlin",
-  "year": null
+  "year": 2025
  },
  "tv:239618": {
   "imdb_id": "tt30051064",
@@ -13507,7 +13493,7 @@
   "num": 9747,
   "part": 9,
   "title": "Ballard",
-  "year": null
+  "year": 2025
  },
  "tv:239901": {
   "imdb_id": "tt29489359",
@@ -13524,11 +13510,11 @@
   "year": 2025
  },
  "tv:240667": {
-  "imdb_id": null,
+  "imdb_id": "tt16283804",
   "num": 11072,
   "part": 16,
   "title": "One Day",
-  "year": null
+  "year": 2024
  },
  "tv:240740": {
   "imdb_id": "tt14786934",
@@ -13549,14 +13535,14 @@
   "num": 9887,
   "part": 10,
   "title": "56 Days",
-  "year": null
+  "year": 2026
  },
  "tv:241388": {
   "imdb_id": "tt13968252",
   "num": 10467,
   "part": 14,
   "title": "Eyes of Wakanda",
-  "year": null
+  "year": 2025
  },
  "tv:241405": {
   "imdb_id": "tt30252752",
@@ -13591,7 +13577,7 @@
   "num": 10533,
   "part": 15,
   "title": "La Palma",
-  "year": null
+  "year": 2024
  },
  "tv:243360": {
   "imdb_id": "tt27846061",
@@ -13605,14 +13591,14 @@
   "num": 10474,
   "part": 15,
   "title": "Motorheads",
-  "year": null
+  "year": 2025
  },
  "tv:243964": {
   "imdb_id": "tt35450649",
   "num": 10597,
   "part": 15,
   "title": "Melo Movie",
-  "year": null
+  "year": 2025
  },
  "tv:244244": {
   "imdb_id": "tt9169516",
@@ -13626,7 +13612,7 @@
   "num": 9669,
   "part": 8,
   "title": "Malice",
-  "year": null
+  "year": 2025
  },
  "tv:245318": {
   "imdb_id": "tt31137273",
@@ -13640,14 +13626,14 @@
   "num": 10745,
   "part": 16,
   "title": "Blackshore",
-  "year": null
+  "year": 2024
  },
  "tv:245648": {
   "imdb_id": "tt31173096",
   "num": 9796,
   "part": 9,
   "title": "Billionaires’ Bunker",
-  "year": null
+  "year": 2025
  },
  "tv:245842": {
   "imdb_id": "tt31889371",
@@ -13668,14 +13654,14 @@
   "num": 9787,
   "part": 9,
   "title": "The Copenhagen Test",
-  "year": null
+  "year": 2025
  },
  "tv:246485": {
   "imdb_id": "tt31219594",
   "num": 10184,
   "part": 12,
   "title": "The Dead Girls",
-  "year": null
+  "year": 2025
  },
  "tv:246740": {
   "imdb_id": "tt34993190",
@@ -13689,7 +13675,7 @@
   "num": 10678,
   "part": 15,
   "title": "A Cruel Love: The Ruth Ellis Story",
-  "year": null
+  "year": 2025
  },
  "tv:246992": {
   "imdb_id": "tt31429675",
@@ -13717,42 +13703,42 @@
   "num": 9700,
   "part": 9,
   "title": "The Monster of Florence",
-  "year": null
+  "year": 2025
  },
  "tv:247784": {
   "imdb_id": "tt31407116",
   "num": 10614,
   "part": 15,
   "title": "Pulse",
-  "year": null
+  "year": 2025
  },
  "tv:248416": {
   "imdb_id": "tt31613279",
   "num": 9691,
   "part": 8,
   "title": "The Twisted Tale of Amanda Knox",
-  "year": null
+  "year": 2025
  },
  "tv:248752": {
   "imdb_id": "tt31691565",
   "num": 10658,
   "part": 15,
   "title": "Good Cop/Bad Cop",
-  "year": null
+  "year": 2025
  },
  "tv:249042": {
   "imdb_id": "tt31806037",
   "num": 10661,
   "part": 15,
   "title": "Adolescence",
-  "year": null
+  "year": 2025
  },
  "tv:249054": {
   "imdb_id": "tt32524691",
   "num": 9744,
   "part": 9,
   "title": "Romantics Anonymous",
-  "year": null
+  "year": 2025
  },
  "tv:249565": {
   "imdb_id": "tt31842126",
@@ -13773,14 +13759,14 @@
   "num": 9995,
   "part": 11,
   "title": "Love on the Turquoise Land",
-  "year": null
+  "year": 2025
  },
  "tv:250008": {
-  "imdb_id": null,
+  "imdb_id": "tt41278615",
   "num": 11080,
   "part": 16,
   "title": "Oh Boy Was I Wrong About Her",
-  "year": null
+  "year": 2026
  },
  "tv:250203": {
   "imdb_id": "tt6773088",
@@ -13857,7 +13843,7 @@
   "num": 9643,
   "part": 8,
   "title": "The Potato Lab",
-  "year": null
+  "year": 2025
  },
  "tv:254420": {
   "imdb_id": "tt32020831",
@@ -13913,14 +13899,14 @@
   "num": 9762,
   "part": 9,
   "title": "The Darwin Incident",
-  "year": null
+  "year": 2026
  },
  "tv:255351": {
   "imdb_id": "tt33059905",
   "num": 9450,
   "part": 7,
   "title": "Saint-Pierre",
-  "year": null
+  "year": 2025
  },
  "tv:255358": {
   "imdb_id": "tt36517689",
@@ -13948,7 +13934,7 @@
   "num": 9487,
   "part": 7,
   "title": "The Best Thing",
-  "year": null
+  "year": 2025
  },
  "tv:256694": {
   "imdb_id": "tt32603995",
@@ -13962,7 +13948,7 @@
   "num": 9763,
   "part": 9,
   "title": "Love’s Ambition",
-  "year": null
+  "year": 2025
  },
  "tv:257519": {
   "imdb_id": "tt32252887",
@@ -13990,7 +13976,7 @@
   "num": 9328,
   "part": 6,
   "title": "East of Eden",
-  "year": null
+  "year": 2026
  },
  "tv:258230": {
   "imdb_id": "tt6037988",
@@ -14004,21 +13990,21 @@
   "num": 9982,
   "part": 10,
   "title": "Dashing Youth",
-  "year": null
+  "year": 2024
  },
  "tv:258357": {
   "imdb_id": "tt37436184",
   "num": 9718,
   "part": 9,
   "title": "My Girlfriend Is the Man!",
-  "year": null
+  "year": 2025
  },
  "tv:258742": {
   "imdb_id": "tt30291387",
   "num": 10197,
   "part": 12,
   "title": "All’s Fair",
-  "year": null
+  "year": 2025
  },
  "tv:258865": {
   "imdb_id": "tt32330809",
@@ -14046,7 +14032,7 @@
   "num": 10545,
   "part": 15,
   "title": "Suits LA",
-  "year": null
+  "year": 2025
  },
  "tv:259486": {
   "imdb_id": "tt33246471",
@@ -14060,7 +14046,7 @@
   "num": 9941,
   "part": 10,
   "title": "Olympo",
-  "year": null
+  "year": 2025
  },
  "tv:259702": {
   "imdb_id": "tt33022938",
@@ -14074,7 +14060,7 @@
   "num": 9780,
   "part": 9,
   "title": "Confidence Queen",
-  "year": null
+  "year": 2025
  },
  "tv:259837": {
   "imdb_id": "tt34440854",
@@ -14088,7 +14074,7 @@
   "num": 9812,
   "part": 9,
   "title": "The War Between the Land and the Sea",
-  "year": null
+  "year": 2025
  },
  "tv:260463": {
   "imdb_id": "tt37532356",
@@ -14123,28 +14109,28 @@
   "num": 10416,
   "part": 14,
   "title": "Our Unwritten Seoul",
-  "year": null
+  "year": 2025
  },
  "tv:261981": {
   "imdb_id": "tt36802356",
   "num": 10347,
   "part": 13,
   "title": "Second Shot at Love",
-  "year": null
+  "year": 2025
  },
  "tv:262237": {
   "imdb_id": "tt37436162",
   "num": 9753,
   "part": 9,
   "title": "My Youth",
-  "year": null
+  "year": 2025
  },
  "tv:262262": {
   "imdb_id": "tt33741848",
   "num": 9847,
   "part": 9,
   "title": "Under Salt Marsh",
-  "year": null
+  "year": 2026
  },
  "tv:262280": {
   "imdb_id": "tt33265765",
@@ -14158,7 +14144,7 @@
   "num": 10172,
   "part": 12,
   "title": "Long Story Short",
-  "year": null
+  "year": 2025
  },
  "tv:262388": {
   "imdb_id": "tt33253070",
@@ -14200,14 +14186,14 @@
   "num": 9729,
   "part": 9,
   "title": "Shiboyugi: Playing Death Games to Put Food on the Table",
-  "year": null
+  "year": 2026
  },
  "tv:270420": {
   "imdb_id": "tt33429144",
   "num": 9403,
   "part": 6,
   "title": "No Tail to Tell",
-  "year": null
+  "year": 2026
  },
  "tv:270431": {
   "imdb_id": "tt36983579",
@@ -14256,14 +14242,14 @@
   "num": 10192,
   "part": 12,
   "title": "The Chair Company",
-  "year": null
+  "year": 2025
  },
  "tv:271596": {
   "imdb_id": "tt33377409",
   "num": 10322,
   "part": 13,
   "title": "Sorgu",
-  "year": null
+  "year": 2024
  },
  "tv:271609": {
   "imdb_id": "tt38646055",
@@ -14277,14 +14263,14 @@
   "num": 9853,
   "part": 9,
   "title": "A Hundred Memories",
-  "year": null
+  "year": 2025
  },
  "tv:272500": {
   "imdb_id": "tt33679603",
   "num": 10663,
   "part": 15,
   "title": "Solar System",
-  "year": null
+  "year": 2024
  },
  "tv:272715": {
   "imdb_id": "tt41926853",
@@ -14319,14 +14305,14 @@
   "num": 10214,
   "part": 12,
   "title": "Law and the City",
-  "year": null
+  "year": 2025
  },
  "tv:273467": {
-  "imdb_id": null,
+  "imdb_id": "tt36593277",
   "num": 11073,
   "part": 16,
   "title": "The Warrior Princess and the Barbaric King",
-  "year": null
+  "year": 2026
  },
  "tv:273866": {
   "imdb_id": "tt37022512",
@@ -14340,28 +14326,28 @@
   "num": 9772,
   "part": 9,
   "title": "A Gentle Noble’s Vacation Recommendation",
-  "year": null
+  "year": 2026
  },
  "tv:274810": {
   "imdb_id": "tt35936938",
   "num": 9739,
   "part": 9,
   "title": "This Monster Wants to Eat Me",
-  "year": null
+  "year": 2025
  },
  "tv:274814": {
   "imdb_id": "tt38037460",
   "num": 10287,
   "part": 13,
   "title": "Pass the Monster Meat, Milady!",
-  "year": null
+  "year": 2025
  },
  "tv:274915": {
   "imdb_id": "tt34196445",
   "num": 9667,
   "part": 8,
   "title": "The Borderline",
-  "year": null
+  "year": 2025
  },
  "tv:275102": {
   "imdb_id": "tt36347588",
@@ -14403,7 +14389,7 @@
   "num": 9794,
   "part": 9,
   "title": "Tamon’s B-Side",
-  "year": null
+  "year": 2026
  },
  "tv:276470": {
   "imdb_id": "tt44051354",
@@ -14431,7 +14417,7 @@
   "num": 9504,
   "part": 7,
   "title": "Cape Fear",
-  "year": null
+  "year": 2026
  },
  "tv:277618": {
   "imdb_id": "tt31887685",
@@ -14459,7 +14445,7 @@
   "num": 9814,
   "part": 9,
   "title": "Old Money",
-  "year": null
+  "year": 2025
  },
  "tv:278043": {
   "imdb_id": "tt36034547",
@@ -14480,7 +14466,7 @@
   "num": 9759,
   "part": 9,
   "title": "Unveil: Jadewind",
-  "year": null
+  "year": 2026
  },
  "tv:278178": {
   "imdb_id": "tt34771210",
@@ -14529,35 +14515,35 @@
   "num": 10160,
   "part": 11,
   "title": "Love, Take Two",
-  "year": null
+  "year": 2025
  },
  "tv:278927": {
   "imdb_id": "tt31521718",
   "num": 9996,
   "part": 11,
   "title": "The Unclouded Soul",
-  "year": null
+  "year": 2025
  },
  "tv:279041": {
   "imdb_id": "tt36596644",
   "num": 9878,
   "part": 10,
   "title": "Speed and Love",
-  "year": null
+  "year": 2025
  },
  "tv:279089": {
   "imdb_id": "tt34883857",
   "num": 9429,
   "part": 7,
   "title": "Possession",
-  "year": null
+  "year": 2026
  },
  "tv:279116": {
   "imdb_id": "tt0808224",
   "num": 10171,
   "part": 12,
   "title": "The Death of Bunny Munro",
-  "year": null
+  "year": 2025
  },
  "tv:279136": {
   "imdb_id": "tt35890969",
@@ -14606,7 +14592,7 @@
   "num": 9383,
   "part": 6,
   "title": "Hell Mode: The Hardcore Gamer Dominates in Another World with Garbage Balancing",
-  "year": null
+  "year": 2026
  },
  "tv:280437": {
   "imdb_id": "tt28107213",
@@ -14620,42 +14606,42 @@
   "num": 10157,
   "part": 11,
   "title": "Murder Before Evensong",
-  "year": null
+  "year": 2025
  },
  "tv:280777": {
   "imdb_id": "tt14899630",
   "num": 9566,
   "part": 8,
   "title": "Kral Kaybederse",
-  "year": null
+  "year": 2025
  },
  "tv:280860": {
   "imdb_id": "tt33338105",
   "num": 9696,
   "part": 9,
   "title": "Queen of Fucking Everything",
-  "year": null
+  "year": 2025
  },
  "tv:280878": {
   "imdb_id": "tt34749465",
   "num": 10173,
   "part": 12,
   "title": "El clan Olimpia",
-  "year": null
+  "year": 2025
  },
  "tv:280948": {
   "imdb_id": "tt39137681",
   "num": 9144,
   "part": 4,
   "title": "Spring Fever",
-  "year": null
+  "year": 2026
  },
  "tv:281005": {
   "imdb_id": "tt38221085",
   "num": 9788,
   "part": 9,
   "title": "Surely Tomorrow",
-  "year": null
+  "year": 2025
  },
  "tv:281010": {
   "imdb_id": "tt39837101",
@@ -14669,7 +14655,7 @@
   "num": 9836,
   "part": 9,
   "title": "Would You Marry Me?",
-  "year": null
+  "year": 2025
  },
  "tv:281016": {
   "imdb_id": "tt35848827",
@@ -14690,14 +14676,14 @@
   "num": 9834,
   "part": 9,
   "title": "Finding Her Edge",
-  "year": null
+  "year": 2026
  },
  "tv:281555": {
   "imdb_id": "tt23772966",
   "num": 9679,
   "part": 8,
   "title": "To Cook a Bear",
-  "year": null
+  "year": 2025
  },
  "tv:281965": {
   "imdb_id": "tt39695941",
@@ -14711,14 +14697,14 @@
   "num": 9726,
   "part": 9,
   "title": "My Troublesome Star",
-  "year": null
+  "year": 2025
  },
  "tv:281967": {
   "imdb_id": "tt36807941",
   "num": 10453,
   "part": 14,
   "title": "Hunter with a Scalpel",
-  "year": null
+  "year": 2025
  },
  "tv:282326": {
   "imdb_id": "tt32500958",
@@ -14746,14 +14732,14 @@
   "num": 9816,
   "part": 9,
   "title": "The Judge Returns",
-  "year": null
+  "year": 2026
  },
  "tv:282946": {
   "imdb_id": "tt38646949",
   "num": 9813,
   "part": 9,
   "title": "Kunon the Sorcerer Can See",
-  "year": null
+  "year": 2026
  },
  "tv:283151": {
   "imdb_id": "tt35587659",
@@ -14781,7 +14767,7 @@
   "num": 9769,
   "part": 9,
   "title": "Motorvalley",
-  "year": null
+  "year": 2025
  },
  "tv:283371": {
   "imdb_id": "tt36470958",
@@ -14851,7 +14837,7 @@
   "num": 9820,
   "part": 9,
   "title": "Isekai Office Worker: The Other World’s Books Depend on the Bean Counter",
-  "year": null
+  "year": 2026
  },
  "tv:284558": {
   "imdb_id": "tt35726020",
@@ -14879,7 +14865,7 @@
   "num": 9724,
   "part": 9,
   "title": "Pro Bono",
-  "year": null
+  "year": 2025
  },
  "tv:284833": {
   "imdb_id": "tt35854736",
@@ -14893,7 +14879,7 @@
   "num": 9138,
   "part": 4,
   "title": "9-1-1: Nashville",
-  "year": null
+  "year": 2025
  },
  "tv:285143": {
   "imdb_id": "tt36596650",
@@ -14907,14 +14893,14 @@
   "num": 9835,
   "part": 9,
   "title": "Jack-of-All-Trades, Party of None",
-  "year": null
+  "year": 2026
  },
  "tv:285278": {
   "imdb_id": "tt39068875",
   "num": 9850,
   "part": 9,
   "title": "Idol I",
-  "year": null
+  "year": 2025
  },
  "tv:285322": {
   "imdb_id": "tt35934755",
@@ -14928,7 +14914,7 @@
   "num": 10150,
   "part": 11,
   "title": "Frauds",
-  "year": null
+  "year": 2025
  },
  "tv:285404": {
   "imdb_id": "tt35946742",
@@ -14949,14 +14935,14 @@
   "num": 9258,
   "part": 5,
   "title": "Youth",
-  "year": null
+  "year": 2026
  },
  "tv:285574": {
-  "imdb_id": null,
+  "imdb_id": "tt36056731",
   "num": 11084,
   "part": 16,
   "title": "I Want to Love You Till Your Dying Day",
-  "year": null
+  "year": 2026
  },
  "tv:285625": {
   "imdb_id": "tt38715296",
@@ -14977,14 +14963,14 @@
   "num": 9612,
   "part": 8,
   "title": "Tojima Wants to Be a Kamen Rider",
-  "year": null
+  "year": 2025
  },
  "tv:285807": {
   "imdb_id": "tt36022742",
   "num": 10063,
   "part": 11,
   "title": "Nemesis",
-  "year": null
+  "year": 2026
  },
  "tv:285818": {
   "imdb_id": "tt37729351",
@@ -15005,7 +14991,7 @@
   "num": 10413,
   "part": 14,
   "title": "Heo’s Diner",
-  "year": null
+  "year": 2025
  },
  "tv:285899": {
   "imdb_id": "tt38939893",
@@ -15033,7 +15019,7 @@
   "num": 9687,
   "part": 8,
   "title": "Shin’s Project",
-  "year": null
+  "year": 2025
  },
  "tv:286291": {
   "imdb_id": "tt37533007",
@@ -15173,7 +15159,7 @@
   "num": 10542,
   "part": 15,
   "title": "Star Wars: Tales of the Underworld",
-  "year": null
+  "year": 2025
  },
  "tv:288430": {
   "imdb_id": "tt40645702",
@@ -15215,7 +15201,7 @@
   "num": 11195,
   "part": "mbm",
   "title": "Carrie",
-  "year": null
+  "year": 2026
  },
  "tv:288971": {
   "imdb_id": "tt39281887",
@@ -15229,14 +15215,14 @@
   "num": 10231,
   "part": 12,
   "title": "The Wayfinders",
-  "year": null
+  "year": 2025
  },
  "tv:289078": {
   "imdb_id": "tt36758489",
   "num": 9342,
   "part": 6,
   "title": "A Prophet",
-  "year": null
+  "year": 2026
  },
  "tv:289116": {
   "imdb_id": "tt37831535",
@@ -15299,14 +15285,14 @@
   "num": 9255,
   "part": 5,
   "title": "CIA",
-  "year": null
+  "year": 2026
  },
  "tv:289690": {
   "imdb_id": "tt40002799",
   "num": 9852,
   "part": 9,
   "title": "Love Phobia",
-  "year": null
+  "year": 2026
  },
  "tv:289763": {
   "imdb_id": "tt38960812",
@@ -15341,7 +15327,7 @@
   "num": 9693,
   "part": 8,
   "title": "Hell Motel",
-  "year": null
+  "year": 2025
  },
  "tv:290699": {
   "imdb_id": "tt37357034",
@@ -15425,7 +15411,7 @@
   "num": 10366,
   "part": 14,
   "title": "Reminder",
-  "year": null
+  "year": 2025
  },
  "tv:292696": {
   "imdb_id": "tt37096911",
@@ -15460,7 +15446,7 @@
   "num": 10211,
   "part": 12,
   "title": "Undercover Miss Hong",
-  "year": null
+  "year": 2026
  },
  "tv:293610": {
   "imdb_id": "tt39328047",
@@ -15502,7 +15488,7 @@
   "num": 9418,
   "part": 6,
   "title": "Dusk Beyond the End of the World",
-  "year": null
+  "year": 2025
  },
  "tv:294990": {
   "imdb_id": "tt45956347",
@@ -15565,7 +15551,7 @@
   "num": 10232,
   "part": 12,
   "title": "Positively Yours",
-  "year": null
+  "year": 2026
  },
  "tv:296140": {
   "imdb_id": "tt43648966",
@@ -15607,7 +15593,7 @@
   "num": 9415,
   "part": 6,
   "title": "Veliaht",
-  "year": null
+  "year": 2025
  },
  "tv:296756": {
   "imdb_id": "tt37692332",
@@ -15621,7 +15607,7 @@
   "num": 9871,
   "part": 10,
   "title": "Gözleri Karadeniz",
-  "year": null
+  "year": 2025
  },
  "tv:297438": {
   "imdb_id": "tt38797595",
@@ -15656,7 +15642,7 @@
   "num": 10163,
   "part": 11,
   "title": "The Family Next Door",
-  "year": null
+  "year": 2025
  },
  "tv:297903": {
   "imdb_id": "tt39181351",
@@ -15691,7 +15677,7 @@
   "num": 9668,
   "part": 8,
   "title": "Strip Law",
-  "year": null
+  "year": 2026
  },
  "tv:298425": {
   "imdb_id": "tt34885250",
@@ -15712,7 +15698,7 @@
   "num": 9189,
   "part": 5,
   "title": "Halef",
-  "year": null
+  "year": 2025
  },
  "tv:298831": {
   "imdb_id": "tt39551287",
@@ -15726,7 +15712,7 @@
   "num": 11235,
   "part": "mbm",
   "title": "War",
-  "year": null
+  "year": 2026
  },
  "tv:298939": {
   "imdb_id": "tt37510653",
@@ -15754,7 +15740,7 @@
   "num": 9332,
   "part": 6,
   "title": "The Sisters Grimm",
-  "year": null
+  "year": 2025
  },
  "tv:299365": {
   "imdb_id": "tt42206645",
@@ -15796,7 +15782,7 @@
   "num": 9750,
   "part": 9,
   "title": "Bereketli Topraklar",
-  "year": null
+  "year": 2025
  },
  "tv:300388": {
   "imdb_id": "tt38074086",
@@ -15824,7 +15810,7 @@
   "num": 9436,
   "part": 7,
   "title": "Kaosun Anatomisi",
-  "year": null
+  "year": 2025
  },
  "tv:300954": {
   "imdb_id": "tt39393581",
@@ -15838,7 +15824,7 @@
   "num": 9238,
   "part": 5,
   "title": "Ben Leman",
-  "year": null
+  "year": 2025
  },
  "tv:301345": {
   "imdb_id": "tt43629548",
@@ -15873,14 +15859,14 @@
   "num": 9281,
   "part": 5,
   "title": "Sahtekarlar",
-  "year": null
+  "year": 2025
  },
  "tv:301886": {
   "imdb_id": "tt39303266",
   "num": 10212,
   "part": 12,
   "title": "To My Beloved Thief",
-  "year": null
+  "year": 2026
  },
  "tv:302034": {
   "imdb_id": "tt38582409",
@@ -15901,7 +15887,7 @@
   "num": 9735,
   "part": 9,
   "title": "Watching You",
-  "year": null
+  "year": 2025
  },
  "tv:302074": {
   "imdb_id": "tt37063558",
@@ -15985,7 +15971,7 @@
   "num": 9776,
   "part": 9,
   "title": "War of the Kingdoms",
-  "year": null
+  "year": 2025
  },
  "tv:304452": {
   "imdb_id": "tt37109705",
@@ -16041,28 +16027,28 @@
   "num": 9804,
   "part": 9,
   "title": "Rüya Gibi",
-  "year": null
+  "year": 2025
  },
  "tv:306118": {
   "imdb_id": "tt39013436",
   "num": 9454,
   "part": 7,
   "title": "Arafta",
-  "year": null
+  "year": 2025
  },
  "tv:306252": {
   "imdb_id": "tt38942109",
   "num": 10245,
   "part": 12,
   "title": "I Am Boxer",
-  "year": null
+  "year": 2025
  },
  "tv:306529": {
   "imdb_id": "tt38282411",
   "num": 9291,
   "part": 6,
   "title": "A.B.I.",
-  "year": null
+  "year": 2026
  },
  "tv:306762": {
   "imdb_id": "tt39050141",
@@ -16076,7 +16062,7 @@
   "num": 9671,
   "part": 8,
   "title": "The Nowhere Man",
-  "year": null
+  "year": 2025
  },
  "tv:307106": {
   "imdb_id": "tt39087958",
@@ -16121,11 +16107,11 @@
   "year": null
  },
  "tv:309163": {
-  "imdb_id": null,
+  "imdb_id": "tt39443176",
   "num": 11071,
   "part": 16,
   "title": "Gals Can't Be Kind to Otaku!?",
-  "year": null
+  "year": 2026
  },
  "tv:309798": {
   "imdb_id": "tt37352716",
@@ -16223,14 +16209,14 @@
   "num": 9316,
   "part": 6,
   "title": "Infinite Cycle of Love",
-  "year": null
+  "year": 2026
  },
  "tv:312849": {
-  "imdb_id": null,
+  "imdb_id": "tt41278600",
   "num": 11079,
   "part": 16,
   "title": "Rich Girl Caretaker",
-  "year": null
+  "year": 2026
  },
  "tv:312850": {
   "imdb_id": "tt41296544",
@@ -16289,7 +16275,7 @@
   "year": null
  },
  "tv:313774": {
-  "imdb_id": null,
+  "imdb_id": "tt35674865",
   "num": 10036,
   "part": 11,
   "title": "That Night",
@@ -16324,11 +16310,11 @@
   "year": null
  },
  "tv:314554": {
-  "imdb_id": null,
+  "imdb_id": "tt40550160",
   "num": 11078,
   "part": 16,
   "title": "From Overshadowed to Overpowered: Second Reincarnation of a Talentless Sage",
-  "year": null
+  "year": 2026
  },
  "tv:314784": {
   "imdb_id": "tt41090249",
@@ -16342,7 +16328,7 @@
   "num": 9313,
   "part": 6,
   "title": "Love as Bait",
-  "year": null
+  "year": 2026
  },
  "tv:314939": {
   "imdb_id": "tt43736405",
@@ -16461,7 +16447,7 @@
   "num": 9524,
   "part": 7,
   "title": "Fullmetal Alchemist: Brotherhood",
-  "year": null
+  "year": 2009
  },
  "tv:31917": {
   "imdb_id": "tt1578873",
@@ -16587,7 +16573,7 @@
   "num": 10021,
   "part": 11,
   "title": "The Fortune",
-  "year": null
+  "year": 2026
  },
  "tv:324346": {
   "imdb_id": "tt37094589",
@@ -16615,7 +16601,7 @@
   "num": 11236,
   "part": "mbm",
   "title": "What a Boss Wants",
-  "year": null
+  "year": 2026
  },
  "tv:327298": {
   "imdb_id": "tt43646207",
@@ -16625,11 +16611,11 @@
   "year": null
  },
  "tv:327814": {
-  "imdb_id": null,
+  "imdb_id": "tt43640818",
   "num": 11076,
   "part": 16,
   "title": "Final Project",
-  "year": null
+  "year": 2026
  },
  "tv:328010": {
   "imdb_id": "tt41054228",
@@ -16657,7 +16643,7 @@
   "num": 9689,
   "part": 8,
   "title": "Rascal Does Not Dream of Santa Claus",
-  "year": null
+  "year": 2025
  },
  "tv:330542": {
   "imdb_id": "tt37976607",
@@ -16706,7 +16692,7 @@
   "num": 10515,
   "part": 15,
   "title": "Treasure Island",
-  "year": null
+  "year": 2025
  },
  "tv:333438": {
   "imdb_id": "tt43669648",
@@ -16755,7 +16741,7 @@
   "num": 9498,
   "part": 7,
   "title": "Berserk",
-  "year": null
+  "year": 1997
  },
  "tv:37636": {
   "imdb_id": "tt1841321",
@@ -16769,35 +16755,28 @@
   "num": 9373,
   "part": 6,
   "title": "One Piece",
-  "year": null
+  "year": 1999
  },
  "tv:39272": {
   "imdb_id": "tt1843230",
   "num": 9424,
   "part": 7,
   "title": "Once Upon a Time",
-  "year": null
- },
- "tv:4177": {
-  "imdb_id": "tt0050051",
-  "num": 10809,
-  "part": 16,
-  "title": "Perry Mason",
-  "year": null
+  "year": 2011
  },
  "tv:42009": {
   "imdb_id": "tt2085059",
   "num": 10454,
   "part": 14,
   "title": "Black Mirror",
-  "year": null
+  "year": 2011
  },
  "tv:42509": {
   "imdb_id": "tt1910272",
   "num": 9426,
   "part": 7,
   "title": "Steins; Gate",
-  "year": null
+  "year": 2011
  },
  "tv:4275": {
   "imdb_id": "tt0077064",
@@ -16818,7 +16797,7 @@
   "num": 9583,
   "part": 8,
   "title": "Gilmore Girls",
-  "year": null
+  "year": 2000
  },
  "tv:46296": {
   "imdb_id": "tt1442449",
@@ -16826,13 +16805,6 @@
   "part": 16,
   "title": "Spartacus",
   "year": 2010
- },
- "tv:4632": {
-  "imdb_id": "tt0499591",
-  "num": 9749,
-  "part": 9,
-  "title": "Vanished",
-  "year": null
  },
  "tv:47665": {
   "imdb_id": "tt2375692",
@@ -16853,35 +16825,21 @@
   "num": 9213,
   "part": 5,
   "title": "Teenage Mutant Ninja Turtles",
-  "year": null
+  "year": 2012
  },
  "tv:52814": {
   "imdb_id": "tt2934286",
   "num": 10744,
   "part": 16,
   "title": "Halo",
-  "year": null
- },
- "tv:54557": {
-  "imdb_id": "tt0169507",
-  "num": 9684,
-  "part": 8,
-  "title": "Villains",
-  "year": null
- },
- "tv:58929": {
-  "imdb_id": "tt2983896",
-  "num": 9781,
-  "part": 9,
-  "title": "Head Over Heels",
-  "year": null
+  "year": 2022
  },
  "tv:60573": {
   "imdb_id": "tt2575988",
   "num": 9580,
   "part": 8,
   "title": "Silicon Valley",
-  "year": null
+  "year": 2014
  },
  "tv:60802": {
   "imdb_id": "tt2402207",
@@ -16902,7 +16860,7 @@
   "num": 9647,
   "part": 8,
   "title": "Death Parade",
-  "year": null
+  "year": 2015
  },
  "tv:62117": {
   "imdb_id": "tt3288518",
@@ -16930,7 +16888,7 @@
   "num": 9554,
   "part": 7,
   "title": "The Shannara Chronicles",
-  "year": null
+  "year": 2016
  },
  "tv:64196": {
   "imdb_id": "tt4869896",
@@ -16944,14 +16902,14 @@
   "num": 9578,
   "part": 8,
   "title": "The Magicians",
-  "year": null
+  "year": 2015
  },
  "tv:64555": {
   "imdb_id": "tt4686698",
   "num": 10098,
   "part": 11,
   "title": "Frontier",
-  "year": null
+  "year": 2016
  },
  "tv:65942": {
   "imdb_id": "tt5607616",
@@ -16965,28 +16923,21 @@
   "num": 9474,
   "part": 7,
   "title": "Wynonna Earp",
-  "year": null
- },
- "tv:66515": {
-  "imdb_id": "tt6155146",
-  "num": 9254,
-  "part": 5,
-  "title": "Brothers",
-  "year": null
+  "year": 2016
  },
  "tv:66859": {
   "imdb_id": "tt4370596",
   "num": 10074,
   "part": 11,
   "title": "Better Things",
-  "year": null
+  "year": 2016
  },
  "tv:693": {
   "imdb_id": "tt0410975",
   "num": 9577,
   "part": 8,
   "title": "Desperate Housewives",
-  "year": null
+  "year": 2004
  },
  "tv:69346": {
   "imdb_id": "tt6455986",
@@ -17000,14 +16951,14 @@
   "num": 10162,
   "part": 11,
   "title": "Mary Kills People",
-  "year": null
+  "year": 2025
  },
  "tv:70649": {
   "imdb_id": "tt6256484",
   "num": 9609,
   "part": 8,
   "title": "While You Were Sleeping",
-  "year": null
+  "year": 2017
  },
  "tv:70796": {
   "imdb_id": "tt5788792",
@@ -17024,7 +16975,7 @@
   "year": null
  },
  "tv:72517": {
-  "imdb_id": null,
+  "imdb_id": "tt7263328",
   "num": 11069,
   "part": 16,
   "title": "Classroom of the Elite",
@@ -17042,7 +16993,7 @@
   "num": 9555,
   "part": 7,
   "title": "Knightfall",
-  "year": null
+  "year": 2017
  },
  "tv:73223": {
   "imdb_id": "tt7441658",
@@ -17056,35 +17007,35 @@
   "num": 9570,
   "part": 8,
   "title": "Gunpowder",
-  "year": null
+  "year": 2017
  },
  "tv:73613": {
   "imdb_id": "tt6467482",
   "num": 9496,
   "part": 7,
   "title": "La Mante",
-  "year": null
+  "year": 2017
  },
  "tv:76148": {
   "imdb_id": "tt7120662",
   "num": 9557,
   "part": 7,
   "title": "Derry Girls",
-  "year": null
+  "year": 2018
  },
  "tv:76231": {
   "imdb_id": "tt5715524",
   "num": 9519,
   "part": 7,
   "title": "Mayans M.C.",
-  "year": null
+  "year": 2018
  },
  "tv:76284": {
   "imdb_id": "tt6483836",
   "num": 9765,
   "part": 9,
   "title": "Gone",
-  "year": null
+  "year": 2018
  },
  "tv:76560": {
   "imdb_id": "tt6756704",
@@ -17098,21 +17049,21 @@
   "num": 10008,
   "part": 11,
   "title": "The Little Drummer Girl",
-  "year": null
+  "year": 2018
  },
  "tv:78385": {
   "imdb_id": "tt8078816",
   "num": 9607,
   "part": 8,
   "title": "Something in the Rain",
-  "year": null
+  "year": 2018
  },
  "tv:79166": {
-  "imdb_id": null,
+  "imdb_id": "tt8086718",
   "num": 11081,
   "part": 16,
   "title": "Grand Blue Dreaming",
-  "year": null
+  "year": 2018
  },
  "tv:81356": {
   "imdb_id": "tt7767422",
@@ -17147,14 +17098,14 @@
   "num": 10869,
   "part": 16,
   "title": "Lovecraft Country",
-  "year": null
+  "year": 2020
  },
  "tv:83639": {
   "imdb_id": "tt8824648",
   "num": 10450,
   "part": 14,
   "title": "Girl From Nowhere",
-  "year": null
+  "year": 2018
  },
  "tv:855": {
   "imdb_id": "tt0103514",
@@ -17168,14 +17119,14 @@
   "num": 10068,
   "part": 11,
   "title": "Shadow and Bone",
-  "year": null
+  "year": 2021
  },
  "tv:86430": {
   "imdb_id": "tt7440726",
   "num": 10816,
   "part": 16,
   "title": "Your Honor",
-  "year": null
+  "year": 2020
  },
  "tv:87623": {
   "imdb_id": "tt9721776",
@@ -17189,7 +17140,7 @@
   "num": 9520,
   "part": 7,
   "title": "For All Mankind",
-  "year": null
+  "year": 2019
  },
  "tv:8840": {
   "imdb_id": "tt24512262",
@@ -17203,14 +17154,14 @@
   "num": 10817,
   "part": 16,
   "title": "Carnival Row",
-  "year": null
+  "year": 2019
  },
  "tv:90259": {
   "imdb_id": "tt10482370",
   "num": 10868,
   "part": 16,
   "title": "The Third Day",
-  "year": null
+  "year": 2020
  },
  "tv:92875": {
   "imdb_id": "tt8685324",
@@ -17224,21 +17175,21 @@
   "num": 9485,
   "part": 7,
   "title": "Criminal: UK",
-  "year": null
+  "year": 2019
  },
  "tv:93168": {
   "imdb_id": "tt9131050",
   "num": 9505,
   "part": 7,
   "title": "A Confession",
-  "year": null
+  "year": 2019
  },
  "tv:93192": {
   "imdb_id": "tt10911538",
   "num": 9518,
   "part": 7,
   "title": "Rise of the Nazis",
-  "year": null
+  "year": 2019
  },
  "tv:94404": {
   "imdb_id": "tt11147852",
@@ -17266,14 +17217,14 @@
   "num": 10196,
   "part": 12,
   "title": "First Lady",
-  "year": null
+  "year": 2025
  },
  "tv:99747": {
   "imdb_id": "tt11997646",
   "num": 10075,
   "part": 11,
   "title": "Conversations with Friends",
-  "year": null
+  "year": 2022
  },
  "tv:276163": {
   "imdb_id": "tt10570100",
@@ -85435,7 +85386,7 @@
   "year": 2026
  },
  "tv:309256": {
-  "imdb_id": null,
+  "imdb_id": "tt39254884",
   "num": 13091,
   "part": "fh",
   "title": "Shish Maheh",
@@ -85603,7 +85554,7 @@
   "year": 2022
  },
  "tv:248303": {
-  "imdb_id": null,
+  "imdb_id": "tt31596933",
   "num": 13115,
   "part": "fh",
   "title": "The Asphalt Jungle",
@@ -85678,5 +85629,54 @@
   "part": "fh",
   "title": "The Lion Skin",
   "year": 2022
+ },
+ "movie:74879": {
+  "imdb_id": "tt1827487",
+  "num": 7743,
+  "part": 4,
+  "title": "Once Upon a Time in Anatolia",
+  "year": 2011
+ },
+ "tv:287346": {
+  "imdb_id": "tt39301725",
+  "num": 9855,
+  "part": 9,
+  "title": "Honour",
+  "year": 2026
+ },
+ "tv:297424": {
+  "imdb_id": "tt39453765",
+  "num": 10053,
+  "part": 11,
+  "title": "Our Universe",
+  "year": 2026
+ },
+ "tv:85853": {
+  "imdb_id": "tt2077823",
+  "num": 10809,
+  "part": 16,
+  "title": "Perry Mason",
+  "year": 2020
+ },
+ "tv:287231": {
+  "imdb_id": "tt36958533",
+  "num": 9749,
+  "part": 9,
+  "title": "Vanished",
+  "year": 2026
+ },
+ "tv:197491": {
+  "imdb_id": "tt39068271",
+  "num": 9684,
+  "part": 8,
+  "title": "Villains",
+  "year": 2025
+ },
+ "tv:258025": {
+  "imdb_id": "tt37146661",
+  "num": 9781,
+  "part": 9,
+  "title": "Head Over Heels",
+  "year": 2025
  }
 }
