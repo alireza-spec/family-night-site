@@ -4102,7 +4102,7 @@ async function loadHome() {
          newest-first). The live refresh below only MERGES into it. */
       try {
         var _stN = await fnStaticJson('newest.json', null, DL_BASE);
-        if (_stN && (_stN.movies || {}).results && _stN.movies.results.length) { rows.newM25 = _stN.movies.results.slice(0, 20); /* FN-NEWEST-ADD-ORDER v1: pins order = archive-addition order, no date re-sort */ try { fnPaintHome(rows); } catch (e2) {} }
+        if (_stN && (_stN.movies || {}).results && _stN.movies.results.length) { rows.newM25 = _stN.movies.results.slice().sort(function (a, b) { return String(b.release_date || '').localeCompare(String(a.release_date || '')); }).slice(0, 20); /* FN-NEWEST-RELEASE-DATE v1 (user order 2026-11-23 23:32): release_date desc */ try { fnPaintHome(rows); } catch (e2) {} }
       } catch (e) {}
       /* newM25 rail: live TMDB discover. NO-FLOOR WALL (parent-measured
          2026-11-20 ~19:30): a date-desc discover with NO vote floor
@@ -4110,19 +4110,19 @@ async function loadHome() {
          archive-linked titles (gte=40: 48/60). So the live fetch must
          never be a bare floor-less 3-page fetch that wipes the rail:
          (1) it fetches its pool by popularity (like updates does for
-         tv) and the merged list keeps the static pins order first; (2) it only
+         tv) and the list is sorted newest-first below; (2) it only
          MERGES into the static set - a live fetch that returns fewer
          titles never drops static items. The no-floor rule itself
          lives in the daily static precompute (deep-walked
          new-movies.json), not in this 3-page fetch. */
       try {
         const _y = new Date().getFullYear() - 1;
-        const _nmLive = await fnFillHomeRail(page => tmdb('discover/movie', { 'primary_release_date.gte': _y + '-01-01', 'primary_release_date.lte': _today, sort_by: 'popularity.desc', page: page }).then(d => (d.results || []).map(x => Object.assign({}, x, { media_type: 'movie' }))), x => { const dt = x.release_date || ''; return dt && dt <= _today; });
-        /* FN-NEWEST-ADD-ORDER v1: no date re-sort — live stays in fetch order and appends after the static pins. */
+        let _nmLive = await fnFillHomeRail(page => tmdb('discover/movie', { 'primary_release_date.gte': _y + '-01-01', 'primary_release_date.lte': _today, sort_by: 'popularity.desc', page: page }).then(d => (d.results || []).map(x => Object.assign({}, x, { media_type: 'movie' }))), x => { const dt = x.release_date || ''; return dt && dt <= _today; });
+        _nmLive.sort((a, b) => String(b.release_date || '').localeCompare(String(a.release_date || '')));
         if (_nmLive.length) {
           var _nmMerged = (rows.newM25 || []).slice();
           _nmLive.forEach(function (x) { if (!_nmMerged.some(function (y) { return y.id === x.id; })) _nmMerged.push(x); });
-          /* FN-NEWEST-ADD-ORDER v1: no date re-sort — merged list keeps static pins first. */
+          _nmMerged.sort((a, b) => String(b.release_date || '').localeCompare(String(a.release_date || '')));
           _nmLive = _nmMerged.slice(0, 20);
           rows.newM25 = _nmLive;
         }
@@ -4135,7 +4135,7 @@ async function loadHome() {
          refresh below only MERGES into it. */
       try {
         var _stU = await fnStaticJson('newest.json', null, DL_BASE);
-        if (_stU && (_stU.series || {}).results && _stU.series.results.length) { rows.updates = _stU.series.results.slice(0, 20); /* FN-NEWEST-ADD-ORDER v1: pins order = archive-addition order, no date re-sort */ try { fnPaintHome(rows); } catch (e2) {} }
+        if (_stU && (_stU.series || {}).results && _stU.series.results.length) { rows.updates = _stU.series.results.slice().sort(function (a, b) { return String((b.last_air_date || b.first_air_date) || '').localeCompare(String((a.last_air_date || a.first_air_date) || '')); }).slice(0, 20); /* FN-NEWEST-RELEASE-DATE v1 (user order 2026-11-23 23:32): last-episode date desc */ try { fnPaintHome(rows); } catch (e2) {} }
       } catch (e) {}
       /* updates rail: live TMDB discover/tv — SERIES only, new
          episode within 3 months, no talk/news/reality, most popular
@@ -4143,12 +4143,12 @@ async function loadHome() {
          the static set (same NO-FLOOR WALL caution as newM25: a live
          fetch that returns fewer titles must never shrink the rail). */
       try {
-        const _upLive = await fnFillHomeRail(page => tmdb('discover/tv', { 'air_date.gte': _g3s, 'air_date.lte': _today, without_genres: '10767,10763,10764', sort_by: 'popularity.desc', page: page }).then(d => (d.results || []).map(x => Object.assign({}, x, { media_type: 'tv' }))), null);
-        /* FN-NEWEST-ADD-ORDER v1: no date re-sort — live stays in fetch order and appends after the static pins. */
+        let _upLive = await fnFillHomeRail(page => tmdb('discover/tv', { 'air_date.gte': _g3s, 'air_date.lte': _today, without_genres: '10767,10763,10764', sort_by: 'popularity.desc', page: page }).then(d => (d.results || []).map(x => Object.assign({}, x, { media_type: 'tv' }))), null);
+        _upLive.sort((a, b) => String((b.last_air_date || b.first_air_date) || '').localeCompare(String((a.last_air_date || a.first_air_date) || '')));
         if (_upLive.length) {
           var _upMerged = (rows.updates || []).slice();
           _upLive.forEach(function (x) { if (!_upMerged.some(function (y) { return y.id === x.id; })) _upMerged.push(x); });
-          /* FN-NEWEST-ADD-ORDER v1: no date re-sort — merged list keeps static pins first. */
+          _upMerged.sort((a, b) => String((b.last_air_date || b.first_air_date) || '').localeCompare(String((a.last_air_date || a.first_air_date) || '')));
           _upLive = _upMerged.slice(0, 20);
           rows.updates = _upLive;
         }
@@ -4993,9 +4993,8 @@ async function loadArchPage() {
        all 2026-11-20); the static list is deep-walked, archive-linked
        only, no vote floor. Seeding happens BEFORE the seen-dedup below,
        so already-shown cards are still removed and re-seeding needs no
-       flag. The final sort below keeps the seed order for the default sort
-       (archive-addition order, FN-NEWEST-ADD-ORDER v1); an explicit pick
-       still re-sorts. Series are NOT seeded here (part 3). */
+       flag. The final sort below (date-desc default) orders by
+       release_date desc. Series are NOT seeded here (part 3). */
     if (arch.collKey === 'newM25') {
       try {
         var _stSeedN = await fnStaticJson('newest.json', null, DL_BASE);
@@ -5011,9 +5010,8 @@ async function loadArchPage() {
        until 100 archive-linked, no vote floor, and now carries
        last_air_date per series. Seeding happens BEFORE the seen-dedup
        below, so already-shown cards are still removed and re-seeding
-       needs no flag. The final sort below keeps the seed order for the default sort
-       (archive-addition order, FN-NEWEST-ADD-ORDER v1); an explicit pick
-       still re-sorts. */
+       needs no flag. The final sort below orders updates by
+       (last_air_date || first_air_date) desc. */
     if (arch.collKey === 'updates') {
       try {
         var _stSeedU = await fnStaticJson('newest.json', null, DL_BASE);
@@ -5059,16 +5057,13 @@ async function loadArchPage() {
       });
       items = items.concat(_locals);
     }
-    /* FN-NEWEST-ADD-ORDER v1 (user pick 2026-11-23 «تازه اضافه‌شده‌ها اول
-       باشن»): the newest lists (newM25/updates) are ordered by ARCHIVE-
-       ADDITION date — the static newest.json seed already arrives in pins
-       order (newest batch first) and the live pool appends after it. With
-       the DEFAULT newest-first sort, skip the date re-sort below so the
-       addition order survives. An explicit sort pick (oldest, votes,
-       popularity, random) still applies through its own branch. */
-    const _nwKeepOrder = (arch.collKey === 'newM25' || arch.collKey === 'updates') && (sortUi === 'primary_release_date.desc' || sortUi === 'first_air_date.desc');
-    if (_nwKeepOrder) { /* keep seed+pool order: archive-addition order */ }
-    else if (sortUi === 'popularity.desc') items.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
+    /* FN-NEWEST-RELEASE-DATE v1 (user order 2026-11-23 23:32): the
+       newest lists (newM25/updates) sort by RELEASE DATE — movies by
+       release_date desc, series by (last_air_date || first_air_date)
+       desc. No addition-order shortcut: the default sort branches below
+       apply. An explicit sort pick (oldest, votes, popularity, random)
+       still applies through its own branch. */
+    if (sortUi === 'popularity.desc') items.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
     else if (arch.collKey === 'updates' && (sortUi === 'primary_release_date.desc' || sortUi === 'first_air_date.desc')) items.sort((a, b) => String((b.last_air_date || b.first_air_date) || '').localeCompare(String((a.last_air_date || a.first_air_date) || '')));
     else if (sortUi === 'primary_release_date.desc' || sortUi === 'first_air_date.desc') items.sort((a, b) => String((b.media_type === 'tv' ? b.first_air_date : b.release_date) || '').localeCompare(String((a.media_type === 'tv' ? a.first_air_date : a.release_date) || '')));
     /* FN-ASC-SORT v1: oldest-first — the batch was fetched by popularity
