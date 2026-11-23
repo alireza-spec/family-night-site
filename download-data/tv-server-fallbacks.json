@@ -22,6 +22,14 @@
    {
     "url": "https://1681299670.rsc.cdn77.org/LS-63503-4/index.m3u8",
     "title": "سرور5 (نیازبه فیلترشکن)"
+   },
+   {
+    "url": "https://d234zyvf3b6a4t.cloudfront.net/out/v1/abe3211a88b84dafa7a48b8fb2678895/index_10.m3u8",
+    "title": "سرور 5",
+    "country": "",
+    "referer": "",
+    "origin": "",
+    "agent": ""
    }
   ],
   "probe_main": "inconclusive-vm"
@@ -45,6 +53,11 @@
    {
     "url": "https://ca-rt.onetv.app:8443/PMCMusic/index-0.m3u8?token=onetv202",
     "title": "سرورمناسب خارج۳"
+   },
+   {
+    "url": "https://ca-rt.onetvapi.win:8443/PMCMusic/index-0.m3u8?token=onetv202",
+    "title": "سرور2",
+    "referer": "https://onetv.app/"
    }
   ],
   "probe_main": "inconclusive-vm"
@@ -97,6 +110,30 @@
    {
     "url": "https://ayassport.776740.ir.cdn.ir/hls2/varzeshtest.m3u8",
     "title": "سرورمناسب ایران۲"
+   },
+   {
+    "url": "http://46.245.122.6:8080/hls2/varzeshtest.m3u8",
+    "title": "سرورمناسب ایران",
+    "country": "",
+    "referer": "",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://af.ayassport.ir/hls2/varzeshtest.m3u8",
+    "title": "سرور2",
+    "country": "",
+    "referer": "",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://lenz.splus.ir/PLTV/88888888/224/3221226845/index.m3u8",
+    "title": "سرورلنز",
+    "country": "",
+    "referer": "",
+    "origin": "",
+    "agent": ""
    }
   ],
   "probe_main": "inconclusive-vm"
@@ -134,6 +171,17 @@
    {
     "url": "https://10g.vitarani.com/live/UbW_zXSlMiHg43S9rSlyDQ__/master.m3u8",
     "title": "سرورمناسب ایران"
+   },
+   {
+    "url": "https://cp12.adabmedia.com/hls/gnc/stream.m3u8",
+    "title": "سرورمناسب ایران۱",
+    "referer": "https://mytvsat.tv/",
+    "origin": "https://mytvsat.tv/"
+   },
+   {
+    "url": "http://46.245.122.7:8080/hls/gnc/stream.m3u8",
+    "title": "سرورمناسب ایران۲",
+    "referer": "https://mytvsat.tv"
    }
   ],
   "probe_main": "inconclusive-vm"
@@ -156,6 +204,10 @@
    {
     "url": "https://piraxy.tamashaland.com/cors?url=https://moviethls.wns.live/hls/stream.m3u8",
     "title": "سرور اصلی"
+   },
+   {
+    "url": "https://ca.onetvapi.win:8443/moviethls.wns.live/hls/stream.m3u8?token=onetv202",
+    "title": "سرور 1"
    }
   ],
   "probe_main": "inconclusive-vm"
@@ -174,5 +226,1373 @@
    }
   ],
   "probe_main": "inconclusive-vm"
+ },
+ "https://sltwohls.wns.live/hls/stream.m3u8": {
+  "name": "اس ال تی‌وی 2",
+  "dn_name": "اس ال تی‌وی 2",
+  "servers": [
+   {
+    "url": "https://cp12.adabmedia.com/hls/sl2/stream.m3u8",
+    "title": "سرورمناسب ایران1",
+    "referer": "https://mytvsat.tv/"
+   },
+   {
+    "url": "http://46.245.122.7:8080/hls/sl2/stream.m3u8",
+    "title": "سرورمناسب ایران۲",
+    "referer": "https://mytvsat.tv"
+   },
+   {
+    "url": "https://ca.onetvapi.win:8443/sltwohls.wns.live/hls/stream.m3u8?token=onetv202",
+    "title": "سرورمناسب خارج۱",
+    "referer": "https://onetv202.app"
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://slonehls.wns.live/hls/stream.m3u8": {
+  "name": "اس ال تی‌وی 1",
+  "dn_name": "اس ال تی‌وی 1",
+  "servers": [
+   {
+    "url": "https://piraxy.tamashaland.com/cors?url=https://slonehls.wns.live/hls/stream.m3u8",
+    "title": "سرور 2",
+    "referer": "https://tamashaland.com/"
+   },
+   {
+    "url": "https://piraxy.tamashaland.com/cors?url=https://afrashls.wns.live/hls/stream.m3u8",
+    "title": "سرور2",
+    "referer": "https://tamashaland.com"
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://itnhls.wns.live/hls/stream.m3u8": {
+  "name": "آی تی ان",
+  "dn_name": "آی تی ان",
+  "servers": [
+   {
+    "url": "http://46.245.122.7:8080/hls/itn/stream.m3u8",
+    "title": "سرورمناسب ایران",
+    "referer": "https://mytvsat.tv/",
+    "origin": "https://mytvsat.tv/"
+   },
+   {
+    "url": "https://ca-rt.onetv.app/ITN/index-0.m3u8?token=onetv202",
+    "title": "سرور2",
+    "referer": "https://tvitn.com/"
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://mtchls.wns.live/hls/stream.m3u8": {
+  "name": "ام تی سی",
+  "dn_name": "ام تی سی",
+  "servers": [
+   {
+    "url": "https://cp12.adabmedia.com/hls/mtc/stream.m3u8",
+    "title": "سرور مناسب ایران ۱",
+    "referer": "https://mytvsat.tv"
+   },
+   {
+    "url": "http://46.245.122.7:8080/hls/mtc/stream.m3u8",
+    "title": "سرورمناسب ایران۲",
+    "referer": "https://mytvsat.tv"
+   },
+   {
+    "url": "https://ca.onetvapi.win:8443/mtchls.wns.live/hls/stream.m3u8?token=onetv202",
+    "title": "سرور 2",
+    "referer": "https://mtchls.wns.live/"
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://10g.vitarani.com/live/j_fHB9WUAwH2PXnoAsnEDw__/master.m3u8": {
+  "name": "آوا سریس",
+  "dn_name": "آوا سریس",
+  "servers": [
+   {
+    "url": "https://ca.onetvapi.win:8443/avaserieshls.wns.live/hls/stream.m3u8?token=onetv202",
+    "title": "سرور 3"
+   },
+   {
+    "url": "https://avaserieshls.wns.live/hls/stream.m3u8",
+    "title": "سرور ۱",
+    "referer": "https://avaseries.wns.live/"
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://metafilmhls.wns.live/hls/stream.m3u8": {
+  "name": "متا فیلم",
+  "dn_name": "متا فیلم",
+  "servers": [
+   {
+    "url": "https://piraxy.tamashaland.com/cors?url=https://metafilmhls.wns.live/hls/stream.m3u8",
+    "title": "سرور 2",
+    "referer": "https://metafilmhls.wns.live/"
+   },
+   {
+    "url": "https://ca.onetvapi.win:8443/metafilmhls.wns.live/hls/stream.m3u8?token=onetv202",
+    "title": "سرور 3"
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://t2hls.wns.live/hls/stream.m3u8": {
+  "name": "تی ۲ تی‌وی",
+  "dn_name": "تی ۲ تی‌وی",
+  "servers": [
+   {
+    "url": "https://ca.onetvapi.win:8443/t2hls.wns.live/hls/stream.m3u8?token=onetv202",
+    "title": "سرور 1"
+   },
+   {
+    "url": "https://maxtvhls.wns.live/hls/stream.m3u8",
+    "title": "سرور 2"
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://fxtvhls.wns.live/hls/stream.m3u8": {
+  "name": "اف ایکس مووی",
+  "dn_name": "اف ایکس مووی",
+  "servers": [
+   {
+    "url": "https://ca.onetvapi.win:8443/fxtvhls.wns.live/hls/stream.m3u8?token=onetv202",
+    "title": "سرور 3",
+    "referer": "https://onetvapi.win"
+   },
+   {
+    "url": "http://46.245.122.7:8080/hls/fx1/stream.m3u8",
+    "title": "سرورمناسب ایران",
+    "referer": "https://mytvsat.tv/"
+   },
+   {
+    "url": "https://10g.vitarani.com/live/_Y1zPkxouZ1BH7RFFWwSmA__/master.m3u8",
+    "title": "سرور2",
+    "referer": "https://salmal1000.com/",
+    "origin": "https://salmal1000.com"
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://toonixhls.wns.live/hls/stream.m3u8": {
+  "name": "اف ایکس کارتون",
+  "dn_name": "اف ایکس کارتون",
+  "servers": [
+   {
+    "url": "https://cp12.adabmedia.com/hls/fx2/stream.m3u8",
+    "title": "سرورمناسب ایران۱",
+    "referer": "https://mytvsat.tv/"
+   },
+   {
+    "url": "http://46.245.122.7:8080/hls/fx2/stream.m3u8",
+    "title": "سرورمناسب ایران۲"
+   },
+   {
+    "url": "https://ca.onetvapi.win:8443/toonixhls.wns.live/hls/stream.m3u8?token=onetv202",
+    "title": "سرور2",
+    "referer": "https://onetvapi.win"
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://hls.4utv.live/hls/stream.m3u8": {
+  "name": "فوریو تی‌وی",
+  "dn_name": "فوریو تی‌وی",
+  "servers": [
+   {
+    "url": "https://ca.onetvapi.win:8443/hls.4utv.live/hls/stream.m3u8?token=onetv202",
+    "title": "سرور ۲"
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://pmcrohls.wns.live/hls/stream.m3u8": {
+  "name": "پی ام سی رویال",
+  "dn_name": "پی ام سی رویال",
+  "servers": [
+   {
+    "url": "https://ca.onetvapi.win:8443/pmcrohls.wns.live/hls/stream.m3u8?token=onetv202",
+    "title": "سرور 2",
+    "referer": "https://onetv200.app"
+   },
+   {
+    "url": "https://piraxy.tamashaland.com/cors?url=https://pmcrohls.wns.live/hls/stream.m3u8",
+    "title": "سرور۳"
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://clshls.wns.live/hls/stream.m3u8": {
+  "name": "کلاسیک تی وی",
+  "dn_name": "کلاسیک تی وی",
+  "servers": [
+   {
+    "url": "https://ca.onetvapi.win:8443/clshls.wns.live/hls/stream.m3u8?token=onetv202",
+    "title": "سرور 3",
+    "referer": "https://onetvapi.win"
+   },
+   {
+    "url": "https://piraxy.tamashaland.com/cors?url=https://clshls.wns.live/hls/stream.m3u8",
+    "title": "سرور2"
+   },
+   {
+    "url": "http://gg.hls2.xyz/live/Classic%20TV/playlist.m3u8",
+    "title": "سرور2",
+    "referer": "https://www.aparatchi.com/"
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://twohls.persiana.live/hls/stream.m3u8": {
+  "name": "پرشیانا ریلیتی",
+  "dn_name": "پرشیانا ریلیتی",
+  "servers": [
+   {
+    "url": "http://gg.hls2.xyz/live/AP%20Persiana%20Reality/playlist.m3u8",
+    "title": "سرور3",
+    "referer": "https://www.aparatchi.com/"
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://ca.onetvapi.win:8443/araxhls.wns.live/hls/stream.m3u8?token=onetv202": {
+  "name": "آراکس تی‌وی",
+  "dn_name": "آراکس تی‌وی",
+  "servers": [
+   {
+    "url": "https://araxhls.wns.live/hls/stream.m3u8",
+    "title": "سرور۱",
+    "referer": "ـ"
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://piraxy.tamashaland.com/cors?url=https://cafefhls.wns.live/hls/stream.m3u8": {
+  "name": "کافه فیلم",
+  "dn_name": "کافه فیلم",
+  "servers": [
+   {
+    "url": "https://piraxy.tamashaland.com/cors?url=https://afrafhls.wns.live/hls/stream.m3u8",
+    "title": "سرور2",
+    "referer": "https://tamashaland.com"
+   },
+   {
+    "url": "https://piraxy.tamashaland.com/cors?url=https://moviethls.wns.live/hls/stream.m3u8",
+    "title": "سرور 2",
+    "referer": "https://moviethls.wns.live/"
+   },
+   {
+    "url": "https://cafefhls.wns.live/hls/stream.m3u8",
+    "title": "سرور 1",
+    "referer": "https://cafefhls.wns.live/"
+   },
+   {
+    "url": "https://afrafhls.wns.live/hls/stream.m3u8",
+    "title": "سرور1"
+   },
+   {
+    "url": "https://moviethls.wns.live/hls/stream.m3u8",
+    "title": "سرور 1",
+    "referer": "https://moviethls.wns.live/"
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://homeplushls.wns.live/hls/stream.m3u8": {
+  "name": "Home +",
+  "dn_name": "Home +",
+  "servers": [
+   {
+    "url": "https://ca.onetvapi.win:8443/homeplushls.wns.live/hls/stream.m3u8?token=onetv202",
+    "title": "سرور2",
+    "referer": "https://homeplushls.wns.live/"
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://ptravelhls.persiana.live/hls/stream.m3u8": {
+  "name": "پرشیانا تراول",
+  "dn_name": "پرشیانا تراول",
+  "servers": [
+   {
+    "url": "http://gg.hls2.xyz/live/Persiana%20Travel/playlist.m3u8",
+    "title": "سرور2",
+    "referer": "https://www.aparatchi.com/"
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://player.kalemeh.tv/live/ngrp:kalemeh_all/playlist.m3u8": {
+  "name": "کلمه تی‌وی",
+  "dn_name": "کلمه تی‌وی",
+  "servers": [
+   {
+    "url": "https://klmhls.wns.live/hls/stream.m3u8",
+    "title": "سرور1"
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://arkhls.wns.live/hls/stream.m3u8": {
+  "name": "آرکو تی‌وی",
+  "dn_name": "آرکو تی‌وی",
+  "servers": [
+   {
+    "url": "http://gg.hls2.xyz/live/Arko%20TV/playlist.m3u8",
+    "title": "سرور2",
+    "referer": "https://www.aparatchi.com/"
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://arvhls.wns.live/hls/stream.m3u8": {
+  "name": "رویال تی‌وی",
+  "dn_name": "رویال تی‌وی",
+  "servers": [
+   {
+    "url": "http://gg.hls2.xyz/live/Royal%20TV/playlist.m3u8",
+    "title": "سرور۲",
+    "referer": "https://www.aparatchi.com/"
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://atrihls.wns.live/hls/stream.m3u8": {
+  "name": "آترینا تی‌وی",
+  "dn_name": "آترینا تی‌وی",
+  "servers": [
+   {
+    "url": "http://gg.hls2.xyz/live/Atrina%20TV/playlist.m3u8",
+    "title": "سرور2",
+    "referer": "https://www.aparatchi.com/"
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://cp12.adabmedia.com/hls/live1/stream.m3u8": {
+  "name": "جم سریس",
+  "dn_name": "جم سریس",
+  "servers": [
+   {
+    "url": "http://gg.hls2.xyz/live/IR%20-%20GEM%20Series%202/playlist.m3u8",
+    "title": "سرور2",
+    "country": "",
+    "referer": "https://www.aparatchi.com/",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://main.ardanmi.com/live/x8QUkB2h6eVJE7N_PV37Wg__/master.m3u8",
+    "title": "سرور 3",
+    "country": "",
+    "referer": "https://salmal1000.com/",
+    "origin": "https://salmal1000.com",
+    "agent": ""
+   },
+   {
+    "url": "https://ca-rt.onetvapi.win:8443/gemseries/index-0.m3u8?token=onetv202",
+    "title": "سرور4",
+    "country": "",
+    "referer": "https://onetv200.app",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://rjtvhls.wns.live/hls/stream.m3u8": {
+  "name": "رادیو جوان TV",
+  "dn_name": "رادیو جوان TV",
+  "servers": [
+   {
+    "url": "https://cp12.adabmedia.com/hls/rjavan/stream.m3u8",
+    "title": "سرورمناسب ایران۱",
+    "country": "iran",
+    "referer": "https://mytvsat.tv",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "http://46.245.122.7:8080/hls/rjavan/stream.m3u8",
+    "title": "سرورمناسب ایران۲",
+    "country": "iran",
+    "referer": "https://mytvsat.tv",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://ca.onetvapi.win:8443/rjtvhls.wns.live/hls/stream.m3u8?token=onetv202",
+    "title": "سرورمناسب خارج۳",
+    "country": "worldwide",
+    "referer": "https://onetv.app/",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://main.ardanmi.com/live/f68qb6igy7HZAmy674vTDg__/master.m3u8",
+    "title": "سرورخارج2",
+    "country": "worldwide",
+    "referer": "https://salmal1000.com/",
+    "origin": "https://salmal1000.com",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://ncdn.telewebion.ir/tv3/live/playlist.m3u8": {
+  "name": "شبکه سه",
+  "dn_name": "شبکه سه",
+  "servers": [
+   {
+    "url": "https://cp11.adabmedia.com/hls2/tv3test.m3u8",
+    "title": "سرور مناسب ایران ۱",
+    "country": "iran",
+    "referer": "",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://ayassport.776740.ir.cdn.ir/hls2/tv3test.m3u8",
+    "title": "سرور ۱",
+    "country": "",
+    "referer": "",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "http://46.245.122.6:8080/hls2/tv3test.m3u8",
+    "title": "سرورمناسب ایران",
+    "country": "",
+    "referer": "",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://10g.vitarani.com/live/FP7oW6TLcI0Ok4bEXB1z7w__/master.m3u8",
+    "title": "سرورمناسب خارج۱",
+    "country": "worldwide",
+    "referer": "https://salmal1000.com/",
+    "origin": "https://salmal1000.com",
+    "agent": ""
+   },
+   {
+    "url": "https://lenz.splus.ir/PLTV/88888888/224/3221226868/index.m3u8",
+    "title": "سرور لنز",
+    "country": "",
+    "referer": "",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://af.ayassport.ir/hls2/tv3test.m3u8",
+    "title": "شبکه سه",
+    "country": "",
+    "referer": "",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://cp12.adabmedia.com/hls/mbpersia/stream.m3u8": {
+  "name": "ام بی سی پرشیا",
+  "dn_name": "ام بی سی پرشیا",
+  "servers": [
+   {
+    "url": "https://shls-mbcpersia-prod-dub.shahid.net/out/v1/bdc7cd0d990e4c54808632a52c396946/index.m3u8",
+    "title": "سرور2",
+    "country": "",
+    "referer": "",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://hls.ravitv.com/hls/stream.m3u8": {
+  "name": "Ravi",
+  "dn_name": "Ravi",
+  "servers": [
+   {
+    "url": "https://cp12.adabmedia.com/hls/ravitv/stream.m3u8",
+    "title": "سرورمناسب ایران۱",
+    "country": "iran",
+    "referer": "https://mytvsat.tv",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "http://46.245.122.7:8080/hls/ravitv/stream.m3u8",
+    "title": "سرورمناسب ایران۲",
+    "country": "iran",
+    "referer": "https://mytvsat.tv",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://cp12.adabmedia.com/hls/live2/stream.m3u8": {
+  "name": "جم بالیوود",
+  "dn_name": "جم بالیوود",
+  "servers": [
+   {
+    "url": "http://185.109.244.93:8080/hls/live2/stream.m3u8",
+    "title": "سرور2",
+    "country": "",
+    "referer": "https://mytvsat.tv",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "http://gg.hls2.xyz/live/IR%20-%20GEM%20Bollywood2/playlist.m3u8",
+    "title": "سرور3",
+    "country": "",
+    "referer": "https://www.aparatchi.com/",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://ca-rt.onetvapi.win/gembollywood/index-0.m3u8?token=onetv202",
+    "title": "سرور4",
+    "country": "",
+    "referer": "https://onetv200.app",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://cp12.adabmedia.com/hls/gmfood/stream.m3u8": {
+  "name": "جم فود",
+  "dn_name": "جم فود",
+  "servers": [
+   {
+    "url": "http://gg.hls2.xyz/live/IR%20-%20GEM%20FOOD2/playlist.m3u8",
+    "title": "سرور1",
+    "country": "",
+    "referer": "https://www.aparatchi.com/",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://ca-rt.onetvapi.win/gemfood/index-0.m3u8?token=onetv202",
+    "title": "سرور2",
+    "country": "",
+    "referer": "https://onetv200.app",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://cp12.adabmedia.com/hls/RUB/stream.m3u8": {
+  "name": "روبیکس",
+  "dn_name": "روبیکس",
+  "servers": [
+   {
+    "url": "https://ca-rt.onetvapi.win/gemrubix/index-0.m3u8?token=onetv202",
+    "title": "سرور 1",
+    "country": "",
+    "referer": "https://onetv200.app",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "http://gg.hls2.xyz/live/IR%20-%20GEM%20Rubix2/playlist.m3u8",
+    "title": "سرور2",
+    "country": "",
+    "referer": "https://www.aparatchi.com/",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://cp12.adabmedia.com/hls/live4/stream.m3u8": {
+  "name": "جم تیوی",
+  "dn_name": "جم تیوی",
+  "servers": [
+   {
+    "url": "http://gg.hls2.xyz/live/IR%20-%20GEM%20TV2/playlist.m3u8",
+    "title": "سرور2",
+    "country": "",
+    "referer": "https://www.aparatchi.com/",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://ca-rt.onetvapi.win/gem/index-0.m3u8?token=onetv202",
+    "title": "سرور3",
+    "country": "",
+    "referer": "https://onetv200.app",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://cp12.adabmedia.com/hls/RIV/stream.m3u8": {
+  "name": "ریور",
+  "dn_name": "ریور",
+  "servers": [
+   {
+    "url": "https://ca-rt.onetvapi.win/gemriver/index-0.m3u8?token=onetv202",
+    "title": "سرور1",
+    "country": "",
+    "referer": "https://onetv200.app",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "http://gg.hls2.xyz/live/IR%20-%20Gem%20River2/playlist.m3u8",
+    "title": "سرور2",
+    "country": "",
+    "referer": "https://www.aparatchi.com/",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://live.presstv.ir/hls/ifilmfa.m3u8": {
+  "name": "آی‌فیلم فارسی",
+  "dn_name": "آی‌فیلم فارسی",
+  "servers": [
+   {
+    "url": "https://ncdn.telewebion.ir/ifilm/live/playlist.m3u8",
+    "title": "سرورمناسب ایران۱",
+    "country": "iran",
+    "referer": "",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://live.presstv.ir/hls/ifilmen.m3u8",
+    "title": "آی‌فیلم‌انگلیسی",
+    "country": "worldwide",
+    "referer": "",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://cp12.adabmedia.com/hls/drama/stream.m3u8": {
+  "name": "جم دراما",
+  "dn_name": "جم دراما",
+  "servers": [
+   {
+    "url": "http://gg.hls2.xyz/live/IR%20-%20GEM%20Drama_/playlist.m3u8",
+    "title": "سرور1",
+    "country": "",
+    "referer": "https://www.aparatchi.com/",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://gems1.ardanmi.com/live/Kfol1ZIqCEx6rH1XcnnxEg__/master.m3u8",
+    "title": "سرور2",
+    "country": "",
+    "referer": "https://salmal1000.com/",
+    "origin": "https://salmal1000.com",
+    "agent": ""
+   },
+   {
+    "url": "https://ca-rt.onetvapi.win/gemdrama/index-0.m3u8?token=onetv202",
+    "title": "سرور3",
+    "country": "",
+    "referer": "https://onetv202.app",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://cp12.adabmedia.com/hls/ekranm/stream.m3u8": {
+  "name": "اکران مووی",
+  "dn_name": "اکران مووی",
+  "servers": [
+   {
+    "url": "https://ca-rt.onetvapi.win/EkranMovies/index-0.m3u8?token=onetv202",
+    "title": "سرور1",
+    "country": "",
+    "referer": "https://onetv202.app",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "http://gg.hls2.xyz/live/Ekran/playlist.m3u8",
+    "title": "سرور 3",
+    "country": "",
+    "referer": "https://www.aparatchi.com/",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://10g.vitarani.com/live/v_7c79_XGyehukYozgX4kQ__/master.m3u8": {
+  "name": "جم اسپرت",
+  "dn_name": "جم اسپرت",
+  "servers": [
+   {
+    "url": "https://cp11.adabmedia.com/hls2/gms.m3u8",
+    "title": "سرور 2",
+    "country": "",
+    "referer": "",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://ayassport.776740.ir.cdn.ir/hls2/gma.m3u8",
+    "title": "سرور4",
+    "country": "",
+    "referer": "",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://cdn.ayas.ir/hls2/gms.m3u8",
+    "title": "سرور 1",
+    "country": "",
+    "referer": "",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://cdn.ayaslive.ir/hls2/gms.m3u8",
+    "title": "سرور 3",
+    "country": "",
+    "referer": "",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "http://gg.hls2.xyz/live/IR%20-%20GEM%20Sport/playlist.m3u8",
+    "title": "سرور5",
+    "country": "",
+    "referer": "https://www.aparatchi.com/",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://cp11.adabmedia.com/hls2/persiana.m3u8": {
+  "name": "پرشیانا اسپورت 1",
+  "dn_name": "پرشیانا اسپورت 1",
+  "servers": [
+   {
+    "url": "http://46.245.122.6:8080/hls2/persiana.m3u8",
+    "title": "سرورمناسب ایران",
+    "country": "",
+    "referer": "",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://ayassport.776740.ir.cdn.ir/hls2/persiana.m3u8",
+    "title": "سرور 4",
+    "country": "",
+    "referer": "http://salintv.com/",
+    "origin": "http://salintv.com",
+    "agent": ""
+   },
+   {
+    "url": "https://cdn.ayaslive.ir/hls2/persiana.m3u8",
+    "title": "سرورمناسب ایران",
+    "country": "",
+    "referer": "",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "http://gg.hls2.xyz/live/Persiana%20Sports/playlist.m3u8",
+    "title": "سرور3",
+    "country": "",
+    "referer": "https://www.aparatchi.com/",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://serversecond.ardanmi.com/live/YavvmpVcljm7IIlOrHqr_w__/master.m3u8": {
+  "name": "پرشیانا اسپورت 2",
+  "dn_name": "پرشیانا اسپورت 2",
+  "servers": [
+   {
+    "url": "http://gg.hls2.xyz/live/Persiana%20Sports2/playlist.m3u8",
+    "title": "سرور ۲",
+    "country": "",
+    "referer": "https://www.aparatchi.com/",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://ggg.hls2.xyz/live/Persiana%20Sports2/playlist.m3u8",
+    "title": "پرشیانا 2",
+    "country": "",
+    "referer": "https://www.aparatchi.com/",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://cp12.adabmedia.com/hls/gmcl/stream.m3u8": {
+  "name": "جم کلاسیک",
+  "dn_name": "جم کلاسیک",
+  "servers": [
+   {
+    "url": "http://gg.hls2.xyz/live/IR%20-%20GEM%20CLASSIC_/playlist.m3u8",
+    "title": "سرور1",
+    "country": "",
+    "referer": "https://www.aparatchi.com/",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://ca-rt.onetvapi.win/gemclassic/index-0.m3u8?token=onetv202",
+    "title": "سرور2",
+    "country": "",
+    "referer": "https://onetv200.app",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://familyhls.avatv.live/hls/stream.m3u8": {
+  "name": "آوا فامیلی",
+  "dn_name": "آوا فامیلی",
+  "servers": [
+   {
+    "url": "https://ca-rt.onetvapi.win:8443/AVAFamily/index-0.m3u8?token=onetv202",
+    "title": "سرور2",
+    "country": "worldwide",
+    "referer": "https://onetv202.app",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://hls.sunmusic.live/hls/stream.m3u8": {
+  "name": "Sun Music",
+  "dn_name": "Sun Music",
+  "servers": [
+   {
+    "url": "https://ca.onetvapi.win:8443/hls.sunmusic.live/hls/stream.m3u8?token=onetv202",
+    "title": "سرورمناسب خارج۲",
+    "country": "worldwide",
+    "referer": "https://onetv202.app",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "http://46.245.122.7:8080/hls/smusic/stream.m3u8",
+    "title": "سرورمناسب ایران",
+    "country": "",
+    "referer": "https://mytvsat.tv/",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://gems1.ardanmi.com/live/zboEg8jrQiNpGbtpGIfqvQ__/master.m3u8": {
+  "name": "جم نیچر",
+  "dn_name": "جم نیچر",
+  "servers": [
+   {
+    "url": "https://ca-rt.onetvapi.win/gemnature/index-0.m3u8?token=onetv202",
+    "title": "سرور1",
+    "country": "",
+    "referer": "https://onetv200.app",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "http://gg.hls2.xyz/live/IR%20-%20Gem%20Nature_/playlist.m3u8",
+    "title": "سرور2",
+    "country": "",
+    "referer": "https://www.aparatchi.com/",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://familyhls.4utv.live/hls/stream.m3u8": {
+  "name": "4U Family",
+  "dn_name": "4U Family",
+  "servers": [
+   {
+    "url": "https://cp12.adabmedia.com/hls/4utv/stream.m3u8",
+    "title": "سرورمناسب ایران1",
+    "country": "iran",
+    "referer": "https://mytvsat.tv",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "http://46.245.122.7:8080/hls/4utv/stream.m3u8",
+    "title": "سرورمناسب ایران2",
+    "country": "iran",
+    "referer": "https://mytvsat.tv",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://vs-hls-pushb-ww-live.akamaized.net/x=4/i=urn:bbc:pips:service:bbc_persian_tv/t=3840/v=pv14/b=5070016/main.m3u8": {
+  "name": "بی بی سی فارسی",
+  "dn_name": "بی بی سی فارسی",
+  "servers": [
+   {
+    "url": "http://gg.hls2.xyz/live/BBC-Farsi/playlist.m3u8",
+    "title": "سرور1",
+    "country": "",
+    "referer": "https://www.aparatchi.com/",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://cp12.adabmedia.com/hls/gmkid/stream.m3u8": {
+  "name": "جم کیدز",
+  "dn_name": "جم کیدز",
+  "servers": [
+   {
+    "url": "http://gg.hls2.xyz/live/IR%20-%20GEM%20Kids2/playlist.m3u8",
+    "title": "سرور ۱",
+    "country": "",
+    "referer": "https://www.aparatchi.com/",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://ca-rt.onetvapi.win/gemkids/index-0.m3u8?token=onetv202",
+    "title": "سرور2",
+    "country": "",
+    "referer": "https://salintv.com/",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://cp12.adabmedia.com/hls/gmjun/stream.m3u8": {
+  "name": "جم جونیور",
+  "dn_name": "جم جونیور",
+  "servers": [
+   {
+    "url": "http://gg.hls2.xyz/live/IR%20-%20GEM%20Junior2/playlist.m3u8",
+    "title": "سرور1",
+    "country": "",
+    "referer": "https://www.aparatchi.com/",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://ca-rt.onetvapi.win/gemjunior/index-0.m3u8?token=onetv202",
+    "title": "سرور2",
+    "country": "",
+    "referer": "https://onetv202.app",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://main.ardanmi.com/live/l8qJmmdcf9JTiXj7TrDzRQ__/master.m3u8": {
+  "name": "جم میفا",
+  "dn_name": "جم میفا",
+  "servers": [
+   {
+    "url": "http://gg.hls2.xyz/live/IR%20-%20GEM%20Mifa/playlist.m3u8",
+    "title": "سرور ۱",
+    "country": "",
+    "referer": "https://www.aparatchi.com/",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://ca-rt.onetvapi.win/gemmifa/index-0.m3u8?token=onetv202",
+    "title": "سرور ۲",
+    "country": "",
+    "referer": "https://onetv200.app",
+    "origin": "https://onetv200.app",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "http://46.245.122.7:8080/hls/gmcm/stream.m3u8": {
+  "name": "جم کمدی",
+  "dn_name": "جم کمدی",
+  "servers": [
+   {
+    "url": "http://gg.hls2.xyz/live/IR%20-%20GEM%20Comedy/playlist.m3u8",
+    "title": "سرور1",
+    "country": "",
+    "referer": "https://www.aparatchi.com/",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://ca-rt.onetvapi.win/gemcomedy/index-0.m3u8?token=onetv202",
+    "title": "سرور 2",
+    "country": "",
+    "referer": "https://onetv200.app",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://cp11.adabmedia.com/hls2/bein1.m3u8": {
+  "name": "بین اسپرت ۱",
+  "dn_name": "بین اسپرت ۱",
+  "servers": [
+   {
+    "url": "http://46.245.122.6:8080/hls2/bein1.m3u8",
+    "title": "سرورمناسب ایران",
+    "country": "",
+    "referer": "",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://cdn.ayaslive.ir/hls2/bein1.m3u8",
+    "title": "سرورمناسب ایران",
+    "country": "",
+    "referer": "",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://ayassport.776740.ir.cdn.ir/hls2/bein1.m3u8",
+    "title": "سرورمناسب ایران",
+    "country": "",
+    "referer": "",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://ir14.novincdn.ir/hls2/bein1.m3u8",
+    "title": "گزارش آلمانی 1",
+    "country": "",
+    "referer": "",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://10g.vitarani.com/live/BLp_GV2iM3M53_Mul6n9fg__/stream_0.m3u8": {
+  "name": "بین اسپرت ۲",
+  "dn_name": "بین اسپرت ۲",
+  "servers": [
+   {
+    "url": "http://46.245.122.6:8080/hls2/bein2.m3u8",
+    "title": "سرورمناسب ایران",
+    "country": "",
+    "referer": "",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://wo.cma.footballii.ir/hls2/b2.m3u8",
+    "title": "سرور2",
+    "country": "",
+    "referer": "",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://10g.vitarani.com/live/BLp_GV2iM3M53_Mul6n9fg__/master.m3u8",
+    "title": "سرور3",
+    "country": "",
+    "referer": "https://salmal1000.com/",
+    "origin": "https://salmal1000.com",
+    "agent": ""
+   },
+   {
+    "url": "https://ir14.novincdn.ir/hls2/bein2.m3u8",
+    "title": "گزارش آلمانی 2",
+    "country": "",
+    "referer": "https://www.aparatchi.com/",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://gems1.ardanmi.com/live/bX7J0dJHJ7_KLJTFHhCDLw__/master.m3u8": {
+  "name": "جم فیلم",
+  "dn_name": "جم فیلم",
+  "servers": [
+   {
+    "url": "http://gg.hls2.xyz/live/IR%20-%20GEM%20Film_/playlist.m3u8",
+    "title": "سرور ۱",
+    "country": "",
+    "referer": "https://www.aparatchi.com/",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "http://46.245.122.7:8080/hls/gmfit/stream.m3u8": {
+  "name": "جم فیت",
+  "dn_name": "جم فیت",
+  "servers": [
+   {
+    "url": "https://gems1.ardanmi.com/live/q5Y9wBro0HDSmexfc7SNnw__/master.m3u8",
+    "title": "سرور2",
+    "country": "",
+    "referer": "https://salmal1000.com/",
+    "origin": "https://salmal1000.com",
+    "agent": ""
+   },
+   {
+    "url": "http://gg.hls2.xyz/live/IR%20-%20GEM%20FIT_/playlist.m3u8",
+    "title": "سرور3",
+    "country": "",
+    "referer": "https://www.aparatchi.com/",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://serversecond.ardanmi.com/live/e6vPG2LUaKR40yKuC7HMag__/master.m3u8": {
+  "name": "جم اونیکس",
+  "dn_name": "جم اونیکس",
+  "servers": [
+   {
+    "url": "http://gg.hls2.xyz/live/IR%20-%20Gem%20Onyx/playlist.m3u8",
+    "title": "سرور1",
+    "country": "",
+    "referer": "https://www.aparatchi.com/",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://ca-rt.onetvapi.win/gemonyx/index-0.m3u8?token=onetv202",
+    "title": "سرور3",
+    "country": "",
+    "referer": "https://onetv200.app",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://hls.tapeshtv.live/hls/stream.m3u8": {
+  "name": "شبکه طپش",
+  "dn_name": "شبکه طپش",
+  "servers": [
+   {
+    "url": "https://piraxy.tamashaland.com/cors?url=https://iptv.tapesh.tv/tapesh/playlist.m3u8",
+    "title": "سرور2",
+    "country": "",
+    "referer": "https://tamashaland.com/",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://ca-rt.onetvapi.win:8443/TapeshAmerica/index-0.m3u8?token=onetv202",
+    "title": "سرور3",
+    "country": "",
+    "referer": "",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://iptv.tapesh.tv/tapesh/playlist.m3u8",
+    "title": "سرور4 ( نیاز به فیلترشکن)",
+    "country": "",
+    "referer": "",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://cp12.adabmedia.com/hls/gment/stream.m3u8": {
+  "name": "جم اینترتیمنت",
+  "dn_name": "جم اینترتیمنت",
+  "servers": [
+   {
+    "url": "http://46.245.122.7:8080/hls/gment/stream.m3u8",
+    "title": "سرور اصلی",
+    "country": "",
+    "referer": "https://mytvsat.tv",
+    "origin": "https://mytvsat.tv",
+    "agent": ""
+   },
+   {
+    "url": "http://46.245.122.7:8080/hls/gment/stream.m3u8",
+    "title": "سرور اصلی",
+    "country": "",
+    "referer": "https://mytvsat.tv",
+    "origin": "https://mytvsat.tv",
+    "agent": ""
+   },
+   {
+    "url": "http://gg.hls2.xyz/live/IR%20-%20GEM%20Entertainment_/playlist.m3u8",
+    "title": "سرور 1",
+    "country": "",
+    "referer": "https://www.aparatchi.com/",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://ca-rt.onetvapi.win/gementertainment/index-0.m3u8?token=onetv202",
+    "title": "سرور 2",
+    "country": "",
+    "referer": "https://onetv202.app",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://rferl-ingest.akamaized.net/hls/live/2121768/tvmc01/playlist.m3u8": {
+  "name": "Radio Farda",
+  "dn_name": "Radio Farda",
+  "servers": [
+   {
+    "url": "https://n02.radiojar.com/cp13r2cpn3quv?rj-ttl=5&rj-tok=AAABdKGZL8EA6kz0Ko9AZ00Nkg",
+    "title": "سرور اصلی",
+    "country": "",
+    "referer": "",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://n02.radiojar.com/cp13r2cpn3quv?rj-ttl=5&rj-tok=AAABdKGZL8EA6kz0Ko9AZ00Nkg",
+    "title": "سرور اصلی",
+    "country": "",
+    "referer": "",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://ncdn.telewebion.ir/tv1/live/playlist.m3u8": {
+  "name": "شبکه یک",
+  "dn_name": "شبکه یک",
+  "servers": [
+   {
+    "url": "https://ayassport.776740.ir.cdn.ir/hls2/tv1tw.m3u8",
+    "title": "سرور1 نیم بها",
+    "country": "",
+    "referer": "",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "http://gg.hls2.xyz/live/irib-tv1/playlist.m3u8",
+    "title": "سرور 5 مناسب خارج",
+    "country": "",
+    "referer": "https://www.aparatchi.com/",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://turnerlive.warnermediacdn.com/hls/live/586495/cnngo/cnn_slate/VIDEO_0_3564000.m3u8": {
+  "name": "سی ان ان",
+  "dn_name": "سی ان ان",
+  "servers": [
+   {
+    "url": "https://p2.usnlive.com/stream/cnn.m3u8",
+    "title": "سرور 1",
+    "country": "iran",
+    "referer": "https://usnewson.com/",
+    "origin": "https://usnewson.com",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://gems1.ardanmi.com/live/iVwhrn0Gm_bkmmzrIT1hpw__/master.m3u8": {
+  "name": "جم لایف",
+  "dn_name": "جم لایف",
+  "servers": [
+   {
+    "url": "http://gg.hls2.xyz/live/IR%20-%20GEM%20Life_/playlist.m3u8",
+    "title": "سرور1",
+    "country": "",
+    "referer": "https://www.aparatchi.com/",
+    "origin": "",
+    "agent": ""
+   },
+   {
+    "url": "https://ca-rt.onetvapi.win/gemlife/index-0.m3u8?token=onetv202",
+    "title": "سرور 3",
+    "country": "",
+    "referer": "https://onetv202.app",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://gems1.ardanmi.com/live/ELqdYL1kf_TSjpHtSqHf6w__/master.m3u8": {
+  "name": "جم مستند",
+  "dn_name": "جم مستند",
+  "servers": [
+   {
+    "url": "http://gg.hls2.xyz/live/IR%20-%20GEM%20Documentary/playlist.m3u8",
+    "title": "سرور2",
+    "country": "",
+    "referer": "https://www.aparatchi.com/",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://janya-ayaztv.vgcdn.net/ptnr-WebApp/title-Ayaz_TV/v1/vglive-sk-934820/main.m3u8": {
+  "name": "ایاز تی‌وی",
+  "dn_name": "ایاز تی‌وی",
+  "servers": [
+   {
+    "url": "http://gg.hls2.xyz/live/AyazTV/playlist.m3u8",
+    "title": "سرور2",
+    "country": "",
+    "referer": "https://www.aparatchi.com/",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
+ },
+ "https://pleonhls.wns.live/hls/stream.m3u8": {
+  "name": "Project Leon",
+  "dn_name": "Project Leon",
+  "servers": [
+   {
+    "url": "https://ca.onetvapi.win:8443/pleonhls.wns.live/hls/stream.m3u8?token=onetv202",
+    "title": "سرورمناسب ایران۱",
+    "country": "iran",
+    "referer": "",
+    "origin": "",
+    "agent": ""
+   }
+  ],
+  "probe_main": "unverified"
  }
 }

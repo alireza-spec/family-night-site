@@ -12,12 +12,14 @@
  {
   "name": "4U Family",
   "url": "https://familyhls.4utv.live/hls/stream.m3u8",
-  "group": "Family",
+  "group": "Entertainment",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "parsatv": "4U-Family",
-  "logo": "",
-  "probe": "alive"
+  "logo": "https://appfa.beauty/webservice/upload/1782140219464.png",
+  "probe": "alive",
+  "name_en": "4U Family",
+  "mytv": 1
  },
  {
   "name": "Alternative Shorai",
@@ -202,12 +204,14 @@
  {
   "name": "Novin",
   "url": "https://stream.novin.live/hls/playlist.m3u8",
-  "group": "General",
+  "group": "Entertainment",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "parsatv": "Novin-TV",
-  "logo": "",
-  "probe": "alive"
+  "logo": "https://appfa.beauty/webservice/upload/1782140219654.png",
+  "probe": "alive",
+  "name_en": "Novin TV",
+  "mytv": 1
  },
  {
   "name": "Omid Javedan",
@@ -222,42 +226,50 @@
  {
   "name": "Persiana China",
   "url": "https://chinahls.persiana.live/hls/stream.m3u8",
-  "group": "General",
+  "group": "پرشیانا",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "parsatv": "Persiana-China",
-  "logo": "",
-  "probe": "alive"
+  "logo": "https://appfa.beauty/webservice/upload/1788835758051.webp",
+  "probe": "alive",
+  "name_en": "Persiana China",
+  "mytv": 1
  },
  {
   "name": "Persiana Podcast",
   "url": "https://podhls.persiana.live/hls/stream.m3u8",
-  "group": "General",
+  "group": "پرشیانا",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "parsatv": "Persiana-Podcast",
-  "logo": "",
-  "probe": "alive"
+  "logo": "https://appfa.beauty/webservice/upload/1788836190568.webp",
+  "probe": "alive",
+  "name_en": "Persiana Podcast",
+  "mytv": 1
  },
  {
   "name": "Persiana SetMix",
   "url": "https://setmixhls.persiana.live/hls/stream.m3u8",
-  "group": "General",
+  "group": "پرشیانا",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "parsatv": "Persiana-SetMix",
-  "logo": "",
-  "probe": "alive"
+  "logo": "https://appfa.beauty/webservice/upload/1782140219428.png",
+  "probe": "alive",
+  "name_en": "Persiana Setmix",
+  "mytv": 1
  },
  {
   "name": "Persiana Voyage",
   "url": "https://voyhls.persiana.live/hls/stream.m3u8",
-  "group": "General",
+  "group": "پرشیانا",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "parsatv": "Persiana-Voyage",
-  "logo": "",
-  "probe": "alive"
+  "logo": "https://appfa.beauty/webservice/upload/1788836026707.webp",
+  "probe": "alive",
+  "name_en": "Persiana Voyage",
+  "mytv": 1
  },
  {
   "name": "Porchooneh",
@@ -272,12 +284,14 @@
  {
   "name": "Project Leon",
   "url": "https://pleonhls.wns.live/hls/stream.m3u8",
-  "group": "General",
+  "group": "News",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "parsatv": "Project-Leon",
-  "logo": "",
-  "probe": "alive"
+  "logo": "https://appfa.beauty/webservice/upload/1782140219413.jpg",
+  "probe": "alive",
+  "name_en": "Project Leon",
+  "mytv": 1
  },
  {
   "name": "Pulse Media",
@@ -292,12 +306,15 @@
  {
   "name": "Radio Farda",
   "url": "https://rferl-ingest.akamaized.net/hls/live/2121768/tvmc01/playlist.m3u8",
-  "group": "News",
+  "group": "رادیو - اخبار",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "parsatv": "Radio-Farda-TV",
-  "logo": "",
-  "probe": "alive"
+  "logo": "https://appfa.beauty/webservice/upload/1782140219468.jpg",
+  "probe": "alive",
+  "name_en": "Radio Farda",
+  "mytv": 1,
+  "vpn": 1
  },
  {
   "name": "Radio Shemroon",
@@ -312,12 +329,14 @@
  {
   "name": "Ravi",
   "url": "https://hls.ravitv.com/hls/stream.m3u8",
-  "group": "General",
+  "group": "Entertainment",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "parsatv": "Ravi-TV",
-  "logo": "",
-  "probe": "alive"
+  "logo": "https://appfa.beauty/webservice/upload/1782140219677.png",
+  "probe": "alive",
+  "name_en": "Ravi TV",
+  "mytv": 1
  },
  {
   "name": "Romantico",
@@ -336,8 +355,10 @@
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "parsatv": "Sun-Music",
-  "logo": "",
-  "probe": "alive"
+  "logo": "https://appfa.beauty/webservice/upload/1782140219575.jpg",
+  "probe": "alive",
+  "name_en": "Sun Music",
+  "mytv": 1
  },
  {
   "name": "T2 America",
@@ -362,12 +383,14 @@
  {
   "name": "Tasvire Iran",
   "url": "https://bozztv.com/1gbw5/tintv/tintv/playlist.m3u8",
-  "group": "General",
+  "group": "Entertainment",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "parsatv": "Tasvire-Iran",
-  "logo": "",
-  "probe": "alive"
+  "logo": "https://appfa.beauty/webservice/upload/1782140219734.png",
+  "probe": "alive",
+  "name_en": "Tin TV",
+  "mytv": 1
  },
  {
   "name": "Woman",
@@ -533,7 +556,7 @@
   "name": "Afarin Kids",
   "name_en": "Afarin Kids",
   "url": "http://afarinTV.flashmediacast.com:1935/afarinTV/livestream/chunklist.m3u8",
-  "group": "General",
+  "group": "کوردی",
   "dncat": "کوردی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
@@ -545,199 +568,216 @@
     "url": "https://gg.hls2.xyz/live/Afarin%20Kids%20TV/playlist.m3u8",
     "title": "سرورخارج"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "BLOOMBERG HT",
   "name_en": "BLOOMBERG HT",
   "url": "https://bloomberght-live.daioncdn.net/bloomberght/bloomberght.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219752.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "Beyaz",
   "name_en": "Beyaz",
   "url": "https://beyaztv-live.daioncdn.net/beyaztv/beyaztv.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219751.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "DMAX Turkiye",
   "name_en": "DMAX Turkiye",
   "url": "https://dogus-live.daioncdn.net/dmax/dmax.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219517.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "Dream Turk",
   "name_en": "Dream Turk",
   "url": "https://live.duhnet.tv/S2/HLS_LIVE/dreamturknp/playlist.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219519.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "Haber Global",
   "name_en": "Haber Global",
   "url": "https://ensonhaber-live.ercdn.net/haberglobal/haberglobal.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219566.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "Haberturk",
   "name_en": "Haberturk",
   "url": "https://ciner-live.daioncdn.net/haberturktv/haberturktv.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219565.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "Halk Tv",
   "name_en": "Halk Tv",
   "url": "https://halktv-live.daioncdn.net/halktv/halktv.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219755.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "Kral Tv",
   "name_en": "Kral Tv",
   "url": "https://dogus-live.daioncdn.net/kralpoptv/kralpoptv_720p.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219592.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "KurdSat News TV",
   "name_en": "KurdSat News TV",
   "url": "https://kurdsat-news.akamaized.net/hls/kurdsat-news.m3u8",
-  "group": "General",
+  "group": "کوردی",
   "dncat": "کوردی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219593.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "NTV",
   "name_en": "NTV",
   "url": "http://dogus.daioncdn.net/ntv/ntv.m3u8?ce=3&&app=7c4bb802-0c41-409e-8cd2-799984995694",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219757.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "NUMBER 1 TURK",
   "name_en": "NUMBER 1 TURK",
   "url": "https://b01c02nl.mediatriple.net/videoonlylive/mtkgeuihrlfwlive/broadcast_5c9e187770143.smil/playlist.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219758.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "Power Love",
   "name_en": "Power Love",
   "url": "http://livetv.powerapp.com.tr/plove/love.smil/playlist.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219761.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "Power TV",
   "name_en": "Power TV",
   "url": "http://livetv.powerapp.com.tr/powerTV/powerhd.smil/playlists.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219763.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "Power Turk",
   "name_en": "Power Turk",
   "url": "http://livetv.powerapp.com.tr/powerturkTV/powerturkhd.smil/playlist.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219759.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "Power Turk Akustik",
   "name_en": "Power Turk Akustik",
   "url": "http://livetv.powerapp.com.tr/pturkakustik/akustik.smil/playlist.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219760.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "Power Turk Slow",
   "name_en": "Power Turk Slow",
   "url": "http://livetv.powerapp.com.tr/pturkslow/slow.smil/playlist.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219762.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "Red bull TV",
@@ -749,139 +789,151 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219459.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "Sports TV",
   "name_en": "Sports TV",
   "url": "https://live.sportstv.com.tr/hls/low/sportstv_hd/index.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219720.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "TATLISES TV",
   "name_en": "TATLISES TV",
   "url": "https://live.artidijitalmedya.com/artidijital_tatlisestv/tatlisestv/playlist.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219725.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "TRT 3 - TBMM TV",
   "name_en": "TRT 3 - TBMM TV",
   "url": "https://meclistv-live.ercdn.net/meclistv/meclistv_720p.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219743.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "TRT AVAZ",
   "name_en": "TRT AVAZ",
   "url": "https://tv-trtavaz.medya.trt.com.tr/master.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219745.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "TRT Arabi",
   "name_en": "TRT Arabi",
   "url": "https://tv-trtarabi.medya.trt.com.tr/master.m3u8",
-  "group": "General",
+  "group": "عربی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219740.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "TRT Belgesel",
   "name_en": "TRT Belgesel",
   "url": "https://tv-trtbelgesel.medya.trt.com.tr/master.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219746.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "TRT Eba ILK",
   "name_en": "TRT Eba ILK",
   "url": "https://tv-e-okul00.medya.trt.com.tr/master.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219739.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "TRT Haber",
   "name_en": "TRT Haber",
   "url": "https://tv-trthaber.medya.trt.com.tr/master.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219739.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "TRT MUZIK",
   "name_en": "TRT MUZIK",
   "url": "https://tv-trtmuzik.medya.trt.com.tr/master.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219749.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "TRT World",
   "name_en": "TRT World",
   "url": "https://tv-trtworld.medya.trt.com.tr/master.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219742.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "Ton Tv",
   "name_en": "Ton Tv",
   "url": "https://live.artidijitalmedya.com/artidijital_tontv/tontv/playlist.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219765.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "skate phantom flex",
@@ -893,19 +945,22 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219572.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "test": 1,
+  "mytv": 1
  },
  {
   "name": "آ تی‌وی",
   "name_en": "A TV",
   "url": "https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219494.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "آمریکا هم‌اکنون",
@@ -917,44 +972,48 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219655.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "استار تی‌وی",
   "name_en": "Star Tv",
   "url": "https://dogus.daioncdn.net/startv/startv_720p.m3u8?app=startv_web&ce=3",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219722.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "اسکای نیوز عربی",
   "name_en": "Sky News Arabia",
   "url": "https://stream.skynewsarabia.com/hls/sna_720.m3u8",
-  "group": "General",
+  "group": "عربی",
   "dncat": "عربی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219718.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "اصلاح تیوی",
   "name_en": "Eslah TV",
   "url": "https://eslahtvhls.wns.live/hls/stream.m3u8",
-  "group": "General",
+  "group": "افغانستان",
   "dncat": "افغانستان",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219481.png",
   "dn": 1,
   "probe": "alive",
-  "vpn": 1
+  "vpn": 1,
+  "mytv": 1
  },
  {
   "name": "افغانستان اینترنشنال",
@@ -967,170 +1026,184 @@
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219483.png",
   "dn": 1,
   "probe": "alive",
-  "vpn": 1
+  "vpn": 1,
+  "mytv": 1
  },
  {
   "name": "الجزیره",
   "name_en": "Aljazeera",
   "url": "https://live-hls-web-aja.getaj.net/AJA/index.m3u8",
-  "group": "General",
+  "group": "عربی",
   "dncat": "عربی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219487.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "العربیه",
   "name_en": "Al Arabiya",
   "url": "https://live.alarabiya.net/alarabiapublish/alarabiya.smil/playlist.m3u8",
-  "group": "General",
+  "group": "عربی",
   "dncat": "عربی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219443.png",
   "dn": 1,
   "probe": "alive",
-  "vpn": 1
+  "vpn": 1,
+  "mytv": 1
  },
  {
   "name": "الکوثر",
   "name_en": "Al kawthar",
   "url": "https://ncdn.telewebion.ir/kawthar/live/playlist.m3u8",
-  "group": "General",
+  "group": "برون مرزی",
   "dncat": "برون مرزی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219488.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "ام بی سی",
   "name_en": "MBC",
   "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-1/15cf99af5de54063fdabfefe66adc075/index.m3u8",
-  "group": "General",
+  "group": "عربی",
   "dncat": "عربی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219639.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "ام بی سی 2",
   "name_en": "MBC 2",
   "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-2/51db9d7fa48a27d051f1eecb68069151/index.mpd?decryption_key=e3ce77324a3d4fa2a913b26cc1976052:17774f82a3b9e33ea7a149596acbb20f",
-  "group": "General",
+  "group": "عربی",
   "dncat": "عربی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219639.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "ام بی سی 3",
   "name_en": "MBC 3",
   "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-3-usa/5d58265a862a476dc7f97694addb5ded/index.m3u8",
-  "group": "General",
+  "group": "عربی",
   "dncat": "عربی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219639.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "ام بی سی 4",
   "name_en": "MBC 4",
   "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-4/24f134f1cd63db9346439e96b86ca6ed/index.m3u8",
-  "group": "General",
+  "group": "عربی",
   "dncat": "عربی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219639.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "ام بی سی 5",
   "name_en": "MBC 5",
   "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-5/ee6b000cee0629411b666ab26cb13e9b/index.m3u8",
-  "group": "General",
+  "group": "عربی",
   "dncat": "عربی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219639.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "ام بی سی بالیوود",
   "name_en": "MBC Bollywood",
   "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-bollywood/546eb40d7dcf9a209255dd2496903764/index.m3u8",
-  "group": "General",
+  "group": "عربی",
   "dncat": "عربی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219639.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "ام بی سی دراما پلاس",
   "name_en": "MBC Drama+",
   "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-plus-drama/e37251ec2aac8f6c98f75cd0fa37cd28/index.m3u8",
-  "group": "General",
+  "group": "عربی",
   "dncat": "عربی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219639.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "ام بی سی عراق",
   "name_en": "MBC Iraq",
   "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-iraq/e38c44b1b43474e1c39cb5b90203691e/index.m3u8",
-  "group": "General",
+  "group": "عربی",
   "dncat": "عربی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219639.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "ام بی سی مصر",
   "name_en": "MBC Masr",
   "url": "https://shd-gcp-live.lg.mncdn.com/live/bitmovin-mbc-masr/956eac069c78a35d47245db6cdbb1575/index.m3u8",
-  "group": "General",
+  "group": "عربی",
   "dncat": "عربی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219410.jpg",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "ام بی سی مصر 2",
   "name_en": "MBC Masr 2",
   "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-masr-2/754931856515075b0aabf0e583495c68/index.m3u8",
-  "group": "General",
+  "group": "عربی",
   "dncat": "عربی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219411.jpg",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "ام بی سی مود",
   "name_en": "MBC Mood",
   "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-mbc-mood/78367bf48ccdba501d0d014a10c21031/index.m3u8",
-  "group": "General",
+  "group": "عربی",
   "dncat": "عربی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
@@ -1143,7 +1216,8 @@
     "title": "سرورخارج"
    }
   ],
-  "vpn": 1
+  "vpn": 1,
+  "mytv": 1
  },
  {
   "name": "ام بی سی پرشیا",
@@ -1165,7 +1239,8 @@
     "url": "https://hls.mbcpersia.live/hls/stream.m3u8",
     "title": ""
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "اورنج تی‌وی",
@@ -1177,7 +1252,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219658.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "اوسکو",
@@ -1189,7 +1265,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219656.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "اکران مووی",
@@ -1211,7 +1288,8 @@
     "url": "https://main.ardanmi.com/live/C9cI_oISFYvgP1_lcKgj6g__/master.m3u8",
     "title": ""
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "اکران کیدز",
@@ -1229,7 +1307,8 @@
     "url": "https://river.ardanmi.com/live/N1LJyDyubxNh5nnyO3vSQQ__/master.m3u8",
     "title": "سرورخارج2"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "ایاز تی‌وی",
@@ -1241,7 +1320,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219497.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "ای‌ام‌سی",
@@ -1253,7 +1333,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219489.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "ای‌بی‌سی نیوز",
@@ -1265,7 +1346,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219479.jpg",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "باب اسفنجی",
@@ -1277,7 +1359,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219505.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "بحرین اسپورت ۲",
@@ -1289,7 +1372,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219501.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "بلومبرگ",
@@ -1301,7 +1385,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219504.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "بی بی سی فارسی",
@@ -1313,7 +1398,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219476.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "بیت العباس علیه السلام",
@@ -1325,7 +1411,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219502.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "بین اسپرت ۱",
@@ -1351,7 +1438,8 @@
     "url": "https://10g.vitarani.com/live/DuWplb6wGAwV0A_NhVTeDA__/stream_0.m3u8",
     "title": "سرورخارج2"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "بین اسپرت ۲",
@@ -1369,7 +1457,8 @@
     "url": "https://cp11.adabmedia.com/hls2/bein2.m3u8",
     "title": "سرورمناسب ایران"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "بین اسپرت ۳",
@@ -1381,7 +1470,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219503.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "بی‌بی شارک",
@@ -1394,7 +1484,8 @@
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219500.png",
   "dn": 1,
   "probe": "alive",
-  "vpn": 1
+  "vpn": 1,
+  "mytv": 1
  },
  {
   "name": "تراول اکس‌پی",
@@ -1406,7 +1497,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219738.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "ترکمن اسپرت",
@@ -1418,7 +1510,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219767.jpg",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "ترکمنستان اسپورت",
@@ -1430,13 +1523,14 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219767.jpg",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "تلوبیون ورزشی 1",
   "name_en": "تلوبیون ورزشی 1",
   "url": "https://ncdn.telewebion.ir/sport1/live/playlist.m3u8",
-  "group": "General",
+  "group": "اختصاصی تلوبیون",
   "dncat": "اختصاصی تلوبیون",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
@@ -1452,13 +1546,14 @@
     "url": "https://ncdn.telewebion.ir/twsport/live/playlist.m3u8",
     "title": "سرور2"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "تلوبیون ورزشی 2",
   "name_en": "تلوبیون ورزشی 2",
   "url": "https://ncdn.telewebion.ir/sport2/live/playlist.m3u8",
-  "group": "General",
+  "group": "اختصاصی تلوبیون",
   "dncat": "اختصاصی تلوبیون",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
@@ -1474,13 +1569,14 @@
     "url": "https://ncdn.telewebion.ir/twsport2/live/playlist.m3u8",
     "title": "سرور2"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "تلوبیون ورزشی 3",
   "name_en": "تلوبیون ورزشی 3",
   "url": "https://ncdn.telewebion.ir/sport3/live/playlist.m3u8",
-  "group": "General",
+  "group": "اختصاصی تلوبیون",
   "dncat": "اختصاصی تلوبیون",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
@@ -1496,7 +1592,8 @@
     "url": "https://ncdn.telewebion.ir/twsport3/live/playlist.m3u8",
     "title": "سرور2"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "تودی تی‌وی",
@@ -1514,7 +1611,8 @@
     "url": "https://glserver1.tamashaland.com/live/mvEGFIb3XPh3iGzqNN55KQ__/master.m3u8",
     "title": ""
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "تونل زمان (خاطره ها",
@@ -1532,13 +1630,14 @@
     "url": "http://46.245.122.7:8080/hls/TunnelZaman/stream.m3u8",
     "title": ""
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "تی ار تی 1",
   "name_en": "TRT 1",
   "url": "https://trt.daioncdn.net/trt-1/master.m3u8?app=web",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
@@ -1550,19 +1649,21 @@
     "url": "https://tv-trt1.medya.trt.com.tr/master.m3u8",
     "title": "سرور 1"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "تی ار تی ترک",
   "name_en": "TRT TURK",
   "url": "https://tv-trtturk.medya.trt.com.tr/master.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219527.jpg",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "تی ار تی کودک",
@@ -1574,67 +1675,73 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219741.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "تی‌آر‌تی کوردی",
   "name_en": "TRT KURDI",
   "url": "https://tv-trtkurdi.medya.trt.com.tr/master.m3u8",
-  "group": "General",
+  "group": "کوردی",
   "dncat": "کوردی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219748.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "تی‌وی 360",
   "name_en": "360 TV",
   "url": "https://turkmedya-live.ercdn.net/tv360/tv360.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219458.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "تی‌وی ۲",
   "name_en": "TV 2",
   "url": "https://teve2.duhnet.tv/S2/HLS_LIVE/teve2np/playlist.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219733.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "تی‌وی ۲۴",
   "name_en": "24 TV",
   "url": "https://turkmedya-live.ercdn.net/tv24/tv24.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219454.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "تی‌وی ۸",
   "name_en": "TV8",
   "url": "https://rkhubpaomb.turknet.ercdn.net/fwjkgpasof/tv8/tv8.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219771.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "جم اسپرت",
@@ -1652,37 +1759,40 @@
     "url": "http://91.107.155.81/live/BmjG6meUcn3VzH2s9W1pDg__/master.m3u8",
     "title": "سرورمناسب ایران۱"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "جم اونیکس",
   "name_en": "Gem Onyx",
   "url": "https://serversecond.ardanmi.com/live/e6vPG2LUaKR40yKuC7HMag__/master.m3u8",
-  "group": "General",
+  "group": "شبکه های جم",
   "dncat": "شبکه های جم",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219556.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "جم اینترتیمنت",
   "name_en": "Gem Entertainment",
   "url": "https://cp12.adabmedia.com/hls/gment/stream.m3u8",
-  "group": "General",
+  "group": "شبکه های جم",
   "dncat": "شبکه های جم",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219545.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "جم بالیوود",
   "name_en": "Gem Bollywood",
   "url": "https://cp12.adabmedia.com/hls/live2/stream.m3u8",
-  "group": "General",
+  "group": "شبکه های جم",
   "dncat": "شبکه های جم",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
@@ -1698,13 +1808,14 @@
     "url": "https://gemss.bitaneshan.com/live/C_l1l__cvti4N5cR9UlhzA__/master.m3u8",
     "title": "سرورخارج2"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "جم تیوی",
   "name_en": "Gem TV",
   "url": "https://cp12.adabmedia.com/hls/live4/stream.m3u8",
-  "group": "General",
+  "group": "شبکه های جم",
   "dncat": "شبکه های جم",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
@@ -1728,13 +1839,14 @@
     "url": "https://10g.vitarani.com/live/deOXYsjTHd3bR16W1v2YOw__/master.m3u8",
     "title": "Server (mytvsat)"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "جم جونیور",
   "name_en": "Gem Junior",
   "url": "https://cp12.adabmedia.com/hls/gmjun/stream.m3u8",
-  "group": "General",
+  "group": "شبکه های جم",
   "dncat": "شبکه های جم",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
@@ -1750,13 +1862,14 @@
     "url": "https://gemextra.tamashaland.com/live/m0zrHr0_MiJKKLVUs0u7lQ__/master.m3u8",
     "title": "سرورخارج2"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "جم دراما",
   "name_en": "Gem Drama",
   "url": "https://cp12.adabmedia.com/hls/drama/stream.m3u8",
-  "group": "General",
+  "group": "شبکه های جم",
   "dncat": "شبکه های جم",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
@@ -1780,13 +1893,14 @@
     "url": "https://cp12.adabmedia.com/hls/dramap/stream.m3u8",
     "title": "سرورمناسب ایران1"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "جم سریس",
   "name_en": "Gem Series",
   "url": "https://cp12.adabmedia.com/hls/live1/stream.m3u8",
-  "group": "General",
+  "group": "شبکه های جم",
   "dncat": "شبکه های جم",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
@@ -1822,13 +1936,14 @@
     "url": "https://shabake3.bitaneshan.com/live/GhWDEnSB_K1CAs1glTxFow__/master.m3u8",
     "title": "Server (mytvsat)"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "جم فود",
   "name_en": "Gem Food",
   "url": "https://cp12.adabmedia.com/hls/gmfood/stream.m3u8",
-  "group": "General",
+  "group": "شبکه های جم",
   "dncat": "شبکه های جم",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
@@ -1844,13 +1959,14 @@
     "url": "https://gemss.bitaneshan.com/live/V9Z9Hk9fsjr8CduNSS7AsA__/master.m3u8",
     "title": "سرورخارج2"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "جم فیت",
   "name_en": "Gem Fit",
   "url": "http://46.245.122.7:8080/hls/gmfit/stream.m3u8",
-  "group": "General",
+  "group": "شبکه های جم",
   "dncat": "شبکه های جم",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
@@ -1866,13 +1982,14 @@
     "url": "https://cp12.adabmedia.com/hls/gmfit/stream.m3u8",
     "title": "سرورمناسب ایران"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "جم فیلم",
   "name_en": "Gem Film",
   "url": "https://gems1.ardanmi.com/live/bX7J0dJHJ7_KLJTFHhCDLw__/master.m3u8",
-  "group": "General",
+  "group": "شبکه های جم",
   "dncat": "شبکه های جم",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
@@ -1884,13 +2001,14 @@
     "url": "https://gems1-new.ardanmi.com/live/bX7J0dJHJ7_KLJTFHhCDLw__/master.m3u8",
     "title": "سرورخارج2"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "جم لایف",
   "name_en": "Gem Life",
   "url": "https://gems1.ardanmi.com/live/iVwhrn0Gm_bkmmzrIT1hpw__/master.m3u8",
-  "group": "General",
+  "group": "شبکه های جم",
   "dncat": "شبکه های جم",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
@@ -1902,13 +2020,14 @@
     "url": "https://gems1-new.ardanmi.com/live/iVwhrn0Gm_bkmmzrIT1hpw__/master.m3u8",
     "title": "سرورخارج2"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "جم مستند",
   "name_en": "Gem Documentary",
   "url": "https://gems1.ardanmi.com/live/ELqdYL1kf_TSjpHtSqHf6w__/master.m3u8",
-  "group": "General",
+  "group": "شبکه های جم",
   "dncat": "شبکه های جم",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
@@ -1920,25 +2039,27 @@
     "url": "https://gems1-new.ardanmi.com/live/ELqdYL1kf_TSjpHtSqHf6w__/master.m3u8",
     "title": "سرورخارج2"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "جم میفا",
   "name_en": "Gem Mifa",
   "url": "https://main.ardanmi.com/live/l8qJmmdcf9JTiXj7TrDzRQ__/master.m3u8",
-  "group": "General",
+  "group": "شبکه های جم",
   "dncat": "شبکه های جم",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219553.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "جم نیچر",
   "name_en": "Gem Nature",
   "url": "https://gems1.ardanmi.com/live/zboEg8jrQiNpGbtpGIfqvQ__/master.m3u8",
-  "group": "General",
+  "group": "شبکه های جم",
   "dncat": "شبکه های جم",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
@@ -1950,25 +2071,27 @@
     "url": "https://gems1-new.ardanmi.com/live/zboEg8jrQiNpGbtpGIfqvQ__/master.m3u8",
     "title": "سرورخارج2"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "جم پیکسل",
   "name_en": "GEM Pixel",
   "url": "https://northtelecom.b-cdn.net/GEMPIXEL.m3u8",
-  "group": "General",
+  "group": "شبکه های جم",
   "dncat": "شبکه های جم",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219557.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "جم کلاسیک",
   "name_en": "Gem Classic",
   "url": "https://cp12.adabmedia.com/hls/gmcl/stream.m3u8",
-  "group": "General",
+  "group": "شبکه های جم",
   "dncat": "شبکه های جم",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
@@ -1984,13 +2107,14 @@
     "url": "https://northtelecom.b-cdn.net/GEMCLASSIC/1_1001_Video.m3u8",
     "title": "سرورمناسب خارج"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "جم کمدی",
   "name_en": "Gem Comedy",
   "url": "http://46.245.122.7:8080/hls/gmcm/stream.m3u8",
-  "group": "General",
+  "group": "شبکه های جم",
   "dncat": "شبکه های جم",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
@@ -2006,13 +2130,14 @@
     "url": "https://cp12.adabmedia.com/hls/gmcm/stream.m3u8",
     "title": "سرورمناسب ایران"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "جم کیدز",
   "name_en": "Gem Kids",
   "url": "https://cp12.adabmedia.com/hls/gmkid/stream.m3u8",
-  "group": "General",
+  "group": "شبکه های جم",
   "dncat": "شبکه های جم",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
@@ -2028,7 +2153,8 @@
     "url": "https://gemextra.tamashaland.com/live/xLKj1oNqBW3qM3Z5ETtb_g__/master.m3u8",
     "title": "سرورخارج"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "جهان نما تی‌وی",
@@ -2040,7 +2166,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219574.jpg",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "خانه فیلم",
@@ -2052,7 +2179,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219584.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "درون تی‌وی",
@@ -2064,20 +2192,22 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219520.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "دنیای نو",
   "name_en": "Dunya Naw TV",
   "url": "https://dunyanhls.wns.live/hls/stream.m3u8",
-  "group": "General",
+  "group": "افغانستان",
   "dncat": "افغانستان",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219481.png",
   "dn": 1,
   "probe": "alive",
-  "vpn": 1
+  "vpn": 1,
+  "mytv": 1
  },
  {
   "name": "دورا",
@@ -2089,7 +2219,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219518.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "دی دبلیو عربی",
@@ -2101,7 +2232,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219524.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "دیدنی ها",
@@ -2113,31 +2245,34 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219515.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "رادیو آینه",
   "name_en": "رادیو آینه",
   "url": "http://107.181.227.250:8244/;stream",
-  "group": "News",
+  "group": "رادیو - اخبار",
   "dncat": "رادیو - اخبار",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219406.jpg",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "رادیو ایران اینترنشنال",
   "name_en": "Radio Iran International",
   "url": "http://stream.radiojar.com/dfnrphnr5f0uv",
-  "group": "News",
+  "group": "رادیو - اخبار",
   "dncat": "رادیو - اخبار",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219434.jpg",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "رادیو خاطره",
@@ -2150,13 +2285,14 @@
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219586.png",
   "dn": 1,
   "probe": "dead",
-  "vpn": 1
+  "vpn": 1,
+  "mytv": 1
  },
  {
   "name": "رادیو دوشات",
   "name_en": "radio doshat",
   "url": "http://dstt.ir:8000/dsradio.mp3",
-  "group": "Music",
+  "group": "رادیو - موزیک",
   "dncat": "رادیو - موزیک",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
@@ -2168,121 +2304,131 @@
     "url": "http://185.137.24.213:8000/dsradio.mp3",
     "title": "سرور مناسب ایران"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "رادیو ران",
   "name_en": "رادیو ران",
   "url": "http://185.80.220.12:8047/live",
-  "group": "Music",
+  "group": "رادیو - موزیک",
   "dncat": "رادیو - موزیک",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219478.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "رادیو شادی",
   "name_en": "Radio Shadi",
   "url": "http://ice9.securenetsystems.net/SHADI",
-  "group": "Music",
+  "group": "رادیو - موزیک",
   "dncat": "رادیو - موزیک",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219405.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "رادیو شمرون",
   "name_en": "رادیو شمرون",
   "url": "http://usa7.fastcast4u.com:5919/;",
-  "group": "Music",
+  "group": "رادیو - موزیک",
   "dncat": "رادیو - موزیک",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219648.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "رادیو فاز",
   "name_en": "Radio Faz",
   "url": "http://www.radiofaaz.com:8000/radiofaaz",
-  "group": "Music",
+  "group": "رادیو - موزیک",
   "dncat": "رادیو - موزیک",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219475.jpg",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "رادیو فان پلاس",
   "name_en": "Radio FunPlus",
   "url": "http://46.245.122.7:8000/live",
-  "group": "Music",
+  "group": "رادیو - موزیک",
   "dncat": "رادیو - موزیک",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219534.jpg",
   "dn": 1,
-  "probe": "inconclusive-vm"
+  "probe": "inconclusive-vm",
+  "mytv": 1
  },
  {
   "name": "رادیو فرانسه",
   "name_en": "رادیو فرانسه",
   "url": "http://icepe3.infomaniak.ch/rfienpersan-64k.mp3",
-  "group": "News",
+  "group": "رادیو - اخبار",
   "dncat": "رادیو - اخبار",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219470.jpg",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "رادیو نشاط",
   "name_en": "neshat",
   "url": "https://neshat2019.radioca.st/stream",
-  "group": "Music",
+  "group": "رادیو - موزیک",
   "dncat": "رادیو - موزیک",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219649.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "رادیو همراه",
   "name_en": "radio hamrah",
   "url": "http://66.165.236.130/RadioHamrahMP3",
-  "group": "Music",
+  "group": "رادیو - موزیک",
   "dncat": "رادیو - موزیک",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219648.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "رادیو یار",
   "name_en": "Radio Yar",
   "url": "http://192.34.153.102:8000/RadioYAR.mp3",
-  "group": "Music",
+  "group": "رادیو - موزیک",
   "dncat": "رادیو - موزیک",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219649.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "روبیکس",
   "name_en": "RUBIX TV",
   "url": "https://cp12.adabmedia.com/hls/RUB/stream.m3u8",
-  "group": "General",
+  "group": "شبکه های جم",
   "dncat": "شبکه های جم",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
@@ -2302,7 +2448,8 @@
     "url": "https://10g.vitarani.com/live/imwYENt45PbZthaLBZgNqg__/master.m3u8",
     "title": "Server (mytvsat)"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "روتانا موزیک",
@@ -2314,25 +2461,27 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219680.jpg",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "رودو تی‌وی",
   "name_en": "Rudaw TV",
   "url": "https://live.rudaw.net/hls/rudaw-tv/master.m3u8",
-  "group": "General",
+  "group": "کوردی",
   "dncat": "کوردی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219441.jpg",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "ریور",
   "name_en": "River",
   "url": "https://cp12.adabmedia.com/hls/RIV/stream.m3u8",
-  "group": "General",
+  "group": "شبکه های جم",
   "dncat": "شبکه های جم",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
@@ -2348,7 +2497,8 @@
     "url": "https://river.ardanmi.com/live/39BcYG5D6CoQJLrhPPzlBA__/master.m3u8",
     "title": ""
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "ریور پلاس",
@@ -2366,13 +2516,14 @@
   "name": "زاگرس تی‌وی",
   "name_en": "Zagros Tv",
   "url": "https://5a3ed7a72ed4b.streamlock.net/zagrostv/SMIL:myStream.smil/playlist.m3u8",
-  "group": "General",
+  "group": "عربی",
   "dncat": "عربی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219775.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "زوو موو",
@@ -2384,7 +2535,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219776.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "ستاره تی‌وی",
@@ -2402,7 +2554,8 @@
     "url": "https://rirtv.tamashaland.com/live/XRo7X7OWhzruxFA9rZIaKQ__/master.m3u8",
     "title": "سرور مناسب ایران"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "سی ان ان",
@@ -2414,19 +2567,21 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219513.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "سی جی تی ان عربی",
   "name_en": "CGTN Arabic",
   "url": "https://arabic-livews.cgtn.com/hls/LSveq57bErWLinBnxosqjisZ220802LSTefTAS9zc9mpU08y3np9TH220802cd/playlist.m3u8",
-  "group": "General",
+  "group": "عربی",
   "dncat": "عربی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219511.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "سینتل",
@@ -2438,7 +2593,9 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219717.jpg",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "test": 1,
+  "mytv": 1
  },
  {
   "name": "سی‌بی‌اس‌ان بوستون",
@@ -2450,19 +2607,21 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219510.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "شبکه +1",
   "name_en": "شبکه +1",
   "url": "https://ncdn.telewebion.ir/tv1plus/live/playlist.m3u8",
-  "group": "General",
+  "group": "اختصاصی تلوبیون",
   "dncat": "اختصاصی تلوبیون",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219645.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "شبکه امام حسین(ع) 1",
@@ -2475,19 +2634,21 @@
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219573.png",
   "dn": 1,
   "probe": "alive",
-  "vpn": 1
+  "vpn": 1,
+  "mytv": 1
  },
  {
   "name": "شبکه جام",
   "name_en": "شبکه جام",
   "url": "https://ncdn.telewebion.ir/jam/live/playlist.m3u8",
-  "group": "General",
+  "group": "اختصاصی تلوبیون",
   "dncat": "اختصاصی تلوبیون",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219697.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "شبکه خاطره",
@@ -2505,19 +2666,21 @@
     "url": "http://46.245.122.7:8080/hls/khatereh/stream.m3u8",
     "title": ""
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "شبکه خبر",
   "name_en": "Shabake Khabar",
   "url": "https://ncdn.telewebion.ir/irinn/live/playlist.m3u8",
-  "group": "General",
+  "group": "سراسری",
   "dncat": "سراسری",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219699.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "شبکه طپش",
@@ -2529,7 +2692,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219439.jpg",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "شبکه مکه",
@@ -2541,7 +2705,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219636.gif",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "شبکه کارتون",
@@ -2553,19 +2718,21 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219509.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "شبکه کایران",
   "name_en": "شبکه کایران",
   "url": "http://23.227.170.147/KIRN",
-  "group": "Music",
+  "group": "رادیو - موزیک",
   "dncat": "رادیو - موزیک",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219648.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "شبکه گولی دخترانه",
@@ -2577,7 +2744,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782442068259.jpg",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "شبکه یورتایم",
@@ -2599,19 +2767,21 @@
     "url": "https://live.yourtime.tv/hls/stream.m3u8",
     "title": ""
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "شو تی‌وی",
   "name_en": "Show TV",
   "url": "https://ciner.daioncdn.net/showtv/showtv.m3u8?ce=3&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219715.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "ضد تی‌وی",
@@ -2623,19 +2793,21 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219774.jpg",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "طلوع تی‌وی",
   "name_en": "Tolo TV",
   "url": "https://tgn.bozztv.com/eshgtv-dvrfl05/gin-tolohd/tracks-v1a1/mono.m3u8",
-  "group": "General",
+  "group": "افغانستان",
   "dncat": "افغانستان",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219481.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "فارسی تی‌وی",
@@ -2647,7 +2819,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219446.jpg",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "فان پلاس",
@@ -2665,7 +2838,8 @@
     "url": "http://46.245.122.7:8080/hls/funplus/stream.m3u8",
     "title": "سرورمناسب ایران۲"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "فاکس نیوز",
@@ -2677,7 +2851,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219533.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "فشن تی‌وی",
@@ -2689,7 +2864,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219529.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "فوتبال",
@@ -2701,7 +2877,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219450.jpg",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "فیلم۱",
@@ -2713,7 +2890,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219531.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "لاو نیچر",
@@ -2725,7 +2903,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219632.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "لنز فیلم",
@@ -2737,7 +2916,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219596.jpg",
   "dn": 1,
-  "probe": "inconclusive-vm"
+  "probe": "inconclusive-vm",
+  "mytv": 1
  },
  {
   "name": "موزیک ویدیو 24",
@@ -2755,7 +2935,8 @@
     "url": "http://46.245.122.7:8080/hls/MusicVideo24/stream.m3u8",
     "title": "سرورمناسب ایران۲"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "مون باگ",
@@ -2767,7 +2948,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219644.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "نت تی‌وی",
@@ -2785,7 +2967,8 @@
     "url": "https://nethls.wns.live/hls/stream.m3u8",
     "title": "سرور ۱"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "های ویژن تی‌وی",
@@ -2797,7 +2980,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219568.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "ورزش تاجیکستان",
@@ -2809,7 +2993,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219773.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "وی او ای فارسی",
@@ -2822,7 +3007,8 @@
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219473.png",
   "dn": 1,
   "probe": "alive",
-  "vpn": 1
+  "vpn": 1,
+  "mytv": 1
  },
  {
   "name": "پخش زنده تصاویر حرم مطهر رضوی",
@@ -2834,7 +3020,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219567.jpg",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "پخش زنده‌ی مکه مکرمه",
@@ -2846,7 +3033,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219636.gif",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "پرشیانا اسپورت 1",
@@ -2880,7 +3068,8 @@
     "url": "https://persia-varzesh4.ardanmi.com/live/fkgu__Pt_LW6iumy848EYQ__/master.m3u8",
     "title": "سرورخارج2"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "پرشیانا اسپورت 2",
@@ -2906,7 +3095,8 @@
     "url": "https://rubix.ardanmi.com/live/2bS8KpM8CjujNXVc_RrseQ__/master.m3u8",
     "title": "سرورخارج2"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "پرشیانا اسپورت 3",
@@ -2918,7 +3108,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219671.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "پرشیانا اسپورت 4",
@@ -2930,33 +3121,36 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219672.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "پی ام سی سلکت",
   "name_en": "PMC Select",
   "url": "https://s5.radio.co/sf0a1af54c/listen",
-  "group": "Music",
+  "group": "رادیو - موزیک",
   "dncat": "رادیو - موزیک",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219453.jpg",
   "dn": 1,
   "probe": "alive",
-  "vpn": 1
+  "vpn": 1,
+  "mytv": 1
  },
  {
   "name": "پی ام سی پلانیتا",
   "name_en": "PMC Planeta",
   "url": "https://s5.radio.co/s42d095d44/listen",
-  "group": "Music",
+  "group": "رادیو - موزیک",
   "dncat": "رادیو - موزیک",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219453.jpg",
   "dn": 1,
   "probe": "dead",
-  "vpn": 1
+  "vpn": 1,
+  "mytv": 1
  },
  {
   "name": "کافه بازی",
@@ -2968,31 +3162,34 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219514.png",
   "dn": 1,
-  "probe": "inconclusive-vm"
+  "probe": "inconclusive-vm",
+  "mytv": 1
  },
  {
   "name": "کانال 7",
   "name_en": "Kanal 7",
   "url": "https://kanal7-live.daioncdn.net/kanal7/kanal7.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219444.jpg",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "کانال دی",
   "name_en": "Kanal D",
   "url": "https://live.duhnet.tv/S2/HLS_LIVE/kanalddainp/playlist.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219583.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "کانال فضای باز",
@@ -3004,20 +3201,22 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219659.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "کانال کوردی",
   "name_en": "Kurd Channel",
   "url": "https://kurdchhls.wns.live/hls/stream.m3u8",
-  "group": "General",
+  "group": "کوردی",
   "dncat": "کوردی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219594.png",
   "dn": 1,
   "probe": "alive",
-  "vpn": 1
+  "vpn": 1,
+  "mytv": 1
  },
  {
   "name": "کربلا 1",
@@ -3029,7 +3228,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219678.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "کوآلا تی‌وی",
@@ -3055,44 +3255,49 @@
     "url": "https://www.aparatchii.com/farsi-series-tv/gem-series",
     "title": "سرور 3"
    }
-  ]
+  ],
+  "test": 1,
+  "mytv": 1
  },
  {
   "name": "کوردستان تی‌وی",
   "name_en": "Kurdistan TV",
   "url": "http://84.244.187.150:1935/live/smil:myStream.smil/chunklist.m3u8",
-  "group": "General",
-  "dncat": "کوردی",
-  "lang": "فارسی",
-  "cat": "فارسی‌زبان",
-  "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219593.png",
-  "dn": 1,
-  "probe": "alive"
- },
- {
-  "name": "کوردستان ۲۴",
-  "name_en": "Kurdistan 24",
-  "url": "https://d1x82nydcxndze.cloudfront.net/live/index.m3u8",
-  "group": "General",
-  "dncat": "کوردی",
-  "lang": "فارسی",
-  "cat": "فارسی‌زبان",
-  "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219595.png",
-  "dn": 1,
-  "probe": "dead"
- },
- {
-  "name": "کومالا تیوی",
-  "name_en": "Komala TV",
-  "url": "https://komhls.wns.live/hls/stream.m3u8",
-  "group": "General",
+  "group": "کوردی",
   "dncat": "کوردی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219593.png",
   "dn": 1,
   "probe": "alive",
-  "vpn": 1
+  "mytv": 1
+ },
+ {
+  "name": "کوردستان ۲۴",
+  "name_en": "Kurdistan 24",
+  "url": "https://d1x82nydcxndze.cloudfront.net/live/index.m3u8",
+  "group": "کوردی",
+  "dncat": "کوردی",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219595.png",
+  "dn": 1,
+  "probe": "dead",
+  "mytv": 1
+ },
+ {
+  "name": "کومالا تیوی",
+  "name_en": "Komala TV",
+  "url": "https://komhls.wns.live/hls/stream.m3u8",
+  "group": "کوردی",
+  "dncat": "کوردی",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219593.png",
+  "dn": 1,
+  "probe": "alive",
+  "vpn": 1,
+  "mytv": 1
  },
  {
   "name": "گرند اسپورت",
@@ -3158,7 +3363,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219452.jpg",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "گوتو تراول",
@@ -3170,7 +3376,8 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219564.png",
   "dn": 1,
-  "probe": "dead"
+  "probe": "dead",
+  "mytv": 1
  },
  {
   "name": "گولی",
@@ -3188,7 +3395,8 @@
     "url": "http://41.205.77.102/GULLI/index.m3u8",
     "title": "سرور 1"
    }
-  ]
+  ],
+  "mytv": 1
  },
  {
   "name": "گوگولی تون",
@@ -3200,18 +3408,1182 @@
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219737.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
  },
  {
   "name": "یورو دی",
   "name_en": "Euro D",
   "url": "https://live.duhnet.tv/S2/HLS_LIVE/eurodnp/playlist.m3u8",
-  "group": "General",
+  "group": "ترکی",
   "dncat": "ترکی",
   "lang": "فارسی",
   "cat": "فارسی‌زبان",
   "logo": "https://raw.githubusercontent.com/DarkNamaTv/FaTv/main/data/logos/1782140219753.png",
   "dn": 1,
-  "probe": "alive"
+  "probe": "alive",
+  "mytv": 1
+ },
+ {
+  "name": "اس ال تی‌وی 2",
+  "name_en": "SL2 TV",
+  "url": "https://sltwohls.wns.live/hls/stream.m3u8",
+  "group": "فیلم و سریال",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219634.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "اکسیر فارسی",
+  "name_en": "Oxir",
+  "url": "https://hls.oxir.live/hls/stream.m3u8",
+  "group": "فیلم و سریال",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219660.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "آی سی نت1",
+  "name_en": "icnet 1",
+  "url": "https://icnet1hls.wns.live/hls/stream.m3u8",
+  "group": "فیلم و سریال",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1784750424337.jpg",
+  "probe": "unverified",
+  "vpn": 1,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "آی سی نت2",
+  "name_en": "icnet 2",
+  "url": "https://icnet2hls.wns.live/hls/stream.m3u8",
+  "group": "Religion",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1784750516887.jpg",
+  "probe": "unverified",
+  "vpn": 1,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "آی سی نت3",
+  "name_en": "icnet 3",
+  "url": "https://ic3hls.wns.live/hls/stream.m3u8",
+  "group": "فیلم و سریال",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1784750424337.jpg",
+  "probe": "unverified",
+  "vpn": 1,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "اس ال تی‌وی 1",
+  "name_en": "SL1 TV",
+  "url": "https://slonehls.wns.live/hls/stream.m3u8",
+  "group": "فیلم و سریال",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219633.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "آی تی ان",
+  "name_en": "ITN",
+  "url": "https://itnhls.wns.live/hls/stream.m3u8",
+  "group": "Entertainment",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219631.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "پی ام سی",
+  "name_en": "PMC",
+  "url": "https://pmchls.wns.live/hls/stream.m3u8",
+  "group": "Music",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219453.jpg",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "ام تی سی",
+  "name_en": "MTC",
+  "url": "https://mtchls.wns.live/hls/stream.m3u8",
+  "group": "Music",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219647.jpg",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "آوا سریس",
+  "name_en": "AVA Series",
+  "url": "https://10g.vitarani.com/live/j_fHB9WUAwH2PXnoAsnEDw__/master.m3u8",
+  "group": "فیلم و سریال",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219496.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "آی فیلم ۲",
+  "name_en": "Ifilm 2",
+  "url": "https://live.presstv.co.uk/hls/ifilm2.m3u8",
+  "group": "سراسری",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219696.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "داتیس تی‌وی",
+  "name_en": "DarisTV",
+  "url": "https://ronhls.wns.live/hls/stream.m3u8",
+  "group": "فیلم و سریال",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219412.jpg",
+  "probe": "unverified",
+  "vpn": 1,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "متا فیلم",
+  "name_en": "Meta Film",
+  "url": "https://metafilmhls.wns.live/hls/stream.m3u8",
+  "group": "فیلم و سریال",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219642.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "تی ۲ تی‌وی",
+  "name_en": "T2 tv",
+  "url": "https://t2hls.wns.live/hls/stream.m3u8",
+  "group": "Music",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219724.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "اف ایکس مووی",
+  "name_en": "Fx Movies",
+  "url": "https://fxtvhls.wns.live/hls/stream.m3u8",
+  "group": "فیلم و سریال",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219436.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "اف ایکس کارتون",
+  "name_en": "FX Cartoon",
+  "url": "https://toonixhls.wns.live/hls/stream.m3u8",
+  "group": "Kids",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219437.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "ایران نما",
+  "name_en": "Iran Nama",
+  "url": "https://iran613hls.wns.live/hls/stream.m3u8",
+  "group": "فیلم و سریال",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219579.png",
+  "probe": "unverified",
+  "vpn": 1,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "فوریو تی‌وی",
+  "name_en": "4U TV",
+  "url": "https://hls.4utv.live/hls/stream.m3u8",
+  "group": "Entertainment",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219472.jpg",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "ساینکس",
+  "name_en": "Cinex",
+  "url": "https://gcinemahls.wns.live/hls/stream.m3u8",
+  "group": "فیلم و سریال",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219414.jpg",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "تیتو موویز",
+  "name_en": "T2 Movies",
+  "url": "https://main.ardanmi.com/live/EHFLbTEAxGkDeuJDfW2jaQ__/master.m3u8",
+  "group": "فیلم و سریال",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219723.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "پی ام سی رویال",
+  "name_en": "PMC Royale",
+  "url": "https://pmcrohls.wns.live/hls/stream.m3u8",
+  "group": "Music",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219673.jpg",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "کلاسیک تی وی",
+  "name_en": "Classic TV",
+  "url": "https://clshls.wns.live/hls/stream.m3u8",
+  "group": "فیلم و سریال",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219512.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "پرشیانا داکس",
+  "name_en": "Persiana Docs",
+  "url": "https://scihls.persiana.live/hls/stream.m3u8",
+  "group": "پرشیانا",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219415.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "پرشیانا فایت",
+  "name_en": "Persiana Fight",
+  "url": "https://fighthls.persiana.live/hls/stream.m3u8",
+  "group": "پرشیانا",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219417.jpg",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "پرشیانا مدیکال",
+  "name_en": "Persiana Medical",
+  "url": "https://behnood-ai.behizaman0.workers.dev/?url=https://phd2hls.persiana.live/hls/stream.m3u8",
+  "group": "پرشیانا",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219416.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "پرشیانا کره",
+  "name_en": "Persiana Korea",
+  "url": "https://korhls.persiana.live/hls/stream.m3u8",
+  "group": "پرشیانا",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219418.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "نواهنگ",
+  "name_en": "Navahang",
+  "url": "https://hls.navahang.live/hls/stream.m3u8",
+  "group": "Music",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219435.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "پرشیانا پلاس",
+  "name_en": "Persiana +",
+  "url": "https://euhls.persiana.live/hls/stream.m3u8",
+  "group": "پرشیانا",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219420.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "پرشیانا نوستالژی",
+  "name_en": "Persiana Nostalgia",
+  "url": "https://noshls.persiana.live/hls/stream.m3u8",
+  "group": "پرشیانا",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219422.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "پرشیانا ریلیتی",
+  "name_en": "Persiana Reality",
+  "url": "https://twohls.persiana.live/hls/stream.m3u8",
+  "group": "پرشیانا",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219425.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "فور کورد",
+  "name_en": "4Kurd",
+  "url": "https://4kuhls.persiana.live/hls/stream.m3u8",
+  "group": "پرشیانا",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219430.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "ماه تی وی",
+  "name_en": "Maah TV",
+  "url": "https://hls.maahtv.live/hls/stream.m3u8",
+  "group": "Entertainment",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219635.jpg",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "247 باکس",
+  "name_en": "247Box",
+  "url": "https://hls.247box.live/hls/stream.m3u8",
+  "group": "فیلم و سریال",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219440.jpg",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "آراکس تی‌وی",
+  "name_en": "Arax TV",
+  "url": "https://ca.onetvapi.win:8443/araxhls.wns.live/hls/stream.m3u8?token=onetv202",
+  "group": "فیلم و سریال",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219491.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "مووی تایم",
+  "name_en": "Movie Time",
+  "url": "https://moviethls.wns.live/hls/stream.m3u8",
+  "group": "فیلم و سریال",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219646.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "آونگ",
+  "name_en": "Avang",
+  "url": "https://hls.avang.live/hls/stream.m3u8",
+  "group": "Music",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219442.jpg",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "رادیو صدای آمریکا",
+  "name_en": "Radio Voice of America",
+  "url": "https://voa-ingest.akamaized.net/hls/live/2033876/tvmc07/playlist.m3u8",
+  "group": "رادیو - اخبار",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219460.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "کانال جدید",
+  "name_en": "Kanal Jadid",
+  "url": "https://kjhls.wns.live/hls/stream.m3u8",
+  "group": "فیلم و سریال",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219643.jpg",
+  "probe": "unverified",
+  "vpn": 1,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "ای اف ان تی‌وی",
+  "name_en": "AFN TV",
+  "url": "https://bozztv.com/1gbw5/tintv2/tintv2/playlist.m3u8",
+  "group": "Entertainment",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219484.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "شبکه آذربایجان غربی",
+  "name_en": "Shabake Oromiye",
+  "url": "https://ncdn.telewebion.ir/azarbayjangharbi/live/playlist.m3u8",
+  "group": "استانی",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219602.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "شبکه هامون",
+  "name_en": "Shabake Hamon",
+  "url": "https://ncdn.telewebion.ir/hamoon/live/playlist.m3u8",
+  "group": "استانی",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219610.png",
+  "probe": "alive",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "کافه فیلم",
+  "name_en": "Cafe Film",
+  "url": "https://piraxy.tamashaland.com/cors?url=https://cafefhls.wns.live/hls/stream.m3u8",
+  "group": "فیلم و سریال",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219507.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "شبکه سبلان",
+  "name_en": "Shabake Sabalan",
+  "url": "https://ncdn.telewebion.ir/sabalan/live/playlist.m3u8",
+  "group": "استانی",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219625.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "پرشیانا ترکیه",
+  "name_en": "Persiana Turkiye",
+  "url": "https://turkhls.persiana.live/hls/stream.m3u8",
+  "group": "پرشیانا",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219432.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "شبکه افلاک - لرستان",
+  "name_en": "Shabake Lorestan",
+  "url": "https://ncdn.telewebion.ir/aflak/live/playlist.m3u8",
+  "group": "استانی",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219621.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "امید ایران",
+  "name_en": "Omid Iran",
+  "url": "https://oitnhls.wns.live/hls/stream.m3u8",
+  "group": "Entertainment",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219657.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "شبکه ایلام",
+  "name_en": "Shabake ilam",
+  "url": "https://ncdn.telewebion.ir/ilam/live/playlist.m3u8",
+  "group": "استانی",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219611.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "پارس تی‌وی",
+  "name_en": "Pars TV",
+  "url": "https://parshls.wns.live/hls/stream.m3u8",
+  "group": "News",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219662.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "شبکه خلیج فارس",
+  "name_en": "Shabake horomozgan",
+  "url": "https://ncdn.telewebion.ir/khalijefars/live/playlist.m3u8",
+  "group": "استانی",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219615.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "شبکه قزوين",
+  "name_en": "Shabake qazvin",
+  "url": "https://ncdn.telewebion.ir/qazvin/live/playlist.m3u8",
+  "group": "استانی",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219624.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "شبکه بوشهر",
+  "name_en": "Shabake boushehr",
+  "url": "https://ncdn.telewebion.ir/bushehr/live/playlist.m3u8",
+  "group": "استانی",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219604.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "شبکه مهاباد",
+  "name_en": "Shabake mahabad",
+  "url": "https://ncdn.telewebion.ir/mahabad/live/playlist.m3u8",
+  "group": "استانی",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219622.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "شبکه جهان بین",
+  "name_en": "Shabake jahanbin",
+  "url": "https://ncdn.telewebion.ir/jahanbin/live/playlist.m3u8",
+  "group": "استانی",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219613.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "شبکه زاگرس",
+  "name_en": "Shabake kermanshah",
+  "url": "https://ncdn.telewebion.ir/zagros/live/playlist.m3u8",
+  "group": "استانی",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219630.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "شبکه کیش",
+  "name_en": "Shabake kish",
+  "url": "https://ncdn.telewebion.ir/kish/live/playlist.m3u8",
+  "group": "استانی",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219619.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "شبکه اترک",
+  "name_en": "Shabake atrak",
+  "url": "https://ncdn.telewebion.ir/atrak/live/playlist.m3u8",
+  "group": "استانی",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219601.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "شبکه سبز - گلستان",
+  "name_en": "Shabake golestan",
+  "url": "https://ncdn.telewebion.ir/sabz/live/playlist.m3u8",
+  "group": "استانی",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219608.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "شبکه مثبت پویا",
+  "name_en": "",
+  "url": "https://ncdn.telewebion.ir/javaneh/live/playlist.m3u8",
+  "group": "اختصاصی تلوبیون",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219727.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "شبکه اشراق",
+  "name_en": "eshragh",
+  "url": "https://ncdn.telewebion.ir/eshragh/live/playlist.m3u8",
+  "group": "استانی",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219606.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "شبکه دنا",
+  "name_en": "kohkiloye",
+  "url": "https://ncdn.telewebion.ir/dena/live/playlist.m3u8",
+  "group": "استانی",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219605.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "شبکه آفتاب",
+  "name_en": "marekazi",
+  "url": "https://ncdn.telewebion.ir/aftab/live/playlist.m3u8",
+  "group": "استانی",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219599.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "Home +",
+  "name_en": "Home +",
+  "url": "https://homeplushls.wns.live/hls/stream.m3u8",
+  "group": "Entertainment",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219570.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "Sat7 Pars",
+  "name_en": "ست 7 پارس",
+  "url": "https://sat7phls.wns.live/hls/stream.m3u8",
+  "group": "فیلم و سریال",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219467.jpg",
+  "probe": "unverified",
+  "vpn": 1,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "کافه ترید",
+  "name_en": "Cafe Trade",
+  "url": "https://cafetradehls.wns.live/hls/stream.m3u8",
+  "group": "News",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219506.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "شبکه خاوران",
+  "name_en": "khavaran",
+  "url": "https://ncdn.telewebion.ir/khavaran/live/playlist.m3u8",
+  "group": "استانی",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219616.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "شبکه سینا - همدان ",
+  "name_en": "hamedan",
+  "url": "https://ncdn.telewebion.ir/sina/live/playlist.m3u8",
+  "group": "استانی",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219609.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "شبکه سمنان",
+  "name_en": "Shabake Semnan",
+  "url": "https://ncdn.telewebion.ir/semnan/live/playlist.m3u8",
+  "group": "استانی",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219627.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "شبکه نور",
+  "name_en": "qom",
+  "url": "https://ncdn.telewebion.ir/noor/live/playlist.m3u8",
+  "group": "استانی",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219623.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "مرجعیت",
+  "name_en": "Marjaeyat",
+  "url": "https://livefa.marjaeyattv.com/mtv_fa/playlist.m3u8",
+  "group": "Religion",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219637.jpg",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "گنج حضور",
+  "name_en": "Ganje Hozour TV",
+  "url": "https://media.parvizshahbazi.com/ganjehozour/Main_tv/playlist.m3u8",
+  "group": "Religion",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219535.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "شبکه رضوی",
+  "name_en": "",
+  "url": "https://ncdn.telewebion.ir/razavi/live/playlist.m3u8",
+  "group": "اختصاصی تلوبیون",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219728.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "پرشیانا رپ",
+  "name_en": "Persiana Rap",
+  "url": "https://raphls.persiana.live/hls/stream.m3u8",
+  "group": "پرشیانا",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1788836253272.webp",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "شبکه نوا",
+  "name_en": "",
+  "url": "https://ncdn.telewebion.ir/nava/live/playlist.m3u8",
+  "group": "اختصاصی تلوبیون",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219726.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "تی ام تی‌وی",
+  "name_en": "TmTv",
+  "url": "https://hls.tmtv.live/hls/stream.m3u8",
+  "group": "Entertainment",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219735.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "رادیو جهانی قرآن",
+  "name_en": "quran",
+  "url": "http://104.167.2.55:8000/;",
+  "group": "رادیو - مذهبی",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219457.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "پرشیانا تراول",
+  "name_en": "Persiana Travel",
+  "url": "https://ptravelhls.persiana.live/hls/stream.m3u8",
+  "group": "پرشیانا",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219433.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "آی‌ان‌آر",
+  "name_en": "Iran National Revolution",
+  "url": "https://hls.irannrtv.live/hls/stream.m3u8",
+  "group": "News",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219580.jpg",
+  "probe": "unverified",
+  "vpn": 1,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "کلمه تی‌وی",
+  "name_en": "Kalemeh TV",
+  "url": "https://player.kalemeh.tv/live/ngrp:kalemeh_all/playlist.m3u8",
+  "group": "News",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219582.png",
+  "probe": "unverified",
+  "vpn": 1,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "ای پلنت",
+  "name_en": "ePlanet TV",
+  "url": "https://eplhls.wns.live/hls/stream.m3u8",
+  "group": "News",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219526.jpg",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "آرکو تی‌وی",
+  "name_en": "Arko TV",
+  "url": "https://arkhls.wns.live/hls/stream.m3u8",
+  "group": "فیلم و سریال",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219492.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "رویال تی‌وی",
+  "name_en": "Royal TV",
+  "url": "https://arvhls.wns.live/hls/stream.m3u8",
+  "group": "Entertainment",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219681.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "آترینا تی‌وی",
+  "name_en": "Atrina TV",
+  "url": "https://atrihls.wns.live/hls/stream.m3u8",
+  "group": "Entertainment",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219493.png",
+  "probe": "unverified",
+  "vpn": 0,
+  "mytv": 1,
+  "test": 0
+ },
+ {
+  "name": "شبکه 7",
+  "name_en": "Shabakeh 7",
+  "url": "https://sh7hls.wns.live/hls/stream.m3u8",
+  "group": "Entertainment",
+  "lang": "فارسی",
+  "cat": "فارسی‌زبان",
+  "parsatv": "",
+  "logo": "https://appfa.beauty/webservice/upload/1782140219444.jpg",
+  "probe": "unverified",
+  "vpn": 1,
+  "mytv": 1,
+  "test": 0
  }
 ]

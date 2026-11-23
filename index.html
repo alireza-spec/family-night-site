@@ -407,6 +407,10 @@ box-shadow:0 0 26px rgba(229,169,60,.28),inset 0 0 14px rgba(0,0,0,.65);animatio
 .chan .ini{width:2.5rem;height:2.5rem;border-radius:50%;background:var(--surface4);display:grid;place-items:center;font-weight:800;color:var(--gold2)}
 .chan b{font-size:.78rem;line-height:1.5;font-weight:600}
 .chan .flag{width:1.35rem;height:auto;border-radius:2px}
+/* FN-TV-MYTV v1 — VPN / test badges on TV cards and in the player */
+.tv-vpn{display:inline-block;font-size:.62rem;font-weight:700;color:var(--gold2);border:1px solid rgba(229,169,60,.55);border-radius:99px;padding:.05rem .45rem}
+.tv-test{display:inline-block;font-size:.62rem;font-weight:700;color:#ffb3ad;border:1px solid rgba(255,179,173,.5);border-radius:99px;padding:.05rem .45rem}
+.tv-srv[data-on="1"]{border-color:var(--gold);background:var(--gold-soft)}
 .live-dot{display:inline-flex;align-items:center;gap:.35rem;color:#ff7a70;font-size:.75rem;font-weight:700}
 .live-dot::before{content:"";width:.5rem;height:.5rem;border-radius:50%;background:#ff5147;animation:pulse 1.4s infinite}
 @keyframes pulse{50%{opacity:.35}}
@@ -1749,7 +1753,7 @@ html.tg .bottomnav{display:flex}
           <div class="screen" id="tv-screenbox"><video id="tv-video" playsinline></video><div class="tv-idle">برای شروع پخش زنده، یک شبکه را از فهرست انتخاب کنید</div></div>
           <div style="display:flex;align-items:center;gap:.7rem;margin-top:.7rem;flex-wrap:wrap">
             <h2 id="tv-now" style="margin:0;font-size:1.1rem;font-weight:800">یک شبکه را انتخاب کنید</h2>
-            <span class="live-dot" id="tv-status"></span>
+            <span class="live-dot" id="tv-status"></span><span class="tv-vpn" id="tv-vpnbadge" style="display:none">نیاز به VPN</span><span class="tv-test" id="tv-testbadge" style="display:none">تست</span>
             <span style="margin-inline-start:auto;display:inline-flex;gap:.5rem;flex-wrap:wrap">
             <button class="btn btn-glass btn-sm" id="tv-fs" type="button" style="display:none"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg> تمام‌صفحه افقی</button>
             <button class="btn btn-glass btn-sm" id="tv-pip" type="button" style="display:none"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" style="vertical-align:-2px"><rect x="3" y="5" width="18" height="14" rx="2"/><rect x="12.5" y="11.5" width="6" height="4.5" rx="1" fill="currentColor" stroke="none"/></svg> تصویر در تصویر</button>
@@ -1757,6 +1761,7 @@ html.tg .bottomnav{display:flex}
             <button class="btn btn-glass btn-sm" id="tv-share" type="button" style="display:none"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" style="vertical-align:-2px"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="5.5" r="2.5"/><circle cx="18" cy="18.5" r="2.5"/><path d="m8.2 10.8 7.6-4M8.2 13.2l7.6 4"/></svg> اشتراک‌گذاری شبکه</button>
             </span>
           </div>
+          <div id="tv-servers" style="display:none;margin-top:.55rem;flex-wrap:wrap;gap:.4rem"></div>
           <p id="tv-subnote" style="display:none;color:var(--pearl);font-size:.8rem;margin:.35rem 0 0">برای تماشای تمام‌صفحه و افقی، دکمهٔ «تمام‌صفحه افقی» را بزنید؛ اگر شبکه زیرنویس داشته باشد، پیش‌فرض آن فارسی است و در نبود فارسی، انگلیسی.</p>
           <p id="tv-err" style="color:#ffb3ad;font-size:.85rem;margin:.3rem 0 0"></p>
         </div>
@@ -9903,7 +9908,7 @@ const FEATURED_TV = [
   { name: 'آی‌فیلم انگلیسی', url: 'https://live.presstv.ir/hls/ifilmen.m3u8', cat: 'فارسی‌زبان' },
   { name: 'آی‌فیلم عربی', url: 'https://live.presstv.ir/hls/ifilmar.m3u8', cat: 'فارسی‌زبان' },
   { name: 'پرس تی‌وی', url: 'https://live.presstv.ir/hls/presstv_5_482/index.m3u8', cat: 'فارسی‌زبان' },
-  { name: 'ایران اینترنشنال', url: 'https://hlspackager.akamaized.net/live/DB/IRAN_INTERNATIONAL/HLS/IRAN_INTERNATIONAL.m3u8', cat: 'فارسی‌زبان' },
+  { name: 'ایران اینترنشنال', url: 'https://hlspackager.akamaized.net/live/DB/IRAN_INTERNATIONAL/HLS/IRAN_INTERNATIONAL.m3u8', cat: 'فارسی‌زبان', vpn: 1 },
   { name: 'پرشیانا سینما', url: 'https://cinehls.persiana.live/hls/stream.m3u8', cat: 'فارسی‌زبان' },
   { name: 'پرشیانا سریال', url: 'https://onehls.persiana.live/hls/stream.m3u8', cat: 'فارسی‌زبان' },
   { name: 'پرشیانا فامیلی', url: 'https://familyhls.persiana.live/hls/stream.m3u8', cat: 'فارسی‌زبان' },
@@ -9942,9 +9947,15 @@ function tvGenreOf(c) {
    actually occur in the current channel list, so no filter choice
    can ever come back empty. */
 const TV_CAT_FA = { Animation: 'انیمیشن', Auto: 'خودرو', Business: 'کسب‌وکار', Classic: 'کلاسیک', Comedy: 'کمدی', Cooking: 'آشپزی', Culture: 'فرهنگ', Documentary: 'مستند', Education: 'آموزشی', Entertainment: 'سرگرمی', Family: 'خانوادگی', Football: 'فوتبال', General: 'عمومی', Kids: 'کودک', Legislative: 'قانون‌گذاری', Lifestyle: 'سبک زندگی', Movies: 'فیلم', Music: 'موسیقی', News: 'خبر', Outdoor: 'طبیعت و گردش', Religion: 'مذهبی', Science: 'علمی', Series: 'سریال', Sports: 'ورزش', Travel: 'سفر', Weather: 'آب‌وهوا', Undefined: 'عمومی' };
+/* FN-TV-MYTV v1 — MyTV categories (Persian) with no English
+   group-title equivalent stay verbatim as filter topics; categories
+   that match an existing topic are mapped to that group in the data
+   (GROUP_MAP in the merge), so خبر/اخبار never become two filters. */
+const TV_MTV_TOPICS = new Set(['ترکی', 'استانی', 'سراسری', 'پرشیانا', 'شبکه های جم', 'عربی', 'کوردی', 'اختصاصی تلوبیون', 'افغانستان', 'رادیو - موزیک', 'رادیو - اخبار', 'رادیو - مذهبی', 'برون مرزی', 'فیلم و سریال']);
 function tvTopicOf(c) {
   const g = (c && c.group) || '';
   if (g && TV_CAT_FA[g]) return TV_CAT_FA[g];
+  if (g && TV_MTV_TOPICS.has(g)) return g;
   return tvGenreOf(c);
 }
 const TV_LANG = { US: 'انگلیسی', GB: 'انگلیسی', CA: 'انگلیسی', AU: 'انگلیسی', NZ: 'انگلیسی', ZA: 'انگلیسی', IN: 'هندی', PK: 'اردو', TR: 'ترکی', AE: 'عربی', SA: 'عربی', EG: 'عربی', IQ: 'عربی', DE: 'آلمانی', AT: 'آلمانی', CH: 'آلمانی', FR: 'فرانسوی', BE: 'هلندی', NL: 'هلندی', ES: 'اسپانیایی', MX: 'اسپانیایی', AR: 'اسپانیایی', IT: 'ایتالیایی', KR: 'کره‌ای', JP: 'ژاپنی', RU: 'روسی', UA: 'اوکراینی', CN: 'چینی', TW: 'چینی', HK: 'چینی', SE: 'سوئدی', NO: 'نروژی', DK: 'دانمارکی', FI: 'فنلاندی', PL: 'لهستانی', PT: 'پرتغالی', BR: 'پرتغالی', GR: 'یونانی', CZ: 'چکی', HU: 'مجاری', RO: 'رومانیایی', IL: 'عبری', ID: 'اندونزیایی', TH: 'تایلندی', VN: 'ویتنامی', KZ: 'قزاقی', UZ: 'ازبکی', AZ: 'آذربایجانی', GE: 'گرجی', AM: 'ارمنی', AF: 'فارسی', TJ: 'تاجیکی', IR: 'فارسی' };
@@ -10038,7 +10049,7 @@ function prefetchTv() {
              a DN category (dncat) and a VPN flag; their remote logo is
              resolved to the local mirror exactly like playlist logos. */
           const loc = tvLogoLocal(c.logo || '');
-          extra.push({ name: c.name, url: c.url, logo: loc, logoRemote: loc !== (c.logo || '') ? (c.logo || '') : '', group: c.group || '', cc: '', lang: 'فارسی', cat: 'فارسی‌زبان', tw: c.url.indexOf('telewebion') > -1 ? 1 : 0, servers: (c.servers || []).filter(s => s && s.url).map(s => ({ url: s.url, title: s.title || '' })), dn: c.dn || 0, dncat: c.dncat || '', vpn: c.vpn || 0, name_en: c.name_en || '' });
+          extra.push({ name: c.name, url: c.url, logo: loc, logoRemote: loc !== (c.logo || '') ? (c.logo || '') : '', group: c.group || '', cc: '', lang: 'فارسی', cat: 'فارسی‌زبان', tw: c.url.indexOf('telewebion') > -1 ? 1 : 0, servers: (c.servers || []).filter(s => s && s.url).map(s => ({ url: s.url, title: s.title || '' })), dn: c.dn || 0, dncat: c.dncat || '', vpn: c.vpn || 0, name_en: c.name_en || '', mytv: c.mytv || 0, test: c.test || 0 });
         });
       } catch (e) {}
       tvAll = FEATURED_TV.filter(c => !tvDead(c)).concat(extra);
@@ -10248,7 +10259,7 @@ function paintTvGrid() {
   const grid = $('#tv-grid');
   grid.innerHTML = list.slice(0, tvShown).map((c, i) =>
     '<div class="chan" data-chan="' + i + '" role="button" tabindex="0">' + (c.logo ? '<img class="logo"' + (i < 36 ? ' loading="eager" fetchpriority="high"' : ' loading="lazy"') + ' decoding="async" data-ini="' + esc(c.name.trim().slice(0, 1)) + '"' + (c.logoRemote ? ' data-remote="' + esc(c.logoRemote) + '"' : '') + ' src="' + esc(c.logo) + '" alt="">' : '<span class="ini">' + esc(c.name.trim().slice(0, 1)) + '</span>')
-    + '<b>' + esc(c.name) + '</b><span style="font-size:.66rem;color:var(--pearl)">' + esc(tvTopicOf(c)) + '</span>' + (c.tw ? '<img class="flag" loading="lazy" src="https://flagofiran.com/files/Flag_of_Iran.svg" alt="" onerror="this.remove()">' : '') + '</div>').join('')
+    + '<b>' + esc(c.name) + '</b><span style="font-size:.66rem;color:var(--pearl)">' + esc(tvTopicOf(c)) + '</span>' + (c.vpn ? '<span class="tv-vpn">نیاز به VPN</span>' : '') + (c.test ? '<span class="tv-test">تست</span>' : '') + (c.tw ? '<img class="flag" loading="lazy" src="https://flagofiran.com/files/Flag_of_Iran.svg" alt="" onerror="this.remove()">' : '') + '</div>').join('')
     || '<div class="state" style="grid-column:1/-1">شبکه‌ای با این مشخصات پیدا نشد.</div>';
   /* a logo that fails to load falls back to the channel's initial
      letter instead of leaving an empty slot */
@@ -10447,6 +10458,8 @@ function playChannel(ch, el) {
   if (scr && grid && window.innerWidth < 1000 && scr.parentNode !== grid.parentNode) grid.parentNode.insertBefore(scr, grid);
   if (scr) requestAnimationFrame(() => scr.scrollIntoView({ behavior: 'smooth', block: 'center' }));
   $('#tv-now').textContent = ch.name;
+  const tvVpnB = $('#tv-vpnbadge'); if (tvVpnB) tvVpnB.style.display = ch.vpn ? '' : 'none';
+  const tvTestB = $('#tv-testbadge'); if (tvTestB) tvTestB.style.display = ch.test ? '' : 'none';
   $('#tv-err').textContent = '';
   const video = $('#tv-video');
   /* playback — and the player's controls — only exist once a channel
@@ -10503,6 +10516,35 @@ function playChannel(ch, el) {
     return out;
   })();
   const routes = tvRouteList.map(r => r.src);
+  /* FN-TV-MYTV v1 — server switcher: one button per server (main +
+     ch.servers, deduped, in route order). Tapping one jumps straight
+     to that server's first route; the active button follows every
+     route change, manual or automatic. */
+  const tvSrvBar = $('#tv-servers');
+  const tvSrvUniq = [];
+  { const _seen = new Set(); [{ url: ch.url, title: 'سرور اصلی' }].concat((ch.servers || []).filter(s => s && s.url)).forEach(s => { if (!s.url || _seen.has(s.url)) return; _seen.add(s.url); tvSrvUniq.push({ url: s.url, title: s.title || '' }); }); }
+  const tvSrvMark = src => {
+    if (!tvSrvBar || !tvSrvUniq.length) return;
+    let u = src || '';
+    if (u.indexOf(TV_PROXY) === 0) { try { u = decodeURIComponent(u.slice(TV_PROXY.length)); } catch (e) {} }
+    tvSrvBar.querySelectorAll('.tv-srv').forEach((x, i) => { if (tvSrvUniq[i] && tvSrvUniq[i].url === u) x.setAttribute('data-on', '1'); else x.removeAttribute('data-on'); });
+  };
+  if (tvSrvBar) {
+    if (tvSrvUniq.length > 1) {
+      tvSrvBar.style.display = 'flex';
+      tvSrvBar.innerHTML = tvSrvUniq.map((s, i) => '<button type="button" class="btn btn-glass btn-sm tv-srv" data-i="' + i + '">' + esc(s.title || ('سرور ' + (i + 1))) + '</button>').join('');
+      tvSrvBar.querySelectorAll('.tv-srv').forEach(b => { b.onclick = () => {
+        const u = tvSrvUniq[+b.dataset.i] && tvSrvUniq[+b.dataset.i].url;
+        if (!u) return;
+        let ri = -1;
+        for (let j = 0; j < tvRouteList.length; j++) { const s2 = tvRouteList[j].src; if (s2 === u || s2 === TV_PROXY + encodeURIComponent(u)) { ri = j; break; } }
+        if (ri < 0) return;
+        routeIdx = ri; netRetries = 0; playing = false;
+        $('#tv-status').textContent = 'در حال اتصال… — ' + (tvSrvUniq[+b.dataset.i].title || '');
+        attach(tvRouteList[ri]);
+      }; });
+    } else { tvSrvBar.style.display = 'none'; tvSrvBar.innerHTML = ''; }
+  }
   let routeIdx = 0, netRetries = 0, playing = false;
   const fail = msg => {
     if (token !== tvPlayToken) return;
@@ -10529,6 +10571,7 @@ function playChannel(ch, el) {
     const src = rt && rt.src;
     if (!src || token !== tvPlayToken) return;
     if (rt.title) $('#tv-status').textContent = 'در حال اتصال… — ' + rt.title;
+    tvSrvMark(src);
     if (tvHls) { try { tvHls.destroy(); } catch (e) {} tvHls = null; }
     playing = false;
     armTimer();
