@@ -9572,6 +9572,34 @@
     "season": null,
     "size_bytes": 269234163,
     "size_text": "269 MB"
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Diary.of.a.Wimpy.Kid.2021.720p.WEB-DL.YIFY.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Diary.of.a.Wimpy.Kid.2021.1080p.WEB-DL.YIFY.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
    }
   ],
   "title": "Diary of a Wimpy Kid",

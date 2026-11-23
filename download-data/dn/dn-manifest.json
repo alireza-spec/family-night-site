@@ -2,17 +2,19 @@
  "code": "DN",
  "counts": {
   "by_resolution": {
-   "1080p": 825,
+   "1080p": 913,
    "360p": 1,
-   "480p": 5914,
+   "480p": 6002,
    "540p": 377,
-   "720p": 8092
+   "720p": 8299
   },
   "by_version_family": {
-   "Dubbed": 1754,
-   "Subtitled": 13366,
-   "unknown": 88,
-   "NoSub": 1
+   "Dubbed": 1827,
+   "Subtitled": 13531,
+   "unknown": 99,
+   "NoSub": 2,
+   "HardSub": 36,
+   "SoftSub": 97
   },
   "by_year": {
    "1929": 1,
@@ -20,69 +22,73 @@
    "1943": 2,
    "1953": 1,
    "1955": 2,
-   "1959": 1,
+   "1959": 2,
    "1960": 1,
-   "1968": 1,
+   "1968": 2,
    "1972": 2,
    "1973": 1,
    "1974": 2,
-   "1975": 1,
-   "1976": 1,
-   "1977": 1,
-   "1978": 4,
-   "1979": 2,
+   "1975": 4,
+   "1976": 2,
+   "1977": 4,
+   "1978": 10,
+   "1979": 4,
    "1980": 3,
-   "1981": 5,
-   "1985": 1,
+   "1981": 8,
+   "1985": 3,
    "1990": 2,
-   "1991": 4,
+   "1991": 7,
    "1992": 2,
    "1995": 1,
    "1996": 3,
-   "1997": 2,
+   "1997": 6,
    "1999": 2,
    "2000": 3,
-   "2001": 1,
+   "2001": 5,
    "2002": 5,
-   "2003": 3,
+   "2003": 9,
    "2004": 3,
-   "2005": 9,
-   "2006": 8,
-   "2007": 3,
-   "2008": 7,
+   "2005": 11,
+   "2006": 10,
+   "2007": 4,
+   "2008": 11,
    "2009": 14,
-   "2010": 11,
-   "2011": 9,
-   "2012": 13,
-   "2013": 17,
-   "2014": 23,
-   "2015": 29,
-   "2016": 33,
-   "2017": 33,
-   "2018": 41,
-   "2019": 57,
-   "2020": 43,
-   "2021": 66,
-   "2022": 53,
-   "2023": 70,
-   "2024": 49,
-   "2025": 73,
-   "2026": 53,
-   "1994": 2,
-   "1998": 2,
-   "1971": 2,
+   "2010": 16,
+   "2011": 18,
+   "2012": 21,
+   "2013": 41,
+   "2014": 35,
+   "2015": 50,
+   "2016": 41,
+   "2017": 50,
+   "2018": 63,
+   "2019": 76,
+   "2020": 56,
+   "2021": 78,
+   "2022": 77,
+   "2023": 91,
+   "2024": 62,
+   "2025": 88,
+   "2026": 63,
+   "1994": 4,
+   "1998": 4,
+   "1971": 3,
    "1989": 1,
    "1967": 1,
-   "1969": 1,
-   "1983": 1
+   "1969": 9,
+   "1983": 1,
+   "1984": 10,
+   "1987": 2,
+   "1988": 4,
+   "1965": 3
   },
   "ext_overlap": 1,
-  "films": 425,
-  "play_rows": 16100,
+  "films": 589,
+  "play_rows": 16483,
   "series": 363,
   "skipped_no_links": 11,
   "total": 788,
-  "trailer_keys": 626,
+  "trailer_keys": 737,
   "trailers_dropped": 71,
   "variety_patched": 401,
   "variety_play_created": 42,
@@ -21626,5 +21632,606 @@
    }
   ],
   "note": "Chunk 1 of the 2026-11-23 PM run (REBASED on 4b0f9b94): ZV/Simba/ML only; DN new titles land in chunk 2."
+ },
+ "twice_daily_2026-11-23_pm_dn_movies": {
+  "live_base_head": "13b9f00cc468cb44d8d65d893b3ea11ff0ed0ec6",
+  "start_num": 13514,
+  "end_num": 13677,
+  "new_titles_merged": [
+   "Kill Chain",
+   "Handy Dandy",
+   "Crucible of the Vampire",
+   "Girl on the Third Floor",
+   "A Dog's Way Home",
+   "Guava Island",
+   "Battle of the Sexes",
+   "Halston",
+   "Frontera",
+   "The Shamer's Daughter",
+   "The Legend of Sarila",
+   "Dassehra",
+   "Furious",
+   "Armed Response",
+   "Black Snow",
+   "World Famous Lover",
+   "See You Up There",
+   "Lupin the Third: Goodbye Partner",
+   "Viking Destiny",
+   "Bring Me Home",
+   "Special ID",
+   "Birbal Trilogy: Case 1 – Finding Vajramuni",
+   "Allan The Dog",
+   "God Tussi Great Ho",
+   "The Domain",
+   "The Royal Tailor",
+   "Beverly Hills Cop",
+   "Beverly Hills Cop II",
+   "Beverly Hills Cop III",
+   "Secret in Their Eyes",
+   "Cannibals and Carpet Fitters",
+   "Loukyam",
+   "The Priests",
+   "Katy Perry: Part of Me",
+   "Manglehorn",
+   "Clash",
+   "Zombi Child",
+   "Revolution",
+   "Coming to America",
+   "Go Back",
+   "Tiki Taka",
+   "Dune",
+   "The 33",
+   "Machine Gun Preacher",
+   "Sinners and Saints",
+   "The Secret",
+   "The Scary of Sixty-First",
+   "Arsène Wenger: Invincible",
+   "Hide and Seek",
+   "The Door into Summer",
+   "The Inbetweeners Movie",
+   "The Inbetweeners 2",
+   "Bhaag Johnny",
+   "Conspiracy Theory",
+   "Chori Chori",
+   "The Boss",
+   "Chickenhare and the Hamster of Darkness",
+   "Hot Tub Time Machine",
+   "Henchmen",
+   "Becks",
+   "Midnight's Children",
+   "Clarkson: Powered Up",
+   "In the Land of Blood and Honey",
+   "Air",
+   "The Figo Affair: The Transfer That Changed Football",
+   "10x10",
+   "Eraser: Reborn",
+   "Blackout",
+   "The Innkeepers",
+   "Eklavya: The Royal Guard",
+   "Rigor Mortis",
+   "Darby and the Dead",
+   "Battle for Saipan",
+   "The Accused",
+   "Vive la France",
+   "Little Forest: Summer/Autumn",
+   "One Night Off",
+   "Battlebox",
+   "My Best Friend's Wedding",
+   "Racer and the Jailbird",
+   "Alone",
+   "Our Sunhi",
+   "Range 15",
+   "The Human Voice",
+   "Savage State",
+   "They Found Hell",
+   "Canola",
+   "Friday Night Plan",
+   "Hitmen",
+   "Tommy Guns",
+   "Solomon and Sheba",
+   "The Ottoman Republic",
+   "All-Round Appraiser Q: The Eyes of Mona Lisa",
+   "Ranasthali",
+   "Smoking Causes Coughing",
+   "Phantasm",
+   "Every Thing Will Be Fine",
+   "Dhoomam",
+   "Aliens of the Deep",
+   "Her Şey Aşk İçin",
+   "Thinkalazhcha Nishchayam",
+   "Closed School",
+   "Division III: Football's Finest",
+   "One Night at McCool's",
+   "The Newton Boys",
+   "A Letter From Mars",
+   "Playing for Keeps",
+   "Kahaani 2",
+   "Goodbye, Don Glees!",
+   "Banshee Chapter",
+   "Indivisible",
+   "Prodigy",
+   "Munjya",
+   "Utøya: July 22",
+   "Transit",
+   "22 July",
+   "Gold Kingdom and Water Kingdom",
+   "Dance First",
+   "The Hammer",
+   "Up to His Ears",
+   "Un/Dressed",
+   "Jolly O Gymkhana",
+   "Catalyst",
+   "The Wedding Banquet",
+   "Good Bad Ugly",
+   "Rosencrantz & Guildenstern Are Dead",
+   "Barbie Mariposa & the Fairy Princess",
+   "Like the Wind",
+   "The Chaos Class",
+   "Robinhood",
+   "Shaolin Mantis",
+   "New Tales of the Flying Fox",
+   "Vengeance Is a Golden Blade",
+   "The Brave Archer",
+   "Warriors of Heaven and Earth",
+   "The Golden Sword",
+   "Have Sword, Will Travel",
+   "The Duel of the Century",
+   "Taish",
+   "Frances Ha",
+   "Kuramerukagari",
+   "The Antique",
+   "Air Force Elite: Thunderbirds",
+   "Cassandre",
+   "Back to the 90s",
+   "Mikael: Hunter of Two Realms",
+   "Horsegirls",
+   "Aroopi",
+   "Che: Part Two",
+   "Enigma",
+   "Brexit: The Uncivil War",
+   "Walking with Dinosaurs",
+   "Spooks: The Greater Good",
+   "Without Saying Goodbye",
+   "Sound! Euphonium: Ensemble Contest",
+   "Once Upon a Time Michel Legrand",
+   "The New Shaolin Boxers",
+   "Swordsman at Large",
+   "The Silver Fox",
+   "Return of Bastard Swordsman",
+   "The Five Venoms",
+   "4 Horsemen: Apocalypse",
+   "Iceman: The Time Traveler",
+   "The Fable"
+  ],
+  "new_links": 333,
+  "new_trailers": 51,
+  "completions": [
+   {
+    "dn_id": 2185,
+    "title": "Beanpole",
+    "record": "#8211 4",
+    "links_added": 1
+   },
+   {
+    "dn_id": 2189,
+    "title": "Serenity",
+    "record": "#9045 4",
+    "links_added": 1
+   },
+   {
+    "dn_id": 2194,
+    "title": "The Silence",
+    "record": "#8771 4",
+    "links_added": 1
+   },
+   {
+    "dn_id": 3570,
+    "title": "Knowing",
+    "record": "#8540 4",
+    "links_added": 1
+   },
+   {
+    "dn_id": 3571,
+    "title": "The Hitmans Bodyguard",
+    "record": "#8719 4",
+    "links_added": 2
+   },
+   {
+    "dn_id": 3574,
+    "title": "Scent of a Woman",
+    "record": "#4738 3",
+    "links_added": 1
+   },
+   {
+    "dn_id": 3583,
+    "title": "Rio 2011",
+    "record": "#8084 4",
+    "links_added": 1
+   },
+   {
+    "dn_id": 5029,
+    "title": "Are You Here",
+    "record": "#6797 3",
+    "links_added": 1
+   },
+   {
+    "dn_id": 5032,
+    "title": "The Face Reader",
+    "record": "#7759 4",
+    "links_added": 2
+   },
+   {
+    "dn_id": 5033,
+    "title": "The Great Gatsby",
+    "record": "#8754 4",
+    "links_added": 1
+   },
+   {
+    "dn_id": 6380,
+    "title": "LEGO DC: Shazam - Magic & Monsters",
+    "record": "#2977 2",
+    "links_added": 3
+   },
+   {
+    "dn_id": 6401,
+    "title": "The Wretched",
+    "record": "#8076 4",
+    "links_added": 1
+   },
+   {
+    "dn_id": 6403,
+    "title": "Strange Magic",
+    "record": "#650 3",
+    "links_added": 2
+   },
+   {
+    "dn_id": 6404,
+    "title": "Baaghi 3",
+    "record": "#1668 1",
+    "links_added": 1
+   },
+   {
+    "dn_id": 7778,
+    "title": "The Cincinnati Kid",
+    "record": "#7326 3",
+    "links_added": 1
+   },
+   {
+    "dn_id": 12853,
+    "title": "A Hard Day",
+    "record": "#7599 4",
+    "links_added": 1
+   },
+   {
+    "dn_id": 14045,
+    "title": "Diary of a Wimpy Kid",
+    "record": "#11811 ml",
+    "links_added": 2
+   },
+   {
+    "dn_id": 15329,
+    "title": "The Assassin",
+    "record": "#7011 3",
+    "links_added": 1
+   },
+   {
+    "dn_id": 16863,
+    "title": "Vikrant Rona",
+    "record": "#6467 3",
+    "links_added": 3
+   },
+   {
+    "dn_id": 16873,
+    "title": "Blade of the 47 Ronin",
+    "record": "#6459 3",
+    "links_added": 2
+   },
+   {
+    "dn_id": 19653,
+    "title": "Flamin Hot",
+    "record": "#6093 3",
+    "links_added": 3
+   },
+   {
+    "dn_id": 19661,
+    "title": "Kisi Ka Bhai Kisi Ki Jaan",
+    "record": "#6037 3",
+    "links_added": 1
+   },
+   {
+    "dn_id": 20939,
+    "title": "Jeanne du Barry",
+    "record": "#5853 3",
+    "links_added": 1
+   },
+   {
+    "dn_id": 22463,
+    "title": "Maestro",
+    "record": "#5609 3",
+    "links_added": 1
+   },
+   {
+    "dn_id": 25508,
+    "title": "The Westerner",
+    "record": "#7034 3",
+    "links_added": 2
+   },
+   {
+    "dn_id": 26975,
+    "title": "Confessions of a Christmas Letter",
+    "record": "#4369 2",
+    "links_added": 1
+   },
+   {
+    "dn_id": 26978,
+    "title": "Welcome Week A College Horror Anthology",
+    "record": "#4368 2",
+    "links_added": 1
+   },
+   {
+    "dn_id": 26979,
+    "title": "Strangers",
+    "record": "#4329 2",
+    "links_added": 1
+   },
+   {
+    "dn_id": 28821,
+    "title": "Odela 2",
+    "record": "#1395 1",
+    "links_added": 2
+   },
+   {
+    "dn_id": 32470,
+    "title": "Champion",
+    "record": "#1549 1",
+    "links_added": 3
+   },
+   {
+    "dn_id": 34433,
+    "title": "Uyir",
+    "record": "#526 1",
+    "links_added": 3
+   },
+   {
+    "dn_id": 34439,
+    "title": "Bear Claw Camp",
+    "record": "#401 1",
+    "links_added": 2
+   }
+  ],
+  "completions_skipped_no_gap": [
+   {
+    "dn_id": 2186,
+    "title": "The Kill Team",
+    "record": "#8730 4"
+   },
+   {
+    "dn_id": 2187,
+    "title": "Fast & Furious Presents: Hobbs & Shaw",
+    "record": "#7652 4"
+   },
+   {
+    "dn_id": 3569,
+    "title": "Dirty Grandpa",
+    "record": "#1181 1"
+   },
+   {
+    "dn_id": 3573,
+    "title": "The Shining",
+    "record": "#2776 2"
+   },
+   {
+    "dn_id": 3575,
+    "title": "Bruce Almighty",
+    "record": "#725 1"
+   },
+   {
+    "dn_id": 5030,
+    "title": "Labor Day",
+    "record": "#2483 2"
+   },
+   {
+    "dn_id": 5038,
+    "title": "The Commuter",
+    "record": "#5249 3"
+   },
+   {
+    "dn_id": 6399,
+    "title": "The Half of It",
+    "record": "#8320 4"
+   },
+   {
+    "dn_id": 6409,
+    "title": "Bad Education",
+    "record": "#8250 4"
+   },
+   {
+    "dn_id": 9414,
+    "title": "Waterworld",
+    "record": "#5268 3"
+   },
+   {
+    "dn_id": 11225,
+    "title": "Stowaway",
+    "record": "#7722 4"
+   },
+   {
+    "dn_id": 11235,
+    "title": "Coming 2 America",
+    "record": "#5419 3"
+   },
+   {
+    "dn_id": 14046,
+    "title": "The Tender Bar",
+    "record": "#7218 3"
+   },
+   {
+    "dn_id": 14047,
+    "title": "The Commando",
+    "record": "#7221 3"
+   },
+   {
+    "dn_id": 14048,
+    "title": "Silenced",
+    "record": "#8334 4"
+   },
+   {
+    "dn_id": 15326,
+    "title": "American Hustle",
+    "record": "#5210 3"
+   },
+   {
+    "dn_id": 18292,
+    "title": "The Hanging Sun",
+    "record": "#2675 2"
+   },
+   {
+    "dn_id": 18300,
+    "title": "Fathers & Daughters",
+    "record": "#2077 1"
+   },
+   {
+    "dn_id": 18301,
+    "title": "Desi Boyz",
+    "record": "#2879 2"
+   },
+   {
+    "dn_id": 19662,
+    "title": "You Hurt My Feelings",
+    "record": "#6073 3"
+   },
+   {
+    "dn_id": 20937,
+    "title": "Streamer",
+    "record": "#5854 3"
+   },
+   {
+    "dn_id": 20938,
+    "title": "Match Me If You Can",
+    "record": "#5852 3"
+   },
+   {
+    "dn_id": 20944,
+    "title": "Retribution",
+    "record": "#12214 ml"
+   },
+   {
+    "dn_id": 22460,
+    "title": "Io Capitano",
+    "record": "#5582 3"
+   },
+   {
+    "dn_id": 22472,
+    "title": "The Promised Land",
+    "record": "#3678 2"
+   },
+   {
+    "dn_id": 24001,
+    "title": "Chang An",
+    "record": "#3688 2"
+   },
+   {
+    "dn_id": 24002,
+    "title": "The Tearsmith",
+    "record": "#2100 1"
+   },
+   {
+    "dn_id": 24004,
+    "title": "Kung Fu Panda 4",
+    "record": "#5067 3"
+   },
+   {
+    "dn_id": 25504,
+    "title": "Escape",
+    "record": "#2069 1"
+   },
+   {
+    "dn_id": 26988,
+    "title": "Follow the Rain",
+    "record": "#3967 2"
+   },
+   {
+    "dn_id": 28823,
+    "title": "Nocturnal",
+    "record": "#3283 2"
+   },
+   {
+    "dn_id": 28824,
+    "title": "You Are the Apple of My Eye",
+    "record": "#3217 2"
+   },
+   {
+    "dn_id": 28825,
+    "title": "Ernest Cole Lost and Found",
+    "record": "#3373 2"
+   },
+   {
+    "dn_id": 32454,
+    "title": "Dead Mans Wire",
+    "record": "#837 1"
+   },
+   {
+    "dn_id": 32455,
+    "title": "28 Years Later The Bone Temple",
+    "record": "#1105 1"
+   },
+   {
+    "dn_id": 32456,
+    "title": "Mercy",
+    "record": "#1074 1"
+   },
+   {
+    "dn_id": 32458,
+    "title": "Tyler Perrys Joes College Road Trip",
+    "record": "#1557 1"
+   },
+   {
+    "dn_id": 32465,
+    "title": "Misdirection",
+    "record": "#1509 1"
+   },
+   {
+    "dn_id": 32468,
+    "title": "Bureau 749",
+    "record": "#1550 1"
+   },
+   {
+    "dn_id": 32471,
+    "title": "Night Patrol",
+    "record": "#851 1"
+   },
+   {
+    "dn_id": 34432,
+    "title": "Here the Whole Time",
+    "record": "#463 1"
+   },
+   {
+    "dn_id": 36131,
+    "title": "Supernatural Academy Birth of the Dragon Marked",
+    "record": "#14 1"
+   },
+   {
+    "dn_id": 36132,
+    "title": "Supernatural Academy Fate of the Dragon King",
+    "record": "#15 1"
+   },
+   {
+    "dn_id": 26990,
+    "title": "In a Closed Snowy Mountain Villa",
+    "record": "#3941 2"
+   }
+  ],
+  "repairs": [
+   "Chang An DTI added + search tmdb fix (#3688 p2)",
+   "26990 DTI movie:1231785 + search tmdb fix (#3941 p2)",
+   "The Wretched duplicate ext-only search row removed (part 3)",
+   "search row tt1860213: part 1 flag 1 -> part 1 flag 0",
+   "search row tt4191054: part 3 flag 1 -> part 1 flag 0"
+  ],
+  "decisions": [
+   "year-mismatch +/-1 with OMDb agreement accepted (12 titles)",
+   "version unknown -> NoSub",
+   "H3 title = tmdb_title"
+  ]
  }
 }

@@ -30302,6 +30302,37 @@
   },
   "year": 1959
  },
+ "tt0053290": {
+  "imdb": "tt0053290",
+  "num": 13604,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/film/Solomon.and.Sheba.1959.720p.BluRay.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Solomon and Sheba",
+  "tmdb_key": "movie:29996",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1959
+ },
  "tt0054098": {
   "imdb": "tt0054098",
   "num": 11358,
@@ -30346,6 +30377,65 @@
    "url": null
   },
   "year": 1960
+ },
+ "tt0059831": {
+  "imdb": "tt0059831",
+  "num": 13633,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://exchange.port.sn.giftmond.ir/film/Up.to.His.Ears.1965.720p.BluRay.YIFY.SoftS.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://exchange.port.sn.giftmond.ir/film/Up.to.His.Ears.1965.480p.BluRay.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://exchange.port.sn.giftmond.ir/film/Up.to.His.Ears.1965.720p.BluRay.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Up to His Ears",
+  "tmdb_key": "movie:61765",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1965
  },
  "tt0062472": {
   "imdb": "tt0062472",
@@ -30465,6 +30555,51 @@
   },
   "year": 1968
  },
+ "tt0064067": {
+  "imdb": "tt0064067",
+  "num": 13650,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/Have.Sword.Will.Travel.1969.480p.BluRay.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/Have.Sword.Will.Travel.1969.720p.BluRay.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Have Sword, Will Travel",
+  "tmdb_key": "movie:90022",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1969
+ },
  "tt0064258": {
   "imdb": "tt0064258",
   "num": 12737,
@@ -30515,6 +30650,124 @@
   ],
   "title": "Dragon Swamp",
   "tmdb_key": "movie:75699",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1969
+ },
+ "tt0064374": {
+  "imdb": "tt0064374",
+  "num": 13649,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/The.Golden.Sword.1969.480p.BluRay.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/The.Golden.Sword.1969.720p.BluRay.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/The.Golden.Sword.1969.1080p.BluRay.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Golden Sword",
+  "tmdb_key": "movie:115652",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1969
+ },
+ "tt0065172": {
+  "imdb": "tt0065172",
+  "num": 13646,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/Vengeance.Is.a.Golden.Blade.1969.480p.BluRay.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/Vengeance.Is.a.Golden.Blade.1969.720p.BluRay.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/Vengeance.Is.a.Golden.Blade.1969.1080p.BluRay.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Vengeance Is a Golden Blade",
+  "tmdb_key": "movie:65000",
   "type": "movie",
   "video_mp4": {
    "is_trailer": false,
@@ -30968,6 +31221,37 @@
   },
   "year": 1974
  },
+ "tt0074388": {
+  "imdb": "tt0074388",
+  "num": 13670,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/The.New.Shaolin.Boxers.1976.720p.BluRay.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The New Shaolin Boxers",
+  "tmdb_key": "movie:75832",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1976
+ },
  "tt0074745": {
   "imdb": "tt0074745",
   "num": 11394,
@@ -31274,6 +31558,65 @@
   },
   "year": 1977
  },
+ "tt0077559": {
+  "imdb": "tt0077559",
+  "num": 13674,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/Five.Deadly.Venoms.1978.REMASTERED.480p.BrRip.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/Five.Deadly.Venoms.1978.REMASTERED.720p.BrRip.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/Five.Deadly.Venoms.1978.REMASTERED.1080p.BrRip.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Five Venoms",
+  "tmdb_key": "movie:13481",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1978
+ },
  "tt0078058": {
   "imdb": "tt0078058",
   "num": 11381,
@@ -31324,6 +31667,124 @@
   ],
   "title": "Odds and Evens",
   "tmdb_key": "movie:11367",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1978
+ },
+ "tt0078249": {
+  "imdb": "tt0078249",
+  "num": 13647,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/The.Brave.Archer.1977.480p.BluRay.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/The.Brave.Archer.1977.720p.BluRay.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/The.Brave.Archer.1977.1080p.BluRay.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Brave Archer",
+  "tmdb_key": "movie:73749",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1977
+ },
+ "tt0078360": {
+  "imdb": "tt0078360",
+  "num": 13644,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/Shaolin.Mantis.1978.480p.BrRip.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/Shaolin.Mantis.1978.720p.BrRip.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/Shaolin.Mantis.1978.1080p.BrRip.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Shaolin Mantis",
+  "tmdb_key": "movie:59402",
   "type": "movie",
   "video_mp4": {
    "is_trailer": false,
@@ -31391,6 +31852,51 @@
    "url": null
   },
   "year": 1978
+ },
+ "tt0079714": {
+  "imdb": "tt0079714",
+  "num": 13609,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Phantasm.1979.480p.BluRay.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Phantasm.1979.720p.BluRay.YIFY.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Phantasm",
+  "tmdb_key": "movie:9638",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1979
  },
  "tt0080420": {
   "imdb": "tt0080420",
@@ -31645,6 +32151,65 @@
   },
   "year": 1981
  },
+ "tt0082299": {
+  "imdb": "tt0082299",
+  "num": 13651,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/The.Duel.of.the.Century.1981.480p.WEB-DL.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/The.Duel.of.the.Century.1981.720p.WEB-DL.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/The.Duel.of.the.Century.1981.1080p.WEB-DL.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Duel of the Century",
+  "tmdb_key": "movie:76520",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1981
+ },
  "tt0083343": {
   "imdb": "tt0083343",
   "num": 12740,
@@ -31779,6 +32344,96 @@
    "url": null
   },
   "year": 1981
+ },
+ "tt0086960": {
+  "imdb": "tt0086960",
+  "num": 13540,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://peer.tct.149.giftmond.ir/morteza_movie/Beverly.Hills.Cop.1984.720p.BluRay.x264.Dubbed.FA.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.sn1.giftmond.ir/film/Beverly_Hills_Cop_1984_720p_Ganool.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Beverly Hills Cop",
+  "tmdb_key": "movie:90",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1984
+ },
+ "tt0087182": {
+  "imdb": "tt0087182",
+  "num": 13555,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tct.146.giftmond.ir/film/Dune.1984.720p.BluRay.HardSub.DigiMoviez.mp4",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/film/Dune.1984.1080p.BluRay.SoftSub.DigiMoviez.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Dune",
+  "tmdb_key": "movie:841",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1984
  },
  "tt0088586": {
   "imdb": "tt0088586",
@@ -32133,6 +32788,186 @@
   },
   "year": 1985
  },
+ "tt0089913": {
+  "imdb": "tt0089913",
+  "num": 13551,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Revolution_1985_Directors_Cut_720p_BrRip_Unknown.EasyTV.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Revolution_1985_1080p_BrRip_RARBG.EasyTV.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Revolution",
+  "tmdb_key": "movie:12701",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1985
+ },
+ "tt0092644": {
+  "imdb": "tt0092644",
+  "num": 13541,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://peer.tct.149.giftmond.ir/morteza_movie/Beverly.Hills.Cop.II.1987.720p.BluRay.x264.Dubbed.FA.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.sn1.giftmond.ir/film/Beverly_Hills_Cop_II_1987_720p_Ganool.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Beverly Hills Cop II",
+  "tmdb_key": "movie:96",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1987
+ },
+ "tt0094608": {
+  "imdb": "tt0094608",
+  "num": 13587,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/The.Accused.1988.720p.BluRay.YIFY.FilmKio.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Accused",
+  "tmdb_key": "movie:10868",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1988
+ },
+ "tt0094898": {
+  "imdb": "tt0094898",
+  "num": 13552,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Coming.to.America.1988.REMASTERED.720p.BluRay.x265.SoftSub.DigiMoviez.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Coming.to.America.1988.REMASTERED.480p.BluRay.HardSub.DigiMoviez.mp4",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Coming.to.America.1988.REMASTERED.720p.BluRay.HardSub.DigiMoviez.mp4",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Coming to America",
+  "tmdb_key": "movie:9602",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1988
+ },
  "tt0097383": {
   "imdb": "tt0097383",
   "num": 12719,
@@ -32245,6 +33080,65 @@
   ],
   "title": "Island of Fire",
   "tmdb_key": "movie:18767",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1991
+ },
+ "tt0100519": {
+  "imdb": "tt0100519",
+  "num": 13639,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive2.google.dl175m.info/film/Rosencrantz_and_Guildenstern_Are_Dead_1990_720p.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/Rosencrantz.and.Guildenstern.Are.Dead.1990.1080p.BluRay.YIFY.Farsi.Dubbed.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive2.google.dl175m.info/film/Rosencrantz_and_Guildenstern_Are_Dead_1990_1080p.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Rosencrantz & Guildenstern Are Dead",
+  "tmdb_key": "movie:18971",
   "type": "movie",
   "video_mp4": {
    "is_trailer": false,
@@ -32572,6 +33466,51 @@
   },
   "year": 1994
  },
+ "tt0109254": {
+  "imdb": "tt0109254",
+  "num": 13542,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://peer.tct.149.giftmond.ir/morteza_movie/Beverly.Hills.Cop.III.1994.720p.BluRay.x264.Dubbed.FA.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.sn1.giftmond.ir/film/Beverly_Hills_Cop_III_1994_720p_RARBG.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Beverly Hills Cop III",
+  "tmdb_key": "movie:306",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1994
+ },
  "tt0115952": {
   "imdb": "tt0115952",
   "num": 11284,
@@ -32662,6 +33601,51 @@
   },
   "year": 1996
  },
+ "tt0118883": {
+  "imdb": "tt0118883",
+  "num": 13567,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Conspiracy_Theory_1997_720p_Farsi_Dubbed_%28Film2serial.ir%29.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Conspiracy.Theory.1997.BluRay.720p.Ganool.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Conspiracy Theory",
+  "tmdb_key": "movie:8834",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1997
+ },
  "tt0119239": {
   "imdb": "tt0119239",
   "num": 12716,
@@ -32706,6 +33690,96 @@
    "url": null
   },
   "year": 1997
+ },
+ "tt0119738": {
+  "imdb": "tt0119738",
+  "num": 13592,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/My.Best.Friends.Wedding.1997.720p.BluRay.SoftSub.SaberFun.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/My.Best.Friends.Wedding.1997.1080p.BluRay.SoftSub.SaberFun.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "My Best Friend's Wedding",
+  "tmdb_key": "movie:8874",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1997
+ },
+ "tt0120769": {
+  "imdb": "tt0120769",
+  "num": 13618,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/filmjadid/The.Newton.Boys.1998.480p.BrRip.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/filmjadid/The.Newton.Boys.1998.720p.BrRip.YIFY.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Newton Boys",
+  "tmdb_key": "movie:42807",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1998
  },
  "tt0135114": {
   "imdb": "tt0135114",
@@ -32870,6 +33944,65 @@
   },
   "year": 1997
  },
+ "tt0157583": {
+  "imdb": "tt0157583",
+  "num": 13663,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/film/Enigma.2001.720p.BluRay.x264.Ganool.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://node146.dl150m.info/film/Enigma.2001.480p.Farsi.Dubbed.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://node146.dl150m.info/film/Enigma.2001.720p.Farsi.Dubbed.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Enigma",
+  "tmdb_key": "movie:10491",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2001
+ },
  "tt0166973": {
   "imdb": "tt0166973",
   "num": 12638,
@@ -32974,6 +34107,186 @@
   },
   "year": 1979
  },
+ "tt0199153": {
+  "imdb": "tt0199153",
+  "num": 13645,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/New.Tales.of.the.Flying.Fox.1984.480p.WEB-DL.Dubbed.0.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/New.Tales.of.the.Flying.Fox.1984.720p.WEB-DL.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/New.Tales.of.the.Flying.Fox.1984.1080p.WEB-DL.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "New Tales of the Flying Fox",
+  "tmdb_key": "movie:48299",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1984
+ },
+ "tt0199385": {
+  "imdb": "tt0199385",
+  "num": 13673,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/Return.of.the.Bastard.Swordsman.1984.480p.BrRip.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/Return.of.the.Bastard.Swordsman.1984.720p.BrRip.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/Return.of.the.Bastard.Swordsman.1984.1080p.BrRip.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Return of Bastard Swordsman",
+  "tmdb_key": "movie:107714",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1984
+ },
+ "tt0201343": {
+  "imdb": "tt0201343",
+  "num": 13671,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/Swordsman.At.Large.1971.DVDRip.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Swordsman at Large",
+  "tmdb_key": "movie:64361",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1971
+ },
+ "tt0201353": {
+  "imdb": "tt0201353",
+  "num": 13672,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/The.Silver.Fox.1968.DVDRip.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Silver Fox",
+  "tmdb_key": "movie:199635",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1968
+ },
  "tt0202697": {
   "imdb": "tt0202697",
   "num": 11393,
@@ -33032,6 +34345,37 @@
    "url": null
   },
   "year": 1980
+ },
+ "tt0203755": {
+  "imdb": "tt0203755",
+  "num": 13617,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/filmjadid/One.Night.at.McCools.2001.720p.WEB.DL.YIFY.FilmKio.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "One Night at McCool's",
+  "tmdb_key": "movie:2144",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2001
  },
  "tt0207341": {
   "imdb": "tt0207341",
@@ -36066,6 +37410,65 @@
   },
   "year": 1998
  },
+ "tt0252487": {
+  "imdb": "tt0252487",
+  "num": 13642,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://drive2.google.dl175m.info/film/Hababam.Sinifi-HardSub-480p-%5BTurk-DL%5D.mp4",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://drive2.google.dl175m.info/film/Hababam.Sinifi-HardSub-720p-%5BTurk-DL%5D.mp4",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://drive2.google.dl175m.info/film/Hababam.Sinifi-HardSub-1080p-%5BTurk-DL%5D.mp4",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Chaos Class",
+  "tmdb_key": "movie:83651",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1975
+ },
  "tt0255097": {
   "imdb": "tt0255097",
   "num": 11364,
@@ -36543,6 +37946,37 @@
   },
   "year": 2002
  },
+ "tt0326805": {
+  "imdb": "tt0326805",
+  "num": 13568,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/chori%20chori%202003.Dooble%20Farsi.720p%20DVDRip.SaberFun.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Chori Chori",
+  "tmdb_key": "movie:25020",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2003
+ },
  "tt0343168": {
   "imdb": "tt0343168",
   "num": 12626,
@@ -36618,6 +38052,141 @@
    "url": null
   },
   "year": 2003
+ },
+ "tt0358528": {
+  "imdb": "tt0358528",
+  "num": 13619,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/filmjadid/A.Letter.from.Mars.2003.480p.WEB-DL.SS.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/filmjadid/A.Letter.from.Mars.2003.720p.WEB-DL.SS.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "A Letter From Mars",
+  "tmdb_key": "movie:57753",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2003
+ },
+ "tt0374330": {
+  "imdb": "tt0374330",
+  "num": 13648,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/Warriors.of.Heaven.and.Earth.2003.480p.BrRip.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://drive2.google.dl175m.info/film/Warriors.of.Heaven.and.Earth.2003.720p.BrRip.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive2.google.dl175m.info/film/Warriors.of.Heaven.and.Earth.2003.720p.BrRip.YIFY.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Warriors of Heaven and Earth",
+  "tmdb_key": "movie:14797",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2003
+ },
+ "tt0374569": {
+  "imdb": "tt0374569",
+  "num": 13662,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://peer.tct.146.giftmond.ir/film/Che.Part.Two.2008.720p.Farsi.Dubbed.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Che: Part Two",
+  "tmdb_key": "movie:8880",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2008
  },
  "tt0390614": {
   "imdb": "tt0390614",
@@ -36798,6 +38367,51 @@
    "url": null
   },
   "year": 2006
+ },
+ "tt0417415": {
+  "imdb": "tt0417415",
+  "num": 13612,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/filmjadid/Aliens.of.the.Deep.2005.480p.Farsi.Subbed.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/filmjadid/Aliens.of.the.Deep.2005.720p.Farsi.Subbed.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Aliens of the Deep",
+  "tmdb_key": "movie:22559",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2005
  },
  "tt0425661": {
   "imdb": "tt0425661",
@@ -38313,6 +39927,37 @@
   },
   "year": 2005
  },
+ "tt0459605": {
+  "imdb": "tt0459605",
+  "num": 13583,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Eklavya%202007.Dooble%20Farsi.720p%20DVDRip.SaberFun.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Eklavya: The Royal Guard",
+  "tmdb_key": "movie:192675",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2007
+ },
  "tt0465925": {
   "imdb": "tt0465925",
   "num": 12368,
@@ -39467,6 +41112,37 @@
   },
   "year": 2003
  },
+ "tt0476550": {
+  "imdb": "tt0476550",
+  "num": 13537,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/God_Tussi_Great_Ho_2008_720p_HDRip_Farsi_Dubbed_(Film2serial.IR).mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "God Tussi Great Ho",
+  "tmdb_key": "movie:26153",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2008
+ },
  "tt0490210": {
   "imdb": "tt0490210",
   "num": 11434,
@@ -39781,6 +41457,51 @@
    "url": null
   },
   "year": 2001
+ },
+ "tt0846789": {
+  "imdb": "tt0846789",
+  "num": 13559,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/The.Secret.2006.480p.Farsi.Dubbed.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.sn1.giftmond.ir/film/The.Secret.2006.720p.WEB-DL.YIFY.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Secret",
+  "tmdb_key": "movie:26594",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2006
  },
  "tt0859594": {
   "imdb": "tt0859594",
@@ -44051,6 +45772,51 @@
    "url": null
   },
   "year": 2019
+ },
+ "tt10376384": {
+  "imdb": "tt10376384",
+  "num": 13553,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/film/Go.Back.2021.480p.WEB-DL.SS.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/film/Go.Back.2021.720p.WEB-DL.SS.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Go Back",
+  "tmdb_key": "movie:716854",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2021
  },
  "tt10431290": {
   "imdb": "tt10431290",
@@ -48986,6 +50752,124 @@
   },
   "year": 2020
  },
+ "tt10840884": {
+  "imdb": "tt10840884",
+  "num": 13652,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://node146.dl150m.info/film/Taish%202020.480p%20WEB-DL.FarsiSub.Bollywood1.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://node146.dl150m.info/film/Taish%202020.720p%20WEB-DL.FarsiSub.Bollywood1.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://node146.dl150m.info/film/Taish%202020.1080p%20WEB-DL.FarsiSub.Bollywood1.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Taish",
+  "tmdb_key": "movie:605456",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2020
+ },
+ "tt1094666": {
+  "imdb": "tt1094666",
+  "num": 13632,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://exchange.port.sn.giftmond.ir/film/The.Hammer.2010.480p.BluRay.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://exchange.port.sn.giftmond.ir/film/The.Hammer.2010.720p.BluRay.YIFY.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://exchange.port.sn.giftmond.ir/film/The.Hammer.2010.1080p.BluRay.YIFY.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Hammer",
+  "tmdb_key": "movie:74447",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2010
+ },
  "tt10978526": {
   "imdb": "tt10978526",
   "num": 11472,
@@ -49607,6 +51491,51 @@
    "url": null
   },
   "year": 2019
+ },
+ "tt10991188": {
+  "imdb": "tt10991188",
+  "num": 13529,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/morteza_movie/World_Famous_Lover_2020.480p_WEB-DL.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/morteza_movie/World_Famous_Lover_2020.720p_WEB-DL.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "World Famous Lover",
+  "tmdb_key": "movie:659674",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2020
  },
  "tt10994556": {
   "imdb": "tt10994556",
@@ -52820,6 +54749,37 @@
   },
   "year": 2009
  },
+ "tt1130969": {
+  "imdb": "tt1130969",
+  "num": 13558,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/film/Sinners.And.Saints.2010.720p.KIMO.DUBLE.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Sinners and Saints",
+  "tmdb_key": "movie:66193",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2010
+ },
  "tt11316680": {
   "imdb": "tt11316680",
   "num": 11288,
@@ -55235,6 +57195,51 @@
   },
   "year": 2023
  },
+ "tt11760792": {
+  "imdb": "tt11760792",
+  "num": 13597,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/The.Human.Voice.2020.720p.WEB-DL.x264.YIFY.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/The.Human.Voice.2020.1080p.WEB-DL.x264.YIFY.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Human Voice",
+  "tmdb_key": "movie:671577",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2020
+ },
  "tt1176244": {
   "imdb": "tt1176244",
   "num": 12645,
@@ -56197,6 +58202,51 @@
   },
   "year": 2021
  },
+ "tt12091980": {
+  "imdb": "tt12091980",
+  "num": 13614,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/filmjadid/Thinkalazhcha%20Nishchayam%202021.480p%20WEB-DL.FarsiSub.Bollywood1.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/filmjadid/Thinkalazhcha%20Nishchayam%202021.720p%20WEB-DL.FarsiSub.Bollywood1.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Thinkalazhcha Nishchayam",
+  "tmdb_key": "movie:854587",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2021
+ },
  "tt12105800": {
   "imdb": "tt12105800",
   "num": 12828,
@@ -56860,6 +58910,51 @@
    "url": null
   },
   "year": 2022
+ },
+ "tt12226872": {
+  "imdb": "tt12226872",
+  "num": 13560,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/The.Scary.of.Sixty-First.2021.720p.WEB-DL.YIFY.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/The.Scary.of.Sixty-First.2021.1080p.WEB-DL.YIFY.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Scary of Sixty-First",
+  "tmdb_key": "movie:723377",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2021
  },
  "tt12299458": {
   "imdb": "tt12299458",
@@ -57661,6 +59756,37 @@
    "url": null
   },
   "year": 2021
+ },
+ "tt1231587": {
+  "imdb": "tt1231587",
+  "num": 13571,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Hot%20Tub%20Time%20Machine%202010%20720p%20BluRay%20.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Hot Tub Time Machine",
+  "tmdb_key": "movie:23048",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2010
  },
  "tt12368430": {
   "imdb": "tt12368430",
@@ -60455,6 +62581,51 @@
   },
   "year": 2020
  },
+ "tt12532368": {
+  "imdb": "tt12532368",
+  "num": 13570,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Chickenhare.and.the.Hamster.of.Darkness.2022.480p.WEB-DL.HardSub.DigiMoviez.mp4",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Chickenhare.and.the.Hamster.of.Darkness.2022.720p.WEB-DL.SoftSub.DigiMoviez.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Chickenhare and the Hamster of Darkness",
+  "tmdb_key": "movie:778855",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2022
+ },
  "tt12611334": {
   "imdb": "tt12611334",
   "num": 12598,
@@ -60987,6 +63158,51 @@
    "url": null
   },
   "year": 2021
+ },
+ "tt1278104": {
+  "imdb": "tt1278104",
+  "num": 13605,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://s1.giftmond.ir/filmjadid/67244-tt1278104-480p-Hardsub-%5BAriaMedia%5D.mp4",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://s1.giftmond.ir/filmjadid/67244-tt1278104-720p-Hardsub-%5BAriaMedia%5D.mp4",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Ottoman Republic",
+  "tmdb_key": "movie:52139",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2008
  },
  "tt12838958": {
   "imdb": "tt12838958",
@@ -61786,6 +64002,51 @@
    "url": null
   },
   "year": 2009
+ },
+ "tt12986942": {
+  "imdb": "tt12986942",
+  "num": 13554,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tct.146.giftmond.ir/film/Tiki.Taka.2020.480p.WEB-DL.HardSub.DigiMoviez.mp4",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tct.146.giftmond.ir/film/Tiki.Taka.2020.720p.WEB-DL.HardSub.DigiMoviez.mp4",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Tiki Taka",
+  "tmdb_key": "movie:741494",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2020
  },
  "tt12987894": {
   "imdb": "tt12987894",
@@ -63646,6 +65907,65 @@
   },
   "year": 2022
  },
+ "tt13652006": {
+  "imdb": "tt13652006",
+  "num": 13660,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Horsegirls.2026.480p.WEB-DL.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Horsegirls.2026.720p.WEB-DL.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Horsegirls.2026.1080p.WEB-DL.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Horsegirls",
+  "tmdb_key": "movie:1465818",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
  "tt13714610": {
   "imdb": "tt13714610",
   "num": 11570,
@@ -64596,6 +66916,37 @@
   "title": "Therapist",
   "tmdb_key": "tv:115815",
   "type": "series",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2021
+ },
+ "tt13757540": {
+  "imdb": "tt13757540",
+  "num": 13563,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/The.Door.Into.Summer.2021.720p.WEB-DL.YIFY.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Door into Summer",
+  "tmdb_key": "movie:722798",
+  "type": "movie",
   "video_mp4": {
    "is_trailer": false,
    "size_bytes": null,
@@ -66338,6 +68689,96 @@
    "url": null
   },
   "year": 2021
+ },
+ "tt14079218": {
+  "imdb": "tt14079218",
+  "num": 13561,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Arsene.Wenger.Invincible.2021.720p.BluRay.Pahe.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Arsene.Wenger.Invincible.480p.BluRay.Pahe.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Arsène Wenger: Invincible",
+  "tmdb_key": "movie:885277",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2021
+ },
+ "tt14085258": {
+  "imdb": "tt14085258",
+  "num": 13591,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Battlebox.2023.720p.WEB-DL.x264.AAC-YIFY.SoftSub.SaberFun.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Battlebox.2023.1080p.WEB-DL.x264.AAC-YIFY.SoftSub.SaberFun.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Battlebox",
+  "tmdb_key": "movie:1075199",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2023
  },
  "tt14109994": {
   "imdb": "tt14109994",
@@ -68734,6 +71175,51 @@
    "url": null
   },
   "year": 2010
+ },
+ "tt14404596": {
+  "imdb": "tt14404596",
+  "num": 13667,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Without.Saying.Goodbye.2022.720p.WEBRip.x264.AAC-YTS.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Without.Saying.Goodbye.2022.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Without Saying Goodbye",
+  "tmdb_key": "movie:944664",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2022
  },
  "tt14408016": {
   "imdb": "tt14408016",
@@ -71654,6 +74140,51 @@
   },
   "year": 2023
  },
+ "tt14558102": {
+  "imdb": "tt14558102",
+  "num": 13590,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/One.Night.Off.2021.720p.WEB-DL.x264.AAC-YTS.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/One.Night.Off.2021.1080p.WEB-DL.x264.AAC5.1-YTS.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "One Night Off",
+  "tmdb_key": "movie:920977",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2021
+ },
  "tt14571464": {
   "imdb": "tt14571464",
   "num": 11296,
@@ -74350,6 +76881,51 @@
   },
   "year": 2010
  },
+ "tt14967958": {
+  "imdb": "tt14967958",
+  "num": 13622,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/Zahra/1403.06.03/Goodbye%2C%20Don%20Glees%21/Goodbye%2C.Don.Glees%21.480p.SoftSub.IranFlix.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/Zahra/1403.06.03/Goodbye%2C%20Don%20Glees%21/Goodbye%2C.Don.Glees%21.720p.SoftSub.IranFlix.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Goodbye, Don Glees!",
+  "tmdb_key": "movie:846993",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2022
+ },
  "tt15181018": {
   "imdb": "tt15181018",
   "num": 12442,
@@ -75614,6 +78190,124 @@
   },
   "year": 2021
  },
+ "tt1540128": {
+  "imdb": "tt1540128",
+  "num": 13620,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/filmjadid/Playing.For.Keeps.2012.720p.BluRay.YIFY.FilmKio.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://peer.tct.149.giftmond.ir/filmjadid/Playing.For.Keeps.2012.480p.BluRay.Dubbed.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://peer.tct.149.giftmond.ir/filmjadid/Playing_for_Keeps_2012_DUBBED_720p_BrRip_Ganool_SaberFun.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Playing for Keeps",
+  "tmdb_key": "movie:77875",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2012
+ },
+ "tt15422240": {
+  "imdb": "tt15422240",
+  "num": 13580,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/filmjaded/Eraser.Reborn.2022.720p.BluRay.x264.AAC-YTS.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/filmjaded/Eraser.Reborn.2022.720p.10bit.BluRay.6CH.x265.HEVC-PSA.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/filmjaded/Eraser.Reborn.2022.1080p.BluRay.x264.AAC5.1-YTS.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Eraser: Reborn",
+  "tmdb_key": "movie:923597",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2022
+ },
  "tt15464390": {
   "imdb": "tt15464390",
   "num": 11372,
@@ -75672,6 +78366,51 @@
    "url": null
   },
   "year": 2023
+ },
+ "tt15471560": {
+  "imdb": "tt15471560",
+  "num": 13608,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Smoking.Causes.Coughing.2022.720p.BrRip.YIFY.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Smoking.Causes.Coughing.2022.1080p.BrRip.YIFY.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Smoking Causes Coughing",
+  "tmdb_key": "movie:872709",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2022
  },
  "tt1547606": {
   "imdb": "tt1547606",
@@ -81565,6 +84304,37 @@
   },
   "year": 2009
  },
+ "tt1562849": {
+  "imdb": "tt1562849",
+  "num": 13616,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/filmjadid/Division.III.Football.s.Finest.2011.720p.BluRay.YIFY.FilmKio.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Division III: Football's Finest",
+  "tmdb_key": "movie:82685",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2011
+ },
  "tt15716828": {
   "imdb": "tt15716828",
   "num": 12336,
@@ -81654,6 +84424,51 @@
    "url": null
   },
   "year": 2010
+ },
+ "tt15745226": {
+  "imdb": "tt15745226",
+  "num": 13585,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Darby.And.The.Dead.2022.480p.WEB-DL.x264-RMT.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Darby.And.The.Dead.2022.720p.WEB-DL.x264.AAC-YTS.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Darby and the Dead",
+  "tmdb_key": "movie:898308",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2022
  },
  "tt15758760": {
   "imdb": "tt15758760",
@@ -82668,6 +85483,155 @@
    "url": null
   },
   "year": 2021
+ },
+ "tt15845360": {
+  "imdb": "tt15845360",
+  "num": 13631,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive.google.dl175m.info/film/Dance.First.2023.480p.WEB-DL.x264.RMT.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive.google.dl175m.info/film/Dance.First.2023.720p.WEB-DL.AAC.YIFY.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive.google.dl175m.info/film/Dance.First.2023.1080p.WEB-DL.6CH.YIFY.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Dance First",
+  "tmdb_key": "movie:978114",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2023
+ },
+ "tt1586752": {
+  "imdb": "tt1586752",
+  "num": 13557,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://peer.tct.146.giftmond.ir/film/Machine.Gun.Preacher.2011.DUBBED.720p.BrRip.Exclusive.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/film/Machine.Gun.Preacher.2011.BRrip.720p.Ganool.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Machine Gun Preacher",
+  "tmdb_key": "movie:45610",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2011
+ },
+ "tt1594562": {
+  "imdb": "tt1594562",
+  "num": 13582,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/filmjaded/The.Innkeepers.2011.720p.BrRip.AAC.RARBG.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/filmjaded/The.Innkeepers.2011.1080p.BrRip.AAC.RARBG.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Innkeepers",
+  "tmdb_key": "movie:58428",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2012
  },
  "tt16059146": {
   "imdb": "tt16059146",
@@ -84207,6 +87171,51 @@
   },
   "year": 2021
  },
+ "tt16248294": {
+  "imdb": "tt16248294",
+  "num": 13602,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl1.uploding.sbs/Movies4/2023/Hitmen.2023/Hitmen.2023.720p.WEB-DL.YIFY.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl1.uploding.sbs/Movies4/2023/Hitmen.2023/Hitmen.2023.1080p.WEB-DL.YIFY.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Hitmen",
+  "tmdb_key": "movie:1094481",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2023
+ },
  "tt1629242": {
   "imdb": "tt1629242",
   "num": 11390,
@@ -84956,6 +87965,51 @@
   },
   "year": 2022
  },
+ "tt1707380": {
+  "imdb": "tt1707380",
+  "num": 13610,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Every.Thing.Will.Be.Fine.2015.480p.Bluray.x264-BMB.SoftSub.BMB.5E4881D2.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Every.Thing.Will.Be.Fine.2015.720p.Bluray.x264-BMB.SoftSub.BMB.02A3B711.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Every Thing Will Be Fine",
+  "tmdb_key": "movie:246127",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2015
+ },
  "tt1708537": {
   "imdb": "tt1708537",
   "num": 12349,
@@ -84992,6 +88046,172 @@
   ],
   "title": "The Whale",
   "tmdb_key": "movie:77880",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2011
+ },
+ "tt1714209": {
+  "imdb": "tt1714209",
+  "num": 13576,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/filmjaded/In.the.Land.of.Blood.and.Honey.2011.720p.BrRip.YIFY.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "In the Land of Blood and Honey",
+  "tmdb_key": "movie:79777",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2011
+ },
+ "tt1714866": {
+  "imdb": "tt1714866",
+  "num": 13574,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/filmjaded/Midnight.s.Children.2012.720p.BrRip.YIFY.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/filmjaded/Midnight.s.Children.2012.1080p.BrRip.YIFY.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Midnight's Children",
+  "tmdb_key": "movie:121598",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2012
+ },
+ "tt17156822": {
+  "imdb": "tt17156822",
+  "num": 13586,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Battle.For.Saipan.2022.720p.BluRay.x264.AAC-YTS.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Battle.For.Saipan.2022.1080p.BluRay.x264.AAC5.1-YTS.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Battle for Saipan",
+  "tmdb_key": "movie:1037644",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2022
+ },
+ "tt1716772": {
+  "imdb": "tt1716772",
+  "num": 13564,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/The.Inbetweeners.Movie.2011.720p.Blu-Ray.Unknown.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/The.Inbetweeners.Movie.2011.1080p.Blu-Ray.Ozlem.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Inbetweeners Movie",
+  "tmdb_key": "movie:69798",
   "type": "movie",
   "video_mp4": {
    "is_trailer": false,
@@ -85958,6 +89178,37 @@
    "url": null
   },
   "year": 2010
+ },
+ "tt1741273": {
+  "imdb": "tt1741273",
+  "num": 13543,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/morteza_movie/Secret.in.Their.Eyes.2015.720p.BrRip.ShAaNiG.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Secret in Their Eyes",
+  "tmdb_key": "movie:290751",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2015
  },
  "tt1743281": {
   "imdb": "tt1743281",
@@ -88532,6 +91783,79 @@
    "url": null
   },
   "year": 2022
+ },
+ "tt1762399": {
+  "imdb": "tt1762399",
+  "num": 13665,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Walking.With.Dinosaurs.2013.480p.vidbox.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Walking.with.Dinosaurs.3D.2013.480p.Farsi.Dubbed.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Walking.With.Dinosaurs.2013.720p.vidbox.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Walking.with.Dinosaurs.3D.2013.720p.Farsi.Dubbed.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Walking with Dinosaurs",
+  "tmdb_key": "movie:77951",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2013
  },
  "tt1772685": {
   "imdb": "tt1772685",
@@ -98317,6 +101641,51 @@
   },
   "year": 2012
  },
+ "tt19766560": {
+  "imdb": "tt19766560",
+  "num": 13675,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/4.Horsemen.Apocalypse.2022.480p.WEB-DL.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/4.Horsemen.Apocalypse.2022.720p.WEB-DL.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "4 Horsemen: Apocalypse",
+  "tmdb_key": "movie:969686",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2022
+ },
  "tt19768024": {
   "imdb": "tt19768024",
   "num": 11580,
@@ -99023,6 +102392,96 @@
    "url": null
   },
   "year": 2022
+ },
+ "tt2006295": {
+  "imdb": "tt2006295",
+  "num": 13556,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/film/The.33.2015.720p.2CH.x265.HEVC.SoftSub.NightMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/film/The.33.2015.720p.BluRay.SoftSub.NightMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The 33",
+  "tmdb_key": "movie:293646",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2015
+ },
+ "tt2011276": {
+  "imdb": "tt2011276",
+  "num": 13623,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive.google.dl175m.info/film/Banshee.Chapter.2013.720p.BluRay.YIFY.FilmKio.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive.google.dl175m.info/film/Banshee.Chapter.2013.1080p.BluRay.YIFY.FilmKio.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Banshee Chapter",
+  "tmdb_key": "movie:207769",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2013
  },
  "tt2016335": {
   "imdb": "tt2016335",
@@ -99848,6 +103307,51 @@
   },
   "year": 2022
  },
+ "tt20860298": {
+  "imdb": "tt20860298",
+  "num": 13668,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/Zahra/1403.06.03/Hibike%21%20Euphonium%20Ensemble%20Contest/Hibike%21.Euphonium.Ensemble.Contest.480p.SoftSub.IranFlix.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/Zahra/1403.06.03/Hibike%21%20Euphonium%20Ensemble%20Contest/Hibike%21.Euphonium.Ensemble.Contest.720p.SoftSub.IranFlix.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Sound! Euphonium: Ensemble Contest",
+  "tmdb_key": "movie:1108306",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2023
+ },
  "tt20879602": {
   "imdb": "tt20879602",
   "num": 11292,
@@ -100218,6 +103722,51 @@
   },
   "year": 2024
  },
+ "tt2091478": {
+  "imdb": "tt2091478",
+  "num": 13577,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/filmjaded/Air.2015.480p.Pahe.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/filmjaded/Air.2015.720p.Pahe.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Air",
+  "tmdb_key": "movie:284674",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2015
+ },
  "tt2093977": {
   "imdb": "tt2093977",
   "num": 11243,
@@ -100353,6 +103902,51 @@
   },
   "year": 2011
  },
+ "tt21105546": {
+  "imdb": "tt21105546",
+  "num": 13630,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/Zahra/1403.06.03/Kin%20no%20Kuni%20Mizu%20no%20Kuni/Kin.no.Kuni.Mizu.no.Kuni.480p.SoftSub.IranFlix.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/Zahra/1403.06.03/Kin%20no%20Kuni%20Mizu%20no%20Kuni/Kin.no.Kuni.Mizu.no.Kuni.720p.SoftSub.IranFlix.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Gold Kingdom and Water Kingdom",
+  "tmdb_key": "movie:991190",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2023
+ },
  "tt21109552": {
   "imdb": "tt21109552",
   "num": 12723,
@@ -100397,6 +103991,65 @@
    "url": null
   },
   "year": 2023
+ },
+ "tt2111283": {
+  "imdb": "tt2111283",
+  "num": 13575,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/filmjaded/Clarkson.Powered.Up.2011.480p.Farsi.Subbed.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/filmjaded/Clarkson.Powered.Up.2011.720p.Farsi.Subbed.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/filmjaded/Clarkson.Powered.Up.2011.1080p.Farsi.Subbed.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Clarkson: Powered Up",
+  "tmdb_key": "movie:93053",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2011
  },
  "tt2113659": {
   "imdb": "tt2113659",
@@ -100502,6 +104155,51 @@
   },
   "year": 2024
  },
+ "tt2118775": {
+  "imdb": "tt2118775",
+  "num": 13534,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/Special_ID_2013_720p_BluRay_x264-WiKi.EasyTV.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/Special_ID_2013_1080p_BluRay_x264-WiKi.EasyTV.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Special ID",
+  "tmdb_key": "movie:222216",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2013
+ },
  "tt21216020": {
   "imdb": "tt21216020",
   "num": 11385,
@@ -100532,6 +104230,51 @@
    "url": null
   },
   "year": 2022
+ },
+ "tt21226804": {
+  "imdb": "tt21226804",
+  "num": 13603,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.124.giftmond.ir/film/Nacao.Valente.2022.720p.BluRay.x264.YIFY.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.124.giftmond.ir/film/Nacao.Valente.2022.1080p.BluRay.x264.YIFY.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Tommy Guns",
+  "tmdb_key": "movie:996954",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2023
  },
  "tt21233692": {
   "imdb": "tt21233692",
@@ -104904,6 +108647,51 @@
   },
   "year": 2013
  },
+ "tt21836538": {
+  "imdb": "tt21836538",
+  "num": 13578,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/filmjaded/The.Figo.Affair.The.Transfer.that.Changed.Football.2022.480p.Farsi.Subbed.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/filmjaded/The.Figo.Affair.The.Transfer.that.Changed.Football.2022.720p.Farsi.Subbed.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Figo Affair: The Transfer That Changed Football",
+  "tmdb_key": "movie:1014779",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2022
+ },
  "tt2184430": {
   "imdb": "tt2184430",
   "num": 11493,
@@ -105975,6 +109763,96 @@
   },
   "year": 2013
  },
+ "tt2215719": {
+  "imdb": "tt2215719",
+  "num": 13547,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Katy_Perry_Part_of_Me_2012_720p_BrRip_Ganool.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Katy Perry: Part of Me",
+  "tmdb_key": "movie:101267",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2012
+ },
+ "tt22169746": {
+  "imdb": "tt22169746",
+  "num": 13607,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Ranasthali%202023.480p%20WEB-DL.FarsiSub.Bollywood1.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Ranasthali%202023.720p%20WEB-DL.FarsiSub.Bollywood1.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Ranasthali%202023.1080p%20WEB-DL.FarsiSub.Bollywood1.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Ranasthali",
+  "tmdb_key": "movie:1140883",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2022
+ },
  "tt22264336": {
   "imdb": "tt22264336",
   "num": 12344,
@@ -106533,6 +110411,65 @@
   "title": "Saint Cecilia and Pastor Lawrence",
   "tmdb_key": "tv:204148",
   "type": "series",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2023
+ },
+ "tt22436062": {
+  "imdb": "tt22436062",
+  "num": 13611,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Dhoomam%202023.480p%20WEB-DL.FarsiSub.Bollywood1.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Dhoomam%202023.720p%20WEB-DL.FarsiSub.Bollywood1.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Dhoomam%202023.1080p%20WEB-DL.FarsiSub.Bollywood1.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Dhoomam",
+  "tmdb_key": "movie:1030101",
+  "type": "movie",
   "video_mp4": {
    "is_trailer": false,
    "size_bytes": null,
@@ -108620,6 +112557,37 @@
   },
   "year": 2022
  },
+ "tt2293138": {
+  "imdb": "tt2293138",
+  "num": 13588,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Vive.la.France.2013.720p.BrRip.YIFY.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Vive la France",
+  "tmdb_key": "movie:169020",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2013
+ },
  "tt22964884": {
   "imdb": "tt22964884",
   "num": 11347,
@@ -108664,6 +112632,79 @@
    "url": null
   },
   "year": 2023
+ },
+ "tt2296935": {
+  "imdb": "tt2296935",
+  "num": 13524,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/The.Legend.Of.Sarila.2013.480p.vidbox.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/The.Legend.of.Sarila.2013.480p.Farsi.Dubbed.mp4",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/The.Legend.Of.Sarila.2013.720p.vidbox.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/The.Legend.of.Sarila.2013.720p.Farsi.Dubbed.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Legend of Sarila",
+  "tmdb_key": "movie:233423",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2013
  },
  "tt23032868": {
   "imdb": "tt23032868",
@@ -119164,6 +123205,65 @@
   },
   "year": 2022
  },
+ "tt2347569": {
+  "imdb": "tt2347569",
+  "num": 13653,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://node146.dl150m.info/film/Frances_Ha_2012_720p_YIFY.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://node146.dl150m.info/film/Frances_Ha_2012_1080p_YIFY.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Frances.Ha.2012.720p.BluRay.HardSub.mp4",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Frances Ha",
+  "tmdb_key": "movie:121986",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2013
+ },
  "tt2374835": {
   "imdb": "tt2374835",
   "num": 11405,
@@ -120065,6 +124165,51 @@
   },
   "year": 2013
  },
+ "tt2418510": {
+  "imdb": "tt2418510",
+  "num": 13641,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Like.the.Wind.2013.720p.Bluray.x264-Ganool.SoftSub.BMB.90A06100.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Like.the.Wind.2013.1080p.Bluray.x264-Ganool.SoftSub.BMB.61684A4B.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Like the Wind",
+  "tmdb_key": "movie:235208",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2013
+ },
  "tt24225188": {
   "imdb": "tt24225188",
   "num": 11403,
@@ -120300,6 +124445,65 @@
    "url": null
   },
   "year": 2012
+ },
+ "tt2510028": {
+  "imdb": "tt2510028",
+  "num": 13522,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Frontera.2014.720p.BluRay.2CH.x265.HEVC.Dubbed.FA-[My-Film].mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Frontera.2014.720p.BluRay.x264.Dubbed.FA-[My-Film].mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Frontera.2014.1080p.BluRay.x265.HEVC.Dubbed.FA-[My-Film].mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Frontera",
+  "tmdb_key": "movie:259611",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2014
  },
  "tt25363184": {
   "imdb": "tt25363184",
@@ -121345,6 +125549,37 @@
    "url": null
   },
   "year": 2012
+ },
+ "tt2586120": {
+  "imdb": "tt2586120",
+  "num": 13593,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Racer.and.the.Jailbird.2017.720p.nItRo.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Racer and the Jailbird",
+  "tmdb_key": "movie:414063",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2017
  },
  "tt2590506": {
   "imdb": "tt2590506",
@@ -124150,6 +128385,96 @@
    "url": null
   },
   "year": 2023
+ },
+ "tt2702724": {
+  "imdb": "tt2702724",
+  "num": 13569,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/The.Boss.2016.EXTENDED.720p.BluRay.Dubbed.FA_SaberFun.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/The.Boss.2016.720p.BluRay.x264.YTS.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Boss",
+  "tmdb_key": "movie:323676",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2016
+ },
+ "tt27171077": {
+  "imdb": "tt27171077",
+  "num": 13643,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/film/Robinhood.2025.HQ.720p.ZEE5.WEB.DL.H264.SoftSub.9Movie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/film/Robinhood.2025.HQ.1080p.ZEE5.WEB.DL.H264.SoftSub.9Movie.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Robinhood",
+  "tmdb_key": "movie:1120762",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2025
  },
  "tt27191658": {
   "imdb": "tt27191658",
@@ -127457,6 +131782,82 @@
   },
   "year": 2026
  },
+ "tt27540217": {
+  "imdb": "tt27540217",
+  "num": 13638,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Good.Bad.Ugly.2025.720p.NF.WEB-DL.H.264.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Good Bad Ugly",
+  "tmdb_key": "movie:1259024",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2025
+ },
+ "tt2759338": {
+  "imdb": "tt2759338",
+  "num": 13525,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Dassehra.2018.480p.WEB-DL.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Dassehra.2018.720p.WEB-DL.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Dassehra",
+  "tmdb_key": "movie:550488",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2018
+ },
  "tt27650267": {
   "imdb": "tt27650267",
   "num": 12436,
@@ -128204,6 +132605,51 @@
    "url": null
   },
   "year": 2023
+ },
+ "tt2771800": {
+  "imdb": "tt2771800",
+  "num": 13584,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Rigor_Mortis_2013_720p_YIFY.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Rigor_Mortis_2013_1080p_YIFY.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Rigor Mortis",
+  "tmdb_key": "movie:210911",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2013
  },
  "tt27816710": {
   "imdb": "tt27816710",
@@ -133474,6 +137920,110 @@
   },
   "year": 2013
  },
+ "tt27995594": {
+  "imdb": "tt27995594",
+  "num": 13626,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive.google.dl175m.info/film/Munjya%202024.480p%20WEB-DL.FarsiSub.Bollywood1.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive.google.dl175m.info/film/Munjya%202024.720p%20WEB-DL.FarsiSub.Bollywood1.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive.google.dl175m.info/film/Munjya%202024.1080p%20WEB-DL.FarsiSub.Bollywood1.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Munjya",
+  "tmdb_key": "movie:1187058",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2024
+ },
+ "tt28079579": {
+  "imdb": "tt28079579",
+  "num": 13615,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/filmjadid/Closed.School.2019.480p.KCW.WEB-DL.SS.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/filmjadid/Closed.School.2019.720p.KCW.WEB-DL.SS.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Closed School",
+  "tmdb_key": "movie:627430",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2019
+ },
  "tt28152010": {
   "imdb": "tt28152010",
   "num": 12423,
@@ -135194,6 +139744,65 @@
   },
   "year": 2023
  },
+ "tt28568397": {
+  "imdb": "tt28568397",
+  "num": 13601,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://s11.habq78.shop/film/1402/06/Friday%20Night%20Plan%202023.480p%20WEB-DL.FarsiSub.Bollywood1.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://s11.habq78.shop/film/1402/06/Friday%20Night%20Plan%202023.720p%20WEB-DL.FarsiSub.Bollywood1.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://s11.habq78.shop/film/1402/06/Friday%20Night%20Plan%202023.1080p%20WEB-DL.FarsiSub.Bollywood1.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Friday Night Plan",
+  "tmdb_key": "movie:1160562",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2023
+ },
  "tt28620337": {
   "imdb": "tt28620337",
   "num": 12736,
@@ -135284,6 +139893,51 @@
   },
   "year": 2024
  },
+ "tt2893490": {
+  "imdb": "tt2893490",
+  "num": 13548,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Manglehorn.2014.720p.x264.EasyTV.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Manglehorn.2014.1080p.5.1CH.x264.EasyTV.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Manglehorn",
+  "tmdb_key": "movie:254905",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2015
+ },
  "tt29341311": {
   "imdb": "tt29341311",
   "num": 11330,
@@ -135328,6 +139982,141 @@
    "url": null
   },
   "year": 2023
+ },
+ "tt2942512": {
+  "imdb": "tt2942512",
+  "num": 13595,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Our.Sunhi.2013.720p.BluRay.x264.YIFY.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Our.Sunhi.2013.1080p.BluRay.x264.YIFY.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Our Sunhi",
+  "tmdb_key": "movie:211579",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2013
+ },
+ "tt29439871": {
+  "imdb": "tt29439871",
+  "num": 13613,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tct.149.giftmond.ir/filmjadid/91010-tt29439871-720p-Hardsub-%5BAriaMedia%5D.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tct.149.giftmond.ir/filmjadid/91010-tt29439871-1080p-Hardsub-%5BAriaMedia%5D.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Her Şey Aşk İçin",
+  "tmdb_key": "movie:1263162",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2023
+ },
+ "tt2946582": {
+  "imdb": "tt2946582",
+  "num": 13640,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Barbie_Mariposa_and_the_Fairy_Princess_2013_720p_BrRip_YIFY_ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Barbie_Mariposa_and_the_Fairy_Princess_2013_1080p_BrRip_YIFY_ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Barbie Mariposa & the Fairy Princess",
+  "tmdb_key": "movie:196254",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2013
  },
  "tt29476861": {
   "imdb": "tt29476861",
@@ -136783,6 +141572,51 @@
   },
   "year": 2016
  },
+ "tt29580825": {
+  "imdb": "tt29580825",
+  "num": 13657,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Cassandre.2024.720p.WEBRip.x264.AAC-YTS.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Cassandre.2024.1080p.WEBRip.x264.AAC-YTS.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Cassandre",
+  "tmdb_key": "movie:1178464",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2025
+ },
  "tt29613587": {
   "imdb": "tt29613587",
   "num": 11329,
@@ -137624,6 +142458,65 @@
   },
   "year": 2010
  },
+ "tt29866070": {
+  "imdb": "tt29866070",
+  "num": 13635,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://exchange.port.sn.giftmond.ir/film/Jolly.O.Gymkhana.2024.480p.WEB.DL.mp4",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://exchange.port.sn.giftmond.ir/film/Jolly.O.Gymkhana.2024.720p.WEB.DL.mp4",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://exchange.port.sn.giftmond.ir/film/Jolly.O.Gymkhana.2024.1080p.WEB.DL.mp4",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Jolly O Gymkhana",
+  "tmdb_key": "movie:1390705",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2024
+ },
  "tt2992552": {
   "imdb": "tt2992552",
   "num": 11316,
@@ -137853,6 +142746,79 @@
    "url": null
   },
   "year": 2021
+ },
+ "tt2993848": {
+  "imdb": "tt2993848",
+  "num": 13676,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/Iceman.The.Time.Traveller.2018.480p.BluRay.x264.EasyTV.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/Iceman.The.Time.Traveller.2018.720p.BluRay.x264.VXT.EasyTV.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/Iceman.The.Time.Traveller.2018.1080p.BluRay.x264.EasyTV.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/Iceman.The.Time.Traveller.2018.720p.BRRip.DUBLE.EasyTV.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Iceman: The Time Traveler",
+  "tmdb_key": "movie:490214",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2018
  },
  "tt30133233": {
   "imdb": "tt30133233",
@@ -139052,6 +144018,107 @@
    "url": null
   },
   "year": 2025
+ },
+ "tt3022458": {
+  "imdb": "tt3022458",
+  "num": 13523,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/The.Shamers.Daughter.2015.720p.BluRay.2CH.x265.HEVC.Dubbed.FA-[My-Film].mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/The.Shamers.Daughter.2015.720p.BluRay.x264.Dubbed.FA-[My-Film].mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/The.Shamers.Daughter.2015.1080p.BluRay.x265.HEVC.Dubbed.FA-[My-Film].mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://s1.giftmond.ir/film/The.Shamers.Daughter.2015.720p.Farsi.Dubbed.SaberFun.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.124.giftmond.ir/film/The.Shamers.Daughter.2015.480p.BrRip.YIFY.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.124.giftmond.ir/film/The.Shamers.Daughter.2015.720p.BrRip.YIFY.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Shamer's Daughter",
+  "tmdb_key": "movie:305638",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2015
  },
  "tt30235784": {
   "imdb": "tt30235784",
@@ -146046,6 +151113,51 @@
   },
   "year": 2023
  },
+ "tt3076510": {
+  "imdb": "tt3076510",
+  "num": 13572,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Henchmen.2018.480p.WEB-DL.Farsi.Dub.Golchindl.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Henchmen.2018.720p.WEB-DL.Farsi.Dub.Golchindl.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Henchmen",
+  "tmdb_key": "movie:345942",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2018
+ },
  "tt30807329": {
   "imdb": "tt30807329",
   "num": 12743,
@@ -146149,6 +151261,110 @@
    "url": null
   },
   "year": 2024
+ },
+ "tt3097204": {
+  "imdb": "tt3097204",
+  "num": 13565,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/The%20Inbetweeners%202%20%282014%29%20720p%20BluRay%20YIFY%20.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/The%20Inbetweeners%202%20%282014%29%201080p%20BluRay%20%20YIFY%20.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Inbetweeners 2",
+  "tmdb_key": "movie:242022",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2014
+ },
+ "tt31015496": {
+  "imdb": "tt31015496",
+  "num": 13677,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://node146.dl150m.info/film/Jugnuma%20The%20Fable%202025.480p%20WEB-DL.FarsiSub.Bollywood1.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://node146.dl150m.info/film/Jugnuma%20The%20Fable%202025.720p%20WEB-DL.FarsiSub.Bollywood1.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://node146.dl150m.info/film/Jugnuma%20The%20Fable%202025.1080p%20WEB-DL.FarsiSub.Bollywood1.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Fable",
+  "tmdb_key": "movie:1234603",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2025
  },
  "tt31159061": {
   "imdb": "tt31159061",
@@ -148594,6 +153810,37 @@
   },
   "year": 2025
  },
+ "tt31688642": {
+  "imdb": "tt31688642",
+  "num": 13654,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/film/Kuramerukagari.Movie.1080.NineAnime.ir.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Kuramerukagari",
+  "tmdb_key": "movie:1250784",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2024
+ },
  "tt31777964": {
   "imdb": "tt31777964",
   "num": 11455,
@@ -150749,6 +155996,65 @@
   },
   "year": 2015
  },
+ "tt32214413": {
+  "imdb": "tt32214413",
+  "num": 13637,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://node146.dl150m.info/film/The.Wedding.Banquet.2025.720p.WEB-DL.x264-YIFY.SoftSub.BMB.8CEE7757.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://node146.dl150m.info/film/The.Wedding.Banquet.2025.1080p.WEB-DL.x264-YIFY.SoftSub.BMB.46E8E236.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://node146.dl150m.info/film/The.Wedding.Banquet.2025.720p.WEB-DL.10bit.6CH.x265-PSA.SoftSub.BMB.CB5172F2.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Wedding Banquet",
+  "tmdb_key": "movie:1278827",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2025
+ },
  "tt32237687": {
   "imdb": "tt32237687",
   "num": 11546,
@@ -151157,6 +156463,51 @@
    "url": null
   },
   "year": 2025
+ },
+ "tt32272322": {
+  "imdb": "tt32272322",
+  "num": 13634,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://exchange.port.sn.giftmond.ir/film/Un.Dressed.2024.GERMAN.720p.WEB.h264.HardSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://exchange.port.sn.giftmond.ir/film/Un.Dressed.2024.GERMAN.1080p.WEB.h264.HardSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Un/Dressed",
+  "tmdb_key": "movie:1326963",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2024
  },
  "tt32333055": {
   "imdb": "tt32333055",
@@ -154300,6 +159651,51 @@
    "url": null
   },
   "year": 2025
+ },
+ "tt32749982": {
+  "imdb": "tt32749982",
+  "num": 13669,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://exchange.port.sn.giftmond.ir/film/ll.etait.une.fois.Michel.Legrand.2024.720p.WEB-DL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://exchange.port.sn.giftmond.ir/film/ll.etait.une.fois.Michel.Legrand.2024.1080p.WEB-DL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Once Upon a Time Michel Legrand",
+  "tmdb_key": "movie:1280476",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2024
  },
  "tt32784567": {
   "imdb": "tt32784567",
@@ -160150,6 +165546,51 @@
   },
   "year": 2024
  },
+ "tt33075921": {
+  "imdb": "tt33075921",
+  "num": 13655,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/The.Antique.2024.720p.AMZN.WEB-DL.H.264.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/The.Antique.2024.1080p.AMZN.WEB-DL.H.264.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Antique",
+  "tmdb_key": "movie:610326",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2024
+ },
  "tt33089434": {
   "imdb": "tt33089434",
   "num": 11386,
@@ -160732,6 +166173,110 @@
    "url": null
   },
   "year": 2025
+ },
+ "tt3321300": {
+  "imdb": "tt3321300",
+  "num": 13666,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/Spooks.The.Greater.Good.2015.Bluray.720p-IRanFlix.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/Spooks.The.Greater.Good.2015.Bluray.1080p-IRanFlix.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Spooks: The Greater Good",
+  "tmdb_key": "movie:292040",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2015
+ },
+ "tt3329350": {
+  "imdb": "tt3329350",
+  "num": 13606,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "https://cdn.irdanlod.ir/?s=4&f=/files/Movie/2014/T/The.Eyes.of.Mona.Lisa.2014.480p.Farsi.Dubbed.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "https://cdn.irdanlod.ir/?s=4&f=/files/Movie/2014/T/The.Eyes.of.Mona.Lisa.2014.720p.Farsi.Dubbed.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "https://cdn.irdanlod.ir/?s=4&f=/files/Movie/2014/T/The.Eyes.of.Mona.Lisa.2014.1080p.Farsi.Dubbed.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "All-Round Appraiser Q: The Eyes of Mona Lisa",
+  "tmdb_key": "movie:274795",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2014
  },
  "tt33368329": {
   "imdb": "tt33368329",
@@ -164878,6 +170423,37 @@
   },
   "year": 2025
  },
+ "tt3474600": {
+  "imdb": "tt3474600",
+  "num": 13589,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Little.Forest.Summer.Autumn.2014.720p.BrRip.YIFY.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Little Forest: Summer/Autumn",
+  "tmdb_key": "movie:294682",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2014
+ },
  "tt3480556": {
   "imdb": "tt3480556",
   "num": 12362,
@@ -166664,6 +172240,51 @@
   "title": "Dalah Death and the Flowers",
   "tmdb_key": "tv:282792",
   "type": "series",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2025
+ },
+ "tt35628532": {
+  "imdb": "tt35628532",
+  "num": 13656,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Air.Force.Elite.Thunderbirds.2025.720p.WEBRip.x264.AAC-YTS.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Air.Force.Elite.Thunderbirds.2025.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Air Force Elite: Thunderbirds",
+  "tmdb_key": "movie:1457515",
+  "type": "movie",
   "video_mp4": {
    "is_trailer": false,
    "size_bytes": null,
@@ -168867,6 +174488,37 @@
   },
   "year": 2018
  },
+ "tt3619710": {
+  "imdb": "tt3619710",
+  "num": 13566,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Bhaag.Johnny.2015.DvDRip.SoftSub.SaberFun.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Bhaag Johnny",
+  "tmdb_key": "movie:360817",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2015
+ },
  "tt36264595": {
   "imdb": "tt36264595",
   "num": 11547,
@@ -170245,6 +175897,51 @@
    "url": null
   },
   "year": 2025
+ },
+ "tt36607196": {
+  "imdb": "tt36607196",
+  "num": 13659,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Mikael.The.Hunter.Of.Two.Worlds.2026.720p.WEB-DL.Malay.H264.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Mikael.The.Hunter.Of.Two.Worlds.2026.1080p.WEB-DL.Malay.H264.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Mikael: Hunter of Two Realms",
+  "tmdb_key": "movie:1466978",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
  },
  "tt36624366": {
   "imdb": "tt36624366",
@@ -173622,6 +179319,51 @@
   },
   "year": 2025
  },
+ "tt37540328": {
+  "imdb": "tt37540328",
+  "num": 13658,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Back.To.The.90s.2026.720p.WEBRip.x264.AAC-YTS.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Back.To.The.90s.2026.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Back to the 90s",
+  "tmdb_key": "movie:1676318",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
  "tt3762944": {
   "imdb": "tt3762944",
   "num": 11300,
@@ -174809,6 +180551,37 @@
    "url": null
   },
   "year": 2025
+ },
+ "tt3838034": {
+  "imdb": "tt3838034",
+  "num": 13594,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Seuls.2017.720p.BluRay.x264.YIFY.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Alone",
+  "tmdb_key": "movie:420950",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2017
  },
  "tt38491451": {
   "imdb": "tt38491451",
@@ -178857,6 +184630,51 @@
   },
   "year": 2016
  },
+ "tt3982436": {
+  "imdb": "tt3982436",
+  "num": 13545,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/Loukyam.2014.480p.WEB-DL.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/Loukyam.2014.720p.WEB-DL.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Loukyam",
+  "tmdb_key": "movie:295587",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2014
+ },
  "tt39845031": {
   "imdb": "tt39845031",
   "num": 12930,
@@ -180604,6 +186422,37 @@
    "url": null
   },
   "year": 2026
+ },
+ "tt4024104": {
+  "imdb": "tt4024104",
+  "num": 13539,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/The_Royal_Tailor_2014.720p.HDRip-IRanFlix.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Royal Tailor",
+  "tmdb_key": "movie:314327",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2014
  },
  "tt40606760": {
   "imdb": "tt40606760",
@@ -183796,6 +189645,51 @@
    "url": null
   },
   "year": 2016
+ },
+ "tt4249580": {
+  "imdb": "tt4249580",
+  "num": 13544,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/morteza_movie/Cannibals.And.Carpet.Fitters.2017.480p.RARBG.EasyTV.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/morteza_movie/Cannibals.And.Carpet.Fitters.2017.720p.6CH.RARBG.EasyTV.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Cannibals and Carpet Fitters",
+  "tmdb_key": "movie:511813",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2018
  },
  "tt42554377": {
   "imdb": "tt42554377",
@@ -189301,6 +195195,65 @@
   },
   "year": 2026
  },
+ "tt43612978": {
+  "imdb": "tt43612978",
+  "num": 13661,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Aroopi.2026.Malayalam.480p.WEBDL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Aroopi.2026.Malayalam.720p.WEBDL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Aroopi.2026.Malayalam.1080p.WEBDL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Aroopi",
+  "tmdb_key": "movie:1616268",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
  "tt44091047": {
   "imdb": "tt44091047",
   "num": 12819,
@@ -189885,6 +195838,51 @@
   },
   "year": 2016
  },
+ "tt4557208": {
+  "imdb": "tt4557208",
+  "num": 13527,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/morteza_movie/Armed.Response.2017.480p.iranflix.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/morteza_movie/Armed.Response.2017.720p.iranflix.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Armed Response",
+  "tmdb_key": "movie:450932",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2017
+ },
  "tt4578910": {
   "imdb": "tt4578910",
   "num": 11278,
@@ -190128,6 +196126,82 @@
    "url": null
   },
   "year": 2015
+ },
+ "tt4622512": {
+  "imdb": "tt4622512",
+  "num": 13520,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Battle.of.the.3e.xes.2017.480p.BRrip.PaHe.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Battle.of.the.3e.xes.2017.720p.Ganool.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Battle of the Sexes",
+  "tmdb_key": "movie:369192",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2017
+ },
+ "tt4687276": {
+  "imdb": "tt4687276",
+  "num": 13596,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Range.15.2016.720p.BluRay.x264.YIFY.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Range 15",
+  "tmdb_key": "movie:402976",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2016
  },
  "tt4741110": {
   "imdb": "tt4741110",
@@ -193681,6 +199755,51 @@
   },
   "year": 2026
  },
+ "tt5017936": {
+  "imdb": "tt5017936",
+  "num": 13625,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive.google.dl175m.info/film/Prodigy.2017.720p.BluRay.YIFY.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive.google.dl175m.info/film/Prodigy.2017.1080p.BluRay.YIFY.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Prodigy",
+  "tmdb_key": "movie:446827",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2017
+ },
  "tt5040202": {
   "imdb": "tt5040202",
   "num": 11379,
@@ -193725,6 +199844,51 @@
    "url": null
   },
   "year": 2019
+ },
+ "tt5049302": {
+  "imdb": "tt5049302",
+  "num": 13546,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/The.Priests.2015.720p-IRanFlix.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/The.Priests.2015.1080p-IRanFlix.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Priests",
+  "tmdb_key": "movie:360551",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2015
  },
  "tt5095466": {
   "imdb": "tt5095466",
@@ -194239,6 +200403,37 @@
   "title": "The Asterisk War",
   "tmdb_key": "tv:64671",
   "type": "series",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2015
+ },
+ "tt5113926": {
+  "imdb": "tt5113926",
+  "num": 13599,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/They.Found.Hell.2015.720p.YIFY.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "They Found Hell",
+  "tmdb_key": "movie:362439",
+  "type": "movie",
   "video_mp4": {
    "is_trailer": false,
    "size_bytes": null,
@@ -195623,6 +201818,65 @@
   },
   "year": 2016
  },
+ "tt5258850": {
+  "imdb": "tt5258850",
+  "num": 13530,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/See.You.Up.There.2017.480p-MetaLMovieS.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/See.You.Up.There.2017.720p-MetaLMovieS.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/See.You.Up.There.2017.1080p.6CH-MetaLMovieS.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "See You Up There",
+  "tmdb_key": "movie:430424",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2017
+ },
  "tt5260064": {
   "imdb": "tt5260064",
   "num": 12407,
@@ -196580,6 +202834,51 @@
   },
   "year": 2016
  },
+ "tt5477608": {
+  "imdb": "tt5477608",
+  "num": 13621,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/filmjadid/Kahaani.2.2016.480p.DVDRip.FilmKio.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/filmjadid/Kahaani.2.2016.720p.DVDRip.ShAaNiG.FilmKio.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Kahaani 2",
+  "tmdb_key": "movie:413547",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2016
+ },
  "tt5483626": {
   "imdb": "tt5483626",
   "num": 11250,
@@ -196670,6 +202969,37 @@
   },
   "year": 2016
  },
+ "tt5599692": {
+  "imdb": "tt5599692",
+  "num": 13549,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Clash.2016.720p.BluRay.x264.SoftSub.NightMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Clash",
+  "tmdb_key": "movie:393184",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2016
+ },
  "tt5603620": {
   "imdb": "tt5603620",
   "num": 12568,
@@ -196700,6 +203030,65 @@
    "url": null
   },
   "year": 2019
+ },
+ "tt5614612": {
+  "imdb": "tt5614612",
+  "num": 13528,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/morteza_movie/Black.Snow.2017.480p.iranflix.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/ morteza_movie /Black.Snow.2017.480p.iranflix.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/morteza_movie/Black.Snow.2017.720p.iranflix.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Black Snow",
+  "tmdb_key": "movie:425942",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2017
  },
  "tt5628332": {
   "imdb": "tt5628332",
@@ -196804,6 +203193,51 @@
    "url": null
   },
   "year": 2017
+ },
+ "tt5657280": {
+  "imdb": "tt5657280",
+  "num": 13532,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/Viking.Destiny.2018.720p.BluRay.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/Viking.Destiny.2018.1080p.BluRay.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Viking Destiny",
+  "tmdb_key": "movie:537347",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2018
  },
  "tt5691024": {
   "imdb": "tt5691024",
@@ -197586,6 +204020,37 @@
   },
   "year": 2018
  },
+ "tt6017926": {
+  "imdb": "tt6017926",
+  "num": 13516,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/morteza_movie/crucible.of.the.vampire.2019.720p.BRRip_%281%29.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Crucible of the Vampire",
+  "tmdb_key": "movie:566512",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2019
+ },
  "tt6054846": {
   "imdb": "tt6054846",
   "num": 12706,
@@ -197630,6 +204095,65 @@
    "url": null
   },
   "year": 2019
+ },
+ "tt6054874": {
+  "imdb": "tt6054874",
+  "num": 13526,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/morteza_movie/1588681815_Legenda.o.Kolovrate.2017.720p.Bluray_-_IRanFlix.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/morteza_movie/Legenda.o.Kolovrate.2017.1080p.Bluray_-_IRanFlix.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://peer.tct.149.giftmond.ir/morteza_movie/Furious.2017.720p.DUBLE.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Furious",
+  "tmdb_key": "movie:415381",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2017
  },
  "tt6055082": {
   "imdb": "tt6055082",
@@ -197819,6 +204343,96 @@
   },
   "year": 2016
  },
+ "tt6135036": {
+  "imdb": "tt6135036",
+  "num": 13600,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Canola_2016_480p_WEB-DL.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://node146.dl150m.info/film/Canola_2016_720p_WEB-DL_YIFY.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Canola",
+  "tmdb_key": "movie:387886",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2016
+ },
+ "tt6150942": {
+  "imdb": "tt6150942",
+  "num": 13573,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/filmjaded/Becks.2017.720p.WEB-DL.YIFY.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/filmjaded/Becks.2017.1080p.WEB-DL.YIFY.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Becks",
+  "tmdb_key": "movie:458987",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2018
+ },
  "tt6194530": {
   "imdb": "tt6194530",
   "num": 12381,
@@ -197886,6 +204500,51 @@
   ],
   "title": "Malicious",
   "tmdb_key": "movie:426375",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2018
+ },
+ "tt6210996": {
+  "imdb": "tt6210996",
+  "num": 13579,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/filmjaded/10x10.2018.720p.BluRay.x264.YTS.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/filmjaded/10x10.2018.1080p.BluRay.x264.YTS.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "10x10",
+  "tmdb_key": "movie:505177",
   "type": "movie",
   "video_mp4": {
    "is_trailer": false,
@@ -206519,6 +213178,82 @@
   },
   "year": 2018
  },
+ "tt6512428": {
+  "imdb": "tt6512428",
+  "num": 13624,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive.google.dl175m.info/film/Indivisible.2018.720p.MkvCage.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive.google.dl175m.info/film/Indivisible.2018.1080p.6CH.RARBG.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Indivisible",
+  "tmdb_key": "movie:514407",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2018
+ },
+ "tt6675244": {
+  "imdb": "tt6675244",
+  "num": 13628,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive.google.dl175m.info/film/Transit.2018.720p.BluRay.YIFY.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Transit",
+  "tmdb_key": "movie:471853",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2018
+ },
  "tt6733372": {
   "imdb": "tt6733372",
   "num": 11426,
@@ -207951,6 +214686,51 @@
   },
   "year": 2017
  },
+ "tt6928892": {
+  "imdb": "tt6928892",
+  "num": 13636,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Catalyst.2025.720p.SoftSub.MoviePovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Catalyst.2025.1080p.SoftSub.MoviePovie.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Catalyst",
+  "tmdb_key": "movie:1442033",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2025
+ },
  "tt6973828": {
   "imdb": "tt6973828",
   "num": 11346,
@@ -209110,6 +215890,37 @@
    "url": null
   },
   "year": 2017
+ },
+ "tt7280898": {
+  "imdb": "tt7280898",
+  "num": 13629,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive.google.dl175m.info/film/22.July.2018.720p.WEB-DL.YIFY.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "22 July",
+  "tmdb_key": "movie:474354",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2018
  },
  "tt7310906": {
   "imdb": "tt7310906",
@@ -212745,6 +219556,37 @@
   },
   "year": 2021
  },
+ "tt7616798": {
+  "imdb": "tt7616798",
+  "num": 13518,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/morteza_movie/1572273209_A.Dogs.Way.Home.2019.720p.x264-MkvCage.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "A Dog's Way Home",
+  "tmdb_key": "movie:508763",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2019
+ },
  "tt7636244": {
   "imdb": "tt7636244",
   "num": 12801,
@@ -213214,6 +220056,51 @@
   },
   "year": 2022
  },
+ "tt7959216": {
+  "imdb": "tt7959216",
+  "num": 13627,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive.google.dl175m.info/film/Utoya.July.22.2018.720p.BluRay.YIFY.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive.google.dl175m.info/film/Utoya.July.22.2018.1080p.BluRay.YIFY.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Utøya: July 22",
+  "tmdb_key": "movie:500006",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2018
+ },
  "tt7967580": {
   "imdb": "tt7967580",
   "num": 12633,
@@ -213258,6 +220145,37 @@
    "url": null
   },
   "year": 2017
+ },
+ "tt7975192": {
+  "imdb": "tt7975192",
+  "num": 13562,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Hide.And.Seek.2021.720p.WEB-DL.YIFY.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Hide and Seek",
+  "tmdb_key": "movie:801271",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2021
  },
  "tt7986790": {
   "imdb": "tt7986790",
@@ -213934,6 +220852,51 @@
    "url": null
   },
   "year": 2018
+ },
+ "tt8123618": {
+  "imdb": "tt8123618",
+  "num": 13533,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/Bring.Me.Home.2019.480p.BluRay.EasyTV.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/Bring.Me.Home.2019.KOREAN.720p.BRRip.VXT.EasyTV.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Bring Me Home",
+  "tmdb_key": "movie:507773",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2019
  },
  "tt8147076": {
   "imdb": "tt8147076",
@@ -216339,6 +223302,127 @@
   },
   "year": 2018
  },
+ "tt8363392": {
+  "imdb": "tt8363392",
+  "num": 13581,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/filmjaded/Blackout.2022.720p.BluRay.x264.AAC-YTS.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/filmjaded/Blackout.2022.1080p.BluRay.x264.AAC5.1-YTS.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Blackout",
+  "tmdb_key": "movie:759507",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2022
+ },
+ "tt8364132": {
+  "imdb": "tt8364132",
+  "num": 13535,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/Birbal.Trilogy.2019.720p.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/Birbal.Trilogy.2019.1080p.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Birbal Trilogy: Case 1 – Finding Vajramuni",
+  "tmdb_key": "movie:578432",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2019
+ },
+ "tt8425058": {
+  "imdb": "tt8425058",
+  "num": 13664,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/morteza_movie/Brexit.The.Uncivil.War.2019.720p.WEB-DL.YIFY.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Brexit: The Uncivil War",
+  "tmdb_key": "movie:536176",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2019
+ },
  "tt8436026": {
   "imdb": "tt8436026",
   "num": 12597,
@@ -216369,6 +223453,51 @@
    "url": null
   },
   "year": 2018
+ },
+ "tt8439860": {
+  "imdb": "tt8439860",
+  "num": 13538,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.sn1.giftmond.ir/sansor/The.Domain.2019.480p.BluRay.SUBFA.FilmToon_Asia.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.sn1.giftmond.ir/sansor/The.Domain.2019.720p.BluRay.SUBFA.FilmToon_Asia.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Domain",
+  "tmdb_key": "movie:617776",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2019
  },
  "tt8447170": {
   "imdb": "tt8447170",
@@ -216829,6 +223958,37 @@
    "url": null
   },
   "year": 2018
+ },
+ "tt8535180": {
+  "imdb": "tt8535180",
+  "num": 13514,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/morteza_movie/Kill.Chain.2019.720p.WEB-DL.MkvCage_%281%29.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Kill Chain",
+  "tmdb_key": "movie:531299",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2020
  },
  "tt8535868": {
   "imdb": "tt8535868",
@@ -218071,6 +225231,37 @@
   },
   "year": 2019
  },
+ "tt8639316": {
+  "imdb": "tt8639316",
+  "num": 13515,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/morteza_movie/Handy.Dandy.2019.720p.WEB-DL.YTS.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Handy Dandy",
+  "tmdb_key": "movie:608509",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2019
+ },
  "tt8670784": {
   "imdb": "tt8670784",
   "num": 12745,
@@ -218761,6 +225952,37 @@
   },
   "year": 2020
  },
+ "tt8770976": {
+  "imdb": "tt8770976",
+  "num": 13598,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Savage.State.2019.720p.WEB-DL.x264.GalaxyRG.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Savage State",
+  "tmdb_key": "movie:582919",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2020
+ },
  "tt8786654": {
   "imdb": "tt8786654",
   "num": 12365,
@@ -219074,6 +226296,37 @@
    "url": null
   },
   "year": 2021
+ },
+ "tt8858104": {
+  "imdb": "tt8858104",
+  "num": 13519,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/morteza_movie/Guava_Island_(2019)_1080p_WEB-DL.EasyTV.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Guava Island",
+  "tmdb_key": "movie:543343",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2019
  },
  "tt8865016": {
   "imdb": "tt8865016",
@@ -220731,6 +227984,82 @@
   },
   "year": 2018
  },
+ "tt9026184": {
+  "imdb": "tt9026184",
+  "num": 13517,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.149.giftmond.ir/morteza_movie/Girl.on.the.Third.Floor.2019.720p.WEB-DL_%281%29.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Girl on the Third Floor",
+  "tmdb_key": "movie:580630",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2019
+ },
+ "tt9056192": {
+  "imdb": "tt9056192",
+  "num": 13550,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Zombi.Child.2019.480p.HardSub.DigiMoviez.mp4",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Zombi.Child.2019.720p.HardSub.DigiMoviez.mp4",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Zombi Child",
+  "tmdb_key": "movie:554311",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2019
+ },
  "tt9098928": {
   "imdb": "tt9098928",
   "num": 11301,
@@ -221118,6 +228447,51 @@
   ],
   "title": "Fireball Visitors from Darker Worlds",
   "tmdb_key": "movie:574082",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2020
+ },
+ "tt9286670": {
+  "imdb": "tt9286670",
+  "num": 13536,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/Allan.The.Dog.2020.1080p.WEB-DL.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/Allan.The.Dog.2020.720p.WEB-DL.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Allan The Dog",
+  "tmdb_key": "movie:718334",
   "type": "movie",
   "video_mp4": {
    "is_trailer": false,
@@ -221536,6 +228910,37 @@
   },
   "year": 2020
  },
+ "tt9358192": {
+  "imdb": "tt9358192",
+  "num": 13521,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Halston_2019_720p_WEB-DL_YIFY.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Halston",
+  "tmdb_key": "movie:566227",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2019
+ },
  "tt9397882": {
   "imdb": "tt9397882",
   "num": 11513,
@@ -221692,6 +229097,51 @@
    "url": null
   },
   "year": 2018
+ },
+ "tt9504852": {
+  "imdb": "tt9504852",
+  "num": 13531,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/Lupin.III.Goodbye.Partner.2019.480p.WEB-DL.HardSub.DigiMoviez.mp4",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/Lupin.III.Goodbye.Partner.2019.720p.WEB-DL.HardSub.DigiMoviez.mp4",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Lupin the Third: Goodbye Partner",
+  "tmdb_key": "movie:572616",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2019
  },
  "tt9511462": {
   "imdb": "tt9511462",
