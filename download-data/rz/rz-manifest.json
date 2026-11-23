@@ -2,19 +2,19 @@
  "code": "RZ",
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
  "start_num": 12560,
- "end_num": 13483,
- "live_base_head": "4f199166f0912e72c0b69a350fef663c243a0331 (RezFlix series full extraction 2000s)",
- "generated": "2026-11-22 (RezFlix series full extraction, 2000s)",
+ "end_num": 13492,
+ "live_base_head": "c4991e6d3d5800f32954263ec9f4994deeef832c (5h run 20261123T171105Z; H3 max #13502 verified from live files, RZ part-1 max #13483)",
+ "generated": "2026-11-23 (RezFlix 5-hourly run 20261123T171105Z — merge of 9 new RZ titles #13484-13492 + 8 trailer keys + 2 encode completions into part 1 #14/#15; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
  "counts": {
-  "total_titles": 582,
-  "movies": 17,
-  "series": 565,
-  "total_links": 43242,
+  "total_titles": 591,
+  "movies": 23,
+  "series": 568,
+  "total_links": 43364,
   "by_year": {
    "2024": 1,
-   "2026": 14,
+   "2026": 19,
    "2023": 2,
-   "2025": 3,
+   "2025": 4,
    "2014": 2,
    "1955": 2,
    "1960": 3,
@@ -67,17 +67,19 @@
    "2008": 54,
    "2003": 25,
    "2004": 25,
-   "2005": 39,
+   "2005": 40,
    "2006": 53,
    "2013": 1,
    "2009": 58,
-   "2010": 1
+   "2010": 1,
+   "1957": 1,
+   "2022": 1
   },
   "by_quality": {
-   "720p": 21162,
-   "1080p": 3375,
-   "540p": 289,
-   "480p": 14169,
+   "720p": 21205,
+   "1080p": 3413,
+   "540p": 292,
+   "480p": 14207,
    "CAM 1080p": 117,
    "CAM 720p": 35,
    "Cam 1080p": 1,
@@ -6495,6 +6497,105 @@
    "quality": "720p",
    "rezflix_id": 21509,
    "identity_note": "TMDB+IMDb+OMDb agree (feed 2017, tmdb 88414, tt7722262). Persian name سرگذشت اتومبیل ها."
+  },
+  {
+   "title": "12 Oz Mouse",
+   "tmdb": 3043,
+   "imdb": "tt0465774",
+   "year": 2005,
+   "num": 13484,
+   "links": 99,
+   "quality": "1080p,480p,720p",
+   "rezflix_id": 36053,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2005, TMDB 2005, tt0465774). Persian name موش 12 اونسی (feed)."
+  },
+  {
+   "title": "Band of Angels",
+   "tmdb": 37311,
+   "imdb": "tt0050166",
+   "year": 1957,
+   "num": 13485,
+   "links": 2,
+   "quality": "480p,720p",
+   "rezflix_id": 36124,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1957, TMDB 1957, tt0050166). Persian name OMITTED: the feed's نام پارسی line is another work's name (36124: 'بازی کورکورانه' = Blind Game; 36138: 'نسل فضایی چاندرایان' = Space Gen Chandrayaan)."
+  },
+  {
+   "title": "Love Ted Bundy",
+   "tmdb": 1630801,
+   "imdb": "tt39402072",
+   "year": 2026,
+   "num": 13486,
+   "links": 3,
+   "quality": "1080p,480p,720p",
+   "rezflix_id": 36125,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt39402072). Persian name با عشق، تد باندی (feed)."
+  },
+  {
+   "title": "Blind Game",
+   "tmdb": 1755818,
+   "imdb": "tt26242352",
+   "year": 2026,
+   "num": 13487,
+   "links": 3,
+   "quality": "1080p,480p,720p",
+   "rezflix_id": 36126,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt26242352). Persian name بازی کورکورانه (feed)."
+  },
+  {
+   "title": "Nojsomheden",
+   "tmdb": 1715774,
+   "imdb": "tt39379748",
+   "year": 2026,
+   "num": 13488,
+   "links": 2,
+   "quality": "1080p,720p",
+   "rezflix_id": 36127,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt39379748). Persian name قناعت (feed)."
+  },
+  {
+   "title": "My Boyfriend in Orange",
+   "tmdb": 996499,
+   "imdb": "tt19850394",
+   "year": 2022,
+   "num": 13489,
+   "links": 3,
+   "quality": "1080p,540p,720p",
+   "rezflix_id": 36128,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2022, TMDB 2022, tt19850394). Persian name نامزد نارنجی‌ پوش من (feed)."
+  },
+  {
+   "title": "Expedition Saving Our Seas",
+   "tmdb": 1826442,
+   "imdb": "tt49065977",
+   "year": 2026,
+   "num": 13490,
+   "links": 2,
+   "quality": "1080p,720p",
+   "rezflix_id": 36130,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt49065977). Persian name مأموریت نجات دریاهای ما (feed)."
+  },
+  {
+   "title": "Single Papa",
+   "tmdb": 292625,
+   "imdb": "tt37062070",
+   "year": 2025,
+   "num": 13491,
+   "links": 4,
+   "quality": "480p,720p",
+   "rezflix_id": 36138,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2025, TMDB 2025, tt37062070). Persian name OMITTED: the feed's نام پارسی line is another work's name (36124: 'بازی کورکورانه' = Blind Game; 36138: 'نسل فضایی چاندرایان' = Space Gen Chandrayaan)."
+  },
+  {
+   "title": "The Substitute",
+   "tmdb": 303552,
+   "imdb": "tt50164002",
+   "year": 2026,
+   "num": 13492,
+   "links": 4,
+   "quality": "540p,720p",
+   "rezflix_id": 36139,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt50164002). Persian name جایگزین (feed)."
   }
  ],
  "trailer_keys_added": [
@@ -6538,7 +6639,15 @@
   "tv:877",
   "tv:7354",
   "tv:5148",
-  "tv:31319"
+  "tv:31319",
+  "movie:37311",
+  "movie:1755818",
+  "movie:996499",
+  "movie:1811134",
+  "movie:1811136",
+  "movie:1252382",
+  "tv:292625",
+  "tv:303552"
  ],
  "queued_titles": [
   {
@@ -6561,8 +6670,37 @@
    "tmdb": 365,
    "imdb": "tt0805663",
    "reason": "0 new links (no sources, or all URLs already live)"
+  },
+  {
+   "title": "Love Imagined",
+   "rezflix_id": 36129,
+   "reason": "OMDb title 'Wa Lana Fel Khayal Hob' disagrees with 'Love Imagined'"
   }
  ],
- "url_dupes_dropped": [],
- "note": "Section per filename markers (DESIGN §4); description footer 'زیرنویس چسبیده پارسی' is generic and does not set play_type. MANIFEST REBUILT from the live rz play-index (authoritative): the old manifest files were incomplete (batch 1 kept only Musketeers; the twice-daily counts did not match its films list), so films + counts here are derived from the play rows."
+ "url_dupes_dropped": [
+  "http://peer.tci.cdn.146.dl150m.info/film1/Tyler.Perrys.Finding.Joy.2025.1080p.WEB-DL.Farsi.Sub.Film2Media.mkv  # SAME ENCODE live as #12703 part 16 (Film2Media SoftSub, identical filename; host differs only)",
+  "http://peer.tci.cdn.146.dl150m.info/film1/Tyler.Perrys.Finding.Joy.2025.480p.WEB-DL.Farsi.Sub.Film2Media.mkv  # SAME ENCODE live as #12703 part 16 (Film2Media SoftSub, identical filename; host differs only)",
+  "http://peer.tci.cdn.146.dl150m.info/film1/Tyler.Perrys.Finding.Joy.2025.720p.WEB-DL.Farsi.Sub.Film2Media.mkv  # SAME ENCODE live as #12703 part 16 (Film2Media SoftSub, identical filename; host differs only)"
+ ],
+ "note": "Section per filename markers (DESIGN §4); description footer 'زیرنویس چسبیده پارسی' is generic and does not set play_type. MANIFEST REBUILT from the live rz play-index (authoritative): the old manifest files were incomplete (batch 1 kept only Musketeers; the twice-daily counts did not match its films list), so films + counts here are derived from the play rows.",
+ "encode_completions": [
+  {
+   "title": "Supernatural Academy Birth of the Dragon Marked",
+   "tmdb": 1811134,
+   "imdb": "tt43972085",
+   "num": 14,
+   "part": 1,
+   "rezflix_id": 36131,
+   "added": "SoftSub 480/720/1080 (ZF, dl150m) + trailer movie:1811134; record was Dubbed-only"
+  },
+  {
+   "title": "Supernatural Academy Fate of the Dragon King",
+   "tmdb": 1811136,
+   "imdb": "tt44042062",
+   "num": 15,
+   "part": 1,
+   "rezflix_id": 36132,
+   "added": "SoftSub 480/720/1080 (Farsi.Subbed, dl150m) + trailer movie:1811136; record was Dubbed-only"
+  }
+ ]
 }

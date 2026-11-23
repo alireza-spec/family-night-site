@@ -88317,5 +88317,68 @@
   "part": "fh",
   "title": "Band Bazi",
   "year": 2022
+ },
+ "tv:3043": {
+  "imdb_id": "tt0465774",
+  "num": 13484,
+  "part": "rz",
+  "title": "12 Oz Mouse",
+  "year": 2005
+ },
+ "movie:37311": {
+  "imdb_id": "tt0050166",
+  "num": 13485,
+  "part": "rz",
+  "title": "Band of Angels",
+  "year": 1957
+ },
+ "movie:1630801": {
+  "imdb_id": "tt39402072",
+  "num": 13486,
+  "part": "rz",
+  "title": "Love Ted Bundy",
+  "year": 2026
+ },
+ "movie:1755818": {
+  "imdb_id": "tt26242352",
+  "num": 13487,
+  "part": "rz",
+  "title": "Blind Game",
+  "year": 2026
+ },
+ "movie:1715774": {
+  "imdb_id": "tt39379748",
+  "num": 13488,
+  "part": "rz",
+  "title": "Nojsomheden",
+  "year": 2026
+ },
+ "movie:996499": {
+  "imdb_id": "tt19850394",
+  "num": 13489,
+  "part": "rz",
+  "title": "My Boyfriend in Orange",
+  "year": 2022
+ },
+ "movie:1826442": {
+  "imdb_id": "tt49065977",
+  "num": 13490,
+  "part": "rz",
+  "title": "Expedition Saving Our Seas",
+  "year": 2026
+ },
+ "tv:292625": {
+  "imdb_id": "tt37062070",
+  "num": 13491,
+  "part": "rz",
+  "title": "Single Papa",
+  "year": 2025
+ },
+ "tv:303552": {
+  "imdb_id": "tt50164002",
+  "num": 13492,
+  "part": "rz",
+  "title": "The Substitute",
+  "year": 2026
  }
 }
