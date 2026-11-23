@@ -2,19 +2,20 @@
  "code": "DN",
  "counts": {
   "by_resolution": {
-   "1080p": 913,
+   "1080p": 1007,
    "360p": 1,
-   "480p": 6002,
-   "540p": 377,
-   "720p": 8299
+   "480p": 7627,
+   "540p": 476,
+   "720p": 9761,
+   "576p": 1
   },
   "by_version_family": {
-   "Dubbed": 1828,
-   "Subtitled": 13533,
-   "unknown": 96,
+   "Dubbed": 2859,
+   "Subtitled": 14916,
+   "unknown": 97,
    "NoSub": 2,
-   "HardSub": 36,
-   "SoftSub": 97
+   "HardSub": 371,
+   "SoftSub": 628
   },
   "by_year": {
    "1929": 1,
@@ -32,7 +33,7 @@
    "1976": 2,
    "1977": 4,
    "1978": 10,
-   "1979": 4,
+   "1979": 44,
    "1980": 3,
    "1981": 8,
    "1985": 3,
@@ -53,23 +54,23 @@
    "2007": 4,
    "2008": 11,
    "2009": 14,
-   "2010": 16,
-   "2011": 18,
-   "2012": 21,
+   "2010": 300,
+   "2011": 104,
+   "2012": 57,
    "2013": 41,
-   "2014": 35,
-   "2015": 50,
-   "2016": 41,
-   "2017": 50,
-   "2018": 63,
-   "2019": 76,
-   "2020": 56,
-   "2021": 78,
-   "2022": 77,
-   "2023": 91,
-   "2024": 62,
-   "2025": 88,
-   "2026": 63,
+   "2014": 179,
+   "2015": 1004,
+   "2016": 44,
+   "2017": 153,
+   "2018": 117,
+   "2019": 136,
+   "2020": 115,
+   "2021": 466,
+   "2022": 165,
+   "2023": 310,
+   "2024": 162,
+   "2025": 543,
+   "2026": 81,
    "1994": 4,
    "1998": 4,
    "1971": 3,
@@ -84,11 +85,11 @@
   },
   "ext_overlap": 1,
   "films": 589,
-  "play_rows": 16483,
-  "series": 363,
+  "play_rows": 19764,
+  "series": 423,
   "skipped_no_links": 11,
   "total": 788,
-  "trailer_keys": 737,
+  "trailer_keys": 738,
   "trailers_dropped": 71,
   "variety_patched": 401,
   "variety_play_created": 42,
@@ -22241,5 +22242,200 @@
    "Sinners and Saints #13558: 1x .DUBLE. 720p NoSub -> Dubbed"
   ],
   "note": "gate check 9 flagged these 3 (filename proves version: .SS.=SoftSub, .DUBLE.=Dubbed); version detection misses .SS./.DUBLE. tokens — resolver improvement queued"
+ },
+ "twice_daily_2026-11-23_pm_dn_series": {
+  "live_base_head": "87385fd5739d9afd61d4b52126ffd285929560dc",
+  "start_num": 13678,
+  "end_num": 13737,
+  "new_titles_merged": [
+   "Orphan Flowers",
+   "The Secret Circle",
+   "Three Kingdoms",
+   "We Are Who We Are",
+   "Brain",
+   "Magnificent Century: Kösem",
+   "Record of Youth",
+   "Heart of the City",
+   "Çilek Kokusu",
+   "Blade Runner: Black Lotus",
+   "Bite Sisters",
+   "Gönül İşleri",
+   "Kamisama Kiss",
+   "Melancholia",
+   "Cute Programmer",
+   "Baki Hanma",
+   "Possessed",
+   "World Without End",
+   "The Forest",
+   "RWBY: Ice Queendom",
+   "Legacy: The True Story of the LA Lakers",
+   "Eli Roth Presents: My Possessed Pet",
+   "Seis Manos",
+   "Working: What We Do All Day",
+   "Hi Producer",
+   "Daylight",
+   "Fired on Mars",
+   "Here We Meet Again",
+   "Entrapped",
+   "Terim",
+   "If You Love",
+   "Chivalry of a Failed Knight",
+   "TSUKIMICHI -Moonlit Fantasy-",
+   "The Mutations",
+   "Davina McCall: Life at the Extreme",
+   "Joe Pickett",
+   "Nisekoi",
+   "Chad",
+   "Embrace in the Dark Night",
+   "My Secret Zone",
+   "ORESUKI Are you the only one who loves me?",
+   "Osamake: Romcom Where the Childhood Friend Won't Lose",
+   "Helter Skelter: An American Myth",
+   "Visionaries",
+   "Unnatural Fire",
+   "Hyori's Bed and Breakfast",
+   "It's Okay to Not Be Okay",
+   "Razia Sultan",
+   "Parenthood",
+   "Empires Of New York",
+   "Promise in the Summer",
+   "Legal High",
+   "Oops! I’m in Jail",
+   "Koupen-chan",
+   "Korea No.1",
+   "Silent Truth",
+   "Time Traveler's Disease",
+   "The Rose of Versailles",
+   "The Miracle We Met",
+   "Unforgotten"
+  ],
+  "new_links": 3091,
+  "new_trailers": 1,
+  "duplicate_urls_dropped": 9,
+  "completions": [
+   {
+    "dn_id": 22668,
+    "title": "Love Song for Illusion",
+    "record": "#10575 15",
+    "links_added": 11
+   },
+   {
+    "dn_id": 29527,
+    "title": "The Nice Guy",
+    "record": "#11047 16",
+    "links_added": 9
+   },
+   {
+    "dn_id": 16857,
+    "title": "Tensei shitara ken deshita",
+    "record": "#9224 5",
+    "links_added": 24
+   },
+   {
+    "dn_id": 16874,
+    "title": "The Devils Hour",
+    "record": "#9594 8",
+    "links_added": 5
+   },
+   {
+    "dn_id": 16869,
+    "title": "Cranberry Sorbet/Kizilcik Serbeti",
+    "record": "#9163 5",
+    "links_added": 141
+   }
+  ],
+  "completions_skipped_no_gap": [
+   {
+    "dn_id": 13560,
+    "title": "The Wheel of Time",
+    "record": "#9837 9"
+   },
+   {
+    "dn_id": 13579,
+    "title": "Hellbound",
+    "record": "#9587 8"
+   },
+   {
+    "dn_id": 13580,
+    "title": "Cowboy Bebop",
+    "record": "#9301 6"
+   },
+   {
+    "dn_id": 22701,
+    "title": "Fate/stay night",
+    "record": "#13278 rz"
+   },
+   {
+    "dn_id": 29532,
+    "title": "Golden Boy",
+    "record": "#13021 rz"
+   },
+   {
+    "dn_id": 31511,
+    "title": "Murder Before Evensong",
+    "record": "#10157 11"
+   },
+   {
+    "dn_id": 31512,
+    "title": "Tazza",
+    "record": "#13404 rz"
+   },
+   {
+    "dn_id": 31513,
+    "title": "Sakincali",
+    "record": "#9703 9"
+   },
+   {
+    "dn_id": 31514,
+    "title": "Nuremberg",
+    "record": "#13134 rz"
+   },
+   {
+    "dn_id": 33541,
+    "title": "Life Larry and the Pursuit of Unhappiness an Almost History of America",
+    "record": "#9914 10"
+   },
+   {
+    "dn_id": 16868,
+    "title": "The English Game",
+    "record": "#9303 6"
+   },
+   {
+    "dn_id": 27761,
+    "title": "Dope Thief",
+    "record": "#10651 15"
+   },
+   {
+    "dn_id": 31510,
+    "title": "The Crystal Cuckoo",
+    "record": "#9675 8"
+   },
+   {
+    "dn_id": 36037,
+    "title": "The Secret of Skinwalker Ranch",
+    "record": "#12991 rz"
+   },
+   {
+    "dn_id": 19858,
+    "title": "Rurouni Kenshin Meiji Kenkaku Romantan",
+    "record": "#10376 14"
+   },
+   {
+    "dn_id": 25279,
+    "title": "Worlds Greenest Homes",
+    "record": "#13421 rz"
+   },
+   {
+    "dn_id": 25261,
+    "title": "From Me to You: Kimi ni Todoke",
+    "record": "#13457 rz"
+   }
+  ],
+  "decisions": [
+   "per-season episode conversion for absolute DN numbering",
+   "version unknown -> NoSub",
+   "H3 title = tmdb_name",
+   "Kizilcik 240p file dropped (below 480p floor)"
+  ]
  }
 }
