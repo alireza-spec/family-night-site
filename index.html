@@ -6958,7 +6958,8 @@ async function fnDlTitleFallback(imdbId, tmdbKey, fbTitle, fbYear) {
     if (!rec || !dlRecHasLinks(rec)) return null;
     const _fbReqType = String(tmdbKey || '').indexOf('tv:') === 0 ? 'tv' : (String(tmdbKey || '').indexOf('movie:') === 0 ? 'movie' : '');
     if (_fbReqType && row.type && row.type !== _fbReqType) return null;
-    if (!fnDtiCoordOk({ imdb: rec.imdb, title: rec.title, year: ((rec.title || '').match(/(\d{4})\s*$/) || [])[1] || null }, { imdb: imdbId, title: fbTitle || row.t, year: fbYear || row.y })) return null;
+    /* FN-DL-DTI-TITLE v1: the row is the archive authority — key-proven by tmdbKey/imdb, or title-matched by the candidate filter — so coordinate against row.t/row.y, not the Persian fbTitle. */
+    if (!fnDtiCoordOk({ imdb: rec.imdb, title: rec.title, year: ((rec.title || '').match(/(\d{4})\s*$/) || [])[1] || null }, { imdb: imdbId, title: row.t, year: row.y })) return null;
     console.info('[fn-dl-fallback] title fallback hit: "' + row.t + '" (' + row.y + ') part ' + row.part + (row.old ? ' (old archive)' : '') + ' — ' + (rec.groups.softsub.length + rec.groups.dubbed.length + rec.groups.nosub.length + (rec.groups.audio || []).length) + ' links'); /* FN-AUDIO v1 */
     /* FN-DN-SRC v1: a DN row resolves through the title fallback too —
        its src is 'dn', not 'new', so the box shows the DN hint. */
@@ -8657,7 +8658,8 @@ async function loadDownloadBox(imdbId, token, fbTitle, fbYear, tmdbKey, posterUr
       if (hit && hit.part && hit.num) {
         const _dtiRec = await resolveDlRecordByPart('', hit.num, hit.part, 'new');
         const _dtiIsNew = typeof hit.part === 'number';
-        const _dtiCoordOk = fnDtiCoordOk(_dtiRec && _dtiRec.rec ? { imdb: _dtiRec.rec.imdb, title: _dtiRec.rec.title, year: ((_dtiRec.rec.title || '').match(/(\d{4})\s*$/) || [])[1] || null } : null, { imdb: imdbId || hit.imdb_id, title: fbTitle || hit.title, year: fbYear || hit.year });
+        /* FN-DL-DTI-TITLE v1 (2026-11-23): coordinate archive-vs-archive — fbTitle is the fa-IR Persian detail title and never equals the archive English title, so comparing it rejected every TMDB-only title (Joker 2, Raha, Napoleon). The stale-DTI guard still holds: hit.title vs the part-file record title (substring rule in fnDtiCoordOk), year vs the archive year. */
+        const _dtiCoordOk = fnDtiCoordOk(_dtiRec && _dtiRec.rec ? { imdb: _dtiRec.rec.imdb, title: _dtiRec.rec.title, year: ((_dtiRec.rec.title || '').match(/(\d{4})\s*$/) || [])[1] || null } : null, { imdb: imdbId || hit.imdb_id, title: hit.title, year: hit.year });
         if (_dtiRec && _dtiCoordOk && (_dtiIsNew || !resolved || resolved.src === 'old')) resolved = resolved ? { rec: mergeDlRecs(_dtiRec.rec, resolved.rec), src: 'both', hasDn: !!resolved.hasDn || hit.part === 'dn1' || hit.part === 'dn2' } : _dtiRec;
       }
     }
