@@ -2,33 +2,35 @@
  "code": "FH",
  "source": "FarsiHubz mirror https://monclerjakkejacket.com/ (farsihubby.com: empty splash, 0 titles)",
  "start_num": 12468,
- "end_num": 13104,
- "live_base_head": "a5350c4bf7dfde889d7b6132e22e745cd34c20b0",
+ "end_num": 13125,
+ "live_base_head": "7c948bcb0b44bbe5e69ee5317715d8b8dd2f039e",
  "generated": "2026-11-23",
  "counts": {
-  "total_titles": 129,
+  "total_titles": 150,
   "movies": 70,
-  "series": 59,
-  "total_links": 1075,
+  "series": 80,
+  "total_links": 1538,
   "by_year": {
-   "2024": 7,
+   "2024": 14,
    "2025": 28,
-   "2026": 79,
-   "2022": 3,
-   "2023": 6,
-   "2021": 2,
+   "2026": 83,
+   "2022": 5,
+   "2023": 11,
+   "2021": 3,
    "2018": 1,
-   "2019": 2,
-   "2015": 1
+   "2019": 3,
+   "2015": 1,
+   "2017": 1
   },
   "by_quality": {
-   "1080p": 184,
-   "720p": 886,
+   "1080p": 185,
+   "720p": 1346,
    "534p": 1,
    "536p": 1,
    "600p": 1,
    "480p": 1,
-   "576p": 1
+   "576p": 1,
+   "760p": 2
   }
  },
  "films": [
@@ -1976,6 +1978,506 @@
     "3": 15
    },
    "episodes_held": []
+  },
+  {
+   "title": "Concertino",
+   "tmdb": 255703,
+   "imdb": null,
+   "year": 2024,
+   "num": 13105,
+   "episodes_listed": 11,
+   "episodes_merged": 11,
+   "tmdb_seasons": {
+    "1": 12
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Alijenab",
+   "tmdb": 102917,
+   "imdb": null,
+   "year": 2017,
+   "num": 13106,
+   "episodes_listed": 14,
+   "episodes_merged": 12,
+   "tmdb_seasons": {
+    "1": 6
+   },
+   "episodes_held": [
+    {
+     "slug": "alijenab-serial-trailer",
+     "season": 1,
+     "episode": 1,
+     "url": "https://stream.farsicdn.co/serials/alijenab-show/Alijenab-E00.mp4",
+     "reason": "episode-0 file (teaser/special, not a TMDB episode): Alijenab-E00.mp4"
+    },
+    {
+     "slug": "alijenab-reality-show-part-2",
+     "season": 1,
+     "episode": 2,
+     "reason": "duplicate S1E2 (kept alijenab-reality-show-amoozesh)"
+    }
+   ]
+  },
+  {
+   "title": "Lalaine Who",
+   "tmdb": 45477,
+   "imdb": null,
+   "year": 2026,
+   "num": 13107,
+   "episodes_listed": 18,
+   "episodes_merged": 18,
+   "tmdb_seasons": {},
+   "episodes_held": []
+  },
+  {
+   "title": "The Beheading",
+   "tmdb": 270627,
+   "imdb": "tt33309406",
+   "year": 2024,
+   "num": 13108,
+   "episodes_listed": 16,
+   "episodes_merged": 15,
+   "tmdb_seasons": {
+    "1": 15
+   },
+   "episodes_held": [
+    {
+     "slug": "gardan-zani-trailer",
+     "season": 1,
+     "episode": 1,
+     "url": "https://stream.farsicdn.co/serials/gardan-zani/Gardan-E00.mp4",
+     "reason": "episode-0 file (teaser/special, not a TMDB episode): Gardan-E00.mp4"
+    }
+   ]
+  },
+  {
+   "title": "Loser",
+   "tmdb": 272075,
+   "imdb": "tt33042867",
+   "year": 2024,
+   "num": 13109,
+   "episodes_listed": 12,
+   "episodes_merged": 11,
+   "tmdb_seasons": {
+    "1": 11
+   },
+   "episodes_held": [
+    {
+     "slug": "bazandeh-trailer",
+     "season": 1,
+     "episode": 1,
+     "url": "https://stream.farsicdn.co/serials/bazande/Bazande-E00.mp4",
+     "reason": "episode-0 file (teaser/special, not a TMDB episode): Bazande-E00.mp4"
+    }
+   ]
+  },
+  {
+   "title": "Ahangi Night",
+   "tmdb": 136819,
+   "imdb": null,
+   "year": 2021,
+   "num": 13110,
+   "episodes_listed": 60,
+   "episodes_merged": 43,
+   "tmdb_seasons": {
+    "1": 30,
+    "2": 30,
+    "3": 30
+   },
+   "episodes_held": [
+    {
+     "slug": "shabe-ahangi-episode-1",
+     "season": 2,
+     "episode": 1,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "shabe-ahangi-ghesmate-2",
+     "season": 2,
+     "episode": 2,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "shabe-ahangi-episode-3",
+     "season": 2,
+     "episode": 3,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "shabe-ahangi-ghesmate-4",
+     "season": 2,
+     "episode": 4,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "shabe-ahangi-episode-5",
+     "season": 2,
+     "episode": 5,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "shabe-ahangi-series-6",
+     "season": 2,
+     "episode": 6,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "shabe-ahangi-ghesmate-7",
+     "season": 2,
+     "episode": 7,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "shabe-ahangi-episode-8",
+     "season": 2,
+     "episode": 8,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "shabe-ahangi-ghesmate-9",
+     "season": 2,
+     "episode": 9,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "shabe-ahangi-episode-10",
+     "season": 2,
+     "episode": 10,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "shabe-ahangi-episode-11",
+     "season": 2,
+     "episode": 11,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "shabe-ahangi-ghesmate-12",
+     "season": 2,
+     "episode": 12,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "shabe-ahangi-episode-13",
+     "season": 2,
+     "episode": 13,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "shabe-ahangi-ghesmate-14",
+     "season": 2,
+     "episode": 14,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "shabe-ahangi-episode-15",
+     "season": 2,
+     "episode": 15,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "shabe-ahangi-ghesmate-16",
+     "season": 2,
+     "episode": 16,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "shabe-ahangi-s3-fathers-day",
+     "season": 3,
+     "episode": 1,
+     "reason": "duplicate S3E1 (kept shabe-ahangi-s3-episode-1)"
+    }
+   ]
+  },
+  {
+   "title": "35 Milimetri",
+   "tmdb": 290678,
+   "imdb": "tt35571173",
+   "year": 2026,
+   "num": 13111,
+   "episodes_listed": 13,
+   "episodes_merged": 13,
+   "tmdb_seasons": {
+    "1": 1
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Dolphin Boy",
+   "tmdb": 249212,
+   "imdb": null,
+   "year": 2024,
+   "num": 13112,
+   "episodes_listed": 26,
+   "episodes_merged": 26,
+   "tmdb_seasons": {
+    "1": 26
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "At The End Of The Night",
+   "tmdb": 254869,
+   "imdb": "tt31739473",
+   "year": 2024,
+   "num": 13113,
+   "episodes_listed": 9,
+   "episodes_merged": 9,
+   "tmdb_seasons": {
+    "1": 9
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Mehmooni",
+   "tmdb": 196079,
+   "imdb": "tt19073236",
+   "year": 2022,
+   "num": 13114,
+   "episodes_listed": 88,
+   "episodes_merged": 84,
+   "tmdb_seasons": {
+    "1": 30,
+    "2": 30,
+    "3": 16
+   },
+   "episodes_held": [
+    {
+     "slug": "mehmani-part-1",
+     "season": 1,
+     "episode": 1,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "mehmooni-series-part-2",
+     "season": 1,
+     "episode": 2,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "mehmani-part-3",
+     "season": 1,
+     "episode": 3,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "mehmani-episode-4",
+     "season": 1,
+     "episode": 4,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    }
+   ]
+  },
+  {
+   "title": "The Asphalt Jungle",
+   "tmdb": 248303,
+   "imdb": null,
+   "year": 2024,
+   "num": 13115,
+   "episodes_listed": 15,
+   "episodes_merged": 14,
+   "tmdb_seasons": {
+    "1": 14
+   },
+   "episodes_held": [
+    {
+     "slug": "jangale-asfalt-teaser",
+     "season": 1,
+     "episode": 1,
+     "url": "https://stream.farsicdn.co/serials/jangale-asfalt/Jangal-E00.mp4",
+     "reason": "episode-0 file (teaser/special, not a TMDB episode): Jangal-E00.mp4"
+    }
+   ]
+  },
+  {
+   "title": "Viper of Tehran",
+   "tmdb": 246500,
+   "imdb": "tt31470925",
+   "year": 2024,
+   "num": 13116,
+   "episodes_listed": 15,
+   "episodes_merged": 14,
+   "tmdb_seasons": {
+    "1": 14
+   },
+   "episodes_held": [
+    {
+     "slug": "afiee-tehran-teaser",
+     "season": 1,
+     "episode": 1,
+     "url": "https://stream.farsicdn.co/serials/afie-tehran/Afee-Teaser.mp4",
+     "reason": "non-episode file (teaser/trailer/summary/movie/behind-the-scenes): Afee-Teaser.mp4"
+    }
+   ]
+  },
+  {
+   "title": "Noon Khe",
+   "tmdb": 101827,
+   "imdb": "tt12084390",
+   "year": 2019,
+   "num": 13117,
+   "episodes_listed": 45,
+   "episodes_merged": 45,
+   "tmdb_seasons": {
+    "1": 15,
+    "2": 14,
+    "3": 16,
+    "4": 21,
+    "5": 24
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Aghaye Khandeh",
+   "tmdb": 320211,
+   "imdb": null,
+   "year": 2026,
+   "num": 13118,
+   "episodes_listed": 4,
+   "episodes_merged": 4,
+   "tmdb_seasons": {
+    "1": 1
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Fereshteh's Sin",
+   "tmdb": 242110,
+   "imdb": "tt30527523",
+   "year": 2023,
+   "num": 13119,
+   "episodes_listed": 19,
+   "episodes_merged": 18,
+   "tmdb_seasons": {
+    "1": 18
+   },
+   "episodes_held": [
+    {
+     "slug": "gonahe-fereshte-teaser",
+     "season": 1,
+     "episode": 1,
+     "url": "https://stream.farsicdn.co/serials/gonahe-fereshte/Gonahe-Fereshte-E00.mp4",
+     "reason": "episode-0 file (teaser/special, not a TMDB episode): Gonahe-Fereshte-E00.mp4"
+    }
+   ]
+  },
+  {
+   "title": "2 Shot",
+   "tmdb": 246609,
+   "imdb": "tt30017696",
+   "year": 2023,
+   "num": 13120,
+   "episodes_listed": 40,
+   "episodes_merged": 40,
+   "tmdb_seasons": {
+    "1": 40
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Naato",
+   "tmdb": 225169,
+   "imdb": null,
+   "year": 2023,
+   "num": 13121,
+   "episodes_listed": 23,
+   "episodes_merged": 22,
+   "tmdb_seasons": {
+    "1": 13,
+    "2": 9
+   },
+   "episodes_held": [
+    {
+     "slug": "nato-s2-teaser",
+     "season": 2,
+     "episode": 1,
+     "url": "https://stream.farsicdn.co/serials/naato-S2/Nato-S2E00.mp4",
+     "reason": "episode-0 file (teaser/special, not a TMDB episode): Nato-S2E00.mp4"
+    }
+   ]
+  },
+  {
+   "title": "Chidemaneh",
+   "tmdb": 234161,
+   "imdb": "tt29030461",
+   "year": 2023,
+   "num": 13122,
+   "episodes_listed": 11,
+   "episodes_merged": 10,
+   "tmdb_seasons": {
+    "1": 11
+   },
+   "episodes_held": [
+    {
+     "slug": "chidemaneh-teaser",
+     "season": 1,
+     "episode": 1,
+     "url": "https://stream.farsicdn.co/serials/chidemane/Chidemaneh-Teaser.mp4",
+     "reason": "non-episode file (teaser/trailer/summary/movie/behind-the-scenes): Chidemaneh-Teaser.mp4"
+    }
+   ]
+  },
+  {
+   "title": "ZeD",
+   "tmdb": 1353,
+   "imdb": null,
+   "year": 2026,
+   "num": 13123,
+   "episodes_listed": 16,
+   "episodes_merged": 15,
+   "tmdb_seasons": {},
+   "episodes_held": [
+    {
+     "slug": "zed-series-part-1",
+     "season": 1,
+     "episode": 1,
+     "reason": "duplicate S1E1 (kept zed-serial-amoozesh)"
+    }
+   ]
+  },
+  {
+   "title": "FOFO: Passanger From Kamado",
+   "tmdb": 229964,
+   "imdb": null,
+   "year": 2023,
+   "num": 13124,
+   "episodes_listed": 15,
+   "episodes_merged": 15,
+   "tmdb_seasons": {
+    "1": 16
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "The Lion Skin",
+   "tmdb": 210798,
+   "imdb": "tt20205276",
+   "year": 2022,
+   "num": 13125,
+   "episodes_listed": 26,
+   "episodes_merged": 24,
+   "tmdb_seasons": {
+    "1": 8,
+    "2": 8,
+    "3": 8
+   },
+   "episodes_held": [
+    {
+     "slug": "pooste-shir-poshteh-sahneh-episode-1",
+     "season": 1,
+     "episode": 1,
+     "url": "https://stream.farsicdn.co/serials/pooste-shir/Pooste-Shir-Poshte-1.mp4",
+     "reason": "non-episode file (teaser/trailer/summary/movie/behind-the-scenes): Pooste-Shir-Poshte-1.mp4"
+    },
+    {
+     "slug": "pooste-shir-poshteh-sahneh-2",
+     "season": 1,
+     "episode": 26,
+     "url": "https://stream.farsicdn.co/serials/pooste-shir/Pooste-Shir-Poshte-2.mp4",
+     "reason": "non-episode file (teaser/trailer/summary/movie/behind-the-scenes): Pooste-Shir-Poshte-2.mp4"
+    }
+   ]
   }
  ],
  "held_not_merged": [
