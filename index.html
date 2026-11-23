@@ -18165,6 +18165,19 @@ sxSearchPage = async function (seq, append) {
   var toastTimer = null;
 
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  /* Thumbnail resilience (2026-11-23): static.football360.ir drops connections
+     transiently (probe: 6/26 requests 000, 0 of them 404; same URL 200 three
+     times in a row minutes later) -- a single failed load showed the browser
+     broken-image icon. Retry once after 1.2 s (cache-busted), then hide the
+     img so the card shows a clean black thumb, never a broken icon.
+     window-level: inline onerror handlers cannot see IIFE locals. */
+  window.tvEvImgErr = function (img) {
+    if (!img.dataset.retried) {
+      img.dataset.retried = '1';
+      var s = img.getAttribute('src');
+      setTimeout(function () { img.src = s + (s.indexOf('?') >= 0 ? '&' : '?') + 'tvEvR=1'; }, 1200);
+    } else { img.style.display = 'none'; }
+  };
   function dayOf(ms) { try { return new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Tehran', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(ms)); } catch (e) { var d = new Date(ms); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); } }
   function fmtTime(ms) { try { return fa(new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Tehran', hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date(ms))); } catch (e) { var d = new Date(ms); return fa(String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0')); } }
   function statusOf(ev, now) { return now < ev.start ? 'upcoming' : now < ev.end * 1000 ? 'live' : 'done'; }
@@ -18233,7 +18246,7 @@ sxSearchPage = async function (seq, append) {
       var dw = dayWord(ev);
       var bellOn = !!bells[ev.id];
       var logos = (ev.src === 'anten' && ev.hostLogo && ev.guestLogo)
-        ? '<div class="tv-ev-logos"><img src="' + esc(ev.hostLogo) + '" alt="" loading="lazy"><img src="' + esc(ev.guestLogo) + '" alt="" loading="lazy"></div>' : '';
+        ? '<div class="tv-ev-logos"><img src="' + esc(ev.hostLogo) + '" alt="" loading="lazy" onerror="tvEvImgErr(this)"><img src="' + esc(ev.guestLogo) + '" alt="" loading="lazy" onerror="tvEvImgErr(this)"></div>' : '';
       var foot;
       if (st === 'live') foot = '<span class="tv-ev-status"><i></i>زنده — در حال پخش</span>';
       else if (st === 'done') foot = '<span class="tv-ev-status">به پایان رسیده</span>';
@@ -18242,7 +18255,7 @@ sxSearchPage = async function (seq, append) {
         '<button type="button" class="tv-ev-bell' + (bellOn ? ' on' : '') + '" data-bell="' + esc(ev.id) + '" aria-pressed="' + (bellOn ? 'true' : 'false') + '" title="یادآوری"><svg viewBox="0 0 24 24" fill="' + (bellOn ? 'currentColor' : 'none') + '" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></button>';
       return '<article class="tv-ev-card' + (st === 'live' ? ' live' : '') + (st === 'done' ? ' done' : '') + (playingId === ev.id ? ' playing' : '') + '" data-id="' + esc(ev.id) + '">' +
         '<div class="tv-ev-thumb">' +
-        (ev.img ? '<img src="' + esc(ev.img) + '" alt="' + esc(ev.alt || ev.title) + '" loading="lazy">' : '') +
+        (ev.img ? '<img src="' + esc(ev.img) + '" alt="' + esc(ev.alt || ev.title) + '" loading="lazy" onerror="tvEvImgErr(this)">' : '') +
         logos +
         '<span class="tv-ev-livepill"><i></i>▸ زنده</span>' +
         (tab === 'all' && dw ? '<span class="tv-ev-daychip" style="display:block">' + esc(dw) + '</span>' : '') +
@@ -18277,7 +18290,7 @@ sxSearchPage = async function (seq, append) {
     fired[ev.id] = 1;
     var card = document.createElement('div');
     card.className = 'tv-ev-alert';
-    card.innerHTML = (ev.img ? '<img src="' + esc(ev.img) + '" alt="">' : '') +
+    card.innerHTML = (ev.img ? '<img src="' + esc(ev.img) + '" alt="" onerror="tvEvImgErr(this)">' : '') +
       '<div><span class="tag"><i></i>زنده شد</span><div class="t">' + esc(ev.title) + ' شروع شد</div></div>' +
       '<div class="btns"><button type="button" class="watch">تماشا</button><button type="button" class="close">بستن</button></div>';
     alertsEl.appendChild(card);
