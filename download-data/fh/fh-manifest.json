@@ -2,30 +2,33 @@
  "code": "FH",
  "source": "FarsiHubz mirror https://monclerjakkejacket.com/ (farsihubby.com: empty splash, 0 titles)",
  "start_num": 12468,
- "end_num": 13011,
- "live_base_head": "24b5840b6d13308372d90af29fee20770edddd9a",
- "generated": "2026-11-22",
+ "end_num": 13104,
+ "live_base_head": "a5350c4bf7dfde889d7b6132e22e745cd34c20b0",
+ "generated": "2026-11-23",
  "counts": {
-  "total_titles": 109,
+  "total_titles": 129,
   "movies": 70,
-  "series": 39,
-  "total_links": 662,
+  "series": 59,
+  "total_links": 1075,
   "by_year": {
-   "2024": 4,
-   "2025": 16,
-   "2026": 77,
+   "2024": 7,
+   "2025": 28,
+   "2026": 79,
    "2022": 3,
-   "2023": 5,
+   "2023": 6,
    "2021": 2,
    "2018": 1,
-   "2019": 1
+   "2019": 2,
+   "2015": 1
   },
   "by_quality": {
-   "1080p": 158,
-   "720p": 501,
+   "1080p": 184,
+   "720p": 886,
    "534p": 1,
    "536p": 1,
-   "600p": 1
+   "600p": 1,
+   "480p": 1,
+   "576p": 1
   }
  },
  "films": [
@@ -1668,6 +1671,311 @@
      "reason": "non-episode file (teaser/trailer/summary/movie/behind-the-scenes): Yaghi-Posht-E02.mp4"
     }
    ]
+  },
+  {
+   "title": "Ahl Iran",
+   "tmdb": 322159,
+   "imdb": null,
+   "year": 2026,
+   "num": 13085,
+   "episodes_listed": 12,
+   "episodes_merged": 12,
+   "tmdb_seasons": {
+    "1": 1
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Word by word",
+   "tmdb": 309114,
+   "imdb": "tt39227599",
+   "year": 2025,
+   "num": 13086,
+   "episodes_listed": 12,
+   "episodes_merged": 12,
+   "tmdb_seasons": {
+    "1": 12
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Full or Empty",
+   "tmdb": 260202,
+   "imdb": "tt33348183",
+   "year": 2024,
+   "num": 13087,
+   "episodes_listed": 22,
+   "episodes_merged": 22,
+   "tmdb_seasons": {
+    "1": 12,
+    "2": 10
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Stand-up AbuTalib",
+   "tmdb": 301077,
+   "imdb": null,
+   "year": 2025,
+   "num": 13088,
+   "episodes_listed": 13,
+   "episodes_merged": 13,
+   "tmdb_seasons": {
+    "1": 73
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "The Savage",
+   "tmdb": 286432,
+   "imdb": "tt32085440",
+   "year": 2025,
+   "num": 13089,
+   "episodes_listed": 22,
+   "episodes_merged": 20,
+   "tmdb_seasons": {
+    "1": 8,
+    "2": 12,
+    "3": 1
+   },
+   "episodes_held": [
+    {
+     "slug": "vahshi-trailer",
+     "season": 1,
+     "episode": 1,
+     "url": "https://stream.farsicdn.co/serials/vahshi/Vahshi-E00.mp4",
+     "reason": "episode-0 file (teaser/special, not a TMDB episode): Vahshi-E00.mp4"
+    },
+    {
+     "slug": "vahshi-s3-part-1",
+     "season": 2,
+     "episode": 1,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    }
+   ]
+  },
+  {
+   "title": "Farar Az Tars",
+   "tmdb": 313055,
+   "imdb": null,
+   "year": 2026,
+   "num": 13090,
+   "episodes_listed": 8,
+   "episodes_merged": 8,
+   "tmdb_seasons": {
+    "1": 2,
+    "2": 2,
+    "3": 2,
+    "4": 2
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Shish Maheh",
+   "tmdb": 309256,
+   "imdb": null,
+   "year": 2025,
+   "num": 13091,
+   "episodes_listed": 16,
+   "episodes_merged": 16,
+   "tmdb_seasons": {
+    "1": 17
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Jackal",
+   "tmdb": 297261,
+   "imdb": "tt37939547",
+   "year": 2025,
+   "num": 13092,
+   "episodes_listed": 23,
+   "episodes_merged": 23,
+   "tmdb_seasons": {
+    "1": 23
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Now (Aknoon)...",
+   "tmdb": 278119,
+   "imdb": null,
+   "year": 2024,
+   "num": 13093,
+   "episodes_listed": 65,
+   "episodes_merged": 65,
+   "tmdb_seasons": {
+    "1": 62
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Spotlight",
+   "tmdb": 90631,
+   "imdb": null,
+   "year": 2015,
+   "num": 13094,
+   "episodes_listed": 6,
+   "episodes_merged": 6,
+   "tmdb_seasons": {
+    "1": 227
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Pump",
+   "tmdb": 336451,
+   "imdb": null,
+   "year": 2025,
+   "num": 13095,
+   "episodes_listed": 19,
+   "episodes_merged": 19,
+   "tmdb_seasons": {
+    "1": 8,
+    "2": 10
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Carnival Tar",
+   "tmdb": 296765,
+   "imdb": null,
+   "year": 2025,
+   "num": 13096,
+   "episodes_listed": 21,
+   "episodes_merged": 20,
+   "tmdb_seasons": {
+    "1": 18
+   },
+   "episodes_held": [
+    {
+     "slug": "karnaval-tar-eftetahiye",
+     "season": 1,
+     "episode": 1,
+     "url": "https://stream.farsicdn.co/serials/karnivaltar/Carnavaltar-E00.mp4",
+     "reason": "episode-0 file (teaser/special, not a TMDB episode): Carnavaltar-E00.mp4"
+    }
+   ]
+  },
+  {
+   "title": "Bazmandeh",
+   "tmdb": 309037,
+   "imdb": null,
+   "year": 2025,
+   "num": 13097,
+   "episodes_listed": 3,
+   "episodes_merged": 3,
+   "tmdb_seasons": {
+    "1": 1
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Shekargah",
+   "tmdb": 295153,
+   "imdb": null,
+   "year": 2025,
+   "num": 13098,
+   "episodes_listed": 9,
+   "episodes_merged": 9,
+   "tmdb_seasons": {
+    "1": 1
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "A Delayed Death",
+   "tmdb": 291623,
+   "imdb": "tt36964956",
+   "year": 2025,
+   "num": 13099,
+   "episodes_listed": 20,
+   "episodes_merged": 20,
+   "tmdb_seasons": {
+    "1": 20
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Tasian",
+   "tmdb": 283563,
+   "imdb": "tt31998398",
+   "year": 2025,
+   "num": 13100,
+   "episodes_listed": 23,
+   "episodes_merged": 23,
+   "tmdb_seasons": {
+    "1": 24
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Ringo",
+   "tmdb": 86405,
+   "imdb": null,
+   "year": 2019,
+   "num": 13101,
+   "episodes_listed": 24,
+   "episodes_merged": 24,
+   "tmdb_seasons": {
+    "1": 1
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Joker 2",
+   "tmdb": 256225,
+   "imdb": null,
+   "year": 2024,
+   "num": 13102,
+   "episodes_listed": 42,
+   "episodes_merged": 41,
+   "tmdb_seasons": {
+    "1": 5,
+    "2": 6,
+    "3": 4,
+    "4": 6,
+    "5": 7,
+    "6": 7,
+    "7": 7
+   },
+   "episodes_held": [
+    {
+     "slug": "joker-2-s1-part-teaser",
+     "season": 1,
+     "episode": 1,
+     "url": "https://stream.farsicdn.co/serials/joker2/Joker2-S1E00.mp4",
+     "reason": "episode-0 file (teaser/special, not a TMDB episode): Joker2-S1E00.mp4"
+    }
+   ]
+  },
+  {
+   "title": "Leftist Aspirations",
+   "tmdb": 293348,
+   "imdb": "tt37611786",
+   "year": 2025,
+   "num": 13103,
+   "episodes_listed": 15,
+   "episodes_merged": 15,
+   "tmdb_seasons": {
+    "1": 17
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Sedato",
+   "tmdb": 228941,
+   "imdb": "tt27916162",
+   "year": 2023,
+   "num": 13104,
+   "episodes_listed": 42,
+   "episodes_merged": 42,
+   "tmdb_seasons": {
+    "1": 14,
+    "2": 15,
+    "3": 15
+   },
+   "episodes_held": []
   }
  ],
  "held_not_merged": [
@@ -2531,6 +2839,1868 @@
    "title": "Eshghe Abadi Serial",
    "tmdb": 291471,
    "reason": "309 episodes listed (S1 100 + S2 104 + S3 105); episode fetch deferred to batch 2 (volume)"
+  },
+  {
+   "slug": "eshghe-abadi-serial",
+   "title": "Eternal love",
+   "tmdb": 291471,
+   "reason": "no episode verified playable (309 listed, 309 held)",
+   "held": [
+    {
+     "slug": "eshghe-abadi-episode-1",
+     "season": 1,
+     "episode": 1,
+     "reason": "YouTube embed only (9ilsKzIx_dQ) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-2",
+     "season": 1,
+     "episode": 2,
+     "reason": "YouTube embed only (1dpJMoNTQ1E) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-3",
+     "season": 1,
+     "episode": 3,
+     "reason": "YouTube embed only (dCVcM7NTrhY) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-4",
+     "season": 1,
+     "episode": 4,
+     "reason": "YouTube embed only (rLb0UxhR1EY) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-5",
+     "season": 1,
+     "episode": 5,
+     "reason": "YouTube embed only (uu7CwC5_NO0) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-6",
+     "season": 1,
+     "episode": 6,
+     "reason": "YouTube embed only (KgKKIRC5Des) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-7",
+     "season": 1,
+     "episode": 7,
+     "reason": "YouTube embed only (n5fFffCCzMo) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-8",
+     "season": 1,
+     "episode": 8,
+     "reason": "YouTube embed only (i3DrS6mrlZk) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-9",
+     "season": 1,
+     "episode": 9,
+     "reason": "YouTube embed only (NsFpfzH11uE) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-10",
+     "season": 1,
+     "episode": 10,
+     "reason": "YouTube embed only (4v8OJ8x9NvY) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-11",
+     "season": 1,
+     "episode": 11,
+     "reason": "YouTube embed only (2FicHdn_zyk) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-12",
+     "season": 1,
+     "episode": 12,
+     "reason": "YouTube embed only (kOnoFdUNUTU) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-13",
+     "season": 1,
+     "episode": 13,
+     "reason": "YouTube embed only (T6AKnCaUxxQ) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-14",
+     "season": 1,
+     "episode": 14,
+     "reason": "YouTube embed only (Kyd_QxGfEgA) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-15",
+     "season": 1,
+     "episode": 15,
+     "reason": "YouTube embed only (C5oKHhhO0fI) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-16",
+     "season": 1,
+     "episode": 16,
+     "reason": "YouTube embed only (u6x5qwf1eNc) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-17",
+     "season": 1,
+     "episode": 17,
+     "reason": "YouTube embed only (-TXJqMRXj9A) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-18",
+     "season": 1,
+     "episode": 18,
+     "reason": "YouTube embed only (AM8Fj7Adv0s) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-19",
+     "season": 1,
+     "episode": 19,
+     "reason": "YouTube embed only (7XTppg07WdI) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-20",
+     "season": 1,
+     "episode": 20,
+     "reason": "YouTube embed only (piS63yVi-5o) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-21",
+     "season": 1,
+     "episode": 21,
+     "reason": "YouTube embed only (mfdQnKCSpuE) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-22",
+     "season": 1,
+     "episode": 22,
+     "reason": "YouTube embed only (ZrktRrizzOQ) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-23",
+     "season": 1,
+     "episode": 23,
+     "reason": "YouTube embed only (k-qZ-DX17H0) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-24",
+     "season": 1,
+     "episode": 24,
+     "reason": "YouTube embed only (PTYswAV2oy4) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-25",
+     "season": 1,
+     "episode": 25,
+     "reason": "YouTube embed only (FG20v2zZYKA) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-26",
+     "season": 1,
+     "episode": 26,
+     "reason": "YouTube embed only (Te4u5nPy1ko) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-27",
+     "season": 1,
+     "episode": 27,
+     "reason": "YouTube embed only (yiDQ2o1Pf8c) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-28",
+     "season": 1,
+     "episode": 28,
+     "reason": "YouTube embed only (-oTRG5Dpr28) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-29",
+     "season": 1,
+     "episode": 29,
+     "reason": "YouTube embed only (uq3Q1Rm_3TY) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-30",
+     "season": 1,
+     "episode": 30,
+     "reason": "YouTube embed only (oEVNcbwguKk) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-30-2",
+     "season": 1,
+     "episode": 31,
+     "reason": "YouTube embed only (FnDRu4ws1eI) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-32",
+     "season": 1,
+     "episode": 32,
+     "reason": "YouTube embed only (Xc6poFbR5ug) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-33",
+     "season": 1,
+     "episode": 33,
+     "reason": "YouTube embed only (0WjIYF8Wft8) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-34",
+     "season": 1,
+     "episode": 34,
+     "reason": "YouTube embed only (eTSpxt-M8Ws) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-35",
+     "season": 1,
+     "episode": 35,
+     "reason": "YouTube embed only (bIDKVgz-2GU) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-36",
+     "season": 1,
+     "episode": 36,
+     "reason": "YouTube embed only (n8zis6jeaig) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-37",
+     "season": 1,
+     "episode": 37,
+     "reason": "YouTube embed only (o0-unph-wQY) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-38",
+     "season": 1,
+     "episode": 38,
+     "reason": "YouTube embed only (I4zRA4lzyhE) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-39",
+     "season": 1,
+     "episode": 39,
+     "reason": "YouTube embed only (9AbapSlymxQ) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-40",
+     "season": 1,
+     "episode": 40,
+     "reason": "YouTube embed only (mhJHNWHCs10) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-41",
+     "season": 1,
+     "episode": 41,
+     "reason": "YouTube embed only (IgK3KgGEdTg) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-42",
+     "season": 1,
+     "episode": 42,
+     "reason": "YouTube embed only (hK0lq2DkKZI) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-43",
+     "season": 1,
+     "episode": 43,
+     "reason": "YouTube embed only (HWulWO7FPtw) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-44",
+     "season": 1,
+     "episode": 44,
+     "reason": "YouTube embed only (KwMQikGCgN0) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-45",
+     "season": 1,
+     "episode": 45,
+     "reason": "YouTube embed only (QwGdolypTFc) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-46",
+     "season": 1,
+     "episode": 46,
+     "reason": "YouTube embed only (lvhoTzu_Po0) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-47",
+     "season": 1,
+     "episode": 47,
+     "reason": "YouTube embed only (fOWksgTJxGo) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-48",
+     "season": 1,
+     "episode": 48,
+     "reason": "YouTube embed only (RrkVBYCSG7k) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-49",
+     "season": 1,
+     "episode": 49,
+     "reason": "YouTube embed only (eLoXABu0dOo) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-50",
+     "season": 1,
+     "episode": 50,
+     "reason": "YouTube embed only (mKmPk7KgV2k) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-51",
+     "season": 1,
+     "episode": 51,
+     "reason": "YouTube embed only (XFYGOKN_1oA) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-52",
+     "season": 1,
+     "episode": 52,
+     "reason": "YouTube embed only (XOJM2XatG6c) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-53",
+     "season": 1,
+     "episode": 53,
+     "reason": "YouTube embed only (Mcen0nqbQJo) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-54",
+     "season": 1,
+     "episode": 54,
+     "reason": "YouTube embed only (sTCkCuWFCtQ) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-55",
+     "season": 1,
+     "episode": 55,
+     "reason": "YouTube embed only (-tzwgJGkfac) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-56",
+     "season": 1,
+     "episode": 56,
+     "reason": "YouTube embed only (6PFtZVsIK7Y) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-57",
+     "season": 1,
+     "episode": 57,
+     "reason": "YouTube embed only (mS55_xaHmA0) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-58",
+     "season": 1,
+     "episode": 58,
+     "reason": "YouTube embed only (XWUXzX1zVpo) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-59",
+     "season": 1,
+     "episode": 59,
+     "reason": "YouTube embed only (H-W6h2qBj_4) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-60",
+     "season": 1,
+     "episode": 60,
+     "reason": "YouTube embed only (9VXwr1yiR9I) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-61",
+     "season": 1,
+     "episode": 61,
+     "reason": "YouTube embed only (P7BtcT2C8R8) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-62",
+     "season": 1,
+     "episode": 62,
+     "reason": "YouTube embed only (7TVd7ZFJ_bI) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-63",
+     "season": 1,
+     "episode": 63,
+     "reason": "YouTube embed only (UOypgjruSuA) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-64",
+     "season": 1,
+     "episode": 64,
+     "reason": "YouTube embed only (R8B49_citrY) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-65",
+     "season": 1,
+     "episode": 65,
+     "reason": "YouTube embed only (f77K1JX0WLI) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-66",
+     "season": 1,
+     "episode": 66,
+     "reason": "YouTube embed only (piZT_Ko357I) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-67",
+     "season": 1,
+     "episode": 67,
+     "reason": "YouTube embed only (1mzmE1jgDxY) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-68",
+     "season": 1,
+     "episode": 68,
+     "reason": "YouTube embed only (fkzE87e4qak) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-69",
+     "season": 1,
+     "episode": 69,
+     "reason": "YouTube embed only (rE6RcrtcbUA) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-70",
+     "season": 1,
+     "episode": 70,
+     "reason": "YouTube embed only (Wx9szYmlp9Q) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-71",
+     "season": 1,
+     "episode": 71,
+     "reason": "YouTube embed only (CyZ7Vln9Gas) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-72",
+     "season": 1,
+     "episode": 72,
+     "reason": "YouTube embed only (OkUpYEChekQ) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-73",
+     "season": 1,
+     "episode": 73,
+     "reason": "YouTube embed only (N3kQwUInLwg) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-74",
+     "season": 1,
+     "episode": 74,
+     "reason": "YouTube embed only (snzRf1iXZbc) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-75",
+     "season": 1,
+     "episode": 75,
+     "reason": "YouTube embed only (jw-BQ9U9Btw) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-76",
+     "season": 1,
+     "episode": 76,
+     "reason": "YouTube embed only (U4RUsu4O9NQ) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-77",
+     "season": 1,
+     "episode": 77,
+     "reason": "YouTube embed only (FgEtJ_aJw0M) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-78",
+     "season": 1,
+     "episode": 78,
+     "reason": "YouTube embed only (5Pl6uNBet2I) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-79",
+     "season": 1,
+     "episode": 79,
+     "reason": "YouTube embed only (TuICZApT3Zo) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-80",
+     "season": 1,
+     "episode": 80,
+     "reason": "YouTube embed only (yCy6-UG-API) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-81",
+     "season": 1,
+     "episode": 81,
+     "reason": "YouTube embed only (dKZiV4wH9F8) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-82",
+     "season": 1,
+     "episode": 82,
+     "reason": "YouTube embed only (zhexGNzkw7w) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-83",
+     "season": 1,
+     "episode": 83,
+     "reason": "YouTube embed only (yK-NXrcRuL8) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-84",
+     "season": 1,
+     "episode": 84,
+     "reason": "YouTube embed only (N1kQSKYPJNg) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-85",
+     "season": 1,
+     "episode": 85,
+     "reason": "YouTube embed only (geOpSY9E_fE) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-86",
+     "season": 1,
+     "episode": 86,
+     "reason": "YouTube embed only (PANWn67BzmY) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-87",
+     "season": 1,
+     "episode": 87,
+     "reason": "YouTube embed only (k4E33dVUfC4) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-88",
+     "season": 1,
+     "episode": 88,
+     "reason": "YouTube embed only (9J5cYOEMbL0) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-89",
+     "season": 1,
+     "episode": 89,
+     "reason": "YouTube embed only (_7ykPKe2NZg) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-90",
+     "season": 1,
+     "episode": 90,
+     "reason": "YouTube embed only (mtIWnji-vjY) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-91",
+     "season": 1,
+     "episode": 91,
+     "reason": "YouTube embed only (PqM9Pe5DKfQ) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-92",
+     "season": 1,
+     "episode": 92,
+     "reason": "YouTube embed only (cZje4LTh4Z8) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-93",
+     "season": 1,
+     "episode": 93,
+     "reason": "YouTube embed only (X6vucgLN2zg) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-94",
+     "season": 1,
+     "episode": 94,
+     "reason": "YouTube embed only (xBaCbqUckrs) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-95",
+     "season": 1,
+     "episode": 95,
+     "reason": "YouTube embed only (9ofkQmH_jwM) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-96",
+     "season": 1,
+     "episode": 96,
+     "reason": "YouTube embed only (vT40FyvEEJ8) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-97",
+     "season": 1,
+     "episode": 97,
+     "reason": "YouTube embed only (5eakwahmGn4) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-98",
+     "season": 1,
+     "episode": 98,
+     "reason": "YouTube embed only (Lq_EXF1ypz0) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-99",
+     "season": 1,
+     "episode": 99,
+     "reason": "YouTube embed only (mSc7ykowo5I) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-episode-100",
+     "season": 1,
+     "episode": 100,
+     "reason": "YouTube embed only (l6OA5My95nI) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-1",
+     "season": 2,
+     "episode": 1,
+     "reason": "YouTube embed only (guV0ZaV01v4) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-2",
+     "season": 2,
+     "episode": 2,
+     "reason": "YouTube embed only (IHukHdOqaTQ) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-3",
+     "season": 2,
+     "episode": 3,
+     "reason": "YouTube embed only (goABBjB8PGs) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-4",
+     "season": 2,
+     "episode": 4,
+     "reason": "YouTube embed only (cmVI8VNvOd4) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-5",
+     "season": 2,
+     "episode": 5,
+     "reason": "YouTube embed only (xzGn69vupV8) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-6",
+     "season": 2,
+     "episode": 6,
+     "reason": "YouTube embed only (SI-FU8J7EUU) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-7",
+     "season": 2,
+     "episode": 7,
+     "reason": "YouTube embed only (KdRhlK_-5Po) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-8",
+     "season": 2,
+     "episode": 8,
+     "reason": "YouTube embed only (fUIbBaCzI9M) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-9",
+     "season": 2,
+     "episode": 9,
+     "reason": "YouTube embed only (PCmQ_Vgo-z8) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-10",
+     "season": 2,
+     "episode": 10,
+     "reason": "YouTube embed only (0PyhHBxUAcE) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-11",
+     "season": 2,
+     "episode": 11,
+     "reason": "YouTube embed only (UPcoh6hVSUA) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-12",
+     "season": 2,
+     "episode": 12,
+     "reason": "YouTube embed only (3FP0sjnhFKQ) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-13",
+     "season": 2,
+     "episode": 13,
+     "reason": "YouTube embed only (UPNyFLa6Qg8) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-14",
+     "season": 2,
+     "episode": 14,
+     "reason": "YouTube embed only (x0_kJiitudM) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-15",
+     "season": 2,
+     "episode": 15,
+     "reason": "YouTube embed only (HjksFSTMCa8) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-16",
+     "season": 2,
+     "episode": 16,
+     "reason": "YouTube embed only (f6ctPziHkDU) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-17",
+     "season": 2,
+     "episode": 17,
+     "reason": "YouTube embed only (qrU2EBPB11w) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-18",
+     "season": 2,
+     "episode": 18,
+     "reason": "YouTube embed only (iYqKnawdZus) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-19",
+     "season": 2,
+     "episode": 19,
+     "reason": "YouTube embed only (CIpdUsT9U0s) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-20",
+     "season": 2,
+     "episode": 20,
+     "reason": "YouTube embed only (P_2HE3dRxWw) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-21",
+     "season": 2,
+     "episode": 21,
+     "reason": "YouTube embed only (Ohx3Dpz4Qdc) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-22",
+     "season": 2,
+     "episode": 22,
+     "reason": "YouTube embed only (tVLOGjzbpK8) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-23",
+     "season": 2,
+     "episode": 23,
+     "reason": "YouTube embed only (OUOoLCOXrxg) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "__trashed",
+     "season": 2,
+     "episode": 24,
+     "reason": "YouTube embed only (XYV9IQ5mCFs) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-25",
+     "season": 2,
+     "episode": 25,
+     "reason": "YouTube embed only (8Ix8SL3Ls_A) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-26",
+     "season": 2,
+     "episode": 26,
+     "reason": "YouTube embed only (NOeqBE5Nquk) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-27",
+     "season": 2,
+     "episode": 27,
+     "reason": "YouTube embed only (OGY79rfCRzs) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-28",
+     "season": 2,
+     "episode": 28,
+     "reason": "YouTube embed only (MmOAJmYrW44) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-29",
+     "season": 2,
+     "episode": 29,
+     "reason": "YouTube embed only (e1GrUuqJLYM) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-30",
+     "season": 2,
+     "episode": 30,
+     "reason": "YouTube embed only (bt8qMqRsFQA) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-31",
+     "season": 2,
+     "episode": 31,
+     "reason": "YouTube embed only (mpOy4K9wXsw) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-32",
+     "season": 2,
+     "episode": 32,
+     "reason": "YouTube embed only (SkUrYlnXXZ0) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-33",
+     "season": 2,
+     "episode": 33,
+     "reason": "YouTube embed only (D06PdwxkXxs) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-34",
+     "season": 2,
+     "episode": 34,
+     "reason": "YouTube embed only (TKno-2elLGk) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-35",
+     "season": 2,
+     "episode": 35,
+     "reason": "YouTube embed only (coXlDFeuzic) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-36",
+     "season": 2,
+     "episode": 36,
+     "reason": "YouTube embed only (B06uJiDrFIw) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-37",
+     "season": 2,
+     "episode": 37,
+     "reason": "YouTube embed only (W0ZSGuHE-2w) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-38",
+     "season": 2,
+     "episode": 38,
+     "reason": "YouTube embed only (WtvcQ690tTk) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-39",
+     "season": 2,
+     "episode": 39,
+     "reason": "YouTube embed only (bbkxtSMYnIc) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-40",
+     "season": 2,
+     "episode": 40,
+     "reason": "YouTube embed only (Kb4gniRWCZ0) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-41",
+     "season": 2,
+     "episode": 41,
+     "reason": "YouTube embed only (8mz67w4jtr8) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-42",
+     "season": 2,
+     "episode": 42,
+     "reason": "YouTube embed only (4neoE77ElHY) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-43",
+     "season": 2,
+     "episode": 43,
+     "reason": "YouTube embed only (tAN_pZhk-6A) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-44",
+     "season": 2,
+     "episode": 44,
+     "reason": "YouTube embed only (aZoFZDO2_W8) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-45",
+     "season": 2,
+     "episode": 45,
+     "reason": "YouTube embed only (mt_9aVayS5k) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-46",
+     "season": 2,
+     "episode": 46,
+     "reason": "YouTube embed only (8EfI-KBZ-6s) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-47",
+     "season": 2,
+     "episode": 47,
+     "reason": "YouTube embed only (AVzmEl55894) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-48",
+     "season": 2,
+     "episode": 48,
+     "reason": "YouTube embed only (ekHGRhosilE) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-49",
+     "season": 2,
+     "episode": 49,
+     "reason": "YouTube embed only (S5_T5GsypKM) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-51",
+     "season": 2,
+     "episode": 51,
+     "reason": "YouTube embed only (oPVJ-i3YVdk) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-52",
+     "season": 2,
+     "episode": 52,
+     "reason": "YouTube embed only (URxxu6x50Nk) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-53",
+     "season": 2,
+     "episode": 53,
+     "reason": "YouTube embed only (iIQWk_TfVcg) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-54",
+     "season": 2,
+     "episode": 54,
+     "reason": "YouTube embed only (e58GSXGqD5k) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-55",
+     "season": 2,
+     "episode": 55,
+     "reason": "YouTube embed only (zVfmAdPOp7U) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-56",
+     "season": 2,
+     "episode": 56,
+     "reason": "YouTube embed only (dUuJs5Hv4e4) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-57",
+     "season": 2,
+     "episode": 57,
+     "reason": "YouTube embed only (dmiJ2giICkU) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-58",
+     "season": 2,
+     "episode": 58,
+     "reason": "YouTube embed only (OuGgsigUbVk) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-59",
+     "season": 2,
+     "episode": 59,
+     "reason": "YouTube embed only (OMucSXobCM4) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-60",
+     "season": 2,
+     "episode": 60,
+     "reason": "YouTube embed only (MmJsYMYwe9w) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-61",
+     "season": 2,
+     "episode": 61,
+     "reason": "YouTube embed only (fKFLb2FNBrc) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-62",
+     "season": 2,
+     "episode": 62,
+     "reason": "YouTube embed only (VcSiSfUQ7Mo) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-63",
+     "season": 2,
+     "episode": 63,
+     "reason": "YouTube embed only (uNz0-vgn660) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-64",
+     "season": 2,
+     "episode": 64,
+     "reason": "YouTube embed only (2swnQ-CoEAo) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-65",
+     "season": 2,
+     "episode": 65,
+     "reason": "YouTube embed only (FV1X6CfVHzs) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-66",
+     "season": 2,
+     "episode": 66,
+     "reason": "YouTube embed only (aVHF8p1MTxU) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-67",
+     "season": 2,
+     "episode": 67,
+     "reason": "YouTube embed only (NcnJhfDm4EI) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-68",
+     "season": 2,
+     "episode": 68,
+     "reason": "YouTube embed only (mzNHy5Z5cMc) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-69",
+     "season": 2,
+     "episode": 69,
+     "reason": "YouTube embed only (RTkbAKMo0Xk) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-70",
+     "season": 2,
+     "episode": 70,
+     "reason": "YouTube embed only (GHzAoMG-oNg) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-71",
+     "season": 2,
+     "episode": 71,
+     "reason": "YouTube embed only (CxPXJYgDuL4) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-72",
+     "season": 2,
+     "episode": 72,
+     "reason": "YouTube embed only (OKVshcrPYmM) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-73",
+     "season": 2,
+     "episode": 73,
+     "reason": "YouTube embed only (s6a5TaaXuVM) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-74",
+     "season": 2,
+     "episode": 74,
+     "reason": "YouTube embed only (vlqp0rV3vrk) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-75",
+     "season": 2,
+     "episode": 75,
+     "reason": "YouTube embed only (WGYdN6DZBfI) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-76",
+     "season": 2,
+     "episode": 76,
+     "reason": "YouTube embed only (eHqH7pohmLU) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-77",
+     "season": 2,
+     "episode": 77,
+     "reason": "YouTube embed only (iXhNIy3vBiY) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-78",
+     "season": 2,
+     "episode": 78,
+     "reason": "YouTube embed only (Lrm_uT9TylU) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-79",
+     "season": 2,
+     "episode": 79,
+     "reason": "YouTube embed only (h1e7TwKVb1A) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-80",
+     "season": 2,
+     "episode": 80,
+     "reason": "YouTube embed only (QNen2VPo3L8) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-81",
+     "season": 2,
+     "episode": 81,
+     "reason": "YouTube embed only (ltEoU_4K_rg) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-82",
+     "season": 2,
+     "episode": 82,
+     "reason": "YouTube embed only (0K7nIsZiqes) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-83",
+     "season": 2,
+     "episode": 83,
+     "reason": "YouTube embed only (vLAWj2TDqoU) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-84",
+     "season": 2,
+     "episode": 84,
+     "reason": "YouTube embed only (5EUU8jQQGUE) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-85",
+     "season": 2,
+     "episode": 85,
+     "reason": "YouTube embed only (I6LAG382Pvc) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-86",
+     "season": 2,
+     "episode": 86,
+     "reason": "YouTube embed only (BZVvLdnMUTY) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-87",
+     "season": 2,
+     "episode": 87,
+     "reason": "YouTube embed only (7AN8HBFOWho) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-88",
+     "season": 2,
+     "episode": 88,
+     "reason": "YouTube embed only (Ilt7YIwzNlo) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-89",
+     "season": 2,
+     "episode": 89,
+     "reason": "YouTube embed only (rDJ3erqztL4) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-90",
+     "season": 2,
+     "episode": 90,
+     "reason": "YouTube embed only (nJUHdR6_r4w) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-91",
+     "season": 2,
+     "episode": 91,
+     "reason": "YouTube embed only (CwbHlVwhbjA) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-92",
+     "season": 2,
+     "episode": 92,
+     "reason": "YouTube embed only (fM-FFDWAM58) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-93",
+     "season": 2,
+     "episode": 93,
+     "reason": "YouTube embed only (h9UYI9eixqg) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-94",
+     "season": 2,
+     "episode": 94,
+     "reason": "YouTube embed only (YtfXRT1Hj8A) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-95",
+     "season": 2,
+     "episode": 95,
+     "reason": "YouTube embed only (FQvALdgqYPk) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-96",
+     "season": 2,
+     "episode": 96,
+     "reason": "YouTube embed only (XnpTtjbACKs) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-97",
+     "season": 2,
+     "episode": 97,
+     "reason": "YouTube embed only (JdUeRrzRI8Y) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-98",
+     "season": 2,
+     "episode": 98,
+     "reason": "YouTube embed only (YMl9esWTr1c) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-99",
+     "season": 2,
+     "episode": 99,
+     "reason": "YouTube embed only (noQWXzRqTzI) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-100",
+     "season": 2,
+     "episode": 100,
+     "reason": "YouTube embed only (CJlbTHhziw8) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-101",
+     "season": 2,
+     "episode": 101,
+     "reason": "YouTube embed only (7suU8sBjhM0) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-102",
+     "season": 2,
+     "episode": 102,
+     "reason": "YouTube embed only (kEOhytZutVM) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-103",
+     "season": 2,
+     "episode": 103,
+     "reason": "YouTube embed only (nj6ISEEd0Q0) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-104",
+     "season": 2,
+     "episode": 104,
+     "reason": "YouTube embed only (tKirwJiNGLQ) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s2-ghesmate-105",
+     "season": 2,
+     "episode": 105,
+     "reason": "YouTube embed only (lPab3K63Vo8) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-1",
+     "season": 3,
+     "episode": 1,
+     "reason": "YouTube embed only (_TeH9Be9RJs) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-2",
+     "season": 3,
+     "episode": 2,
+     "reason": "YouTube embed only (r1GBZz0Om9Y) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-3",
+     "season": 3,
+     "episode": 3,
+     "reason": "YouTube embed only (5lZiyxbxU38) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-4",
+     "season": 3,
+     "episode": 4,
+     "reason": "YouTube embed only (o9iW2zjCgS4) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-5",
+     "season": 3,
+     "episode": 5,
+     "reason": "YouTube embed only (iDAf68i_EQ4) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-6",
+     "season": 3,
+     "episode": 6,
+     "reason": "YouTube embed only (Nute4IK8FyY) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-7",
+     "season": 3,
+     "episode": 7,
+     "reason": "YouTube embed only (QhgCnbAwVoE) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-8",
+     "season": 3,
+     "episode": 8,
+     "reason": "YouTube embed only (L5i2hVpuNw0) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-9",
+     "season": 3,
+     "episode": 9,
+     "reason": "YouTube embed only (RJDa0lwe7_o) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-10",
+     "season": 3,
+     "episode": 10,
+     "reason": "YouTube embed only (UzXeJwWzTJc) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-11",
+     "season": 3,
+     "episode": 11,
+     "reason": "YouTube embed only (zskwedlArpc) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-12",
+     "season": 3,
+     "episode": 12,
+     "reason": "YouTube embed only (pSrsfdUKd5E) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-13",
+     "season": 3,
+     "episode": 13,
+     "reason": "YouTube embed only (8_0y35S-rEs) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-14",
+     "season": 3,
+     "episode": 14,
+     "reason": "YouTube embed only (m_tNcdTOIN0) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-15",
+     "season": 3,
+     "episode": 15,
+     "reason": "YouTube embed only (m_tNcdTOIN0) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-16",
+     "season": 3,
+     "episode": 16,
+     "reason": "YouTube embed only (3JaXnvTllfo) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-17",
+     "season": 3,
+     "episode": 17,
+     "reason": "YouTube embed only (v_gYTg4RsmY) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-18",
+     "season": 3,
+     "episode": 18,
+     "reason": "YouTube embed only (N9kD7lA_Ook) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-19",
+     "season": 3,
+     "episode": 19,
+     "reason": "YouTube embed only (knQBbf4hQmM) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-20",
+     "season": 3,
+     "episode": 20,
+     "reason": "YouTube embed only (wP6B73hz8Qo) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-21",
+     "season": 3,
+     "episode": 21,
+     "reason": "YouTube embed only (Xvz2fsRhVgU) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-22",
+     "season": 3,
+     "episode": 22,
+     "reason": "YouTube embed only (mMNPKEviE4Y) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-23",
+     "season": 3,
+     "episode": 23,
+     "reason": "YouTube embed only (Y5dtNjx1e-I) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-24",
+     "season": 3,
+     "episode": 24,
+     "reason": "YouTube embed only (y4BJlAxrq60) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-25",
+     "season": 3,
+     "episode": 25,
+     "reason": "YouTube embed only (KdSPelixaZM) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-26",
+     "season": 3,
+     "episode": 26,
+     "reason": "YouTube embed only (8bUs2aUpnMs) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-27",
+     "season": 3,
+     "episode": 27,
+     "reason": "YouTube embed only (DVSbV4rxJis) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-28",
+     "season": 3,
+     "episode": 28,
+     "reason": "YouTube embed only (Uxp2iwRmASY) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-29",
+     "season": 3,
+     "episode": 29,
+     "reason": "YouTube embed only (iQsSIfcYV34) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-30",
+     "season": 3,
+     "episode": 30,
+     "reason": "YouTube embed only (eG9SZG_2nDI) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-31",
+     "season": 3,
+     "episode": 31,
+     "reason": "YouTube embed only (_zOAkh-G1Bk) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-32",
+     "season": 3,
+     "episode": 32,
+     "reason": "YouTube embed only (4cGcg9zlOQg) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-33",
+     "season": 3,
+     "episode": 33,
+     "reason": "YouTube embed only (Y0QHSbt7as8) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-34",
+     "season": 3,
+     "episode": 34,
+     "reason": "YouTube embed only (Kcx7oLqHvTg) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-35",
+     "season": 3,
+     "episode": 35,
+     "reason": "YouTube embed only (B207EMMkRLU) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-36",
+     "season": 3,
+     "episode": 36,
+     "reason": "YouTube embed only (QuSVPK8fsyw) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-37",
+     "season": 3,
+     "episode": 37,
+     "reason": "YouTube embed only (bOoFkGlKa9I) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-38",
+     "season": 3,
+     "episode": 38,
+     "reason": "YouTube embed only (yysetnEw3Jk) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-39",
+     "season": 3,
+     "episode": 39,
+     "reason": "YouTube embed only (B0nCNbYSE9s) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-40",
+     "season": 3,
+     "episode": 40,
+     "reason": "YouTube embed only (7Xti80rwmGE) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-41",
+     "season": 3,
+     "episode": 41,
+     "reason": "YouTube embed only (wc62tEduNtk) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-42",
+     "season": 3,
+     "episode": 42,
+     "reason": "YouTube embed only (W8JfMxsJju4) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-43",
+     "season": 3,
+     "episode": 43,
+     "reason": "YouTube embed only (FvAmJhweAOk) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-44",
+     "season": 3,
+     "episode": 44,
+     "reason": "YouTube embed only (UMg_e3CSLSc) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-45",
+     "season": 3,
+     "episode": 45,
+     "reason": "YouTube embed only (4JEi08SLbpA) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-46",
+     "season": 3,
+     "episode": 46,
+     "reason": "YouTube embed only (sZlxN4MdYVg) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-ghesmate-47",
+     "season": 3,
+     "episode": 47,
+     "reason": "YouTube embed only (1xhOgK7C77M) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-48",
+     "season": 3,
+     "episode": 48,
+     "reason": "YouTube embed only (S3HriK9UZE8) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-49",
+     "season": 3,
+     "episode": 49,
+     "reason": "YouTube embed only (SaMZcuugkW0) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-50",
+     "season": 3,
+     "episode": 50,
+     "reason": "YouTube embed only (NeOdCnaLTbk) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-51",
+     "season": 3,
+     "episode": 51,
+     "reason": "YouTube embed only (t6UaxhflIXo) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-52",
+     "season": 3,
+     "episode": 52,
+     "reason": "YouTube embed only (xQIoZzmZyaI) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-53",
+     "season": 3,
+     "episode": 53,
+     "reason": "YouTube embed only (CTnQkw-Nztg) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-54",
+     "season": 3,
+     "episode": 54,
+     "reason": "YouTube embed only (XIgsm0S4xrE) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-55",
+     "season": 3,
+     "episode": 55,
+     "reason": "YouTube embed only (V3h123eSax0) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-56",
+     "season": 3,
+     "episode": 56,
+     "reason": "YouTube embed only (l_XwHcgUeVc) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-57",
+     "season": 3,
+     "episode": 57,
+     "reason": "YouTube embed only (iqLQ9ncbZH0) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-58",
+     "season": 3,
+     "episode": 58,
+     "reason": "YouTube embed only (HgVX0YKBNOs) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-59",
+     "season": 3,
+     "episode": 59,
+     "reason": "YouTube embed only (-rCqjeRS4sA) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-60",
+     "season": 3,
+     "episode": 60,
+     "reason": "YouTube embed only (dNUtxxXu_oc) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-61",
+     "season": 3,
+     "episode": 61,
+     "reason": "YouTube embed only (i7bTRHdpyJg) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-62",
+     "season": 3,
+     "episode": 62,
+     "reason": "YouTube embed only (9xEgQaAkdME) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-63",
+     "season": 3,
+     "episode": 63,
+     "reason": "YouTube embed only (uwRAZlPGyB8) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-64",
+     "season": 3,
+     "episode": 64,
+     "reason": "YouTube embed only (wpSzbsS1vCU) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-65",
+     "season": 3,
+     "episode": 65,
+     "reason": "YouTube embed only (QHIVdu_Uty4) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-66",
+     "season": 3,
+     "episode": 66,
+     "reason": "YouTube embed only (jYk7jupR8fw) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-67",
+     "season": 3,
+     "episode": 67,
+     "reason": "YouTube embed only (HhRRxJlgNqY) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-68",
+     "season": 3,
+     "episode": 68,
+     "reason": "YouTube embed only (jXPG42ay4uk) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-69",
+     "season": 3,
+     "episode": 69,
+     "reason": "YouTube embed only (E7yOtW2ZmOc) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-70",
+     "season": 3,
+     "episode": 70,
+     "reason": "YouTube embed only (JIySRAhGh84) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-71",
+     "season": 3,
+     "episode": 71,
+     "reason": "YouTube embed only (wr-q1gnnr7U) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-72",
+     "season": 3,
+     "episode": 72,
+     "reason": "YouTube embed only (qpT1Ut63rzY) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-73",
+     "season": 3,
+     "episode": 73,
+     "reason": "YouTube embed only (_a6HODTf3xw) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-74",
+     "season": 3,
+     "episode": 74,
+     "reason": "YouTube embed only (t7IXuZElrds) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-75",
+     "season": 3,
+     "episode": 75,
+     "reason": "YouTube embed only (Frsf1sO-QB0) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-76",
+     "season": 3,
+     "episode": 76,
+     "reason": "YouTube embed only (28TL7Rk6wUU) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-77",
+     "season": 3,
+     "episode": 77,
+     "reason": "YouTube embed only (VXmpJ5xxRYs) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-78",
+     "season": 3,
+     "episode": 78,
+     "reason": "YouTube embed only (Il_2ZtjY77Y) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-79",
+     "season": 3,
+     "episode": 79,
+     "reason": "YouTube embed only (pig-DS1V_Oc) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-80",
+     "season": 3,
+     "episode": 80,
+     "reason": "YouTube embed only (NcqOENigOAE) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-81",
+     "season": 3,
+     "episode": 81,
+     "reason": "YouTube embed only (QcRATK-vMVo) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-82",
+     "season": 3,
+     "episode": 82,
+     "reason": "YouTube embed only (VTLpZ2fE8tg) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-83",
+     "season": 3,
+     "episode": 83,
+     "reason": "YouTube embed only (hERRv4Fwd3E) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-84",
+     "season": 3,
+     "episode": 84,
+     "reason": "YouTube embed only (bd9_jkIt1J0) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-85",
+     "season": 3,
+     "episode": 85,
+     "reason": "YouTube embed only (jvGpithrnC4) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-86",
+     "season": 3,
+     "episode": 86,
+     "reason": "YouTube embed only (WAWkrTCkRSU) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-87",
+     "season": 3,
+     "episode": 87,
+     "reason": "YouTube embed only (d1azJYyIxLE) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-88",
+     "season": 3,
+     "episode": 88,
+     "reason": "YouTube embed only (gtvgLR7TLFY) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-89",
+     "season": 3,
+     "episode": 89,
+     "reason": "YouTube embed only (3JjtsvK-OPE) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-90",
+     "season": 3,
+     "episode": 90,
+     "reason": "YouTube embed only (00GLZuWk6mQ) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-91",
+     "season": 3,
+     "episode": 91,
+     "reason": "YouTube embed only (CLrNNwDDWko) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-92",
+     "season": 3,
+     "episode": 92,
+     "reason": "YouTube embed only (gPljSgW6wNQ) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-93",
+     "season": 3,
+     "episode": 93,
+     "reason": "YouTube embed only (vUwIvqvveYE) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-94",
+     "season": 3,
+     "episode": 94,
+     "reason": "YouTube embed only (gamo2IQpOpY) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-95",
+     "season": 3,
+     "episode": 95,
+     "reason": "YouTube embed only (Oj9zMA5AYng) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-96",
+     "season": 3,
+     "episode": 96,
+     "reason": "YouTube embed only (w3EdYWoDeLY) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-97",
+     "season": 3,
+     "episode": 97,
+     "reason": "YouTube embed only (QWaw3tbcFEc) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-98",
+     "season": 3,
+     "episode": 98,
+     "reason": "YouTube embed only (IFfORzzSYio) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-99",
+     "season": 3,
+     "episode": 99,
+     "reason": "YouTube embed only (Zny1Vtf8ASo) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-100",
+     "season": 3,
+     "episode": 100,
+     "reason": "YouTube embed only (07RPZRtnvOU) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-101",
+     "season": 3,
+     "episode": 101,
+     "reason": "YouTube embed only (gXjgfUJIOqw) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-102",
+     "season": 3,
+     "episode": 102,
+     "reason": "YouTube embed only (kfngQsj-H5k) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-103",
+     "season": 3,
+     "episode": 103,
+     "reason": "YouTube embed only (MK1qtWxOV8U) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-104",
+     "season": 3,
+     "episode": 104,
+     "reason": "YouTube embed only (tHCilLprvZw) — needs VPN, never merged as a play link"
+    },
+    {
+     "slug": "eshghe-abadi-s3-part-105",
+     "season": 3,
+     "episode": 105,
+     "reason": "YouTube embed only (8SZRRMjsIic) — needs VPN, never merged as a play link"
+    }
+   ]
   }
  ],
  "variety": [
