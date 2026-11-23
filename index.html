@@ -1771,6 +1771,7 @@ html.tg .bottomnav{display:flex}
             <button class="btn btn-glass btn-sm tv-tool" id="tv-fs" type="button" style="display:none" title="تمام‌صفحه افقی"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg> تمام‌صفحه افقی</button>
             <button class="btn btn-glass btn-sm tv-tool" id="tv-pip" type="button" style="display:none" title="تصویر در تصویر"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" style="vertical-align:-2px"><rect x="3" y="5" width="18" height="14" rx="2"/><rect x="12.5" y="11.5" width="6" height="4.5" rx="1" fill="currentColor" stroke="none"/></svg> تصویر در تصویر</button>
             <button class="btn btn-glass btn-sm tv-tool" id="tv-ext" type="button" style="display:none" title="باز کردن در مرورگر"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M14 4h6v6"/><path d="M20 4 11 13"/><path d="M19 13.5V19a1.5 1.5 0 0 1-1.5 1.5h-12A1.5 1.5 0 0 1 4 19V7a1.5 1.5 0 0 1 1.5-1.5H11"/></svg> باز کردن در مرورگر</button>
+            <button class="btn btn-glass btn-sm tv-tool" id="tv-copy" type="button" style="display:none" title="کپی لینک پخش"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> کپی لینک پخش</button>
             <button class="btn btn-glass btn-sm tv-tool" id="tv-share" type="button" style="display:none" title="اشتراک‌گذاری شبکه"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" style="vertical-align:-2px"><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="5.5" r="2.5"/><circle cx="18" cy="18.5" r="2.5"/><path d="m8.2 10.8 7.6-4M8.2 13.2l7.6 4"/></svg> اشتراک‌گذاری شبکه</button>
             </span></div>
           <div class="screen" id="tv-screenbox"><video id="tv-video" playsinline></video><div class="tv-idle">برای شروع پخش زنده، یک شبکه را از فهرست انتخاب کنید</div></div>
@@ -1784,6 +1785,7 @@ html.tg .bottomnav{display:flex}
         </div>
         <style id="tv-ev-css">
 #tv-events{margin:.6rem 0 0;min-width:0}
+#tv-ev-frame{position:absolute;inset:0;display:none;background:#000} /* T6 v2.3 2026-11-23: the live-event iframe fills the 16:9 .screen (which already styles .screen iframe 100%x100%); hidden until an event plays. */
 #tv-ev-head{display:flex;align-items:center;gap:.55rem;width:100%;text-align:start;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.13);border-radius:var(--r-lg);color:inherit;font:inherit;padding:.65rem .8rem;cursor:pointer}
 #tv-ev-head .tv-ev-ball{width:26px;height:26px;flex:none;color:#ff3b30}
 #tv-ev-head h2{font-size:1.18rem;font-weight:900;margin:0}
@@ -18238,6 +18240,7 @@ sxSearchPage = async function (seq, append) {
       var want = tab === 'today' ? dayOf(now) : tab === 'tomorrow' ? dayOf(now + 86400000) : dayOf(now + 2 * 86400000);
       list = list.filter(function (ev) { return dayOf(ev.start) === want; });
     }
+    list = list.filter(function (ev) { return statusOf(ev, now) !== 'done'; });
     var rank = { live: 0, upcoming: 1, done: 2 };
     list.sort(function (a, b) {
       var ra = rank[statusOf(a, now)], rb = rank[statusOf(b, now)];
@@ -18363,6 +18366,11 @@ sxSearchPage = async function (seq, append) {
       var t = cdText(ev, now);
       if (el.textContent !== t) el.textContent = t;
     });
+    if (playingId !== null) {
+      var pev = null;
+      for (var k = 0; k < evs.length; k++) if (evs[k].id === playingId) { pev = evs[k]; break; }
+      if (pev && statusOf(pev, now) === 'done') { playingId = null; changed = true; resetEvExt(); hideTvCopy(); hideEvFrame(); }
+    }
     var sig = signature();
     if (changed || sig !== lastSig) {
       var sl = rail.scrollLeft;
@@ -18383,7 +18391,10 @@ sxSearchPage = async function (seq, append) {
       if (!r.ok) return null;
       var j = await r.json();
       if (typeof j === 'string' && /\.m3u8/i.test(j)) return j;
-      var c = j.url || j.hls || j.stream_url || (j.data && (j.data.url || j.data.hls)) || null;
+      /* aparat-sport getHls2 answers {"stream_line": {"hls_raw": "<m3u8>"}} --
+         the old candidate list never looked there (2026-11-23 diagnosis). */
+      var sl = j.stream_line || (j.data && j.data.stream_line) || null;
+      var c = j.url || j.hls || j.stream_url || (sl && sl.hls_raw) || (j.data && (j.data.url || j.data.hls)) || null;
       if (c && /\.m3u8/i.test(c)) return c;
       return null;
     } catch (e) { return null; }
@@ -18414,9 +18425,168 @@ sxSearchPage = async function (seq, append) {
     if (ev.urlaccess_hq) return ev.urlaccess_hq;
     return null;
   }
+  /* FN-TV-EVENTS v2.3 — live playback via the source's own page in an
+     iframe inside the top player (2026-11-23). The old resolve path is
+     dead in the browser: these hosts send no CORS headers, fetchHls
+     read the wrong aparat-sport shape, and TV_PROXY allowlists only
+     its 3 hosts. Framing verified 2026-11-23: neither football360.ir
+     nor www.anten.ir sends X-Frame-Options, and both send only
+     `Content-Security-Policy: upgrade-insecure-requests` (no
+     frame-ancestors). The frame plays with the user's own IP, so the
+     sources' Iran-only gate passes for him (a VPN exit is 403'd by
+     the source itself — not ours to bypass). */
+  var evFrameTimer = null;
+  function evPageUrl(ev) {
+    if (ev.src === 'f360' && ev.code) return 'https://football360.ir/live/' + ev.code;
+    if (ev.src === 'anten' && ev.anten_id) return 'https://www.anten.ir/football/' + ev.anten_id;
+    return null;
+  }
+  function evFrameEl() {
+    var box = document.getElementById('tv-screenbox');
+    if (!box) return null;
+    var f = document.getElementById('tv-ev-frame');
+    if (!f) {
+      f = document.createElement('iframe');
+      f.id = 'tv-ev-frame';
+      f.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
+      f.setAttribute('allowfullscreen', '');
+      f.setAttribute('title', 'پخش زنده');
+      box.appendChild(f);
+    }
+    return f;
+  }
+  /* FN-TV-EVENTS v2.3.1 — reuse the existing tv-ext button + copy button
+     (2026-11-23). tv-ext already lives in the toolbar («باز کردن در
+     مرورگر»); while an event iframe plays it opens the EVENT's source
+     page, otherwise it keeps its channel behaviour (site replay link).
+     tv-copy (same toolbar row) copies the URL actually playing: the
+     event page URL while an event plays, else the active stream URL —
+     tvHls.url (the attached route, direct or TV_PROXY-resolved), else
+     the video element's currentSrc, else tvCurrent.url. */
+  var evExtUrl = null;
+  var tvExtOrigClick = null;
+  function showEvExt(url) {
+    var xb = document.getElementById('tv-ext');
+    if (!xb) return;
+    if (!tvExtOrigClick && xb.onclick) tvExtOrigClick = xb.onclick;
+    evExtUrl = url;
+    xb.onclick = function () {
+      if (typeof fnOpenInBrowser === 'function') fnOpenInBrowser(url);
+      else window.open(url, '_blank');
+    };
+    xb.style.display = '';
+  }
+  function resetEvExt() {
+    evExtUrl = null;
+    var xb = document.getElementById('tv-ext');
+    if (!xb) return;
+    if (tvExtOrigClick) xb.onclick = tvExtOrigClick;
+    xb.style.display = 'none';
+  }
+  function showTvCopy() {
+    var cb = document.getElementById('tv-copy');
+    if (cb) cb.style.display = '';
+  }
+  function hideTvCopy() {
+    var cb = document.getElementById('tv-copy');
+    if (cb) cb.style.display = 'none';
+  }
+  function tvCopyUrl() {
+    if (evExtUrl) return evExtUrl;
+    try { if (typeof tvHls !== 'undefined' && tvHls && tvHls.url) return tvHls.url; } catch (e) {}
+    try {
+      var v = document.getElementById('tv-video');
+      if (v && v.currentSrc && /^https?:\/\//.test(v.currentSrc)) return v.currentSrc;
+    } catch (e) {}
+    try { if (typeof tvCurrent !== 'undefined' && tvCurrent && tvCurrent.url) return tvCurrent.url; } catch (e) {}
+    return null;
+  }
+  function tvCopyDone(ok) {
+    var msg = ok ? 'کپی شد' : 'کپی نشد';
+    if (typeof toast === 'function') toast(msg);
+    else showToast(msg);
+  }
+  function tvCopyFallback(u) {
+    try {
+      var ta = document.createElement('textarea');
+      ta.value = u;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch (e) {}
+      document.body.removeChild(ta);
+      tvCopyDone(!!ok);
+    } catch (e) { tvCopyDone(false); }
+  }
+  function tvCopyLink() {
+    var u = tvCopyUrl();
+    if (!u) {
+      if (typeof toast === 'function') toast('چیزی برای کپی نیست');
+      else showToast('چیزی برای کپی نیست');
+      return;
+    }
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(u).then(function () { tvCopyDone(true); }, function () { tvCopyFallback(u); });
+        return;
+      }
+    } catch (e) {}
+    tvCopyFallback(u);
+  }
+  (function () {
+    var cb = document.getElementById('tv-copy');
+    if (cb) cb.onclick = function () { tvCopyLink(); };
+  })();
+  function hideEvFrame() {
+    if (evFrameTimer) { clearTimeout(evFrameTimer); evFrameTimer = null; }
+    var f = document.getElementById('tv-ev-frame');
+    if (f) { try { f.src = 'about:blank'; } catch (e) {} f.style.display = 'none'; }
+    resetEvExt(); hideTvCopy();
+    var stEl = document.getElementById('tv-status');
+    if (stEl) stEl.textContent = '';
+  }
+  function showEvFrame(url, ev) {
+    var box = document.getElementById('tv-screenbox');
+    var f = evFrameEl();
+    if (!box || !f) return false;
+    if (typeof fnMiniExit === 'function') { try { fnMiniExit(); } catch (e) {} }
+    var video = document.getElementById('tv-video');
+    if (video) { try { video.pause(); } catch (e) {} }
+    var srv = document.getElementById('tv-servers'); if (srv) srv.style.display = 'none';
+    ['tv-fs', 'tv-pip', 'tv-share', 'tv-subnote'].forEach(function (id) { var b = document.getElementById(id); if (b) b.style.display = 'none'; });
+    var vb = document.getElementById('tv-vpnbadge'); if (vb) vb.style.display = 'none';
+    var tb = document.getElementById('tv-testbadge'); if (tb) tb.style.display = 'none';
+    var nowEl = document.getElementById('tv-now'); if (nowEl) nowEl.textContent = ev.title;
+    var stEl = document.getElementById('tv-status'); if (stEl) stEl.textContent = 'در حال پخش زنده';
+    var errEl = document.getElementById('tv-err'); if (errEl) errEl.textContent = '';
+    box.classList.add('on');
+    f.style.display = 'block';
+    showEvExt(url); showTvCopy();
+    if (evFrameTimer) clearTimeout(evFrameTimer);
+    evFrameTimer = setTimeout(function () {
+      evFrameTimer = null;
+      if (playingId !== ev.id) return;
+      var e2 = document.getElementById('tv-err');
+      if (e2) e2.innerHTML = 'پخش درون‌برنامه‌ای باز نشد؛ صفحهٔ منبع را مستقیم باز کنید: <a class="btn btn-gold btn-sm" href="' + esc(url) + '" target="_blank" rel="noopener">باز کردن در مرورگر</a>';
+    }, 20000);
+    f.onload = function () { if (evFrameTimer) { clearTimeout(evFrameTimer); evFrameTimer = null; } };
+    try { f.src = url; } catch (e) { return false; }
+    return true;
+  }
   async function playEvent(ev) {
     var errEl = document.getElementById('tv-err');
     var stEl = document.getElementById('tv-status');
+    var pageUrl = evPageUrl(ev);
+    if (pageUrl) {
+      playingId = ev.id;
+      lastSig = '';
+      render();
+      if (showEvFrame(pageUrl, ev)) return;
+      /* frame could not be shown (no screenbox): fall through to resolve */
+    }
     if (stEl) stEl.textContent = 'در حال اتصال…';
     var hls = await resolve(ev);
     if (!hls) {
@@ -18436,6 +18606,8 @@ sxSearchPage = async function (seq, append) {
     var _pc = window.playChannel;
     window.playChannel = function (ch, el) {
       if (!ch || !ch.__tvEv) {
+        hideEvFrame();
+        showTvCopy();
         if (playingId !== null) { playingId = null; lastSig = ''; render(); }
       }
       return _pc(ch, el);
