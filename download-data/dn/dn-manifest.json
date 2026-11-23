@@ -9,9 +9,9 @@
    "720p": 8299
   },
   "by_version_family": {
-   "Dubbed": 1827,
-   "Subtitled": 13531,
-   "unknown": 99,
+   "Dubbed": 1828,
+   "Subtitled": 13533,
+   "unknown": 96,
    "NoSub": 2,
    "HardSub": 36,
    "SoftSub": 97
@@ -22233,5 +22233,13 @@
    "version unknown -> NoSub",
    "H3 title = tmdb_title"
   ]
+ },
+ "twice_daily_2026-11-23_pm_dn_movies_fixup_3links": {
+  "live_base_head": "8a39500b8af86807fee68d46af7844da6fc6636f",
+  "fixes": [
+   "Go Back #13553: 2x .SS. 480p/720p NoSub -> SoftSub (Subtitled)",
+   "Sinners and Saints #13558: 1x .DUBLE. 720p NoSub -> Dubbed"
+  ],
+  "note": "gate check 9 flagged these 3 (filename proves version: .SS.=SoftSub, .DUBLE.=Dubbed); version detection misses .SS./.DUBLE. tokens — resolver improvement queued"
  }
 }
