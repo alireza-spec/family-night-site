@@ -10612,7 +10612,7 @@ function epgFollow(name) {
   if (!hit) { if (epgChanId != null) { epgChanId = null; renderEpg(); } return; }
   if (String(hit.id) !== String(epgChanId)) { epgChanId = hit.id; renderEpg(); }
 }
-let tvPlayToken = 0, tvPlayTimer = null, tvCurrent = null;
+let tvPlayToken = 0, tvPlayTimer = null, tvCurrent = null, tvPlayingRawUrl = null;
 function playChannel(ch, el) {
   if (!ch) return;
   /* a new channel always starts in the big player: bring the video
@@ -10713,13 +10713,13 @@ function playChannel(ch, el) {
         let ri = -1;
         for (let j = 0; j < tvRouteList.length; j++) { const s2 = tvRouteList[j].src; if (s2 === u || s2 === TV_PROXY + encodeURIComponent(u)) { ri = j; break; } }
         if (ri < 0) return;
-        routeIdx = ri; netRetries = 0; playing = false;
+        routeIdx = ri; netRetries = 0; playing = false; triedRoutes = 0;
         $('#tv-status').textContent = 'در حال اتصال… — ' + (tvSrvUniq[+b.dataset.i].title || '');
         attach(tvRouteList[ri]);
       }; });
     } else { tvSrvBar.style.display = 'none'; tvSrvBar.innerHTML = ''; }
   }
-  let routeIdx = 0, netRetries = 0, playing = false;
+  let routeIdx = 0, netRetries = 0, playing = false, triedRoutes = 0;
   const fail = msg => {
     if (token !== tvPlayToken) return;
     clearTimeout(tvPlayTimer);
@@ -10735,8 +10735,14 @@ function playChannel(ch, el) {
   };
   const nextRoute = () => {
     if (token !== tvPlayToken) return;
-    routeIdx++;
-    if (routeIdx >= routes.length) { clearTimeout(tvPlayTimer); fail('پخش این شبکه در حال حاضر ممکن نشد؛ شبکه دیگری را امتحان کنید.'); return; }
+    /* FN-TV-ROUTES-WRAP v2.4.1 (2026-11-23): a manual server jump used to
+       strand the player -- routes after the jump were tried, then it
+       gave up without ever retrying the servers before it (آوا فامیلی
+       سرور 2 is dead on both its routes; سرور اصلی plays fine). Wrap
+       around and try every route exactly once before failing. */
+    triedRoutes++;
+    if (triedRoutes >= routes.length) { clearTimeout(tvPlayTimer); fail('پخش این شبکه در حال حاضر ممکن نشد؛ شبکه دیگری را امتحان کنید.'); return; }
+    routeIdx = (routeIdx + 1) % routes.length;
     $('#tv-status').textContent = 'تلاش از مسیر جایگزین…' + (tvRouteList[routeIdx] && tvRouteList[routeIdx].title ? ' — ' + tvRouteList[routeIdx].title : '');
     netRetries = 0;
     attach(tvRouteList[routeIdx]);
@@ -10744,6 +10750,11 @@ function playChannel(ch, el) {
   const attach = rt => {
     const src = rt && rt.src;
     if (!src || token !== tvPlayToken) return;
+    /* FN-TV-COPY-RAW v2.4.1 (2026-11-23): the copy button copies the RAW
+       channel URL, never the proxy-wrapped playing URL. Track the raw
+       URL of the route actually attached (proxy prefix stripped) here,
+       where the route is chosen -- tvCopyUrl() reads it. */
+    try { var _rawU = src; if (_rawU.indexOf(TV_PROXY) === 0) { try { _rawU = decodeURIComponent(_rawU.slice(TV_PROXY.length)); } catch (e2) {} } tvPlayingRawUrl = _rawU; } catch (e3) {}
     if (rt.title) $('#tv-status').textContent = 'در حال اتصال… — ' + rt.title;
     tvSrvMark(src);
     if (tvHls) { try { tvHls.destroy(); } catch (e) {} tvHls = null; }
@@ -18237,7 +18248,33 @@ sxSearchPage = async function (seq, append) {
   };
   function dayOf(ms) { try { return new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Tehran', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(ms)); } catch (e) { var d = new Date(ms); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); } }
   function fmtTime(ms) { try { return fa(new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Tehran', hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date(ms))); } catch (e) { var d = new Date(ms); return fa(String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0')); } }
-  function statusOf(ev, now) { return now < ev.start ? 'upcoming' : now < ev.end * 1000 ? 'live' : 'done'; }
+  /* FN-TV-EVENTS v2.4.1 — source end times are the broadcast window, not
+     the match: f360 reports football at 330-345 min (a 19:30 kickoff
+     "ends" 01:00), so matches finished hours ago stayed "live" on the
+     rail. A match title ("X – Y") is capped at a sane per-sport length
+     from kickoff; studio/show titles (no " – ") keep the source end.
+     Every consumer (filter, rail, counter, tick, tap, bell) reads
+     statusOf, so this one choke point fixes them all. */
+  function matchCapMin(ev) {
+    var t = String(ev.title || '');
+    if (t.indexOf(' – ') < 0 && t.indexOf(' - ') < 0) return null;
+    switch (ev.sportName) {
+      case 'فوتبال': return 180;
+      case 'فوتبال ساحلی': return 90;
+      case 'بسکتبال': return 180;
+      case 'والیبال': return 180;
+      case 'فوتسال': return 105;
+      case 'هندبال': return 120;
+      default: return null;
+    }
+  }
+  function endMs(ev) {
+    var e = ev.end * 1000;
+    var cap = matchCapMin(ev);
+    if (cap) { var c = ev.start + cap * 60000; if (c < e) e = c; }
+    return e;
+  }
+  function statusOf(ev, now) { return now < ev.start ? 'upcoming' : now < endMs(ev) ? 'live' : 'done'; }
   function dayWord(ev) {
     var today = dayOf(Date.now());
     var tmr = dayOf(Date.now() + 86400000);
@@ -18409,7 +18446,7 @@ sxSearchPage = async function (seq, append) {
   }
   async function fetchHls(url) {
     try {
-      var r = await fetch(url, { headers: { 'Accept': 'application/json' } });
+      var r = await fetchTimeout(url, 8000, { headers: { 'Accept': 'application/json' } });
       if (!r.ok) return null;
       var j = await r.json();
       if (typeof j === 'string' && /\.m3u8/i.test(j)) return j;
@@ -18426,7 +18463,7 @@ sxSearchPage = async function (seq, append) {
     if (ev.get_hls_url) { var u = await fetchHls(ev.get_hls_url); if (u) return u; }
     if (ev.code) {
       try {
-        var t = await (await fetch('https://football360.ir/live/' + ev.code)).text();
+        var t = await (await fetchTimeout('https://football360.ir/live/' + ev.code, 8000)).text();
         var m = t.match(/<script id="__NEXT_DATA__" type="application\/json">(.*?)<\/script>/s);
         if (m) {
           var s = JSON.stringify(JSON.parse(m[1]));
@@ -18456,11 +18493,27 @@ sxSearchPage = async function (seq, append) {
      path TV channels use): worker resolve first, direct browser
      resolve as fallback. */
   var TV_RESOLVE = 'https://iran-tv-proxy-v3.alirezadoe8.workers.dev/resolve-event';
+  /* FN-TV-EVENTS v2.4.1 — every resolve fetch is bounded: a tap used to
+     sit on «در حال اتصال…» forever when a host stalled (no timeout on
+     any fetch, no outer catch in playEvent). AbortController with a
+     plain-fetch fallback for old WebViews. */
+  function fetchTimeout(url, ms, opts) {
+    var ctrl = null;
+    try { if (typeof AbortController !== 'undefined') ctrl = new AbortController(); } catch (e) {}
+    var o = {};
+    var k;
+    for (k in (opts || {})) o[k] = opts[k];
+    if (ctrl) o.signal = ctrl.signal;
+    var p = fetch(url, o);
+    if (!ctrl) return p;
+    var timer = setTimeout(function () { try { ctrl.abort(); } catch (e2) {} }, ms);
+    return p.then(function (r) { clearTimeout(timer); return r; }, function (e) { clearTimeout(timer); throw e; });
+  }
   async function resolveWorker(ev) {
     try {
       var q = 'src=' + ev.src + (ev.src === 'f360' ? '&code=' + encodeURIComponent(ev.code || '') : '&id=' + encodeURIComponent(ev.anten_id || ''));
       if (ev.src === 'f360' && ev.get_hls_url) q += '&hls=' + encodeURIComponent(ev.get_hls_url);
-      var r = await fetch(TV_RESOLVE + '?' + q, { headers: { 'Accept': 'application/json' } });
+      var r = await fetchTimeout(TV_RESOLVE + '?' + q, 10000, { headers: { 'Accept': 'application/json' } });
       if (!r.ok) return null;
       var j = await r.json();
       if (j && j.ok && typeof j.hls === 'string' && /\.m3u8/i.test(j.hls)) return j.hls;
@@ -18476,10 +18529,13 @@ sxSearchPage = async function (seq, append) {
      (2026-11-23). tv-ext already lives in the toolbar («باز کردن در
      مرورگر»); while an event plays it opens the EVENT's source
      page, otherwise it keeps its channel behaviour (site replay link).
-     tv-copy (same toolbar row) copies the URL actually playing: the
-     event page URL while an event plays, else the active stream URL —
-     tvHls.url (the attached route, direct or TV_PROXY-resolved), else
-     the video element's currentSrc, else tvCurrent.url. */
+     FN-TV-COPY-RAW v2.4.1 (2026-11-23): tv-copy copies the RAW channel
+     URL (the channel's own stream URL, as it opens in Chrome) -- NEVER
+     the proxy-wrapped playing URL (tvHls.url) and never the site share
+     link (that stays on tv-share). While an event plays it still copies
+     the event page URL. The raw URL is tvPlayingRawUrl, tracked in
+     playChannel's attach() (proxy prefix stripped); tvCurrent.url is
+     the fallback (main server). */
   var evExtUrl = null;
   var tvExtOrigClick = null;
   function showEvExt(url) {
@@ -18510,11 +18566,7 @@ sxSearchPage = async function (seq, append) {
   }
   function tvCopyUrl() {
     if (evExtUrl) return evExtUrl;
-    try { if (typeof tvHls !== 'undefined' && tvHls && tvHls.url) return tvHls.url; } catch (e) {}
-    try {
-      var v = document.getElementById('tv-video');
-      if (v && v.currentSrc && /^https?:\/\//.test(v.currentSrc)) return v.currentSrc;
-    } catch (e) {}
+    try { if (typeof tvPlayingRawUrl !== 'undefined' && tvPlayingRawUrl) return tvPlayingRawUrl; } catch (e) {}
     try { if (typeof tvCurrent !== 'undefined' && tvCurrent && tvCurrent.url) return tvCurrent.url; } catch (e) {}
     return null;
   }
@@ -18567,30 +18619,47 @@ sxSearchPage = async function (seq, append) {
   async function playEvent(ev) {
     var errEl = document.getElementById('tv-err');
     var stEl = document.getElementById('tv-status');
-    if (stEl) stEl.textContent = 'در حال اتصال…';
-    /* Worker resolve first (server-side walk: live page -> getHls2 /
-       urlaccess -> .m3u8). The worker answers the sources' geo gate
-       honestly, so when it 403s we fall through to the direct browser
-       resolve: the phone itself is on an Iran IP, and if the source
-       answers its 200 with CORS headers the HLS URL comes back here.
-       Either way the stream lands in OUR OWN player -- never a
-       foreign page. */
-    var hls = await resolveWorker(ev);
-    if (!hls) hls = await resolve(ev);
-    if (!hls) {
+    try {
+      if (stEl) stEl.textContent = 'در حال اتصال…';
+      /* Worker resolve first (server-side walk: live page -> getHls2 /
+         urlaccess -> .m3u8). The worker answers the sources' geo gate
+         honestly, so when it 403s we fall through to the direct browser
+         resolve: the phone itself is on an Iran IP, and if the source
+         answers its 200 with CORS headers the HLS URL comes back here.
+         Either way the stream lands in OUR OWN player -- never a
+         foreign page.
+         FN-TV-EVENTS v2.4.1: the whole resolve is raced against a 20 s
+         budget and wrapped in a catch-all -- a tap used to die silently
+         (hung fetch, uncaught throw) leaving only «در حال اتصال…». Any
+         failure now shows the honest error loudly (text + toast). */
+      var hls = null;
+      try {
+        hls = await Promise.race([
+          (async function () { var h = await resolveWorker(ev); if (!h) h = await resolve(ev); return h || null; })(),
+          new Promise(function (res) { setTimeout(function () { res(null); }, 20000); })
+        ]);
+      } catch (e) { hls = null; }
+      if (!hls) {
+        if (stEl) stEl.textContent = '';
+        if (errEl) errEl.textContent = 'پخش این برنامه در حال حاضر ممکن نشد.';
+        try { showToast('پخش این برنامه در حال حاضر ممکن نشد.'); } catch (e2) {}
+        return;
+      }
+      if (errEl) errEl.textContent = '';
+      playingId = ev.id;
+      lastSig = '';
+      render();
+      var pageUrl = evPageUrl(ev);
+      if (pageUrl) showEvExt(pageUrl);
+      showTvCopy();
+      try { playChannel({ name: ev.title, url: hls, servers: [], __tvEv: true }, null); } catch (e) {
+        if (errEl) errEl.textContent = 'پخش این برنامه در حال حاضر ممکن نشد.';
+        try { showToast('پخش این برنامه در حال حاضر ممکن نشد.'); } catch (e2) {}
+      }
+    } catch (e) {
       if (stEl) stEl.textContent = '';
       if (errEl) errEl.textContent = 'پخش این برنامه در حال حاضر ممکن نشد.';
-      return;
-    }
-    if (errEl) errEl.textContent = '';
-    playingId = ev.id;
-    lastSig = '';
-    render();
-    var pageUrl = evPageUrl(ev);
-    if (pageUrl) showEvExt(pageUrl);
-    showTvCopy();
-    try { playChannel({ name: ev.title, url: hls, servers: [], __tvEv: true }, null); } catch (e) {
-      if (errEl) errEl.textContent = 'پخش این برنامه در حال حاضر ممکن نشد.';
+      try { showToast('پخش این برنامه در حال حاضر ممکن نشد.'); } catch (e2) {}
     }
   }
   if (typeof window.playChannel === 'function' && !window.playChannel.__tvEvWrapped) {
