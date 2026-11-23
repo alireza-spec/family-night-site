@@ -6393,5 +6393,32 @@
    }
   ]
  },
- "source": "Mobomovies"
+ "source": "Mobomovies",
+ "twice_daily_2026_11_23_pm": {
+  "completions": [
+   {
+    "imdb": "tt32840498",
+    "links_added": 3,
+    "note": "F2M S02E02 480/720/1080 Hardsub (ZV error-title reconciliation)",
+    "record": "#12466 mbm",
+    "title": "Good Partner"
+   },
+   {
+    "imdb": "tt39201866",
+    "links_added": 6,
+    "note": "F2M S01E13-E14 x3 res Hardsub (ZV error-title reconciliation); stale search-index row (part 5, imdb null) removed",
+    "record": "#11186 mbm",
+    "title": "100 Days of Lies"
+   },
+   {
+    "imdb": "tt42152429",
+    "links_added": 3,
+    "note": "F2M S01E04 480/720/1080 Hardsub; ZV p5 #9158 'Sword & Silence' is the same title (TMDB tv 301354 alt titles list both names) — left untouched, IMDb NOT filled there",
+    "record": "#11208 mbm",
+    "title": "King Mun-mu / Sword & Silence"
+   }
+  ],
+  "live_base_head": "4b0f9b94671e1842bc8ca28752fce5dfb89bc8b2",
+  "note": "Chunk 1 of the 2026-11-23 PM run (REBASED on 4b0f9b94): ZV/Simba/ML only; DN new titles land in chunk 2."
+ }
 }

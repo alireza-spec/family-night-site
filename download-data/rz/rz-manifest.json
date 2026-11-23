@@ -2,19 +2,19 @@
  "code": "RZ",
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
  "start_num": 12560,
- "end_num": 13492,
+ "end_num": 13493,
  "live_base_head": "c4991e6d3d5800f32954263ec9f4994deeef832c (5h run 20261123T171105Z; H3 max #13502 verified from live files, RZ part-1 max #13483)",
- "generated": "2026-11-23 (RezFlix 5-hourly run 20261123T171105Z — merge of 9 new RZ titles #13484-13492 + 8 trailer keys + 2 encode completions into part 1 #14/#15; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
+ "generated": "2026-11-23 (twice-daily PM chunk 1 — Love Imagined #13493; prev: RezFlix 5h run 20261123T171105Z)",
  "counts": {
-  "total_titles": 591,
-  "movies": 23,
+  "total_titles": 592,
+  "movies": 24,
   "series": 568,
-  "total_links": 43364,
+  "total_links": 43365,
   "by_year": {
    "2024": 1,
    "2026": 19,
    "2023": 2,
-   "2025": 4,
+   "2025": 5,
    "2014": 2,
    "1955": 2,
    "1960": 3,
@@ -76,7 +76,7 @@
    "2022": 1
   },
   "by_quality": {
-   "720p": 21205,
+   "720p": 21206,
    "1080p": 3413,
    "540p": 292,
    "480p": 14207,
@@ -6596,6 +6596,17 @@
    "quality": "540p,720p",
    "rezflix_id": 36139,
    "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt50164002). Persian name جایگزین (feed)."
+  },
+  {
+   "title": "Love, Imagined",
+   "tmdb": 1223073,
+   "imdb": "tt38947209",
+   "year": 2025,
+   "num": 13493,
+   "links": 1,
+   "quality": "720p",
+   "rezflix_id": 36129,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2025, TMDB 2025, tt38947209). OMDb title 'Wa Lana Fel Khayal Hob' is the romanized original title (TMDB original_title is the Arabic) — identity proven; the RezFlix run queued it on the title-string difference. Persian name عشق خیالی (feed)."
   }
  ],
  "trailer_keys_added": [

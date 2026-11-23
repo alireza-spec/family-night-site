@@ -21603,5 +21603,28 @@
    "tv:342666"
   ],
   "note": "DN slice of the all-sources series audit, batch 6: 5 new series, 176 links; partials completed by episode-level diff."
+ },
+ "twice_daily_2026_11_23_pm": {
+  "live_base_head": "4b0f9b94671e1842bc8ca28752fce5dfb89bc8b2",
+  "start_num": null,
+  "end_num": null,
+  "new_titles_merged": 0,
+  "completions": [
+   {
+    "title": "River of No Return",
+    "imdb": "tt38734657",
+    "record": "#12388 dn2",
+    "links_added": 6,
+    "note": "F2M S01E07-E08 480/720/1080 Hardsub (ZV error-title reconciliation); not DN-origin, series[] count unchanged"
+   },
+   {
+    "title": "Taming the Husband",
+    "imdb": "tt41400834",
+    "record": "#12944 dn2",
+    "links_added": 30,
+    "note": "F2M whole S01E01-E10 x3 res Hardsub set (live holds 20 links of another version); not DN-origin, series[] count unchanged"
+   }
+  ],
+  "note": "Chunk 1 of the 2026-11-23 PM run (REBASED on 4b0f9b94): ZV/Simba/ML only; DN new titles land in chunk 2."
  }
 }
