@@ -6488,10 +6488,11 @@ async function loadDetailEpisodes(d, token) {
         });
       });
       epsBox.innerHTML = eps.length ? eps.map(ep => {
-        const nm = ep.name || ('قسمت ' + ep.episode_number);
+        const nm = ep.name || '';
+        const showNm = nm && !fnEpNameIsGeneric(nm, ep.episode_number);
         const meta = [ep.air_date ? 'پخش: ' + ep.air_date : '', ep.runtime ? ep.runtime + ' دقیقه' : ''].filter(Boolean).join(' · ');
         return '<button class="ep" data-ep="' + ep.episode_number + '">' + (ep.still_path ? '<img loading="lazy" src="' + IMG(ep.still_path, 'w300') + '" alt="">' : '<img alt="">')
-          + '<span style="flex:1;min-width:0"><span class="n">قسمت E' + ep.episode_number + '</span> <b data-trtxt="' + esc(nm) + '">' + esc(nm) + '</b>'
+          + '<span style="flex:1;min-width:0"><span class="n">قسمت E' + ep.episode_number + '</span>' + (showNm ? ' <b data-trtxt="' + esc(nm) + '">' + esc(nm) + '</b>' : '')
           + (meta ? '<span class="epmeta">' + esc(meta) + '</span>' : '')
           + (ep.overview ? '<p data-trtxt="' + esc(ep.overview) + '">' + esc(ep.overview) + '</p>' : '') + '</span>'
           + '<span class="playic"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></span></button>';
@@ -7156,6 +7157,26 @@ function dlRateClass(r) {
   if (r >= 6) return 'yellow';
   return 'red';
 }
+/* FN-EP-NAME v1: TMDB's fa-IR episode names for many Iranian series are
+   literally just «قسمت N» (Joker S05E04: fa name is «قسمت 4») — appending
+   such a name in parentheses after the «قسمت N» label renders
+   «قسمت 4 (قسمت 4)». A name is generic when, after stripping bidi marks
+   and normalising Persian/Arabic digits to Latin, it is just «قسمت»,
+   «episode» or «قسمت N» / «episode N» with N equal to the episode number.
+   Generic names are never shown as the parenthetical (or the detail-page
+   title); real names («فینال», «The Final») are untouched. */
+function fnEpNameIsGeneric(name, epNum) {
+  if (!name) return true;
+  var s = String(name).replace(/[\u202A-\u202E\u200E\u200F\u061C]/g, '')
+    .replace(/[۰-۹]/g, function (d) { return '۰۱۲۳۴۵۶۷۸۹'.indexOf(d); })
+    .replace(/[٠-٩]/g, function (d) { return '٠١٢٣٤٥٦٧٨٩'.indexOf(d); })
+    .replace(/\s+/g, ' ').trim().toLowerCase();
+  if (s === 'قسمت' || s === 'episode' || s === 'ep' || s === 'part' || s === 'بخش' || s === '') return true;
+  var m = s.match(/^(?:قسمت|episode|ep\.?|part|بخش)\s+(\d+)$/);
+  if (m) return parseInt(m[1], 10) === (parseInt(epNum, 10) || 0);
+  return false;
+}
+
 /* split a size string ("1.02 GB", "850.40 MB") into its number and
    its Persian unit — null when there is no size at all */
 function dlSizeParts(s) {
@@ -7548,7 +7569,7 @@ function wireDlTiles(root, ctx) {
         if (!tile) return;
         if (name) {
           var b = tile.querySelector('.fn-dl-tinfo > b');
-          if (b) b.innerHTML = 'قسمت ' + esc(ep.episode_number) + ' (<span data-trtxt="' + esc(name) + '">' + esc(name) + '</span>)';
+          if (b) b.innerHTML = 'قسمت ' + esc(ep.episode_number) + (fnEpNameIsGeneric(name, ep.episode_number) ? '' : ' (<span data-trtxt="' + esc(name) + '">' + esc(name) + '</span>)');
         }
         if (still && typeof IMG === 'function') {
           var th = tile.querySelector('.fn-dl-thumb');
@@ -7853,8 +7874,9 @@ function wireDlTiles(root, ctx) {
     top.hidden = false;
     var titleEl = root.querySelector('.fn-dl-s1title');
     if (titleEl) {
+      var rawNm = ep.name_fa || ep.name || '';
       var nm = ep.name_fa ? esc(ep.name_fa) : (ep.name ? '<span data-trtxt="' + esc(ep.name) + '">' + esc(ep.name) + '</span>' : '');
-      titleEl.innerHTML = 'قسمت ' + esc(ep.episode) + (nm ? ' (' + nm + ')' : '');
+      titleEl.innerHTML = 'قسمت ' + esc(ep.episode) + ((nm && !fnEpNameIsGeneric(rawNm, ep.episode)) ? ' (' + nm + ')' : '');
       if (typeof fnSweepTrTxt === 'function') { try { fnSweepTrTxt(root); } catch (e) {} }
     }
     var chipsEl = root.querySelector('.fn-dl-s1chips');
@@ -8487,10 +8509,11 @@ async function fnS1TvSection(tmdbKey, posterUrl, title, ctx, year, iranian) {
         var cls = dlRateClass(ep.rating);
         var chips = ep.links.map(function (l) { return '<span class="fn-dl-qchip">' + esc(l.sp.res) + '</span>'; }).join('');
         var thumb = ep.still ? '<img loading="lazy" decoding="async" src="' + esc(IMG(ep.still, 'w300')) + '" alt="">' : dlPosterHtml(posterUrl || '', title);
+        var rawNm = ep.name_fa || ep.name || '';
         var nm = ep.name_fa ? esc(ep.name_fa) : (ep.name ? '<span data-trtxt="' + esc(ep.name) + '">' + esc(ep.name) + '</span>' : '');
         out += '<div class="fn-dl-eptile fn-dl-s1eptile' + (cls ? ' fn-dl-rate-' + cls : '') + '" data-dl-s1ep="' + esc(ep.season + '|' + ep.episode) + '">'
           + '<span class="fn-dl-thumb">' + thumb + '</span>'
-          + '<span class="fn-dl-tinfo"><b>قسمت ' + esc(ep.episode) + (nm ? ' (' + nm + ')' : '') + (ep.rating > 0 ? '<span class="fn-dl-rate" style="color:' + s1TvRateColor(ep.rating) + '">★ ' + ep.rating + '</span>' : '') + '</b>'
+          + '<span class="fn-dl-tinfo"><b>قسمت ' + esc(ep.episode) + ((nm && !fnEpNameIsGeneric(rawNm, ep.episode)) ? ' (' + nm + ')' : '') + (ep.rating > 0 ? '<span class="fn-dl-rate" style="color:' + s1TvRateColor(ep.rating) + '">★ ' + ep.rating + '</span>' : '') + '</b>'
           + '<span class="fn-dl-tline"><span class="fn-dl-ver">سرور خارجی</span>' + chips + '</span>'
           + s1TvSizesRow(ep.links)
           + '</span>'
