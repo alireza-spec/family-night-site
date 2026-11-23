@@ -1785,7 +1785,6 @@ html.tg .bottomnav{display:flex}
         </div>
         <style id="tv-ev-css">
 #tv-events{margin:.6rem 0 0;min-width:0}
-#tv-ev-frame{position:absolute;inset:0;display:none;background:#000} /* T6 v2.3 2026-11-23: the live-event iframe fills the 16:9 .screen (which already styles .screen iframe 100%x100%); hidden until an event plays. */
 #tv-ev-head{display:flex;align-items:center;gap:.55rem;width:100%;text-align:start;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.13);border-radius:var(--r-lg);color:inherit;font:inherit;padding:.65rem .8rem;cursor:pointer}
 #tv-ev-head .tv-ev-ball{width:26px;height:26px;flex:none;color:#ff3b30}
 #tv-ev-head h2{font-size:1.18rem;font-weight:900;margin:0}
@@ -18168,8 +18167,11 @@ sxSearchPage = async function (seq, append) {
    Matches the approved demo (blinking live dot + «N ایونت زنده», 4 tabs,
    live-first rail, go-live alert card + system notification).
    Data: download-data/tv-events.json, baked + refreshed daily by the
-   tv-sports-events-refresh cron (live fetch is impossible: the sources
-   send no CORS headers and TV_PROXY allowlists only its 3 hosts).
+   tv-sports-events-refresh cron. v2.4 (2026-11-23): the source-page
+   iframe is GONE (the user saw a browser check, a reCAPTCHA, then the
+   source site with a BLACK video area). Events resolve to a direct HLS
+   URL -- worker /resolve-event first, direct browser resolve as
+   fallback -- and play in OUR OWN player via playChannel.
    Live status + countdowns run off the client clock against the baked
    start/end times, so an event flips live exactly on time. */
 (function () {
@@ -18369,7 +18371,7 @@ sxSearchPage = async function (seq, append) {
     if (playingId !== null) {
       var pev = null;
       for (var k = 0; k < evs.length; k++) if (evs[k].id === playingId) { pev = evs[k]; break; }
-      if (pev && statusOf(pev, now) === 'done') { playingId = null; changed = true; resetEvExt(); hideTvCopy(); hideEvFrame(); }
+      if (pev && statusOf(pev, now) === 'done') { playingId = null; changed = true; endEvPlay(); }
     }
     var sig = signature();
     if (changed || sig !== lastSig) {
@@ -18421,43 +18423,38 @@ sxSearchPage = async function (seq, append) {
       var h = await fetchHls(urls[i]);
       if (h) return h;
     }
-    if (ev.get_hls_url) return ev.get_hls_url;
-    if (ev.urlaccess_hq) return ev.urlaccess_hq;
+    /* v2.4: NEVER return the raw API URL -- getHls2 / urlaccess answer
+       JSON, not media. Feeding one to the video element would burn the
+       14 s arm timer + retries before failing. Null = honest error. */
     return null;
   }
-  /* FN-TV-EVENTS v2.3 — live playback via the source's own page in an
-     iframe inside the top player (2026-11-23). The old resolve path is
-     dead in the browser: these hosts send no CORS headers, fetchHls
-     read the wrong aparat-sport shape, and TV_PROXY allowlists only
-     its 3 hosts. Framing verified 2026-11-23: neither football360.ir
-     nor www.anten.ir sends X-Frame-Options, and both send only
-     `Content-Security-Policy: upgrade-insecure-requests` (no
-     frame-ancestors). The frame plays with the user's own IP, so the
-     sources' Iran-only gate passes for him (a VPN exit is 403'd by
-     the source itself — not ours to bypass). */
-  var evFrameTimer = null;
+  /* FN-TV-EVENTS v2.4 -- live playback as a proper embed in OUR OWN
+     player (2026-11-23). The v2.3 source-page iframe is REMOVED: the
+     user saw a browser check, then a reCAPTCHA, then the source site
+     itself with a BLACK video area -- no stream ever arrived. The
+     stream now comes as a direct HLS URL into playChannel (the same
+     path TV channels use): worker resolve first, direct browser
+     resolve as fallback. */
+  var TV_RESOLVE = 'https://iran-tv-proxy-v3.alirezadoe8.workers.dev/resolve-event';
+  async function resolveWorker(ev) {
+    try {
+      var q = 'src=' + ev.src + (ev.src === 'f360' ? '&code=' + encodeURIComponent(ev.code || '') : '&id=' + encodeURIComponent(ev.anten_id || ''));
+      if (ev.src === 'f360' && ev.get_hls_url) q += '&hls=' + encodeURIComponent(ev.get_hls_url);
+      var r = await fetch(TV_RESOLVE + '?' + q, { headers: { 'Accept': 'application/json' } });
+      if (!r.ok) return null;
+      var j = await r.json();
+      if (j && j.ok && typeof j.hls === 'string' && /\.m3u8/i.test(j.hls)) return j.hls;
+      return null;
+    } catch (e) { return null; }
+  }
   function evPageUrl(ev) {
     if (ev.src === 'f360' && ev.code) return 'https://football360.ir/live/' + ev.code;
     if (ev.src === 'anten' && ev.anten_id) return 'https://www.anten.ir/football/' + ev.anten_id;
     return null;
   }
-  function evFrameEl() {
-    var box = document.getElementById('tv-screenbox');
-    if (!box) return null;
-    var f = document.getElementById('tv-ev-frame');
-    if (!f) {
-      f = document.createElement('iframe');
-      f.id = 'tv-ev-frame';
-      f.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
-      f.setAttribute('allowfullscreen', '');
-      f.setAttribute('title', 'پخش زنده');
-      box.appendChild(f);
-    }
-    return f;
-  }
   /* FN-TV-EVENTS v2.3.1 — reuse the existing tv-ext button + copy button
      (2026-11-23). tv-ext already lives in the toolbar («باز کردن در
-     مرورگر»); while an event iframe plays it opens the EVENT's source
+     مرورگر»); while an event plays it opens the EVENT's source
      page, otherwise it keeps its channel behaviour (site replay link).
      tv-copy (same toolbar row) copies the URL actually playing: the
      event page URL while an event plays, else the active stream URL —
@@ -18540,55 +18537,26 @@ sxSearchPage = async function (seq, append) {
     var cb = document.getElementById('tv-copy');
     if (cb) cb.onclick = function () { tvCopyLink(); };
   })();
-  function hideEvFrame() {
-    if (evFrameTimer) { clearTimeout(evFrameTimer); evFrameTimer = null; }
-    var f = document.getElementById('tv-ev-frame');
-    if (f) { try { f.src = 'about:blank'; } catch (e) {} f.style.display = 'none'; }
+  /* End event playback state (no frame any more -- v2.4 removed the
+     iframe): restore the toolbar buttons and clear the status line. */
+  function endEvPlay() {
     resetEvExt(); hideTvCopy();
     var stEl = document.getElementById('tv-status');
     if (stEl) stEl.textContent = '';
   }
-  function showEvFrame(url, ev) {
-    var box = document.getElementById('tv-screenbox');
-    var f = evFrameEl();
-    if (!box || !f) return false;
-    if (typeof fnMiniExit === 'function') { try { fnMiniExit(); } catch (e) {} }
-    var video = document.getElementById('tv-video');
-    if (video) { try { video.pause(); } catch (e) {} }
-    var srv = document.getElementById('tv-servers'); if (srv) srv.style.display = 'none';
-    ['tv-fs', 'tv-pip', 'tv-share', 'tv-subnote'].forEach(function (id) { var b = document.getElementById(id); if (b) b.style.display = 'none'; });
-    var vb = document.getElementById('tv-vpnbadge'); if (vb) vb.style.display = 'none';
-    var tb = document.getElementById('tv-testbadge'); if (tb) tb.style.display = 'none';
-    var nowEl = document.getElementById('tv-now'); if (nowEl) nowEl.textContent = ev.title;
-    var stEl = document.getElementById('tv-status'); if (stEl) stEl.textContent = 'در حال پخش زنده';
-    var errEl = document.getElementById('tv-err'); if (errEl) errEl.textContent = '';
-    box.classList.add('on');
-    f.style.display = 'block';
-    showEvExt(url); showTvCopy();
-    if (evFrameTimer) clearTimeout(evFrameTimer);
-    evFrameTimer = setTimeout(function () {
-      evFrameTimer = null;
-      if (playingId !== ev.id) return;
-      var e2 = document.getElementById('tv-err');
-      if (e2) e2.innerHTML = 'پخش درون‌برنامه‌ای باز نشد؛ صفحهٔ منبع را مستقیم باز کنید: <a class="btn btn-gold btn-sm" href="' + esc(url) + '" target="_blank" rel="noopener">باز کردن در مرورگر</a>';
-    }, 20000);
-    f.onload = function () { if (evFrameTimer) { clearTimeout(evFrameTimer); evFrameTimer = null; } };
-    try { f.src = url; } catch (e) { return false; }
-    return true;
-  }
   async function playEvent(ev) {
     var errEl = document.getElementById('tv-err');
     var stEl = document.getElementById('tv-status');
-    var pageUrl = evPageUrl(ev);
-    if (pageUrl) {
-      playingId = ev.id;
-      lastSig = '';
-      render();
-      if (showEvFrame(pageUrl, ev)) return;
-      /* frame could not be shown (no screenbox): fall through to resolve */
-    }
     if (stEl) stEl.textContent = 'در حال اتصال…';
-    var hls = await resolve(ev);
+    /* Worker resolve first (server-side walk: live page -> getHls2 /
+       urlaccess -> .m3u8). The worker answers the sources' geo gate
+       honestly, so when it 403s we fall through to the direct browser
+       resolve: the phone itself is on an Iran IP, and if the source
+       answers its 200 with CORS headers the HLS URL comes back here.
+       Either way the stream lands in OUR OWN player -- never a
+       foreign page. */
+    var hls = await resolveWorker(ev);
+    if (!hls) hls = await resolve(ev);
     if (!hls) {
       if (stEl) stEl.textContent = '';
       if (errEl) errEl.textContent = 'پخش این برنامه در حال حاضر ممکن نشد.';
@@ -18598,6 +18566,9 @@ sxSearchPage = async function (seq, append) {
     playingId = ev.id;
     lastSig = '';
     render();
+    var pageUrl = evPageUrl(ev);
+    if (pageUrl) showEvExt(pageUrl);
+    showTvCopy();
     try { playChannel({ name: ev.title, url: hls, servers: [], __tvEv: true }, null); } catch (e) {
       if (errEl) errEl.textContent = 'پخش این برنامه در حال حاضر ممکن نشد.';
     }
@@ -18606,7 +18577,7 @@ sxSearchPage = async function (seq, append) {
     var _pc = window.playChannel;
     window.playChannel = function (ch, el) {
       if (!ch || !ch.__tvEv) {
-        hideEvFrame();
+        endEvPlay();
         showTvCopy();
         if (playingId !== null) { playingId = null; lastSig = ''; render(); }
       }
