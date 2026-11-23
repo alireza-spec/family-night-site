@@ -2,33 +2,35 @@
  "code": "FH",
  "source": "FarsiHubz mirror https://monclerjakkejacket.com/ (farsihubby.com: empty splash, 0 titles)",
  "start_num": 12468,
- "end_num": 13125,
- "live_base_head": "7c948bcb0b44bbe5e69ee5317715d8b8dd2f039e",
+ "end_num": 13502,
+ "live_base_head": "b3f1be512b7547e0724b3accf88d2d7511738a38",
  "generated": "2026-11-23",
  "counts": {
-  "total_titles": 150,
+  "total_titles": 169,
   "movies": 70,
-  "series": 80,
-  "total_links": 1538,
+  "series": 99,
+  "total_links": 1884,
   "by_year": {
    "2024": 14,
    "2025": 28,
    "2026": 83,
-   "2022": 5,
-   "2023": 11,
-   "2021": 3,
+   "2022": 10,
+   "2023": 21,
+   "2021": 5,
    "2018": 1,
    "2019": 3,
    "2015": 1,
-   "2017": 1
+   "2017": 1,
+   "1965": 1,
+   "2011": 1
   },
   "by_quality": {
-   "1080p": 185,
-   "720p": 1346,
+   "1080p": 194,
+   "720p": 1682,
    "534p": 1,
    "536p": 1,
    "600p": 1,
-   "480p": 1,
+   "480p": 2,
    "576p": 1,
    "760p": 2
   }
@@ -2476,6 +2478,540 @@
      "episode": 26,
      "url": "https://stream.farsicdn.co/serials/pooste-shir/Pooste-Shir-Poshte-2.mp4",
      "reason": "non-episode file (teaser/trailer/summary/movie/behind-the-scenes): Pooste-Shir-Poshte-2.mp4"
+    }
+   ]
+  },
+  {
+   "title": "TNT",
+   "tmdb": 220830,
+   "imdb": "tt0492928",
+   "year": 1965,
+   "num": 13484,
+   "episodes_listed": 25,
+   "episodes_merged": 23,
+   "tmdb_seasons": {
+    "1": 7
+   },
+   "episodes_held": [
+    {
+     "slug": "tnt-norooz-special-part-1",
+     "season": 1,
+     "episode": 1,
+     "reason": "duplicate S1E1 (kept tnt-mostabeghe-part-1)"
+    },
+    {
+     "slug": "tnt-show-episode-2",
+     "season": 1,
+     "episode": 2,
+     "reason": "duplicate S1E2 (kept tnt-series-norooz-special-2)"
+    }
+   ]
+  },
+  {
+   "title": "Dadzan",
+   "tmdb": 226451,
+   "imdb": null,
+   "year": 2023,
+   "num": 13485,
+   "episodes_listed": 10,
+   "episodes_merged": 10,
+   "tmdb_seasons": {
+    "1": 11
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Scorpion in love",
+   "tmdb": 229921,
+   "imdb": "tt28335163",
+   "year": 2023,
+   "num": 13486,
+   "episodes_listed": 20,
+   "episodes_merged": 20,
+   "tmdb_seasons": {
+    "1": 20
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "The Black Hole",
+   "tmdb": 225015,
+   "imdb": "tt27521744",
+   "year": 2023,
+   "num": 13487,
+   "episodes_listed": 11,
+   "episodes_merged": 11,
+   "tmdb_seasons": {
+    "1": 11
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Mentalist",
+   "tmdb": 222749,
+   "imdb": null,
+   "year": 2023,
+   "num": 13488,
+   "episodes_listed": 9,
+   "episodes_merged": 9,
+   "tmdb_seasons": {
+    "1": 10
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Vertigo",
+   "tmdb": 218462,
+   "imdb": "tt26256718",
+   "year": 2023,
+   "num": 13489,
+   "episodes_listed": 24,
+   "episodes_merged": 24,
+   "tmdb_seasons": {
+    "1": 24
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Amsterdam",
+   "tmdb": 225791,
+   "imdb": null,
+   "year": 2023,
+   "num": 13490,
+   "episodes_listed": 11,
+   "episodes_merged": 11,
+   "tmdb_seasons": {
+    "1": 12
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Gildokht",
+   "tmdb": 245065,
+   "imdb": "tt26985690",
+   "year": 2022,
+   "num": 13491,
+   "episodes_listed": 60,
+   "episodes_merged": 60,
+   "tmdb_seasons": {
+    "1": 40
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "The Voice Persia",
+   "tmdb": 250732,
+   "imdb": "tt26625872",
+   "year": 2023,
+   "num": 13492,
+   "episodes_listed": 12,
+   "episodes_merged": 12,
+   "tmdb_seasons": {
+    "1": 12
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "The Translator",
+   "tmdb": 218581,
+   "imdb": null,
+   "year": 2023,
+   "num": 13493,
+   "episodes_listed": 13,
+   "episodes_merged": 13,
+   "tmdb_seasons": {
+    "1": 13
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Secret Army",
+   "tmdb": 220298,
+   "imdb": "tt27011778",
+   "year": 2023,
+   "num": 13494,
+   "episodes_listed": 16,
+   "episodes_merged": 16,
+   "tmdb_seasons": {
+    "1": 3,
+    "2": 3,
+    "3": 3,
+    "4": 3,
+    "5": 3
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "The Fall",
+   "tmdb": 217797,
+   "imdb": "tt25785616",
+   "year": 2023,
+   "num": 13495,
+   "episodes_listed": 9,
+   "episodes_merged": 9,
+   "tmdb_seasons": {
+    "1": 9
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Jeyran",
+   "tmdb": 155613,
+   "imdb": "tt14471602",
+   "year": 2022,
+   "num": 13496,
+   "episodes_listed": 52,
+   "episodes_merged": 52,
+   "tmdb_seasons": {
+    "1": 52
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Anten",
+   "tmdb": 210748,
+   "imdb": null,
+   "year": 2022,
+   "num": 13497,
+   "episodes_listed": 14,
+   "episodes_merged": 14,
+   "tmdb_seasons": {
+    "1": 14
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "The Secret Of Survival",
+   "tmdb": 196115,
+   "imdb": "tt18938902",
+   "year": 2022,
+   "num": 13498,
+   "episodes_listed": 17,
+   "episodes_merged": 17,
+   "tmdb_seasons": {
+    "1": 17
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Soda",
+   "tmdb": 60652,
+   "imdb": "tt2063560",
+   "year": 2011,
+   "num": 13499,
+   "episodes_listed": 10,
+   "episodes_merged": 6,
+   "tmdb_seasons": {
+    "1": 25,
+    "2": 30,
+    "3": 30
+   },
+   "episodes_held": [
+    {
+     "slug": "soda-episode-1",
+     "season": 1,
+     "episode": 1,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "soda-2",
+     "season": 1,
+     "episode": 2,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "soda-episode-3",
+     "season": 1,
+     "episode": 3,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "soda-4",
+     "season": 1,
+     "episode": 4,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    }
+   ]
+  },
+  {
+   "title": "Joker",
+   "tmdb": 152279,
+   "imdb": "tt16409108",
+   "year": 2021,
+   "num": 13500,
+   "episodes_listed": 33,
+   "episodes_merged": 14,
+   "tmdb_seasons": {
+    "1": 4,
+    "2": 4,
+    "3": 4,
+    "4": 4,
+    "5": 4,
+    "6": 5,
+    "7": 5
+   },
+   "episodes_held": [
+    {
+     "slug": "joker-ghesmate-1",
+     "season": 1,
+     "episode": 1,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "joker-show-episode-2",
+     "season": 1,
+     "episode": 2,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "joker-ghesmate-3",
+     "season": 1,
+     "episode": 3,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "joker-show-ghesmate-4",
+     "season": 1,
+     "episode": 4,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "joker-s2-ghesmate-1",
+     "season": 2,
+     "episode": 1,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "joker-season-2-episode-2",
+     "season": 2,
+     "episode": 2,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "joker-show-season-2-episode-3",
+     "season": 2,
+     "episode": 3,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "joker-s2-part-4",
+     "season": 2,
+     "episode": 4,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "joker-season-3-part-1",
+     "season": 3,
+     "episode": 1,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "joker-s3-part-2",
+     "season": 3,
+     "episode": 2,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "joker-season-3-part-3",
+     "season": 3,
+     "episode": 3,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "joker-s3-episode-4",
+     "season": 3,
+     "episode": 4,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "joker-season-4-part-1",
+     "season": 4,
+     "episode": 1,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "joker-s4-part-2",
+     "season": 4,
+     "episode": 2,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "joker-season-4-part-3",
+     "season": 4,
+     "episode": 3,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "joker-s4-ghesmate-4",
+     "season": 4,
+     "episode": 4,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "joker-s5-ghesmate-1",
+     "season": 5,
+     "episode": 1,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "joker-season-5-part-2",
+     "season": 5,
+     "episode": 2,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "joker-s5-episode-3",
+     "season": 5,
+     "episode": 3,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    }
+   ]
+  },
+  {
+   "title": "Island",
+   "tmdb": 137244,
+   "imdb": "tt15754746",
+   "year": 2021,
+   "num": 13501,
+   "episodes_listed": 14,
+   "episodes_merged": 14,
+   "tmdb_seasons": {
+    "1": 14
+   },
+   "episodes_held": []
+  },
+  {
+   "title": "Band Bazi",
+   "tmdb": 195873,
+   "imdb": null,
+   "year": 2022,
+   "num": 13502,
+   "episodes_listed": 31,
+   "episodes_merged": 11,
+   "tmdb_seasons": {
+    "1": 31
+   },
+   "episodes_held": [
+    {
+     "slug": "band-bazi-part-1",
+     "season": 1,
+     "episode": 1,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "band-bazi-ghesmate-2",
+     "season": 1,
+     "episode": 2,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "band-bazi-episode-3",
+     "season": 1,
+     "episode": 3,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "band-bazi-show-4",
+     "season": 1,
+     "episode": 4,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "band-bazi-part-5",
+     "season": 1,
+     "episode": 5,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "band-bazi-6",
+     "season": 1,
+     "episode": 6,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "band-bazi-show-7",
+     "season": 1,
+     "episode": 7,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "band-bazi-part-8",
+     "season": 1,
+     "episode": 8,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "band-bazi-9",
+     "season": 1,
+     "episode": 9,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "band-bazi-episode-10",
+     "season": 1,
+     "episode": 10,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "band-bazi-part-11",
+     "season": 1,
+     "episode": 11,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "band-bazi-12",
+     "season": 1,
+     "episode": 12,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "band-bazi-part-13",
+     "season": 1,
+     "episode": 13,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "band-bazi-part-14",
+     "season": 1,
+     "episode": 14,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "band-bazi-episode-15",
+     "season": 1,
+     "episode": 15,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "band-bazi-16",
+     "season": 1,
+     "episode": 16,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "band-bazi-17",
+     "season": 1,
+     "episode": 17,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "band-bazi-part-18",
+     "season": 1,
+     "episode": 18,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "band-bazi-21",
+     "season": 1,
+     "episode": 21,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "band-bazi-episode-31",
+     "season": 1,
+     "episode": 31,
+     "url": "https://stream.farsicdn.co/serials/band-bazi/Band-Bazi-E31.mp4",
+     "reason": "mp4 did not probe playable: {'url': 'https://stream.farsicdn.co/serials/band-bazi/Band-Bazi-E31.mp4', 'head_status': 404, 'size_bytes': 555, 'content_type': 'text/html; charset=utf-8', 'range_status': 404, 'range_bytes': 555, 'ftyp_ok': False, 'moov_offset': None, 'moov_after_mdat': True, 'width': None, 'height': None, 'quality': None, 'playable': False}"
     }
    ]
   }
@@ -5201,6 +5737,204 @@
      "season": 3,
      "episode": 105,
      "reason": "YouTube embed only (8SZRRMjsIic) — needs VPN, never merged as a play link"
+    }
+   ]
+  },
+  {
+   "slug": "yazdah-iranian-serial",
+   "title": "Kalantari Yazdah",
+   "tmdb": 319692,
+   "reason": "no episode verified playable (11 listed, 11 held)",
+   "held": [
+    {
+     "slug": "yazda-part-1",
+     "season": 1,
+     "episode": 1,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "yazdah-ghesmate-2",
+     "season": 1,
+     "episode": 2,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "yazda-part-3",
+     "season": 1,
+     "episode": 3,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "yazdah-ghesmate-4",
+     "season": 1,
+     "episode": 4,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "yazdah-part-5",
+     "season": 1,
+     "episode": 5,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "yazda-ghesmate-6",
+     "season": 1,
+     "episode": 6,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "yazdah-ghesmate-7",
+     "season": 1,
+     "episode": 7,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "yazda-part-8",
+     "season": 1,
+     "episode": 8,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "yazdah-ghesmate-9",
+     "season": 1,
+     "episode": 9,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "yazda-part-10",
+     "season": 1,
+     "episode": 10,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "yazdah-part-11",
+     "season": 1,
+     "episode": 11,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    }
+   ]
+  },
+  {
+   "slug": "rooze-balva-persian-serial",
+   "title": "The Day of the Riot",
+   "tmdb": 139407,
+   "reason": "no episode verified playable (3 listed, 3 held)",
+   "held": [
+    {
+     "slug": "rooze-balva-part-1",
+     "season": 1,
+     "episode": 1,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "rooze-balva-episode-2",
+     "season": 1,
+     "episode": 2,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "rooze-balva-part-3",
+     "season": 1,
+     "episode": 3,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    }
+   ]
+  },
+  {
+   "slug": "nargil-serial",
+   "title": "Coconut",
+   "tmdb": 133156,
+   "reason": "no episode verified playable (15 listed, 15 held)",
+   "held": [
+    {
+     "slug": "nargil-ghesmate-1",
+     "season": 1,
+     "episode": 1,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "nargil-ghesmate-2",
+     "season": 1,
+     "episode": 2,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "nargil-ghesmate-3",
+     "season": 1,
+     "episode": 3,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "nargil-ghesmate-4",
+     "season": 1,
+     "episode": 4,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "nargil-part-5",
+     "season": 1,
+     "episode": 5,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "nargil-6",
+     "season": 1,
+     "episode": 6,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "nargil-7",
+     "season": 1,
+     "episode": 7,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "nargil-episode-8",
+     "season": 1,
+     "episode": 8,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "nargil-part-9",
+     "season": 1,
+     "episode": 9,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "nargil-episode-10",
+     "season": 1,
+     "episode": 10,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "nargil-episode-11",
+     "season": 1,
+     "episode": 11,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "nargil-12",
+     "season": 1,
+     "episode": 12,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "nargil-episode-13",
+     "season": 1,
+     "episode": 13,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "nargil-14",
+     "season": 1,
+     "episode": 14,
+     "reason": "episode page has no mp4 source and no YouTube embed"
+    },
+    {
+     "slug": "nargil-episode-15",
+     "season": 1,
+     "episode": 15,
+     "reason": "episode page has no mp4 source and no YouTube embed"
     }
    ]
   }
