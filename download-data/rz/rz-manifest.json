@@ -2,19 +2,19 @@
  "code": "RZ",
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
  "start_num": 12560,
- "end_num": 13512,
- "live_base_head": "c4991e6d3d5800f32954263ec9f4994deeef832c (5h run 20261123T171105Z; H3 max #13502 verified from live files, RZ part-1 max #13483)",
- "generated": "2026-11-23 (twice-daily PM chunk 1 — Love Imagined #13512; prev: RezFlix 5h run 20261123T171105Z)",
+ "end_num": 13746,
+ "live_base_head": "a6df8e52e16ab6a9734b882206a52f4f20d0b36d (5h run 20261123T221058Z; H3 max #13737 verified from live files, RZ part-1 max #13512)",
+ "generated": "2026-11-24 (RezFlix 5-hourly run 20261123T221058Z — merge of 9 new RZ titles #13738-13746 + 10 trailer keys; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
  "counts": {
-  "total_titles": 592,
-  "movies": 24,
+  "total_titles": 601,
+  "movies": 33,
   "series": 568,
-  "total_links": 43365,
+  "total_links": 43384,
   "by_year": {
    "2024": 1,
-   "2026": 19,
+   "2026": 26,
    "2023": 2,
-   "2025": 5,
+   "2025": 7,
    "2014": 2,
    "1955": 2,
    "1960": 3,
@@ -76,10 +76,10 @@
    "2022": 1
   },
   "by_quality": {
-   "720p": 21206,
-   "1080p": 3413,
+   "720p": 21215,
+   "1080p": 3422,
    "540p": 292,
-   "480p": 14207,
+   "480p": 14208,
    "CAM 1080p": 117,
    "CAM 720p": 35,
    "Cam 1080p": 1,
@@ -6607,6 +6607,105 @@
    "quality": "720p",
    "rezflix_id": 36129,
    "identity_note": "TMDB+IMDb+OMDb agree (feed 2025, TMDB 2025, tt38947209). OMDb title 'Wa Lana Fel Khayal Hob' is the romanized original title (TMDB original_title is the Arabic) — identity proven; the RezFlix run queued it on the title-string difference. Persian name عشق خیالی (feed)."
+  },
+  {
+   "title": "Black Trumpet",
+   "tmdb": 1694033,
+   "imdb": "tt39309870",
+   "year": 2026,
+   "num": 13738,
+   "links": 2,
+   "quality": "1080p,720p",
+   "rezflix_id": 36140,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt39309870). Persian name شیپور سیاه (feed, verified vs synopsis)."
+  },
+  {
+   "title": "Santo Antonio Lisbon Love",
+   "tmdb": 1610820,
+   "imdb": "tt38781172",
+   "year": 2026,
+   "num": 13739,
+   "links": 2,
+   "quality": "1080p,720p",
+   "rezflix_id": 36141,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt38781172). Persian name سانتو آنتونیو عشق لیسبون (feed, verified vs synopsis)."
+  },
+  {
+   "title": "Last Shot",
+   "tmdb": 1536236,
+   "imdb": "tt15426712",
+   "year": 2026,
+   "num": 13740,
+   "links": 2,
+   "quality": "1080p,720p",
+   "rezflix_id": 36142,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt15426712). Persian name آخرین شوت (feed, verified vs synopsis)."
+  },
+  {
+   "title": "On Behalf of My Son",
+   "tmdb": 1307474,
+   "imdb": "tt33402927",
+   "year": 2026,
+   "num": 13741,
+   "links": 2,
+   "quality": "1080p,720p",
+   "rezflix_id": 36143,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt33402927). Persian name از طرف پسرم (feed, verified vs synopsis)."
+  },
+  {
+   "title": "Sad Girlz",
+   "tmdb": 1536433,
+   "imdb": "tt39311354",
+   "year": 2026,
+   "num": 13742,
+   "links": 2,
+   "quality": "1080p,720p",
+   "rezflix_id": 36145,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt39311354). Persian name دختران غمگین (feed, verified vs synopsis)."
+  },
+  {
+   "title": "Hungarian Wedding",
+   "tmdb": 1563538,
+   "imdb": "tt38267641",
+   "year": 2026,
+   "num": 13743,
+   "links": 2,
+   "quality": "1080p,720p",
+   "rezflix_id": 36146,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2025, TMDB 2026, tt38267641). Feed/description year 2025, TMDB+OMDb 2026 — identity year 2026 (2-of-3 rule). Persian name عروسی مجارستانی (feed, verified vs synopsis)."
+  },
+  {
+   "title": "The Influencer Project",
+   "tmdb": 1654086,
+   "imdb": "tt42643242",
+   "year": 2026,
+   "num": 13744,
+   "links": 2,
+   "quality": "1080p,720p",
+   "rezflix_id": 36147,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt42643242). Persian name پروژه اینفلوئنسر (feed, verified vs synopsis)."
+  },
+  {
+   "title": "The True Beauty of Being Bitten by a Tick",
+   "tmdb": 1421993,
+   "imdb": "tt33578667",
+   "year": 2025,
+   "num": 13745,
+   "links": 2,
+   "quality": "1080p,720p",
+   "rezflix_id": 36148,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2025, TMDB 2025, tt33578667). Feed 2025, TMDB 2025, OMDb 2026 — identity year 2025. Persian name زیبایی واقعی نیش کنه (feed, verified vs synopsis)."
+  },
+  {
+   "title": "Sister",
+   "tmdb": 1469050,
+   "imdb": "tt36622192",
+   "year": 2025,
+   "num": 13746,
+   "links": 3,
+   "quality": "1080p,480p,720p",
+   "rezflix_id": 36149,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2025, tt36622192). Feed 2026, TMDB+OMDb 2025 — identity year 2025. Persian name خواهر (feed, verified vs synopsis)."
   }
  ],
  "trailer_keys_added": [
@@ -6658,7 +6757,17 @@
   "movie:1811136",
   "movie:1252382",
   "tv:292625",
-  "tv:303552"
+  "tv:303552",
+  "movie:1694033",
+  "movie:1610820",
+  "movie:1536236",
+  "movie:1307474",
+  "movie:1281331",
+  "movie:1536433",
+  "movie:1563538",
+  "movie:1654086",
+  "movie:1421993",
+  "movie:1469050"
  ],
  "queued_titles": [
   {
@@ -6691,7 +6800,10 @@
  "url_dupes_dropped": [
   "http://peer.tci.cdn.146.dl150m.info/film1/Tyler.Perrys.Finding.Joy.2025.1080p.WEB-DL.Farsi.Sub.Film2Media.mkv  # SAME ENCODE live as #12703 part 16 (Film2Media SoftSub, identical filename; host differs only)",
   "http://peer.tci.cdn.146.dl150m.info/film1/Tyler.Perrys.Finding.Joy.2025.480p.WEB-DL.Farsi.Sub.Film2Media.mkv  # SAME ENCODE live as #12703 part 16 (Film2Media SoftSub, identical filename; host differs only)",
-  "http://peer.tci.cdn.146.dl150m.info/film1/Tyler.Perrys.Finding.Joy.2025.720p.WEB-DL.Farsi.Sub.Film2Media.mkv  # SAME ENCODE live as #12703 part 16 (Film2Media SoftSub, identical filename; host differs only)"
+  "http://peer.tci.cdn.146.dl150m.info/film1/Tyler.Perrys.Finding.Joy.2025.720p.WEB-DL.Farsi.Sub.Film2Media.mkv  # SAME ENCODE live as #12703 part 16 (Film2Media SoftSub, identical filename; host differs only)",
+  "http://peer.tci.cdn.146.dl150m.info/film1/The.Social.Reckoning.2026.1080p.WEB-DL.6CH.YIFY.Farsi.Sub.Film2Media.mkv  # SAME ENCODE live as #11093 part 16 (Film2Media SoftSub, identical filename; host differs only)",
+  "http://peer.tci.cdn.146.dl150m.info/film1/The.Social.Reckoning.2026.480p.WEB-DL.Farsi.Sub.Film2Media.mkv  # SAME ENCODE live as #11093 part 16 (Film2Media SoftSub, identical filename; host differs only)",
+  "http://peer.tci.cdn.146.dl150m.info/film1/The.Social.Reckoning.2026.720p.WEB-DL.YIFY.Farsi.Sub.Film2Media.mkv  # SAME ENCODE live as #11093 part 16 (Film2Media SoftSub, identical filename; host differs only)"
  ],
  "note": "Section per filename markers (DESIGN §4); description footer 'زیرنویس چسبیده پارسی' is generic and does not set play_type. MANIFEST REBUILT from the live rz play-index (authoritative): the old manifest files were incomplete (batch 1 kept only Musketeers; the twice-daily counts did not match its films list), so films + counts here are derived from the play rows.",
  "encode_completions": [

@@ -536943,6 +536943,51 @@
   },
   "year": 2009
  },
+ "tt15426712": {
+  "imdb": "tt15426712",
+  "num": 13740,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Last.Shot.2026.1080p.WEBRip.x264.AAC-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.74 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Last.Shot.2026.720p.WEBRip.x264.AAC-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 1005584384,
+    "size_text": "959 MB"
+   }
+  ],
+  "title": "Last Shot",
+  "tmdb_key": "movie:1536236",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
  "tt1547413": {
   "imdb": "tt1547413",
   "num": 13174,
@@ -593912,6 +593957,96 @@
   },
   "year": 2015
  },
+ "tt33402927": {
+  "imdb": "tt33402927",
+  "num": 13741,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/On.Behalf.of.My.Son.2026.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "2.69 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/On.Behalf.of.My.Son.2026.720p.WEBRip.x264.AAC-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.31 GB"
+   }
+  ],
+  "title": "On Behalf of My Son",
+  "tmdb_key": "movie:1307474",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
+ "tt33578667": {
+  "imdb": "tt33578667",
+  "num": 13745,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/The.True.Beauty.Of.Being.Bitten.By.A.Tick.2025.1080p.WEBRip.x264.AAC-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.36 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/The.True.Beauty.Of.Being.Bitten.By.A.Tick.2025.720p.WEBRip.x264.AAC-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 787480576,
+    "size_text": "751 MB"
+   }
+  ],
+  "title": "The True Beauty of Being Bitten by a Tick",
+  "tmdb_key": "movie:1421993",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2025
+ },
  "tt3364894": {
   "imdb": "tt3364894",
   "num": 13455,
@@ -600824,6 +600959,65 @@
   },
   "year": 2025
  },
+ "tt36622192": {
+  "imdb": "tt36622192",
+  "num": 13746,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "ValaMovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Sister.2026.1080p.WEB-DL.ValaMovie.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.62 GB"
+   },
+   {
+    "encoder": "ValaMovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Sister.2026.720p.WEB-DL.ValaMovie.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1 GB"
+   },
+   {
+    "encoder": "ValaMovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Sister.2026.480p.WEB-DL.ValaMovie.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 398458880,
+    "size_text": "380 MB"
+   }
+  ],
+  "title": "Sister",
+  "tmdb_key": "movie:1469050",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2025
+ },
  "tt37062070": {
   "imdb": "tt37062070",
   "num": 13510,
@@ -601031,6 +601225,51 @@
    "url": null
   },
   "year": 2025
+ },
+ "tt38267641": {
+  "imdb": "tt38267641",
+  "num": 13743,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Hungarian.Wedding.2025.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.72 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Hungarian.Wedding.2025.720p.WEBRip.x264.AA-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 896532480,
+    "size_text": "855 MB"
+   }
+  ],
+  "title": "Hungarian Wedding",
+  "tmdb_key": "movie:1563538",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
  },
  "tt38336631": {
   "imdb": "tt38336631",
@@ -602514,6 +602753,51 @@
   },
   "year": 2017
  },
+ "tt38781172": {
+  "imdb": "tt38781172",
+  "num": 13739,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Santo.Antonio.Lisbon.Love.2026.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "2.2 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Santo.Antonio.Lisbon.Love.2026.720p.WEBRip.x264.AAC-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.07 GB"
+   }
+  ],
+  "title": "Santo Antonio Lisbon Love",
+  "tmdb_key": "movie:1610820",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
  "tt38947209": {
   "imdb": "tt38947209",
   "num": 13512,
@@ -602638,6 +602922,96 @@
   "title": "Valentina and the 12 Signs",
   "tmdb_key": "tv:318420",
   "type": "tv",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
+ "tt39309870": {
+  "imdb": "tt39309870",
+  "num": 13738,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Black.Trumpet.2026.1080p.WEBRip.x264.AAC-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.48 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Black.Trumpet.2026.720p.WEBRip.x264.AAC-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 856686592,
+    "size_text": "817 MB"
+   }
+  ],
+  "title": "Black Trumpet",
+  "tmdb_key": "movie:1694033",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
+ "tt39311354": {
+  "imdb": "tt39311354",
+  "num": 13742,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Sad.Girlz.2026.1080p.WEBRip.x264.AAC-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.51 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Sad.Girlz.2026.720p.WEBRip.x264.AAC-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 870318080,
+    "size_text": "830 MB"
+   }
+  ],
+  "title": "Sad Girlz",
+  "tmdb_key": "movie:1536433",
+  "type": "movie",
   "video_mp4": {
    "is_trailer": false,
    "size_bytes": null,
@@ -603346,6 +603720,51 @@
    "url": null
   },
   "year": 1996
+ },
+ "tt42643242": {
+  "imdb": "tt42643242",
+  "num": 13744,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/The.Influencer.Project.2026.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.88 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/The.Influencer.Project.2026.720p.WEBRip.x264.AAC-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 979369984,
+    "size_text": "934 MB"
+   }
+  ],
+  "title": "The Influencer Project",
+  "tmdb_key": "movie:1654086",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
  },
  "tt4634542": {
   "imdb": "tt4634542",
