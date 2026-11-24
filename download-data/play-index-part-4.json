@@ -118316,6 +118316,20 @@
     "season": 3,
     "size_bytes": 240565025,
     "size_text": "241 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": 7,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl2.sermoviedown.pw/Series/2024/Tracker/S04/720x265/Tracker.2024.S04E07.720p.10bit.WEBRip.2CH.x265.HEVC-PSA.Sermovie.mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": 4,
+    "size_bytes": 260780851,
+    "size_text": "261 MB"
    }
   ],
   "title": "Tracker",

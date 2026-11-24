@@ -9,13 +9,13 @@
   "new_titles": 42,
   "new_links": 735,
   "have_new_titles": 277,
-  "have_new_links_added": 3556,
+  "have_new_links_added": 3558,
   "have_old_titles": 35,
   "have_old_links_added": 619,
   "have_mbm_titles": 2,
   "have_mbm_links_added": 46,
   "total_titles": 355,
-  "total_links_added": 4956,
+  "total_links_added": 4958,
   "by_year": {
    "2011": 1,
    "2018": 2,
@@ -31,10 +31,10 @@
   "by_resolution": {
    "1080p": 209,
    "540p": 12,
-   "720p": 516
+   "720p": 518
   },
   "by_version": {
-   "NoSub": 446,
+   "NoSub": 448,
    "SoftSub": 291
   },
   "by_type": {
@@ -164,7 +164,7 @@
    "title": "Animal Control",
    "imdb": "tt21376524",
    "tmdb": 214162,
-   "nlinks": 31
+   "nlinks": 32
   },
   {
    "title": "Brawn: The Impossible Formula 1 Story",
@@ -532,7 +532,7 @@
    "title": "Tracker",
    "imdb": "tt13875494",
    "tmdb": null,
-   "nlinks": 46
+   "nlinks": 47
   },
   {
    "title": "We Were Liars",
@@ -2924,7 +2924,7 @@
    "imdb": "tt13875494",
    "part": 4,
    "existing_num": 9116,
-   "nlinks_added": 46
+   "nlinks_added": 47
   },
   {
    "title": "Trying",
@@ -3036,6 +3036,13 @@
    "imdb": "tt37020296",
    "part": 16,
    "existing_num": 10927,
+   "nlinks_added": 1
+  },
+  {
+   "title": "Animal Control",
+   "imdb": "tt21376524",
+   "part": "srm",
+   "existing_num": 11600,
    "nlinks_added": 1
   }
  ],
