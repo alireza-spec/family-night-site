@@ -99455,6 +99455,34 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/filmjaded/The.Lair.2022.720p.WEB-DL.x264.AAC-YTS.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/filmjaded/The.Lair.2022.1080p.WEB-DL.x264.AAC5.1-YTS.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
    }
   ],
   "title": "The Lair",
@@ -182309,6 +182337,20 @@
     "playit_url": "https://www.myf2ms.top/18268/beyond-youthful-days-2024/?playit=6a9bd536f2be13f8cc2290e1fd998e87&play_type=hardsub&quality=WEB-DL 720p&type=movies&id=18268",
     "quality": "WEB-DL 720p",
     "quality_label": "web-dl 720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive.google.dl175m.info/film/18x2.Beyond.Youthful.Days.2024.480p.NF.WEB-DL.x264.Pahe.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
     "season": null,
     "size_bytes": null,
     "size_text": ""
