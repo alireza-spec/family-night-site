@@ -91061,5 +91061,96 @@
   "part": "dn2",
   "title": "Ryakudatsu Datsukon",
   "year": 2026
+ },
+ "tv:87007": {
+  "imdb_id": "tt11379008",
+  "num": 13893,
+  "part": "sm",
+  "title": "Martial Universe",
+  "year": 2019
+ },
+ "tv:295268": {
+  "imdb_id": "tt38195069",
+  "num": 13894,
+  "part": "sm",
+  "title": "Tumm Se Tumm Tak",
+  "year": 2025
+ },
+ "tv:326991": {
+  "imdb_id": "tt44093541",
+  "num": 13895,
+  "part": "sm",
+  "title": "A Trap Called Desire",
+  "year": 2026
+ },
+ "tv:285710": {
+  "imdb_id": "tt42938834",
+  "num": 13896,
+  "part": "sm",
+  "title": "Suikoden: The Anime",
+  "year": 2026
+ },
+ "tv:329190": {
+  "imdb_id": null,
+  "num": 13897,
+  "part": "sm",
+  "title": "Mission: Mompossible",
+  "year": 2026
+ },
+ "tv:316891": {
+  "imdb_id": "tt43691365",
+  "num": 13898,
+  "part": "sm",
+  "title": "The Cold Sato-san Is Only Sweet to Me",
+  "year": 2026
+ },
+ "tv:327765": {
+  "imdb_id": "tt43691391",
+  "num": 13899,
+  "part": "sm",
+  "title": "Super Psychic Policeman Chojo",
+  "year": 2026
+ },
+ "tv:316551": {
+  "imdb_id": "tt41295113",
+  "num": 13900,
+  "part": "sm",
+  "title": "Battle Spirits [Re] ZEKKAI NO KU",
+  "year": 2026
+ },
+ "tv:279155": {
+  "imdb_id": "tt34959964",
+  "num": 13901,
+  "part": "sm",
+  "title": "The Silent Storm",
+  "year": 2026
+ },
+ "tv:283119": {
+  "imdb_id": null,
+  "num": 13902,
+  "part": "sm",
+  "title": "The Other Side of Deep Space",
+  "year": 2026
+ },
+ "tv:294498": {
+  "imdb_id": "tt37479351",
+  "num": 13903,
+  "part": "sm",
+  "title": "Still a Family",
+  "year": 2026
+ },
+ "movie:1599184": {
+  "imdb_id": "tt51165610",
+  "num": 13904,
+  "part": "sm",
+  "title": "Battle Through the Heavens: The Battle of Two Emperors",
+  "year": 2026
+ },
+ "tv:341537": {
+  "imdb_id": null,
+  "num": 13905,
+  "part": "sm",
+  "title": "A New Way for Sanctification",
+  "year": 2026
  }
 }

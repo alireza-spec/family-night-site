@@ -211,18 +211,18 @@
  ],
  "counts": {
   "by_resolution": {
-   "1080p": 48,
-   "480p": 133,
-   "720p": 221
+   "1080p": 94,
+   "480p": 357,
+   "720p": 723
   },
   "by_type": {
-   "movie": 11,
-   "series": 21
+   "movie": 12,
+   "series": 33
   },
   "by_version": {
    "Dubbed": 10,
-   "HardSub": 355,
-   "SoftSub": 37
+   "HardSub": 1091,
+   "SoftSub": 73
   },
   "by_year": {
    "1991": 1,
@@ -235,14 +235,15 @@
    "2022": 3,
    "2023": 2,
    "2024": 1,
-   "2025": 4,
-   "2026": 13
+   "2025": 5,
+   "2026": 24,
+   "2019": 1
   },
-  "new_links": 402,
-  "new_play_rows_expanded": 490,
-  "new_titles": 32,
-  "total_links_added": 402,
-  "total_titles": 32,
+  "new_links": 1174,
+  "new_play_rows_expanded": 1262,
+  "new_titles": 45,
+  "total_links_added": 1174,
+  "total_titles": 45,
   "variety_links_added": 81,
   "variety_links_parsed": 86,
   "variety_play_rows_expanded": 78,
@@ -602,6 +603,149 @@
    "tmdb": 166178,
    "type": "movie",
    "year": 2012
+  },
+  {
+   "num": 13893,
+   "title": "Martial Universe",
+   "year": 2019,
+   "type": "series",
+   "imdb": "tt11379008",
+   "tmdb": 87007,
+   "nlinks": 98,
+   "play_rows": 98,
+   "note": "TMDB external_ids gives tt11379008 (check pass recorded null after transport errors); OMDb agrees: Martial Universe, 2019-, series. Simba seasons S1-S6 (TMDB has 8); filenames match per season."
+  },
+  {
+   "num": 13894,
+   "title": "Tumm Se Tumm Tak",
+   "year": 2025,
+   "type": "series",
+   "imdb": "tt38195069",
+   "tmdb": 295268,
+   "nlinks": 219,
+   "play_rows": 219,
+   "note": "Simba splits one TMDB season into فصل 1-4; filenames carry continuous E001-E219 with no S marker and TMDB has 1 season / 300 eps, so seasons collapse to S1 (flagged in build). 720p HardSub mp4."
+  },
+  {
+   "num": 13895,
+   "title": "A Trap Called Desire",
+   "year": 2026,
+   "type": "series",
+   "imdb": "tt44093541",
+   "tmdb": 326991,
+   "nlinks": 126,
+   "play_rows": 126,
+   "note": "Simba فصل دوم chunk files carry S01E061-E063 in the filename; filename wins, all S1 (TMDB: 1 season / 100 eps)."
+  },
+  {
+   "num": 13896,
+   "title": "Suikoden: The Anime",
+   "year": 2026,
+   "type": "series",
+   "imdb": "tt42938834",
+   "tmdb": 285710,
+   "nlinks": 24,
+   "play_rows": 24,
+   "note": "OMDb agrees: Suikoden: The Anime, 2026-, series."
+  },
+  {
+   "num": 13897,
+   "title": "Mission: Mompossible",
+   "year": 2026,
+   "type": "series",
+   "imdb": null,
+   "tmdb": 329190,
+   "nlinks": 81,
+   "play_rows": 81,
+   "note": "TMDB-ONLY: TMDB external_ids null (no IMDb anywhere). Identity via TMDB detail (Mission: Mompossible, 2026-09-28, S1) + Simba filenames S01E001+ matching TMDB S1. Alt titles include 'Mom is Crazy'."
+  },
+  {
+   "num": 13898,
+   "title": "The Cold Sato-san Is Only Sweet to Me",
+   "year": 2026,
+   "type": "series",
+   "imdb": "tt43691365",
+   "tmdb": 316891,
+   "nlinks": 24,
+   "play_rows": 24,
+   "note": "TMDB external_ids gives tt43691365 (check pass recorded null); OMDb agrees exactly: The Cold Sato-san Is Only Sweet to Me, 2026-, series."
+  },
+  {
+   "num": 13899,
+   "title": "Super Psychic Policeman Chojo",
+   "year": 2026,
+   "type": "series",
+   "imdb": "tt43691391",
+   "tmdb": 327765,
+   "nlinks": 24,
+   "play_rows": 24,
+   "note": "OMDb title is the original Japanese title 'Choujun! Choujou Senpai' (= TMDB original_title); year 2026- and type series agree."
+  },
+  {
+   "num": 13900,
+   "title": "Battle Spirits [Re] ZEKKAI NO KU",
+   "year": 2026,
+   "type": "series",
+   "imdb": "tt41295113",
+   "tmdb": 316551,
+   "nlinks": 24,
+   "play_rows": 24,
+   "note": "TMDB external_ids gives tt41295113 (check pass recorded null); OMDb agrees: Battle Spirits (Re) Zekkai no Kuu, 2026-, series. Simba short title; identity via single 2026 TMDB hit + matching filenames + TMDB alt titles."
+  },
+  {
+   "num": 13901,
+   "title": "The Silent Storm",
+   "year": 2026,
+   "type": "series",
+   "imdb": "tt34959964",
+   "tmdb": 279155,
+   "nlinks": 60,
+   "play_rows": 60,
+   "note": "TMDB external_ids gives tt34959964 (check pass recorded null); OMDb SILENT (no entry). TMDB+IMDb agree; filenames match. 1 teaser source excluded (trailer:true)."
+  },
+  {
+   "num": 13902,
+   "title": "The Other Side of Deep Space",
+   "year": 2026,
+   "type": "series",
+   "imdb": null,
+   "tmdb": 283119,
+   "nlinks": 52,
+   "play_rows": 52,
+   "note": "TMDB-ONLY: TMDB external_ids null. Record title = TMDB name 'The Other Side of Deep Space'; Simba title 'Shenkong Bi An' is the transliteration (TMDB alt title 'Shen Kong Bi An'); filenames match."
+  },
+  {
+   "num": 13903,
+   "title": "Still a Family",
+   "year": 2026,
+   "type": "series",
+   "imdb": "tt37479351",
+   "tmdb": 294498,
+   "nlinks": 28,
+   "play_rows": 28,
+   "note": "OMDb SILENT (no entry). TMDB+IMDb agree (Still a Family, 2026-11-16); filenames S01E01+ match."
+  },
+  {
+   "num": 13904,
+   "title": "Battle Through the Heavens: The Battle of Two Emperors",
+   "year": 2026,
+   "type": "movie",
+   "imdb": "tt51165610",
+   "tmdb": 1599184,
+   "nlinks": 3,
+   "play_rows": 3,
+   "note": "OMDb agrees: Battle Through the Heavens Movie Duel of the Two Dou Emperors, 2026, movie. Record title = TMDB title."
+  },
+  {
+   "num": 13905,
+   "title": "A New Way for Sanctification",
+   "year": 2026,
+   "type": "series",
+   "imdb": null,
+   "tmdb": 341537,
+   "nlinks": 9,
+   "play_rows": 9,
+   "note": "TMDB-ONLY: TMDB external_ids null. TMDB primary name is Chinese 混在末日，独自成仙; 'A New Way for Sanctification' is a TMDB alternative title; filenames 'Apocalypse Becoming an Immortal Alone' = translation of the Chinese title. DN 36123 holds the IDENTICAL 9 URLs (verified by set comparison) - nothing additional to add."
   }
  ],
  "nosub_only_new": [],
@@ -616,6 +760,45 @@
    "file": "Jee.Karda.S01E05E08.Hindi.720p.WEBDL.HardSub.mkv",
    "flag": "episode JSON=(4, 8) vs filename=(5,8)",
    "title": "Jee Karda"
+  },
+  {
+   "title": "Tumm Se Tumm Tak",
+   "flag": "season-collapse: TMDB 1 season + no S-marker in filenames; 159 Simba فصل 2-4 labels forced to S1 so rows match TMDB S1 tiles"
+  },
+  {
+   "title": "A Trap Called Desire",
+   "file": "A.Trap.Called.Desire.2026.S01E061.480p-BaroMovie.mkv",
+   "flag": "season JSON=2 vs filename=1"
+  },
+  {
+   "title": "A Trap Called Desire",
+   "file": "A.Trap.Called.Desire.2026.S01E061.720p-BaroMovie.mkv",
+   "flag": "season JSON=2 vs filename=1"
+  },
+  {
+   "title": "A Trap Called Desire",
+   "file": "A.Trap.Called.Desire.2026.S01E062.480p-BaroMovie.mkv",
+   "flag": "season JSON=2 vs filename=1"
+  },
+  {
+   "title": "A Trap Called Desire",
+   "file": "A.Trap.Called.Desire.2026.S01E062.720p-BaroMovie.mkv",
+   "flag": "season JSON=2 vs filename=1"
+  },
+  {
+   "title": "A Trap Called Desire",
+   "file": "A.Trap.Called.Desire.2026.S01E063.480p-BaroMovie.mkv",
+   "flag": "season JSON=2 vs filename=1"
+  },
+  {
+   "title": "A Trap Called Desire",
+   "file": "A.Trap.Called.Desire.2026.S01E063.720p-BaroMovie.mkv",
+   "flag": "season JSON=2 vs filename=1"
+  },
+  {
+   "title": "Mission: Mompossible",
+   "file": "Mission.Mompossible.E29.720p.KCW.WEB-DL.SS.mkv",
+   "flag": "episode JSON=(41, 41) vs filename=(29,29)"
   }
  ],
  "part": 1,
@@ -731,6 +914,41 @@
    "simba_id": 36026,
    "title": "Taming the Husband",
    "year": "2026"
+  },
+  {
+   "simba_id": 35991,
+   "title": "Sai Roong",
+   "year": 2022,
+   "nlinks": null,
+   "reason": "ALREADY-IN-ARCHIVE: same Simba id 35991 merged 2026-11-20 as sm #11657 (TMDB 340510, 1997, tt29668631, TMDB+OMDb agree, OMDb plot matches TMDB 340510 overview verbatim). All 31 unique URLs already live in that record; the checker's TMDB 209341 (Fallen Rainbow 2022, different plot) conflicts with the live verified identity. NO second record; needs adjudication, not a merge."
+  },
+  {
+   "simba_id": 36149,
+   "title": "Sister",
+   "year": 2026,
+   "nlinks": null,
+   "reason": "QUEUED per task: TMDB search failed 3x transport errors; possible identity overlap with live Sister 2026 tt39239178. Do NOT merge, do NOT create a second Sister record."
+  },
+  {
+   "simba_id": 36109,
+   "title": "11",
+   "year": 2017,
+   "nlinks": null,
+   "reason": "QUEUED per task: TMDB failed."
+  },
+  {
+   "simba_id": 36059,
+   "title": "Chiranjeevi",
+   "year": 2026,
+   "nlinks": null,
+   "reason": "QUEUED per task: likely TMDB 1748499 unverified. NOTE: live archive already has Kiku Chiranjeevi (movie:1748499, tt41740111) as sm #12297 - possible duplicate."
+  },
+  {
+   "simba_id": 36055,
+   "title": "Hum Dono",
+   "year": 2024,
+   "nlinks": null,
+   "reason": "QUEUED per task: two TMDB entries, year mismatch. TMDB detail 286319 has no date, pop 0.141."
   }
  ],
  "source": "Simba",
@@ -743,6 +961,18 @@
   {
    "file": "Sai.Roong.EP01.480P.NextMovie.m4v",
    "title": "Sai Roong"
+  },
+  {
+   "title": "A Trap Called Desire",
+   "file": "A.Trap.Called.Desire.2026.S01E011.720p-BaroMovie.mkv"
+  },
+  {
+   "title": "A Trap Called Desire",
+   "file": "A.Trap.Called.Desire.2026.S01E046.720p-BaroMovie.mkv"
+  },
+  {
+   "title": "Mission: Mompossible",
+   "file": "Mission.Mompossible.E29.720p.KCW.WEB-DL.SS.mkv"
   }
  ],
  "url_dupes_in_dn_records": [],
@@ -860,5 +1090,37 @@
    "title": "Tainá"
   }
  ],
- "zero_h3_variety": []
+ "zero_h3_variety": [],
+ "batches": [
+  {
+   "batch": "2026-11-24-pm",
+   "live_base_head": "243fb68a1689dbf8e08e21422a6ece7b7dfaf7f0",
+   "start_num": 13893,
+   "new_titles": 13,
+   "new_links": 772,
+   "new_play_rows_expanded": 772,
+   "queued": [
+    {
+     "simba_id": 35991,
+     "title": "Sai Roong"
+    },
+    {
+     "simba_id": 36149,
+     "title": "Sister"
+    },
+    {
+     "simba_id": 36109,
+     "title": "11"
+    },
+    {
+     "simba_id": 36059,
+     "title": "Chiranjeevi"
+    },
+    {
+     "simba_id": 36055,
+     "title": "Hum Dono"
+    }
+   ]
+  }
+ ]
 }
