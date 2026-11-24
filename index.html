@@ -10681,7 +10681,7 @@ function playChannel(ch, el) {
      server in order (direct, then proxy, per server), so one dead
      server moves on to the next instead of failing the channel. */
   const tvRouteList = (() => {
-    const urls = [{ url: ch.url, title: '' }].concat((ch.servers || []).filter(s => s && s.url));
+    const urls = [{ url: ch.url, title: ch.mainTitle || '' }].concat((ch.servers || []).filter(s => s && s.url));
     const seenR = new Set(); const out = [];
     urls.forEach(s => { if (!s.url || seenR.has(s.url)) return; seenR.add(s.url);
       if (ch.tw || ch.pf) { out.push({ src: TV_PROXY + encodeURIComponent(s.url), title: s.title || '' }); out.push({ src: s.url, title: s.title || '' }); }
@@ -10696,7 +10696,7 @@ function playChannel(ch, el) {
      route change, manual or automatic. */
   const tvSrvBar = $('#tv-servers');
   const tvSrvUniq = [];
-  { const _seen = new Set(); [{ url: ch.url, title: 'سرور اصلی' }].concat((ch.servers || []).filter(s => s && s.url)).forEach(s => { if (!s.url || _seen.has(s.url)) return; _seen.add(s.url); tvSrvUniq.push({ url: s.url, title: s.title || '' }); }); }
+  { const _seen = new Set(); [{ url: ch.url, title: ch.mainTitle || 'سرور اصلی' }].concat((ch.servers || []).filter(s => s && s.url)).forEach(s => { if (!s.url || _seen.has(s.url)) return; _seen.add(s.url); tvSrvUniq.push({ url: s.url, title: s.title || '' }); }); }
   const tvSrvMark = src => {
     if (!tvSrvBar || !tvSrvUniq.length) return;
     let u = src || '';
@@ -18258,13 +18258,17 @@ sxSearchPage = async function (seq, append) {
   function matchCapMin(ev) {
     var t = String(ev.title || '');
     if (t.indexOf(' – ') < 0 && t.indexOf(' - ') < 0) return null;
+    /* FN-TV-EVENTS v2.5 (T14, 2026-11-25): caps tightened -- the 180-min
+       football cap kept a 23:30 kickoff "live" until 02:30 although the
+       match ends ~01:15 (user screenshot 02:22). Real durations + ~30
+       min buffer. Same caps baked in refresh_tv_events.py. */
     switch (ev.sportName) {
-      case 'فوتبال': return 180;
-      case 'فوتبال ساحلی': return 90;
-      case 'بسکتبال': return 180;
-      case 'والیبال': return 180;
-      case 'فوتسال': return 105;
-      case 'هندبال': return 120;
+      case 'فوتبال': return 120;
+      case 'فوتبال ساحلی': return 60;
+      case 'بسکتبال': return 150;
+      case 'والیبال': return 150;
+      case 'فوتسال': return 75;
+      case 'هندبال': return 90;
       default: return null;
     }
   }
@@ -18616,30 +18620,69 @@ sxSearchPage = async function (seq, append) {
     var stEl = document.getElementById('tv-status');
     if (stEl) stEl.textContent = '';
   }
+  /* FN-TV-EVENTS v2.5 (T14, 2026-11-25) -- MULTI-SERVER per event. The
+     bake stores ev.servers[] (one entry per source: سرور آپارات اسپورت /
+     سرور فوتبال ۳۶۰ / سرور آنتن). Each server resolves on its own
+     (worker resolve first, direct browser resolve second, in parallel
+     across servers, whole thing still raced against the 20 s budget).
+     Every server that yields an HLS URL goes to playChannel -- first
+     as the main URL, the rest as ch.servers -- so the player shows the
+     source-labelled switcher and falls back across servers AND across
+     direct/proxy routes per server (the channel machinery, reused).
+     Legacy events without servers[] fall back to the old single-source
+     fields. The stream still lands in OUR OWN player -- never a foreign
+     page, never an iframe. */
+  function evServers(ev) {
+    var out = [];
+    var list = (ev && Array.isArray(ev.servers)) ? ev.servers : null;
+    if (list && list.length) {
+      list.forEach(function (s) {
+        if (!s) return;
+        var sev = { src: s.src || ev.src, code: s.code, anten_id: s.anten_id, get_hls_url: s.get_hls_url, urlaccess_hq: s.urlaccess_hq, urlaccess_lq: s.urlaccess_lq, hls: s.hls || null };
+        if (sev.hls || sev.get_hls_url || sev.urlaccess_hq || sev.urlaccess_lq) out.push({ label: s.label || '', ev: sev });
+      });
+      if (out.length) return out;
+    }
+    if (ev.get_hls_url) out.push({ label: 'سرور آپارات اسپورت', ev: { src: 'f360', code: ev.code, get_hls_url: ev.get_hls_url, hls: null } });
+    if (ev.hls) out.push({ label: 'سرور فوتبال ۳۶۰', ev: { src: 'f360', code: ev.code, hls: ev.hls } });
+    if (ev.urlaccess_hq || ev.urlaccess_lq) out.push({ label: 'سرور آنتن', ev: { src: 'anten', anten_id: ev.anten_id, urlaccess_hq: ev.urlaccess_hq, urlaccess_lq: ev.urlaccess_lq, hls: null } });
+    if (!out.length && ev.src) out.push({ label: '', ev: ev });
+    return out;
+  }
   async function playEvent(ev) {
     var errEl = document.getElementById('tv-err');
     var stEl = document.getElementById('tv-status');
     try {
       if (stEl) stEl.textContent = 'در حال اتصال…';
-      /* Worker resolve first (server-side walk: live page -> getHls2 /
-         urlaccess -> .m3u8). The worker answers the sources' geo gate
-         honestly, so when it 403s we fall through to the direct browser
-         resolve: the phone itself is on an Iran IP, and if the source
-         answers its 200 with CORS headers the HLS URL comes back here.
-         Either way the stream lands in OUR OWN player -- never a
+      /* Worker resolve first per server (server-side walk: live page ->
+         getHls2 / urlaccess -> .m3u8). The worker answers the sources'
+         geo gate honestly, so when it 403s we fall through to the direct
+         browser resolve: the phone itself is on an Iran IP, and if the
+         source answers its 200 with CORS headers the HLS URL comes back
+         here. Either way the stream lands in OUR OWN player -- never a
          foreign page.
          FN-TV-EVENTS v2.4.1: the whole resolve is raced against a 20 s
          budget and wrapped in a catch-all -- a tap used to die silently
          (hung fetch, uncaught throw) leaving only «در حال اتصال…». Any
          failure now shows the honest error loudly (text + toast). */
-      var hls = null;
+      var resolved = null;
       try {
-        hls = await Promise.race([
-          (async function () { var h = await resolveWorker(ev); if (!h) h = await resolve(ev); return h || null; })(),
+        resolved = await Promise.race([
+          Promise.all(evServers(ev).map(function (s) {
+            return (async function () {
+              var h = s.ev.hls || null;
+              if (!h) h = await resolveWorker(s.ev);
+              if (!h) h = await resolve(s.ev);
+              return h ? { hls: h, label: s.label } : null;
+            })();
+          })),
           new Promise(function (res) { setTimeout(function () { res(null); }, 20000); })
         ]);
-      } catch (e) { hls = null; }
-      if (!hls) {
+      } catch (e) { resolved = null; }
+      var ok = [];
+      var seenHls = {};
+      (resolved || []).forEach(function (r) { if (r && r.hls && !seenHls[r.hls]) { seenHls[r.hls] = 1; ok.push(r); } });
+      if (!ok.length) {
         if (stEl) stEl.textContent = '';
         if (errEl) errEl.textContent = 'پخش این برنامه در حال حاضر ممکن نشد.';
         try { showToast('پخش این برنامه در حال حاضر ممکن نشد.'); } catch (e2) {}
@@ -18652,7 +18695,7 @@ sxSearchPage = async function (seq, append) {
       var pageUrl = evPageUrl(ev);
       if (pageUrl) showEvExt(pageUrl);
       showTvCopy();
-      try { playChannel({ name: ev.title, url: hls, servers: [], __tvEv: true }, null); } catch (e) {
+      try { playChannel({ name: ev.title, url: ok[0].hls, mainTitle: ok[0].label, servers: ok.slice(1).map(function (r) { return { url: r.hls, title: r.label }; }), __tvEv: true }, null); } catch (e) {
         if (errEl) errEl.textContent = 'پخش این برنامه در حال حاضر ممکن نشد.';
         try { showToast('پخش این برنامه در حال حاضر ممکن نشد.'); } catch (e2) {}
       }
