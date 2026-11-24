@@ -601004,65 +601004,6 @@
   },
   "year": 2014
  },
- "tt36622192": {
-  "imdb": "tt36622192",
-  "num": 13746,
-  "part": "rz",
-  "play": [
-   {
-    "encoder": "ValaMovie",
-    "episode": null,
-    "group": "SoftSub",
-    "join_tier": 1,
-    "play_type": "none",
-    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Sister.2026.1080p.WEB-DL.ValaMovie.SoftSub.mkv",
-    "playit_url": null,
-    "quality": "1080p",
-    "quality_label": "1080p",
-    "season": null,
-    "size_bytes": null,
-    "size_text": "1.62 GB"
-   },
-   {
-    "encoder": "ValaMovie",
-    "episode": null,
-    "group": "SoftSub",
-    "join_tier": 1,
-    "play_type": "none",
-    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Sister.2026.720p.WEB-DL.ValaMovie.SoftSub.mkv",
-    "playit_url": null,
-    "quality": "720p",
-    "quality_label": "720p",
-    "season": null,
-    "size_bytes": null,
-    "size_text": "1 GB"
-   },
-   {
-    "encoder": "ValaMovie",
-    "episode": null,
-    "group": "SoftSub",
-    "join_tier": 1,
-    "play_type": "none",
-    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Sister.2026.480p.WEB-DL.ValaMovie.SoftSub.mkv",
-    "playit_url": null,
-    "quality": "480p",
-    "quality_label": "480p",
-    "season": null,
-    "size_bytes": 398458880,
-    "size_text": "380 MB"
-   }
-  ],
-  "title": "Sister",
-  "tmdb_key": "movie:1469050",
-  "type": "movie",
-  "video_mp4": {
-   "is_trailer": false,
-   "size_bytes": null,
-   "size_text": "",
-   "url": null
-  },
-  "year": 2025
- },
  "tt37062070": {
   "imdb": "tt37062070",
   "num": 13510,
@@ -602975,6 +602916,107 @@
   },
   "year": 2026
  },
+ "tt39239178": {
+  "imdb": "tt39239178",
+  "num": 13746,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "ValaMovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Sister.2026.1080p.WEB-DL.ValaMovie.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.62 GB"
+   },
+   {
+    "encoder": "ValaMovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Sister.2026.720p.WEB-DL.ValaMovie.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1 GB"
+   },
+   {
+    "encoder": "ValaMovie",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Sister.2026.480p.WEB-DL.ValaMovie.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 398458880,
+    "size_text": "380 MB"
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2026/Sister.2026/SUB/Sister.2026.1080p.WEB-DL.Farsi.Sub.Film2Media.mkv?v=981827842024",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p",
+    "quality_label": "web-dl 1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2026/Sister.2026/SUB/Sister.2026.720p.WEB-DL.Farsi.Sub.Film2Media.mkv?v=659642136010",
+    "playit_url": null,
+    "quality": "WEB-DL 720p",
+    "quality_label": "web-dl 720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2026/Sister.2026/SUB/Sister.2026.480p.WEB-DL.Farsi.Sub.Film2Media.mkv?v=633496774250",
+    "playit_url": null,
+    "quality": "WEB-DL 480p",
+    "quality_label": "web-dl 480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Sister",
+  "tmdb_key": "movie:1394098",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
  "tt39309870": {
   "imdb": "tt39309870",
   "num": 13738,
@@ -603857,6 +603899,62 @@
     "season": null,
     "size_bytes": 785383424,
     "size_text": "749 MB"
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2026/You.Can.See.Everything.2026/SUB/You.Can.See.Everything.2026.1080p.WEB-DL.6CH.Farsi.Sub.Film2Media.mkv?v=412602668388",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p",
+    "quality_label": "web-dl 1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Pahe",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2026/You.Can.See.Everything.2026/SUB/You.Can.See.Everything.2026.720p.WEB-DL.Pahe.Farsi.Sub.Film2Media.mkv?v=384474307965",
+    "playit_url": null,
+    "quality": "WEB-DL 720p",
+    "quality_label": "web-dl 720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Pahe",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2026/You.Can.See.Everything.2026/SUB/You.Can.See.Everything.2026.720p.WEB-DL.x265.10Bit.Pahe.Farsi.Sub.Film2Media.mkv?v=391570811604",
+    "playit_url": null,
+    "quality": "WEB-DL 720p",
+    "quality_label": "web-dl 720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Pahe",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2026/You.Can.See.Everything.2026/SUB/You.Can.See.Everything.2026.480p.WEB-DL.Pahe.Farsi.Sub.Film2Media.mkv?v=866583690253",
+    "playit_url": null,
+    "quality": "WEB-DL 480p",
+    "quality_label": "web-dl 480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
    }
   ],
   "title": "You Can See Everything",

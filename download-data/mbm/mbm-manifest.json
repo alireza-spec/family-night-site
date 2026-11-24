@@ -6420,5 +6420,18 @@
   ],
   "live_base_head": "4b0f9b94671e1842bc8ca28752fce5dfb89bc8b2",
   "note": "Chunk 1 of the 2026-11-23 PM run (REBASED on 4b0f9b94): ZV/Simba/ML only; DN new titles land in chunk 2."
+ },
+ "twice_daily_2026_11_24_pm": {
+  "completions": [
+   {
+    "imdb": "tt9471404",
+    "links_added": 3,
+    "note": "F2M S06E04 480/720/1080 Hardsub (ZV re-fetch ∩ local diff); 8 extra S01 F2M files on the page are known-deferred (in known_links, dropped at the MBM merge for a later append) — not merged",
+    "record": "#11228 mbm",
+    "title": "The Chosen"
+   }
+  ],
+  "live_base_head": "8a13ce1db7b41196f07ebdc42c649a33aaa4bf05",
+  "note": "ZV chunk of the 2026-11-24 PM run."
  }
 }

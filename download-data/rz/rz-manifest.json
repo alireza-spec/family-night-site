@@ -12,9 +12,9 @@
   "total_links": 43389,
   "by_year": {
    "2024": 1,
-   "2026": 27,
+   "2026": 28,
    "2023": 2,
-   "2025": 7,
+   "2025": 6,
    "2014": 3,
    "1955": 2,
    "1960": 3,
@@ -6698,14 +6698,14 @@
   },
   {
    "title": "Sister",
-   "tmdb": 1469050,
-   "imdb": "tt36622192",
-   "year": 2025,
+   "tmdb": 1394098,
+   "imdb": "tt39239178",
+   "year": 2026,
    "num": 13746,
    "links": 3,
    "quality": "1080p,480p,720p",
    "rezflix_id": 36149,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2025, tt36622192). Feed 2026, TMDB+OMDb 2025 — identity year 2025. Persian name خواهر (feed, verified vs synopsis)."
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt39239178). RE-ATTRIBUTED 2026-11-24 PM: live rz #13746 was filed as the 2025 US short 'Sister!' (tmdb 1469050/tt36622192) but its files are the 2026 Korean film Sister (tmdb 1394098). Persian name خواهر (feed). PM chunk also adds the 3 F2M Hardsub files (1080/720/480p) to this record."
   },
   {
    "title": "You Can See Everything",
@@ -6789,7 +6789,7 @@
   "movie:1563538",
   "movie:1654086",
   "movie:1421993",
-  "movie:1469050",
+  "movie:1394098",
   "movie:1765072",
   "movie:1574560",
   "movie:1195803"
@@ -6868,5 +6868,25 @@
    "rezflix_id": 36153,
    "added": "SoftSub 480/720/1080 (ZarFilm/YIFY WEB-DL, dl150m) + trailer movie:1195803; record was Dubbed-only (HDTS); avail imdb key tt29611136 added [1,1]"
   }
- ]
+ ],
+ "twice_daily_2026_11_24_pm": {
+  "live_base_head": "8a13ce1db7b41196f07ebdc42c649a33aaa4bf05",
+  "completions": [
+   {
+    "title": "Sister",
+    "imdb": "tt39239178",
+    "record": "#13746 rz",
+    "links_added": 3,
+    "note": "F2M 480/720/1080 Hardsub (ZV re-fetch ∩ local diff); record RE-ATTRIBUTED from the 2025 short 'Sister!' (tmdb 1469050/tt36622192) to the 2026 Korean film (tmdb 1394098) in this chunk — same edits as the AM chunk, still un-uploaded"
+   },
+   {
+    "title": "You Can See Everything",
+    "imdb": "tt45368240",
+    "record": "#13747 rz",
+    "links_added": 4,
+    "note": "F2M 480/720/1080 (+720p x265 Pahe) Hardsub (ZV re-fetch ∩ local diff); 2 extra PSA 10bit x265 files appeared on the page after the run — queued for the next run, not merged"
+   }
+  ],
+  "note": "ZV chunk of the 2026-11-24 PM run: ZV/F2M completions + Sister re-attribution; Clashing (new H3 #13906) lands in part 16, not rz. films[] links counts not maintained for completions (AM/chunk-1 precedent)."
+ }
 }

@@ -188123,6 +188123,48 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2023/A.Samurai.In.Time.2023/DUB/A.Samurai.In.Time.2023.1080p.WEB-DL.Farsi.Dubbed.Film2Media.mkv?v=124753747250",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p",
+    "quality_label": "web-dl 1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2023/A.Samurai.In.Time.2023/DUB/A.Samurai.In.Time.2023.720p.WEB-DL.Farsi.Dubbed.Film2Media.mkv?v=543372414648",
+    "playit_url": null,
+    "quality": "WEB-DL 720p",
+    "quality_label": "web-dl 720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2023/A.Samurai.In.Time.2023/DUB/A.Samurai.In.Time.2023.480p.WEB-DL.Farsi.Dubbed.Film2Media.mkv?v=495448659872",
+    "playit_url": null,
+    "quality": "WEB-DL 480p",
+    "quality_label": "web-dl 480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
    }
   ],
   "title": "A Samurai in Time",
