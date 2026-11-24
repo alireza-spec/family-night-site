@@ -2,20 +2,20 @@
  "code": "RZ",
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
  "start_num": 12560,
- "end_num": 13746,
- "live_base_head": "a6df8e52e16ab6a9734b882206a52f4f20d0b36d (5h run 20261123T221058Z; H3 max #13737 verified from live files, RZ part-1 max #13512)",
- "generated": "2026-11-24 (RezFlix 5-hourly run 20261123T221058Z — merge of 9 new RZ titles #13738-13746 + 10 trailer keys; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
+ "end_num": 13748,
+ "live_base_head": "19367c1882e8804928d1a7b9de02f57a48554866 (5h run 20261124T131115Z; H3 max #13746 verified from live files, RZ part-1 max #13746)",
+ "generated": "2026-11-24 (RezFlix 5-hourly run 20261124T131115Z — merge of 2 new RZ titles #13747-13748 + 3 trailer keys + 2 encode completions into part 16 #11240 / part 1 #109; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
  "counts": {
-  "total_titles": 601,
-  "movies": 33,
+  "total_titles": 603,
+  "movies": 35,
   "series": 568,
-  "total_links": 43384,
+  "total_links": 43389,
   "by_year": {
    "2024": 1,
-   "2026": 26,
+   "2026": 27,
    "2023": 2,
    "2025": 7,
-   "2014": 2,
+   "2014": 3,
    "1955": 2,
    "1960": 3,
    "1962": 1,
@@ -76,10 +76,10 @@
    "2022": 1
   },
   "by_quality": {
-   "720p": 21215,
-   "1080p": 3422,
+   "720p": 21217,
+   "1080p": 3423,
    "540p": 292,
-   "480p": 14208,
+   "480p": 14210,
    "CAM 1080p": 117,
    "CAM 720p": 35,
    "Cam 1080p": 1,
@@ -6706,6 +6706,28 @@
    "quality": "1080p,480p,720p",
    "rezflix_id": 36149,
    "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2025, tt36622192). Feed 2026, TMDB+OMDb 2025 — identity year 2025. Persian name خواهر (feed, verified vs synopsis)."
+  },
+  {
+   "title": "You Can See Everything",
+   "tmdb": 1765072,
+   "imdb": "tt45368240",
+   "year": 2026,
+   "num": 13747,
+   "links": 3,
+   "quality": "1080p,480p,720p",
+   "rezflix_id": 36150,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt45368240). Persian name می‌توانید همه چیز را ببینید (feed, verified vs synopsis; 2nd نام پارسی line)."
+  },
+  {
+   "title": "Clover",
+   "tmdb": 341041,
+   "imdb": "tt3594796",
+   "year": 2014,
+   "num": 13748,
+   "links": 2,
+   "quality": "480p,720p",
+   "rezflix_id": 36152,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2014, TMDB 2014, tt3594796). Persian name شبدر (feed, verified vs synopsis; 2nd نام پارسی line)."
   }
  ],
  "trailer_keys_added": [
@@ -6767,7 +6789,10 @@
   "movie:1563538",
   "movie:1654086",
   "movie:1421993",
-  "movie:1469050"
+  "movie:1469050",
+  "movie:1765072",
+  "movie:1574560",
+  "movie:1195803"
  ],
  "queued_titles": [
   {
@@ -6824,6 +6849,24 @@
    "part": 1,
    "rezflix_id": 36132,
    "added": "SoftSub 480/720/1080 (Farsi.Subbed, dl150m) + trailer movie:1811136; record was Dubbed-only"
+  },
+  {
+   "title": "Last Man in Tower",
+   "tmdb": 1574560,
+   "imdb": "tt36267730",
+   "num": 11240,
+   "part": 16,
+   "rezflix_id": 36151,
+   "added": "HardSub 480/720/1080 (Hindi WEBDL, dl150m) + trailer movie:1574560; record was Dubbed-only; play entry n:11240 CREATED (none existed); avail [1,0]->[1,1]"
+  },
+  {
+   "title": "Wicker",
+   "tmdb": 1195803,
+   "imdb": "tt29611136",
+   "num": 109,
+   "part": 1,
+   "rezflix_id": 36153,
+   "added": "SoftSub 480/720/1080 (ZarFilm/YIFY WEB-DL, dl150m) + trailer movie:1195803; record was Dubbed-only (HDTS); avail imdb key tt29611136 added [1,1]"
   }
  ]
 }

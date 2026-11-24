@@ -5963,6 +5963,48 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "YIFY",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Wicker.2026.1080p.WEB-DL.6CH.YIFY.SoftSub.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.9 GB"
+   },
+   {
+    "encoder": "YIFY",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Wicker.2026.720p.WEB-DL.YIFY.SoftSub.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 1015021568,
+    "size_text": "968 MB"
+   },
+   {
+    "encoder": "ZarFilm",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Wicker.2026.480p.WEB-DL.x264.SoftSub.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 553648128,
+    "size_text": "528 MB"
    }
   ],
   "title": "Wicker",

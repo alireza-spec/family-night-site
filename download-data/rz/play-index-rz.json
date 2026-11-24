@@ -600959,6 +600959,51 @@
   },
   "year": 2025
  },
+ "tt3594796": {
+  "imdb": "tt3594796",
+  "num": 13748,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/CLOVER.720.Lunazha.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 838860800,
+    "size_text": "800 MB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/CLOVER.480.Lunazha.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 557842432,
+    "size_text": "532 MB"
+   }
+  ],
+  "title": "Clover",
+  "tmdb_key": "movie:341041",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2014
+ },
  "tt36622192": {
   "imdb": "tt36622192",
   "num": 13746,
@@ -603757,6 +603802,65 @@
   ],
   "title": "The Influencer Project",
   "tmdb_key": "movie:1654086",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
+ "tt45368240": {
+  "imdb": "tt45368240",
+  "num": 13747,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/You.Can.See.Everything.2026.1080p.WEB-DL.6CH.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "3.4 GB"
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/You.Can.See.Everything.2026.720p.WEB-DL.Pahe.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.6 GB"
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/You.Can.See.Everything.2026.480p.WEB-DL.Pahe.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 785383424,
+    "size_text": "749 MB"
+   }
+  ],
+  "title": "You Can See Everything",
+  "tmdb_key": "movie:1765072",
   "type": "movie",
   "video_mp4": {
    "is_trailer": false,

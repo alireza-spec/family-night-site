@@ -66242,6 +66242,65 @@
   },
   "year": null
  },
+ "n:11240": {
+  "imdb": "tt36267730",
+  "num": 11240,
+  "part": 16,
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "HardSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Last.Man.In.Tower.2026.Hindi.1080p.WEBDL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.93 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "HardSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Last.Man.In.Tower.2026.Hindi.720p.WEBDL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.11 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "HardSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Last.Man.In.Tower.2026.Hindi.480p.WEBDL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 555745280,
+    "size_text": "530 MB"
+   }
+  ],
+  "title": "Last Man in Tower",
+  "tmdb_key": "movie:1574560",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
  "tt0021884": {
   "imdb": "tt0021884",
   "num": 10924,
