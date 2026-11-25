@@ -2,17 +2,17 @@
  "code": "RZ",
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
  "start_num": 12560,
- "end_num": 13955,
- "live_base_head": "1e58963d4bed9a7f2ff356fe306b4d00c7811a77 (RezFlix 5h run 20261125T141111Z newest prepend)",
- "generated": "2026-11-25 (RezFlix screenshots merge: 3 new RZ movies #13953-13955 Breeder / Lottie Dottie Chicken The Movie / Josephine (CAM) + Blade Runner 2099 E02-E06 ValaMovie and E01-E05 F2M + The Substitute E01+E02 F2M 480/720/1080 + 3 trailer keys)",
+ "end_num": 14096,
+ "live_base_head": "e3c9d049f79b864e9c3d8d0996ede4fb48a11946 (5h run 20261125T191122Z; H3 max #14086 verified from live files, RZ part-1 max #13955)",
+ "generated": "2026-11-25 (RezFlix 5-hourly run 20261125T191122Z — merge of 1 new RZ title #14096 + 2 trailer keys + encode completion The Mosquito Bowl into part 1 #51 (was Dubbed-only) + full duplicate Outmatched (already #14084 dn2, 10/10 URLs); cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
  "counts": {
-  "total_titles": 618,
-  "movies": 42,
+  "total_titles": 619,
+  "movies": 43,
   "series": 576,
-  "total_links": 44033,
+  "total_links": 44036,
   "by_year": {
    "2024": 1,
-   "2026": 36,
+   "2026": 37,
    "2023": 2,
    "2025": 7,
    "2014": 3,
@@ -76,8 +76,8 @@
    "2022": 1
   },
   "by_quality": {
-   "720p": 21403,
-   "1080p": 3588,
+   "720p": 21404,
+   "1080p": 3589,
    "540p": 292,
    "480p": 14371,
    "CAM 1080p": 117,
@@ -86,7 +86,7 @@
    "WEB-DL 1080p": 62,
    "WEB-DL 720p": 63,
    "WEB-DL 480p": 11,
-   "720p x265": 1066,
+   "720p x265": 1067,
    "544p": 140,
    "576p": 181,
    "نامشخص": 2586,
@@ -3525,7 +3525,7 @@
    "imdb": "tt0375355",
    "year": 2004,
    "num": 13213,
-   "links": 111,
+   "links": 201,
    "quality": "480p,720p",
    "rezflix_id": 13926,
    "identity_note": "TMDB+IMDb+OMDb agree (feed 2004, tmdb 1466, tt0375355). Persian name جویی."
@@ -6704,7 +6704,7 @@
    "imdb": "tt39239178",
    "year": 2026,
    "num": 13746,
-   "links": 3,
+   "links": 6,
    "quality": "1080p,480p,720p",
    "rezflix_id": 36149,
    "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt39239178). RE-ATTRIBUTED 2026-11-24 PM: live rz #13746 was filed as the 2025 US short 'Sister!' (tmdb 1469050/tt36622192) but its files are the 2026 Korean film Sister (tmdb 1394098). Persian name خواهر (feed). PM chunk also adds the 3 F2M Hardsub files (1080/720/480p) to this record."
@@ -6715,7 +6715,7 @@
    "imdb": "tt45368240",
    "year": 2026,
    "num": 13747,
-   "links": 3,
+   "links": 7,
    "quality": "1080p,480p,720p",
    "rezflix_id": 36150,
    "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt45368240). Persian name می‌توانید همه چیز را ببینید (feed, verified vs synopsis; 2nd نام پارسی line)."
@@ -6895,6 +6895,17 @@
    "quality": "HDCAM 1080p,HDCAM 720p",
    "rezflix_id": 36166,
    "identity_note": "TMDB+IMDb+OMDb agree (TMDB 2026-11-19, tt32321285; director Beth de Araújo, cast Channing Tatum/Gemma Chan/Mason Reeves match feed). Persian name جوزفین (feed description). CAM: HDCAM only everywhere (F2M absent, Simba/DN HDCAM only, ML/BF/DS/FH nothing) — CAM kept per rule, upgrade later when real quality appears."
+  },
+  {
+   "title": "Way of the Warrior Kid",
+   "tmdb": 1280115,
+   "imdb": "tt32213169",
+   "year": 2026,
+   "num": 14096,
+   "links": 3,
+   "quality": "1080p,720p,720p x265",
+   "rezflix_id": 36171,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt32213169). Persian name راه و رسم کودک جنگجو (feed description, verified vs synopsis). No sizes: حجم line ambiguous (qual order 720x265/1080/720 vs volumes 837/978 MB/2 GB cannot be mapped 1:1)."
   }
  ],
  "trailer_keys_added": [
@@ -6968,7 +6979,9 @@
   "movie:1780407",
   "movie:1496696",
   "movie:1615391",
-  "movie:1299329"
+  "movie:1299329",
+  "movie:1458300",
+  "movie:1280115"
  ],
  "queued_titles": [
   {
@@ -7061,6 +7074,15 @@
    "part": 16,
    "rezflix_id": 36165,
    "added": "SoftSub 720/1080 (RezFlix dl150m, 306/597 MB) + trailer movie:1780407; record was Dubbed-only (3 Film2Media links); new SoftSub header inserted; play key tt47791876 existed"
+  },
+  {
+   "title": "The Mosquito Bowl",
+   "tmdb": 1458300,
+   "imdb": "tt36413910",
+   "num": 51,
+   "part": 1,
+   "rezflix_id": 36169,
+   "added": "SoftSub 480/720/1080 (ZarFilm/YIFY WEB-DL, dl150m, 644 MB / 1.1 GB / 2.4 GB) + trailer movie:1458300 + avail imdb tt36413910 [1,1]; record was Dubbed-only (3 HDTS Film2Media links); new SoftSub header inserted; play key n:51 existed (Wicker #109 precedent)"
   }
  ],
  "twice_daily_2026_11_24_pm": {

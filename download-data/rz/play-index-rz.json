@@ -597494,6 +597494,110 @@
   },
   "year": 2007
  },
+ "tt32213169": {
+  "imdb": "tt32213169",
+  "num": 14096,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "YIFY",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Way.of.the.Warrior.Kid.2026.1080p.WEB-DL.6CH.YIFY.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "YIFY",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Way.of.the.Warrior.Kid.2026.720p.WEB-DL.YIFY.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "PSA",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Way.of.the.Warrior.Kid.2026.720p.10bit.WEB-DL.6CH.x265.PSA.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "720p x265",
+    "quality_label": "720p x265",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Way of the Warrior Kid",
+  "tmdb_key": "movie:1280115",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
+ "tt32321285": {
+  "imdb": "tt32321285",
+  "num": 13955,
+  "part": "rz",
+  "title": "Josephine",
+  "tmdb_key": "movie:1299329",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026,
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Josephine.2026.1080p.HDCAM.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "HDCAM 1080p",
+    "quality_label": "hdcam 1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "2.43 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Josephine.2026.720p.HDCAM.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "HDCAM 720p",
+    "quality_label": "hdcam 720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.31 GB"
+   }
+  ]
+ },
  "tt32324552": {
   "imdb": "tt32324552",
   "num": 12667,
@@ -610008,6 +610112,51 @@
    "url": null
   },
   "year": 2026
+ },
+ "tt39482377": {
+  "imdb": "tt39482377",
+  "num": 13954,
+  "part": "rz",
+  "title": "Lottie Dottie Chicken The Movie",
+  "tmdb_key": "movie:1615391",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026,
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Lottie.Dottie.Chicken.The.Movie.2026.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.52 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Lottie.Dottie.Chicken.The.Movie.2026.720p.WEBRip.x264.AAC-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 793772032,
+    "size_text": "757 MB"
+   }
+  ]
  },
  "tt4009874": {
   "imdb": "tt4009874",
@@ -625933,6 +626082,93 @@
   },
   "year": 2006
  },
+ "tt9213874": {
+  "imdb": "tt9213874",
+  "num": 13953,
+  "part": "rz",
+  "title": "Breeder",
+  "tmdb_key": "movie:1496696",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026,
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Breeder.2026.1080p.WEB-DL.6CH.YIFY.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.9 GB"
+   },
+   {
+    "encoder": "PSA",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2026/Breeder.2026/SUB/Breeder.2026.1080p.10bit.WEB-DL.6CH.x265.PSA.Farsi.Sub.Film2Media.mkv?v=249215444576",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p",
+    "quality_label": "web-dl 1080p",
+    "season": null,
+    "size_bytes": 753800883,
+    "size_text": "719 MB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Breeder.2026.720p.WEB-DL.YIFY.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 944766976,
+    "size_text": "901 MB"
+   },
+   {
+    "encoder": "PSA",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2026/Breeder.2026/SUB/Breeder.2026.720p.10bit.WEB-DL.6CH.x265.PSA.Farsi.Sub.Film2Media.mkv?v=766181764880",
+    "playit_url": null,
+    "quality": "WEB-DL 720p",
+    "quality_label": "web-dl 720p",
+    "season": null,
+    "size_bytes": 382812177,
+    "size_text": "365 MB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Breeder.2026.480p.WEB-DL.Pahe.Farsi.Sub.Film2Media.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 420478976,
+    "size_text": "401 MB"
+   }
+  ]
+ },
  "tt9814900": {
   "imdb": "tt9814900",
   "num": 13080,
@@ -626789,182 +627025,5 @@
    "url": null
   },
   "year": 2019
- },
- "tt9213874": {
-  "imdb": "tt9213874",
-  "num": 13953,
-  "part": "rz",
-  "title": "Breeder",
-  "tmdb_key": "movie:1496696",
-  "type": "movie",
-  "video_mp4": {
-   "is_trailer": false,
-   "size_bytes": null,
-   "size_text": "",
-   "url": null
-  },
-  "year": 2026,
-  "play": [
-   {
-    "encoder": "RezFlix",
-    "episode": null,
-    "group": "SoftSub",
-    "join_tier": 1,
-    "play_type": "none",
-    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Breeder.2026.1080p.WEB-DL.6CH.YIFY.Farsi.Sub.Film2Media.mkv",
-    "playit_url": null,
-    "quality": "1080p",
-    "quality_label": "1080p",
-    "season": null,
-    "size_bytes": null,
-    "size_text": "1.9 GB"
-   },
-   {
-    "encoder": "PSA",
-    "episode": null,
-    "group": "SoftSub",
-    "join_tier": 1,
-    "play_type": "none",
-    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2026/Breeder.2026/SUB/Breeder.2026.1080p.10bit.WEB-DL.6CH.x265.PSA.Farsi.Sub.Film2Media.mkv?v=249215444576",
-    "playit_url": null,
-    "quality": "WEB-DL 1080p",
-    "quality_label": "web-dl 1080p",
-    "season": null,
-    "size_bytes": 753800883,
-    "size_text": "719 MB"
-   },
-   {
-    "encoder": "RezFlix",
-    "episode": null,
-    "group": "SoftSub",
-    "join_tier": 1,
-    "play_type": "none",
-    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Breeder.2026.720p.WEB-DL.YIFY.Farsi.Sub.Film2Media.mkv",
-    "playit_url": null,
-    "quality": "720p",
-    "quality_label": "720p",
-    "season": null,
-    "size_bytes": 944766976,
-    "size_text": "901 MB"
-   },
-   {
-    "encoder": "PSA",
-    "episode": null,
-    "group": "SoftSub",
-    "join_tier": 1,
-    "play_type": "none",
-    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2026/Breeder.2026/SUB/Breeder.2026.720p.10bit.WEB-DL.6CH.x265.PSA.Farsi.Sub.Film2Media.mkv?v=766181764880",
-    "playit_url": null,
-    "quality": "WEB-DL 720p",
-    "quality_label": "web-dl 720p",
-    "season": null,
-    "size_bytes": 382812177,
-    "size_text": "365 MB"
-   },
-   {
-    "encoder": "RezFlix",
-    "episode": null,
-    "group": "SoftSub",
-    "join_tier": 1,
-    "play_type": "none",
-    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Breeder.2026.480p.WEB-DL.Pahe.Farsi.Sub.Film2Media.mkv",
-    "playit_url": null,
-    "quality": "480p",
-    "quality_label": "480p",
-    "season": null,
-    "size_bytes": 420478976,
-    "size_text": "401 MB"
-   }
-  ]
- },
- "tt39482377": {
-  "imdb": "tt39482377",
-  "num": 13954,
-  "part": "rz",
-  "title": "Lottie Dottie Chicken The Movie",
-  "tmdb_key": "movie:1615391",
-  "type": "movie",
-  "video_mp4": {
-   "is_trailer": false,
-   "size_bytes": null,
-   "size_text": "",
-   "url": null
-  },
-  "year": 2026,
-  "play": [
-   {
-    "encoder": "RezFlix",
-    "episode": null,
-    "group": "SoftSub",
-    "join_tier": 1,
-    "play_type": "none",
-    "play_url": "http://drive3.google.dl175m.info/new%20film/Lottie.Dottie.Chicken.The.Movie.2026.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.mkv",
-    "playit_url": null,
-    "quality": "1080p",
-    "quality_label": "1080p",
-    "season": null,
-    "size_bytes": null,
-    "size_text": "1.52 GB"
-   },
-   {
-    "encoder": "RezFlix",
-    "episode": null,
-    "group": "SoftSub",
-    "join_tier": 1,
-    "play_type": "none",
-    "play_url": "http://drive3.google.dl175m.info/new%20film/Lottie.Dottie.Chicken.The.Movie.2026.720p.WEBRip.x264.AAC-YTS.SoftSub.mkv",
-    "playit_url": null,
-    "quality": "720p",
-    "quality_label": "720p",
-    "season": null,
-    "size_bytes": 793772032,
-    "size_text": "757 MB"
-   }
-  ]
- },
- "tt32321285": {
-  "imdb": "tt32321285",
-  "num": 13955,
-  "part": "rz",
-  "title": "Josephine",
-  "tmdb_key": "movie:1299329",
-  "type": "movie",
-  "video_mp4": {
-   "is_trailer": false,
-   "size_bytes": null,
-   "size_text": "",
-   "url": null
-  },
-  "year": 2026,
-  "play": [
-   {
-    "encoder": "RezFlix",
-    "episode": null,
-    "group": "SoftSub",
-    "join_tier": 1,
-    "play_type": "none",
-    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Josephine.2026.1080p.HDCAM.SoftSub.mkv",
-    "playit_url": null,
-    "quality": "HDCAM 1080p",
-    "quality_label": "hdcam 1080p",
-    "season": null,
-    "size_bytes": null,
-    "size_text": "2.43 GB"
-   },
-   {
-    "encoder": "RezFlix",
-    "episode": null,
-    "group": "SoftSub",
-    "join_tier": 1,
-    "play_type": "none",
-    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Josephine.2026.720p.HDCAM.SoftSub.mkv",
-    "playit_url": null,
-    "quality": "HDCAM 720p",
-    "quality_label": "hdcam 720p",
-    "season": null,
-    "size_bytes": null,
-    "size_text": "1.31 GB"
-   }
-  ]
  }
 }
