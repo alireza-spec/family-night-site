@@ -2,17 +2,17 @@
  "code": "RZ",
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
  "start_num": 12560,
- "end_num": 13913,
- "live_base_head": "54628d72a2c75e9960f83c820c8277b72b8f1438 (screenshot-audit merge 2026-11-25; H3 max #13909 verified from live files, RZ part-1 max #13909)",
- "generated": "2026-11-25 (screenshot-audit merge — 4 new RZ series #13910-13913, 152 SoftSub links, 0 trailer keys; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
+ "end_num": 13952,
+ "live_base_head": "bf1e43417b578e3434e6aed4ca6890ad52ec13c1 (5h run 20261125T141111Z; H3 max #13947 verified from live files, RZ part-1 max #13913)",
+ "generated": "2026-11-25 (RezFlix 5-hourly run 20261125T141111Z — merge of 5 new RZ titles #13948-13952 + 5 trailer keys + encode completion Snoopy Presents 12 Days of Snoopy into part 16 #12661 (was Dubbed-only) + teaser-only Switchback (old archive part 3 #4140); cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
  "counts": {
-  "total_titles": 610,
-  "movies": 35,
-  "series": 575,
-  "total_links": 43863,
+  "total_titles": 615,
+  "movies": 39,
+  "series": 576,
+  "total_links": 43881,
   "by_year": {
    "2024": 1,
-   "2026": 31,
+   "2026": 33,
    "2023": 2,
    "2025": 7,
    "2014": 3,
@@ -28,7 +28,7 @@
    "1972": 3,
    "1973": 2,
    "1974": 3,
-   "1975": 7,
+   "1975": 8,
    "1976": 3,
    "1977": 6,
    "1978": 4,
@@ -49,13 +49,13 @@
    "1991": 5,
    "1992": 4,
    "1993": 7,
-   "1994": 9,
+   "1994": 10,
    "2020": 1,
    "2007": 49,
    "2017": 2,
    "1997": 6,
    "1996": 15,
-   "1995": 9,
+   "1995": 10,
    "1999": 12,
    "2000": 13,
    "2019": 2,
@@ -76,10 +76,10 @@
    "2022": 1
   },
   "by_quality": {
-   "720p": 21389,
-   "1080p": 3576,
+   "720p": 21396,
+   "1080p": 3581,
    "540p": 292,
-   "480p": 14359,
+   "480p": 14365,
    "CAM 1080p": 117,
    "CAM 720p": 35,
    "Cam 1080p": 1,
@@ -6805,6 +6805,61 @@
    "quality": "1080p,480p,720p",
    "rezflix_id": 35382,
    "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt39390769). Persian name دارک ماشین انیمیشن (feed description, verified vs synopsis). Series: single episodes, SoftSub, no per-episode sizes (RZ series precedent). TMDB /videos: none — no trailer anywhere."
+  },
+  {
+   "title": "The Man Who Would Be King",
+   "tmdb": 983,
+   "imdb": "tt0073341",
+   "year": 1975,
+   "num": 13948,
+   "links": 5,
+   "quality": "1080p,480p,720p",
+   "rezflix_id": 36159,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1975, TMDB 1975, tt0073341). Persian name مردی که می خواست سلطان باشد (feed description, verified vs synopsis). No sizes: حجم line ambiguous (36159: 4 sizes / 5 links; 36160: 2 groups share qualities)."
+  },
+  {
+   "title": "Naajayaz",
+   "tmdb": 253708,
+   "imdb": "tt0113913",
+   "year": 1995,
+   "num": 13949,
+   "links": 4,
+   "quality": "480p,720p",
+   "rezflix_id": 36160,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1995, TMDB 1995, tt0113913). Persian name نامشروع (feed description, verified vs synopsis). No sizes: حجم line ambiguous (36159: 4 sizes / 5 links; 36160: 2 groups share qualities)."
+  },
+  {
+   "title": "Jacob",
+   "tmdb": 2712,
+   "imdb": "tt0110175",
+   "year": 1994,
+   "num": 13950,
+   "links": 3,
+   "quality": "1080p,480p,720p",
+   "rezflix_id": 36161,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1994, TMDB 1994, tt0110175). Persian name یعقوب (feed description, verified vs synopsis)."
+  },
+  {
+   "title": "A Table for Two",
+   "tmdb": 1249668,
+   "imdb": "tt31925197",
+   "year": 2026,
+   "num": 13951,
+   "links": 3,
+   "quality": "1080p,480p,720p",
+   "rezflix_id": 36163,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt31925197). Persian name میزی برای دو نفر (feed description, verified vs synopsis)."
+  },
+  {
+   "title": "Blade Runner 2099",
+   "tmdb": 171802,
+   "imdb": "tt18224594",
+   "year": 2026,
+   "num": 13952,
+   "links": 3,
+   "quality": "1080p,480p,720p",
+   "rezflix_id": 36164,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt18224594). Persian name بلید رانر 2099 (feed description, verified vs synopsis). Series: single episode S01E01, SoftSub, no per-episode sizes (RZ series precedent)."
   }
  ],
  "trailer_keys_added": [
@@ -6870,7 +6925,12 @@
   "movie:1765072",
   "movie:1574560",
   "movie:1195803",
-  "movie:1611767"
+  "movie:1611767",
+  "movie:983",
+  "movie:253708",
+  "movie:10871",
+  "movie:1249668",
+  "movie:1780407"
  ],
  "queued_titles": [
   {
@@ -6954,6 +7014,15 @@
    "part": 16,
    "rezflix_id": 36158,
    "added": "SoftSub 480/720/1080 (RezFlix dl150m WEB-DL) + trailer movie:1611767; record is the PM run's #13906 (3 Film2Media links); links appended under the existing SoftSub header; play key tt39316936 existed"
+  },
+  {
+   "title": "Snoopy Presents 12 Days of Snoopy",
+   "tmdb": 1780407,
+   "imdb": "tt47791876",
+   "num": 12661,
+   "part": 16,
+   "rezflix_id": 36165,
+   "added": "SoftSub 720/1080 (RezFlix dl150m, 306/597 MB) + trailer movie:1780407; record was Dubbed-only (3 Film2Media links); new SoftSub header inserted; play key tt47791876 existed"
   }
  ],
  "twice_daily_2026_11_24_pm": {
