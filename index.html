@@ -11237,6 +11237,7 @@ try {
        &fn_s=<season>&fn_e=<episode>            → straight into playback
      ?fn_person=<personId>                       → the person's page
      ?fn_tv=<channel name>&fn_tvu=<stream url>   → live TV, that channel
+     ?fn_tvev=<event id>                         → live TV, that event (card + playback)
    Reading them here — in the page itself, not only in the Telegram
    layer — makes every such link land on its target in a regular
    browser AND inside the mini app, instead of dropping on Home. */
@@ -18548,10 +18549,12 @@ sxSearchPage = async function (seq, append) {
     if (!tvExtOrigClick && xb.onclick) tvExtOrigClick = xb.onclick;
     evExtUrl = url;
     xb.onclick = function () {
-      if (typeof fnOpenInBrowser === 'function') fnOpenInBrowser(url);
-      else window.open(url, '_blank');
+      var u = evEffectiveUrl();
+      if (!u) return;
+      if (typeof fnOpenInBrowser === 'function') fnOpenInBrowser(u);
+      else window.open(u, '_blank');
     };
-    xb.style.display = '';
+    syncEvTools();
   }
   function resetEvExt() {
     evExtUrl = null;
@@ -18569,6 +18572,10 @@ sxSearchPage = async function (seq, append) {
     if (cb) cb.style.display = 'none';
   }
   function tvCopyUrl() {
+    /* T15: while an event is active, copy the currently-playing source
+       URL (embed URL, else the resolved HLS URL) -- never the event
+       page URL and never a stale URL from an earlier play. */
+    if (evActive) return evEffectiveUrl();
     if (evExtUrl) return evExtUrl;
     try { if (typeof tvPlayingRawUrl !== 'undefined' && tvPlayingRawUrl) return tvPlayingRawUrl; } catch (e) {}
     try { if (typeof tvCurrent !== 'undefined' && tvCurrent && tvCurrent.url) return tvCurrent.url; } catch (e) {}
@@ -18616,7 +18623,13 @@ sxSearchPage = async function (seq, append) {
   /* End event playback state (no frame any more -- v2.4 removed the
      iframe): restore the toolbar buttons and clear the status line. */
   function endEvPlay() {
+    hideEventEmbed();
     resetEvExt(); hideTvCopy();
+    evActive = false;
+    evCurrentEv = null;
+    evCurrentUrl = null;
+    evSelectedIdx = -1;
+    resetEvShare();
     var stEl = document.getElementById('tv-status');
     if (stEl) stEl.textContent = '';
   }
@@ -18638,7 +18651,7 @@ sxSearchPage = async function (seq, append) {
     if (list && list.length) {
       list.forEach(function (s) {
         if (!s) return;
-        var sev = { src: s.src || ev.src, code: s.code, anten_id: s.anten_id, get_hls_url: s.get_hls_url, urlaccess_hq: s.urlaccess_hq, urlaccess_lq: s.urlaccess_lq, hls: s.hls || null };
+        var sev = { src: s.src || ev.src, code: s.code, anten_id: s.anten_id, get_hls_url: s.get_hls_url, urlaccess_hq: s.urlaccess_hq, urlaccess_lq: s.urlaccess_lq, hls: s.hls || null, embed: s.embed || null };
         if (sev.hls || sev.get_hls_url || sev.urlaccess_hq || sev.urlaccess_lq) out.push({ label: s.label || '', ev: sev });
       });
       if (out.length) return out;
@@ -18648,6 +18661,328 @@ sxSearchPage = async function (seq, append) {
     if (ev.urlaccess_hq || ev.urlaccess_lq) out.push({ label: 'سرور آنتن', ev: { src: 'anten', anten_id: ev.anten_id, urlaccess_hq: ev.urlaccess_hq, urlaccess_lq: ev.urlaccess_lq, hls: null } });
     if (!out.length && ev.src) out.push({ label: '', ev: ev });
     return out;
+  }
+  /* FN-TV-EVENTS v2.6 (T15, 2026-11-25) -- OFFICIAL-EMBED fallback +
+     server list on failure.
+     When every HLS server fails (worker 403 geo gate + phone 200 with
+     no CORS headers), the event can still play inside OUR OWN player
+     through the source's official video-only embed player. Verified
+     2026-11-25: Anten's https://www.anten.ir/iframe/[pID] returns
+     HTTP 200, 59,451 B, layout variant "nothing" (16:9 player box, no
+     header/footer/nav, no site chrome), no X-Frame-Options header --
+     a clean player, not the full site. pID is the program id
+     (anten_id): the route param is literally named pID and Anten
+     addresses programs by that id everywhere (football page, calendar
+     API, urlaccess). Aparat Sport has NO embed: live streams carry no
+     videohash (the Aparat video API 404s on the stream_id) and
+     aparatsport.com is fully geo-blocked from the VM, so no embed URL
+     can be verified there. Football360/ARVAN has no per-event embed
+     id either (config_url / player_url are null in the feed, and ARVAN
+     is OffStream on these matches). Those servers stay HLS-only.
+     The allowlist regex below is the ONLY way an iframe src is ever
+     set: a full source-page URL can never reach it. Embed is a
+     fallback ONLY -- it is never preferred over a working HLS stream.
+     SERVER LIST ON FAILURE (user case 2026-11-25 03:59): tapping the
+     live NBA event «اورلاندو مجیک – دیترویت پیستونز» (anten:187913,
+     ONE server «سرور آنتن») showed the loud failure and NO server
+     list at all -- because the resolved HLS list was empty, no button
+     ever rendered. From v2.6, when all HLS fails the player STILL
+     renders the server list from the event's servers[] (source names
+     visible, even for a single server) and every button retries its
+     own server (resolve again, or its embed); the failure text is
+     never shown bare with no list. */
+  var TV_EMBED_ALLOW = /^https:\/\/www\.anten\.ir\/iframe\/\d+$/;
+  function evEmbedUrl(sev) {
+    /* Every candidate must pass the allowlist: a baked embed URL that
+       fails it falls through to the derivation from anten_id, and a
+       non-numeric anten_id derives nothing usable. No URL that fails
+       the regex can ever become an iframe src. */
+    var cands = [];
+    if (sev && sev.embed) cands.push(sev.embed);
+    if (sev && sev.anten_id) cands.push('https://www.anten.ir/iframe/' + sev.anten_id);
+    for (var i = 0; i < cands.length; i++) {
+      if (TV_EMBED_ALLOW.test(cands[i])) return cands[i];
+    }
+    return null;
+  }
+  function evServerList(ev) {
+    return evServers(ev).map(function (s) {
+      return { label: s.label || '', embed: evEmbedUrl(s.ev), sev: s.ev };
+    });
+  }
+  var evEmbedFrame = null;
+  var evRetryBusy = false;
+  function evEmbedEl() {
+    if (evEmbedFrame) return evEmbedFrame;
+    var box = document.getElementById('tv-screenbox');
+    if (!box) return null;
+    var f = document.createElement('iframe');
+    f.id = 'tv-ev-embed';
+    f.setAttribute('allow', 'autoplay; fullscreen; encrypted-media; picture-in-picture');
+    f.setAttribute('allowfullscreen', '');
+    f.setAttribute('frameborder', '0');
+    f.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;display:none;background:#000';
+    box.appendChild(f);
+    evEmbedFrame = f;
+    return f;
+  }
+  function hideEventEmbed() {
+    var f = document.getElementById('tv-ev-embed');
+    if (f) { try { f.src = 'about:blank'; } catch (e) {} f.style.display = 'none'; }
+    var video = document.getElementById('tv-video');
+    if (video) video.style.display = '';
+    var pip = document.getElementById('tv-pip');
+    if (pip) pip.style.display = '';
+    var shb = document.getElementById('tv-share');
+    if (shb) shb.style.display = '';
+  }
+  /* The event server bar -- rendered from the event's own servers[]
+     (NOT from resolved HLS), so it is visible even when every resolve
+     failed. Always rendered in the fallback states, even for a single
+     server: the user must see WHICH servers exist. Tapping a button
+     retries that server (its embed, or a fresh resolve). */
+  function renderEventServerBar(ev, list, activeIdx) {
+    var bar = document.getElementById('tv-servers');
+    if (!bar) return;
+    if (!list || !list.length) { bar.style.display = 'none'; bar.innerHTML = ''; return; }
+    bar.style.display = 'flex';
+    bar.innerHTML = list.map(function (s, i) {
+      return '<button type="button" class="btn btn-glass btn-sm tv-srv" data-i="' + i + '"' + (i === activeIdx ? ' data-on="1"' : '') + '>' + esc(s.label || ('سرور ' + (i + 1))) + '</button>';
+    }).join('');
+    bar.querySelectorAll('.tv-srv').forEach(function (b) {
+      b.onclick = function () { retryEventServer(ev, list, +b.dataset.i); };
+    });
+  }
+  /* Honest failure WITH the server list: never a bare message. */
+  function showEventFailed(ev, list) {
+    hideEventEmbed();
+    evActive = true;
+    evCurrentEv = ev;
+    /* The selected server's embed stays copyable/openable in the failed
+       state (the Anten embed URL is a real playable link); a server
+       with no embed leaves nothing to copy -- never a stale URL from
+       an earlier play. */
+    var sel = (evSelectedIdx >= 0 && list[evSelectedIdx]) ? list[evSelectedIdx] : null;
+    if (!sel || !sel.embed) {
+      for (var i = 0; i < list.length; i++) { if (list[i].embed) { sel = list[i]; break; } }
+    }
+    evCurrentUrl = (sel && sel.embed) || null;
+    try { if (typeof tvPlayingRawUrl !== 'undefined') tvPlayingRawUrl = null; } catch (e) {}
+    var stEl = document.getElementById('tv-status');
+    if (stEl) stEl.textContent = '';
+    var errEl = document.getElementById('tv-err');
+    if (errEl) errEl.textContent = 'پخش این برنامه در حال حاضر ممکن نشد.';
+    try { showToast('پخش این برنامه در حال حاضر ممکن نشد.'); } catch (e) {}
+    renderEventServerBar(ev, list, -1);
+    showEvShare(ev);
+    syncEvTools();
+  }
+  async function retryEventServer(ev, list, idx) {
+    var s = list[idx];
+    if (!s || evRetryBusy) return;
+    evSelectedIdx = idx;
+    /* A server with an embed switches straight to it. */
+    if (s.embed) { showEventEmbed(ev, list, idx); return; }
+    evRetryBusy = true;
+    try {
+      var stEl = document.getElementById('tv-status');
+      var errEl = document.getElementById('tv-err');
+      if (stEl) stEl.textContent = 'در حال اتصال…' + (s.label ? ' — ' + s.label : '');
+      if (errEl) errEl.textContent = '';
+      var h = null;
+      try {
+        h = await Promise.race([
+          (async function () {
+            var r = (s.sev && s.sev.hls) || null;
+            if (!r) r = await resolveWorker(s.sev);
+            if (!r) r = await resolve(s.sev);
+            return r;
+          })(),
+          new Promise(function (res) { setTimeout(function () { res(null); }, 20000); })
+        ]);
+      } catch (e) { h = null; }
+      if (h) {
+        hideEventEmbed();
+        if (errEl) errEl.textContent = '';
+        playingId = ev.id;
+        lastSig = '';
+        render();
+        evActive = true;
+        evCurrentEv = ev;
+        evCurrentUrl = null;
+        showEvShare(ev);
+        var pageUrl = evPageUrl(ev);
+        if (pageUrl) showEvExt(pageUrl);
+        try {
+          playChannel({ name: ev.title, url: h, mainTitle: s.label, servers: [], __tvEv: true }, null);
+        } catch (e2) { showEventFailed(ev, list); return; }
+        syncEvTools();
+        return;
+      }
+      showEventFailed(ev, list);
+    } finally {
+      evRetryBusy = false;
+    }
+  }
+  function showEventEmbed(ev, list, activeIdx) {
+    var f = evEmbedEl();
+    if (!f) return false;
+    var act = list[activeIdx] || {};
+    if (!act.embed) return false;
+    evActive = true;
+    evCurrentEv = ev;
+    evCurrentUrl = act.embed;
+    evSelectedIdx = activeIdx;
+    try { if (typeof tvPlayingRawUrl !== 'undefined') tvPlayingRawUrl = null; } catch (e7) {}
+    /* Invalidate any in-flight playChannel timers (arm timer / stall
+       watchdog are all token-guarded) and stop the native player, so
+       nothing from a previous HLS play can write into the UI while the
+       embed is showing. */
+    try { if (typeof tvPlayToken !== 'undefined') tvPlayToken++; } catch (e) {}
+    try { if (typeof tvPlayTimer !== 'undefined' && tvPlayTimer) clearTimeout(tvPlayTimer); } catch (e2) {}
+    try { if (typeof tvHls !== 'undefined' && tvHls) { tvHls.destroy(); tvHls = null; } } catch (e3) {}
+    try { if (typeof fnMiniExit === 'function') fnMiniExit(); } catch (e4) {}
+    var video = document.getElementById('tv-video');
+    try { if (video) { video.pause(); video.removeAttribute('src'); video.load(); } } catch (e5) {}
+    if (video) video.style.display = 'none';
+    var scrEl = document.querySelector('#view-tv .screen');
+    if (scrEl) scrEl.classList.add('on');
+    var nowEl = document.getElementById('tv-now');
+    if (nowEl) nowEl.textContent = ev.title || '';
+    try { if (typeof epgFollow === 'function') epgFollow(ev.title || ''); } catch (e6) {}
+    var stEl = document.getElementById('tv-status');
+    if (stEl) stEl.textContent = 'در حال پخش' + (act.label ? ' — ' + act.label : '');
+    var errEl = document.getElementById('tv-err');
+    if (errEl) errEl.textContent = '';
+    var pip = document.getElementById('tv-pip');
+    if (pip) pip.style.display = 'none';
+    var fsb = document.getElementById('tv-fs');
+    if (fsb) fsb.style.display = '';
+    var shb = document.getElementById('tv-share');
+    if (shb) shb.style.display = 'none';
+    var vpnB = document.getElementById('tv-vpnbadge');
+    if (vpnB) vpnB.style.display = 'none';
+    var tstB = document.getElementById('tv-testbadge');
+    if (tstB) tstB.style.display = 'none';
+    var subN = document.getElementById('tv-subnote');
+    if (subN) subN.style.display = 'none';
+    f.style.display = '';
+    f.src = act.embed;
+    renderEventServerBar(ev, list, activeIdx);
+    showEvShare(ev);
+    syncEvTools();
+    return true;
+  }
+  function playEventEmbed(ev) {
+    var list = evServerList(ev);
+    var first = -1;
+    for (var i = 0; i < list.length; i++) { if (list[i].embed) { first = i; break; } }
+    if (first < 0) return false;
+    var errEl = document.getElementById('tv-err');
+    if (errEl) errEl.textContent = '';
+    playingId = ev.id;
+    lastSig = '';
+    render();
+    evActive = true;
+    evCurrentEv = ev;
+    var pageUrl = evPageUrl(ev);
+    if (pageUrl) showEvExt(pageUrl);
+    return showEventEmbed(ev, list, first);
+  }
+
+  /* FN-TV-EVENTS v2.6 (T15) -- EVENT TOOLBAR: the same four top icons
+     as the TV channel player (copy / share / browser / fullscreen),
+     wired to the EVENT's own stream, not the channel's.
+     - Copy (کپی لینک پخش): the currently-playing source URL -- the
+       resolved HLS URL while HLS plays (tvPlayingRawUrl, kept current
+       by playChannel's attach on every server switch), the embed URL
+       while the embed plays. Never the event page URL (the old
+       tvCopyUrl preference for evExtUrl is bypassed while an event is
+       active -- see the tvCopyUrl patch), never a stale URL from an
+       earlier play (tvPlayingRawUrl is cleared whenever the embed
+       shows or the event fails).
+     - Share (اشتراک‌گذاری): the site link ?fn_tvev=<event id>, opened
+       by the site itself (openSharedEvent below) -- TV section, the
+       event's card, playback starts. Mirrors the channel link
+       ?fn_tv=<name>&fn_tvu=<url> and ?fn_id=...&fn_play=1.
+     - Browser (پخش با مرورگر): opens the same current URL externally
+       (fnOpenInBrowser / window.open) -- the tv-ext override in
+       showEvExt reads it live at click time.
+     - Fullscreen: fnToggleFs on the screen box, same as channels.
+     Copy/browser hide when there is no usable URL (failed state with
+     no embed server); share/fullscreen stay whenever an event is
+     active. Channel playback restores the channel handlers via
+     endEvPlay (resetEvShare + evActive=false). */
+  var evActive = false;
+  var evCurrentEv = null;
+  var evCurrentUrl = null;
+  var evSelectedIdx = -1;
+  var evShareOrigClick = null;
+  function evEffectiveUrl() {
+    if (!evActive) return null;
+    if (evCurrentUrl) return evCurrentUrl;
+    try { if (typeof tvPlayingRawUrl !== 'undefined' && tvPlayingRawUrl) return tvPlayingRawUrl; } catch (e) {}
+    return null;
+  }
+  function syncEvTools() {
+    if (!evActive) return;
+    var u = evEffectiveUrl();
+    var cb = document.getElementById('tv-copy');
+    if (cb) cb.style.display = u ? '' : 'none';
+    var xb = document.getElementById('tv-ext');
+    if (xb) xb.style.display = u ? '' : 'none';
+    var fsb = document.getElementById('tv-fs');
+    if (fsb) {
+      fsb.style.display = '';
+      fsb.onclick = function () { if (typeof fnToggleFs === 'function') fnToggleFs(document.getElementById('tv-screenbox')); };
+    }
+    var sb = document.getElementById('tv-share');
+    if (sb) sb.style.display = '';
+  }
+  function shareEvLink(ev) {
+    if (!ev) return;
+    var origin = (typeof FN_SITE_ORIGIN !== 'undefined' && FN_SITE_ORIGIN) ? FN_SITE_ORIGIN : location.origin;
+    var url = origin + '/?fn_tvev=' + encodeURIComponent(ev.id);
+    var text = '📺 تماشای زندهٔ «' + (ev.title || '') + '» در Family Night\nبا این لینک، مستقیم همین برنامه پخش می‌شود:';
+    if (typeof fnShareLink === 'function') { fnShareLink(url, text); return; }
+    if (navigator.share) { navigator.share({ title: 'Family Night', text: text, url: url }).catch(function () {}); return; }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text + '\n' + url).then(function () { showToast('لینک اشتراک‌گذاری کپی شد'); }, function () { showToast('کپی لینک ممکن نشد'); });
+    } else showToast('اشتراک‌گذاری در این مرورگر ممکن نشد');
+  }
+  function showEvShare(ev) {
+    var sb = document.getElementById('tv-share');
+    if (!sb) return;
+    if (!evShareOrigClick && sb.onclick) evShareOrigClick = sb.onclick;
+    sb.onclick = function () { shareEvLink(ev); };
+    sb.style.display = '';
+  }
+  function resetEvShare() {
+    var sb = document.getElementById('tv-share');
+    if (!sb) return;
+    if (evShareOrigClick) sb.onclick = evShareOrigClick;
+  }
+  /* Open a shared event link (?fn_tvev=<event id>): TV section, the
+     event's card scrolled into view, playback starts -- mirrors the
+     channel link (?fn_tv=) which plays the channel at once. Called
+     from load() after the rail renders. */
+  function openSharedEvent() {
+    var id = null;
+    try { id = new URLSearchParams(location.search).get('fn_tvev'); } catch (e) {}
+    if (!id) return;
+    var ev = null;
+    for (var i = 0; i < evs.length; i++) if (evs[i].id === id) { ev = evs[i]; break; }
+    try { if (typeof go === 'function') go('tv'); } catch (e2) {}
+    if (!ev) { try { showToast('این برنامه در فهرست فعلی پیدا نشد'); } catch (e3) {} return; }
+    tab = 'all'; syncTabs(); render();
+    var card = null;
+    var cards = rail.querySelectorAll('.tv-ev-card');
+    for (var j = 0; j < cards.length; j++) { if (cards[j].getAttribute('data-id') === id) { card = cards[j]; break; } }
+    if (card) { try { card.scrollIntoView({ block: 'nearest' }); } catch (e4) {} }
+    var st = statusOf(ev, Date.now());
+    if (st === 'upcoming') { try { showToast('هنوز این برنامه آغاز نشده'); } catch (e5) {} return; }
+    if (st === 'done') { try { showToast('این برنامه به پایان رسیده است'); } catch (e6) {} return; }
+    playEvent(ev);
   }
   async function playEvent(ev) {
     var errEl = document.getElementById('tv-err');
@@ -18683,23 +19018,35 @@ sxSearchPage = async function (seq, append) {
       var seenHls = {};
       (resolved || []).forEach(function (r) { if (r && r.hls && !seenHls[r.hls]) { seenHls[r.hls] = 1; ok.push(r); } });
       if (!ok.length) {
-        if (stEl) stEl.textContent = '';
-        if (errEl) errEl.textContent = 'پخش این برنامه در حال حاضر ممکن نشد.';
-        try { showToast('پخش این برنامه در حال حاضر ممکن نشد.'); } catch (e2) {}
+        /* T15: HLS failed on every server -- try the official embed
+           player (Anten) before failing loudly. Embed is a fallback
+           only, never preferred over a working HLS stream. If no embed
+           exists either, the failure stays honest -- but the server
+           list still renders, so the user sees the servers and can tap
+           one to retry it (Orlando-Detroit 2026-11-25: a single
+           «سرور آنتن» showed no list at all). */
+        if (playEventEmbed(ev)) return;
+        showEventFailed(ev, evServerList(ev));
         return;
       }
       if (errEl) errEl.textContent = '';
       playingId = ev.id;
       lastSig = '';
       render();
+      evActive = true;
+      evCurrentEv = ev;
+      evCurrentUrl = null;
+      showEvShare(ev);
       var pageUrl = evPageUrl(ev);
       if (pageUrl) showEvExt(pageUrl);
-      showTvCopy();
+      hideEventEmbed();
       try { playChannel({ name: ev.title, url: ok[0].hls, mainTitle: ok[0].label, servers: ok.slice(1).map(function (r) { return { url: r.hls, title: r.label }; }), __tvEv: true }, null); } catch (e) {
         if (errEl) errEl.textContent = 'پخش این برنامه در حال حاضر ممکن نشد.';
         try { showToast('پخش این برنامه در حال حاضر ممکن نشد.'); } catch (e2) {}
       }
+      syncEvTools();
     } catch (e) {
+      hideEventEmbed();
       if (stEl) stEl.textContent = '';
       if (errEl) errEl.textContent = 'پخش این برنامه در حال حاضر ممکن نشد.';
       try { showToast('پخش این برنامه در حال حاضر ممکن نشد.'); } catch (e2) {}
@@ -18780,6 +19127,7 @@ sxSearchPage = async function (seq, append) {
         lastSig = '';
         render();
         lastSig = signature();
+        openSharedEvent();
       })
       .catch(function () { evs = []; render(); });
   }
