@@ -190257,6 +190257,34 @@
     "season": 3,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": 7,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl2.sermoviedown.pw/Series/2024/The.Lord.of.the.Rings.The.Rings.of.Power/S03/720x265/The.Lord.of.the.Rings.The.Rings.of.Power.S03E07.720p.10bit.WEBRip.2CH.x265.PSA.Sermovie..mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": 3,
+    "size_bytes": 515641825,
+    "size_text": "516 MB"
+   },
+   {
+    "encoder": "Sermovie",
+    "episode": 8,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl2.sermoviedown.pw/Series/2024/The.Lord.of.the.Rings.The.Rings.of.Power/S03/720x265/The.Lord.of.the.Rings.The.Rings.of.Power.S03E08.720p.10bit.WEBRip.2CH.x265.PSA.Sermovie..mkv",
+    "playit_url": null,
+    "quality": "WEBRip 720p 10bit x265",
+    "quality_label": "webrip 720p 10bit x265",
+    "season": 3,
+    "size_bytes": 644641748,
+    "size_text": "645 MB"
    }
   ],
   "title": "The Lord of the Rings: The Rings of Power",
