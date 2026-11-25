@@ -2,17 +2,17 @@
  "code": "RZ",
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
  "start_num": 12560,
- "end_num": 14096,
- "live_base_head": "e3c9d049f79b864e9c3d8d0996ede4fb48a11946 (5h run 20261125T191122Z; H3 max #14086 verified from live files, RZ part-1 max #13955)",
- "generated": "2026-11-25 (RezFlix 5-hourly run 20261125T191122Z — merge of 1 new RZ title #14096 + 2 trailer keys + encode completion The Mosquito Bowl into part 1 #51 (was Dubbed-only) + full duplicate Outmatched (already #14084 dn2, 10/10 URLs); cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
+ "end_num": 14106,
+ "live_base_head": "f3d3b8c9972865d4b8e438ca672eb026d515ef72 (RezFlix screenshots 20261126)",
+ "generated": "2026-11-26 (RezFlix screenshots merge: 5 new RZ movies #14102-14106 Rob Lowe The Outsider / Mayookha / The Last Song You Left Behind / Big Girls Dont Cry / Microstar + Way of the Warrior Kid #14096 size resolution + 480p link + 1080p x265 PSA (F2M) + 3 trailer keys)",
  "counts": {
-  "total_titles": 619,
-  "movies": 43,
+  "total_titles": 624,
+  "movies": 48,
   "series": 576,
-  "total_links": 44036,
+  "total_links": 44049,
   "by_year": {
    "2024": 1,
-   "2026": 37,
+   "2026": 42,
    "2023": 2,
    "2025": 7,
    "2014": 3,
@@ -76,14 +76,14 @@
    "2022": 1
   },
   "by_quality": {
-   "720p": 21404,
-   "1080p": 3589,
+   "720p": 21409,
+   "1080p": 3594,
    "540p": 292,
-   "480p": 14371,
+   "480p": 14373,
    "CAM 1080p": 117,
    "CAM 720p": 35,
    "Cam 1080p": 1,
-   "WEB-DL 1080p": 62,
+   "WEB-DL 1080p": 63,
    "WEB-DL 720p": 63,
    "WEB-DL 480p": 11,
    "720p x265": 1067,
@@ -6902,10 +6902,65 @@
    "imdb": "tt32213169",
    "year": 2026,
    "num": 14096,
-   "links": 3,
-   "quality": "1080p,720p,720p x265",
+   "links": 5,
+   "quality": "1080p,480p,720p,720p x265,WEB-DL 1080p",
    "rezflix_id": 36171,
-   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt32213169). Persian name راه و رسم کودک جنگجو (feed description, verified vs synopsis). No sizes: حجم line ambiguous (qual order 720x265/1080/720 vs volumes 837/978 MB/2 GB cannot be mapped 1:1)."
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt32213169). Persian name راه و رسم کودک جنگجو (feed description, verified vs synopsis). Sizes RESOLVED 2026-11-26: F2M CDN HEAD of identical files 720p YIFY=978 MB, 1080p YIFY=2 GB, 720p x265 PSA=837 MB; 480p ZarFilm=541 MB by elimination (4 files, 4 feed volumes, 3 pinned by measurement). +480p link +1080p x265 PSA (F2M) this run."
+  },
+  {
+   "title": "Rob Lowe The Outsider",
+   "tmdb": 1802703,
+   "imdb": "tt47597255",
+   "year": 2026,
+   "num": 14102,
+   "links": 2,
+   "quality": "1080p,720p",
+   "rezflix_id": 36180,
+   "identity_note": "TMDB+IMDb+OMDb agree (TMDB 2026-11-24 doc, tt47597255; OMDb 'Rob Lowe: The Outsider' 2026, Chris Smith, 91 min; feed director Chris Smith, cast Rob Lowe). Persian name راب لو غریبه (feed description)."
+  },
+  {
+   "title": "Mayookha",
+   "tmdb": 1620668,
+   "imdb": "tt39378361",
+   "year": 2026,
+   "num": 14103,
+   "links": 2,
+   "quality": "1080p,720p",
+   "rezflix_id": 36179,
+   "identity_note": "TMDB+IMDb+OMDb agree (TMDB 2026-10-09 Telugu thriller, tt39378361; OMDb 'Mayookha' 2026, Shree Tej SK, India; feed director Shree Tej SK. Runtime note: TMDB 131 min vs OMDb 108 min — title/year/director agree, runtime differs by cut. Persian name مایوکا (feed description)."
+  },
+  {
+   "title": "The Last Song You Left Behind",
+   "tmdb": 1559185,
+   "imdb": "tt41149182",
+   "year": 2026,
+   "num": 14104,
+   "links": 2,
+   "quality": "1080p,720p",
+   "rezflix_id": 36175,
+   "identity_note": "TMDB+IMDb+OMDb agree (TMDB 2026-03-20 Japanese romance, tt41149182; OMDb 'The Last song You Left Behind' 2026, Takahiro Miki, 117 min; feed director Takahiro Miki, cast Shunsuke Michieda. Persian name آخرین آهنگی که از خودت به جا گذاشتی (feed description)."
+  },
+  {
+   "title": "Big Girls Dont Cry",
+   "tmdb": 1477963,
+   "imdb": "tt36867663",
+   "year": 2026,
+   "num": 14105,
+   "links": 3,
+   "quality": "1080p,480p,720p",
+   "rezflix_id": 36173,
+   "identity_note": "TMDB+IMDb+OMDb agree (TMDB 2026-10-08 NZ drama, tt36867663; OMDb 'Big Girls Don't Cry' 2026, Paloma Schneideman, New Zealand; feed director Paloma Schneideman. Persian name دختران بزرگ گریه نمی‌کنند (feed description)."
+  },
+  {
+   "title": "Microstar",
+   "tmdb": 1482377,
+   "imdb": "tt41662804",
+   "year": 2026,
+   "num": 14106,
+   "links": 2,
+   "quality": "1080p,720p",
+   "rezflix_id": 36172,
+   "identity_note": "TMDB+IMDb+OMDb agree (TMDB 2026-07-08 French comedy, tt41662804; OMDb 'Microstar' 2026, Léopold Kraus, France; feed director Léopold Kraus. Persian name میکروستار (feed description)."
   }
  ],
  "trailer_keys_added": [
@@ -6981,7 +7036,10 @@
   "movie:1615391",
   "movie:1299329",
   "movie:1458300",
-  "movie:1280115"
+  "movie:1280115",
+  "movie:1559185",
+  "movie:1477963",
+  "movie:1482377"
  ],
  "queued_titles": [
   {
@@ -7083,6 +7141,15 @@
    "part": 1,
    "rezflix_id": 36169,
    "added": "SoftSub 480/720/1080 (ZarFilm/YIFY WEB-DL, dl150m, 644 MB / 1.1 GB / 2.4 GB) + trailer movie:1458300 + avail imdb tt36413910 [1,1]; record was Dubbed-only (3 HDTS Film2Media links); new SoftSub header inserted; play key n:51 existed (Wicker #109 precedent)"
+  },
+  {
+   "title": "Way of the Warrior Kid",
+   "tmdb": 1280115,
+   "imdb": "tt32213169",
+   "num": 14096,
+   "part": "rz",
+   "rezflix_id": 36171,
+   "added": "Sizes set on 3 existing SoftSub rows (720p YIFY 978 MB / 1080p YIFY 2 GB / 720p x265 PSA 837 MB, F2M HEAD-measured) + 480p ZarFilm RZ 541 MB + 1080p x265 PSA F2M 1.64 GB; 3 -> 5 links"
   }
  ],
  "twice_daily_2026_11_24_pm": {

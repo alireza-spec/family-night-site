@@ -597510,8 +597510,22 @@
     "quality": "1080p",
     "quality_label": "1080p",
     "season": null,
-    "size_bytes": null,
-    "size_text": ""
+    "size_bytes": 2112112526,
+    "size_text": "2 GB"
+   },
+   {
+    "encoder": "PSA",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2026/Way.of.the.Warrior.Kid.2026/SUB/Way.of.the.Warrior.Kid.2026.1080p.10bit.WEB-DL.6CH.x265.PSA.Farsi.Sub.Film2Media.mkv?v=168016303727",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p",
+    "quality_label": "web-dl 1080p",
+    "season": null,
+    "size_bytes": 1762107695,
+    "size_text": "1.64 GB"
    },
    {
     "encoder": "YIFY",
@@ -597524,8 +597538,8 @@
     "quality": "720p",
     "quality_label": "720p",
     "season": null,
-    "size_bytes": null,
-    "size_text": ""
+    "size_bytes": 1025686123,
+    "size_text": "978 MB"
    },
    {
     "encoder": "PSA",
@@ -597538,8 +597552,22 @@
     "quality": "720p x265",
     "quality_label": "720p x265",
     "season": null,
-    "size_bytes": null,
-    "size_text": ""
+    "size_bytes": 878109921,
+    "size_text": "837 MB"
+   },
+   {
+    "encoder": "ZarFilm",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Way.of.the.Warrior.Kid.2026.480p.WEB-DL.x264.SoftSub.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 567279616,
+    "size_text": "541 MB"
    }
   ],
   "title": "Way of the Warrior Kid",
@@ -627025,5 +627053,244 @@
    "url": null
   },
   "year": 2019
+ },
+ "tt47597255": {
+  "imdb": "tt47597255",
+  "num": 14102,
+  "part": "rz",
+  "title": "Rob Lowe The Outsider",
+  "tmdb_key": "movie:1802703",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026,
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Rob.Lowe.The.Outsider.2026.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.72 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Rob.Lowe.The.Outsider.2026.720p.WEBRip.x264.AAC-YTS.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 894435328,
+    "size_text": "853 MB"
+   }
+  ]
+ },
+ "tt39378361": {
+  "imdb": "tt39378361",
+  "num": 14103,
+  "part": "rz",
+  "title": "Mayookha",
+  "tmdb_key": "movie:1620668",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026,
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Mayookha.2026.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "2.38 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Mayookha.2026.720p.WEBRip.x264.AAC-YTS.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.15 GB"
+   }
+  ]
+ },
+ "tt41149182": {
+  "imdb": "tt41149182",
+  "num": 14104,
+  "part": "rz",
+  "title": "The Last Song You Left Behind",
+  "tmdb_key": "movie:1559185",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026,
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/The.Last.Song.You.Left.Behind.2026.1080p.BluRay.x264.AAC5.1-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "2.14 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/The.Last.Song.You.Left.Behind.2026.720p.BluRay.x264.AAC-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.04 GB"
+   }
+  ]
+ },
+ "tt36867663": {
+  "imdb": "tt36867663",
+  "num": 14105,
+  "part": "rz",
+  "title": "Big Girls Dont Cry",
+  "tmdb_key": "movie:1477963",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026,
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Big.Girls.Dont.Cry.2026.1080p.WEB-DL.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "2 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Big.Girls.Dont.Cry.2026.720p.WEB-DL.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.05 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Big.Girls.Dont.Cry.2026.480p.WEB-DL.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 701497344,
+    "size_text": "669 MB"
+   }
+  ]
+ },
+ "tt41662804": {
+  "imdb": "tt41662804",
+  "num": 14106,
+  "part": "rz",
+  "title": "Microstar",
+  "tmdb_key": "movie:1482377",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026,
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Microstar.2026.FRENCH.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.6 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Microstar.2026.FRENCH.720p.WEBRip.x264.AAC-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 835715072,
+    "size_text": "797 MB"
+   }
+  ]
  }
 }
