@@ -2025,6 +2025,48 @@
     "season": 1,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Simba",
+    "episode": 4,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/tv2/A%20New%20Way%20for%20Sanctification/fasl11080/%5B%40AnimeGateOfficial%5D%20Apocalypse%20Becoming%20an%20Immortal%20Alone%20-%20%284%29.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Simba",
+    "episode": 4,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/tv2/A%20New%20Way%20for%20Sanctification/fasl1720/%5B%40AnimeGateOfficial%5D%20Apocalypse%20Becoming%20an%20Immortal%20Alone%20-%20%284%29.0.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Simba",
+    "episode": 4,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/tv2/A%20New%20Way%20for%20Sanctification/fasl1480/%5B%40AnimeGateOfficial%5D%20Apocalypse%20Becoming%20an%20Immortal%20Alone%20-%20%284%29.1.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": 1,
+    "size_bytes": 131072000,
+    "size_text": "125 MB"
    }
   ],
   "title": "A New Way for Sanctification",

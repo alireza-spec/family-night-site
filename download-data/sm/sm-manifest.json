@@ -211,9 +211,9 @@
  ],
  "counts": {
   "by_resolution": {
-   "1080p": 130,
-   "480p": 581,
-   "720p": 1101
+   "1080p": 131,
+   "480p": 582,
+   "720p": 1102
   },
   "by_type": {
    "movie": 12,
@@ -222,7 +222,7 @@
   "by_version": {
    "Dubbed": 32,
    "HardSub": 1703,
-   "SoftSub": 77
+   "SoftSub": 80
   },
   "by_year": {
    "1991": 1,
@@ -239,17 +239,17 @@
    "2019": 1,
    "2020": 1
   },
-  "new_links": 1812,
-  "new_play_rows_expanded": 1900,
+  "new_links": 1815,
+  "new_play_rows_expanded": 1903,
   "new_titles": 51,
-  "total_links_added": 1812,
+  "total_links_added": 1815,
   "total_titles": 51,
   "variety_links_added": 81,
   "variety_links_parsed": 86,
   "variety_play_rows_expanded": 78,
   "variety_titles": 14
  },
- "generated": "2026-11-21",
+ "generated": "2026-11-25 (RezFlix screenshots merge: A New Way for Sanctification S01E04 x 480/720/1080)",
  "live_base_head": "41edc227d8fcb0de04bae1cc6e082fbb0b7f7846",
  "new_titles": [
   {

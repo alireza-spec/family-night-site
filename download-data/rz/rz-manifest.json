@@ -2,17 +2,17 @@
  "code": "RZ",
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
  "start_num": 12560,
- "end_num": 13952,
- "live_base_head": "bf1e43417b578e3434e6aed4ca6890ad52ec13c1 (5h run 20261125T141111Z; H3 max #13947 verified from live files, RZ part-1 max #13913)",
- "generated": "2026-11-25 (RezFlix 5-hourly run 20261125T141111Z — merge of 5 new RZ titles #13948-13952 + 5 trailer keys + encode completion Snoopy Presents 12 Days of Snoopy into part 16 #12661 (was Dubbed-only) + teaser-only Switchback (old archive part 3 #4140); cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
+ "end_num": 13955,
+ "live_base_head": "1e58963d4bed9a7f2ff356fe306b4d00c7811a77 (RezFlix 5h run 20261125T141111Z newest prepend)",
+ "generated": "2026-11-25 (RezFlix screenshots merge: 3 new RZ movies #13953-13955 Breeder / Lottie Dottie Chicken The Movie / Josephine (CAM) + Blade Runner 2099 E02-E06 ValaMovie and E01-E05 F2M + The Substitute E01+E02 F2M 480/720/1080 + 3 trailer keys)",
  "counts": {
-  "total_titles": 615,
-  "movies": 39,
+  "total_titles": 618,
+  "movies": 42,
   "series": 576,
-  "total_links": 43881,
+  "total_links": 44033,
   "by_year": {
    "2024": 1,
-   "2026": 33,
+   "2026": 36,
    "2023": 2,
    "2025": 7,
    "2014": 3,
@@ -76,23 +76,25 @@
    "2022": 1
   },
   "by_quality": {
-   "720p": 21396,
-   "1080p": 3581,
+   "720p": 21403,
+   "1080p": 3588,
    "540p": 292,
-   "480p": 14365,
+   "480p": 14371,
    "CAM 1080p": 117,
    "CAM 720p": 35,
    "Cam 1080p": 1,
-   "WEB-DL 1080p": 2,
-   "WEB-DL 720p": 2,
-   "WEB-DL 480p": 2,
+   "WEB-DL 1080p": 62,
+   "WEB-DL 720p": 63,
+   "WEB-DL 480p": 11,
    "720p x265": 1066,
    "544p": 140,
    "576p": 181,
    "نامشخص": 2586,
    "CAM ?": 3,
    "240p": 104,
-   "360p": 8
+   "360p": 8,
+   "HDCAM 720p": 1,
+   "HDCAM 1080p": 1
   }
  },
  "films": [
@@ -6592,8 +6594,8 @@
    "imdb": "tt50164002",
    "year": 2026,
    "num": 13511,
-   "links": 4,
-   "quality": "540p,720p",
+   "links": 10,
+   "quality": "540p,720p,WEB-DL 1080p,WEB-DL 480p,WEB-DL 720p",
    "rezflix_id": 36139,
    "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt50164002). Persian name جایگزین (feed)."
   },
@@ -6856,10 +6858,43 @@
    "imdb": "tt18224594",
    "year": 2026,
    "num": 13952,
-   "links": 3,
-   "quality": "1080p,480p,720p",
+   "links": 43,
+   "quality": "1080p,480p,720p,WEB-DL 1080p,WEB-DL 480p,WEB-DL 720p",
    "rezflix_id": 36164,
    "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt18224594). Persian name بلید رانر 2099 (feed description, verified vs synopsis). Series: single episode S01E01, SoftSub, no per-episode sizes (RZ series precedent)."
+  },
+  {
+   "title": "Breeder",
+   "tmdb": 1496696,
+   "imdb": "tt9213874",
+   "year": 2026,
+   "num": 13953,
+   "links": 5,
+   "quality": "1080p,480p,720p,WEB-DL 1080p,WEB-DL 720p",
+   "rezflix_id": 36168,
+   "identity_note": "TMDB+IMDb+OMDb agree (TMDB 2026-10-28, tt9213874; director Alex Goyette, cast Daniel Doheny/Dot-Marie Jones/Maddie Phillips match feed). Persian name پرورش‌دهنده (feed description)."
+  },
+  {
+   "title": "Lottie Dottie Chicken The Movie",
+   "tmdb": 1615391,
+   "imdb": "tt39482377",
+   "year": 2026,
+   "num": 13954,
+   "links": 2,
+   "quality": "1080p,720p",
+   "rezflix_id": 36167,
+   "identity_note": "TMDB+IMDb+OMDb agree (TMDB 2026-10-01, tt39482377, original Galinha Pintadinha: O Filme; directors Marcos Patrizzi Luporini/Juliano Prado match feed). Persian name ماجرای مرغ خال‌خالی (feed description)."
+  },
+  {
+   "title": "Josephine",
+   "tmdb": 1299329,
+   "imdb": "tt32321285",
+   "year": 2026,
+   "num": 13955,
+   "links": 2,
+   "quality": "HDCAM 1080p,HDCAM 720p",
+   "rezflix_id": 36166,
+   "identity_note": "TMDB+IMDb+OMDb agree (TMDB 2026-11-19, tt32321285; director Beth de Araújo, cast Channing Tatum/Gemma Chan/Mason Reeves match feed). Persian name جوزفین (feed description). CAM: HDCAM only everywhere (F2M absent, Simba/DN HDCAM only, ML/BF/DS/FH nothing) — CAM kept per rule, upgrade later when real quality appears."
   }
  ],
  "trailer_keys_added": [
@@ -6930,7 +6965,10 @@
   "movie:253708",
   "movie:10871",
   "movie:1249668",
-  "movie:1780407"
+  "movie:1780407",
+  "movie:1496696",
+  "movie:1615391",
+  "movie:1299329"
  ],
  "queued_titles": [
   {
