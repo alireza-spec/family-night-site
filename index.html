@@ -18653,7 +18653,7 @@ sxSearchPage = async function (seq, append) {
     if (list && list.length) {
       list.forEach(function (s) {
         if (!s) return;
-        var sev = { src: s.src || ev.src, code: s.code, anten_id: s.anten_id, get_hls_url: s.get_hls_url, urlaccess_hq: s.urlaccess_hq, urlaccess_lq: s.urlaccess_lq, hls: s.hls || null, embed: s.embed || null };
+        var sev = { src: s.src || ev.src, code: s.code, anten_id: s.anten_id, embed_stream_id: s.embed_stream_id || null, get_hls_url: s.get_hls_url, urlaccess_hq: s.urlaccess_hq, urlaccess_lq: s.urlaccess_lq, hls: s.hls || null, embed: s.embed || null };
         if (sev.hls || sev.get_hls_url || sev.urlaccess_hq || sev.urlaccess_lq) out.push({ label: s.label || '', ev: sev });
       });
       if (out.length) return out;
@@ -18664,6 +18664,9 @@ sxSearchPage = async function (seq, append) {
     if (!out.length && ev.src) out.push({ label: '', ev: ev });
     return out;
   }
+  /* FN-TV-EVENTS v2.7 (T16, 2026-11-25) -- OFFICIAL-EMBED fallback +
+     stream-id fix (T15's v2.6 shipped the program id as pID; T16 uses
+     the baked streamPublisherId). Server list on failure below. */
   /* FN-TV-EVENTS v2.6 (T15, 2026-11-25) -- OFFICIAL-EMBED fallback +
      server list on failure.
      When every HLS server fails (worker 403 geo gate + phone 200 with
@@ -18672,10 +18675,17 @@ sxSearchPage = async function (seq, append) {
      2026-11-25: Anten's https://www.anten.ir/iframe/[pID] returns
      HTTP 200, 59,451 B, layout variant "nothing" (16:9 player box, no
      header/footer/nav, no site chrome), no X-Frame-Options header --
-     a clean player, not the full site. pID is the program id
-     (anten_id): the route param is literally named pID and Anten
-     addresses programs by that id everywhere (football page, calendar
-     API, urlaccess). Aparat Sport has NO embed: live streams carry no
+     a clean player, not the full site. T16 (2026-11-25): pID is the
+     streamPublisherId, NOT the program id -- the phone test proved it:
+     /iframe/187914 (Denver-Dallas, program id) is a black player with
+     a dead play button, with or without VPN, and the direct embed link
+     fails the same way. The program page SSR carries streams[0].id
+     (187913 -> 215375, 187914 -> 215376, proven live 6/6 programs)
+     with urlaccess URLs using the stream id, and the iframe page calls
+     getStreamPublisher({streamPublisherId: pID}). The bake resolves
+     the stream id per program (embed_stream_id) and the embed URL uses
+     it when known; the program id stays as last resort only. Aparat
+     Sport has NO embed: live streams carry no
      videohash (the Aparat video API 404s on the stream_id) and
      aparatsport.com is fully geo-blocked from the VM, so no embed URL
      can be verified there. Football360/ARVAN has no per-event embed
@@ -18695,11 +18705,15 @@ sxSearchPage = async function (seq, append) {
      never shown bare with no list. */
   var TV_EMBED_ALLOW = /^https:\/\/www\.anten\.ir\/iframe\/\d+$/;
   function evEmbedUrl(sev) {
-    /* Every candidate must pass the allowlist: a baked embed URL that
-       fails it falls through to the derivation from anten_id, and a
-       non-numeric anten_id derives nothing usable. No URL that fails
-       the regex can ever become an iframe src. */
+    /* Candidate order (T16): the stream-id derivation first -- it
+       outranks even a baked embed, so a stale baked program-id URL can
+       never win over a known stream id -- then the baked embed URL,
+       then the derivation from anten_id (program id, last resort only).
+       Every candidate must pass the allowlist, and a non-numeric id
+       derives nothing usable. No URL that fails the regex can ever
+       become an iframe src. */
     var cands = [];
+    if (sev && sev.embed_stream_id && /^\d+$/.test(String(sev.embed_stream_id))) cands.push('https://www.anten.ir/iframe/' + sev.embed_stream_id);
     if (sev && sev.embed) cands.push(sev.embed);
     if (sev && sev.anten_id) cands.push('https://www.anten.ir/iframe/' + sev.anten_id);
     for (var i = 0; i < cands.length; i++) {
