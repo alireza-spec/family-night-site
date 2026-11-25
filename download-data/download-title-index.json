@@ -5202,7 +5202,7 @@
  },
  "movie:1401433": {
   "imdb_id": "tt29870331",
-  "num": 11018,
+  "num": 10912,
   "part": 16,
   "title": "Appofeniacs",
   "year": 2026
@@ -91207,6 +91207,13 @@
   "num": 13913,
   "part": "rz",
   "title": "Dark Machine the Animation",
+  "year": 2026
+ },
+ "tv:303463": {
+  "imdb_id": "tt31189898",
+  "num": 12553,
+  "part": "fh",
+  "title": "Bamdade Khomar",
   "year": 2026
  }
 }
