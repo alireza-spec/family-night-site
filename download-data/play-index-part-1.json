@@ -151102,6 +151102,48 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "YIFY",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2025/Motor.City.2025/BluSUB/Motor.City.2025.1080p.BluRay.YIFY.Farsi.Sub.Film2Media.mkv?v=481383327573",
+    "playit_url": null,
+    "quality": "BluRay 1080p",
+    "quality_label": "bluray 1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "YIFY",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2025/Motor.City.2025/BluSUB/Motor.City.2025.720p.BluRay.YIFY.Farsi.Sub.Film2Media.mkv?v=364478289182",
+    "playit_url": null,
+    "quality": "BluRay 720p",
+    "quality_label": "bluray 720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2025/Motor.City.2025/BluSUB/Motor.City.2025.480p.BluRay.Farsi.Sub.Film2Media.mkv?v=519773996687",
+    "playit_url": null,
+    "quality": "BluRay 480p",
+    "quality_label": "bluray 480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
    }
   ],
   "title": "Motor City",
