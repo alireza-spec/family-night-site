@@ -211,39 +211,39 @@
  ],
  "counts": {
   "by_resolution": {
-   "1080p": 94,
-   "480p": 357,
-   "720p": 723
+   "1080p": 130,
+   "480p": 581,
+   "720p": 1101
   },
   "by_type": {
    "movie": 12,
-   "series": 33
+   "series": 39
   },
   "by_version": {
-   "Dubbed": 10,
-   "HardSub": 1091,
-   "SoftSub": 73
+   "Dubbed": 32,
+   "HardSub": 1703,
+   "SoftSub": 77
   },
   "by_year": {
    "1991": 1,
    "1992": 1,
-   "1997": 1,
    "2012": 1,
    "2015": 1,
    "2016": 1,
    "2018": 3,
-   "2022": 3,
+   "2022": 4,
    "2023": 2,
-   "2024": 1,
-   "2025": 5,
-   "2026": 24,
-   "2019": 1
+   "2024": 2,
+   "2025": 6,
+   "2026": 27,
+   "2019": 1,
+   "2020": 1
   },
-  "new_links": 1174,
-  "new_play_rows_expanded": 1262,
-  "new_titles": 45,
-  "total_links_added": 1174,
-  "total_titles": 45,
+  "new_links": 1812,
+  "new_play_rows_expanded": 1900,
+  "new_titles": 51,
+  "total_links_added": 1812,
+  "total_titles": 51,
   "variety_links_added": 81,
   "variety_links_parsed": 86,
   "variety_play_rows_expanded": 78,
@@ -528,15 +528,15 @@
    "year": 1992
   },
   {
-   "imdb": "tt29668631",
+   "imdb": "tt19631810",
    "nlinks": 31,
-   "note": "IMDb id from OMDb; TMDB+OMDb agree on 1997 (Simba year 2022 uncorroborated).",
+   "note": "RE-KEYED 2026-11-25-am: files are the 2022 series (tv 209341, tt19631810 per OMDb by-title + by-id, Sai Roong 2022 series) — 16/16 episodes, served by Simba's 2022 page; the 1997 series (tv 340510) has 18 episodes so these 31 URLs cannot be its set. Heading/DTI/avail/search/play re-keyed; links unchanged. Previous note: IMDb id from OMDb; TMDB+OMDb agree on 1997 (Simba year 2022 uncorroborated).",
    "num": 11657,
    "play_rows": 31,
    "title": "Sai Roong",
-   "tmdb": 340510,
+   "tmdb": 209341,
    "type": "series",
-   "year": 1997
+   "year": 2022
   },
   {
    "imdb": "tt3513704",
@@ -746,6 +746,72 @@
    "nlinks": 9,
    "play_rows": 9,
    "note": "TMDB-ONLY: TMDB external_ids null. TMDB primary name is Chinese 混在末日，独自成仙; 'A New Way for Sanctification' is a TMDB alternative title; filenames 'Apocalypse Becoming an Immortal Alone' = translation of the Chinese title. DN 36123 holds the IDENTICAL 9 URLs (verified by set comparison) - nothing additional to add."
+  },
+  {
+   "num": 13941,
+   "title": "City Kitchen",
+   "year": 2026,
+   "type": "series",
+   "imdb": "tt40069913",
+   "tmdb": 297385,
+   "nlinks": 22,
+   "play_rows": 22,
+   "note": "TMDB external_ids gives tt40069913 (check pass recorded null after transport errors); OMDb agrees: Matbakh Al-Madeena, 2026-, series (Arabic title of City Kitchen, TMDB original_name). TMDB find tt40069913 -> tv 297385. 22 dubbed 720p mp4, S1E01-E22."
+  },
+  {
+   "num": 13942,
+   "title": "Destined to Be Phoenix",
+   "year": 2026,
+   "type": "series",
+   "imdb": null,
+   "tmdb": 340801,
+   "nlinks": 44,
+   "play_rows": 44,
+   "note": "TMDB-ONLY: TMDB external_ids null (verified); OMDb has no entry by title. 44 SoftSub links, S1E01-E22 in 720p + 480p."
+  },
+  {
+   "num": 13943,
+   "title": "A Calm Sea and Beautiful Days with You",
+   "year": 2025,
+   "type": "series",
+   "imdb": "tt36693655",
+   "tmdb": 287338,
+   "nlinks": 32,
+   "play_rows": 32,
+   "note": "TMDB external_ids gives tt36693655 (check pass recorded null after transport errors); OMDb agrees: A Calm Sea and Beautiful Days with You, 2025, series. TMDB find tt36693655 -> tv 287338. 32 links + 1 teaser excluded (trailer:true). S1E01-E10 + S2E01-E06."
+  },
+  {
+   "num": 13944,
+   "title": "Notes of DNA Appraiser",
+   "year": 2026,
+   "type": "series",
+   "imdb": null,
+   "tmdb": 259785,
+   "nlinks": 76,
+   "play_rows": 76,
+   "note": "TMDB-ONLY: TMDB external_ids null (verified); OMDb has no entry by title. 76 SoftSub links, S1E01-E38 in 720p + 480p."
+  },
+  {
+   "num": 13945,
+   "title": "Swallowed Star",
+   "year": 2020,
+   "type": "series",
+   "imdb": "tt17050076",
+   "tmdb": 101172,
+   "nlinks": 402,
+   "play_rows": 402,
+   "note": "TMDB external_ids gives tt17050076 (check pass recorded null after transport errors); OMDb agrees: Swallowed Star, 2020-, series. TMDB find tt17050076 -> tv 101172. 402 links (404 Simba sources minus 2 duplicate URLs: Tunshi Xingkong 4th Season (142)/(143) listed under both S5 720 and S5 480). Simba seasons S1-S6 map to S1-S5 (two فصل پنجم groups = S5 in 720p+480p); filenames' S01/S02 markers unreliable, Simba season+episode used."
+  },
+  {
+   "num": 13946,
+   "title": "Hum Dono",
+   "year": 2024,
+   "type": "series",
+   "imdb": "tt34821866",
+   "tmdb": 286319,
+   "nlinks": 62,
+   "play_rows": 62,
+   "note": "IMDb id from OMDb (TMDB external_ids null): OMDb by-title + by-id agree Hum Dono, 2024-, series, tt34821866; Simba year 2024 confirmed by OMDb (TMDB has no first_air_date). TMDB find does not know tt34821866 yet. 62 SoftSub links, S1E01-E31 in 480p + 1080p (E30-E31 files in the 480 season are 1080p by filename)."
   }
  ],
  "nosub_only_new": [],
@@ -920,7 +986,7 @@
    "title": "Sai Roong",
    "year": 2022,
    "nlinks": null,
-   "reason": "ALREADY-IN-ARCHIVE: same Simba id 35991 merged 2026-11-20 as sm #11657 (TMDB 340510, 1997, tt29668631, TMDB+OMDb agree, OMDb plot matches TMDB 340510 overview verbatim). All 31 unique URLs already live in that record; the checker's TMDB 209341 (Fallen Rainbow 2022, different plot) conflicts with the live verified identity. NO second record; needs adjudication, not a merge."
+   "reason": "RESOLVED 2026-11-25-am: sm #11657 re-keyed to the 2022 identity (tv 209341, tt19631810 per OMDb). 16/16 episodes vs the 1997 series' 18; files served by Simba's 2022 page. Previous reason: ALREADY-IN-ARCHIVE: same Simba id 35991 merged 2026-11-20 as sm #11657 (TMDB 340510, 1997, tt29668631)."
   },
   {
    "simba_id": 36149,
@@ -948,7 +1014,35 @@
    "title": "Hum Dono",
    "year": 2024,
    "nlinks": null,
-   "reason": "QUEUED per task: two TMDB entries, year mismatch. TMDB detail 286319 has no date, pop 0.141."
+   "reason": "MERGED 2026-11-25-am as sm #13946 (Hum Dono, tv 286319, tt34821866 per OMDb; TMDB external_ids null). Previous reason: QUEUED per task: two TMDB entries, year mismatch. TMDB detail 286319 has no date, pop 0.141."
+  },
+  {
+   "simba_id": 34742,
+   "title": "Haysiyet",
+   "year": 2026,
+   "nlinks": null,
+   "reason": "QUEUED 2026-11-25-am: no TMDB exact-match in this run or any PM pass; no TMDB id to verify."
+  },
+  {
+   "simba_id": 34638,
+   "title": "Tuzlu Kahve",
+   "year": 2026,
+   "nlinks": null,
+   "reason": "QUEUED 2026-11-25-am: no TMDB exact-match in this run or any PM pass; no TMDB id to verify."
+  },
+  {
+   "simba_id": 35714,
+   "title": "Hob Aswad",
+   "year": 2026,
+   "nlinks": null,
+   "reason": "QUEUED 2026-11-25-am: no TMDB exact-match in this run or any PM pass; no TMDB id to verify."
+  },
+  {
+   "simba_id": 33894,
+   "title": "I The Fated Villain",
+   "year": 2026,
+   "nlinks": null,
+   "reason": "QUEUED 2026-11-25-am: no TMDB exact-match in this run or any PM pass; no TMDB id to verify."
   }
  ],
  "source": "Simba",
@@ -973,6 +1067,14 @@
   {
    "title": "Mission: Mompossible",
    "file": "Mission.Mompossible.E29.720p.KCW.WEB-DL.SS.mkv"
+  },
+  {
+   "file": "[@AnimeGateOfficial] Tunshi Xingkong 4th Season - (142).mkv",
+   "title": "Swallowed Star"
+  },
+  {
+   "file": "[@AnimeGateOfficial] Tunshi Xingkong 4th Season - (143).mkv",
+   "title": "Swallowed Star"
   }
  ],
  "url_dupes_in_dn_records": [],
@@ -1119,6 +1221,57 @@
     {
      "simba_id": 36055,
      "title": "Hum Dono"
+    }
+   ]
+  },
+  {
+   "batch": "2026-11-25-am",
+   "live_base_head": "ed8aa1772640b83de0da418227a06ee7d19b3dc2",
+   "start_num": 13941,
+   "new_titles": 6,
+   "new_links": 638,
+   "new_play_rows_expanded": 638,
+   "queued": [
+    {
+     "simba_id": 34742,
+     "title": "Haysiyet"
+    },
+    {
+     "simba_id": 34638,
+     "title": "Tuzlu Kahve"
+    },
+    {
+     "simba_id": 35714,
+     "title": "Hob Aswad"
+    },
+    {
+     "simba_id": 33894,
+     "title": "I The Fated Villain"
+    },
+    {
+     "simba_id": 36109,
+     "title": "11"
+    },
+    {
+     "simba_id": 36059,
+     "title": "Chiranjeevi"
+    }
+   ],
+   "repaired": [
+    {
+     "num": 11657,
+     "title": "Sai Roong",
+     "from": {
+      "tmdb": 340510,
+      "imdb": "tt29668631",
+      "year": 1997
+     },
+     "to": {
+      "tmdb": 209341,
+      "imdb": "tt19631810",
+      "year": 2022
+     },
+     "nlinks": 31
     }
    ]
   }
