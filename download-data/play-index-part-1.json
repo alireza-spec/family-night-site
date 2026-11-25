@@ -43945,6 +43945,48 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "unknown",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl.moviezland.ir/animations/5-1400/Rufus.The.Sea.Serpent.Who.Couldn.t.Swim.2025.1080p.Sub.Farsi.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": 1703118823,
+    "size_text": "1.6 GiB"
+   },
+   {
+    "encoder": "unknown",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl.moviezland.ir/animations/5-1400/Rufus.The.Sea.Serpent.Who.Couldn.t.Swim.2025.720p.Sub.Farsi.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 1072726901,
+    "size_text": "1.0 GiB"
+   },
+   {
+    "encoder": "unknown",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl.moviezland.ir/animations/5-1400/Rufus.The.Sea.Serpent.Who.Couldn.t.Swim.2025.480p.Sub.Farsi.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 498656846,
+    "size_text": "475.6 MiB"
    }
   ],
   "title": "Rufus: The Sea Serpent Who Couldn’t Swim",
