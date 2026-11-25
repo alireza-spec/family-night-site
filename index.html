@@ -4102,7 +4102,7 @@ async function loadHome() {
          newest-first). The live refresh below only MERGES into it. */
       try {
         var _stN = await fnStaticJson('newest.json', null, DL_BASE);
-        if (_stN && (_stN.movies || {}).results && _stN.movies.results.length) { rows.newM25 = _stN.movies.results.slice().sort(function (a, b) { return String(b.release_date || '').localeCompare(String(a.release_date || '')); }).slice(0, 20); /* FN-NEWEST-RELEASE-DATE v1 (user order 2026-11-23 23:32): release_date desc */ try { fnPaintHome(rows); } catch (e2) {} }
+        if (_stN && (_stN.movies || {}).results && _stN.movies.results.length) { rows.newM25 = _stN.movies.results.slice(0, 20); /* FN-NEWEST-ADDITION-DATE v1 (user decision 2026-11-25 05:55): newest.json file order IS addition order (most recently added first) — NO date re-sort */ try { fnPaintHome(rows); } catch (e2) {} }
       } catch (e) {}
       /* newM25 rail: live TMDB discover. NO-FLOOR WALL (parent-measured
          2026-11-20 ~19:30): a date-desc discover with NO vote floor
@@ -4122,7 +4122,7 @@ async function loadHome() {
         if (_nmLive.length) {
           var _nmMerged = (rows.newM25 || []).slice();
           _nmLive.forEach(function (x) { if (!_nmMerged.some(function (y) { return y.id === x.id; })) _nmMerged.push(x); });
-          _nmMerged.sort((a, b) => String(b.release_date || '').localeCompare(String(a.release_date || '')));
+          /* FN-NEWEST-ADDITION-DATE v1 (user decision 2026-11-25 05:55): NO date re-sort — static file order first, live extras appended after, in live order. */
           _nmLive = _nmMerged.slice(0, 20);
           rows.newM25 = _nmLive;
         }
@@ -4135,7 +4135,7 @@ async function loadHome() {
          refresh below only MERGES into it. */
       try {
         var _stU = await fnStaticJson('newest.json', null, DL_BASE);
-        if (_stU && (_stU.series || {}).results && _stU.series.results.length) { rows.updates = _stU.series.results.slice().sort(function (a, b) { return String((b.last_air_date || b.first_air_date) || '').localeCompare(String((a.last_air_date || a.first_air_date) || '')); }).slice(0, 20); /* FN-NEWEST-RELEASE-DATE v1 (user order 2026-11-23 23:32): last-episode date desc */ try { fnPaintHome(rows); } catch (e2) {} }
+        if (_stU && (_stU.series || {}).results && _stU.series.results.length) { rows.updates = _stU.series.results.slice(0, 20); /* FN-NEWEST-ADDITION-DATE v1 (user decision 2026-11-25 05:55): newest.json file order IS addition order — NO date re-sort */ try { fnPaintHome(rows); } catch (e2) {} }
       } catch (e) {}
       /* updates rail: live TMDB discover/tv — SERIES only, new
          episode within 3 months, no talk/news/reality, most popular
@@ -4148,7 +4148,7 @@ async function loadHome() {
         if (_upLive.length) {
           var _upMerged = (rows.updates || []).slice();
           _upLive.forEach(function (x) { if (!_upMerged.some(function (y) { return y.id === x.id; })) _upMerged.push(x); });
-          _upMerged.sort((a, b) => String((b.last_air_date || b.first_air_date) || '').localeCompare(String((a.last_air_date || a.first_air_date) || '')));
+          /* FN-NEWEST-ADDITION-DATE v1 (user decision 2026-11-25 05:55): NO date re-sort — static file order first, live extras appended after, in live order. */
           _upLive = _upMerged.slice(0, 20);
           rows.updates = _upLive;
         }
@@ -5057,13 +5057,15 @@ async function loadArchPage() {
       });
       items = items.concat(_locals);
     }
-    /* FN-NEWEST-RELEASE-DATE v1 (user order 2026-11-23 23:32): the
-       newest lists (newM25/updates) sort by RELEASE DATE — movies by
-       release_date desc, series by (last_air_date || first_air_date)
-       desc. No addition-order shortcut: the default sort branches below
-       apply. An explicit sort pick (oldest, votes, popularity, random)
-       still applies through its own branch. */
-    if (sortUi === 'popularity.desc') items.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
+    /* FN-NEWEST-ADDITION-DATE v1 (user decision 2026-11-25 05:55): the
+       newest lists (newM25/updates) keep newest.json FILE ORDER on the
+       default newest-first sort — the seed prepended above already puts
+       the static list first in file order (addition date, most recently
+       added first), so NO date re-sort runs here. An explicit sort pick
+       (oldest, votes, popularity, random) still applies through its own
+       branch. */
+    if ((arch.collKey === 'newM25' || arch.collKey === 'updates') && (sortUi === 'primary_release_date.desc' || sortUi === 'first_air_date.desc')) { /* keep file order: no sort */ }
+    else if (sortUi === 'popularity.desc') items.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
     else if (arch.collKey === 'updates' && (sortUi === 'primary_release_date.desc' || sortUi === 'first_air_date.desc')) items.sort((a, b) => String((b.last_air_date || b.first_air_date) || '').localeCompare(String((a.last_air_date || a.first_air_date) || '')));
     else if (sortUi === 'primary_release_date.desc' || sortUi === 'first_air_date.desc') items.sort((a, b) => String((b.media_type === 'tv' ? b.first_air_date : b.release_date) || '').localeCompare(String((a.media_type === 'tv' ? a.first_air_date : a.release_date) || '')));
     /* FN-ASC-SORT v1: oldest-first — the batch was fetched by popularity
