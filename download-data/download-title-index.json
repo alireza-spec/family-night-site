@@ -91180,5 +91180,33 @@
   "part": "rz",
   "title": "Kung Fu",
   "year": 1972
+ },
+ "tv:335536": {
+  "imdb_id": "tt35051210",
+  "num": 13910,
+  "part": "rz",
+  "title": "Tyson",
+  "year": 2026
+ },
+ "tv:261343": {
+  "imdb_id": "tt35769369",
+  "num": 13911,
+  "part": "rz",
+  "title": "Chitose Is in the Ramune Bottle",
+  "year": 2025
+ },
+ "tv:314054": {
+  "imdb_id": "tt41278592",
+  "num": 13912,
+  "part": "rz",
+  "title": "Red River",
+  "year": 2026
+ },
+ "tv:306565": {
+  "imdb_id": "tt39390769",
+  "num": 13913,
+  "part": "rz",
+  "title": "Dark Machine the Animation",
+  "year": 2026
  }
 }

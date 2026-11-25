@@ -2,19 +2,19 @@
  "code": "RZ",
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
  "start_num": 12560,
- "end_num": 13909,
- "live_base_head": "6fc5415dd8e9da4a9cfe5d062e3256ec9d875dd0 (5h run 20261124T231106Z REBASED; H3 max #13906 verified from live files, RZ part-1 max #13748)",
- "generated": "2026-11-25 (RezFlix 5-hourly run 20261124T231106Z — merge of 3 new RZ series #13907-13909 + 1 trailer key + encode completion Clashing Through the Snow into part 16 #13906 (PM run's record); cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
+ "end_num": 13913,
+ "live_base_head": "54628d72a2c75e9960f83c820c8277b72b8f1438 (screenshot-audit merge 2026-11-25; H3 max #13909 verified from live files, RZ part-1 max #13909)",
+ "generated": "2026-11-25 (screenshot-audit merge — 4 new RZ series #13910-13913, 152 SoftSub links, 0 trailer keys; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
  "counts": {
-  "total_titles": 606,
+  "total_titles": 610,
   "movies": 35,
-  "series": 571,
-  "total_links": 43711,
+  "series": 575,
+  "total_links": 43863,
   "by_year": {
    "2024": 1,
-   "2026": 28,
+   "2026": 31,
    "2023": 2,
-   "2025": 6,
+   "2025": 7,
    "2014": 3,
    "1955": 2,
    "1960": 3,
@@ -76,10 +76,10 @@
    "2022": 1
   },
   "by_quality": {
-   "720p": 21337,
-   "1080p": 3524,
+   "720p": 21389,
+   "1080p": 3576,
    "540p": 292,
-   "480p": 14311,
+   "480p": 14359,
    "CAM 1080p": 117,
    "CAM 720p": 35,
    "Cam 1080p": 1,
@@ -6761,6 +6761,50 @@
    "quality": "1080p,480p,720p",
    "rezflix_id": 36092,
    "identity_note": "TMDB+IMDb+OMDb agree (feed 1972, TMDB 1972, tt0068093). Persian name کونگ فو (feed description, verified vs synopsis). Series: single episodes, NoSub, no per-episode sizes (RZ series precedent)."
+  },
+  {
+   "title": "Tyson",
+   "tmdb": 335536,
+   "imdb": "tt35051210",
+   "year": 2026,
+   "num": 13910,
+   "links": 8,
+   "quality": "1080p,720p",
+   "rezflix_id": 35440,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt35051210). OMDb title is the stale working title «Untitled Mike Tyson Documentary Series» (same IMDb id/year, plot matches). Persian name تایسون (feed description, verified vs synopsis). Series: single episodes, SoftSub, no per-episode sizes (RZ series precedent). TMDB YouTube trailer o1S5LsYhfEg (Official Trailer) — site serves via the YouTube fallback; NOT added to dn-trailer-index (direct-mp4 only)."
+  },
+  {
+   "title": "Chitose Is in the Ramune Bottle",
+   "tmdb": 261343,
+   "imdb": "tt35769369",
+   "year": 2025,
+   "num": 13911,
+   "links": 60,
+   "quality": "1080p,480p,720p",
+   "rezflix_id": 30986,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2025, TMDB 2025, tt35769369). Persian name چیتوسه توی بطری رامونه است (feed description, verified vs synopsis). Series: single episodes, SoftSub, no per-episode sizes (RZ series precedent). RezFlix «فصل دوم» is cour 2 of TMDB S1: mapped to S01E14–E20 (13+7=20 aired-to-date, last_air 2026-11-17). S2 E02/E06 720p file sits in a 480 folder (uploader misfile; sources listed 480/720/1080 in order in all 20 episodes; host size check impossible from VM). TMDB YouTube trailer ahnbKqceZ-A (Official Trailer [Subtitled]) — site serves via the YouTube fallback; NOT added to dn-trailer-index (direct-mp4 only)."
+  },
+  {
+   "title": "Red River",
+   "tmdb": 314054,
+   "imdb": "tt41278592",
+   "year": 2026,
+   "num": 13912,
+   "links": 63,
+   "quality": "1080p,480p,720p",
+   "rezflix_id": 33719,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt41278592). Persian name رودخانه سرخ (feed description, verified vs synopsis). Series: single episodes, SoftSub, no per-episode sizes (RZ series precedent). TMDB /videos: none — no trailer anywhere."
+  },
+  {
+   "title": "Dark Machine the Animation",
+   "tmdb": 306565,
+   "imdb": "tt39390769",
+   "year": 2026,
+   "num": 13913,
+   "links": 21,
+   "quality": "1080p,480p,720p",
+   "rezflix_id": 35382,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt39390769). Persian name دارک ماشین انیمیشن (feed description, verified vs synopsis). Series: single episodes, SoftSub, no per-episode sizes (RZ series precedent). TMDB /videos: none — no trailer anywhere."
   }
  ],
  "trailer_keys_added": [
