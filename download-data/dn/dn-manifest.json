@@ -2,20 +2,20 @@
  "code": "DN",
  "counts": {
   "by_resolution": {
-   "1080p": 1070,
+   "1080p": 1118,
    "360p": 1,
-   "480p": 7734,
-   "540p": 481,
-   "720p": 10012,
+   "480p": 7919,
+   "540p": 488,
+   "720p": 10507,
    "576p": 1
   },
   "by_version_family": {
-   "Dubbed": 2947,
-   "Subtitled": 15115,
+   "Dubbed": 2951,
+   "Subtitled": 15699,
    "unknown": 105,
    "NoSub": 3,
-   "HardSub": 400,
-   "SoftSub": 729
+   "HardSub": 413,
+   "SoftSub": 863
   },
   "by_year": {
    "1929": 1,
@@ -53,26 +53,26 @@
    "2006": 21,
    "2007": 11,
    "2008": 18,
-   "2009": 21,
-   "2010": 306,
+   "2009": 23,
+   "2010": 307,
    "2011": 120,
-   "2012": 60,
-   "2013": 53,
-   "2014": 187,
+   "2012": 63,
+   "2013": 55,
+   "2014": 274,
    "2015": 1020,
-   "2016": 52,
+   "2016": 62,
    "2017": 209,
-   "2018": 142,
-   "2019": 166,
-   "2020": 142,
-   "2021": 490,
-   "2022": 180,
-   "2023": 315,
-   "2024": 187,
-   "2025": 548,
-   "2026": 110,
+   "2018": 172,
+   "2019": 175,
+   "2020": 186,
+   "2021": 554,
+   "2022": 233,
+   "2023": 674,
+   "2024": 220,
+   "2025": 556,
+   "2026": 134,
    "1994": 4,
-   "1998": 8,
+   "1998": 11,
    "1971": 6,
    "1989": 1,
    "1967": 1,
@@ -86,12 +86,12 @@
    "1993": 2
   },
   "ext_overlap": 1,
-  "films": 726,
-  "play_rows": 20190,
-  "series": 430,
+  "films": 737,
+  "play_rows": 20925,
+  "series": 446,
   "skipped_no_links": 11,
   "total": 788,
-  "trailer_keys": 784,
+  "trailer_keys": 786,
   "trailers_dropped": 71,
   "variety_patched": 401,
   "variety_play_created": 42,
@@ -22765,5 +22765,164 @@
  "twice_daily_2026-11-24_pm_trailer_fixup": {
   "live_base_head": "c1d727a7ad69e990a42a049ff1a0d478ed91ace1",
   "note": "Silent Storm (sm #13901, tv:279155) trailer entry added to dn-trailer-index (teaser merged by the Simba PM build, index entry omitted there); trailer_keys 782->783."
+ },
+ "twice_daily_2026-11-25_am_dn_movies": {
+  "live_base_head": "ed8aa1772640b83de0da418227a06ee7d19b3dc2",
+  "start_num": 13914,
+  "end_num": 13924,
+  "new_titles_merged": [
+   "The Emperor of Paris",
+   "Desolate",
+   "Red Dawn",
+   "A-X-L",
+   "Clownery",
+   "The Trials of Cate McCall",
+   "83",
+   "The Reef",
+   "I Hate Valentine's Day",
+   "Bad Newz",
+   "The Longest Nite"
+  ],
+  "new_links": 23,
+  "new_trailers": 2,
+  "completions": [
+   {
+    "dn_id": 34489,
+    "title": "Bharat Bhhagya Viddhaata",
+    "record": "#489 1",
+    "links_added": 3
+   }
+  ],
+  "completions_skipped_no_gap": [
+   {
+    "dn_id": 18328,
+    "title": "The Point Men",
+    "record": "#6099 3"
+   },
+   {
+    "dn_id": 19676,
+    "title": "Pocket Dial Murder",
+    "record": "#6071 3"
+   },
+   {
+    "dn_id": 22498,
+    "title": "The Portrait",
+    "record": "#5601 3"
+   },
+   {
+    "dn_id": 24018,
+    "title": "Prey",
+    "record": "#5408 3"
+   },
+   {
+    "dn_id": 27007,
+    "title": "When Love Strikes",
+    "record": "#4360 2"
+   },
+   {
+    "dn_id": 28864,
+    "title": "Sinners",
+    "record": "#1765 1"
+   },
+   {
+    "dn_id": 36158,
+    "title": "Clashing Through the Snow",
+    "record": "#13906 16"
+   }
+  ],
+  "repairs": [],
+  "decisions": [
+   "version unknown -> NoSub",
+   "H3 title = tmdb_title",
+   "DN 12892 Arjun Pandit queued (single link, no determinable resolution)",
+   "DN 12891 Disney Princess Enchanted Tales (PM) re-checked, still queued (single link, no determinable resolution)",
+   "DN 2204 URL '00MB' size prefix stripped",
+   ".SS./.DUBLE. filename tokens recognised in version fallback",
+   "rz completions into rz/archive-part-1.html + rz/play-index-rz.json; rz-manifest untouched (RezFlix-owned)"
+  ]
+ },
+ "twice_daily_2026-11-25_am_dn_series": {
+  "live_base_head": "ed8aa1772640b83de0da418227a06ee7d19b3dc2",
+  "start_num": 13925,
+  "end_num": 13940,
+  "new_titles_merged": [
+   "Deception",
+   "Douluo Continent",
+   "Yona of the Dawn",
+   "Happy Valley",
+   "CESTVS -The Roman Fighter-",
+   "The Longest Promise",
+   "Vinyl",
+   "The Baking Challenge",
+   "The Influencer",
+   "The Dog House",
+   "How to Die Alone",
+   "Shrouding the Heavens",
+   "Rebirth of Shopping Addict",
+   "Falling Into You",
+   "FER",
+   "Raakh"
+  ],
+  "new_links": 709,
+  "new_trailers": 0,
+  "duplicate_urls_dropped": 0,
+  "completions": [],
+  "completions_skipped_no_gap": [
+   {
+    "dn_id": 9273,
+    "title": "The Third Day",
+    "record": "#10868 16"
+   },
+   {
+    "dn_id": 19862,
+    "title": "Golden Kamuy",
+    "record": "#9805 9"
+   },
+   {
+    "dn_id": 25293,
+    "title": "In Love All Over Again",
+    "record": "#11030 16"
+   },
+   {
+    "dn_id": 27783,
+    "title": "Daddy Issues",
+    "record": "#10151 11"
+   },
+   {
+    "dn_id": 27784,
+    "title": "Spaced",
+    "record": "#13067 rz"
+   },
+   {
+    "dn_id": 33546,
+    "title": "The Cat and the Dragon",
+    "record": "#9446 7"
+   },
+   {
+    "dn_id": 36090,
+    "title": "Wonder Woman",
+    "record": "#13907 rz"
+   },
+   {
+    "dn_id": 36091,
+    "title": "UFO",
+    "record": "#13908 rz"
+   },
+   {
+    "dn_id": 36092,
+    "title": "Kung Fu",
+    "record": "#13909 rz"
+   }
+  ],
+  "repairs": [
+   "search row tt41278620: part 3 flag 1 -> part 7 flag 0"
+  ],
+  "decisions": [
+   "per-season episode conversion for absolute DN numbering",
+   "version unknown -> NoSub",
+   "H3 title = tmdb_name",
+   "series completions gap = per-episode (res, family) not served live; URL already live wins over label family",
+   "no archive-counts.json regen here (coordinator decides at assemble time)"
+  ]
  }
 }
