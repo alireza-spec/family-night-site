@@ -2,20 +2,20 @@
  "code": "DN",
  "counts": {
   "by_resolution": {
-   "1080p": 1118,
+   "1080p": 1276,
    "360p": 1,
-   "480p": 7919,
-   "540p": 488,
-   "720p": 10507,
+   "480p": 8455,
+   "540p": 537,
+   "720p": 11353,
    "576p": 1
   },
   "by_version_family": {
-   "Dubbed": 2951,
-   "Subtitled": 15699,
-   "unknown": 105,
-   "NoSub": 3,
-   "HardSub": 413,
-   "SoftSub": 863
+   "Dubbed": 3054,
+   "Subtitled": 16848,
+   "unknown": 110,
+   "NoSub": 7,
+   "HardSub": 527,
+   "SoftSub": 1077
   },
   "by_year": {
    "1929": 1,
@@ -26,12 +26,12 @@
    "1959": 2,
    "1960": 1,
    "1968": 2,
-   "1972": 2,
+   "1972": 5,
    "1973": 4,
    "1974": 2,
    "1975": 7,
-   "1976": 2,
-   "1977": 4,
+   "1976": 5,
+   "1977": 5,
    "1978": 16,
    "1979": 44,
    "1980": 3,
@@ -42,37 +42,37 @@
    "1992": 4,
    "1995": 3,
    "1996": 5,
-   "1997": 6,
-   "1999": 10,
-   "2000": 3,
-   "2001": 9,
-   "2002": 5,
+   "1997": 10,
+   "1999": 15,
+   "2000": 4,
+   "2001": 12,
+   "2002": 7,
    "2003": 14,
    "2004": 10,
-   "2005": 24,
-   "2006": 21,
+   "2005": 27,
+   "2006": 26,
    "2007": 11,
-   "2008": 18,
-   "2009": 23,
-   "2010": 307,
-   "2011": 120,
-   "2012": 63,
-   "2013": 55,
-   "2014": 274,
-   "2015": 1020,
-   "2016": 62,
+   "2008": 20,
+   "2009": 30,
+   "2010": 334,
+   "2011": 205,
+   "2012": 99,
+   "2013": 150,
+   "2014": 304,
+   "2015": 1033,
+   "2016": 69,
    "2017": 209,
-   "2018": 172,
-   "2019": 175,
-   "2020": 186,
-   "2021": 554,
-   "2022": 233,
-   "2023": 674,
-   "2024": 220,
-   "2025": 556,
-   "2026": 134,
+   "2018": 235,
+   "2019": 204,
+   "2020": 255,
+   "2021": 815,
+   "2022": 383,
+   "2023": 793,
+   "2024": 413,
+   "2025": 585,
+   "2026": 228,
    "1994": 4,
-   "1998": 11,
+   "1998": 13,
    "1971": 6,
    "1989": 1,
    "1967": 1,
@@ -81,17 +81,20 @@
    "1984": 13,
    "1987": 2,
    "1988": 4,
-   "1965": 4,
+   "1965": 7,
    "1970": 3,
-   "1993": 2
+   "1993": 3,
+   "1918": 1,
+   "1966": 3,
+   "1940": 3
   },
   "ext_overlap": 1,
-  "films": 737,
-  "play_rows": 20925,
-  "series": 446,
+  "films": 835,
+  "play_rows": 22514,
+  "series": 479,
   "skipped_no_links": 11,
   "total": 788,
-  "trailer_keys": 795,
+  "trailer_keys": 818,
   "trailers_dropped": 71,
   "variety_patched": 401,
   "variety_play_created": 42,
@@ -22917,6 +22920,675 @@
   "repairs": [
    "search row tt41278620: part 3 flag 1 -> part 7 flag 0"
   ],
+  "decisions": [
+   "per-season episode conversion for absolute DN numbering",
+   "version unknown -> NoSub",
+   "H3 title = tmdb_name",
+   "series completions gap = per-episode (res, family) not served live; URL already live wins over label family",
+   "no archive-counts.json regen here (coordinator decides at assemble time)"
+  ]
+ },
+ "twice_daily_2026-11-25_pm_dn_movies": {
+  "live_base_head": "216bc6c4530af6686d31d5b0a62b3e6c98c288a4",
+  "start_num": 13956,
+  "end_num": 14053,
+  "new_titles_merged": [
+   "In Darkness",
+   "Semper Fi",
+   "Replicas",
+   "Game Over, Man!",
+   "Midnight Sun",
+   "The Liberator",
+   "Dragon Quest: Your Story",
+   "Housefull 3",
+   "Housefull 4",
+   "Polar Bears: Ice Bear",
+   "Batman: Gotham Knight",
+   "Thappad",
+   "Doctor Death",
+   "Ghosts of War",
+   "Bhoothnath Returns",
+   "Big Momma's House",
+   "Big Momma's House 2",
+   "Big Mommas: Like Father, Like Son",
+   "Darr",
+   "Bunty Aur Babli",
+   "Phantom",
+   "Tokyo Ghoul 'S'",
+   "Condemned",
+   "Countdown",
+   "Trigger Point",
+   "True Mothers",
+   "The Princess and the Magic Mirror",
+   "The Beauty Inside",
+   "Playing It Cool",
+   "Miracle: Letters to the President",
+   "Tomb of the River",
+   "Exit Wounds",
+   "Castaway on the Moon",
+   "Housefull",
+   "Jane Got a Gun",
+   "Truth to Power",
+   "The Night Doctor",
+   "WWE Starrcade",
+   "Beyond the Infinite Two Minutes",
+   "Jayeshbhai Jordaar",
+   "Ip Man: The Awakening",
+   "Virus: 32",
+   "The Assault",
+   "Takers",
+   "Stake Land",
+   "By Quantum Physics: A Nightlife Venture",
+   "Vendhu Thanindhathu Kaadu",
+   "Gigi & Nate",
+   "Letters to Juliet",
+   "30 Days of Night: Dark Days",
+   "Entrapment",
+   "Night Train",
+   "Thunivu",
+   "The Inspection",
+   "Havenhurst",
+   "About Endlessness",
+   "Shoulder Arms",
+   "The Duellists",
+   "The Borrowers",
+   "Short Peace",
+   "Book of Blood",
+   "Stab in the Dark: All Stars",
+   "The Ringer",
+   "Dahmer",
+   "Yeh Shaadi Nahi Ho Sakti",
+   "The Stranger",
+   "Whatcha Wearin'?",
+   "Moonage Daydream",
+   "Kaiji: The Ultimate Gambler",
+   "The Driftless Area",
+   "In Our Day",
+   "Kachche Dhaage",
+   "Stalker",
+   "Yo-Yo Girl Cop",
+   "Exit",
+   "Spare Parts",
+   "V for Vengeance",
+   "The Tribe",
+   "Zombiepura",
+   "Elevator",
+   "Magic Mike",
+   "Magic Mike XXL",
+   "Sour Apples",
+   "Operation Blood Hunt",
+   "Angaaray",
+   "Free Ride",
+   "Beyond Valkyrie: Dawn of the 4th Reich",
+   "The Uninvited",
+   "Marching Powder",
+   "Ip Man: Kung Fu Master",
+   "Red Angel",
+   "Buck and the Preacher",
+   "North West Mounted Police",
+   "7-Man Army",
+   "Brutal Tales of Chivalry",
+   "Hilda and the Mountain King",
+   "The Convenience Store",
+   "Switchback"
+  ],
+  "new_links": 197,
+  "new_trailers": 23,
+  "completions": [
+   {
+    "dn_id": 3612,
+    "title": "3 Idiots",
+    "record": "#8587 4",
+    "links_added": 2
+   },
+   {
+    "dn_id": 3615,
+    "title": "Stree",
+    "record": "#4822 3",
+    "links_added": 1
+   },
+   {
+    "dn_id": 5058,
+    "title": "Enchanted",
+    "record": "#8457 4",
+    "links_added": 1
+   },
+   {
+    "dn_id": 5059,
+    "title": "Kiss of the Dragon",
+    "record": "#2213 2",
+    "links_added": 2
+   },
+   {
+    "dn_id": 5061,
+    "title": "Housefull 2",
+    "record": "#1829 1",
+    "links_added": 2
+   },
+   {
+    "dn_id": 6431,
+    "title": "The Longest Yard",
+    "record": "#7485 3",
+    "links_added": 2
+   },
+   {
+    "dn_id": 6438,
+    "title": "The Princess and the Frog",
+    "record": "#8567 4",
+    "links_added": 1
+   },
+   {
+    "dn_id": 6447,
+    "title": "Heroic Losers",
+    "record": "#8312 4",
+    "links_added": 2
+   },
+   {
+    "dn_id": 7819,
+    "title": "Batman: Under the Red Hood",
+    "record": "#8844 4",
+    "links_added": 2
+   },
+   {
+    "dn_id": 9438,
+    "title": "Come Play",
+    "record": "#7916 4",
+    "links_added": 1
+   },
+   {
+    "dn_id": 9445,
+    "title": "As Above, So Below",
+    "record": "#5236 3",
+    "links_added": 1
+   },
+   {
+    "dn_id": 9449,
+    "title": "Lilo & Stitch",
+    "record": "#1573 1",
+    "links_added": 1
+   },
+   {
+    "dn_id": 11303,
+    "title": "Pale Rider",
+    "record": "#7778 4",
+    "links_added": 2
+   },
+   {
+    "dn_id": 11304,
+    "title": "Ronin",
+    "record": "#7530 4",
+    "links_added": 1
+   },
+   {
+    "dn_id": 11305,
+    "title": "A Bronx Tale",
+    "record": "#7764 4",
+    "links_added": 2
+   },
+   {
+    "dn_id": 14081,
+    "title": "The French Connection",
+    "record": "#7264 3",
+    "links_added": 1
+   },
+   {
+    "dn_id": 18333,
+    "title": "Little Fish",
+    "record": "#7896 4",
+    "links_added": 1
+   },
+   {
+    "dn_id": 20968,
+    "title": "Talk to Me",
+    "record": "#3086 2",
+    "links_added": 4
+   },
+   {
+    "dn_id": 24019,
+    "title": "Wicked Little Letters",
+    "record": "#5082 3",
+    "links_added": 1
+   },
+   {
+    "dn_id": 24045,
+    "title": "Windcatcher",
+    "record": "#3600 2",
+    "links_added": 2
+   },
+   {
+    "dn_id": 25541,
+    "title": "Out Come the Wolves",
+    "record": "#4316 2",
+    "links_added": 1
+   },
+   {
+    "dn_id": 25543,
+    "title": "Duck You Sucker",
+    "record": "#8323 4",
+    "links_added": 2
+   },
+   {
+    "dn_id": 25553,
+    "title": "The Good Half",
+    "record": "#4870 3",
+    "links_added": 1
+   },
+   {
+    "dn_id": 28878,
+    "title": "A Samurai in Time",
+    "record": "#3346 2",
+    "links_added": 1
+   },
+   {
+    "dn_id": 30717,
+    "title": "The Fugitive",
+    "record": "#7903 4",
+    "links_added": 2
+   },
+   {
+    "dn_id": 32517,
+    "title": "Redux Redux",
+    "record": "#1563 1",
+    "links_added": 3
+   },
+   {
+    "dn_id": 32526,
+    "title": "Tafiti Across the Desert",
+    "record": "#1742 1",
+    "links_added": 3
+   }
+  ],
+  "completions_skipped_no_gap": [
+   {
+    "dn_id": 2223,
+    "title": "22 July",
+    "record": "#13629 dn1"
+   },
+   {
+    "dn_id": 2225,
+    "title": "Bad Times at the El Royale",
+    "record": "#9038 4"
+   },
+   {
+    "dn_id": 2238,
+    "title": "Alpha",
+    "record": "#442 1"
+   },
+   {
+    "dn_id": 2244,
+    "title": "Kickboxer: Retaliation",
+    "record": "#3241 2"
+   },
+   {
+    "dn_id": 3605,
+    "title": "Mean Girls 2",
+    "record": "#1258 1"
+   },
+   {
+    "dn_id": 3611,
+    "title": "Smallfoot",
+    "record": "#9065 4"
+   },
+   {
+    "dn_id": 3616,
+    "title": "Offender",
+    "record": "#2058 1"
+   },
+   {
+    "dn_id": 5057,
+    "title": "Chinese Zodiac",
+    "record": "#1816 1"
+   },
+   {
+    "dn_id": 5064,
+    "title": "Hansel & Gretel: Witch Hunters",
+    "record": "#8907 4"
+   },
+   {
+    "dn_id": 5065,
+    "title": "Dark Shadows",
+    "record": "#8071 4"
+   },
+   {
+    "dn_id": 7816,
+    "title": "30 Days of Night",
+    "record": "#7237 3"
+   },
+   {
+    "dn_id": 7824,
+    "title": "Om Shanti Om",
+    "record": "#3220 2"
+   },
+   {
+    "dn_id": 11293,
+    "title": "Ma Raineys Black Bottom",
+    "record": "#7954 4"
+   },
+   {
+    "dn_id": 12901,
+    "title": "Nowhere Special",
+    "record": "#378 1"
+   },
+   {
+    "dn_id": 14071,
+    "title": "Eternals",
+    "record": "#7137 3"
+   },
+   {
+    "dn_id": 14080,
+    "title": "Pierrot le Fou",
+    "record": "#3009 2"
+   },
+   {
+    "dn_id": 15362,
+    "title": "Night on Earth",
+    "record": "#5081 3"
+   },
+   {
+    "dn_id": 15366,
+    "title": "Mad God",
+    "record": "#6730 3"
+   },
+   {
+    "dn_id": 16912,
+    "title": "Smile",
+    "record": "#5342 3"
+   },
+   {
+    "dn_id": 18331,
+    "title": "Leviathan",
+    "record": "#5924 3"
+   },
+   {
+    "dn_id": 19683,
+    "title": "Through My Window Across the Sea",
+    "record": "#6068 3"
+   },
+   {
+    "dn_id": 19689,
+    "title": "The Town That Dreaded Sundown",
+    "record": "#5391 3"
+   },
+   {
+    "dn_id": 19690,
+    "title": "Coriolanus",
+    "record": "#2734 2"
+   },
+   {
+    "dn_id": 20967,
+    "title": "No Limit",
+    "record": "#5848 3"
+   },
+   {
+    "dn_id": 22510,
+    "title": "Close Your Eyes",
+    "record": "#5551 3"
+   },
+   {
+    "dn_id": 22522,
+    "title": "Maid in Manhattan",
+    "record": "#1153 1"
+   },
+   {
+    "dn_id": 22523,
+    "title": "A Good Year",
+    "record": "#2423 2"
+   },
+   {
+    "dn_id": 24030,
+    "title": "Slow",
+    "record": "#4047 2"
+   },
+   {
+    "dn_id": 25546,
+    "title": "Drive",
+    "record": "#4843 3"
+   },
+   {
+    "dn_id": 27008,
+    "title": "The Taste of Tea",
+    "record": "#4359 2"
+   },
+   {
+    "dn_id": 27009,
+    "title": "Imani",
+    "record": "#4356 2"
+   },
+   {
+    "dn_id": 27016,
+    "title": "Pushpa The Rule Part 2",
+    "record": "#571 1"
+   },
+   {
+    "dn_id": 28876,
+    "title": "How to Make a Killing",
+    "record": "#3344 2"
+   },
+   {
+    "dn_id": 30718,
+    "title": "The Crush",
+    "record": "#2681 2"
+   },
+   {
+    "dn_id": 30723,
+    "title": "PTU",
+    "record": "#2729 2"
+   },
+   {
+    "dn_id": 32508,
+    "title": "The Dreadful",
+    "record": "#1457 1"
+   },
+   {
+    "dn_id": 32516,
+    "title": "Kidnapped Elizabeth Smart",
+    "record": "#1526 1"
+   },
+   {
+    "dn_id": 32519,
+    "title": "Diabolic",
+    "record": "#1278 1"
+   },
+   {
+    "dn_id": 32527,
+    "title": "I Was a Stranger",
+    "record": "#1506 1"
+   },
+   {
+    "dn_id": 32528,
+    "title": "East of Wall",
+    "record": "#1505 1"
+   },
+   {
+    "dn_id": 34491,
+    "title": "Sunshine Womens Choir",
+    "record": "#496 1"
+   },
+   {
+    "dn_id": 34493,
+    "title": "Motor City",
+    "record": "#480 1"
+   },
+   {
+    "dn_id": 34499,
+    "title": "Batman Knightfall Part 1 Knightfall",
+    "record": "#420 1"
+   },
+   {
+    "dn_id": 34502,
+    "title": "Mystery Arena",
+    "record": "#493 1"
+   },
+   {
+    "dn_id": 36159,
+    "title": "The Man Who Would Be King",
+    "record": "#13948 rz"
+   },
+   {
+    "dn_id": 36160,
+    "title": "Naajayaz",
+    "record": "#13949 rz"
+   },
+   {
+    "dn_id": 36161,
+    "title": "Jacob",
+    "record": "#13950 rz"
+   },
+   {
+    "dn_id": 36163,
+    "title": "A Table for Two",
+    "record": "#13951 rz"
+   },
+   {
+    "dn_id": 36165,
+    "title": "Snoopy Presents 12 Days of Snoopy",
+    "record": "#12661 16"
+   },
+   {
+    "dn_id": 36166,
+    "title": "Josephine",
+    "record": "#13955 rz"
+   },
+   {
+    "dn_id": 36168,
+    "title": "Breeder",
+    "record": "#13953 rz"
+   }
+  ],
+  "repairs": [
+   "search row tt1679235: part 3 flag 1 -> part 1 flag 0",
+   "search row tt9032400: part 1 flag 1 -> part 3 flag 0",
+   "search row tt0252076: part 2 flag 1 -> part 1 flag 0"
+  ],
+  "decisions": [
+   "version unknown -> NoSub",
+   "H3 title = tmdb_title",
+   "DN 12892 Arjun Pandit queued (single link, no determinable resolution)",
+   "DN 12891 Disney Princess Enchanted Tales (PM) re-checked, still queued (single link, no determinable resolution)",
+   "DN 34492 24 Redemption reclassified NEW but QUEUED: no TMDB movie record (TMDB find = tv episode only)",
+   "DN 9439 announcement post skipped (0 file links)",
+   "Breeder/Josephine/Switchback: Simba URLs identical to DN (deduped +0); ZV Breeder +5 abrtech links merged",
+   "DN 2204 URL '00MB' size prefix stripped",
+   ".SS./.DUBLE. filename tokens recognised in version fallback",
+   "rz completions into rz/archive-part-1.html + rz/play-index-rz.json; rz-manifest untouched (RezFlix-owned)"
+  ]
+ },
+ "twice_daily_2026-11-25_pm_dn_series": {
+  "live_base_head": "216bc6c4530af6686d31d5b0a62b3e6c98c288a4",
+  "start_num": 14054,
+  "end_num": 14086,
+  "new_titles_merged": [
+   "Dating in the Kitchen",
+   "Titanic: Blood and Steel",
+   "Falling Into Your Smile",
+   "Work Later, Drink Now",
+   "Your Lie in April",
+   "Mobile Suit Gundam: The Witch from Mercury",
+   "Curtain Call",
+   "Angel Beats!",
+   "Fireworks of My Heart",
+   "Reign of the Seven Spellblades",
+   "The Walking Dead: Webisodes",
+   "Ishura",
+   "Suptar 2550",
+   "Earth from Space",
+   "My Deer Friend Nokotan",
+   "Are You Sure?!",
+   "Days with My Stepsister",
+   "SurrealEstate",
+   "How (Not) To Get Rid of a Body",
+   "Devil in the Family: The Fall of Ruby Franke",
+   "Arctic Air",
+   "Love at Night",
+   "Hayat Devam Ediyor",
+   "Good Doctor",
+   "The Dangerous Book for Boys",
+   "The Mighty Ducks: Game Changers",
+   "BAEMON HOUSE",
+   "Inseparable",
+   "The Lady Painter",
+   "Revenge Girl",
+   "Outmatched",
+   "Sr. Avila",
+   "The Good Witch"
+  ],
+  "new_links": 1155,
+  "new_trailers": 0,
+  "duplicate_urls_dropped": 2,
+  "completions": [
+   {
+    "dn_id": 9412,
+    "title": "The Office",
+    "record": "#10442 14",
+    "links_added": 3
+   },
+   {
+    "dn_id": 19880,
+    "title": "My Happy Marriage",
+    "record": "#9278 5",
+    "links_added": 48
+   },
+   {
+    "dn_id": 31537,
+    "title": "Love on the Turquoise Land",
+    "record": "#9995 11",
+    "links_added": 64
+   },
+   {
+    "dn_id": 31545,
+    "title": "Arafta",
+    "record": "#9454 7",
+    "links_added": 77
+   }
+  ],
+  "completions_skipped_no_gap": [
+   {
+    "dn_id": 9395,
+    "title": "Miss Marple: The Body in the Library",
+    "record": "#12850 rz"
+   },
+   {
+    "dn_id": 9397,
+    "title": "Miss Marple: A Murder Is Announced",
+    "record": "#12855 rz"
+   },
+   {
+    "dn_id": 13616,
+    "title": "Hawkeye",
+    "record": "#10449 14"
+   },
+   {
+    "dn_id": 19878,
+    "title": "My Adventures with Superman",
+    "record": "#9425 7"
+   },
+   {
+    "dn_id": 22724,
+    "title": "Chained Soldier",
+    "record": "#11060 16"
+   },
+   {
+    "dn_id": 25295,
+    "title": "Tales of the Teenage Mutant Ninja Turtles",
+    "record": "#10187 12"
+   },
+   {
+    "dn_id": 29554,
+    "title": "Kabul",
+    "record": "#9784 9"
+   },
+   {
+    "dn_id": 31536,
+    "title": "Professor Balthazar",
+    "record": "#12759 rz"
+   },
+   {
+    "dn_id": 36164,
+    "title": "Blade Runner 2099",
+    "record": "#13952 rz"
+   }
+  ],
+  "repairs": [],
   "decisions": [
    "per-season episode conversion for absolute DN numbering",
    "version unknown -> NoSub",
