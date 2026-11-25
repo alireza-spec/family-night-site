@@ -211,18 +211,18 @@
  ],
  "counts": {
   "by_resolution": {
-   "1080p": 131,
-   "480p": 582,
-   "720p": 1102
+   "1080p": 173,
+   "480p": 714,
+   "720p": 1356
   },
   "by_type": {
-   "movie": 12,
-   "series": 39
+   "movie": 13,
+   "series": 47
   },
   "by_version": {
    "Dubbed": 32,
-   "HardSub": 1703,
-   "SoftSub": 80
+   "HardSub": 2079,
+   "SoftSub": 132
   },
   "by_year": {
    "1991": 1,
@@ -230,20 +230,22 @@
    "2012": 1,
    "2015": 1,
    "2016": 1,
-   "2018": 3,
+   "2018": 5,
    "2022": 4,
    "2023": 2,
-   "2024": 2,
-   "2025": 6,
-   "2026": 27,
+   "2024": 3,
+   "2025": 7,
+   "2026": 30,
    "2019": 1,
-   "2020": 1
+   "2020": 1,
+   "2017": 1,
+   "2021": 1
   },
-  "new_links": 1815,
-  "new_play_rows_expanded": 1903,
-  "new_titles": 51,
-  "total_links_added": 1815,
-  "total_titles": 51,
+  "new_links": 2243,
+  "new_play_rows_expanded": 2331,
+  "new_titles": 60,
+  "total_links_added": 2243,
+  "total_titles": 60,
   "variety_links_added": 81,
   "variety_links_parsed": 86,
   "variety_play_rows_expanded": 78,
@@ -812,6 +814,105 @@
    "nlinks": 62,
    "play_rows": 62,
    "note": "IMDb id from OMDb (TMDB external_ids null): OMDb by-title + by-id agree Hum Dono, 2024-, series, tt34821866; Simba year 2024 confirmed by OMDb (TMDB has no first_air_date). TMDB find does not know tt34821866 yet. 62 SoftSub links, S1E01-E31 in 480p + 1080p (E30-E31 files in the 480 season are 1080p by filename)."
+  },
+  {
+   "num": 14087,
+   "title": "11",
+   "year": 2017,
+   "type": "movie",
+   "imdb": "tt6474850",
+   "tmdb": 842800,
+   "nlinks": 1,
+   "play_rows": 1,
+   "note": "Movie '11' (2017, Turkish, TMDB 842800, tt6474850). 1 link: 480p Hardsub mkv (dl150m, [AriaMedia]). Simba detail quality '480 زیرنویس'."
+  },
+  {
+   "num": 14088,
+   "title": "The Confession Truth",
+   "year": 2026,
+   "type": "tv",
+   "imdb": null,
+   "tmdb": 330828,
+   "nlinks": 54,
+   "play_rows": 54,
+   "note": "TMDB-ONLY: TMDB external_ids null (verified); OMDb has no entry by title. Was queued in sm-manifest (simba 35872, NO-IMDB+NO-OMDB) — merged 2026-11-25-pm per the TMDB-only rule (AM Destined/Notes of DNA precedent). 2 seasons of Simba data (فصل اول 720 + 480)."
+  },
+  {
+   "num": 14089,
+   "title": "Beneath the Lies",
+   "year": 2026,
+   "type": "tv",
+   "imdb": null,
+   "tmdb": 336036,
+   "nlinks": 28,
+   "play_rows": 28,
+   "note": "TMDB-ONLY: TMDB external_ids null (verified); OMDb has no entry by title. 2 seasons of Simba data (فصل اول 720 + 480)."
+  },
+  {
+   "num": 14090,
+   "title": "Sasaki and Peeps",
+   "year": 2024,
+   "type": "tv",
+   "imdb": "tt27524116",
+   "tmdb": 206630,
+   "nlinks": 48,
+   "play_rows": 48,
+   "note": "IMDb tt27524116 via TMDB external_ids (checker recorded null after transport errors). 2 seasons."
+  },
+  {
+   "num": 14091,
+   "title": "Stellar Transformation",
+   "year": 2018,
+   "type": "tv",
+   "imdb": "tt15788086",
+   "tmdb": 83708,
+   "nlinks": 131,
+   "play_rows": 131,
+   "note": "IMDb tt15788086 via TMDB external_ids (checker recorded null after transport errors). 7 seasons S01-S07."
+  },
+  {
+   "num": 14092,
+   "title": "Da Wang Rao Ming",
+   "year": 2021,
+   "type": "tv",
+   "imdb": "tt16409202",
+   "tmdb": 146339,
+   "nlinks": 94,
+   "play_rows": 94,
+   "note": "SOFT-IDENTITY MERGE: TMDB 'Spare Me, Great Lord!' (146339, 2021-12-03) + OMDb agree (tt16409202). Simba title is the pinyin original. 3 seasons."
+  },
+  {
+   "num": 14093,
+   "title": "The Worlds Strongest Witch",
+   "year": 2026,
+   "type": "tv",
+   "imdb": "tt43691408",
+   "tmdb": 321518,
+   "nlinks": 23,
+   "play_rows": 23,
+   "note": "SOFT-IDENTITY MERGE: TMDB \"The World's Strongest Witch\" (321518, 2026-10-07) tt43691408; OMDb title is the Japanese original 'Sekai Saikyou no Majo, Hajimemashita', confirmed by Simba filenames. 1 season."
+  },
+  {
+   "num": 14094,
+   "title": "Happy If You Died",
+   "year": 2018,
+   "type": "tv",
+   "imdb": "tt9143894",
+   "tmdb": 83435,
+   "nlinks": 16,
+   "play_rows": 16,
+   "note": "SOFT-IDENTITY MERGE: TMDB 'Feel Good To Die' (83435, 2018-11-07) + OMDb 'Happy If You Died' agree (tt9143894, same year). 1 season."
+  },
+  {
+   "num": 14095,
+   "title": "Paws & Palaces",
+   "year": 2025,
+   "type": "tv",
+   "imdb": "tt39104949",
+   "tmdb": 306296,
+   "nlinks": 33,
+   "play_rows": 33,
+   "note": "SOFT-IDENTITY MERGE: TMDB original_name '紫禁·御喵房' (306296, 2025-12-03) tt39104949 = OMDb/Simba title 'Paws & Palaces'. 1 season."
   }
  ],
  "nosub_only_new": [],
@@ -871,7 +972,7 @@
  "queued_titles": [
   {
    "nlinks": 40,
-   "reason": "NO-IMDB+NO-OMDB: TMDB has no IMDb id and OMDb has no entry by title",
+   "reason": "MERGED 2026-11-25-pm as sm #14088 (The Confession Truth, tv 330828, TMDB-only: TMDB external_ids null, OMDb no entry; AM Destined/Notes of DNA precedent). Previous reason: NO-IMDB+NO-OMDB: TMDB has no IMDb id and OMDb has no entry by title.",
    "simba_id": 35872,
    "title": "The Confession Truth",
    "year": "2026"
@@ -1000,7 +1101,7 @@
    "title": "11",
    "year": 2017,
    "nlinks": null,
-   "reason": "QUEUED per task: TMDB failed."
+   "reason": "MERGED 2026-11-25-pm as sm #14087 ('11', movie 842800, tt6474850). Previous reason: QUEUED per task: TMDB failed."
   },
   {
    "simba_id": 36059,
@@ -1035,14 +1136,21 @@
    "title": "Hob Aswad",
    "year": 2026,
    "nlinks": null,
-   "reason": "QUEUED 2026-11-25-am: no TMDB exact-match in this run or any PM pass; no TMDB id to verify."
+   "reason": "QUEUED 2026-11-25-pm: TMDB 338385 'Black Love' (2026-10-18) has NO IMDb id; OMDb has no entry by title. Cannot merge without an IMDb id (gate forbids empty IMDb). Previous reason: QUEUED 2026-11-25-am: no TMDB exact-match in this run or any PM pass; no TMDB id to verify."
   },
   {
    "simba_id": 33894,
    "title": "I The Fated Villain",
    "year": 2026,
    "nlinks": null,
-   "reason": "QUEUED 2026-11-25-am: no TMDB exact-match in this run or any PM pass; no TMDB id to verify."
+   "reason": "QUEUED 2026-11-25-pm: TMDB 330250 Chinese title only (2026-07-15), no IMDb id; OMDb has no entry by title. Cannot merge without an IMDb id. Previous reason: QUEUED 2026-11-25-am: no TMDB exact-match in this run or any PM pass; no TMDB id to verify."
+  },
+  {
+   "simba_id": 36095,
+   "title": "Good Witch",
+   "year": 2015,
+   "nlinks": 40,
+   "reason": "QUEUED 2026-11-25-pm: already live in the OLD archive (old/archive-part-3.html #1808, 127 links, avail [1,1], served via the site old-fallback) — never a new H3. Simba's 40 SigmaFa links are NEW files for that old record (0 URL overlap); they belong in an old-record completion, which the Simba builder does not do."
   }
  ],
  "source": "Simba",
@@ -1075,6 +1183,10 @@
   {
    "file": "[@AnimeGateOfficial] Tunshi Xingkong 4th Season - (143).mkv",
    "title": "Swallowed Star"
+  },
+  {
+   "file": "[@AnimeGateOfficial] Sekai Saikyou no Majo Hajimemashita - (2).0.mkv",
+   "title": "The Worlds Strongest Witch"
   }
  ],
  "url_dupes_in_dn_records": [],
@@ -1272,6 +1384,70 @@
       "year": 2022
      },
      "nlinks": 31
+    }
+   ]
+  },
+  {
+   "batch": "2026-11-25-pm",
+   "live_base_head": "2e1a6a068eaff43c9562f4d24b8e050985343e2c",
+   "start_num": 14087,
+   "new_titles": 9,
+   "new_links": 428,
+   "new_play_rows_expanded": 428,
+   "queued": [
+    {
+     "simba_id": 35714,
+     "title": "Hob Aswad"
+    },
+    {
+     "simba_id": 33894,
+     "title": "I The Fated Villain"
+    },
+    {
+     "simba_id": 36059,
+     "title": "Chiranjeevi"
+    },
+    {
+     "simba_id": 36095,
+     "title": "Good Witch"
+    }
+   ],
+   "merged_via_dn": [
+    {
+     "tmdb": 1615391,
+     "title": "Lottie Dottie Chicken The Movie",
+     "num": 13954,
+     "part": "rz"
+    },
+    {
+     "tmdb": 1299329,
+     "title": "Josephine",
+     "num": 13955,
+     "part": "rz"
+    },
+    {
+     "tmdb": 1496696,
+     "title": "Breeder",
+     "num": 13953,
+     "part": "rz"
+    },
+    {
+     "tmdb": 10871,
+     "title": "Switchback",
+     "num": 14053,
+     "part": "dn1"
+    },
+    {
+     "tmdb": 96652,
+     "title": "Outmatched",
+     "num": 14084,
+     "part": "dn2"
+    },
+    {
+     "tmdb": 64969,
+     "title": "Sr. Avila",
+     "num": 14085,
+     "part": "dn2"
     }
    ]
   }
