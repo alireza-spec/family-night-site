@@ -2,14 +2,14 @@
  "code": "RZ",
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
  "start_num": 12560,
- "end_num": 13748,
- "live_base_head": "19367c1882e8804928d1a7b9de02f57a48554866 (5h run 20261124T131115Z; H3 max #13746 verified from live files, RZ part-1 max #13746)",
- "generated": "2026-11-24 (RezFlix 5-hourly run 20261124T131115Z — merge of 2 new RZ titles #13747-13748 + 3 trailer keys + 2 encode completions into part 16 #11240 / part 1 #109; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
+ "end_num": 13909,
+ "live_base_head": "6fc5415dd8e9da4a9cfe5d062e3256ec9d875dd0 (5h run 20261124T231106Z REBASED; H3 max #13906 verified from live files, RZ part-1 max #13748)",
+ "generated": "2026-11-25 (RezFlix 5-hourly run 20261124T231106Z — merge of 3 new RZ series #13907-13909 + 1 trailer key + encode completion Clashing Through the Snow into part 16 #13906 (PM run's record); cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
  "counts": {
-  "total_titles": 603,
+  "total_titles": 606,
   "movies": 35,
-  "series": 568,
-  "total_links": 43389,
+  "series": 571,
+  "total_links": 43711,
   "by_year": {
    "2024": 1,
    "2026": 28,
@@ -23,12 +23,12 @@
    "1967": 1,
    "1966": 2,
    "1969": 2,
-   "1970": 1,
+   "1970": 2,
    "1971": 1,
-   "1972": 2,
+   "1972": 3,
    "1973": 2,
    "1974": 3,
-   "1975": 6,
+   "1975": 7,
    "1976": 3,
    "1977": 6,
    "1978": 4,
@@ -76,10 +76,10 @@
    "2022": 1
   },
   "by_quality": {
-   "720p": 21217,
-   "1080p": 3423,
+   "720p": 21337,
+   "1080p": 3524,
    "540p": 292,
-   "480p": 14210,
+   "480p": 14311,
    "CAM 1080p": 117,
    "CAM 720p": 35,
    "Cam 1080p": 1,
@@ -6728,6 +6728,39 @@
    "quality": "480p,720p",
    "rezflix_id": 36152,
    "identity_note": "TMDB+IMDb+OMDb agree (feed 2014, TMDB 2014, tt3594796). Persian name شبدر (feed, verified vs synopsis; 2nd نام پارسی line)."
+  },
+  {
+   "title": "Wonder Woman",
+   "tmdb": 4331,
+   "imdb": "tt0074074",
+   "year": 1975,
+   "num": 13907,
+   "links": 178,
+   "quality": "1080p,480p,720p",
+   "rezflix_id": 36090,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1975, TMDB 1975, tt0074074). Persian name زن شگفت انگیز (feed description, verified vs synopsis). Series: single episodes, NoSub, no per-episode sizes (RZ series precedent)."
+  },
+  {
+   "title": "UFO",
+   "tmdb": 2560,
+   "imdb": "tt0063962",
+   "year": 1970,
+   "num": 13908,
+   "links": 78,
+   "quality": "1080p,480p,720p",
+   "rezflix_id": 36091,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1970, TMDB 1970, tt0063962). Persian name جسم پرنده ناشناس (feed description, verified vs synopsis). Series: single episodes, NoSub, no per-episode sizes (RZ series precedent)."
+  },
+  {
+   "title": "Kung Fu",
+   "tmdb": 1472,
+   "imdb": "tt0068093",
+   "year": 1972,
+   "num": 13909,
+   "links": 66,
+   "quality": "1080p,480p,720p",
+   "rezflix_id": 36092,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 1972, TMDB 1972, tt0068093). Persian name کونگ فو (feed description, verified vs synopsis). Series: single episodes, NoSub, no per-episode sizes (RZ series precedent)."
   }
  ],
  "trailer_keys_added": [
@@ -6792,7 +6825,8 @@
   "movie:1394098",
   "movie:1765072",
   "movie:1574560",
-  "movie:1195803"
+  "movie:1195803",
+  "movie:1611767"
  ],
  "queued_titles": [
   {
@@ -6867,6 +6901,15 @@
    "part": 1,
    "rezflix_id": 36153,
    "added": "SoftSub 480/720/1080 (ZarFilm/YIFY WEB-DL, dl150m) + trailer movie:1195803; record was Dubbed-only (HDTS); avail imdb key tt29611136 added [1,1]"
+  },
+  {
+   "title": "Clashing Through the Snow",
+   "tmdb": 1611767,
+   "imdb": "tt39316936",
+   "num": 13906,
+   "part": 16,
+   "rezflix_id": 36158,
+   "added": "SoftSub 480/720/1080 (RezFlix dl150m WEB-DL) + trailer movie:1611767; record is the PM run's #13906 (3 Film2Media links); links appended under the existing SoftSub header; play key tt39316936 existed"
   }
  ],
  "twice_daily_2026_11_24_pm": {
