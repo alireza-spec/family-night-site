@@ -1,36 +1,7 @@
 {
- "generated_at": "2026-11-25T00:42:51Z",
+ "generated_at": "2026-11-25T02:32:36Z",
  "date": "2026-11-25",
  "events": [
-  {
-   "id": "anten:187913",
-   "title": "بسکتبال: اورلاندو مجیک – دیترویت پیستونز",
-   "comp": "بسکتبال NBA",
-   "img": "https://static.r1-edge-v2.s3mer.net/images/2026/10/13/B/81e66ca8-1c36-4e1c-8a8c-d8a5608c403b.jpg",
-   "alt": "بسکتبال: اورلاندو مجیک – دیترویت پیستونز — بسکتبال NBA",
-   "start": 1795565513000,
-   "dur": 120,
-   "end": 1795572713,
-   "end_estimated": true,
-   "src": "anten",
-   "anten_id": 187913,
-   "urlaccess_hq": "https://api2.anten.ir/programs/187913/urlaccess/hq",
-   "urlaccess_lq": "https://api2.anten.ir/programs/187913/urlaccess/lq",
-   "servers": [
-    {
-     "key": "anten",
-     "label": "سرور آنتن",
-     "src": "anten",
-     "anten_id": 187913,
-     "urlaccess_hq": "https://api2.anten.ir/programs/187913/urlaccess/hq",
-     "urlaccess_lq": "https://api2.anten.ir/programs/187913/urlaccess/lq",
-     "embed": "https://www.anten.ir/iframe/187913"
-    }
-   ],
-   "hostLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/e66a7103-e348-4604-9714-636b823809ea.png",
-   "guestLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/2d88a2a1-dffb-481d-a36c-c026d33c823e.png",
-   "sportName": "بسکتبال"
-  },
   {
    "id": "anten:187914",
    "title": "بسکتبال: دنور ناگتس – دالاس ماوریکس",
@@ -440,7 +411,7 @@
    "id": "anten:187957",
    "title": "والیبال: سپاهان – مهرگان مازندران",
    "comp": "هفته 6 لیگ برتر والیبال ایران",
-   "img": "https://static.r1-edge-v2.s3mer.net/images/2020/9/9/C/84322165-f000-4b09-8bc9-f129c14cf580.png",
+   "img": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/fd839737-55d4-4594-920e-2e18489afda2.png",
    "alt": "والیبال: سپاهان – مهرگان مازندران — هفته 6 لیگ برتر والیبال ایران",
    "start": 1795609800000,
    "dur": 120,
@@ -2130,7 +2101,7 @@
    "id": "anten:187939",
    "title": "وردربرمن – مونشن گلادباخ",
    "comp": "هفته 11 بوندسلیگا",
-   "img": "https://static.r1-edge-v2.s3mer.net/images/2025/2/16/D/5474f858-1810-4b20-b09b-2b2e320a8ec9.jpg",
+   "img": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/fb469ae1-a3ec-4e5f-8ef4-dbd275be8eff.png",
    "alt": "وردربرمن – مونشن گلادباخ — هفته 11 بوندسلیگا",
    "start": 1795807800000,
    "dur": 120,
@@ -2559,6 +2530,35 @@
    ],
    "hostLogo": "https://static.r1-edge-v2.s3mer.net/images/2022/12/20/D/af17373d-aa42-4750-98da-801b30ce3334.png",
    "guestLogo": "https://static.r1-edge-v2.s3mer.net/images/2022/8/24/D/cfd5b983-0c1a-45fe-9ddf-612622f73e44.png",
+   "sportName": "فوتبال"
+  },
+  {
+   "id": "anten:188175",
+   "title": "هامبورگ – بایرن مونیخ",
+   "comp": "هفته 11 بوندسلیگا",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/2025/2/16/D/5474f858-1810-4b20-b09b-2b2e320a8ec9.jpg",
+   "alt": "هامبورگ – بایرن مونیخ — هفته 11 بوندسلیگا",
+   "start": 1795876200000,
+   "dur": 120,
+   "end": 1795883400,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188175,
+   "urlaccess_hq": "https://api2.anten.ir/programs/188175/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/188175/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188175,
+     "urlaccess_hq": "https://api2.anten.ir/programs/188175/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/188175/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/188175"
+    }
+   ],
+   "hostLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/cca11075-227a-4569-b1fe-c613693e0d62.png",
+   "guestLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/dd1e97a8-efcd-475a-8bd3-49fc44af3e79.png",
    "sportName": "فوتبال"
   }
  ]
