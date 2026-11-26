@@ -2,19 +2,19 @@
  "code": "RZ",
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
  "start_num": 12560,
- "end_num": 14106,
- "live_base_head": "f3d3b8c9972865d4b8e438ca672eb026d515ef72 (RezFlix screenshots 20261126)",
- "generated": "2026-11-26 (RezFlix screenshots merge: 5 new RZ movies #14102-14106 Rob Lowe The Outsider / Mayookha / The Last Song You Left Behind / Big Girls Dont Cry / Microstar + Way of the Warrior Kid #14096 size resolution + 480p link + 1080p x265 PSA (F2M) + 3 trailer keys)",
+ "end_num": 14109,
+ "live_base_head": "20d675fd6d16ace5c182cdee1b008141d3989508 (5h run 20261126T001124Z; H3 max #14106 verified from live files, RZ part-1 max #14106)",
+ "generated": "2026-11-26 (RezFlix 5-hourly run 20261126T001124Z — merge of 3 new RZ titles #14107-14109 + 2 trailer keys; no encode completions, no duplicates; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
  "counts": {
-  "total_titles": 624,
-  "movies": 48,
-  "series": 576,
-  "total_links": 44049,
+  "total_titles": 627,
+  "movies": 49,
+  "series": 578,
+  "total_links": 44067,
   "by_year": {
-   "2024": 1,
-   "2026": 42,
+   "2024": 2,
+   "2026": 43,
    "2023": 2,
-   "2025": 7,
+   "2025": 8,
    "2014": 3,
    "1955": 2,
    "1960": 3,
@@ -76,10 +76,10 @@
    "2022": 1
   },
   "by_quality": {
-   "720p": 21409,
-   "1080p": 3594,
+   "720p": 21416,
+   "1080p": 3598,
    "540p": 292,
-   "480p": 14373,
+   "480p": 14380,
    "CAM 1080p": 117,
    "CAM 720p": 35,
    "Cam 1080p": 1,
@@ -6961,6 +6961,39 @@
    "quality": "1080p,720p",
    "rezflix_id": 36172,
    "identity_note": "TMDB+IMDb+OMDb agree (TMDB 2026-07-08 French comedy, tt41662804; OMDb 'Microstar' 2026, Léopold Kraus, France; feed director Léopold Kraus. Persian name میکروستار (feed description)."
+  },
+  {
+   "title": "Reeling",
+   "tmdb": 1330232,
+   "imdb": "tt33039328",
+   "year": 2025,
+   "num": 14107,
+   "links": 3,
+   "quality": "1080p,480p,720p",
+   "rezflix_id": 36174,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2025, TMDB 2025, tt33039328). Persian name سردرگم (feed description, verified vs synopsis). Sizes 301 MB / 631 MB / 1.5 GB (qual line 480------720------1080 == vol order, 1:1)."
+  },
+  {
+   "title": "The Unlikely Cook with Awkwafina",
+   "tmdb": 306179,
+   "imdb": "tt38992068",
+   "year": 2026,
+   "num": 14108,
+   "links": 9,
+   "quality": "1080p,480p,720p",
+   "rezflix_id": 36181,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt38992068). Persian name آکوافینا آشپزی که فکرش را نمی کردی (feed description, verified vs synopsis). No sizes: حجم line only covers 480 with a range (214-----269 MB) across episodes."
+  },
+  {
+   "title": "Inspector Rishi",
+   "tmdb": 249543,
+   "imdb": "tt31701070",
+   "year": 2024,
+   "num": 14109,
+   "links": 6,
+   "quality": "480p,720p",
+   "rezflix_id": 36182,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2024, TMDB 2024, tt31701070). Persian name بازرس ریشی (feed description, verified vs synopsis). No sizes: حجم line is a 480 range (404------902 MB) across bundled episodes. Episodes are bundled ranges S01E01-E04 / E05-E08 / E09-E10 (Single Papa precedent). Trailer tv:249543 is the Official_Trailer source (trailer slot only)."
   }
  ],
  "trailer_keys_added": [
@@ -7039,7 +7072,9 @@
   "movie:1280115",
   "movie:1559185",
   "movie:1477963",
-  "movie:1482377"
+  "movie:1482377",
+  "movie:1330232",
+  "tv:249543"
  ],
  "queued_titles": [
   {

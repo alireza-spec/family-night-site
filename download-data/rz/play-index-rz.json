@@ -596208,6 +596208,107 @@
   },
   "year": 2009
  },
+ "tt31701070": {
+  "imdb": "tt31701070",
+  "num": 14109,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": "S01E01-E04",
+    "group": "HardSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://s1.giftmond.ir/tv3/Inspector%20Rishi/fasl1480/Inspector.Rishi.S01.E01.E04.Tamil.480p.WEBDL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": "S01E01-E04",
+    "group": "HardSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://s1.giftmond.ir/tv3/Inspector%20Rishi/fasl1720/Inspector.Rishi.S01.E01.E04.Tamil.720p.WEBDL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": "S01E05-E08",
+    "group": "HardSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://s1.giftmond.ir/tv3/Inspector%20Rishi/fasl1480/Inspector.Rishi.S01.E05.E08.Tamil.480p.WEBDL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": "S01E05-E08",
+    "group": "HardSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://s1.giftmond.ir/tv3/Inspector%20Rishi/fasl1720/Inspector.Rishi.S01.E05.E08.Tamil.720p.WEBDL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": "S01E09-E10",
+    "group": "HardSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://s1.giftmond.ir/tv3/Inspector%20Rishi/fasl1480/Inspector.Rishi.S01.E09.E10.Tamil.480p.WEBDL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": "S01E09-E10",
+    "group": "HardSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://s1.giftmond.ir/tv3/Inspector%20Rishi/fasl1720/Inspector.Rishi.S01.E09.E10.Tamil.720p.WEBDL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Inspector Rishi",
+  "tmdb_key": "tv:249543",
+  "type": "series",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2024
+ },
  "tt3179566": {
   "imdb": "tt3179566",
   "num": 13473,
@@ -599544,6 +599645,65 @@
    "url": null
   },
   "year": 2015
+ },
+ "tt33039328": {
+  "imdb": "tt33039328",
+  "num": 14107,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Reeling.2025.1080p.WEB-DL.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.5 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Reeling.2025.720p.WEB-DL.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 661651456,
+    "size_text": "631 MB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Reeling.2025.480p.WEB-DL.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 315621376,
+    "size_text": "301 MB"
+   }
+  ],
+  "title": "Reeling",
+  "tmdb_key": "movie:1330232",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2025
  },
  "tt33402927": {
   "imdb": "tt33402927",
@@ -607578,6 +607738,65 @@
   },
   "year": 2014
  },
+ "tt36867663": {
+  "imdb": "tt36867663",
+  "num": 14105,
+  "part": "rz",
+  "title": "Big Girls Dont Cry",
+  "tmdb_key": "movie:1477963",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026,
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Big.Girls.Dont.Cry.2026.1080p.WEB-DL.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "2 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Big.Girls.Dont.Cry.2026.720p.WEB-DL.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.05 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Big.Girls.Dont.Cry.2026.480p.WEB-DL.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 701497344,
+    "size_text": "669 MB"
+   }
+  ]
+ },
  "tt37062070": {
   "imdb": "tt37062070",
   "num": 13510,
@@ -609389,6 +609608,149 @@
   },
   "year": 2025
  },
+ "tt38992068": {
+  "imdb": "tt38992068",
+  "num": 14108,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": "S01E01",
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/tv3/The%20Unlikely%20Cook%20with%20Awkwafina/fasl1480/Awkwafina.The.Unlikely.Cook.S01E01.480p.Farsi.Subbed.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": "S01E01",
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/tv3/The%20Unlikely%20Cook%20with%20Awkwafina/fasl1720/Awkwafina.The.Unlikely.Cook.S01E01.720p.Farsi.Subbed.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": "S01E01",
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/tv3/The%20Unlikely%20Cook%20with%20Awkwafina/fasl11080/Awkwafina.The.Unlikely.Cook.S01E01.1080p.Farsi.Subbed.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": "S01E02",
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/tv3/The%20Unlikely%20Cook%20with%20Awkwafina/fasl1480/Awkwafina.The.Unlikely.Cook.S01E02.480p.Farsi.Subbed.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": "S01E02",
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/tv3/The%20Unlikely%20Cook%20with%20Awkwafina/fasl1720/Awkwafina.The.Unlikely.Cook.S01E02.720p.Farsi.Subbed.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": "S01E02",
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/tv3/The%20Unlikely%20Cook%20with%20Awkwafina/fasl11080/Awkwafina.The.Unlikely.Cook.S01E02.1080p.Farsi.Subbed.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": "S01E03",
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/tv3/The%20Unlikely%20Cook%20with%20Awkwafina/fasl1480/Awkwafina.The.Unlikely.Cook.S01E03.480p.Farsi.Subbed.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": "S01E03",
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/tv3/The%20Unlikely%20Cook%20with%20Awkwafina/fasl1720/Awkwafina.The.Unlikely.Cook.S01E03.720p.Farsi.Subbed.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": "S01E03",
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/tv3/The%20Unlikely%20Cook%20with%20Awkwafina/fasl11080/Awkwafina.The.Unlikely.Cook.S01E03.1080p.Farsi.Subbed.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Unlikely Cook with Awkwafina",
+  "tmdb_key": "tv:306179",
+  "type": "series",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
  "tt39161219": {
   "imdb": "tt39161219",
   "num": 12664,
@@ -609725,6 +610087,51 @@
    "url": null
   },
   "year": 2026
+ },
+ "tt39378361": {
+  "imdb": "tt39378361",
+  "num": 14103,
+  "part": "rz",
+  "title": "Mayookha",
+  "tmdb_key": "movie:1620668",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026,
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Mayookha.2026.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "2.38 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Mayookha.2026.720p.WEBRip.x264.AAC-YTS.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.15 GB"
+   }
+  ]
  },
  "tt39379748": {
   "imdb": "tt39379748",
@@ -610566,6 +610973,51 @@
    "url": null
   },
   "year": 2009
+ },
+ "tt41149182": {
+  "imdb": "tt41149182",
+  "num": 14104,
+  "part": "rz",
+  "title": "The Last Song You Left Behind",
+  "tmdb_key": "movie:1559185",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026,
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/The.Last.Song.You.Left.Behind.2026.1080p.BluRay.x264.AAC5.1-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "2.14 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/The.Last.Song.You.Left.Behind.2026.720p.BluRay.x264.AAC-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.04 GB"
+   }
+  ]
  },
  "tt41278592": {
   "imdb": "tt41278592",
@@ -611636,6 +612088,51 @@
    "url": null
   },
   "year": 1996
+ },
+ "tt41662804": {
+  "imdb": "tt41662804",
+  "num": 14106,
+  "part": "rz",
+  "title": "Microstar",
+  "tmdb_key": "movie:1482377",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026,
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Microstar.2026.FRENCH.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.6 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Microstar.2026.FRENCH.720p.WEBRip.x264.AAC-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 835715072,
+    "size_text": "797 MB"
+   }
+  ]
  },
  "tt42643242": {
   "imdb": "tt42643242",
@@ -614042,6 +614539,51 @@
    "url": null
   },
   "year": 2002
+ },
+ "tt47597255": {
+  "imdb": "tt47597255",
+  "num": 14102,
+  "part": "rz",
+  "title": "Rob Lowe The Outsider",
+  "tmdb_key": "movie:1802703",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026,
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Rob.Lowe.The.Outsider.2026.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.72 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Rob.Lowe.The.Outsider.2026.720p.WEBRip.x264.AAC-YTS.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 894435328,
+    "size_text": "853 MB"
+   }
+  ]
  },
  "tt4773360": {
   "imdb": "tt4773360",
@@ -627053,244 +627595,5 @@
    "url": null
   },
   "year": 2019
- },
- "tt47597255": {
-  "imdb": "tt47597255",
-  "num": 14102,
-  "part": "rz",
-  "title": "Rob Lowe The Outsider",
-  "tmdb_key": "movie:1802703",
-  "type": "movie",
-  "video_mp4": {
-   "is_trailer": false,
-   "size_bytes": null,
-   "size_text": "",
-   "url": null
-  },
-  "year": 2026,
-  "play": [
-   {
-    "encoder": "RezFlix",
-    "episode": null,
-    "group": "SoftSub",
-    "join_tier": 1,
-    "play_type": "none",
-    "play_url": "http://s1.giftmond.ir/filmjadid/Rob.Lowe.The.Outsider.2026.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.simba.mkv",
-    "playit_url": null,
-    "quality": "1080p",
-    "quality_label": "1080p",
-    "season": null,
-    "size_bytes": null,
-    "size_text": "1.72 GB"
-   },
-   {
-    "encoder": "RezFlix",
-    "episode": null,
-    "group": "SoftSub",
-    "join_tier": 1,
-    "play_type": "none",
-    "play_url": "http://s1.giftmond.ir/filmjadid/Rob.Lowe.The.Outsider.2026.720p.WEBRip.x264.AAC-YTS.SoftSub.simba.mkv",
-    "playit_url": null,
-    "quality": "720p",
-    "quality_label": "720p",
-    "season": null,
-    "size_bytes": 894435328,
-    "size_text": "853 MB"
-   }
-  ]
- },
- "tt39378361": {
-  "imdb": "tt39378361",
-  "num": 14103,
-  "part": "rz",
-  "title": "Mayookha",
-  "tmdb_key": "movie:1620668",
-  "type": "movie",
-  "video_mp4": {
-   "is_trailer": false,
-   "size_bytes": null,
-   "size_text": "",
-   "url": null
-  },
-  "year": 2026,
-  "play": [
-   {
-    "encoder": "RezFlix",
-    "episode": null,
-    "group": "SoftSub",
-    "join_tier": 1,
-    "play_type": "none",
-    "play_url": "http://s1.giftmond.ir/filmjadid/Mayookha.2026.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.simba.mkv",
-    "playit_url": null,
-    "quality": "1080p",
-    "quality_label": "1080p",
-    "season": null,
-    "size_bytes": null,
-    "size_text": "2.38 GB"
-   },
-   {
-    "encoder": "RezFlix",
-    "episode": null,
-    "group": "SoftSub",
-    "join_tier": 1,
-    "play_type": "none",
-    "play_url": "http://s1.giftmond.ir/filmjadid/Mayookha.2026.720p.WEBRip.x264.AAC-YTS.SoftSub.simba.mkv",
-    "playit_url": null,
-    "quality": "720p",
-    "quality_label": "720p",
-    "season": null,
-    "size_bytes": null,
-    "size_text": "1.15 GB"
-   }
-  ]
- },
- "tt41149182": {
-  "imdb": "tt41149182",
-  "num": 14104,
-  "part": "rz",
-  "title": "The Last Song You Left Behind",
-  "tmdb_key": "movie:1559185",
-  "type": "movie",
-  "video_mp4": {
-   "is_trailer": false,
-   "size_bytes": null,
-   "size_text": "",
-   "url": null
-  },
-  "year": 2026,
-  "play": [
-   {
-    "encoder": "RezFlix",
-    "episode": null,
-    "group": "SoftSub",
-    "join_tier": 1,
-    "play_type": "none",
-    "play_url": "http://s1.giftmond.ir/filmjadid/The.Last.Song.You.Left.Behind.2026.1080p.BluRay.x264.AAC5.1-YTS.SoftSub.mkv",
-    "playit_url": null,
-    "quality": "1080p",
-    "quality_label": "1080p",
-    "season": null,
-    "size_bytes": null,
-    "size_text": "2.14 GB"
-   },
-   {
-    "encoder": "RezFlix",
-    "episode": null,
-    "group": "SoftSub",
-    "join_tier": 1,
-    "play_type": "none",
-    "play_url": "http://s1.giftmond.ir/filmjadid/The.Last.Song.You.Left.Behind.2026.720p.BluRay.x264.AAC-YTS.SoftSub.mkv",
-    "playit_url": null,
-    "quality": "720p",
-    "quality_label": "720p",
-    "season": null,
-    "size_bytes": null,
-    "size_text": "1.04 GB"
-   }
-  ]
- },
- "tt36867663": {
-  "imdb": "tt36867663",
-  "num": 14105,
-  "part": "rz",
-  "title": "Big Girls Dont Cry",
-  "tmdb_key": "movie:1477963",
-  "type": "movie",
-  "video_mp4": {
-   "is_trailer": false,
-   "size_bytes": null,
-   "size_text": "",
-   "url": null
-  },
-  "year": 2026,
-  "play": [
-   {
-    "encoder": "RezFlix",
-    "episode": null,
-    "group": "SoftSub",
-    "join_tier": 1,
-    "play_type": "none",
-    "play_url": "http://s1.giftmond.ir/filmjadid/Big.Girls.Dont.Cry.2026.1080p.WEB-DL.SoftSub.mkv",
-    "playit_url": null,
-    "quality": "1080p",
-    "quality_label": "1080p",
-    "season": null,
-    "size_bytes": null,
-    "size_text": "2 GB"
-   },
-   {
-    "encoder": "RezFlix",
-    "episode": null,
-    "group": "SoftSub",
-    "join_tier": 1,
-    "play_type": "none",
-    "play_url": "http://s1.giftmond.ir/filmjadid/Big.Girls.Dont.Cry.2026.720p.WEB-DL.SoftSub.mkv",
-    "playit_url": null,
-    "quality": "720p",
-    "quality_label": "720p",
-    "season": null,
-    "size_bytes": null,
-    "size_text": "1.05 GB"
-   },
-   {
-    "encoder": "RezFlix",
-    "episode": null,
-    "group": "SoftSub",
-    "join_tier": 1,
-    "play_type": "none",
-    "play_url": "http://s1.giftmond.ir/filmjadid/Big.Girls.Dont.Cry.2026.480p.WEB-DL.SoftSub.mkv",
-    "playit_url": null,
-    "quality": "480p",
-    "quality_label": "480p",
-    "season": null,
-    "size_bytes": 701497344,
-    "size_text": "669 MB"
-   }
-  ]
- },
- "tt41662804": {
-  "imdb": "tt41662804",
-  "num": 14106,
-  "part": "rz",
-  "title": "Microstar",
-  "tmdb_key": "movie:1482377",
-  "type": "movie",
-  "video_mp4": {
-   "is_trailer": false,
-   "size_bytes": null,
-   "size_text": "",
-   "url": null
-  },
-  "year": 2026,
-  "play": [
-   {
-    "encoder": "RezFlix",
-    "episode": null,
-    "group": "SoftSub",
-    "join_tier": 1,
-    "play_type": "none",
-    "play_url": "http://s1.giftmond.ir/filmjadid/Microstar.2026.FRENCH.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.mkv",
-    "playit_url": null,
-    "quality": "1080p",
-    "quality_label": "1080p",
-    "season": null,
-    "size_bytes": null,
-    "size_text": "1.6 GB"
-   },
-   {
-    "encoder": "RezFlix",
-    "episode": null,
-    "group": "SoftSub",
-    "join_tier": 1,
-    "play_type": "none",
-    "play_url": "http://s1.giftmond.ir/filmjadid/Microstar.2026.FRENCH.720p.WEBRip.x264.AAC-YTS.SoftSub.mkv",
-    "playit_url": null,
-    "quality": "720p",
-    "quality_label": "720p",
-    "season": null,
-    "size_bytes": 835715072,
-    "size_text": "797 MB"
-   }
-  ]
  }
 }
