@@ -18518,7 +18518,7 @@ sxSearchPage = async function (seq, append) {
   }
   async function resolveWorker(ev) {
     try {
-      var q = 'src=' + ev.src + (ev.src === 'f360' ? '&code=' + encodeURIComponent(ev.code || '') : '&id=' + encodeURIComponent(ev.anten_id || ''));
+      var q = 'src=' + ev.src + (ev.src === 'f360' ? '&code=' + encodeURIComponent(ev.code || '') : '&id=' + encodeURIComponent((ev.embed_stream_id || ev.anten_id || ''))); /* T17: the worker's resolveAnten builds /programs/{id}/urlaccess -- the id MUST be the streamPublisherId (worker ?id=188512 -> 502, ?id=215974 -> 200 + m3u8, proven live 2026-11-26). No worker deploy needed: it takes whatever id we pass. */
       if (ev.src === 'f360' && ev.get_hls_url) q += '&hls=' + encodeURIComponent(ev.get_hls_url);
       var r = await fetchTimeout(TV_RESOLVE + '?' + q, 10000, { headers: { 'Accept': 'application/json' } });
       if (!r.ok) return null;
@@ -18660,10 +18660,15 @@ sxSearchPage = async function (seq, append) {
     }
     if (ev.get_hls_url) out.push({ label: 'سرور آپارات اسپورت', ev: { src: 'f360', code: ev.code, get_hls_url: ev.get_hls_url, hls: null } });
     if (ev.hls) out.push({ label: 'سرور فوتبال ۳۶۰', ev: { src: 'f360', code: ev.code, hls: ev.hls } });
-    if (ev.urlaccess_hq || ev.urlaccess_lq) out.push({ label: 'سرور آنتن', ev: { src: 'anten', anten_id: ev.anten_id, urlaccess_hq: ev.urlaccess_hq, urlaccess_lq: ev.urlaccess_lq, hls: null } });
+    if (ev.urlaccess_hq || ev.urlaccess_lq) out.push({ label: 'سرور آنتن', ev: { src: 'anten', anten_id: ev.anten_id, embed_stream_id: ev.embed_stream_id || null, urlaccess_hq: ev.urlaccess_hq, urlaccess_lq: ev.urlaccess_lq, hls: null, embed: ev.embed || null } }); /* T17: legacy path must carry the stream id + embed too, or the worker gets the program id and the embed falls back to it. */
     if (!out.length && ev.src) out.push({ label: '', ev: ev });
     return out;
   }
+  /* FN-TV-EVENTS v2.8 (T17, 2026-11-26) -- STREAM-ID EVERYWHERE +
+     program-id fallback REMOVED (phone test 09:46: /iframe/188512
+     frames Anten's empty shell; urlaccess 403s on the program id,
+     200s on the stream id; worker id param now carries the stream
+     id). A missing stream id fails honestly, never frames a site. */
   /* FN-TV-EVENTS v2.7 (T16, 2026-11-25) -- OFFICIAL-EMBED fallback +
      stream-id fix (T15's v2.6 shipped the program id as pID; T16 uses
      the baked streamPublisherId). Server list on failure below. */
@@ -18684,7 +18689,13 @@ sxSearchPage = async function (seq, append) {
      with urlaccess URLs using the stream id, and the iframe page calls
      getStreamPublisher({streamPublisherId: pID}). The bake resolves
      the stream id per program (embed_stream_id) and the embed URL uses
-     it when known; the program id stays as last resort only. Aparat
+     it when known. T17 (2026-11-26): the program id is NOT a fallback
+     any more -- /iframe/<program id> frames Anten's empty player shell
+     (phone test 09:46, anten:188512) and urlaccess with the program id
+     403s while the stream id 200s with a real m3u8 (same VM egress),
+     so a missing stream id now means honest failure, never a framed
+     site. The worker gets the stream id as its id param (no deploy
+     needed). Aparat
      Sport has NO embed: live streams carry no
      videohash (the Aparat video API 404s on the stream_id) and
      aparatsport.com is fully geo-blocked from the VM, so no embed URL
@@ -18705,17 +18716,26 @@ sxSearchPage = async function (seq, append) {
      never shown bare with no list. */
   var TV_EMBED_ALLOW = /^https:\/\/www\.anten\.ir\/iframe\/\d+$/;
   function evEmbedUrl(sev) {
-    /* Candidate order (T16): the stream-id derivation first -- it
-       outranks even a baked embed, so a stale baked program-id URL can
-       never win over a known stream id -- then the baked embed URL,
-       then the derivation from anten_id (program id, last resort only).
+    /* Candidate order (T17): the stream-id derivation first, then a
+       baked embed whose id is NOT the program id. There is NO
+       program-id candidate any more (T16's last resort is removed):
+       /iframe/<program id> can never play -- getStreamPublisher finds
+       no stream for a program id, and the iframe only frames Anten's
+       empty player shell (phone test 2026-11-26 09:46). A missing
+       stream id returns null here, and the player fails honestly.
        Every candidate must pass the allowlist, and a non-numeric id
        derives nothing usable. No URL that fails the regex can ever
        become an iframe src. */
     var cands = [];
     if (sev && sev.embed_stream_id && /^\d+$/.test(String(sev.embed_stream_id))) cands.push('https://www.anten.ir/iframe/' + sev.embed_stream_id);
-    if (sev && sev.embed) cands.push(sev.embed);
-    if (sev && sev.anten_id) cands.push('https://www.anten.ir/iframe/' + sev.anten_id);
+    /* T17: a baked embed is trusted ONLY when its id is not the program
+       id -- /iframe/<program id> frames Anten's empty player shell
+       (phone test 2026-11-26 09:46, anten:188512), so a stale bake's
+       program-id embed is skipped, never shown. The program-id
+       derivation is REMOVED entirely: a missing stream id yields null
+       here, and the player fails honestly (server list + «پخش ممکن
+       نشد») instead of framing a site. */
+    if (sev && sev.embed) { var _m = String(sev.embed).match(/\/iframe\/(\d+)$/); if (!_m || String(sev.anten_id) !== _m[1]) cands.push(sev.embed); }
     for (var i = 0; i < cands.length; i++) {
       if (TV_EMBED_ALLOW.test(cands[i])) return cands[i];
     }
