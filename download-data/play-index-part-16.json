@@ -87666,48 +87666,6 @@
   "part": 16,
   "play": [
    {
-    "encoder": "unknown",
-    "episode": null,
-    "group": "SoftSub",
-    "join_tier": 1,
-    "play_type": "hardsub",
-    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/The.Social.Reckoning.2026.1080p.HDCAM.SoftSub.mkv",
-    "playit_url": null,
-    "quality": "HDCAM 1080p",
-    "quality_label": "hdcam 1080p",
-    "season": null,
-    "size_bytes": null,
-    "size_text": ""
-   },
-   {
-    "encoder": "unknown",
-    "episode": null,
-    "group": "SoftSub",
-    "join_tier": 1,
-    "play_type": "hardsub",
-    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/The.Social.Reckoning.2026.720p.HDCAM.SoftSub.mkv",
-    "playit_url": null,
-    "quality": "HDCAM 720p",
-    "quality_label": "hdcam 720p",
-    "season": null,
-    "size_bytes": null,
-    "size_text": ""
-   },
-   {
-    "encoder": "unknown",
-    "episode": null,
-    "group": "SoftSub",
-    "join_tier": 1,
-    "play_type": "hardsub",
-    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/The.Social.Reckoning.2026.480p.HDCAM.SoftSub.mkv",
-    "playit_url": null,
-    "quality": "HDCAM 480p",
-    "quality_label": "hdcam 480p",
-    "season": null,
-    "size_bytes": null,
-    "size_text": ""
-   },
-   {
     "encoder": "YIFY",
     "episode": null,
     "group": "SoftSub",
