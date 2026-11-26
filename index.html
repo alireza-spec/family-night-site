@@ -3503,6 +3503,20 @@ function fnTrendVoteOk(x, todayStr) {
      for everyone. todayStr kept only so the two call sites need no change. */
   return (x.vote_count || 0) >= 100;
 }
+/* FN-TRENDING-ORDER v1 (user order 2026-11-26): the trending category
+   orders by the date each title was ADDED TO TRENDING (added_at, newest
+   first) — NOT the archive-addition date, NOT the release date. added_at
+   is stamped per entry in trending.json (reconstructed from the file's
+   git history for the current 50; the generator stamps new entries with
+   the rebuild date, hand-adds with the add date). Stable sort: ties keep
+   file order. Entries without added_at sort last, never first. */
+function fnTrendOrder(list) {
+  return (list || []).slice().sort(function (a, b) {
+    var da = (a && a.added_at) || '', db = (b && b.added_at) || '';
+    if (da === db) return 0;
+    return da > db ? -1 : 1;
+  });
+}
 
 /* FN-EDITORS-PICK-RAIL: «پیشنهاد سردبیر» home rail — the curator list
    is a resolved static list (FN_CURATOR_DATA, 482 movies). Shuffle it
@@ -4088,23 +4102,20 @@ async function loadHome() {
      row. The hero upgrade re-renders the hero when it lands. */
   const _jobs = [
     (async () => {
-      /* FN-NO-VPN-R3: static trending.json first (same-origin, paints
-         at once even with the worker dead); the live refresh below
-         still replaces it when it lands. */
+      /* FN-TRENDING-ORDER v1 (user order 2026-11-26): the trending rail
+         IS the trending category — download-data/sections/trending.json
+         in added-to-trending date order (newest first, fnTrendOrder).
+         The old live TMDB trending/week refresh REPLACED the file with
+         the live popularity pool sorted by release date, so a hand-added
+         head (The Social Reckoning, added 2026-11-26) sank mid-rail.
+         The live refresh is gone; the file is the category. The
+         snapshot row stays only as the fail-open fallback. */
       var _hadStaticTrend = false;
       try {
         var _stT = await fnStaticJson('trending.json');
-        if (_stT && (_stT.results || []).length) { rows.trending_now = _stT.results.slice(0, 20); _hadStaticTrend = true; try { fnPaintHome(rows); } catch (e2) {} }
+        if (_stT && (_stT.results || []).length) { rows.trending_now = fnTrendOrder(_stT.results).slice(0, 20); _hadStaticTrend = true; try { fnPaintHome(rows); } catch (e2) {} }
       } catch (e) {}
-      try {
-        const _live = await fnFillHomeRail(async page => {
-          const [_tm, _tt] = await Promise.all([tmdb('trending/movie/week', { page: page }), tmdb('trending/tv/week', { page: page })]);
-          return [].concat((_tm.results || []).map(x => Object.assign({}, x, { media_type: 'movie' })))
-            .concat((_tt.results || []).map(x => Object.assign({}, x, { media_type: 'tv' })));
-        }, x => { const dt = _dt(x); return dt && dt <= _today && dt >= _g3s && fnTrendVoteOk(x, _today); });
-        _live.sort((a, b) => _dt(b).localeCompare(_dt(a)));
-        if (_live.length) rows.trending_now = _live.slice(0, 20); else if (!_hadStaticTrend) _trendFallback();
-      } catch (e) { if (!_hadStaticTrend) _trendFallback(); }
+      if (!_hadStaticTrend) _trendFallback();
     })(),
     (async () => {
       /* FN-HERO-TRENDING v1: the hero IS the trending category —
@@ -4939,10 +4950,20 @@ async function loadArchPage() {
   const sortUi = $('#arch-sort').value;
   const yr = $('#arch-year').value, yr2 = ($('#arch-yearto') || {}).value || '';
   const certVal = arch.cert || (($('#arch-cert') || {}).value || '');
+  /* FN-TRENDING-ORDER v1: the trending see-all shows the static
+     trending.json category, NOT the live TMDB trending/week streams
+     (they return the live popularity pool — titles like Guarding Stars
+     and Steps that are NOT in the category — sorted by release date).
+     The streams are marked done so paging ends; the seed below supplies
+     the pool in category order. anyOk is set so the empty-stream path
+     does not throw. */
+  var _trendStaticOnly = (arch.collKey === 'trending_now');
+  if (_trendStaticOnly) { (arch.streams || []).forEach(function (s) { s.done = true; }); }
   const active = arch.streams.filter(s => !s.done);
   let anyOk = false;
+  if (_trendStaticOnly) anyOk = true;
   try {
-    const batches = await fnWithDeadline(Promise.all(active.map(async s => {
+    const batches = _trendStaticOnly ? [] : await fnWithDeadline(Promise.all(active.map(async s => {
       const isTv = s.type === 'tv';
       const dk = isTv ? 'first_air_date' : 'primary_release_date';
       let sort = sortUi;
@@ -5054,19 +5075,36 @@ async function loadArchPage() {
         if (_seedSeries.length) items = _seedSeries.map(function (x) { return Object.assign({}, x, { media_type: 'tv' }); }).concat(items);
       } catch (e) {}
     }
+    /* FN-TRENDING-ORDER v1 (user order 2026-11-26): the trending
+       see-all IS the trending category — seed the pool with static
+       trending.json in added-to-trending date order (fnTrendOrder), on
+       EVERY loadArchPage call like the newM25/updates seeds. The TMDB
+       trending streams are bypassed above (they return the live
+       popularity pool, not the category). The reader's live filters
+       that the streams used to apply (type chip, year range, vote
+       floors, country) are applied here to the static pool; the
+       3-month window + vote>=100 gates live in the file's build, NOT
+       here — carried-forward titles stay in the category by design. */
+    if (arch.collKey === 'trending_now') {
+      try {
+        var _stSeedT = await fnStaticJson('trending.json');
+        var _seedTrend = ((_stSeedT && _stSeedT.results) || []).map(function (x) { return Object.assign({}, x); });
+        if (arch.collType && arch.collType !== 'all') _seedTrend = _seedTrend.filter(function (x) { return (x.media_type || 'movie') === arch.collType; });
+        if (yr) _seedTrend = _seedTrend.filter(function (x) { return String((x.media_type === 'tv' ? x.first_air_date : x.release_date) || '').slice(0, 4) >= String(yr); });
+        if (yr2) _seedTrend = _seedTrend.filter(function (x) { return String((x.media_type === 'tv' ? x.first_air_date : x.release_date) || '').slice(0, 4) <= String(yr2); });
+        if (vcSel) _seedTrend = _seedTrend.filter(function (x) { return (x.vote_count || 0) >= (+vcSel || 0); });
+        if (vote) _seedTrend = _seedTrend.filter(function (x) { return (x.vote_average || 0) >= (+vote || 0); });
+        if (archCountry) _seedTrend = _seedTrend.filter(function (x) { return (x.origin_country || []).indexOf(archCountry) > -1; });
+        if (_seedTrend.length) items = fnTrendOrder(_seedTrend).concat(items);
+      } catch (e) {}
+    }
     const seen = new Set([...grid.querySelectorAll('[data-open]')].map(el => el.dataset.open));
     items = items.filter(x => { const k = (x.media_type || 'movie') + ':' + x.id; if (seen.has(k)) return false; seen.add(k); return true; });
-    /* Trending (user rule): only RELEASED + last-3-months + notable
-       (the trending endpoint already ranks by popularity). The trending
-       API returns popularity order, so re-sort newest-first here. */
-    if (arch.collKey === 'trending_now') {
-      const _today = new Date().toISOString().slice(0, 10);
-      const _g3 = new Date(); _g3.setMonth(_g3.getMonth() - 3);
-      const _g3s = _g3.toISOString().slice(0, 10);
-      const _dt = x => x.media_type === 'tv' ? (x.first_air_date || '') : (x.release_date || '');
-      items = items.filter(x => { const dt = _dt(x); return dt && dt <= _today && dt >= _g3s && fnTrendVoteOk(x, _today); })
-        .sort((a, b) => _dt(b).localeCompare(_dt(a)));
-    }
+    /* FN-TRENDING-ORDER v1: trending_now keeps the static file's
+       category order (added-to-trending date, newest first — set by
+       the seed above). NO 3-month / vote re-filter and NO release-date
+       re-sort here: the gates live in the file's build, and
+       carried-forward titles stay in the category by design. */
     /* حروف و اعداد: keep only titles whose original name starts
        with the picked letter (or a digit) */
     if (archLetter) items = items.filter(letterMatch);
@@ -5099,7 +5137,7 @@ async function loadArchPage() {
        added first), so NO date re-sort runs here. An explicit sort pick
        (oldest, votes, popularity, random) still applies through its own
        branch. */
-    if ((arch.collKey === 'newM25' || arch.collKey === 'updates') && (sortUi === 'primary_release_date.desc' || sortUi === 'first_air_date.desc')) { /* keep file order: no sort */ }
+    if ((arch.collKey === 'newM25' || arch.collKey === 'updates' || arch.collKey === 'trending_now') && (sortUi === 'primary_release_date.desc' || sortUi === 'first_air_date.desc')) { /* keep file order: no sort */ }
     else if (sortUi === 'popularity.desc') items.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
     else if (arch.collKey === 'updates' && (sortUi === 'primary_release_date.desc' || sortUi === 'first_air_date.desc')) items.sort((a, b) => String((b.last_air_date || b.first_air_date) || '').localeCompare(String((a.last_air_date || a.first_air_date) || '')));
     else if (sortUi === 'primary_release_date.desc' || sortUi === 'first_air_date.desc') items.sort((a, b) => String((b.media_type === 'tv' ? b.first_air_date : b.release_date) || '').localeCompare(String((a.media_type === 'tv' ? a.first_air_date : a.release_date) || '')));
