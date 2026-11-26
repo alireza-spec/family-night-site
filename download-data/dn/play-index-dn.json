@@ -363844,6 +363844,48 @@
     "season": 1,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": 1,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Series/Fool.Night/Fool.Night.S01E01.1080p.WEB-DL.6CH.Farsi.Sub.Film2Media.mkv?v=918744462713",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p",
+    "quality_label": "web-dl 1080p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": 1,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Series/Fool.Night/Fool.Night.S01E01.720p.WEB-DL.Farsi.Sub.Film2Media.mkv?v=563375258667",
+    "playit_url": null,
+    "quality": "WEB-DL 720p",
+    "quality_label": "web-dl 720p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": 1,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Series/Fool.Night/Fool.Night.S01E01.480p.WEB-DL.Farsi.Sub.Film2Media.mkv?v=945302861941",
+    "playit_url": null,
+    "quality": "WEB-DL 480p",
+    "quality_label": "web-dl 480p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
    }
   ],
   "title": "Fool Night",
