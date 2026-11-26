@@ -1504,13 +1504,14 @@ html.tg .bottomnav{display:flex}
 .fnp-tbtn{flex:none;min-width:2.5rem;height:2.5rem;padding:0 .45rem;border-radius:.65rem;background:rgba(255,255,255,.12);color:#fff;display:inline-flex;align-items:center;justify-content:center;gap:.25rem;font-size:.78rem;font-weight:700}
 .fnp-tbtn.on{background:var(--gold);color:#231700}
 .fnp-tbtn svg{width:1.25rem;height:1.25rem}
-.fnp-center{position:absolute;inset:0;z-index:5;display:flex;align-items:center;justify-content:center;gap:3.2rem;pointer-events:none}
-.fnp-cbtn{pointer-events:auto;width:4.2rem;height:4.2rem;border-radius:99px;background:rgba(0,0,0,.45);color:#fff;display:grid;place-items:center;border:1px solid rgba(255,255,255,.25)}
+.fnp-center{position:absolute;inset:0;z-index:5;display:flex;align-items:center;justify-content:center;gap:3.2rem;pointer-events:none;direction:ltr}
+.fnp-cbtn{pointer-events:auto;width:4.2rem;height:4.2rem;border:0;background:none;color:rgba(255,255,255,.8);display:grid;place-items:center}
 .fnp-cbtn svg{width:2rem;height:2rem}
-.fnp-cbtn.main{width:5rem;height:5rem;background:rgba(229,169,60,.92);color:#231700;border-color:transparent}
+.fnp-cbtn.main{width:5rem;height:5rem;background:none;color:rgba(255,255,255,.92);border:0}
 .fnp-cbtn.main svg{width:2.4rem;height:2.4rem}
 .fnp-bottom{position:absolute;left:0;right:0;bottom:0;z-index:10;padding:.4rem .8rem .8rem;background:linear-gradient(transparent,rgba(0,0,0,.8))}
-.fnp-times{display:flex;justify-content:space-between;color:#e2e8f0;font-size:.78rem;font-family:var(--display);padding:0 .2rem .3rem}
+.fnp-times{display:flex;justify-content:space-between;direction:ltr;color:#e2e8f0;font-size:.78rem;font-family:var(--display);padding:0 .2rem .3rem}
+#fnp-dur{cursor:pointer}
 .fnp-seek{-webkit-appearance:none;appearance:none;width:100%;height:.45rem;border-radius:99px;background:rgba(255,255,255,.28);outline:none;direction:ltr}
 .fnp-seek::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:1.15rem;height:1.15rem;border-radius:99px;background:var(--gold2);border:2px solid #fff;box-shadow:0 0 0 3px rgba(229,169,60,.35)}
 .fnp-seek::-moz-range-thumb{width:1.05rem;height:1.05rem;border-radius:99px;background:var(--gold2);border:2px solid #fff}
@@ -1543,7 +1544,15 @@ html.tg .bottomnav{display:flex}
 .fnp-resume .btn{width:100%;min-height:3rem;margin-top:.5rem}
 .fnp-hide-ui .fnp-top,.fnp-hide-ui .fnp-center,.fnp-hide-ui .fnp-bottom{opacity:0;pointer-events:none}
 .fnp-top,.fnp-center,.fnp-bottom{transition:opacity .25s ease}
-.fnp-tap{position:absolute;inset:0;z-index:4}
+.fnp-tap{position:absolute;inset:0;z-index:4;touch-action:pan-y;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}
+.fnp-dbl{position:absolute;top:50%;transform:translateY(-50%);z-index:7;pointer-events:none;color:#fff;opacity:0;transition:opacity .15s ease;text-align:center}
+.fnp-dbl.on{opacity:1}
+.fnp-dbl.left{left:11%}
+.fnp-dbl.right{right:11%}
+.fnp-dbl svg{width:3.4rem;height:3.4rem;display:block;margin:0 auto}
+.fnp-dbl b{display:block;font-size:1.05rem;margin-top:.25rem;font-family:var(--display)}
+.fnp-2x{position:absolute;top:16%;left:50%;transform:translateX(-50%);z-index:7;pointer-events:none;background:rgba(0,0,0,.6);color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:.5rem;padding:.15rem .7rem;font-weight:800;font-size:1rem;display:none}
+.fnp-2x.on{display:block}
 /* FN-DN-SRC v1 — DarkNama VPN hint in the play list: one short muted
    line, only when the list holds DN rows. */
 /* FN-DN-TRAILER v1 — trailer mode: the subtitle options a trailer does
@@ -9668,7 +9677,7 @@ function fnPlayOpenOpt(p) {
   $('#fn-play-opt').classList.add('on');
 }
 /* ================= built-in player ================= */
-var FNP = { v: null, p: null, key: '', hash: '', dur: 0, subCues: [], subOn: false, subOff: 0, subColor: '#ffffff', subSize: 1, aspect: 0, rotated: false, uiTimer: null, lastSave: 0, marked: false, started: false, lastTap: 0, lastTapX: 0, singleTimer: null, tapX0: 0, tapT0: 0, trailer: false };
+var FNP = { v: null, p: null, key: '', hash: '', dur: 0, subCues: [], subOn: false, subOff: 0, subColor: '#ffffff', subSize: 1, aspect: 0, rotated: false, uiTimer: null, lastSave: 0, marked: false, started: false, lastTap: 0, lastTapX: 0, singleTimer: null, tapX0: 0, tapY0: 0, tapT0: 0, trailer: false, durMode: 'total', lpTimer: null, lpActive: false, lpPrevRate: 1, dblTimer: null, scrubbing: false, scrubX0: 0, scrubT0: 0, subState: 'idle', subSrc: '', inbandSub: false, sidecarTried: false };
 var FNP_ASPECTS = [['متناسب با صفحه', ''], ['برش', 'fit-cover'], ['کشیده', 'fit-fill'], ['اندازه واقعی', 'fit-none']];
 var FNP_SUB_SIZES = [[0.85, 'کوچک'], [1, 'معمولی'], [1.25, 'بزرگ'], [1.5, 'خیلی بزرگ']];
 var FNP_SUB_COLORS = [['#ffffff', 'سفید'], ['#ffe600', 'زرد'], ['#00e5ff', 'آبی'], ['#7cfc00', 'سبز'], ['#ff7eb6', 'صورتی']];
@@ -9680,10 +9689,12 @@ function fnPlayerEnsureDom() {
     + '<video id="fnp-video" playsinline preload="metadata"></video>'
     + '<div class="fnp-sub" id="fnp-sub"><span id="fnp-sub-text"></span></div>'
     + '<div class="fnp-tap" id="fnp-tap"></div>'
+    + '<div class="fnp-dbl" id="fnp-dbl"></div>'
+    + '<div class="fnp-2x" id="fnp-2x">2x</div>'
     + '<div class="fnp-center" id="fnp-center">'
-    + '<button class="fnp-cbtn" id="fnp-back10" aria-label="۱۰ ثانیه عقب"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 17l-5-5 5-5M18 17l-5-5 5-5"/></svg></button>'
+    + '<button class="fnp-cbtn" id="fnp-back10" aria-label="۱۰ ثانیه عقب"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/><text x="12" y="15.5" text-anchor="middle" font-size="7.5" fill="currentColor" stroke="none" font-weight="700">10</text></svg></button>'
     + '<button class="fnp-cbtn main" id="fnp-playpause" aria-label="پخش / توقف"><svg id="fnp-pp-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg></button>'
-    + '<button class="fnp-cbtn" id="fnp-fwd10" aria-label="۱۰ ثانیه جلو"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 17l5-5-5-5M6 17l5-5-5-5"/></svg></button>'
+    + '<button class="fnp-cbtn" id="fnp-fwd10" aria-label="۱۰ ثانیه جلو"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/><text x="12" y="15.5" text-anchor="middle" font-size="7.5" fill="currentColor" stroke="none" font-weight="700">10</text></svg></button>'
     + '</div>'
     + '<div class="fnp-top" id="fnp-top">'
     + '<button class="fnp-tbtn" id="fnp-close" aria-label="خروج"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 5l14 14M19 5L5 19"/></svg></button>'
@@ -9741,6 +9752,103 @@ function fnPlayerSetPP() {
   $('#fnp-pp-ic').innerHTML = v.paused ? '<path d="M7 4.5v15l13-7.5z"/>' : '<path d="M6 4h4v16H6zM14 4h4v16h-4z"/>';
 }
 function fnPlayerSeekBy(d) { var v = FNP.v; if (!v) return; try { v.currentTime = Math.min(Math.max(0, (v.currentTime || 0) + d), (v.duration || 0)); } catch (e) {} fnPlayerShowUi(); }
+function fnPlayerShowDbl(dir) {
+  var el = $('#fnp-dbl'); if (!el) return;
+  var ic = dir === 'fwd'
+    ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>'
+    : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>';
+  el.innerHTML = ic + '<b>10s</b>';
+  el.classList.remove('left', 'right'); el.classList.add(dir === 'fwd' ? 'right' : 'left');
+  el.classList.add('on');
+  clearTimeout(FNP.dblTimer);
+  FNP.dblTimer = setTimeout(function () { el.classList.remove('on'); }, 700);
+}
+function fnPlayerLpStart() {
+  var v = FNP.v, st = $('#fnp-stage'); if (!v || !st) return;
+  if (v.paused || FNP.scrubbing || !st.classList.contains('fnp-hide-ui')) return;
+  FNP.lpPrevRate = v.playbackRate || 1;
+  try { v.playbackRate = 2; } catch (e) {}
+  FNP.lpActive = true;
+  var b = $('#fnp-2x'); if (b) b.classList.add('on');
+}
+function fnPlayerLpEnd() {
+  if (!FNP.lpActive) return;
+  FNP.lpActive = false;
+  var v = FNP.v; if (v) { try { v.playbackRate = FNP.lpPrevRate || 1; } catch (e) {} }
+  var b = $('#fnp-2x'); if (b) b.classList.remove('on');
+}
+/* ---------- subtitles: sidecar .srt next to the video file ---------- */
+function fnPlayerAutoKey() { return 'fnplay:subauto:' + FNP.hash; }
+function fnPlayerSubCandidates(playUrl) {
+  var u = String(playUrl || '');
+  var m = u.match(/^([^?#]*\/)([^\/\?#]+?)(?:\?.*)?$/);
+  if (!m) return [];
+  var dir = m[1], base = m[2] || '';
+  var out = [];
+  function push(x) { if (x && out.indexOf(x) < 0) out.push(x); }
+  var ep = base.match(/^(.+?\.S\d{2}E\d{2})/i);
+  if (ep) push(dir + ep[1] + '.srt');
+  var ty = base.match(/^(.+?\.(?:19|20)\d{2})/);
+  if (ty) push(dir + ty[1] + '.srt');
+  push(dir + base.replace(/\.(mkv|mp4|avi|mov)$/i, '') + '.srt');
+  return out;
+}
+function fnPlayerDisableInband() {
+  var v = FNP.v; if (!v || !v.textTracks) return;
+  for (var i = 0; i < v.textTracks.length; i++) { try { v.textTracks[i].mode = 'disabled'; } catch (e) {} }
+  FNP.inbandSub = false;
+}
+function fnPlayerCheckInband() {
+  var v = FNP.v; if (!v || !v.textTracks) return;
+  if (FNP.subCues.length) { fnPlayerDisableInband(); return; }
+  var tracks = v.textTracks, pick = null, i;
+  for (i = 0; i < tracks.length; i++) {
+    var t = tracks[i];
+    if (t.kind === 'subtitles' || t.kind === 'captions') {
+      var lab = String((t.label || '') + ' ' + (t.language || '')).toLowerCase();
+      if (/fa|farsi|persian|\u0641\u0627\u0631\u0633\u06cc/.test(lab)) { pick = t; break; }
+      if (!pick) pick = t;
+    }
+  }
+  if (pick) {
+    for (var j = 0; j < tracks.length; j++) { try { tracks[j].mode = (tracks[j] === pick) ? 'showing' : 'disabled'; } catch (e) {} }
+    FNP.inbandSub = true; FNP.subState = 'inband'; fnPlayerPaintSubMenu();
+  }
+}
+function fnPlayerTrySidecar() {
+  var p = FNP.p; if (!p || FNP.trailer) return;
+  if (!(p.group === 'SoftSub' || p.group === 'HardSub') || p.play_type === 'hardsub') return;
+  if (FNP.subCues.length) return;
+  if (FNP.sidecarTried) return;
+  FNP.sidecarTried = true;
+  try {
+    var cached = localStorage.getItem(fnPlayerAutoKey());
+    if (cached) {
+      var cc = fnPlayerParseSubs(cached);
+      if (cc.length) { FNP.subCues = cc; FNP.subOn = true; FNP.subState = 'sidecar'; FNP.subSrc = 'sidecar'; fnPlayerRenderSub(); fnPlayerPaintSubMenu(); return; }
+    }
+  } catch (e) {}
+  var cands = fnPlayerSubCandidates(p.play_url || '');
+  if (!cands.length) { FNP.subState = 'failed'; fnPlayerPaintSubMenu(); return; }
+  FNP.subState = 'loading'; fnPlayerPaintSubMenu();
+  var i = 0;
+  function next() {
+    if (i >= cands.length) { FNP.subState = 'failed'; fnPlayerPaintSubMenu(); return; }
+    var url = cands[i++];
+    var done = false;
+    var to = setTimeout(function () { if (!done) { done = true; next(); } }, 8000);
+    fetch(url, { mode: 'cors' }).then(function (r) { if (!r.ok) throw new Error('http ' + r.status); return r.text(); }).then(function (txt) {
+      if (done) return; done = true; clearTimeout(to);
+      var cues = fnPlayerParseSubs(txt);
+      if (!cues.length) { next(); return; }
+      FNP.subCues = cues; FNP.subOn = true; FNP.subState = 'sidecar'; FNP.subSrc = 'sidecar';
+      try { localStorage.setItem(fnPlayerAutoKey(), txt.slice(0, 400000)); } catch (e) {}
+      if (FNP.inbandSub) fnPlayerDisableInband();
+      fnPlayerRenderSub(); fnPlayerPaintSubMenu();
+    }).catch(function () { if (done) return; done = true; clearTimeout(to); next(); });
+  }
+  next();
+}
 function fnPlayerToggle() { var v = FNP.v; if (!v) return; if (v.paused) v.play().catch(function () {}); else v.pause(); }
 function fnPlayerPaintSeek() {
   var v = FNP.v, sk = $('#fnp-seek'); if (!v || !sk) return;
@@ -9749,7 +9857,7 @@ function fnPlayerPaintSeek() {
   var pct = dur ? (cur / dur * 100) : 0;
   sk.style.background = 'linear-gradient(to right, var(--gold2) ' + pct + '%, rgba(255,255,255,.28) ' + pct + '%)';
   $('#fnp-cur').textContent = fnPlayerFmt(cur);
-  $('#fnp-dur').textContent = fnPlayerFmt(dur);
+  $('#fnp-dur').textContent = FNP.durMode === 'remain' ? (dur ? '-' + fnPlayerFmt(dur - cur) : fnPlayerFmt(0)) : fnPlayerFmt(dur);
 }
 /* ---------- subtitles: parse + render + upload + sync ---------- */
 function fnPlayerParseSubs(text) {
@@ -9772,6 +9880,7 @@ function fnPlayerParseSubs(text) {
 function fnPlayerRenderSub() {
   var el = $('#fnp-sub-text'), box = $('#fnp-sub'); if (!el || !box) return;
   var v = FNP.v; if (!v) { el.textContent = ''; return; }
+  var sb = $('#fnp-subbtn'); if (sb) sb.classList.toggle('on', (FNP.subOn && FNP.subCues.length > 0) || FNP.inbandSub);
   if (!FNP.subOn || !FNP.subCues.length) { el.textContent = ''; box.style.display = 'none'; return; }
   var t = (v.currentTime || 0) + (FNP.subOff || 0) / 1000, cue = null, i;
   for (i = 0; i < FNP.subCues.length; i++) { var c = FNP.subCues[i]; if (t >= c.start && t < c.end) { cue = c; break; } if (c.start > t) break; }
@@ -9788,6 +9897,7 @@ function fnPlayerLoadUploaded() {
     FNP.subOff = parseInt(localStorage.getItem(fnPlayerOffKey()) || '0', 10) || 0;
   } catch (e) { FNP.subCues = []; FNP.subOff = 0; }
   FNP.subOn = FNP.subCues.length > 0;
+  FNP.subSrc = FNP.subCues.length ? 'upload' : '';
 }
 function fnPlayerUploadSub(file) {
   if (!file) return;
@@ -9796,7 +9906,7 @@ function fnPlayerUploadSub(file) {
   rd.onload = function () {
     var cues = fnPlayerParseSubs(String(rd.result || ''));
     if (!cues.length) { toast('در این فایل زیرنویسی پیدا نشد'); return; }
-    FNP.subCues = cues; FNP.subOn = true; FNP.subOff = 0;
+    FNP.subCues = cues; FNP.subOn = true; FNP.subOff = 0; FNP.subSrc = 'upload';
     try { localStorage.setItem(fnPlayerSubKey(), String(rd.result || '').slice(0, 400000)); localStorage.setItem(fnPlayerOffKey(), '0'); } catch (e) {}
     fnPlayerRenderSub(); fnPlayerPaintSubMenu(); fnPlayerPaintSetMenu();
     toast('زیرنویس اضافه شد');
@@ -9806,12 +9916,19 @@ function fnPlayerUploadSub(file) {
 function fnPlayerPaintSubMenu() {
   var list = $('#fnp-sub-list'); if (!list) return;
   var p = FNP.p, rows = [];
-  var hard = p && p.group === 'SoftSub';
+  var hard = p && p.play_type === 'hardsub' && (p.group === 'SoftSub' || p.group === 'HardSub');
+  var soft = p && (p.group === 'SoftSub' || p.group === 'HardSub') && p.play_type !== 'hardsub';
   if (hard) rows.push('<button class="fnp-opt on" data-subpick="hard">زیرنویس فارسی (هاردساب)<span class="ck">چسبیده به فیلم</span></button>');
+  else if (soft) {
+    if (FNP.inbandSub) rows.push('<button class="fnp-opt on" data-subpick="inband">زیرنویس فارسی<span class="ck">فعال</span></button>');
+    else if (FNP.subState === 'sidecar' && FNP.subCues.length) rows.push('<button class="fnp-opt on" data-subpick="sidecar">زیرنویس فارسی (فایل جدا)<span class="ck">فعال</span></button>');
+    else if (FNP.subState === 'loading') rows.push('<button class="fnp-opt" data-subpick="loading">زیرنویس فارسی<span class="ck">در حال دریافت…</span></button>');
+    else rows.push('<button class="fnp-opt" data-subpick="nosidecar">زیرنویس فارسی<span class="ck">فایل جدا پیدا نشد</span></button>');
+  }
   else if (p && p.group === 'Dubbed') rows.push('<button class="fnp-opt" data-subpick="none">دوبله فارسی<span class="ck">بدون زیرنویس</span></button>');
   else rows.push('<button class="fnp-opt" data-subpick="none">بدون زیرنویس</button>');
-  if (FNP.subCues.length) rows.push('<button class="fnp-opt' + (FNP.subOn ? ' on' : '') + '" data-subpick="up">زیرنویس آپلودشده<span class="ck">' + (FNP.subOn ? 'فعال' : 'خاموش') + '</span></button>');
-  rows.push('<button class="fnp-opt" data-subpick="off">خاموش کردن زیرنویس آپلودشده</button>');
+  if (FNP.subCues.length && FNP.subSrc === 'upload') rows.push('<button class="fnp-opt' + (FNP.subOn ? ' on' : '') + '" data-subpick="up">زیرنویس آپلودشده<span class="ck">' + (FNP.subOn ? 'فعال' : 'خاموش') + '</span></button>');
+  rows.push('<button class="fnp-opt" data-subpick="off">خاموش کردن زیرنویس</button>');
   rows.push('<button class="fnp-opt" data-subpick="upload">آپلود زیرنویس (.srt / .vtt)</button>');
   list.innerHTML = rows.join('');
   list.querySelectorAll('[data-subpick]').forEach(function (b) {
@@ -9821,6 +9938,9 @@ function fnPlayerPaintSubMenu() {
       else if (k === 'off') { FNP.subOn = false; fnPlayerRenderSub(); toast('زیرنویس خاموش شد'); }
       else if (k === 'upload') { var inp = document.createElement('input'); inp.type = 'file'; inp.accept = '.srt,.vtt'; inp.onchange = function () { fnPlayerUploadSub(inp.files && inp.files[0]); }; inp.click(); return; }
       else if (k === 'hard') { toast('این زیرنویس به فیلم چسبیده و قابل تغییر نیست'); }
+      else if (k === 'sidecar' || k === 'inband') { toast('زیرنویس فارسی فعال است'); }
+      else if (k === 'loading') { toast('در حال دریافت زیرنویس…'); }
+      else if (k === 'nosidecar') { toast('برای این نسخه فایل زیرنویس جدا پیدا نشد — می‌توانید فایل srt آپلود کنید'); }
       fnPlayerPaintSubMenu();
     };
   });
@@ -9832,9 +9952,9 @@ function fnPlayerPaintSetMenu() {
     + FNP_SUB_COLORS.map(function (c) { return '<button class="fnp-sw' + (FNP.subColor === c[0] ? ' on' : '') + '" data-color="' + c[0] + '" title="' + c[1] + '" style="background:' + c[0] + '"></button>'; }).join('') + '</div>'
     + '<p style="margin:.4rem 0;color:var(--pearl);font-size:.85rem">اندازه زیرنویس</p><div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.6rem">'
     + FNP_SUB_SIZES.map(function (s) { return '<button class="chip' + (FNP.subSize === s[0] ? ' on' : '') + '" data-subsize="' + s[0] + '">' + s[1] + '</button>'; }).join('') + '</div>'
-    + '<p style="margin:.4rem 0;color:var(--pearl);font-size:.85rem">هماهنگ‌سازی زیرنویس آپلودشده (میلی‌ثانیه)</p>'
+    + '<p style="margin:.4rem 0;color:var(--pearl);font-size:.85rem">هماهنگ‌سازی زیرنویس (میلی‌ثانیه)</p>'
     + '<div class="fnp-sync"><button id="fnp-sync-minus" aria-label="عقب">−</button><b id="fnp-sync-val">' + (FNP.subOff > 0 ? '+' : '') + fnPlayFa(FNP.subOff) + ' ms</b><button id="fnp-sync-plus" aria-label="جلو">+</button></div>'
-    + '<p style="margin:.2rem 0 .6rem;color:var(--pearl);font-size:.8rem;line-height:1.9">' + (hasUp ? 'با + زیرنویس جلوتر و با − عقب‌تر نمایش داده می‌شود. با هر بار زدن ۱۰۰ میلی‌ثانیه جابه‌جا می‌شود.' : 'برای هماهنگی، اول یک زیرنویس آپلود کنید.') + '</p>'
+    + '<p style="margin:.2rem 0 .6rem;color:var(--pearl);font-size:.8rem;line-height:1.9">' + (hasUp ? 'با + زیرنویس جلوتر و با − عقب‌تر نمایش داده می‌شود. با هر بار زدن ۱۰۰ میلی‌ثانیه جابه‌جا می‌شود.' : 'برای هماهنگی، اول زیرنویس را فعال کنید.') + '</p>'
     + '<button class="btn btn-gold" id="fnp-set-upload" style="width:100%">آپلود زیرنویس (.srt / .vtt)</button>';
   body.querySelectorAll('[data-color]').forEach(function (b) {
     b.onclick = function () { FNP.subColor = b.dataset.color; try { localStorage.setItem('fnplay:subcolor', FNP.subColor); } catch (e) {} fnPlayerRenderSub(); fnPlayerPaintSetMenu(); };
@@ -9844,7 +9964,7 @@ function fnPlayerPaintSetMenu() {
   });
   var minus = body.querySelector('#fnp-sync-minus'), plus = body.querySelector('#fnp-sync-plus');
   function bump(d) {
-    if (!FNP.subCues.length) { toast('اول یک زیرنویس آپلود کنید'); return; }
+    if (!FNP.subCues.length) { toast('اول زیرنویس را فعال کنید'); return; }
     FNP.subOff += d;
     try { localStorage.setItem(fnPlayerOffKey(), String(FNP.subOff)); } catch (e) {}
     fnPlayerRenderSub(); fnPlayerPaintSetMenu();
@@ -9908,16 +10028,55 @@ function fnPlayerWire(d) {
   var sk = d.querySelector('#fnp-seek');
   sk.addEventListener('input', function () { try { v.currentTime = parseFloat(sk.value) || 0; } catch (e) {} fnPlayerPaintSeek(); fnPlayerShowUi(); });
   sk.addEventListener('change', function () { fnPlayerShowUi(); });
-  /* tap zones: single tap toggles the chrome, double-tap on the left /
-     right third seeks ∓10s, double-tap in the middle toggles play */
+  d.querySelector('#fnp-dur').addEventListener('click', function () {
+    if (!FNP.v || !(FNP.v.duration || 0)) return;
+    FNP.durMode = FNP.durMode === 'remain' ? 'total' : 'remain';
+    fnPlayerPaintSeek(); fnPlayerShowUi();
+  });
+  /* gestures (FN-PLAYER v1): single tap toggles the chrome; double-tap
+     on the left / right HALF seeks ∓10s with a transient indicator;
+     horizontal drag scrubs; long-press (playing, chrome hidden) holds 2x.
+     Pointer Events only — the same path serves the standalone site and
+     the Telegram mini-app webview (touch-action:pan-y on the tap layer
+     keeps vertical pans with Telegram and kills double-tap zoom). */
   var tap = d.querySelector('#fnp-tap');
-  tap.addEventListener('pointerdown', function (e) { FNP.tapX0 = e.clientX; FNP.tapT0 = Date.now(); });
+  tap.addEventListener('pointerdown', function (e) {
+    FNP.tapX0 = e.clientX; FNP.tapY0 = e.clientY; FNP.tapT0 = Date.now();
+    FNP.scrubbing = false;
+    clearTimeout(FNP.lpTimer); FNP.lpTimer = null;
+    var st = $('#fnp-stage');
+    if (v && !v.paused && st && st.classList.contains('fnp-hide-ui')) {
+      FNP.lpTimer = setTimeout(fnPlayerLpStart, 450);
+    }
+  });
+  tap.addEventListener('pointermove', function (e) {
+    if (FNP.lpActive) return;
+    var dx = e.clientX - FNP.tapX0, dy = (e.clientY || 0) - (FNP.tapY0 || 0);
+    if (!FNP.scrubbing) {
+      if (Math.abs(dx) <= 14 || Math.abs(dx) <= Math.abs(dy)) {
+        if (Math.abs(dx) > 14 || Math.abs(dy) > 14) { clearTimeout(FNP.lpTimer); FNP.lpTimer = null; }
+        return;
+      }
+      clearTimeout(FNP.lpTimer); FNP.lpTimer = null;
+      /* scrub origin is the pointerdown point, so the first move that
+         crosses the 14px slop already seeks — no dead zone. */
+      FNP.scrubbing = true; FNP.scrubX0 = FNP.tapX0; FNP.scrubT0 = v.currentTime || 0;
+    }
+    var w = tap.clientWidth || 1, dur = v.duration || 0;
+    if (!dur) return;
+    var t = FNP.scrubT0 + (e.clientX - FNP.scrubX0) / w * dur;
+    try { v.currentTime = Math.min(Math.max(0, t), dur); } catch (err) {}
+    fnPlayerPaintSeek(); fnPlayerShowUi();
+  });
   tap.addEventListener('pointerup', function (e) {
+    clearTimeout(FNP.lpTimer); FNP.lpTimer = null;
+    if (FNP.lpActive) { fnPlayerLpEnd(); FNP.lastTap = 0; return; }
+    if (FNP.scrubbing) { FNP.scrubbing = false; FNP.lastTap = 0; return; }
     if (Date.now() - FNP.tapT0 > 350 || Math.abs(e.clientX - FNP.tapX0) > 14) return;
     var now = Date.now(), w = tap.clientWidth || 1, x = e.clientX;
     if (now - FNP.lastTap < 350) {
       clearTimeout(FNP.singleTimer); FNP.lastTap = 0;
-      if (x < w / 3) fnPlayerSeekBy(-10); else if (x > w * 2 / 3) fnPlayerSeekBy(10); else fnPlayerToggle();
+      if (x < w / 2) { fnPlayerSeekBy(-10); fnPlayerShowDbl('back'); } else { fnPlayerSeekBy(10); fnPlayerShowDbl('fwd'); }
       return;
     }
     FNP.lastTap = now; FNP.lastTapX = x;
@@ -9927,8 +10086,19 @@ function fnPlayerWire(d) {
       if (st.classList.contains('fnp-hide-ui')) fnPlayerShowUi(); else { st.classList.add('fnp-hide-ui'); clearTimeout(FNP.uiTimer); }
     }, 350);
   });
-  ['pointermove', 'touchstart'].forEach(function (ev) { d.querySelector('#fnp-stage').addEventListener(ev, fnPlayerShowUi, { passive: true }); });
-  v.addEventListener('loadedmetadata', function () { FNP.dur = v.duration || 0; fnPlayerPaintSeek(); });
+  tap.addEventListener('pointercancel', function () {
+    clearTimeout(FNP.lpTimer); FNP.lpTimer = null;
+    if (FNP.lpActive) fnPlayerLpEnd();
+    FNP.scrubbing = false;
+  });
+  tap.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+  d.querySelector('#fnp-stage').addEventListener('pointermove', function () { if (FNP.lpTimer || FNP.lpActive || FNP.scrubbing) return; fnPlayerShowUi(); }, { passive: true });
+  d.querySelector('#fnp-stage').addEventListener('touchstart', function (e) {
+    var t = e.target, st = d.querySelector('#fnp-stage');
+    while (t && t !== st) { if (t.id === 'fnp-tap') return; t = t.parentNode; }
+    fnPlayerShowUi();
+  }, { passive: true });
+  v.addEventListener('loadedmetadata', function () { FNP.dur = v.duration || 0; fnPlayerPaintSeek(); fnPlayerCheckInband(); });
   v.addEventListener('timeupdate', function () {
     fnPlayerPaintSeek(); fnPlayerRenderSub();
     var now = Date.now(); if (now - FNP.lastSave > 5000) { FNP.lastSave = now; fnPlayerSavePos(); }
@@ -9943,7 +10113,7 @@ function fnPlayerWire(d) {
   });
   v.addEventListener('waiting', function () { if (!v.paused) $('#fnp-load').classList.add('on'); });
   v.addEventListener('canplay', function () { $('#fnp-load').classList.remove('on'); });
-  v.addEventListener('ended', function () { try { localStorage.removeItem(fnPlayerPosKey()); } catch (e) {} fnPlayerSetPP(); fnPlayerShowUi(); });
+  v.addEventListener('ended', function () { if (FNP.lpActive) fnPlayerLpEnd(); try { localStorage.removeItem(fnPlayerPosKey()); } catch (e) {} fnPlayerSetPP(); fnPlayerShowUi(); });
   v.addEventListener('error', function () {
     if (!FNP.p) return;
     $('#fnp-load').classList.remove('on');
@@ -10013,9 +10183,11 @@ function fnPlayerOpen(p, opts) {
   FNP.key = FN_PLAY.key;
   FNP.marked = false; FNP.started = false; FNP.aspect = 0; FNP.rotated = false; FNP.lastSave = 0; FNP.dur = 0;
   fnPlayerLoadPrefs();
+  FNP.subState = 'idle'; FNP.subSrc = ''; FNP.inbandSub = false; FNP.sidecarTried = false; FNP.durMode = 'total'; FNP.lpActive = false; FNP.scrubbing = false;
   fnPlayerLoadUploaded();
+  fnPlayerTrySidecar();
   var v = FNP.v;
-  v.classList.remove('fit-cover', 'fit-fill', 'fit-none'); v.style.transform = '';
+  v.classList.remove('fit-cover', 'fit-fill', 'fit-none'); v.style.transform = ''; try { v.playbackRate = 1; } catch (e) {}
   $('#fnp-err').classList.remove('on');
   $('#fnp-submenu').classList.remove('on'); $('#fnp-setmenu').classList.remove('on');
   $('#fnp-resume').classList.remove('on');
