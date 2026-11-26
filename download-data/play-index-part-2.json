@@ -34683,6 +34683,20 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/Paris,.Texas.1984.480p.BluRay.HardSub.DigiMoviez.mp4",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
    }
   ],
   "title": "Paris, Texas",
@@ -38115,6 +38129,20 @@
     "playit_url": "https://www.myf2ms.top/52338/the-specialist-1994/?playit=c95040e6059c37309af292736a10dbe6&play_type=hardsub&quality=BluRay 480p&type=movies&id=52338",
     "quality": "BluRay 480p",
     "quality_label": "bluray 480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://peer.tct.124.giftmond.ir/new%20film/The.Specialist.1994.480p.Bluray.Duble.Bartarmoviz.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
     "season": null,
     "size_bytes": null,
     "size_text": ""
@@ -54900,6 +54928,20 @@
     "playit_url": "https://www.myf2ms.top/8238/veer-zaara-2004/?playit=8f2f8a2ca42d3dd15a35870e2eb86ca9&play_type=dubbled&quality=BluRay 480p&type=movies&id=8238",
     "quality": "BluRay 480p",
     "quality_label": "bluray 480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/filmjaded/Veer-Zaara_2004_720p_Ganool.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
     "season": null,
     "size_bytes": null,
     "size_text": ""

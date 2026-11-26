@@ -77795,6 +77795,48 @@
     "season": 1,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": 6,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://exchange.port.sn.giftmond.ir/NEWTV/The%20Defects/fasl1480/The%20Defects.S01E06.250805.540p.SS.mkv",
+    "playit_url": null,
+    "quality": "540p",
+    "quality_label": "540p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": 7,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.124.giftmond.ir/newtv/The%20Defects/fasl1480/The%20Defects.S01E07.250811.540p.SS.mkv",
+    "playit_url": null,
+    "quality": "540p",
+    "quality_label": "540p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": 8,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://exchange.port.sn.giftmond.ir/NEWTV/The%20Defects/fasl1480/The%20Defects.S01E08.250812.540p.SS.mkv",
+    "playit_url": null,
+    "quality": "540p",
+    "quality_label": "540p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
    }
   ],
   "title": "The Defects",
