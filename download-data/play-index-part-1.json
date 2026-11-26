@@ -64473,6 +64473,20 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Movielandz",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://dl.moviezland.ir/movies/foreign/6-1405/Godzilla.Minus.Zero.2026.CAM.1080p.mkv",
+    "playit_url": null,
+    "quality": "CAM 1080p",
+    "quality_label": "cam 1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
    }
   ],
   "title": "Godzilla Minus Zero",

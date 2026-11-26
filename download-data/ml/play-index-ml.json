@@ -26896,5 +26896,111 @@
   "tmdb_key": "movie:366080",
   "type": "movie",
   "year": 2016
+ },
+ "tt34498564": {
+  "imdb": "tt34498564",
+  "num": 14227,
+  "part": "ml",
+  "play": [
+   {
+    "encoder": "Movielandz",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "https://dl.moviezland.ir/movies/hendi/3-1400/The.Vvaan.Force.of.the.Forrest.2026.1080p.Dub.Farsi.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": 3363698432,
+    "size_text": "3.4 GB"
+   },
+   {
+    "encoder": "Movielandz",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "https://dl.moviezland.ir/movies/hendi/3-1400/The.Vvaan.Force.of.the.Forrest.2026.720p.Dub.Farsi.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 2462075411,
+    "size_text": "2.5 GB"
+   },
+   {
+    "encoder": "Movielandz",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "https://dl.moviezland.ir/movies/hendi/3-1400/The.Vvaan.Force.of.the.Forrest.2026.480p.Dub.Farsi.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 885829892,
+    "size_text": "886 MB"
+   }
+  ],
+  "title": "The Vvaan: Force of the Forrest",
+  "tmdb_key": "movie:1384514",
+  "type": "movie",
+  "year": 2026
+ },
+ "tt32644729": {
+  "imdb": "tt32644729",
+  "num": 14228,
+  "part": "ml",
+  "play": [
+   {
+    "encoder": "Movielandz",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "https://dl.moviezland.ir/movies/hendi/3-1400/Andharan.The.Hunter.2026.1080p.Dub.Farsi.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": 3300485711,
+    "size_text": "3.3 GB"
+   },
+   {
+    "encoder": "Movielandz",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "https://dl.moviezland.ir/movies/hendi/3-1400/Andharan.The.Hunter.2026.720p.Dub.Farsi.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 2391733492,
+    "size_text": "2.4 GB"
+   },
+   {
+    "encoder": "Movielandz",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "https://dl.moviezland.ir/movies/hendi/3-1400/Andharan.The.Hunter.2026.480p.Dub.Farsi.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 836877788,
+    "size_text": "837 MB"
+   }
+  ],
+  "title": "Andharan: The Hunter",
+  "tmdb_key": "movie:1738076",
+  "type": "movie",
+  "year": 2026
  }
 }
