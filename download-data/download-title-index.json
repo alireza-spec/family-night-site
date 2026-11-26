@@ -93511,5 +93511,292 @@
   "part": "sm",
   "title": "Mohabbat",
   "year": 2026
+ },
+ "tv:93785": {
+  "imdb_id": "tt9184986",
+  "num": 14243,
+  "part": "dn2",
+  "title": "Barbarians",
+  "year": 2020
+ },
+ "tv:92209": {
+  "imdb_id": "tt7907922",
+  "num": 14244,
+  "part": "dn2",
+  "title": "Truth Seekers",
+  "year": 2020
+ },
+ "tv:99492": {
+  "imdb_id": "tt12923294",
+  "num": 14245,
+  "part": "dn2",
+  "title": "Search",
+  "year": 2020
+ },
+ "tv:60557": {
+  "imdb_id": "tt2288064",
+  "num": 14246,
+  "part": "dn2",
+  "title": "Witches of East End",
+  "year": 2013
+ },
+ "tv:113987": {
+  "imdb_id": "tt11471892",
+  "num": 14247,
+  "part": "dn2",
+  "title": "Landscapers",
+  "year": 2021
+ },
+ "tv:61009": {
+  "imdb_id": "tt3737080",
+  "num": 14248,
+  "part": "dn2",
+  "title": "Hotel King",
+  "year": 2014
+ },
+ "tv:135897": {
+  "imdb_id": "tt15026724",
+  "num": 14249,
+  "part": "dn2",
+  "title": "Our Beloved Summer",
+  "year": 2021
+ },
+ "tv:134071": {
+  "imdb_id": "tt15729630",
+  "num": 14250,
+  "part": "dn2",
+  "title": "Let Me Be Your Knight",
+  "year": 2021
+ },
+ "tv:136205": {
+  "imdb_id": "tt14484374",
+  "num": 14251,
+  "part": "dn2",
+  "title": "Surge",
+  "year": 2021
+ },
+ "tv:62644": {
+  "imdb_id": "tt4612922",
+  "num": 14252,
+  "part": "dn2",
+  "title": "The Producers",
+  "year": 2015
+ },
+ "tv:96958": {
+  "imdb_id": "tt11507218",
+  "num": 14253,
+  "part": "dn2",
+  "title": "Love the Way You Are",
+  "year": 2019
+ },
+ "tv:203701": {
+  "imdb_id": "tt21633224",
+  "num": 14254,
+  "part": "dn2",
+  "title": "Arcane: Bridging the Rift",
+  "year": 2022
+ },
+ "tv:201380": {
+  "imdb_id": "tt15466144",
+  "num": 14255,
+  "part": "dn2",
+  "title": "Uncoupled",
+  "year": 2022
+ },
+ "tv:133197": {
+  "imdb_id": "tt21230432",
+  "num": 14256,
+  "part": "dn2",
+  "title": "The Yakuza's Guide to Babysitting",
+  "year": 2022
+ },
+ "tv:158534": {
+  "imdb_id": "tt18332840",
+  "num": 14257,
+  "part": "dn2",
+  "title": "Gaming Wall St",
+  "year": 2022
+ },
+ "tv:98178": {
+  "imdb_id": "tt5165368",
+  "num": 14258,
+  "part": "dn2",
+  "title": "Amazing Stories",
+  "year": 2020
+ },
+ "tv:120155": {
+  "imdb_id": "tt15447890",
+  "num": 14259,
+  "part": "dn2",
+  "title": "The Greatest Demon Lord Is Reborn as a Typical Nobody",
+  "year": 2022
+ },
+ "tv:103445": {
+  "imdb_id": "tt12313914",
+  "num": 14260,
+  "part": "dn2",
+  "title": "Ju-On: Origins",
+  "year": 2020
+ },
+ "tv:129680": {
+  "imdb_id": "tt10937180",
+  "num": 14261,
+  "part": "dn2",
+  "title": "I Know What You Did Last Summer",
+  "year": 2021
+ },
+ "tv:68071": {
+  "imdb_id": "tt6738600",
+  "num": 14262,
+  "part": "dn2",
+  "title": "ALL OUT!!",
+  "year": 2016
+ },
+ "tv:59674": {
+  "imdb_id": "tt2391224",
+  "num": 14263,
+  "part": "dn2",
+  "title": "The Paradise",
+  "year": 2012
+ },
+ "tv:209694": {
+  "imdb_id": "tt22091800",
+  "num": 14264,
+  "part": "dn2",
+  "title": "Beloved Life",
+  "year": 2022
+ },
+ "tv:70637": {
+  "imdb_id": "tt6845846",
+  "num": 14265,
+  "part": "dn2",
+  "title": "Akashic Records of Bastard Magic Instructor",
+  "year": 2017
+ },
+ "tv:68982": {
+  "imdb_id": "tt6653336",
+  "num": 14266,
+  "part": "dn2",
+  "title": "Sophia",
+  "year": 2016
+ },
+ "tv:243763": {
+  "imdb_id": "tt31721651",
+  "num": 14267,
+  "part": "dn2",
+  "title": "Tarot",
+  "year": 2024
+ },
+ "tv:257782": {
+  "imdb_id": "tt31869080",
+  "num": 14268,
+  "part": "dn2",
+  "title": "The Glory",
+  "year": 2025
+ },
+ "tv:283300": {
+  "imdb_id": "tt36256053",
+  "num": 14269,
+  "part": "dn2",
+  "title": "Villains Everywhere",
+  "year": 2025
+ },
+ "tv:95484": {
+  "imdb_id": "tt11378124",
+  "num": 14270,
+  "part": "dn2",
+  "title": "Stove League",
+  "year": 2019
+ },
+ "tv:79611": {
+  "imdb_id": "tt6394324",
+  "num": 14271,
+  "part": "dn2",
+  "title": "Charmed",
+  "year": 2018
+ },
+ "tv:62933": {
+  "imdb_id": "tt4803738",
+  "num": 14272,
+  "part": "dn2",
+  "title": "Hello Monster",
+  "year": 2015
+ },
+ "tv:61613": {
+  "imdb_id": "tt4135572",
+  "num": 14273,
+  "part": "dn2",
+  "title": "Modern Farmer",
+  "year": 2014
+ },
+ "tv:103319": {
+  "imdb_id": "tt12305588",
+  "num": 14274,
+  "part": "dn2",
+  "title": "The Day I Became a God",
+  "year": 2020
+ },
+ "tv:38861": {
+  "imdb_id": "tt1935066",
+  "num": 14275,
+  "part": "dn2",
+  "title": "49 Days",
+  "year": 2011
+ },
+ "tv:202850": {
+  "imdb_id": "tt20102280",
+  "num": 14276,
+  "part": "dn2",
+  "title": "Dil Awaiz",
+  "year": 2022
+ },
+ "tv:316675": {
+  "imdb_id": "tt40727461",
+  "num": 14277,
+  "part": "dn2",
+  "title": "The Double Game",
+  "year": 2026
+ },
+ "tv:305997": {
+  "imdb_id": "tt36852013",
+  "num": 14278,
+  "part": "dn2",
+  "title": "Harlan Coben's Final Twist",
+  "year": 2026
+ },
+ "tv:61544": {
+  "imdb_id": "tt3726584",
+  "num": 14279,
+  "part": "dn2",
+  "title": "Bride of the Century",
+  "year": 2014
+ },
+ "tv:65725": {
+  "imdb_id": "tt5333564",
+  "num": 14280,
+  "part": "dn2",
+  "title": "Vampire Detective",
+  "year": 2016
+ },
+ "tv:79566": {
+  "imdb_id": "tt8269322",
+  "num": 14281,
+  "part": "dn2",
+  "title": "Sketch",
+  "year": 2018
+ },
+ "tv:81494": {
+  "imdb_id": "tt9077184",
+  "num": 14282,
+  "part": "dn2",
+  "title": "Accidentally in Love",
+  "year": 2018
+ },
+ "tv:326247": {
+  "imdb_id": "tt43613803",
+  "num": 14283,
+  "part": "dn2",
+  "title": "Fool Night",
+  "year": 2026
  }
 }

@@ -2,20 +2,20 @@
  "code": "DN",
  "counts": {
   "by_resolution": {
-   "1080p": 1363,
+   "1080p": 1386,
    "360p": 1,
-   "480p": 8814,
-   "540p": 587,
-   "720p": 13158,
+   "480p": 9169,
+   "540p": 711,
+   "720p": 13905,
    "576p": 1
   },
   "by_version_family": {
-   "Dubbed": 3717,
-   "Subtitled": 18118,
+   "Dubbed": 3751,
+   "Subtitled": 18996,
    "unknown": 119,
    "NoSub": 7,
-   "HardSub": 608,
-   "SoftSub": 1355
+   "HardSub": 658,
+   "SoftSub": 1642
   },
   "by_year": {
    "1929": 1,
@@ -55,22 +55,22 @@
    "2008": 20,
    "2009": 36,
    "2010": 430,
-   "2011": 218,
-   "2012": 101,
-   "2013": 154,
-   "2014": 359,
-   "2015": 1054,
-   "2016": 73,
-   "2017": 258,
-   "2018": 308,
-   "2019": 304,
-   "2020": 341,
-   "2021": 982,
-   "2022": 443,
+   "2011": 258,
+   "2012": 133,
+   "2013": 200,
+   "2014": 463,
+   "2015": 1082,
+   "2016": 138,
+   "2017": 270,
+   "2018": 478,
+   "2019": 384,
+   "2020": 423,
+   "2021": 1072,
+   "2022": 623,
    "2023": 895,
-   "2024": 635,
-   "2025": 727,
-   "2026": 234,
+   "2024": 649,
+   "2025": 811,
+   "2026": 299,
    "1994": 4,
    "1998": 13,
    "1971": 6,
@@ -91,11 +91,11 @@
   },
   "ext_overlap": 1,
   "films": 909,
-  "play_rows": 24815,
-  "series": 522,
+  "play_rows": 26064,
+  "series": 563,
   "skipped_no_links": 11,
   "total": 788,
-  "trailer_keys": 847,
+  "trailer_keys": 849,
   "trailers_dropped": 71,
   "variety_patched": 401,
   "variety_play_created": 42,
@@ -24167,6 +24167,155 @@
   "repairs": [
    "search row tt41279522: part 3 flag 1 -> part 6 flag 0"
   ],
+  "decisions": [
+   "per-season episode conversion for absolute DN numbering",
+   "version unknown -> NoSub",
+   "H3 title = tmdb_name",
+   "series completions gap = per-episode (res, family) not served live; URL already live wins over label family",
+   "no archive-counts.json regen here (coordinator decides at assemble time)"
+  ]
+ },
+ "twice_daily_2026-11-26_pm_dn_series": {
+  "live_base_head": "73ee9d8d185b72ad3408d6e0abcf5f35598ec52d",
+  "start_num": 14243,
+  "end_num": 14283,
+  "new_titles_merged": [
+   "Barbarians",
+   "Truth Seekers",
+   "Search",
+   "Witches of East End",
+   "Landscapers",
+   "Hotel King",
+   "Our Beloved Summer",
+   "Let Me Be Your Knight",
+   "Surge",
+   "The Producers",
+   "Love the Way You Are",
+   "Arcane: Bridging the Rift",
+   "Uncoupled",
+   "The Yakuza's Guide to Babysitting",
+   "Gaming Wall St",
+   "Amazing Stories",
+   "The Greatest Demon Lord Is Reborn as a Typical Nobody",
+   "Ju-On: Origins",
+   "I Know What You Did Last Summer",
+   "ALL OUT!!",
+   "The Paradise",
+   "Beloved Life",
+   "Akashic Records of Bastard Magic Instructor",
+   "Sophia",
+   "Tarot",
+   "The Glory",
+   "Villains Everywhere",
+   "Stove League",
+   "Charmed",
+   "Hello Monster",
+   "Modern Farmer",
+   "The Day I Became a God",
+   "49 Days",
+   "Dil Awaiz",
+   "The Double Game",
+   "Harlan Coben's Final Twist",
+   "Bride of the Century",
+   "Vampire Detective",
+   "Sketch",
+   "Accidentally in Love",
+   "Fool Night"
+  ],
+  "new_links": 1092,
+  "new_trailers": 2,
+  "duplicate_urls_dropped": 0,
+  "completions": [
+   {
+    "dn_id": 19936,
+    "title": "Full Circle",
+    "record": "#10792 16",
+    "links_added": 6
+   },
+   {
+    "dn_id": 22757,
+    "title": "Solo Leveling",
+    "record": "#9882 10",
+    "links_added": 29
+   },
+   {
+    "dn_id": 22768,
+    "title": "Inuyasha",
+    "record": "#13131 rz",
+    "links_added": 9
+   },
+   {
+    "dn_id": 25351,
+    "title": "Bad Monkey",
+    "record": "#9592 8",
+    "links_added": 1
+   },
+   {
+    "dn_id": 27833,
+    "title": "Hyper Knife",
+    "record": "#10481 15",
+    "links_added": 4
+   },
+   {
+    "dn_id": 27839,
+    "title": "Esref Ruya",
+    "record": "#9628 8",
+    "links_added": 108
+   }
+  ],
+  "completions_skipped_no_gap": [
+   {
+    "dn_id": 9516,
+    "title": "Youre Beautiful",
+    "record": "#13480 rz"
+   },
+   {
+    "dn_id": 9551,
+    "title": "Medici",
+    "record": "#9556 7"
+   },
+   {
+    "dn_id": 13736,
+    "title": "Hellsing Ultimate",
+    "record": "#13285 rz"
+   },
+   {
+    "dn_id": 16970,
+    "title": "Neon Genesis Evangelion",
+    "record": "#13017 rz"
+   },
+   {
+    "dn_id": 25339,
+    "title": "The Angel Next Door Spoils Me Rotten",
+    "record": "#11068 16"
+   },
+   {
+    "dn_id": 25342,
+    "title": "Mega Disasters",
+    "record": "#13295 rz"
+   },
+   {
+    "dn_id": 27837,
+    "title": "Good American Family",
+    "record": "#10638 15"
+   },
+   {
+    "dn_id": 31570,
+    "title": "Natures Great Events",
+    "record": "#13461 rz"
+   },
+   {
+    "dn_id": 31575,
+    "title": "Mrs Playmen",
+    "record": "#9713 9"
+   },
+   {
+    "dn_id": 33603,
+    "title": "Elle",
+    "record": "#9973 10"
+   }
+  ],
+  "repairs": [],
   "decisions": [
    "per-season episode conversion for absolute DN numbering",
    "version unknown -> NoSub",
