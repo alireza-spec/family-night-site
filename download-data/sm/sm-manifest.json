@@ -211,9 +211,9 @@
  ],
  "counts": {
   "by_resolution": {
-   "1080p": 196,
-   "480p": 801,
-   "720p": 1428
+   "1080p": 268,
+   "480p": 919,
+   "720p": 1471
   },
   "by_type": {
    "movie": 13,
@@ -221,8 +221,8 @@
   },
   "by_version": {
    "Dubbed": 32,
-   "HardSub": 2281,
-   "SoftSub": 132
+   "HardSub": 2512,
+   "SoftSub": 134
   },
   "by_year": {
    "1991": 1,
@@ -237,16 +237,16 @@
    "2025": 7,
    "2026": 34,
    "2019": 1,
-   "2020": 1,
+   "2020": 2,
    "2017": 1,
-   "2021": 1,
+   "2021": 2,
    "2009": 1
   },
-  "new_links": 2425,
-  "new_play_rows_expanded": 2513,
+  "new_links": 2658,
+  "new_play_rows_expanded": 2746,
   "new_titles": 66,
-  "total_links_added": 2425,
-  "total_titles": 65,
+  "total_links_added": 2658,
+  "total_titles": 71,
   "variety_links_added": 81,
   "variety_links_parsed": 86,
   "variety_play_rows_expanded": 78,
@@ -969,6 +969,72 @@
    "nlinks": 48,
    "play_rows": 48,
    "note": "TMDB-ONLY: TMDB external_ids null (verified); OMDb has no entry by title. 1 season, 24 eps x 480+720 SoftSub mkv (SigmaFa)."
+  },
+  {
+   "num": 14237,
+   "title": "Hurmat",
+   "year": 2026,
+   "type": "tv",
+   "imdb": null,
+   "tmdb": 337670,
+   "nlinks": 32,
+   "play_rows": 32,
+   "note": "TMDB-ONLY (coordinator decision 2026-11-26-am): TMDB external_ids null (verified); OMDb by title returns tt48919149 (2026) but TMDB /find does not map it to 337670 — IMDb link unproven, NOT attached (candidate to confirm later). 1 season, 16 eps x 480+1080 mp4."
+  },
+  {
+   "num": 14238,
+   "title": "Bano",
+   "year": 2026,
+   "type": "tv",
+   "imdb": null,
+   "tmdb": 337185,
+   "nlinks": 81,
+   "play_rows": 81,
+   "note": "TMDB-ONLY (coordinator decision 2026-11-26-am): TMDB external_ids null (verified); OMDb by title returns tt48919207 (2026) but TMDB /find does not map it to 337185 — IMDb link unproven, NOT attached (candidate to confirm later). 1 season, 42 eps 480 + 40 eps 1080 mp4 (1 duplicate URL dropped)."
+  },
+  {
+   "num": 14239,
+   "title": "Nine to Six",
+   "year": 2026,
+   "type": "tv",
+   "imdb": null,
+   "tmdb": 310209,
+   "nlinks": 2,
+   "play_rows": 2,
+   "note": "TMDB-ONLY (coordinator decision 2026-11-26-am): TMDB external_ids null (verified); OMDb by title returns tt41743360 (2026) but TMDB /find does not map it to 310209 — IMDb link unproven, NOT attached (candidate to confirm later). Only E01 so far (480+720 SoftSub mkv, ValaMovie) + 1 trailer."
+  },
+  {
+   "num": 14240,
+   "title": "Sweet Sweet",
+   "year": 2021,
+   "type": "tv",
+   "imdb": null,
+   "tmdb": 133773,
+   "nlinks": 44,
+   "play_rows": 44,
+   "note": "TMDB-ONLY (coordinator decision 2026-11-26-am): TMDB external_ids empty (verified); OMDb by title returns tt15421146 (2021) but TMDB /find does not map it to 133773 — IMDb link unproven, NOT attached (candidate to confirm later). 1 season, 22 eps x 480+720 mkv."
+  },
+  {
+   "num": 14241,
+   "title": "My Fake Wife",
+   "year": 2020,
+   "type": "tv",
+   "imdb": null,
+   "tmdb": 207574,
+   "nlinks": 40,
+   "play_rows": 40,
+   "note": "TMDB-ONLY (coordinator decision 2026-11-26-am): TMDB external_ids null (verified); OMDb by title returns tt17634770 (2020) but TMDB /find does not map it to 207574 — IMDb link unproven, NOT attached (candidate to confirm later). 1 season, 20 eps x 480+720 mkv."
+  },
+  {
+   "num": 14242,
+   "title": "Mohabbat",
+   "year": 2026,
+   "type": "tv",
+   "imdb": null,
+   "tmdb": 336715,
+   "nlinks": 34,
+   "play_rows": 34,
+   "note": "TMDB-ONLY (coordinator decision 2026-11-26-am): TMDB 336715 'Mohabbat' (original محبت, 2026-09-28); Simba title 'Muhabbat' is the alternate romanization and Simba's own file paths use 'Mohabbat'. Archive title is the TMDB title 'Mohabbat'. IMDb candidate tt46669848 (TMDB external_ids + OMDb agree) NOT attached per coordinator decision — candidate to confirm later. 1 season, 17 eps x 480+1080 mp4."
   }
  ],
  "nosub_only_new": [],
@@ -1320,6 +1386,10 @@
   {
    "file": "[@AnimeGateOfficial] Sekai Saikyou no Majo Hajimemashita - (2).0.mkv",
    "title": "The Worlds Strongest Witch"
+  },
+  {
+   "file": "Bano E04 480.mp4",
+   "title": "Bano"
   }
  ],
  "url_dupes_in_dn_records": [],
@@ -1669,6 +1739,48 @@
      "tmdb": 207574
     }
    ]
+  },
+  {
+   "batch": "2026-11-26-am-simba2",
+   "live_base_head": "741ba328a408da3247ed1b48f0bc82c5354baf2a",
+   "start_num": 14237,
+   "new_titles": 6,
+   "new_links": 233,
+   "new_play_rows_expanded": 233,
+   "merged_pending": [
+    {
+     "simba_id": 35457,
+     "title": "Hurmat",
+     "tmdb": 337670
+    },
+    {
+     "simba_id": 35455,
+     "title": "Bano",
+     "tmdb": 337185
+    },
+    {
+     "simba_id": 36170,
+     "title": "Nine to Six",
+     "tmdb": 310209
+    },
+    {
+     "simba_id": 36101,
+     "title": "Sweet Sweet",
+     "tmdb": 133773
+    },
+    {
+     "simba_id": 36098,
+     "title": "My Fake Wife",
+     "tmdb": 207574
+    },
+    {
+     "simba_id": 35286,
+     "title": "Mohabbat",
+     "tmdb": 336715
+    }
+   ],
+   "queued": [],
+   "pending_coordinator_decision": []
   }
  ]
 }
