@@ -10724,6 +10724,23 @@ function playChannel(ch, el) {
   let routeIdx = 0, netRetries = 0, playing = false, triedRoutes = 0;
   const fail = msg => {
     if (token !== tvPlayToken) return;
+    /* FN-TV-EVENTS v2.9 (T18, 2026-11-26): an event whose HLS died falls
+       back to the official Anten embed instead of the dead-end failure.
+       The worker-resolved HLS URL is unplayable from the phone: Anten's
+       playlistForGuests JWT is bound to the minter's IP (worker egress),
+       so the phone's manifest fetch 406s -- proven live 2026-11-26
+       (same-connection 200, separate-connection 406 x12, worker /proxy
+       406). The embed runs on anten.ir in the phone's browser with the
+       phone's own stable Iran IP, so its resolve works. One attempt per
+       tap (__t18EmbedTried, reset in playEvent); a second failure --
+       e.g. the retry button, which replays playChannel directly --
+       shows the honest failure. Events/channels without an embed are
+       unchanged. The handle is window.fnTvEvEmbed (exposed by tv-ev-js;
+       playEventEmbed itself is IIFE-scoped and invisible here). */
+    if (ch && ch.__tvEv && ch.__ev && !ch.__ev.__t18EmbedTried && typeof window.fnTvEvEmbed === 'function') {
+      ch.__ev.__t18EmbedTried = true;
+      try { if (window.fnTvEvEmbed(ch.__ev)) return; } catch (e9) {}
+    }
     clearTimeout(tvPlayTimer);
     tvStallStop();
     $('#tv-status').textContent = '';
@@ -18664,7 +18681,8 @@ sxSearchPage = async function (seq, append) {
     if (!out.length && ev.src) out.push({ label: '', ev: ev });
     return out;
   }
-  /* FN-TV-EVENTS v2.8 (T17, 2026-11-26) -- STREAM-ID EVERYWHERE +
+  /* FN-TV-EVENTS v2.9 (T18, 2026-11-26) -- HLS-FAILURE -> EMBED FALLBACK +
+     (v2.8 T17: STREAM-ID EVERYWHERE +
      program-id fallback REMOVED (phone test 09:46: /iframe/188512
      frames Anten's empty shell; urlaccess 403s on the program id,
      200s on the stream id; worker id param now carries the stream
@@ -18850,7 +18868,7 @@ sxSearchPage = async function (seq, append) {
         var pageUrl = evPageUrl(ev);
         if (pageUrl) showEvExt(pageUrl);
         try {
-          playChannel({ name: ev.title, url: h, mainTitle: s.label, servers: [], __tvEv: true }, null);
+          playChannel({ name: ev.title, url: h, mainTitle: s.label, servers: [], __tvEv: true, __ev: ev }, null);
         } catch (e2) { showEventFailed(ev, list); return; }
         syncEvTools();
         return;
@@ -18925,6 +18943,10 @@ sxSearchPage = async function (seq, append) {
     if (pageUrl) showEvExt(pageUrl);
     return showEventEmbed(ev, list, first);
   }
+  /* T18 (v2.9): expose the embed fallback to playChannel's fail() in the
+     main script -- playEventEmbed lives inside this IIFE, so the outer
+     player cannot call it by name. */
+  window.fnTvEvEmbed = playEventEmbed;
 
   /* FN-TV-EVENTS v2.6 (T15) -- EVENT TOOLBAR: the same four top icons
      as the TV channel player (copy / share / browser / fullscreen),
@@ -19023,6 +19045,9 @@ sxSearchPage = async function (seq, append) {
   async function playEvent(ev) {
     var errEl = document.getElementById('tv-err');
     var stEl = document.getElementById('tv-status');
+    /* T18 (v2.9): each fresh tap gets one embed-fallback attempt if HLS
+       dies in playChannel (flag reset here; set in fail()). */
+    try { ev.__t18EmbedTried = false; } catch (e0) {}
     try {
       if (stEl) stEl.textContent = 'در حال اتصال…';
       /* Worker resolve first per server (server-side walk: live page ->
@@ -19076,7 +19101,7 @@ sxSearchPage = async function (seq, append) {
       var pageUrl = evPageUrl(ev);
       if (pageUrl) showEvExt(pageUrl);
       hideEventEmbed();
-      try { playChannel({ name: ev.title, url: ok[0].hls, mainTitle: ok[0].label, servers: ok.slice(1).map(function (r) { return { url: r.hls, title: r.label }; }), __tvEv: true }, null); } catch (e) {
+      try { playChannel({ name: ev.title, url: ok[0].hls, mainTitle: ok[0].label, servers: ok.slice(1).map(function (r) { return { url: r.hls, title: r.label }; }), __tvEv: true, __ev: ev }, null); } catch (e) {
         if (errEl) errEl.textContent = 'پخش این برنامه در حال حاضر ممکن نشد.';
         try { showToast('پخش این برنامه در حال حاضر ممکن نشد.'); } catch (e2) {}
       }
