@@ -1291,6 +1291,11 @@ body.fn-theater-on .bottomnav,body.fn-theater-on header.top{display:none!importa
 #view-search .chip{padding:.26rem .8rem;min-height:2.05rem;font-size:.8rem}
 #view-search .app-tabs .chip{padding:.42rem 1.05rem;min-height:2.5rem;font-size:.88rem}
 #view-search .chips{gap:.4rem}
+/* FN-SEARCH-FILTER v1: genre + mood rows are ONE horizontal row each,
+   swipeable by hand — same pattern as #arch-genres / .stabs */
+#view-search #genre-chips,#view-search #mood-chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;padding-bottom:.25rem}
+#view-search #genre-chips::-webkit-scrollbar,#view-search #mood-chips::-webkit-scrollbar{display:none}
+#view-search #genre-chips .chip,#view-search #mood-chips .chip{flex:none}
 #view-search .sec{margin:1.25rem 0}
 #view-search .sec h2,#view-search .sechead h2{font-size:1.05rem}
 #view-search .sechead{margin-bottom:.6rem}
@@ -1670,8 +1675,8 @@ html.tg .bottomnav{display:flex}
       <div class="pagehead"><h1>جستجو</h1></div>
       <div class="stabs app-tabs" id="search-type-tabs" role="tablist" aria-label="نوع جستجو">
         <button class="chip on" data-stype="all" type="button">همه</button>
-        <button class="chip" data-stnav="movies" type="button">فیلم‌ها</button>
-        <button class="chip" data-stnav="series" type="button">سریال‌ها</button>
+        <button class="chip" data-stype="movie" type="button">فیلم‌ها</button>
+        <button class="chip" data-stype="tv" type="button">سریال‌ها</button>
         <button class="chip" data-stype="person" type="button">افراد</button>
         <button class="chip" data-stype="company" type="button">کمپانی‌ها</button>
         <button class="chip" data-stype="collection" type="button">کالکشن‌ها</button>
@@ -1699,6 +1704,13 @@ html.tg .bottomnav{display:flex}
           <button class="chip" data-mood="5" type="button">ماجراجویی و فانتزی</button>
           <button class="chip" data-mood="6" type="button">علمی‌تخیلی</button>
           <button class="chip" data-mood="7" type="button">خانوادگی</button>
+          <button class="chip" data-mood="8" type="button">جنایی و معمایی</button>
+          <button class="chip" data-mood="9" type="button">جنگی و تاریخی</button>
+          <button class="chip" data-mood="10" type="button">وسترن</button>
+          <button class="chip" data-mood="11" type="button">کمدی رمانتیک</button>
+          <button class="chip" data-mood="12" type="button">رازآلود</button>
+          <button class="chip" data-mood="13" type="button">ترسناک کمدی</button>
+          <button class="chip" data-mood="14" type="button">ماجراجویی</button>
         </div></div>
         <div class="sec"><div class="sechead"><h2>کشورها</h2><button data-browse-countries type="button">مشاهده همه</button></div><div class="ctryrow" id="sb-countries"><span style="color:var(--pearl);font-size:.88rem">در حال بارگذاری…</span></div></div>
         <div class="sec"><div class="sechead"><h2>ستارگان سینما (مرد)</h2><button data-browse-people="male" type="button">مشاهده همه</button></div><div class="cast" id="sb-male"><span style="color:var(--pearl);font-size:.88rem">در حال بارگذاری…</span></div></div>
@@ -4447,7 +4459,7 @@ $('#headsearch').addEventListener('submit', e => { e.preventDefault(); go('searc
 let searchDeb = null;
 /* v8.7 FN-LOCAL-SEARCH: 200ms — local rows render instantly per keystroke, TMDB merges in the background */
 $('#search-input').addEventListener('input', e => { clearTimeout(searchDeb); searchDeb = setTimeout(() => doSearch(e.target.value), 200); });
-$('#genre-chips').innerHTML = [28, 35, 27, 16, 878, 18, 10749, 53, 9648, 99].map(id => '<button class="chip" data-gchip="' + id + '">' + GENRES_FA[id] + '</button>').join('');
+$('#genre-chips').innerHTML = [28, 35, 27, 16, 878, 18, 10749, 53, 9648, 99, 12, 80, 10751, 14, 36, 10402, 10770, 10752, 37].map(id => '<button class="chip" data-gchip="' + id + '">' + GENRES_FA[id] + '</button>').join('');
 $$('#genre-chips [data-gchip]').forEach(b => b.onclick = () => openArchive({ title: 'ژانر: ' + GENRES_FA[b.dataset.gchip], type: 'movie', genre: b.dataset.gchip }));
 
 /* ================= FN-AVAIL-FILTER v1 =================
@@ -13912,10 +13924,8 @@ $$('#search-type-tabs [data-stype]').forEach(b => b.onclick = () => {
   const q = $('#search-input').value.trim();
   if (q) doSearch(q);
 });
-/* the app-style chips on top of Search: «فیلم‌ها» and «سریال‌ها»
-   open the full movies / series pages (filters + grid), exactly
-   like the FN app — they are navigation, not search-type filters */
-$$('#search-type-tabs [data-stnav]').forEach(b => b.onclick = () => go(b.dataset.stnav));
+/* «فیلم‌ها» / «سریال‌ها» filter in place via the data-stype handler
+   above (searchType 'movie' / 'tv') — no navigation, like the other chips */
 
 /* ---------- multi-type search ---------- */
 let sxSearchState = null;
@@ -14673,7 +14683,14 @@ const FX_MOODS = [
   { fa: 'درام و احساسی', gM: '18', gT: '18' },
   { fa: 'ماجراجویی و فانتزی', gM: '12|14', gT: '10765|10759' },
   { fa: 'علمی‌تخیلی', gM: '878', gT: '10765' },
-  { fa: 'خانوادگی', gM: '10751', gT: '10751|10762' }
+  { fa: 'خانوادگی', gM: '10751', gT: '10751|10762' },
+  { fa: 'جنایی و معمایی', gM: '80,9648', gT: '80,9648' },
+  { fa: 'جنگی و تاریخی', gM: '10752,36', gT: '10768' },
+  { fa: 'وسترن', gM: '37', gT: '37' },
+  { fa: 'کمدی رمانتیک', gM: '35,10749', gT: '35' },
+  { fa: 'رازآلود', gM: '9648', gT: '9648' },
+  { fa: 'ترسناک کمدی', gM: '27,35', gT: '35' },
+  { fa: 'ماجراجویی', gM: '12', gT: '10759' }
 ];
 $$('#mood-chips [data-mood]').forEach(b => b.onclick = () => openMood(+b.dataset.mood));
 function openMood(i) {
