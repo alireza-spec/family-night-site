@@ -10960,22 +10960,16 @@ function playChannel(ch, el) {
   let routeIdx = 0, netRetries = 0, playing = false, triedRoutes = 0;
   const fail = msg => {
     if (token !== tvPlayToken) return;
-    /* FN-TV-EVENTS v2.9 (T18, 2026-11-26): an event whose HLS died falls
-       back to the official Anten embed instead of the dead-end failure.
-       The worker-resolved HLS URL is unplayable from the phone: Anten's
-       playlistForGuests JWT is bound to the minter's IP (worker egress),
-       so the phone's manifest fetch 406s -- proven live 2026-11-26
-       (same-connection 200, separate-connection 406 x12, worker /proxy
-       406). The embed runs on anten.ir in the phone's browser with the
-       phone's own stable Iran IP, so its resolve works. One attempt per
-       tap (__t18EmbedTried, reset in playEvent); a second failure --
-       e.g. the retry button, which replays playChannel directly --
-       shows the honest failure. Events/channels without an embed are
-       unchanged. The handle is window.fnTvEvEmbed (exposed by tv-ev-js;
-       playEventEmbed itself is IIFE-scoped and invisible here). */
-    if (ch && ch.__tvEv && ch.__ev && !ch.__ev.__t18EmbedTried && typeof window.fnTvEvEmbed === 'function') {
-      ch.__ev.__t18EmbedTried = true;
-      try { if (window.fnTvEvEmbed(ch.__ev)) return; } catch (e9) {}
+    /* FN-TV-EVENTS v3.0 (T20, 2026-11-26): NO iframe, NO embed for
+       events (user order 2026-11-26 23:09) -- the T18 embed fallback
+       is REMOVED; it only ever showed black on the phone (T19). An
+       event whose HLS dies in the player hands back to the event
+       layer (window.fnTvEvFailed, exposed by tv-ev-js): it clears
+       the dead video and shows the honest failure with the server
+       list + the browser escape hatch. Channels are unchanged. */
+    if (ch && ch.__tvEv && ch.__ev && typeof window.fnTvEvFailed === 'function') {
+      try { window.fnTvEvFailed(ch.__ev); } catch (e9) {}
+      return;
     }
     clearTimeout(tvPlayTimer);
     tvStallStop();
@@ -18757,13 +18751,16 @@ sxSearchPage = async function (seq, append) {
        14 s arm timer + retries before failing. Null = honest error. */
     return null;
   }
-  /* FN-TV-EVENTS v2.4 -- live playback as a proper embed in OUR OWN
-     player (2026-11-23). The v2.3 source-page iframe is REMOVED: the
-     user saw a browser check, then a reCAPTCHA, then the source site
-     itself with a BLACK video area -- no stream ever arrived. The
-     stream now comes as a direct HLS URL into playChannel (the same
-     path TV channels use): worker resolve first, direct browser
-     resolve as fallback. */
+  /* FN-TV-EVENTS v3.0 (T20, 2026-11-26) -- live playback as a direct
+     HLS URL into playChannel (the same path TV channels use): worker
+     resolve first, direct browser resolve as fallback. The v2.3
+     source-page iframe is REMOVED (2026-11-23) and the v2.6-v2.9
+     official-embed fallback is REMOVED too (T20, user order
+     2026-11-26 23:09 -- NO iframe, NO embed for events): the embed
+     only ever showed black on the phone (T19), and no direct-stream
+     route exists for either source today (Anten: IP-bound JWT, 406;
+     Aparat: getHls2 geo-blocked for the worker, no CORS for the
+     phone). A failed event fails honestly with its server list. */
   var TV_RESOLVE = 'https://iran-tv-proxy-v3.alirezadoe8.workers.dev/resolve-event';
   /* FN-TV-EVENTS v2.4.1 — every resolve fetch is bounded: a tap used to
      sit on «در حال اتصال…» forever when a host stalled (no timeout on
@@ -18839,9 +18836,10 @@ sxSearchPage = async function (seq, append) {
     if (cb) cb.style.display = 'none';
   }
   function tvCopyUrl() {
-    /* T15: while an event is active, copy the currently-playing source
-       URL (embed URL, else the resolved HLS URL) -- never the event
-       page URL and never a stale URL from an earlier play. */
+    /* T15/T20: while an event is active, copy the currently-playing
+       source URL (the resolved HLS URL while it plays; the event page
+       URL in the failed state, where there is no stream URL) -- never
+       a stale URL from an earlier play. */
     if (evActive) return evEffectiveUrl();
     if (evExtUrl) return evExtUrl;
     try { if (typeof tvPlayingRawUrl !== 'undefined' && tvPlayingRawUrl) return tvPlayingRawUrl; } catch (e) {}
@@ -18890,7 +18888,6 @@ sxSearchPage = async function (seq, append) {
   /* End event playback state (no frame any more -- v2.4 removed the
      iframe): restore the toolbar buttons and clear the status line. */
   function endEvPlay() {
-    hideEventEmbed();
     resetEvExt(); hideTvCopy();
     evActive = false;
     evCurrentEv = null;
@@ -18918,131 +18915,64 @@ sxSearchPage = async function (seq, append) {
     if (list && list.length) {
       list.forEach(function (s) {
         if (!s) return;
-        var sev = { src: s.src || ev.src, code: s.code, anten_id: s.anten_id, embed_stream_id: s.embed_stream_id || null, get_hls_url: s.get_hls_url, urlaccess_hq: s.urlaccess_hq, urlaccess_lq: s.urlaccess_lq, hls: s.hls || null, embed: s.embed || null };
+        var sev = { src: s.src || ev.src, code: s.code, anten_id: s.anten_id, embed_stream_id: s.embed_stream_id || null, get_hls_url: s.get_hls_url, urlaccess_hq: s.urlaccess_hq, urlaccess_lq: s.urlaccess_lq, hls: s.hls || null };
         if (sev.hls || sev.get_hls_url || sev.urlaccess_hq || sev.urlaccess_lq) out.push({ label: s.label || '', ev: sev });
       });
       if (out.length) return out;
     }
     if (ev.get_hls_url) out.push({ label: 'سرور آپارات اسپورت', ev: { src: 'f360', code: ev.code, get_hls_url: ev.get_hls_url, hls: null } });
     if (ev.hls) out.push({ label: 'سرور فوتبال ۳۶۰', ev: { src: 'f360', code: ev.code, hls: ev.hls } });
-    if (ev.urlaccess_hq || ev.urlaccess_lq) out.push({ label: 'سرور آنتن', ev: { src: 'anten', anten_id: ev.anten_id, embed_stream_id: ev.embed_stream_id || null, urlaccess_hq: ev.urlaccess_hq, urlaccess_lq: ev.urlaccess_lq, hls: null, embed: ev.embed || null } }); /* T17: legacy path must carry the stream id + embed too, or the worker gets the program id and the embed falls back to it. */
+    if (ev.urlaccess_hq || ev.urlaccess_lq) out.push({ label: 'سرور آنتن', ev: { src: 'anten', anten_id: ev.anten_id, embed_stream_id: ev.embed_stream_id || null, urlaccess_hq: ev.urlaccess_hq, urlaccess_lq: ev.urlaccess_lq, hls: null } }); /* T17: legacy path must carry the stream id, or the worker gets the program id. */
     if (!out.length && ev.src) out.push({ label: '', ev: ev });
     return out;
   }
-  /* FN-TV-EVENTS v2.9 (T18, 2026-11-26) -- HLS-FAILURE -> EMBED FALLBACK +
-     (v2.8 T17: STREAM-ID EVERYWHERE +
-     program-id fallback REMOVED (phone test 09:46: /iframe/188512
-     frames Anten's empty shell; urlaccess 403s on the program id,
-     200s on the stream id; worker id param now carries the stream
-     id). A missing stream id fails honestly, never frames a site. */
-  /* FN-TV-EVENTS v2.7 (T16, 2026-11-25) -- OFFICIAL-EMBED fallback +
-     stream-id fix (T15's v2.6 shipped the program id as pID; T16 uses
-     the baked streamPublisherId). Server list on failure below. */
-  /* FN-TV-EVENTS v2.6 (T15, 2026-11-25) -- OFFICIAL-EMBED fallback +
-     server list on failure.
-     When every HLS server fails (worker 403 geo gate + phone 200 with
-     no CORS headers), the event can still play inside OUR OWN player
-     through the source's official video-only embed player. Verified
-     2026-11-25: Anten's https://www.anten.ir/iframe/[pID] returns
-     HTTP 200, 59,451 B, layout variant "nothing" (16:9 player box, no
-     header/footer/nav, no site chrome), no X-Frame-Options header --
-     a clean player, not the full site. T16 (2026-11-25): pID is the
-     streamPublisherId, NOT the program id -- the phone test proved it:
-     /iframe/187914 (Denver-Dallas, program id) is a black player with
-     a dead play button, with or without VPN, and the direct embed link
-     fails the same way. The program page SSR carries streams[0].id
-     (187913 -> 215375, 187914 -> 215376, proven live 6/6 programs)
-     with urlaccess URLs using the stream id, and the iframe page calls
-     getStreamPublisher({streamPublisherId: pID}). The bake resolves
-     the stream id per program (embed_stream_id) and the embed URL uses
-     it when known. T17 (2026-11-26): the program id is NOT a fallback
-     any more -- /iframe/<program id> frames Anten's empty player shell
-     (phone test 09:46, anten:188512) and urlaccess with the program id
-     403s while the stream id 200s with a real m3u8 (same VM egress),
-     so a missing stream id now means honest failure, never a framed
-     site. The worker gets the stream id as its id param (no deploy
-     needed). Aparat
-     Sport has NO embed: live streams carry no
-     videohash (the Aparat video API 404s on the stream_id) and
-     aparatsport.com is fully geo-blocked from the VM, so no embed URL
-     can be verified there. Football360/ARVAN has no per-event embed
-     id either (config_url / player_url are null in the feed, and ARVAN
-     is OffStream on these matches). Those servers stay HLS-only.
-     The allowlist regex below is the ONLY way an iframe src is ever
-     set: a full source-page URL can never reach it. Embed is a
-     fallback ONLY -- it is never preferred over a working HLS stream.
-     SERVER LIST ON FAILURE (user case 2026-11-25 03:59): tapping the
-     live NBA event «اورلاندو مجیک – دیترویت پیستونز» (anten:187913,
-     ONE server «سرور آنتن») showed the loud failure and NO server
-     list at all -- because the resolved HLS list was empty, no button
-     ever rendered. From v2.6, when all HLS fails the player STILL
-     renders the server list from the event's servers[] (source names
-     visible, even for a single server) and every button retries its
-     own server (resolve again, or its embed); the failure text is
-     never shown bare with no list. */
-  var TV_EMBED_ALLOW = /^https:\/\/www\.anten\.ir\/iframe\/\d+$/;
-  function evEmbedUrl(sev) {
-    /* Candidate order (T17): the stream-id derivation first, then a
-       baked embed whose id is NOT the program id. There is NO
-       program-id candidate any more (T16's last resort is removed):
-       /iframe/<program id> can never play -- getStreamPublisher finds
-       no stream for a program id, and the iframe only frames Anten's
-       empty player shell (phone test 2026-11-26 09:46). A missing
-       stream id returns null here, and the player fails honestly.
-       Every candidate must pass the allowlist, and a non-numeric id
-       derives nothing usable. No URL that fails the regex can ever
-       become an iframe src. */
-    var cands = [];
-    if (sev && sev.embed_stream_id && /^\d+$/.test(String(sev.embed_stream_id))) cands.push('https://www.anten.ir/iframe/' + sev.embed_stream_id);
-    /* T17: a baked embed is trusted ONLY when its id is not the program
-       id -- /iframe/<program id> frames Anten's empty player shell
-       (phone test 2026-11-26 09:46, anten:188512), so a stale bake's
-       program-id embed is skipped, never shown. The program-id
-       derivation is REMOVED entirely: a missing stream id yields null
-       here, and the player fails honestly (server list + «پخش ممکن
-       نشد») instead of framing a site. */
-    if (sev && sev.embed) { var _m = String(sev.embed).match(/\/iframe\/(\d+)$/); if (!_m || String(sev.anten_id) !== _m[1]) cands.push(sev.embed); }
-    for (var i = 0; i < cands.length; i++) {
-      if (TV_EMBED_ALLOW.test(cands[i])) return cands[i];
-    }
-    return null;
-  }
+  /* FN-TV-EVENTS v3.0 (T20, 2026-11-26) -- EMBED REMOVED (user order
+     2026-11-26 23:09: NO iframe, NO embed for events). The v2.6-v2.9
+     official-Anten-embed fallback is gone: it loaded but showed
+     black on the phone (T19), and the user does not want a framed
+     page -- events must play like the IPTV channels, direct HLS in
+     OUR OWN player. No direct-stream route exists for either source
+     today (Anten: playlist JWT is IP-bound to the minter, the phone
+     gets 406; Aparat: getHls2 403s the worker's egress and sends no
+     CORS, so the phone cannot mint it either; ARVAN playlists: 0 of
+     107 live events carry one). So a failed event now fails honestly
+     (showEventFailed): dead video cleared, error text + server list
+     + the browser escape hatch (the event's real page, opened in the
+     browser, is the one place the stream plays today). The bake
+     still writes an `embed` URL per Anten server; the site no longer
+     reads it. */
   function evServerList(ev) {
     return evServers(ev).map(function (s) {
-      return { label: s.label || '', embed: evEmbedUrl(s.ev), sev: s.ev };
+      return { label: s.label || '', sev: s.ev };
     });
   }
-  var evEmbedFrame = null;
   var evRetryBusy = false;
-  function evEmbedEl() {
-    if (evEmbedFrame) return evEmbedFrame;
-    var box = document.getElementById('tv-screenbox');
-    if (!box) return null;
-    var f = document.createElement('iframe');
-    f.id = 'tv-ev-embed';
-    f.setAttribute('allow', 'autoplay; fullscreen; encrypted-media; picture-in-picture');
-    f.setAttribute('allowfullscreen', '');
-    f.setAttribute('frameborder', '0');
-    f.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;display:none;background:#000';
-    box.appendChild(f);
-    evEmbedFrame = f;
-    return f;
-  }
-  function hideEventEmbed() {
-    var f = document.getElementById('tv-ev-embed');
-    if (f) { try { f.src = 'about:blank'; } catch (e) {} f.style.display = 'none'; }
+  /* FN-TV-EVENTS v3.0 (T20): clear the player video after a failed
+     event attempt, so no dead 0:00 video stays on screen (the user's
+     2026-11-26 screenshot: a native <video> stuck at 0:00 after the
+     embed hid it and the failure path restored it with its src
+     removed). Same cleanup the embed used to do, minus the iframe:
+     invalidate in-flight play timers, destroy HLS, pause + unload
+     the video, drop the controls, take the screen out of its 'on'
+     state. Error/status text is NOT touched here -- the caller sets
+     it after. The video display is left alone: nothing in the event
+     layer hides it any more, so the next channel/event play finds it
+     as playChannel left it. */
+  function clearEvVideo() {
+    try { if (typeof tvPlayToken !== 'undefined') tvPlayToken++; } catch (e) {}
+    try { if (typeof tvPlayTimer !== 'undefined' && tvPlayTimer) clearTimeout(tvPlayTimer); } catch (e2) {}
+    try { if (typeof tvHls !== 'undefined' && tvHls) { tvHls.destroy(); tvHls = null; } } catch (e3) {}
+    try { if (typeof fnMiniExit === 'function') fnMiniExit(); } catch (e4) {}
     var video = document.getElementById('tv-video');
-    if (video) video.style.display = '';
-    var pip = document.getElementById('tv-pip');
-    if (pip) pip.style.display = '';
-    var shb = document.getElementById('tv-share');
-    if (shb) shb.style.display = '';
+    try { if (video) { video.pause(); video.removeAttribute('src'); video.load(); video.controls = false; } } catch (e5) {}
+    var scrEl = document.querySelector('#view-tv .screen');
+    if (scrEl) scrEl.classList.remove('on');
   }
   /* The event server bar -- rendered from the event's own servers[]
      (NOT from resolved HLS), so it is visible even when every resolve
      failed. Always rendered in the fallback states, even for a single
      server: the user must see WHICH servers exist. Tapping a button
-     retries that server (its embed, or a fresh resolve). */
+     retries that server (a fresh resolve). */
   function renderEventServerBar(ev, list, activeIdx) {
     var bar = document.getElementById('tv-servers');
     if (!bar) return;
@@ -19055,21 +18985,25 @@ sxSearchPage = async function (seq, append) {
       b.onclick = function () { retryEventServer(ev, list, +b.dataset.i); };
     });
   }
-  /* Honest failure WITH the server list: never a bare message. */
+  /* Honest failure WITH the server list: never a bare message.
+     FN-TV-EVENTS v3.0 (T20): the dead video is cleared (clearEvVideo)
+     so no 0:00 black video stays on screen; the error text stays
+     visible in the player (the toast alone auto-hides after 3.5 s);
+     the server pills stay so each server can be retried; and the
+     browser escape hatch points at the EVENT'S REAL PAGE (evPageUrl)
+     -- that page is the one place the stream plays today, so the
+     copy/browser buttons stay usable in the failed state instead of
+     hiding. No iframe, no embed anywhere. */
   function showEventFailed(ev, list) {
-    hideEventEmbed();
+    clearEvVideo();
     evActive = true;
     evCurrentEv = ev;
-    /* The selected server's embed stays copyable/openable in the failed
-       state (the Anten embed URL is a real playable link); a server
-       with no embed leaves nothing to copy -- never a stale URL from
-       an earlier play. */
-    var sel = (evSelectedIdx >= 0 && list[evSelectedIdx]) ? list[evSelectedIdx] : null;
-    if (!sel || !sel.embed) {
-      for (var i = 0; i < list.length; i++) { if (list[i].embed) { sel = list[i]; break; } }
-    }
-    evCurrentUrl = (sel && sel.embed) || null;
+    evCurrentUrl = null;
     try { if (typeof tvPlayingRawUrl !== 'undefined') tvPlayingRawUrl = null; } catch (e) {}
+    var pageUrl = evPageUrl(ev);
+    if (pageUrl) { evCurrentUrl = pageUrl; showEvExt(pageUrl); }
+    var nowEl = document.getElementById('tv-now');
+    if (nowEl) nowEl.textContent = ev.title || '';
     var stEl = document.getElementById('tv-status');
     if (stEl) stEl.textContent = '';
     var errEl = document.getElementById('tv-err');
@@ -19083,8 +19017,6 @@ sxSearchPage = async function (seq, append) {
     var s = list[idx];
     if (!s || evRetryBusy) return;
     evSelectedIdx = idx;
-    /* A server with an embed switches straight to it. */
-    if (s.embed) { showEventEmbed(ev, list, idx); return; }
     evRetryBusy = true;
     try {
       var stEl = document.getElementById('tv-status');
@@ -19104,7 +19036,6 @@ sxSearchPage = async function (seq, append) {
         ]);
       } catch (e) { h = null; }
       if (h) {
-        hideEventEmbed();
         if (errEl) errEl.textContent = '';
         playingId = ev.id;
         lastSig = '';
@@ -19126,87 +19057,24 @@ sxSearchPage = async function (seq, append) {
       evRetryBusy = false;
     }
   }
-  function showEventEmbed(ev, list, activeIdx) {
-    var f = evEmbedEl();
-    if (!f) return false;
-    var act = list[activeIdx] || {};
-    if (!act.embed) return false;
-    evActive = true;
-    evCurrentEv = ev;
-    evCurrentUrl = act.embed;
-    evSelectedIdx = activeIdx;
-    try { if (typeof tvPlayingRawUrl !== 'undefined') tvPlayingRawUrl = null; } catch (e7) {}
-    /* Invalidate any in-flight playChannel timers (arm timer / stall
-       watchdog are all token-guarded) and stop the native player, so
-       nothing from a previous HLS play can write into the UI while the
-       embed is showing. */
-    try { if (typeof tvPlayToken !== 'undefined') tvPlayToken++; } catch (e) {}
-    try { if (typeof tvPlayTimer !== 'undefined' && tvPlayTimer) clearTimeout(tvPlayTimer); } catch (e2) {}
-    try { if (typeof tvHls !== 'undefined' && tvHls) { tvHls.destroy(); tvHls = null; } } catch (e3) {}
-    try { if (typeof fnMiniExit === 'function') fnMiniExit(); } catch (e4) {}
-    var video = document.getElementById('tv-video');
-    try { if (video) { video.pause(); video.removeAttribute('src'); video.load(); } } catch (e5) {}
-    if (video) video.style.display = 'none';
-    var scrEl = document.querySelector('#view-tv .screen');
-    if (scrEl) scrEl.classList.add('on');
-    var nowEl = document.getElementById('tv-now');
-    if (nowEl) nowEl.textContent = ev.title || '';
-    try { if (typeof epgFollow === 'function') epgFollow(ev.title || ''); } catch (e6) {}
-    var stEl = document.getElementById('tv-status');
-    if (stEl) stEl.textContent = 'در حال پخش' + (act.label ? ' — ' + act.label : '');
-    var errEl = document.getElementById('tv-err');
-    if (errEl) errEl.textContent = '';
-    var pip = document.getElementById('tv-pip');
-    if (pip) pip.style.display = 'none';
-    var fsb = document.getElementById('tv-fs');
-    if (fsb) fsb.style.display = '';
-    var shb = document.getElementById('tv-share');
-    if (shb) shb.style.display = 'none';
-    var vpnB = document.getElementById('tv-vpnbadge');
-    if (vpnB) vpnB.style.display = 'none';
-    var tstB = document.getElementById('tv-testbadge');
-    if (tstB) tstB.style.display = 'none';
-    var subN = document.getElementById('tv-subnote');
-    if (subN) subN.style.display = 'none';
-    f.style.display = '';
-    f.src = act.embed;
-    renderEventServerBar(ev, list, activeIdx);
-    showEvShare(ev);
-    syncEvTools();
-    return true;
-  }
-  function playEventEmbed(ev) {
-    var list = evServerList(ev);
-    var first = -1;
-    for (var i = 0; i < list.length; i++) { if (list[i].embed) { first = i; break; } }
-    if (first < 0) return false;
-    var errEl = document.getElementById('tv-err');
-    if (errEl) errEl.textContent = '';
-    playingId = ev.id;
-    lastSig = '';
-    render();
-    evActive = true;
-    evCurrentEv = ev;
-    var pageUrl = evPageUrl(ev);
-    if (pageUrl) showEvExt(pageUrl);
-    return showEventEmbed(ev, list, first);
-  }
-  /* T18 (v2.9): expose the embed fallback to playChannel's fail() in the
-     main script -- playEventEmbed lives inside this IIFE, so the outer
-     player cannot call it by name. */
-  window.fnTvEvEmbed = playEventEmbed;
+  /* FN-TV-EVENTS v3.0 (T20): the event layer's honest-failure entry
+     point for playChannel's fail() in the main script -- an event
+     whose HLS died in the player ends here (dead video cleared,
+     error + server list + browser escape hatch). Exposed on window
+     because showEventFailed lives inside this IIFE. */
+  window.fnTvEvFailed = function (ev) {
+    try { showEventFailed(ev, evServerList(ev)); } catch (e) {}
+  };
 
   /* FN-TV-EVENTS v2.6 (T15) -- EVENT TOOLBAR: the same four top icons
      as the TV channel player (copy / share / browser / fullscreen),
      wired to the EVENT's own stream, not the channel's.
      - Copy (کپی لینک پخش): the currently-playing source URL -- the
        resolved HLS URL while HLS plays (tvPlayingRawUrl, kept current
-       by playChannel's attach on every server switch), the embed URL
-       while the embed plays. Never the event page URL (the old
-       tvCopyUrl preference for evExtUrl is bypassed while an event is
-       active -- see the tvCopyUrl patch), never a stale URL from an
-       earlier play (tvPlayingRawUrl is cleared whenever the embed
-       shows or the event fails).
+       by playChannel's attach on every server switch); the event page
+       URL in the failed state, where there is no stream URL. Never a
+       stale URL from an earlier play (tvPlayingRawUrl is cleared
+       whenever the event fails).
      - Share (اشتراک‌گذاری): the site link ?fn_tvev=<event id>, opened
        by the site itself (openSharedEvent below) -- TV section, the
        event's card, playback starts. Mirrors the channel link
@@ -19293,9 +19161,6 @@ sxSearchPage = async function (seq, append) {
   async function playEvent(ev) {
     var errEl = document.getElementById('tv-err');
     var stEl = document.getElementById('tv-status');
-    /* T18 (v2.9): each fresh tap gets one embed-fallback attempt if HLS
-       dies in playChannel (flag reset here; set in fail()). */
-    try { ev.__t18EmbedTried = false; } catch (e0) {}
     try {
       if (stEl) stEl.textContent = 'در حال اتصال…';
       /* Worker resolve first per server (server-side walk: live page ->
@@ -19327,14 +19192,10 @@ sxSearchPage = async function (seq, append) {
       var seenHls = {};
       (resolved || []).forEach(function (r) { if (r && r.hls && !seenHls[r.hls]) { seenHls[r.hls] = 1; ok.push(r); } });
       if (!ok.length) {
-        /* T15: HLS failed on every server -- try the official embed
-           player (Anten) before failing loudly. Embed is a fallback
-           only, never preferred over a working HLS stream. If no embed
-           exists either, the failure stays honest -- but the server
-           list still renders, so the user sees the servers and can tap
-           one to retry it (Orlando-Detroit 2026-11-25: a single
-           «سرور آنتن» showed no list at all). */
-        if (playEventEmbed(ev)) return;
+        /* T20: HLS failed on every server -- fail honestly with the
+           server list (no embed any more). The user sees the servers
+           and can tap one to retry it (Orlando-Detroit 2026-11-25: a
+           single «سرور آنتن» showed no list at all). */
         showEventFailed(ev, evServerList(ev));
         return;
       }
@@ -19348,14 +19209,12 @@ sxSearchPage = async function (seq, append) {
       showEvShare(ev);
       var pageUrl = evPageUrl(ev);
       if (pageUrl) showEvExt(pageUrl);
-      hideEventEmbed();
       try { playChannel({ name: ev.title, url: ok[0].hls, mainTitle: ok[0].label, servers: ok.slice(1).map(function (r) { return { url: r.hls, title: r.label }; }), __tvEv: true, __ev: ev }, null); } catch (e) {
-        if (errEl) errEl.textContent = 'پخش این برنامه در حال حاضر ممکن نشد.';
-        try { showToast('پخش این برنامه در حال حاضر ممکن نشد.'); } catch (e2) {}
+        showEventFailed(ev, evServerList(ev));
       }
       syncEvTools();
     } catch (e) {
-      hideEventEmbed();
+      clearEvVideo();
       if (stEl) stEl.textContent = '';
       if (errEl) errEl.textContent = 'پخش این برنامه در حال حاضر ممکن نشد.';
       try { showToast('پخش این برنامه در حال حاضر ممکن نشد.'); } catch (e2) {}
