@@ -2,17 +2,17 @@
  "code": "RZ",
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
  "start_num": 12560,
- "end_num": 14293,
- "live_base_head": "16151d992aa302631fcc9d8f3acf11b4e2c1e154 (5h run 20261127T011109Z; H3 max #14292 verified from live files, RZ part-1 max #14109)",
- "generated": "2026-11-27 (RezFlix 5-hourly run 20261127T011109Z — merge of 1 new RZ title #14293 Cloud Girl + 1 trailer key; no encode completions, no duplicates; drift repair: InuYasha #13131 links 189 -> 198 (+9 x 720p), Way of the Warrior Kid #14096 links 5 -> 6 (+1 x WEB-DL 480p), both added by later runs without a manifest update; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
+ "end_num": 14294,
+ "live_base_head": "c4e1680536a3c343d4903e2825e516bc2f0cbbcc (5h run 20261127T035721Z; H3 max #14293 verified from live files, RZ part-1 max #14293)",
+ "generated": "2026-11-27 (RezFlix 5-hourly run 20261127T035721Z — merge of 1 new RZ title #14294 Dig (series, S01E01-E04 x 480p/720p/1080p WEB-DL ValaMovie SoftSub) + 1 trailer key; no encode completions, no duplicates; no manifest drift; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
  "counts": {
-  "total_titles": 628,
+  "total_titles": 629,
   "movies": 50,
-  "series": 578,
-  "total_links": 44079,
+  "series": 579,
+  "total_links": 44091,
   "by_year": {
    "2024": 2,
-   "2026": 44,
+   "2026": 45,
    "2023": 2,
    "2025": 8,
    "2014": 3,
@@ -76,10 +76,10 @@
    "2022": 1
   },
   "by_quality": {
-   "720p": 21426,
-   "1080p": 3599,
+   "720p": 21430,
+   "1080p": 3603,
    "540p": 292,
-   "480p": 14380,
+   "480p": 14384,
    "CAM 1080p": 117,
    "CAM 720p": 35,
    "Cam 1080p": 1,
@@ -7005,6 +7005,17 @@
    "quality": "1080p,720p",
    "rezflix_id": 36189,
    "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt20259240). Persian name دختری در ابرها (feed description, verified vs synopsis). Sizes 777 MB / 1.56 GB (qual line 720------1080 == vol order, 1:1; GB text-only). Encoder YTS from filename (-YTS). Trailer movie:1151265 is the Persian-titled teaser (trailer slot only)."
+  },
+  {
+   "title": "Dig",
+   "tmdb": 290826,
+   "imdb": "tt36843594",
+   "year": 2026,
+   "num": 14294,
+   "links": 12,
+   "quality": "1080p,480p,720p",
+   "rezflix_id": 36191,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt36843594). Persian name حفاری (feed description). Sizes are RANGES across episodes (480: 142-147 MB, 720: 393-406 MB, 1080: 655-675 MB) — no per-file sizes, size_bytes null. Encoder ValaMovie from filename (-ValaMovie.SoftSub). Trailer tv:290826 is the /tizer/ teaser (trailer slot only)."
   }
  ],
  "trailer_keys_added": [
@@ -7086,7 +7097,8 @@
   "movie:1482377",
   "movie:1330232",
   "tv:249543",
-  "movie:1151265"
+  "movie:1151265",
+  "tv:290826"
  ],
  "queued_titles": [
   {
