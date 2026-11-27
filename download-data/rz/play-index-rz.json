@@ -529251,6 +529251,51 @@
   },
   "year": 2009
  },
+ "tt14813764": {
+  "imdb": "tt14813764",
+  "num": 14380,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "YTS",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Fleak.2025.1080p.WEBRip.x264.AAC-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.38 GB"
+   },
+   {
+    "encoder": "YTS",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Fleak.2025.720p.WEBRip.x264.AAC-YTS.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 796917760,
+    "size_text": "760 MB"
+   }
+  ],
+  "title": "Fleak",
+  "tmdb_key": "movie:680770",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2025
+ },
  "tt1497563": {
   "imdb": "tt1497563",
   "num": 13451,
@@ -623102,6 +623147,65 @@
    "url": null
   },
   "year": 2006
+ },
+ "tt6649274": {
+  "imdb": "tt6649274",
+  "num": 14381,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "Simba",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Make.a.Bow.And.Kiss.1080.simba.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.8 GB"
+   },
+   {
+    "encoder": "Simba",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Make.a.Bow.And.Kiss.720.simba.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": "1.2 GB"
+   },
+   {
+    "encoder": "Simba",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Make.a.Bow.And.Kiss.480.simba.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 646971392,
+    "size_text": "617 MB"
+   }
+  ],
+  "title": "Make a Bow and Kiss",
+  "tmdb_key": "movie:526306",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2017
  },
  "tt7033000": {
   "imdb": "tt7033000",

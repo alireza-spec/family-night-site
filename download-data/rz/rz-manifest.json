@@ -2,19 +2,19 @@
  "code": "RZ",
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
  "start_num": 12560,
- "end_num": 14294,
- "live_base_head": "c4e1680536a3c343d4903e2825e516bc2f0cbbcc (5h run 20261127T035721Z; H3 max #14293 verified from live files, RZ part-1 max #14293)",
- "generated": "2026-11-27 (RezFlix 5-hourly run 20261127T035721Z — merge of 1 new RZ title #14294 Dig (series, S01E01-E04 x 480p/720p/1080p WEB-DL ValaMovie SoftSub) + 1 trailer key; no encode completions, no duplicates; no manifest drift; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
+ "end_num": 14381,
+ "live_base_head": "b5804c7097c4e7e1fb1434f7450d46b09008c896 (5h run 20261127T075700Z; H3 max #14379 verified from live files, RZ part-1 max #14294)",
+ "generated": "2026-11-27 (RezFlix 5-hourly run 20261127T075700Z — merge of 2 new RZ titles #14380 Fleak (movie 2025, 720p/1080p WEB-DL YTS SoftSub) + #14381 Make a Bow and Kiss (movie 2017, 480p/720p/1080p Simba SoftSub) + 2 trailer keys; Street Fighter is an encode completion into live #162 part 1 (+3 dl150m mirror links, not an RZ title); no manifest drift; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
  "counts": {
-  "total_titles": 629,
-  "movies": 50,
+  "total_titles": 631,
+  "movies": 52,
   "series": 579,
-  "total_links": 44097,
+  "total_links": 44102,
   "by_year": {
    "2024": 2,
    "2026": 45,
    "2023": 2,
-   "2025": 8,
+   "2025": 9,
    "2014": 3,
    "1955": 2,
    "1960": 3,
@@ -52,7 +52,7 @@
    "1994": 10,
    "2020": 1,
    "2007": 49,
-   "2017": 2,
+   "2017": 3,
    "1997": 6,
    "1996": 15,
    "1995": 10,
@@ -76,10 +76,10 @@
    "2022": 1
   },
   "by_quality": {
-   "720p": 21432,
-   "1080p": 3605,
+   "720p": 21434,
+   "1080p": 3607,
    "540p": 292,
-   "480p": 14386,
+   "480p": 14387,
    "CAM 1080p": 117,
    "CAM 720p": 35,
    "Cam 1080p": 1,
@@ -7016,6 +7016,28 @@
    "quality": "1080p,480p,720p",
    "rezflix_id": 36191,
    "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt36843594). Persian name حفاری (feed description). Sizes are RANGES across episodes (480: 142-147 MB, 720: 393-406 MB, 1080: 655-675 MB) — no per-file sizes, size_bytes null. Encoder ValaMovie from filename (-ValaMovie.SoftSub). Trailer tv:290826 is the /tizer/ teaser (trailer slot only)."
+  },
+  {
+   "title": "Fleak",
+   "tmdb": 680770,
+   "imdb": "tt14813764",
+   "year": 2025,
+   "num": 14380,
+   "links": 2,
+   "quality": "1080p,720p",
+   "rezflix_id": 36194,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2025, TMDB 2025, tt14813764). OMDb year 2024 vs feed/TMDB 2025: OMDb title 'Fleak' + genre Animation agree; OMDb plot/director silent (N/A); TMDB origin US/FI/FR/MY/PL matches the feed countries exactly — same work, 2024 is the festival year. Persian name فلیک (feed description). Sizes from the feed حجم line (1:1 in quality order): 720p 760 MB, 1080p 1.38 GB. Encoder YTS from filename."
+  },
+  {
+   "title": "Make a Bow and Kiss",
+   "tmdb": 526306,
+   "imdb": "tt6649274",
+   "year": 2017,
+   "num": 14381,
+   "links": 3,
+   "quality": "1080p,480p,720p",
+   "rezflix_id": 36195,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2017, TMDB 2017, tt6649274). Persian name کمان و بوسه (feed description). Sizes from the feed حجم line (1:1 in quality order): 480p 617 MB, 720p 1.2 GB, 1080p 1.8 GB. Encoder Simba from filename."
   }
  ],
  "trailer_keys_added": [
@@ -7098,7 +7120,9 @@
   "movie:1330232",
   "tv:249543",
   "movie:1151265",
-  "tv:290826"
+  "tv:290826",
+  "movie:680770",
+  "movie:1153576"
  ],
  "queued_titles": [
   {
@@ -7209,6 +7233,17 @@
    "part": "rz",
    "rezflix_id": 36171,
    "added": "Sizes set on 3 existing SoftSub rows (720p YIFY 978 MB / 1080p YIFY 2 GB / 720p x265 PSA 837 MB, F2M HEAD-measured) + 480p ZarFilm RZ 541 MB + 1080p x265 PSA F2M 1.64 GB; 3 -> 5 links"
+  },
+  {
+   "title": "Street Fighter",
+   "tmdb": 1153576,
+   "imdb": "tt27419420",
+   "year": 2026,
+   "num": 162,
+   "part": 1,
+   "links_added": 3,
+   "rezflix_id": 36196,
+   "note": "dl150m mirror URLs (480p/720p/1080p IMAX WEB-DL Farsi.Sub Film2Media) — same filenames as 3 live abrtech.top links in #162; same-file-different-host mirror per #4 precedent. Trailer movie:1153576 also added."
   }
  ],
  "twice_daily_2026_11_24_pm": {
