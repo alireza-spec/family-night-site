@@ -1,100 +1,7 @@
 {
- "generated_at": "2026-11-27T02:40:08Z",
+ "generated_at": "2026-11-27T09:42:34Z",
  "date": "2026-11-27",
  "events": [
-  {
-   "id": "anten:188527",
-   "title": "فوتبال آمریکایی: بوفالو بیلز – کانزاس سیتی چیفس",
-   "comp": "لیگ ملی فوتبال آمریکایی - NFL",
-   "img": "https://static.r1-edge-v2.s3mer.net/images/2022/6/26/B/635f19bf-c6b3-410f-9eef-d46e1257713e.jpg",
-   "alt": "فوتبال آمریکایی: بوفالو بیلز – کانزاس سیتی چیفس — لیگ ملی فوتبال آمریکایی - NFL",
-   "start": 1795743577000,
-   "dur": 120,
-   "end": 1795750777,
-   "end_estimated": true,
-   "src": "anten",
-   "anten_id": 188527,
-   "embed_stream_id": 215989,
-   "urlaccess_hq": "https://api2.anten.ir/programs/215989/urlaccess/hq",
-   "urlaccess_lq": "https://api2.anten.ir/programs/215989/urlaccess/lq",
-   "servers": [
-    {
-     "key": "anten",
-     "label": "سرور آنتن",
-     "src": "anten",
-     "anten_id": 188527,
-     "embed_stream_id": 215989,
-     "urlaccess_hq": "https://api2.anten.ir/programs/215989/urlaccess/hq",
-     "urlaccess_lq": "https://api2.anten.ir/programs/215989/urlaccess/lq",
-     "embed": "https://www.anten.ir/iframe/215989"
-    }
-   ],
-   "hostLogo": "https://static.r1-edge-v2.s3mer.net/images/2024/9/11/B/111a8c17-7d7e-4ccf-b1f7-19ec610d1a6d.png",
-   "guestLogo": "https://static.r1-edge-v2.s3mer.net/images/2021/2/7/D/7f238550-2696-4d9d-8493-950e4b28d13a.png",
-   "sportName": "فوتبال آمریکایی"
-  },
-  {
-   "id": "anten:188544",
-   "title": "سایر ورزش ها: بزرگترین رویداد ورزشی سالمندان کشور در تبریز",
-   "comp": "پخش اختصاصی باشگاه",
-   "img": "https://static.r1-edge-v2.s3mer.net/images/54e5d1a7-85f7-4c1d-820e-1daf9bfc4db6/54e5d1a7-85f7-4c1d-820e-1daf9bfc4db6.jpeg",
-   "alt": "سایر ورزش ها: بزرگترین رویداد ورزشی سالمندان کشور در تبریز — پخش اختصاصی باشگاه",
-   "start": 1795754700000,
-   "dur": 120,
-   "end": 1795761900,
-   "end_estimated": true,
-   "src": "anten",
-   "anten_id": 188544,
-   "embed_stream_id": 216006,
-   "urlaccess_hq": "https://api2.anten.ir/programs/216006/urlaccess/hq",
-   "urlaccess_lq": "https://api2.anten.ir/programs/216006/urlaccess/lq",
-   "servers": [
-    {
-     "key": "anten",
-     "label": "سرور آنتن",
-     "src": "anten",
-     "anten_id": 188544,
-     "embed_stream_id": 216006,
-     "urlaccess_hq": "https://api2.anten.ir/programs/216006/urlaccess/hq",
-     "urlaccess_lq": "https://api2.anten.ir/programs/216006/urlaccess/lq",
-     "embed": "https://www.anten.ir/iframe/216006"
-    }
-   ],
-   "hostLogo": null,
-   "guestLogo": null,
-   "sportName": "سایر ورزش ها"
-  },
-  {
-   "id": "anten:188488",
-   "title": "سایر ورزش ها: مسابقات دارت ایمیدرو کشور",
-   "comp": "پخش اختصاصی باشگاه",
-   "img": "https://static.r1-edge-v2.s3mer.net/images/c542d539-1b49-401d-b558-1e6431d3fb7a/c542d539-1b49-401d-b558-1e6431d3fb7a.png",
-   "alt": "سایر ورزش ها: مسابقات دارت ایمیدرو کشور — پخش اختصاصی باشگاه",
-   "start": 1795764600000,
-   "dur": 120,
-   "end": 1795771800,
-   "end_estimated": true,
-   "src": "anten",
-   "anten_id": 188488,
-   "embed_stream_id": 215950,
-   "urlaccess_hq": "https://api2.anten.ir/programs/215950/urlaccess/hq",
-   "urlaccess_lq": "https://api2.anten.ir/programs/215950/urlaccess/lq",
-   "servers": [
-    {
-     "key": "anten",
-     "label": "سرور آنتن",
-     "src": "anten",
-     "anten_id": 188488,
-     "embed_stream_id": 215950,
-     "urlaccess_hq": "https://api2.anten.ir/programs/215950/urlaccess/hq",
-     "urlaccess_lq": "https://api2.anten.ir/programs/215950/urlaccess/lq",
-     "embed": "https://www.anten.ir/iframe/215950"
-    }
-   ],
-   "hostLogo": null,
-   "guestLogo": null,
-   "sportName": "سایر ورزش ها"
-  },
   {
    "id": "anten:188516",
    "title": "سبزوسفید پوشان معراج – تام",
@@ -127,14 +34,45 @@
    "sportName": "فوتبال"
   },
   {
+   "id": "anten:188553",
+   "title": "فوتبال ساحلی: جوانان پدیده لسمان انزلی – هاکان کرمانشاه",
+   "comp": "پخش اختصاصی باشگاه",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/1dbe2209-0f0e-44e2-ba71-d31e8e26ab2a/1dbe2209-0f0e-44e2-ba71-d31e8e26ab2a.jpeg",
+   "alt": "فوتبال ساحلی: جوانان پدیده لسمان انزلی – هاکان کرمانشاه — پخش اختصاصی باشگاه",
+   "start": 1795768500000,
+   "dur": 60,
+   "end": 1795772100,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188553,
+   "embed_stream_id": 216015,
+   "urlaccess_hq": "https://api2.anten.ir/programs/216015/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/216015/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188553,
+     "embed_stream_id": 216015,
+     "urlaccess_hq": "https://api2.anten.ir/programs/216015/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/216015/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/216015"
+    }
+   ],
+   "hostLogo": null,
+   "guestLogo": null,
+   "sportName": "فوتبال ساحلی"
+  },
+  {
    "id": "anten:188386",
    "title": "بسکتبال: ایران – استرالیا",
    "comp": "انتخابی جام جهانی بسکتبال",
    "img": "https://static.r1-edge-v2.s3mer.net/images/2026/11/26/A/d844d499-27cc-404b-a51b-f005c29cca90.jpg",
    "alt": "بسکتبال: ایران – استرالیا — انتخابی جام جهانی بسکتبال",
-   "start": 1795770000000,
+   "start": 1795769634000,
    "dur": 120,
-   "end": 1795777200,
+   "end": 1795776834,
    "end_estimated": true,
    "src": "anten",
    "anten_id": 188386,
@@ -443,6 +381,37 @@
    "sportName": "فوتبال"
   },
   {
+   "id": "anten:188554",
+   "title": "فینال لیگ فوتبال نوجوانان استان چهارمحال و بختیاری",
+   "comp": "پخش اختصاصی باشگاه",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/2025/4/13/B/3a1aa09a-505b-4589-854c-37a5d4a441e6.jpg",
+   "alt": "فینال لیگ فوتبال نوجوانان استان چهارمحال و بختیاری — پخش اختصاصی باشگاه",
+   "start": 1795775400000,
+   "dur": 120,
+   "end": 1795782600,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188554,
+   "embed_stream_id": 216016,
+   "urlaccess_hq": "https://api2.anten.ir/programs/216016/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/216016/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188554,
+     "embed_stream_id": 216016,
+     "urlaccess_hq": "https://api2.anten.ir/programs/216016/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/216016/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/216016"
+    }
+   ],
+   "hostLogo": null,
+   "guestLogo": null,
+   "sportName": "فوتبال"
+  },
+  {
    "id": "anten:188496",
    "title": "نوجوانان اف سی جلالی – بکتاش تبریز",
    "comp": "پخش اختصاصی باشگاه",
@@ -728,6 +697,37 @@
    "sportName": "والیبال"
   },
   {
+   "id": "anten:188567",
+   "title": "والیبال: ملل اردبیل – رژ میوه مریوان",
+   "comp": "پخش اختصاصی باشگاه",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/1a9ba1da-7d18-469f-8408-7b6796551335/1a9ba1da-7d18-469f-8408-7b6796551335.jpeg",
+   "alt": "والیبال: ملل اردبیل – رژ میوه مریوان — پخش اختصاصی باشگاه",
+   "start": 1795782840000,
+   "dur": 120,
+   "end": 1795790040,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188567,
+   "embed_stream_id": 216029,
+   "urlaccess_hq": "https://api2.anten.ir/programs/216029/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/216029/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188567,
+     "embed_stream_id": 216029,
+     "urlaccess_hq": "https://api2.anten.ir/programs/216029/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/216029/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/216029"
+    }
+   ],
+   "hostLogo": null,
+   "guestLogo": null,
+   "sportName": "والیبال"
+  },
+  {
    "id": "anten:187949",
    "title": "آلومینیوم اراک – پرسپولیس",
    "comp": "هفته 14 لیگ برتر ایران",
@@ -756,6 +756,37 @@
    ],
    "hostLogo": "https://static.r1-edge-v2.s3mer.net/images/2021/12/29/A/ca141035-649f-4fe3-a5ea-b5e56fe53968.png",
    "guestLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/288c4ff6-701d-4efe-bfd3-e5a24cb96a26.png",
+   "sportName": "فوتبال"
+  },
+  {
+   "id": "anten:187942",
+   "title": "هندوراس – ژاپن",
+   "comp": "جام جهانی زیر 17 سال 2026",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/2026/11/3/B/5b9ca35b-3229-410c-9368-c0258540a0b5.png",
+   "alt": "هندوراس – ژاپن — جام جهانی زیر 17 سال 2026",
+   "start": 1795784400000,
+   "dur": 120,
+   "end": 1795791600,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 187942,
+   "embed_stream_id": 215404,
+   "urlaccess_hq": "https://api2.anten.ir/programs/215404/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/215404/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 187942,
+     "embed_stream_id": 215404,
+     "urlaccess_hq": "https://api2.anten.ir/programs/215404/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/215404/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/215404"
+    }
+   ],
+   "hostLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/d6aef248-b070-4d41-b5c6-1b5025e1b5ce.png",
+   "guestLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/2c31ba02-c776-4aa7-8465-74e35c6fd565.png",
    "sportName": "فوتبال"
   },
   {
@@ -823,9 +854,9 @@
   {
    "id": "f360:20261126100",
    "title": "کاستاریکا – برزیل",
-   "comp": null,
+   "comp": "جام جهانی زیر 17 سال 2026",
    "img": "https://static.football360.ir/nesta2/media/posts_stream/covers/%DA%A9%D8%A7%D9%88%D8%B1_%D9%BE%D8%AE%D8%B4_%D8%B2%D9%86%D8%AF%D9%87_%D9%86%D9%88%D8%AC%D9%88%D8%A7%D9%86%D8%A7%D9%86_%DA%A9%D8%A7%D8%B3%D8%AA%D8%A7%D8%B1%DB%8C%DA%A9%D8%A7_%D8%A8%D8%B1%D8%B2%DB%8C%D9%84.jpg",
-   "alt": "کاستاریکا – برزیل",
+   "alt": "کاستاریکا – برزیل — جام جهانی زیر 17 سال 2026",
    "start": 1795788000000,
    "dur": 120,
    "end": 1795795200,
@@ -843,6 +874,16 @@
      "src": "f360",
      "code": 20261126100,
      "get_hls_url": "https://www.aparatsport.com/adele/getHls2?stream_id=0vRb5f1c804BD31"
+    },
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 187943,
+     "embed_stream_id": 215405,
+     "urlaccess_hq": "https://api2.anten.ir/programs/215405/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/215405/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/215405"
     }
    ],
    "end_estimated": true
@@ -882,7 +923,7 @@
    "id": "anten:188144",
    "title": "والیبال: پدیده صنعت اوج گلپایگان – والیبال زنان شاهین بندرعامری",
    "comp": "هفته 2 لیگ برتر والیبال زنان",
-   "img": "https://static.r1-edge-v2.s3mer.net/images/2022/11/17/A/4a33c464-76bd-480f-8a36-cb6e3cd4f492.jpeg",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/2026/11/27/B/c71e3680-8ecd-4224-aa0c-3d0def19b928.jpg",
    "alt": "والیبال: پدیده صنعت اوج گلپایگان – والیبال زنان شاهین بندرعامری — هفته 2 لیگ برتر والیبال زنان",
    "start": 1795788000000,
    "dur": 120,
@@ -932,6 +973,16 @@
      "src": "f360",
      "code": 2026112670,
      "get_hls_url": "https://www.aparatsport.com/adele/getHls2?stream_id=eQT134afC9C463C"
+    },
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188116,
+     "embed_stream_id": 215578,
+     "urlaccess_hq": "https://api2.anten.ir/programs/215578/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/215578/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/215578"
     }
    ],
    "end_estimated": true
@@ -968,6 +1019,37 @@
    "sportName": "سایر ورزش ها"
   },
   {
+   "id": "anten:188545",
+   "title": "تنیس: ایتالیا – جمهوری چک",
+   "comp": "نیمه نهایی تنیس دیویس کاپ 2026",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/2020/11/14/D/b66bbaf9-0651-49db-8b57-78e4c0483ea4.png",
+   "alt": "تنیس: ایتالیا – جمهوری چک — نیمه نهایی تنیس دیویس کاپ 2026",
+   "start": 1795791600000,
+   "dur": 120,
+   "end": 1795798800,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188545,
+   "embed_stream_id": 216007,
+   "urlaccess_hq": "https://api2.anten.ir/programs/216007/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/216007/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188545,
+     "embed_stream_id": 216007,
+     "urlaccess_hq": "https://api2.anten.ir/programs/216007/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/216007/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/216007"
+    }
+   ],
+   "hostLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/12e04777-0cbb-4b50-99cc-6f58f4a1d7fe.png",
+   "guestLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/616b2d28-d34a-4968-be01-4d2ec4e7381c.png",
+   "sportName": "تنیس"
+  },
+  {
    "id": "f360:2026112672",
    "title": "لوسیل – العربی",
    "comp": "لیگ ستارگان قطر",
@@ -993,6 +1075,37 @@
     }
    ],
    "end_estimated": true
+  },
+  {
+   "id": "anten:188555",
+   "title": "بسکتبال: پارک سنتر – نخلستان جم",
+   "comp": "پخش اختصاصی باشگاه",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/e53efba7-d44f-4051-83c9-ed6beecdc32d/e53efba7-d44f-4051-83c9-ed6beecdc32d.jpeg",
+   "alt": "بسکتبال: پارک سنتر – نخلستان جم — پخش اختصاصی باشگاه",
+   "start": 1795793400000,
+   "dur": 120,
+   "end": 1795800600,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188555,
+   "embed_stream_id": 216017,
+   "urlaccess_hq": "https://api2.anten.ir/programs/216017/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/216017/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188555,
+     "embed_stream_id": 216017,
+     "urlaccess_hq": "https://api2.anten.ir/programs/216017/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/216017/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/216017"
+    }
+   ],
+   "hostLogo": null,
+   "guestLogo": null,
+   "sportName": "بسکتبال"
   },
   {
    "id": "anten:187950",
@@ -1023,6 +1136,37 @@
    ],
    "hostLogo": "https://static.r1-edge-v2.s3mer.net/images/2025/5/4/B/5ed5f7b4-60b1-46a3-b4b0-eae5b7bedba6.png",
    "guestLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/7a0ee8d0-43a9-4826-b370-250c20a26162.png",
+   "sportName": "فوتبال"
+  },
+  {
+   "id": "anten:188556",
+   "title": "ونزوئلا – مکزیک",
+   "comp": "جام جهانی زیر 17 سال 2026",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/2026/11/3/B/5b9ca35b-3229-410c-9368-c0258540a0b5.png",
+   "alt": "ونزوئلا – مکزیک — جام جهانی زیر 17 سال 2026",
+   "start": 1795795200000,
+   "dur": 120,
+   "end": 1795802400,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188556,
+   "embed_stream_id": null,
+   "urlaccess_hq": "https://api2.anten.ir/programs/188556/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/188556/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188556,
+     "embed_stream_id": null,
+     "urlaccess_hq": "https://api2.anten.ir/programs/188556/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/188556/urlaccess/lq",
+     "embed": null
+    }
+   ],
+   "hostLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/e5d5534d-9508-480f-bf1d-88654b0fc716.png",
+   "guestLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/c41fac40-4a62-4891-9a87-9e71cdbad504.png",
    "sportName": "فوتبال"
   },
   {
@@ -1149,7 +1293,7 @@
    "id": "f360:2026112669",
    "title": "ناتینگام فارست – چلسی",
    "comp": "لیگ برتر انگلیس",
-   "img": "https://static.football360.ir/nesta2/media/posts_stream/covers/%DA%A9%D8%A7%D9%88%D8%B1_%D9%BE%D8%AE%D8%B4_%D8%B2%D9%86%D8%AF%D9%87_%D9%86%D8%A7%D8%AA%DB%8C%D9%86%DA%AF%D8%A7%D9%85_%D9%81%D8%A7%D8%B1%D8%B3%D8%AA_%DA%86%D9%84%D8%B3%DB%8C_3WzZ7v6.jpg",
+   "img": "https://static.football360.ir/nesta2/media/posts_stream/covers/photo_2026-11-27_12-10-06.jpg",
    "alt": "ناتینگام فارست – چلسی — لیگ برتر انگلیس",
    "start": 1795809600000,
    "dur": 120,
@@ -3275,6 +3419,223 @@
    "hostLogo": "https://static.r1-edge-v2.s3mer.net/images/2024/10/27/A/0fb07652-0c6e-4581-bdc5-3db12664cb88.png",
    "guestLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/97c5092d-34fe-485a-a3a8-6edd2f0f3c29.png",
    "sportName": "بسکتبال"
+  },
+  {
+   "id": "anten:188242",
+   "title": "گزتپه – ترابزون اسپور",
+   "comp": "هفته 13 سوپرلیگ ترکیه",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/2026/8/16/D/ff6384bb-9c83-4d80-ab3f-a01b5cae8f88.jpg",
+   "alt": "گزتپه – ترابزون اسپور — هفته 13 سوپرلیگ ترکیه",
+   "start": 1796054400000,
+   "dur": 120,
+   "end": 1796061600,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188242,
+   "embed_stream_id": 215704,
+   "urlaccess_hq": "https://api2.anten.ir/programs/215704/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/215704/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188242,
+     "embed_stream_id": 215704,
+     "urlaccess_hq": "https://api2.anten.ir/programs/215704/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/215704/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/215704"
+    }
+   ],
+   "hostLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/1f01eac2-93ac-4e9f-82ef-126269c98ca6.png",
+   "guestLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/08c13d2b-0bb2-4d50-87b2-0bd870f7e14d.png",
+   "sportName": "فوتبال"
+  },
+  {
+   "id": "anten:188485",
+   "title": "والیبال: زشوف – کاتوویچه",
+   "comp": "هفته 9 لیگ برتر والیبال لهستان",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/2023/11/9/A/fd7a6da7-8196-48f9-919b-a53db9810cda.png",
+   "alt": "والیبال: زشوف – کاتوویچه — هفته 9 لیگ برتر والیبال لهستان",
+   "start": 1796056200000,
+   "dur": 120,
+   "end": 1796063400,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188485,
+   "embed_stream_id": 215947,
+   "urlaccess_hq": "https://api2.anten.ir/programs/215947/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/215947/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188485,
+     "embed_stream_id": 215947,
+     "urlaccess_hq": "https://api2.anten.ir/programs/215947/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/215947/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/215947"
+    }
+   ],
+   "hostLogo": "https://static.r1-edge-v2.s3mer.net/images/2024/10/16/B/8bfd8ca2-a758-4bc0-ab4c-a375cae80c1c.png",
+   "guestLogo": "https://static.r1-edge-v2.s3mer.net/images/2024/10/22/B/b2f6c0d6-3c1d-4cb4-a88e-528c3c22dfc6.png",
+   "sportName": "والیبال"
+  },
+  {
+   "id": "anten:188238",
+   "title": "لچه – آتالانتا",
+   "comp": "هفته 13 سری آ ایتالیا",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/2025/2/16/D/a7038be3-0352-46c4-8be1-ac1d19a88068.jpg",
+   "alt": "لچه – آتالانتا — هفته 13 سری آ ایتالیا",
+   "start": 1796059800000,
+   "dur": 120,
+   "end": 1796067000,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188238,
+   "embed_stream_id": 215700,
+   "urlaccess_hq": "https://api2.anten.ir/programs/215700/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/215700/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188238,
+     "embed_stream_id": 215700,
+     "urlaccess_hq": "https://api2.anten.ir/programs/215700/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/215700/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/215700"
+    }
+   ],
+   "hostLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/ac0cfd3e-37cb-4421-9ca5-2d923f02ef0a.png",
+   "guestLogo": "https://static.r1-edge-v2.s3mer.net/images/2026/5/25/B/15423afd-5142-47f2-be88-c71504e2b073.png",
+   "sportName": "فوتبال"
+  },
+  {
+   "id": "anten:188241",
+   "title": "بشیکتاش – گالاتاسارای",
+   "comp": "هفته 13 سوپرلیگ ترکیه",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/2026/8/16/D/ff6384bb-9c83-4d80-ab3f-a01b5cae8f88.jpg",
+   "alt": "بشیکتاش – گالاتاسارای — هفته 13 سوپرلیگ ترکیه",
+   "start": 1796061600000,
+   "dur": 120,
+   "end": 1796068800,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188241,
+   "embed_stream_id": 215703,
+   "urlaccess_hq": "https://api2.anten.ir/programs/215703/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/215703/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188241,
+     "embed_stream_id": 215703,
+     "urlaccess_hq": "https://api2.anten.ir/programs/215703/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/215703/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/215703"
+    }
+   ],
+   "hostLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/fd885822-6920-4ad8-9a88-b02de5281ed9.png",
+   "guestLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/7252b7dd-97c2-438e-b825-62b680e39b00.png",
+   "sportName": "فوتبال"
+  },
+  {
+   "id": "anten:188486",
+   "title": "والیبال: پروجکت ورشو – گدانسک",
+   "comp": "هفته 9 لیگ برتر والیبال لهستان",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/2023/11/9/A/fd7a6da7-8196-48f9-919b-a53db9810cda.png",
+   "alt": "والیبال: پروجکت ورشو – گدانسک — هفته 9 لیگ برتر والیبال لهستان",
+   "start": 1796067000000,
+   "dur": 120,
+   "end": 1796074200,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188486,
+   "embed_stream_id": 215948,
+   "urlaccess_hq": "https://api2.anten.ir/programs/215948/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/215948/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188486,
+     "embed_stream_id": 215948,
+     "urlaccess_hq": "https://api2.anten.ir/programs/215948/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/215948/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/215948"
+    }
+   ],
+   "hostLogo": "https://static.r1-edge-v2.s3mer.net/images/2022/2/2/D/251b8806-07de-40b9-a448-56b3a2e2430a.png",
+   "guestLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/5865af75-0fc6-4940-be85-db5e4f36f014.png",
+   "sportName": "والیبال"
+  },
+  {
+   "id": "anten:188239",
+   "title": "کالیاری – آث میلان",
+   "comp": "هفته 13 سری آ ایتالیا",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/2025/2/16/D/a7038be3-0352-46c4-8be1-ac1d19a88068.jpg",
+   "alt": "کالیاری – آث میلان — هفته 13 سری آ ایتالیا",
+   "start": 1796067900000,
+   "dur": 120,
+   "end": 1796075100,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188239,
+   "embed_stream_id": 215701,
+   "urlaccess_hq": "https://api2.anten.ir/programs/215701/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/215701/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188239,
+     "embed_stream_id": 215701,
+     "urlaccess_hq": "https://api2.anten.ir/programs/215701/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/215701/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/215701"
+    }
+   ],
+   "hostLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/512935b6-a418-4728-bb78-a51a04700940.png",
+   "guestLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/47523fd4-df4f-4d39-a4dd-915ead83123f.png",
+   "sportName": "فوتبال"
+  },
+  {
+   "id": "anten:188237",
+   "title": "اسپانیول – ختافه",
+   "comp": "هفته 14 لالیگا اسپانیا",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/2025/2/16/D/e5a5cd45-b8ba-4fd4-8259-49cf4eb661b7.jpg",
+   "alt": "اسپانیول – ختافه — هفته 14 لالیگا اسپانیا",
+   "start": 1796068800000,
+   "dur": 120,
+   "end": 1796076000,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188237,
+   "embed_stream_id": 215699,
+   "urlaccess_hq": "https://api2.anten.ir/programs/215699/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/215699/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188237,
+     "embed_stream_id": 215699,
+     "urlaccess_hq": "https://api2.anten.ir/programs/215699/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/215699/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/215699"
+    }
+   ],
+   "hostLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/5aee06ab-78ba-4d8f-94e7-b7c21bf82468.png",
+   "guestLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/656d6df3-cd06-4903-aadd-e31c6e5afdee.png",
+   "sportName": "فوتبال"
   }
  ]
 }
