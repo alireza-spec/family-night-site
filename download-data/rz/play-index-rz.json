@@ -628492,5 +628492,78 @@
    "url": null
   },
   "year": 2017
+ },
+ "tt50666033": {
+  "imdb": "tt50666033",
+  "num": 14386,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": 1,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/tv2/MELANIA%20the%20Series/fasl1720/MELANIA.The.Series.S01E01.720p.AMZN.WEB-DL.H.264.SoftSub.9Movie.mp4",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": 1,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/tv2/MELANIA%20the%20Series/fasl11080/MELANIA.The.Series.S01E01.1080p.AMZN.WEB-DL.H.264.SoftSub.9Movie.mp4",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": 2,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/tv2/MELANIA%20the%20Series/fasl1720/MELANIA.The.Series.S01E02.720p.AMZN.WEB-DL.H.264.SoftSub.9Movie.mp4",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": 2,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/tv2/MELANIA%20the%20Series/fasl11080/MELANIA.The.Series.S01E02.1080p.AMZN.WEB-DL.H.264.SoftSub.9Movie.mp4",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "MELANIA the Series",
+  "tmdb_key": "tv:314131",
+  "type": "tv",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
  }
 }

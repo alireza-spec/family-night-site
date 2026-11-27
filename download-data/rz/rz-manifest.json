@@ -2,17 +2,17 @@
  "code": "RZ",
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
  "start_num": 12560,
- "end_num": 14385,
- "live_base_head": "c7ebfbc04528eb75bc9c34c7e2d5bbc7d8e86bb9 (5h run 20261127T095657Z; H3 max #14384 verified from live files)",
- "generated": "2026-11-27 13:26 Tehran (5h run 20261127T095657Z)",
+ "end_num": 14386,
+ "live_base_head": "c57a819efa5a229eaae95821df2c287187a96332 (5h run 20261127T105653Z; H3 max #14385 verified from live files)",
+ "generated": "2026-11-27 14:26 Tehran (5h run 20261127T105653Z)",
  "counts": {
-  "total_titles": 632,
+  "total_titles": 633,
   "movies": 53,
-  "series": 579,
-  "total_links": 44105,
+  "series": 580,
+  "total_links": 44109,
   "by_year": {
    "2024": 2,
-   "2026": 45,
+   "2026": 46,
    "2023": 2,
    "2025": 9,
    "2014": 3,
@@ -76,8 +76,8 @@
    "2022": 1
   },
   "by_quality": {
-   "720p": 21435,
-   "1080p": 3608,
+   "720p": 21437,
+   "1080p": 3610,
    "540p": 292,
    "480p": 14388,
    "CAM 1080p": 117,
@@ -7049,6 +7049,17 @@
    "quality": "1080p,480p,720p",
    "rezflix_id": 36197,
    "identity_note": "TMDB+IMDb+OMDb agree (feed 2017, TMDB 2017, tt5871080). Persian name دزد ویسکی (feed description). Original title A Viszkis; feed director Nimród Anta = TMDB Nimród Antal; country Hungary = TMDB HU. Sizes from the feed حجم line (1:1 in quality order): 480p 614 MB, 720p 1.1 GB, 1080p 2 GB. Encoders Simba (480/720, .simba. in filename), RezFlix (1080p, no encoder token)."
+  },
+  {
+   "title": "MELANIA the Series",
+   "tmdb": 314131,
+   "imdb": "tt50666033",
+   "year": 2026,
+   "num": 14386,
+   "links": 4,
+   "quality": "720p,1080p",
+   "rezflix_id": 36137,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt50666033). Persian name سریال ملانیا (feed description). Country آمریکا = TMDB US; Prime Video; 2 episodes. Sizes are per-quality RANGES across episodes in the feed (720: 297-329 MB, 1080: 571-632 MB) — ranges are never written as per-file size_bytes/size_text. Encoder RezFlix (no encoder token in filename)."
   }
  ],
  "trailer_keys_added": [
@@ -7134,7 +7145,8 @@
   "tv:290826",
   "movie:680770",
   "movie:1153576",
-  "movie:401600"
+  "movie:401600",
+  "movie:1632599"
  ],
  "queued_titles": [
   {
@@ -7170,7 +7182,19 @@
   "http://peer.tci.cdn.146.dl150m.info/film1/Tyler.Perrys.Finding.Joy.2025.720p.WEB-DL.Farsi.Sub.Film2Media.mkv  # SAME ENCODE live as #12703 part 16 (Film2Media SoftSub, identical filename; host differs only)",
   "http://peer.tci.cdn.146.dl150m.info/film1/The.Social.Reckoning.2026.1080p.WEB-DL.6CH.YIFY.Farsi.Sub.Film2Media.mkv  # SAME ENCODE live as #11093 part 16 (Film2Media SoftSub, identical filename; host differs only)",
   "http://peer.tci.cdn.146.dl150m.info/film1/The.Social.Reckoning.2026.480p.WEB-DL.Farsi.Sub.Film2Media.mkv  # SAME ENCODE live as #11093 part 16 (Film2Media SoftSub, identical filename; host differs only)",
-  "http://peer.tci.cdn.146.dl150m.info/film1/The.Social.Reckoning.2026.720p.WEB-DL.YIFY.Farsi.Sub.Film2Media.mkv  # SAME ENCODE live as #11093 part 16 (Film2Media SoftSub, identical filename; host differs only)"
+  "http://peer.tci.cdn.146.dl150m.info/film1/The.Social.Reckoning.2026.720p.WEB-DL.YIFY.Farsi.Sub.Film2Media.mkv  # SAME ENCODE live as #11093 part 16 (Film2Media SoftSub, identical filename; host differs only)",
+  {
+   "title": "The Slightest Touch",
+   "tmdb": 1632599,
+   "imdb": "tt39461889",
+   "rezflix_id": 36201,
+   "reason": "Already live as H3 #14296 part 16 with the same 3 files (480p/720p/1080p Farsi.Sub YIFY/Film2Media, abrtech host); RezFlix dl150m URLs are mirrors of the same files, not new encodes.",
+   "urls": [
+    "http://peer.tci.cdn.146.dl150m.info/film1/The.Slightest.Touch.2026.480p.WEB-DL.Farsi.Sub.Film2Media.mkv",
+    "http://peer.tci.cdn.146.dl150m.info/film1/The.Slightest.Touch.2026.720p.WEB-DL.YIFY.Farsi.Sub.Film2Media.mkv",
+    "http://peer.tci.cdn.146.dl150m.info/film1/The.Slightest.Touch.2026.1080p.WEB-DL.6CH.YIFY.Farsi.Sub.Film2Media.mkv"
+   ]
+  }
  ],
  "note": "Section per filename markers (DESIGN §4); description footer 'زیرنویس چسبیده پارسی' is generic and does not set play_type. MANIFEST REBUILT from the live rz play-index (authoritative): the old manifest files were incomplete (batch 1 kept only Musketeers; the twice-daily counts did not match its films list), so films + counts here are derived from the play rows.",
  "encode_completions": [
