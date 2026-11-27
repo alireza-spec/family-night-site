@@ -2,19 +2,19 @@
  "code": "RZ",
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
  "start_num": 12560,
- "end_num": 14388,
- "live_base_head": "65895523153f4bafec8389692714ba97f742df68 (5h run 20261127T165712Z; H3 max #14387 verified from live files, RZ part-1 max #14387)",
- "generated": "2026-11-27 (RezFlix 5-hourly run 20261127T165712Z — merge of 1 new RZ title #14388 Sidelined 3 End Game (movie 2026, 2x SoftSub Simba 480p 385 MB / 720p 728 MB); no trailer, no completion; no manifest drift; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
+ "end_num": 14400,
+ "live_base_head": "3f744b0750d6ec165e97f4753c432c3f3025943c (5h run 20261127T195707Z; H3 max #14398 verified from live files, RZ part-1 max #14388)",
+ "generated": "2026-11-27 (RezFlix 5-hourly run 20261127T195707Z — merge of 2 new RZ titles #14399 The Night of the Three Fires (movie 2025, 2x SoftSub YTS 720p 743 MB / 1080p 1.35 GB) and #14400 Um Tio Quase Perfeito 3 (movie 2026, 2x SoftSub YTS 720p 872 MB / 1080p 1.75 GB); +2 trailer keys movie:1458352, movie:1368568; no completion; no manifest drift; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
  "counts": {
-  "total_titles": 635,
-  "movies": 54,
+  "total_titles": 637,
+  "movies": 56,
   "series": 581,
-  "total_links": 44206,
+  "total_links": 44210,
   "by_year": {
    "2024": 2,
-   "2026": 47,
+   "2026": 48,
    "2023": 2,
-   "2025": 9,
+   "2025": 10,
    "2014": 3,
    "1955": 2,
    "1960": 3,
@@ -77,8 +77,8 @@
    "2016": 1
   },
   "by_quality": {
-   "720p": 21513,
-   "1080p": 3610,
+   "720p": 21515,
+   "1080p": 3612,
    "540p": 292,
    "480p": 14389,
    "CAM 1080p": 117,
@@ -7085,6 +7085,28 @@
    "quality": "480p,720p",
    "rezflix_id": 36202,
    "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt42576213). Persian name کنار گذاشته شده 3 بازی پایانی (feed description «نام پارسی فیلم»). Sizes from the feed حجم line («385 + 728 مگابایت», quality line «480------720», in order): 480p 385 MB, 720p 728 MB. Encoder Simba from filename."
+  },
+  {
+   "title": "The Night of the Three Fires",
+   "tmdb": 1458352,
+   "imdb": "tt34771515",
+   "year": 2025,
+   "num": 14399,
+   "links": 2,
+   "quality": "1080p,720p",
+   "rezflix_id": 36206,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2025, TMDB 2025-05-08, tt34771515; OMDb 'La Noche de Los Tres Fuegos' 2025 Argentina, director Andrés Paternostro). Persian name شب سه آتش (feed description «نام پارسی فیلم»). Sizes from the feed حجم line («743 مگابایت + 1.35 گیگابایت», quality line «720------1080», in order): 1080p 1.35 GB, 720p 743 MB. Encoder YTS from filename."
+  },
+  {
+   "title": "Um Tio Quase Perfeito 3",
+   "tmdb": 1368568,
+   "imdb": "tt48462493",
+   "year": 2026,
+   "num": 14400,
+   "links": 2,
+   "quality": "1080p,720p",
+   "rezflix_id": 36208,
+   "identity_note": "IDENTITY CORRECTED: feed title/filenames are PART 3; TMDB 1368568 'Um Tio Quase Perfeito 3' (2026-10-08) + external_ids tt48462493 + OMDb ('Um Tio Quase Perfeito 3', 2026, Brazil, Pedro Antonio) agree. The check script's tmdb 448949 / tt6853930 (2017 original) is WRONG and was NOT used. Persian name یک دایی تقریباً بی‌ نقص (feed description «نام پارسی فیلم»). Sizes from the feed حجم line («872 مگابایت + 1.75 گیگابایت», quality line «720------1080», in order): 1080p 1.75 GB, 720p 872 MB. Encoder YTS from filename."
   }
  ],
  "trailer_keys_added": [
@@ -7171,7 +7193,9 @@
   "movie:680770",
   "movie:1153576",
   "movie:401600",
-  "movie:1632599"
+  "movie:1632599",
+  "movie:1458352",
+  "movie:1368568"
  ],
  "queued_titles": [
   {

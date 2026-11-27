@@ -94603,5 +94603,19 @@
   "part": "dn1",
   "title": "Somebody",
   "year": 2025
+ },
+ "movie:1458352": {
+  "imdb_id": "tt34771515",
+  "num": 14399,
+  "part": "rz",
+  "title": "The Night of the Three Fires",
+  "year": 2025
+ },
+ "movie:1368568": {
+  "imdb_id": "tt48462493",
+  "num": 14400,
+  "part": "rz",
+  "title": "Um Tio Quase Perfeito 3",
+  "year": 2026
  }
 }
