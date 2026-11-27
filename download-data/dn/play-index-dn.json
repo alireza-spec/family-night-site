@@ -404780,5 +404780,469 @@
    "url": null
   },
   "year": 2012
+ },
+ "tt10370380": {
+  "imdb": "tt10370380",
+  "num": 14389,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/The.Windermere.Children.2020.720p.vidbox.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://uplink.tci2.giftmond.ir/film/The.Windermere.Children.2020.480p.vidbox.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/The.Windermere.Children.2020.720p.BluRay.MkvHub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Windermere Children",
+  "tmdb_key": "movie:664423",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2020
+ },
+ "tt1461418": {
+  "imdb": "tt1461418",
+  "num": 14390,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "Dubbed",
+    "join_tier": 1,
+    "play_type": "dubbled",
+    "play_url": "http://peer.tct.149.giftmond.ir/morteza_movie/The.Gruffalo.2009.720p.Farsi.Dubbed.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Gruffalo",
+  "tmdb_key": "movie:28118",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2009
+ },
+ "tt0940642": {
+  "imdb": "tt0940642",
+  "num": 14391,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/200.Pounds.Beauty.2006.480p.BluRay-IRanFlix.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.sn1.giftmond.ir/film/200.Pounds.Beauty.2006.BluRay.720p.Ganool.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "200 Pounds Beauty",
+  "tmdb_key": "movie:18377",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2006
+ },
+ "tt8123646": {
+  "imdb": "tt8123646",
+  "num": 14392,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tct.146.giftmond.ir/film/A.Thousand.Miles.Behind.2019.480p.WEB-DL.HardSub.DigiMoviez.mp4",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tct.146.giftmond.ir/film/A.Thousand.Miles.Behind.2019.720p.WEB-DL.HardSub.DigiMoviez.mp4",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "A Thousand Miles Behind",
+  "tmdb_key": "movie:555261",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2020
+ },
+ "tt11558688": {
+  "imdb": "tt11558688",
+  "num": 14393,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/The.Spy.Who.Never.Dies.2022.480p.WEB-DL.x264.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/The.Spy.Who.Never.Dies.2022.720p.WEB-DL.x264.AAC-YTS.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Spy Who Never Dies",
+  "tmdb_key": "movie:934196",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2022
+ },
+ "tt18951176": {
+  "imdb": "tt18951176",
+  "num": 14394,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Gulmohar.2023.480p.WebDL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Gulmohar.2023.720p.WebDL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Gulmohar",
+  "tmdb_key": "movie:974792",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2023
+ },
+ "tt21354090": {
+  "imdb": "tt21354090",
+  "num": 14395,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/filmjaded/Pollen.2023.720p.WEB-DL.YIFY.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/filmjaded/Pollen_2023_1080p_WEB-DL_x264_YIFY_SoftSub_SaberFun.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Pollen",
+  "tmdb_key": "movie:1126637",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2023
+ },
+ "tt14488886": {
+  "imdb": "tt14488886",
+  "num": 14396,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Paper.and.Glue.2021.480p.Farsi.Subbed.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/Paper.and.Glue.2021.720p.Farsi.Subbed.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Paper and Glue",
+  "tmdb_key": "movie:820559",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2021
+ },
+ "tt1877543": {
+  "imdb": "tt1877543",
+  "num": 14397,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://exchange.port.sn.giftmond.ir/film/247F.2011.720p.BluRay.YIFY.FilmKio.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://exchange.port.sn.giftmond.ir/film/247F.2011.1080p.BluRay.YIFY.FilmKio.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "247°F",
+  "tmdb_key": "movie:137145",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2011
+ },
+ "tt35899314": {
+  "imdb": "tt35899314",
+  "num": 14398,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Somebody.2024.AMZN.WEB-DL.480p-simba.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Somebody.2024.AMZN.WEB-DL.720p-simba.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Somebody.2024.AMZN.WEB-DL.1080p-simba.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Somebody",
+  "tmdb_key": "movie:1216662",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2025
  }
 }
