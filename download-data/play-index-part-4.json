@@ -176138,6 +176138,48 @@
     "season": 3,
     "size_bytes": 1340860626,
     "size_text": "1.25 GB"
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": 74,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Series/Uzak.Sehir/S03/Uzak-Sehir.S03E74.HardSub.1080p.WEB-DL.Farsi.Sub.Film2Media.mkv?v=878609538627",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p",
+    "quality_label": "web-dl 1080p",
+    "season": 3,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": 74,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Series/Uzak.Sehir/S03/Uzak-Sehir.S03E74.HardSub.540p.WEB-DL.Farsi.Sub.Film2Media.mkv?v=884488249296",
+    "playit_url": null,
+    "quality": "WEB-DL 480p",
+    "quality_label": "web-dl 480p",
+    "season": 3,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": 74,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Series/Uzak.Sehir/S03/Uzak-Sehir.S03E74.HardSub.720p.WEB-DL.Farsi.Sub.Film2Media.mkv?v=497712248267",
+    "playit_url": null,
+    "quality": "WEB-DL 720p",
+    "quality_label": "web-dl 720p",
+    "season": 3,
+    "size_bytes": null,
+    "size_text": ""
    }
   ],
   "title": "Uzak Sehir",
