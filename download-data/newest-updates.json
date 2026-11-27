@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-27T15:17:36Z",
+ "generated_at": "2026-11-27T20:54:18Z",
  "date": "2026-11-27",
  "updates": [
   {
@@ -439,6 +439,33 @@
     99
    ],
    "overview": "Emma Fogarty lives with Epidermolysis Bullosa, a rare and extremely painful genetic condition that leaves her skin so fragile it blisters and tears at the slightest touch. As she turns 40, the age doctors predicted she would never reach, she takes up an offer from her long-time friend, Colin Farrell, to complete the Dublin Marathon together, with Farrell pushing her wheelchair for the final few miles.",
+   "updated_at": "2026-11-27"
+  },
+  {
+   "id": 329662,
+   "media_type": "tv",
+   "title": "",
+   "name": "Marriage Is Beautiful",
+   "original_title": "",
+   "original_name": "Evlilik Güzeldir",
+   "poster_path": "/koUw3UXTZqlgNSTnVdtUy5amMD7.jpg",
+   "backdrop_path": "/zXWWutJ96z2bF84U9LO4EjTije1.jpg",
+   "release_date": "",
+   "first_air_date": "2026-09-07",
+   "last_air_date": "2026-10-26",
+   "vote_average": 6.5,
+   "vote_count": 2,
+   "popularity": 4.1311,
+   "original_language": "tr",
+   "origin_country": [
+    "TR"
+   ],
+   "genre_ids": [
+    10751,
+    35,
+    18
+   ],
+   "overview": "The series centers on the story of Mesut Bahtiyar—a record-breaking marriage officer who has officiated the weddings of thousands of couples over the years—living with his five daughters and elderly mother in one of Istanbul's long-established neighborhoods.",
    "updated_at": "2026-11-27"
   },
   {
