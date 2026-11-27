@@ -405244,5 +405244,64 @@
    "url": null
   },
   "year": 2025
+ },
+ "tt34966140": {
+  "imdb": "tt34966140",
+  "num": 14403,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Focker.In.Law.2026.480p.HDCAM.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Focker.In.Law.2026.720p.HDCAM.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Focker.In.Law.2026.1080p.HDCAM.SoftSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Focker In-Law",
+  "tmdb_key": "movie:1400336",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
  }
 }
