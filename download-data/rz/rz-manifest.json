@@ -2,14 +2,14 @@
  "code": "RZ",
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
  "start_num": 12560,
- "end_num": 14386,
- "live_base_head": "c57a819efa5a229eaae95821df2c287187a96332 (5h run 20261127T105653Z; H3 max #14385 verified from live files)",
- "generated": "2026-11-27 14:26 Tehran (5h run 20261127T105653Z)",
+ "end_num": 14387,
+ "live_base_head": "1c1d92f8bca6694b292bc40432a3c5a8b82d00a9 (5h run 20261127T135726Z; H3 max #14386 verified from live files, RZ part-1 max #14386)",
+ "generated": "2026-11-27 (RezFlix 5-hourly run 20261127T135726Z — merge of 1 new RZ title #14387 Fuller House (series 2016, 75x 720p NextMovie SoftSub, S01E01-S05E18, 210 MB/episode); no trailer, no completion; no manifest drift; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
  "counts": {
-  "total_titles": 633,
+  "total_titles": 634,
   "movies": 53,
-  "series": 580,
-  "total_links": 44109,
+  "series": 581,
+  "total_links": 44204,
   "by_year": {
    "2024": 2,
    "2026": 46,
@@ -73,19 +73,20 @@
    "2009": 58,
    "2010": 1,
    "1957": 1,
-   "2022": 1
+   "2022": 1,
+   "2016": 1
   },
   "by_quality": {
-   "720p": 21437,
+   "720p": 21512,
    "1080p": 3610,
    "540p": 292,
    "480p": 14388,
    "CAM 1080p": 117,
    "CAM 720p": 35,
    "Cam 1080p": 1,
-   "WEB-DL 1080p": 63,
-   "WEB-DL 720p": 63,
-   "WEB-DL 480p": 12,
+   "WEB-DL 1080p": 67,
+   "WEB-DL 720p": 67,
+   "WEB-DL 480p": 16,
    "720p x265": 1067,
    "544p": 140,
    "576p": 181,
@@ -94,7 +95,9 @@
    "240p": 104,
    "360p": 8,
    "HDCAM 720p": 1,
-   "HDCAM 1080p": 1
+   "HDCAM 1080p": 1,
+   "WEB-DL 1080p 10bit x265": 4,
+   "WEB-DL 720p 10bit x265": 4
   }
  },
  "films": [
@@ -7012,8 +7015,8 @@
    "imdb": "tt36843594",
    "year": 2026,
    "num": 14294,
-   "links": 12,
-   "quality": "1080p,480p,720p",
+   "links": 32,
+   "quality": "1080p,480p,720p,WEB-DL 1080p,WEB-DL 1080p 10bit x265,WEB-DL 480p,WEB-DL 720p,WEB-DL 720p 10bit x265",
    "rezflix_id": 36191,
    "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt36843594). Persian name حفاری (feed description). Sizes are RANGES across episodes (480: 142-147 MB, 720: 393-406 MB, 1080: 655-675 MB) — no per-file sizes, size_bytes null. Encoder ValaMovie from filename (-ValaMovie.SoftSub). Trailer tv:290826 is the /tizer/ teaser (trailer slot only)."
   },
@@ -7060,6 +7063,17 @@
    "quality": "720p,1080p",
    "rezflix_id": 36137,
    "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt50666033). Persian name سریال ملانیا (feed description). Country آمریکا = TMDB US; Prime Video; 2 episodes. Sizes are per-quality RANGES across episodes in the feed (720: 297-329 MB, 1080: 571-632 MB) — ranges are never written as per-file size_bytes/size_text. Encoder RezFlix (no encoder token in filename)."
+  },
+  {
+   "title": "Fuller House",
+   "tmdb": 63623,
+   "imdb": "tt3986586",
+   "year": 2016,
+   "num": 14387,
+   "links": 75,
+   "quality": "720p",
+   "rezflix_id": 36157,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2016, TMDB 2016, tt3986586). Persian name خانه فولر (feed description «نام پارسی سریال»). Sizes from the feed حجم line («کیفیت 720 (210 مگابایت)», per episode file, Chandrayaan precedent): 720p 210 MB. Encoder NextMovie from filename."
   }
  ],
  "trailer_keys_added": [
@@ -7301,5 +7315,22 @@
    }
   ],
   "note": "ZV chunk of the 2026-11-24 PM run: ZV/F2M completions + Sister re-attribution; Clashing (new H3 #13906) lands in part 16, not rz. films[] links counts not maintained for completions (AM/chunk-1 precedent)."
- }
+ },
+ "drift_repairs": [
+  {
+   "num": 14294,
+   "title": "Dig",
+   "imdb": "tt36843594",
+   "links_before": 12,
+   "links_after": 32,
+   "added_quality": {
+    "WEB-DL 1080p": 4,
+    "WEB-DL 1080p 10bit x265": 4,
+    "WEB-DL 480p": 4,
+    "WEB-DL 720p": 4,
+    "WEB-DL 720p 10bit x265": 4
+   },
+   "note": "sources-check F2M encode completion added rows to the RZ part + play index without updating rz-manifest.json; repaired from the live part diff (H3==play) with quality attribution from the live play rows"
+  }
+ ]
 }
