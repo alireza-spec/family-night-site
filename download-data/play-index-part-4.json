@@ -8017,6 +8017,48 @@
     "season": 1,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": 23,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Series/Blossom.in.Darkness/S01/Blossom.in.Darkness.S01E23.1080p.WEB-DL.Farsi.Sub.Film2Media.mkv?v=760681324152",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p",
+    "quality_label": "web-dl 1080p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": 23,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Series/Blossom.in.Darkness/S01/Blossom.in.Darkness.S01E23.480p.WEB-DL.Farsi.Sub.Film2Media.mkv?v=527860102049",
+    "playit_url": null,
+    "quality": "WEB-DL 480p",
+    "quality_label": "web-dl 480p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": 23,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Series/Blossom.in.Darkness/S01/Blossom.in.Darkness.S01E23.720p.WEB-DL.Farsi.Sub.Film2Media.mkv?v=735007863037",
+    "playit_url": null,
+    "quality": "WEB-DL 720p",
+    "quality_label": "web-dl 720p",
+    "season": 1,
+    "size_bytes": null,
+    "size_text": ""
    }
   ],
   "title": "Blossom in Darkness",
