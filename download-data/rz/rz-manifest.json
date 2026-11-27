@@ -2,17 +2,17 @@
  "code": "RZ",
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
  "start_num": 12560,
- "end_num": 14387,
- "live_base_head": "1c1d92f8bca6694b292bc40432a3c5a8b82d00a9 (5h run 20261127T135726Z; H3 max #14386 verified from live files, RZ part-1 max #14386)",
- "generated": "2026-11-27 (RezFlix 5-hourly run 20261127T135726Z — merge of 1 new RZ title #14387 Fuller House (series 2016, 75x 720p NextMovie SoftSub, S01E01-S05E18, 210 MB/episode); no trailer, no completion; no manifest drift; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
+ "end_num": 14388,
+ "live_base_head": "65895523153f4bafec8389692714ba97f742df68 (5h run 20261127T165712Z; H3 max #14387 verified from live files, RZ part-1 max #14387)",
+ "generated": "2026-11-27 (RezFlix 5-hourly run 20261127T165712Z — merge of 1 new RZ title #14388 Sidelined 3 End Game (movie 2026, 2x SoftSub Simba 480p 385 MB / 720p 728 MB); no trailer, no completion; no manifest drift; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
  "counts": {
-  "total_titles": 634,
-  "movies": 53,
+  "total_titles": 635,
+  "movies": 54,
   "series": 581,
-  "total_links": 44204,
+  "total_links": 44206,
   "by_year": {
    "2024": 2,
-   "2026": 46,
+   "2026": 47,
    "2023": 2,
    "2025": 9,
    "2014": 3,
@@ -77,10 +77,10 @@
    "2016": 1
   },
   "by_quality": {
-   "720p": 21512,
+   "720p": 21513,
    "1080p": 3610,
    "540p": 292,
-   "480p": 14388,
+   "480p": 14389,
    "CAM 1080p": 117,
    "CAM 720p": 35,
    "Cam 1080p": 1,
@@ -7074,6 +7074,17 @@
    "quality": "720p",
    "rezflix_id": 36157,
    "identity_note": "TMDB+IMDb+OMDb agree (feed 2016, TMDB 2016, tt3986586). Persian name خانه فولر (feed description «نام پارسی سریال»). Sizes from the feed حجم line («کیفیت 720 (210 مگابایت)», per episode file, Chandrayaan precedent): 720p 210 MB. Encoder NextMovie from filename."
+  },
+  {
+   "title": "Sidelined 3 End Game",
+   "tmdb": 1690098,
+   "imdb": "tt42576213",
+   "year": 2026,
+   "num": 14388,
+   "links": 2,
+   "quality": "480p,720p",
+   "rezflix_id": 36202,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt42576213). Persian name کنار گذاشته شده 3 بازی پایانی (feed description «نام پارسی فیلم»). Sizes from the feed حجم line («385 + 728 مگابایت», quality line «480------720», in order): 480p 385 MB, 720p 728 MB. Encoder Simba from filename."
   }
  ],
  "trailer_keys_added": [

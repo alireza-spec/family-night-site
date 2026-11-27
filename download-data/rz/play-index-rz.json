@@ -613980,6 +613980,51 @@
    }
   ]
  },
+ "tt42576213": {
+  "imdb": "tt42576213",
+  "num": 14388,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "Simba",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/6b099d01e149f501ca366f42.simba.mp4",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 763363328,
+    "size_text": "728 MB"
+   },
+   {
+    "encoder": "Simba",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/6b099d03e149f501ca366f43.simba.mp4",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 403701760,
+    "size_text": "385 MB"
+   }
+  ],
+  "title": "Sidelined 3 End Game",
+  "tmdb_key": "movie:1690098",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
  "tt42643242": {
   "imdb": "tt42643242",
   "num": 13744,
