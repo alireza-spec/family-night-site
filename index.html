@@ -2167,8 +2167,8 @@ const TV_PROXY = 'https://iran-tv-proxy-v3.alirezadoe8.workers.dev/proxy?url=';
 const IMG = (p, s) => p ? 'https://image.tmdb.org/t/p/' + (s || 'w500') + p : '';
 
 const GENRES_FA = {28:'اکشن',12:'ماجراجویی',16:'انیمیشن',35:'کمدی',80:'جنایی',99:'مستند',18:'درام',10751:'خانوادگی',14:'فانتزی',36:'تاریخی',27:'ترسناک',10402:'موسیقی',9648:'معمایی',10749:'عاشقانه',878:'علمی‌تخیلی',10770:'فیلم تلویزیونی',53:'هیجان‌انگیز',10752:'جنگ',37:'وسترن',10759:'اکشن و ماجراجویی',10762:'کودک',10763:'اخبار',10764:'ریالیتی',10765:'علمی‌تخیلی و فانتزی',10766:'سریال روزانه',10767:'تاک‌شو',10768:'جنگ و سیاست'};
-const ROW_LABELS = {trending_now:'ترندهای روز',newM25:'فیلم‌های جدید',updates:'سریال‌های جدید و به‌روز شده',tm:'برترین فیلم‌های تاریخ',ts:'برترین سریال‌های تاریخ',miniseries:'مینی‌سریال‌های برتر',emmy:'برندگان جایزه امی',oscar:'برندگان اسکار',golden_globe:'برندگان گلدن گلوب',survival:'بقا و نجات',act:'اکشن',com:'کمدی',hor:'ترسناک',dra:'درام',sci:'علمی‌تخیلی',ani:'انیمیشن',anime:'انیمه',rom:'عاشقانه',fam:'خانوادگی',sports:'ورزشی',war:'جنگ',bio:'زندگینامه',book:'اقتباس از کتاب',docs:'مستند',romcom:'کمدی رمانتیک',parody:'پارودی',christmas_time:'کریسمس',apocalypse:'آخرالزمانی',iran:'سینمای ایران',iran_pre1978:'آثار ایران قدیم (پیش از ۱۹۷۸)',india:'سینمای هند',asia:'سینمای آسیا',a24:'برگزیده‌های A24',marvel:'دنیای مارول',marvelTV:'سریال‌های مارول',dc:'دنیای دی‌سی',adult:'ویژه بزرگسالان',curator:'پیشنهاد سردبیر',fan:'فانتزی',mental:'روان‌شناختی',heartbreak_loss:'غم و فقدان','20s':'دهه ۱۹۲۰','30s':'دهه ۱۹۳۰','40s':'دهه ۱۹۴۰','50s':'دهه ۱۹۵۰','60s':'دهه ۱۹۶۰','70s':'دهه ۱۹۷۰','80s':'دهه ۱۹۸۰','90s':'دهه ۱۹۹۰','00s':'دهه ۲۰۰۰','10s':'دهه ۲۰۱۰'};
-const HOME_ORDER = ['trending_now','curator','newM25','updates','tm','ts','miniseries','act','ani','anime','iran','com','oscar','sci','fam','hor','romcom','docs','marvel','dc','war'];
+const ROW_LABELS = {trending_now:'ترندهای روز',newM25:'فیلم‌های جدید',updates:'سریال‌های جدید و به‌روز شده',updated:'بروز شده‌ها',tm:'برترین فیلم‌های تاریخ',ts:'برترین سریال‌های تاریخ',miniseries:'مینی‌سریال‌های برتر',emmy:'برندگان جایزه امی',oscar:'برندگان اسکار',golden_globe:'برندگان گلدن گلوب',survival:'بقا و نجات',act:'اکشن',com:'کمدی',hor:'ترسناک',dra:'درام',sci:'علمی‌تخیلی',ani:'انیمیشن',anime:'انیمه',rom:'عاشقانه',fam:'خانوادگی',sports:'ورزشی',war:'جنگ',bio:'زندگینامه',book:'اقتباس از کتاب',docs:'مستند',romcom:'کمدی رمانتیک',parody:'پارودی',christmas_time:'کریسمس',apocalypse:'آخرالزمانی',iran:'سینمای ایران',iran_pre1978:'آثار ایران قدیم (پیش از ۱۹۷۸)',india:'سینمای هند',asia:'سینمای آسیا',a24:'برگزیده‌های A24',marvel:'دنیای مارول',marvelTV:'سریال‌های مارول',dc:'دنیای دی‌سی',adult:'ویژه بزرگسالان',curator:'پیشنهاد سردبیر',fan:'فانتزی',mental:'روان‌شناختی',heartbreak_loss:'غم و فقدان','20s':'دهه ۱۹۲۰','30s':'دهه ۱۹۳۰','40s':'دهه ۱۹۴۰','50s':'دهه ۱۹۵۰','60s':'دهه ۱۹۶۰','70s':'دهه ۱۹۷۰','80s':'دهه ۱۹۸۰','90s':'دهه ۱۹۹۰','00s':'دهه ۲۰۰۰','10s':'دهه ۲۰۱۰'};
+const HOME_ORDER = ['trending_now','curator','newM25','updates','updated','tm','ts','miniseries','act','ani','anime','iran','com','oscar','sci','fam','hor','romcom','docs','marvel','dc','war'];
 /* ================= FN-CURATOR-PICKS v2 =================
    «پیشنهاد سردبیر» — the old repo's CURATOR'S PICK list (483 movies,
    title + year only, fn-repo/index.html L6495-6496), resolved to TMDB
@@ -3138,7 +3138,7 @@ function collectionStreams(key) {
 }
 function catalogItems() { return [...itemCache.values()]; }
 function buildSidebar() {
-  const colKeys = ['trending_now', 'newM25', 'updates', 'tm', 'ts', 'miniseries', 'oscar', 'emmy', 'golden_globe', 'iran', 'iran_pre1978', 'india', 'asia', 'a24', 'marvel', 'marvelTV', 'dc', 'survival', 'apocalypse', 'christmas_time', 'curator'];
+  const colKeys = ['trending_now', 'newM25', 'updates', 'updated', 'tm', 'ts', 'miniseries', 'oscar', 'emmy', 'golden_globe', 'iran', 'iran_pre1978', 'india', 'asia', 'a24', 'marvel', 'marvelTV', 'dc', 'survival', 'apocalypse', 'christmas_time', 'curator'];
   const rows = (homeSnap && homeSnap.rows) || {};
   const cols = colKeys.filter(k => rows[k] && rows[k].length);
   $('#sb-collections').innerHTML = cols.length
@@ -4199,6 +4199,18 @@ async function loadHome() {
           rows.updates = _upLive;
         }
       } catch (e) { /* keep the static row or the snapshot row */ }
+    })(),
+    (async () => {
+      /* FN-NEWEST-SORT-V2 (user decision 2026-11-27): static
+         newest-updates.json first (download-data/newest-updates.json -
+         titles that got new links/episodes after first addition, in
+         updated-date order, movies + series mixed, single `updates`
+         array). No live TMDB merge: no TMDB query expresses "got new
+         archive links", so a discover step would only pollute the rail. */
+      try {
+        var _stUpd = await fnStaticJson('newest-updates.json', null, DL_BASE);
+        if (_stUpd && (_stUpd.updates || []).length) { rows.updated = _stUpd.updates.slice(0, 20); /* FN-NEWEST-SORT-V2: file order IS updated-date order — NO re-sort */ try { fnPaintHome(rows); } catch (e2) {} }
+      } catch (e) {}
     })()
   ];
   await Promise.allSettled(_jobs.map(j => fnWithDeadline(j, 30000)));
