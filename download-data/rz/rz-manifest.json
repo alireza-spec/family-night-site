@@ -2,17 +2,17 @@
  "code": "RZ",
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
  "start_num": 12560,
- "end_num": 14109,
- "live_base_head": "20d675fd6d16ace5c182cdee1b008141d3989508 (5h run 20261126T001124Z; H3 max #14106 verified from live files, RZ part-1 max #14106)",
- "generated": "2026-11-26 (RezFlix 5-hourly run 20261126T001124Z — merge of 3 new RZ titles #14107-14109 + 2 trailer keys; no encode completions, no duplicates; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
+ "end_num": 14293,
+ "live_base_head": "16151d992aa302631fcc9d8f3acf11b4e2c1e154 (5h run 20261127T011109Z; H3 max #14292 verified from live files, RZ part-1 max #14109)",
+ "generated": "2026-11-27 (RezFlix 5-hourly run 20261127T011109Z — merge of 1 new RZ title #14293 Cloud Girl + 1 trailer key; no encode completions, no duplicates; drift repair: InuYasha #13131 links 189 -> 198 (+9 x 720p), Way of the Warrior Kid #14096 links 5 -> 6 (+1 x WEB-DL 480p), both added by later runs without a manifest update; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
  "counts": {
-  "total_titles": 627,
-  "movies": 49,
+  "total_titles": 628,
+  "movies": 50,
   "series": 578,
-  "total_links": 44067,
+  "total_links": 44079,
   "by_year": {
    "2024": 2,
-   "2026": 43,
+   "2026": 44,
    "2023": 2,
    "2025": 8,
    "2014": 3,
@@ -76,8 +76,8 @@
    "2022": 1
   },
   "by_quality": {
-   "720p": 21416,
-   "1080p": 3598,
+   "720p": 21426,
+   "1080p": 3599,
    "540p": 292,
    "480p": 14380,
    "CAM 1080p": 117,
@@ -85,7 +85,7 @@
    "Cam 1080p": 1,
    "WEB-DL 1080p": 63,
    "WEB-DL 720p": 63,
-   "WEB-DL 480p": 11,
+   "WEB-DL 480p": 12,
    "720p x265": 1067,
    "544p": 140,
    "576p": 181,
@@ -2623,7 +2623,7 @@
    "imdb": "tt0290223",
    "year": 2000,
    "num": 13131,
-   "links": 189,
+   "links": 198,
    "quality": "720p",
    "rezflix_id": 22768,
    "identity_note": "TMDB+IMDb+OMDb agree (feed 2000, tmdb 35610, tt0290223). Persian name اینویاشا."
@@ -6902,7 +6902,7 @@
    "imdb": "tt32213169",
    "year": 2026,
    "num": 14096,
-   "links": 5,
+   "links": 6,
    "quality": "1080p,480p,720p,720p x265,WEB-DL 1080p",
    "rezflix_id": 36171,
    "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt32213169). Persian name راه و رسم کودک جنگجو (feed description, verified vs synopsis). Sizes RESOLVED 2026-11-26: F2M CDN HEAD of identical files 720p YIFY=978 MB, 1080p YIFY=2 GB, 720p x265 PSA=837 MB; 480p ZarFilm=541 MB by elimination (4 files, 4 feed volumes, 3 pinned by measurement). +480p link +1080p x265 PSA (F2M) this run."
@@ -6994,6 +6994,17 @@
    "quality": "480p,720p",
    "rezflix_id": 36182,
    "identity_note": "TMDB+IMDb+OMDb agree (feed 2024, TMDB 2024, tt31701070). Persian name بازرس ریشی (feed description, verified vs synopsis). No sizes: حجم line is a 480 range (404------902 MB) across bundled episodes. Episodes are bundled ranges S01E01-E04 / E05-E08 / E09-E10 (Single Papa precedent). Trailer tv:249543 is the Official_Trailer source (trailer slot only)."
+  },
+  {
+   "title": "Cloud Girl",
+   "tmdb": 1151265,
+   "imdb": "tt20259240",
+   "year": 2026,
+   "num": 14293,
+   "links": 2,
+   "quality": "1080p,720p",
+   "rezflix_id": 36189,
+   "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt20259240). Persian name دختری در ابرها (feed description, verified vs synopsis). Sizes 777 MB / 1.56 GB (qual line 720------1080 == vol order, 1:1; GB text-only). Encoder YTS from filename (-YTS). Trailer movie:1151265 is the Persian-titled teaser (trailer slot only)."
   }
  ],
  "trailer_keys_added": [
@@ -7074,7 +7085,8 @@
   "movie:1477963",
   "movie:1482377",
   "movie:1330232",
-  "tv:249543"
+  "tv:249543",
+  "movie:1151265"
  ],
  "queued_titles": [
   {
