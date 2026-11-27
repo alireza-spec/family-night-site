@@ -608694,6 +608694,65 @@
   },
   "year": 2025
  },
+ "tt37267166": {
+  "imdb": "tt37267166",
+  "num": 14402,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "ZarFilm",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/The.Hunchback.Soul.of.Paris.2026.1080p.WEB-DL.x264.SoftSub.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": 1932735283,
+    "size_text": "1.8 GB"
+   },
+   {
+    "encoder": "ZarFilm",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/The.Hunchback.Soul.of.Paris.2026.720p.WEB-DL.x264.SoftSub.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 980418560,
+    "size_text": "935 MB"
+   },
+   {
+    "encoder": "ZarFilm",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://s1.giftmond.ir/filmjadid/The.Hunchback.Soul.of.Paris.2026.480p.WEB-DL.x264.SoftSub.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 580911104,
+    "size_text": "554 MB"
+   }
+  ],
+  "title": "The Hunchback Soul of Paris",
+  "tmdb_key": "movie:1480665",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
  "tt37438659": {
   "imdb": "tt37438659",
   "num": 12994,
