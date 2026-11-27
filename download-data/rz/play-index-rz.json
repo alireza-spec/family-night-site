@@ -608784,6 +608784,65 @@
   },
   "year": 2026
  },
+ "tt37809949": {
+  "imdb": "tt37809949",
+  "num": 14401,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "HardSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Dulhaniya.Le.Aaeegi.2026.Hindi.1080p.WEBDL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": 2802466161,
+    "size_text": "2.61 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "HardSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Dulhaniya.Le.Aaeegi.2026.Hindi.720p.WEBDL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 1385126953,
+    "size_text": "1.29 GB"
+   },
+   {
+    "encoder": "RezFlix",
+    "episode": null,
+    "group": "HardSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Dulhaniya.Le.Aaeegi.2026.Hindi.480p.WEBDL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 716177408,
+    "size_text": "683 MB"
+   }
+  ],
+  "title": "Dulhaniya Le Aaeegi",
+  "tmdb_key": "movie:1720201",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
  "tt37964718": {
   "imdb": "tt37964718",
   "num": 12992,

@@ -2,17 +2,17 @@
  "code": "RZ",
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
  "start_num": 12560,
- "end_num": 14400,
- "live_base_head": "3f744b0750d6ec165e97f4753c432c3f3025943c (5h run 20261127T195707Z; H3 max #14398 verified from live files, RZ part-1 max #14388)",
- "generated": "2026-11-27 (RezFlix 5-hourly run 20261127T195707Z — merge of 2 new RZ titles #14399 The Night of the Three Fires (movie 2025, 2x SoftSub YTS 720p 743 MB / 1080p 1.35 GB) and #14400 Um Tio Quase Perfeito 3 (movie 2026, 2x SoftSub YTS 720p 872 MB / 1080p 1.75 GB); +2 trailer keys movie:1458352, movie:1368568; no completion; no manifest drift; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
+ "end_num": 14401,
+ "live_base_head": "1693c880bda46b777d19f99e298b598608075263 (5h run 20261127T205712Z; H3 max #14400 verified from live files, RZ part-1 max #14400)",
+ "generated": "2026-11-28 (RezFlix 5-hourly run 20261127T205712Z — merge of 1 new RZ title #14401 Dulhaniya Le Aaeegi (movie 2026, 3x HardSub WEBDL 480p 683 MB / 720p 1.29 GB / 1080p 2.61 GB); +1 trailer key movie:1720201; no completion; no manifest drift; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
  "counts": {
-  "total_titles": 637,
-  "movies": 56,
+  "total_titles": 638,
+  "movies": 57,
   "series": 581,
-  "total_links": 44210,
+  "total_links": 44213,
   "by_year": {
    "2024": 2,
-   "2026": 48,
+   "2026": 49,
    "2023": 2,
    "2025": 10,
    "2014": 3,
@@ -77,10 +77,10 @@
    "2016": 1
   },
   "by_quality": {
-   "720p": 21515,
-   "1080p": 3612,
+   "720p": 21516,
+   "1080p": 3613,
    "540p": 292,
-   "480p": 14389,
+   "480p": 14390,
    "CAM 1080p": 117,
    "CAM 720p": 35,
    "Cam 1080p": 1,
@@ -7107,6 +7107,17 @@
    "quality": "1080p,720p",
    "rezflix_id": 36208,
    "identity_note": "IDENTITY CORRECTED: feed title/filenames are PART 3; TMDB 1368568 'Um Tio Quase Perfeito 3' (2026-10-08) + external_ids tt48462493 + OMDb ('Um Tio Quase Perfeito 3', 2026, Brazil, Pedro Antonio) agree. The check script's tmdb 448949 / tt6853930 (2017 original) is WRONG and was NOT used. Persian name یک دایی تقریباً بی‌ نقص (feed description «نام پارسی فیلم»). Sizes from the feed حجم line («872 مگابایت + 1.75 گیگابایت», quality line «720------1080», in order): 1080p 1.75 GB, 720p 872 MB. Encoder YTS from filename."
+  },
+  {
+   "title": "Dulhaniya Le Aaeegi",
+   "tmdb": 1720201,
+   "imdb": "tt37809949",
+   "year": 2026,
+   "num": 14401,
+   "links": 3,
+   "quality": "1080p,480p,720p",
+   "rezflix_id": 36205,
+   "identity_note": "IDENTITY CORRECTED (parent-verified): the check script QUEUED this on the OMDb title-string mismatch — OMDb 'Dulhaniyan Le Aayegi' (2025) is a Hindi transliteration variant of the SAME title, not a different work: TMDB 1720201 'Dulhaniya Le Aaeegi' (2026-07-24) + external_ids tt37809949 + OMDb (director Akashaditya Lama; actors Khushali Kumar, Mahesh Manjrekar, Piyush Mishra; plot 'big fat Indian wedding goes wrong' == TMDB overview / feed synopsis) agree. Persian name عروس رو میاره (feed description «نام پارسی فیلم»). Sizes from the feed حجم line («683 مگابایت + 1.29 گیگابایت + 2.61 گیگابایت», quality line «480------720-----1080», in order): 1080p 2.61 GB, 480p 683 MB, 720p 1.29 GB. Encoder RezFlix from filename."
   }
  ],
  "trailer_keys_added": [
@@ -7195,7 +7206,8 @@
   "movie:401600",
   "movie:1632599",
   "movie:1458352",
-  "movie:1368568"
+  "movie:1368568",
+  "movie:1720201"
  ],
  "queued_titles": [
   {
