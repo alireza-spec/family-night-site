@@ -196402,6 +196402,20 @@
     "season": null,
     "size_bytes": null,
     "size_text": ""
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "https://gnjx4q9pgkzymnchqbc3fy74.abrtech.top/aG5p/Film/New-Server/2019/Monos.2019.720p.BluRay.Film2Media.mkv?v=780238394366",
+    "playit_url": null,
+    "quality": "BluRay 480p",
+    "quality_label": "bluray 480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
    }
   ],
   "title": "Monos",
