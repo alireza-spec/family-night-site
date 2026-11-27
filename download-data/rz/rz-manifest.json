@@ -9,7 +9,7 @@
   "total_titles": 629,
   "movies": 50,
   "series": 579,
-  "total_links": 44091,
+  "total_links": 44097,
   "by_year": {
    "2024": 2,
    "2026": 45,
@@ -76,10 +76,10 @@
    "2022": 1
   },
   "by_quality": {
-   "720p": 21430,
-   "1080p": 3603,
+   "720p": 21432,
+   "1080p": 3605,
    "540p": 292,
-   "480p": 14384,
+   "480p": 14386,
    "CAM 1080p": 117,
    "CAM 720p": 35,
    "Cam 1080p": 1,
@@ -6858,7 +6858,7 @@
    "imdb": "tt18224594",
    "year": 2026,
    "num": 13952,
-   "links": 43,
+   "links": 49,
    "quality": "1080p,480p,720p,WEB-DL 1080p,WEB-DL 480p,WEB-DL 720p",
    "rezflix_id": 36164,
    "identity_note": "TMDB+IMDb+OMDb agree (feed 2026, TMDB 2026, tt18224594). Persian name بلید رانر 2099 (feed description, verified vs synopsis). Series: single episode S01E01, SoftSub, no per-episode sizes (RZ series precedent)."
