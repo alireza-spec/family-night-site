@@ -2,17 +2,19 @@
  "code": "DN",
  "counts": {
   "by_resolution": {
-   "1080p": 1387,
+   "1080p": 1407,
    "360p": 1,
-   "480p": 9170,
+   "480p": 9190,
    "540p": 711,
-   "720p": 13906,
-   "576p": 1
+   "720p": 13949,
+   "576p": 1,
+   "DVDRip": 3,
+   "DVD": 2
   },
   "by_version_family": {
-   "Dubbed": 3751,
-   "Subtitled": 18996,
-   "unknown": 119,
+   "Dubbed": 3771,
+   "Subtitled": 19056,
+   "unknown": 127,
    "NoSub": 7,
    "HardSub": 661,
    "SoftSub": 1642
@@ -41,36 +43,36 @@
    "1991": 7,
    "1992": 4,
    "1995": 5,
-   "1996": 5,
+   "1996": 7,
    "1997": 10,
-   "1999": 17,
+   "1999": 21,
    "2000": 4,
    "2001": 12,
    "2002": 9,
    "2003": 15,
-   "2004": 12,
+   "2004": 13,
    "2005": 27,
    "2006": 49,
-   "2007": 1004,
+   "2007": 1005,
    "2008": 20,
-   "2009": 36,
-   "2010": 430,
+   "2009": 37,
+   "2010": 431,
    "2011": 258,
-   "2012": 133,
+   "2012": 135,
    "2013": 200,
-   "2014": 463,
-   "2015": 1082,
-   "2016": 138,
-   "2017": 270,
-   "2018": 478,
+   "2014": 466,
+   "2015": 1085,
+   "2016": 142,
+   "2017": 274,
+   "2018": 480,
    "2019": 384,
-   "2020": 423,
-   "2021": 1072,
-   "2022": 623,
+   "2020": 425,
+   "2021": 1078,
+   "2022": 624,
    "2023": 895,
-   "2024": 649,
+   "2024": 650,
    "2025": 811,
-   "2026": 302,
+   "2026": 305,
    "1994": 4,
    "1998": 13,
    "1971": 6,
@@ -85,17 +87,17 @@
    "1970": 3,
    "1993": 5,
    "1918": 1,
-   "1966": 5,
+   "1966": 6,
    "1940": 3,
    "1936": 2
   },
   "ext_overlap": 1,
-  "films": 909,
-  "play_rows": 26100,
+  "films": 951,
+  "play_rows": 26188,
   "series": 563,
   "skipped_no_links": 11,
-  "total": 788,
-  "trailer_keys": 855,
+  "total": 830,
+  "trailer_keys": 867,
   "trailers_dropped": 71,
   "variety_patched": 401,
   "variety_play_created": 42,
@@ -5133,6 +5135,41 @@
    "title": "Cat Funeral",
    "year": 2015,
    "imdb": "tt5218784",
+   "type": "movie",
+   "note": "needs Persian subtitle version"
+  },
+  {
+   "title": "Skin",
+   "year": 2018,
+   "imdb": "tt6043142",
+   "type": "movie",
+   "note": "needs Persian subtitle version"
+  },
+  {
+   "title": "If Anything Happens I Love You",
+   "year": 2020,
+   "imdb": "tt11768948",
+   "type": "movie",
+   "note": "needs Persian subtitle version"
+  },
+  {
+   "title": "Arjun Pandit",
+   "year": 1999,
+   "imdb": "tt0278315",
+   "type": "movie",
+   "note": "needs Persian subtitle version"
+  },
+  {
+   "title": "More Than Blue",
+   "year": 2009,
+   "imdb": "tt1454545",
+   "type": "movie",
+   "note": "needs Persian subtitle version"
+  },
+  {
+   "title": "Prem Granth",
+   "year": 1996,
+   "imdb": "tt0117374",
    "type": "movie",
    "note": "needs Persian subtitle version"
   }
@@ -24333,5 +24370,288 @@
   ],
   "live_base_head": "73ee9d8d185b72ad3408d6e0abcf5f35598ec52d",
   "note": "4 Simba PM teasers (The Story Untold, Daughter of a Concubine, Happy Anding, Against the Gods) into dn-trailer-index; trailer_keys 847->851."
+ },
+ "twice_daily_2026-11-27_am_dn_movies": {
+  "live_base_head": "bebfa630329027925aa318a517ea61c83eae6b82",
+  "start_num": 14297,
+  "end_num": 14338,
+  "new_titles_merged": [
+   "Skin",
+   "Everything, Everything",
+   "Superman vs. The Elite",
+   "Half Girlfriend",
+   "Don't Cry, Mommy",
+   "Sherlock Gnomes",
+   "If Anything Happens I Love You",
+   "Mission: Possible",
+   "Arjun Pandit",
+   "More Than Blue",
+   "Daphne",
+   "Kristy",
+   "Intruders",
+   "Fortune Favors Lady Nikuko",
+   "South Park: Post COVID: The Return of COVID",
+   "Friendzone",
+   "Don't Forget I Love You",
+   "Tech Billionaires: Jeff Bezos",
+   "Darbe",
+   "One Piece: Heart of Gold",
+   "Christmas with the Kranks",
+   "Miss Meadows",
+   "Mona Lisa and the Blood Moon",
+   "Animaniacs: Wakko's Wish",
+   "The King and I",
+   "Bury the Devil",
+   "Prem Granth",
+   "Revolutionary Girl Utena: The Movie",
+   "Horizon",
+   "Bygones Be Bygones",
+   "Three Housewives and a Body",
+   "In a Whisper",
+   "The Mountain II",
+   "Cagefighter: Worlds Collide",
+   "The Bandit",
+   "No Way",
+   "Lt. Robin Crusoe U.S.N.",
+   "The Mermaid Princess",
+   "Five Minarets in New York",
+   "No Way! 2",
+   "Do You See Me?",
+   "Disney Princess Enchanted Tales: Follow Your Dreams"
+  ],
+  "new_links": 88,
+  "new_trailers": 12,
+  "duplicate_urls_dropped": 0,
+  "completions": [],
+  "repairs": [],
+  "skipped": [],
+  "trailers_dropped": [
+   {
+    "key": "movie:850140",
+    "title": "Tech Billionaires: Jeff Bezos",
+    "year": 2021,
+    "url": "https://play.doostihaa.com/Teaser/Tech.Billionaires.Jeff.Bezos.2021.Trailer.mp4",
+    "reason": "outside DN file pool (or not direct mp4/mkv)"
+   }
+  ],
+  "search_rows_updated_in_place": [
+   {
+    "imdb": "tt6043142",
+    "old": [
+     "Skin",
+     2018,
+     "movie",
+     "tt6043142",
+     542417,
+     3,
+     1
+    ],
+    "new": [
+     "Skin",
+     2018,
+     "movie",
+     "tt6043142",
+     542417,
+     "dn1",
+     0
+    ]
+   },
+   {
+    "imdb": "tt5001718",
+    "old": [
+     "Everything, Everything",
+     2017,
+     "movie",
+     "tt5001718",
+     417678,
+     2,
+     1
+    ],
+    "new": [
+     "Everything, Everything",
+     2017,
+     "movie",
+     "tt5001718",
+     417678,
+     "dn1",
+     0
+    ]
+   },
+   {
+    "imdb": "tt2296777",
+    "old": [
+     "Sherlock Gnomes",
+     2018,
+     "movie",
+     "tt2296777",
+     370567,
+     3,
+     1
+    ],
+    "new": [
+     "Sherlock Gnomes",
+     2018,
+     "movie",
+     "tt2296777",
+     370567,
+     "dn1",
+     0
+    ]
+   },
+   {
+    "imdb": "tt14140954",
+    "old": [
+     "Mission: Possible",
+     2021,
+     "movie",
+     "tt14140954",
+     629028,
+     3,
+     1
+    ],
+    "new": [
+     "Mission: Possible",
+     2021,
+     "movie",
+     "tt14140954",
+     629028,
+     "dn1",
+     0
+    ]
+   },
+   {
+    "imdb": "tt4009278",
+    "old": [
+     "Intruders",
+     2015,
+     "movie",
+     "tt4009278",
+     333674,
+     3,
+     1
+    ],
+    "new": [
+     "Intruders",
+     2015,
+     "movie",
+     "tt4009278",
+     333674,
+     "dn1",
+     0
+    ]
+   },
+   {
+    "imdb": "tt13758684",
+    "old": [
+     "Fortune Favors Lady Nikuko",
+     2021,
+     "movie",
+     "tt13758684",
+     781816,
+     3,
+     1
+    ],
+    "new": [
+     "Fortune Favors Lady Nikuko",
+     2021,
+     "movie",
+     "tt13758684",
+     781816,
+     "dn1",
+     0
+    ]
+   },
+   {
+    "imdb": "tt0388419",
+    "old": [
+     "Christmas with the Kranks",
+     2004,
+     "movie",
+     "tt0388419",
+     13673,
+     2,
+     1
+    ],
+    "new": [
+     "Christmas with the Kranks",
+     2004,
+     "movie",
+     "tt0388419",
+     13673,
+     "dn1",
+     0
+    ]
+   },
+   {
+    "imdb": "tt5813916",
+    "old": [
+     "The Mountain II",
+     2016,
+     "movie",
+     "tt5813916",
+     427008,
+     2,
+     1
+    ],
+    "new": [
+     "The Mountain II",
+     2016,
+     "movie",
+     "tt5813916",
+     427008,
+     "dn1",
+     0
+    ]
+   },
+   {
+    "imdb": "tt0116231",
+    "old": [
+     "The Bandit",
+     1996,
+     "movie",
+     "tt0116231",
+     26900,
+     2,
+     1
+    ],
+    "new": [
+     "The Bandit",
+     1996,
+     "movie",
+     "tt0116231",
+     26900,
+     "dn1",
+     0
+    ]
+   },
+   {
+    "imdb": "tt1686039",
+    "old": [
+     "Act of Vengeance",
+     2010,
+     "movie",
+     "tt1686039",
+     null,
+     3,
+     1
+    ],
+    "new": [
+     "Five Minarets in New York",
+     2010,
+     "movie",
+     "tt1686039",
+     51794,
+     "dn1",
+     0
+    ]
+   }
+  ],
+  "decisions": [
+   "version unknown -> NoSub",
+   "H3 title = tmdb_title/tmdb_name; H3 year = DN year",
+   "quality from filename (bare numbers allowed); DVDRip/DVD with no res token -> quality DVDRip/DVD (live label precedent)",
+   "teasers -> dn-trailer-index only (DN pool hosts + mp4/mkv); outside-pool dropped",
+   "pre-existing search rows updated in place to dn1/dn2 (old H3 record left untouched, 11-24 PM precedent)"
+  ]
  }
 }
