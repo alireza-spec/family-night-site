@@ -1505,6 +1505,10 @@ html.tg .bottomnav{display:flex}
 .fnp-tbtn.on{background:var(--gold);color:#231700}
 .fnp-tbtn svg{width:1.25rem;height:1.25rem}
 .fnp-center{position:absolute;inset:0;z-index:5;display:flex;align-items:center;justify-content:center;gap:3.2rem;pointer-events:none;direction:ltr}
+/* FN-OVERLAP-FIX v1: the JS toggles fnp-busy on #ov-fnplayer while the
+   loading spinner or error card is up; hide the center buttons so they
+   do not ghost through the overlays. (Rule never existed in either file.) */
+.fnp-busy .fnp-center{display:none}
 .fnp-cbtn{pointer-events:auto;width:4.2rem;height:4.2rem;border:0;background:none;color:rgba(255,255,255,.8);display:grid;place-items:center}
 .fnp-cbtn svg{width:2rem;height:2rem}
 .fnp-cbtn.main{width:5rem;height:5rem;background:none;color:rgba(255,255,255,.92);border:0}
@@ -9838,9 +9842,15 @@ function fnPlayerSubCandidates(playUrl) {
   function push(x) { if (x && out.indexOf(x) < 0) out.push(x); }
   var ep = base.match(/^(.+?\.S\d{2}E\d{2})/i);
   if (ep) push(dir + ep[1] + '.srt');
+  /* The video may already sit in a subtitle folder (F2M: `SUB/`,
+     `S01.Sub/`, …) — then a `SUB/` variant would resolve to nonsense
+     `SUB/SUB/…`. Only add SUB/ variants when the dir is not already one. */
+  var inSubDir = /(^|\/)(SUB|S\d+\.Sub)\/$/i.test(dir);
+  if (ep && !inSubDir) push(dir + 'SUB/' + ep[1] + '.srt');
   var ty = base.match(/^(.+?\.(?:19|20)\d{2})/);
   if (ty) push(dir + ty[1] + '.srt');
   push(dir + base.replace(/\.(mkv|mp4|avi|mov)$/i, '') + '.srt');
+  if (!inSubDir) push(dir + 'SUB/' + base.replace(/\.(mkv|mp4|avi|mov)$/i, '') + '.srt');
   return out;
 }
 function fnPlayerDisableInband() {
@@ -9865,9 +9875,26 @@ function fnPlayerCheckInband() {
     FNP.inbandSub = true; FNP.subState = 'inband'; fnPlayerPaintSubMenu();
   }
 }
+/* Path-B rows (download-section "پخش با فمیلی نایت", dlPlayInSite) carry the
+   Persian version label as `group` ('زیرنویس فارسی' / 'دوبله فارسی') instead
+   of the play-index section key ('SoftSub' / 'HardSub'). Treat both
+   vocabularies as the same subtitle group, so the download-section player
+   fetches a sidecar exactly like the play-list player. (v2 fix for the
+   dlPlayInSite gap: that function lives in the main script, outside this
+   module, so normalising here — not threading group/play_type through it —
+   is the one fix point. Trade-off, on record: path-B rows carry no
+   play_type, so they always take the soft branch — a genuinely-hardsub
+   path-B file with no sidecar shows «فایل جدا پیدا نشد» instead of the
+   hard row. That is the honest state for an unverified file: the player
+   cannot verify burned-in subs, and it matches the play-list behaviour
+   for play_type 'none' rows.) */
+function fnPlayerSubGroup(g) {
+  var s = String(g || '');
+  return s === 'SoftSub' || s === 'HardSub' || s === 'زیرنویس فارسی';
+}
 function fnPlayerTrySidecar() {
   var p = FNP.p; if (!p || FNP.trailer) return;
-  if (!(p.group === 'SoftSub' || p.group === 'HardSub') || p.play_type === 'hardsub') return;
+  if (!fnPlayerSubGroup(p.group)) return;
   if (FNP.subCues.length) return;
   if (FNP.sidecarTried) return;
   FNP.sidecarTried = true;
@@ -9966,16 +9993,22 @@ function fnPlayerUploadSub(file) {
 function fnPlayerPaintSubMenu() {
   var list = $('#fnp-sub-list'); if (!list) return;
   var p = FNP.p, rows = [];
-  var hard = p && p.play_type === 'hardsub' && (p.group === 'SoftSub' || p.group === 'HardSub');
-  var soft = p && (p.group === 'SoftSub' || p.group === 'HardSub') && p.play_type !== 'hardsub';
-  if (hard) rows.push('<button class="fnp-opt on" data-subpick="hard">زیرنویس فارسی (هاردساب)<span class="ck">چسبیده به فیلم</span></button>');
+  var hard = p && p.play_type === 'hardsub' && fnPlayerSubGroup(p.group);
+  var soft = p && fnPlayerSubGroup(p.group) && p.play_type !== 'hardsub';
+  if (hard) {
+    /* A hardsub-labelled row that actually loaded a sidecar shows the
+       sidecar row — the subtitle is a separate file, not burned in, so
+       the hard row would lie about it. */
+    if (FNP.subState === 'sidecar' && FNP.subCues.length) rows.push('<button class="fnp-opt on" data-subpick="sidecar">زیرنویس فارسی (فایل جدا)<span class="ck">فعال</span></button>');
+    else rows.push('<button class="fnp-opt on" data-subpick="hard">زیرنویس فارسی (هاردساب)<span class="ck">چسبیده به فیلم</span></button>');
+  }
   else if (soft) {
     if (FNP.inbandSub) rows.push('<button class="fnp-opt on" data-subpick="inband">زیرنویس فارسی<span class="ck">فعال</span></button>');
     else if (FNP.subState === 'sidecar' && FNP.subCues.length) rows.push('<button class="fnp-opt on" data-subpick="sidecar">زیرنویس فارسی (فایل جدا)<span class="ck">فعال</span></button>');
     else if (FNP.subState === 'loading') rows.push('<button class="fnp-opt" data-subpick="loading">زیرنویس فارسی<span class="ck">در حال دریافت…</span></button>');
     else rows.push('<button class="fnp-opt" data-subpick="nosidecar">زیرنویس فارسی<span class="ck">فایل جدا پیدا نشد</span></button>');
   }
-  else if (p && p.group === 'Dubbed') rows.push('<button class="fnp-opt" data-subpick="none">دوبله فارسی<span class="ck">بدون زیرنویس</span></button>');
+  else if (p && (p.group === 'Dubbed' || p.group === 'دوبله فارسی')) rows.push('<button class="fnp-opt" data-subpick="none">دوبله فارسی<span class="ck">بدون زیرنویس</span></button>');
   else rows.push('<button class="fnp-opt" data-subpick="none">بدون زیرنویس</button>');
   if (FNP.subCues.length && FNP.subSrc === 'upload') rows.push('<button class="fnp-opt' + (FNP.subOn ? ' on' : '') + '" data-subpick="up">زیرنویس آپلودشده<span class="ck">' + (FNP.subOn ? 'فعال' : 'خاموش') + '</span></button>');
   rows.push('<button class="fnp-opt" data-subpick="off">خاموش کردن زیرنویس</button>');
@@ -10043,6 +10076,20 @@ function fnPlayerToggleRotate() {
 function fnPlayerWire(d) {
   var v = d.querySelector('#fnp-video');
   FNP.v = v;
+  /* FN-OVERLAP-FIX v1: while the loading spinner or the error card is
+     up, hide the center play/skip buttons. They sit at the same
+     center spot and ghost through the translucent overlays, so the
+     error text and the buttons fall on top of each other. The
+     observer watches both overlays and toggles fnp-busy on the
+     player; CSS hides .fnp-center under it. */
+  try {
+    var _fnpBusyObs = new MutationObserver(function () {
+      var _l = d.querySelector('#fnp-load'), _e = d.querySelector('#fnp-err');
+      d.classList.toggle('fnp-busy', !!((_l && _l.classList.contains('on')) || (_e && _e.classList.contains('on'))));
+    });
+    _fnpBusyObs.observe(d.querySelector('#fnp-load'), { attributes: true, attributeFilter: ['class'] });
+    _fnpBusyObs.observe(d.querySelector('#fnp-err'), { attributes: true, attributeFilter: ['class'] });
+  } catch (e) {}
   d.querySelector('#fnp-close').onclick = fnPlayerClose;
   d.querySelector('#fnp-playpause').onclick = function () { fnPlayerToggle(); };
   d.querySelector('#fnp-back10').onclick = function () { fnPlayerSeekBy(-10); };
