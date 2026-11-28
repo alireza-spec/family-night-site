@@ -599272,6 +599272,20 @@
     "season": null,
     "size_bytes": 1073741824,
     "size_text": "1 GB"
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2025/Heads.or.Tails.2025/SUB/Heads.or.Tails.2025.480p.WEB-DL.Farsi.Sub.Film2Media.mkv?v=613075500082",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 592927704,
+    "size_text": "565 MB"
    }
   ],
   "title": "Heads or Tails",
@@ -608781,6 +608795,20 @@
     "season": null,
     "size_bytes": 949787150,
     "size_text": "906 MB"
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2026/Big.Girls.Don.t.Cry.2026/SUB/Big.Girls.Dont.Cry.2026.480p.WEB-DL.Farsi.Sub.Film2Media.mkv?v=440457496840",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": 505646468,
+    "size_text": "482 MB"
    }
   ]
  },
