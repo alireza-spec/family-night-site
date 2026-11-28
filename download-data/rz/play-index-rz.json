@@ -608740,6 +608740,48 @@
     "season": null,
     "size_bytes": 580911104,
     "size_text": "554 MB"
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2026/The.Hunchback.Soul.of.Paris.2026/SUB/The.Hunchback.Soul.of.Paris.2026.1080p.WEB-DL.6CH.Farsi.Sub.Film2Media.mkv?v=719018608193",
+    "playit_url": null,
+    "quality": "WEB-DL 1080p",
+    "quality_label": "web-dl 1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2026/The.Hunchback.Soul.of.Paris.2026/SUB/The.Hunchback.Soul.of.Paris.2026.720p.WEB-DL.Farsi.Sub.Film2Media.mkv?v=250555959266",
+    "playit_url": null,
+    "quality": "WEB-DL 720p",
+    "quality_label": "web-dl 720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Film2Media",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2026/The.Hunchback.Soul.of.Paris.2026/SUB/The.Hunchback.Soul.of.Paris.2026.480p.WEB-DL.Farsi.Sub.Film2Media.mkv?v=434833199267",
+    "playit_url": null,
+    "quality": "WEB-DL 480p",
+    "quality_label": "web-dl 480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
    }
   ],
   "title": "The Hunchback Soul of Paris",
