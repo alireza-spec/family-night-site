@@ -558594,6 +558594,51 @@
   },
   "year": 2009
  },
+ "tt1650042": {
+  "imdb": "tt1650042",
+  "num": 14426,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "YIFY",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Dead.Season.2012.1080p.BluRay.YIFY.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": 1385126953,
+    "size_text": "1.29 GB"
+   },
+   {
+    "encoder": "YIFY",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Dead.Season.2012.720p.BluRay.YIFY.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 629145600,
+    "size_text": "600 MB"
+   }
+  ],
+  "title": "Dead Season",
+  "tmdb_key": "movie:114789",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2012
+ },
  "tt1652217": {
   "imdb": "tt1652217",
   "num": 13336,
@@ -607194,6 +607239,51 @@
    "url": null
   },
   "year": 2025
+ },
+ "tt35512499": {
+  "imdb": "tt35512499",
+  "num": 14427,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "YTS",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/7.Dogs.2026.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": 2437393940,
+    "size_text": "2.27 GB"
+   },
+   {
+    "encoder": "YTS",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/7.Dogs.2026.720p.WEBRip.x264.AAC-YTS.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 1181116006,
+    "size_text": "1.10 GB"
+   }
+  ],
+  "title": "7 Dogs",
+  "tmdb_key": "movie:1316427",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
  },
  "tt35724928": {
   "imdb": "tt35724928",

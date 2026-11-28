@@ -2,17 +2,17 @@
  "code": "RZ",
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
  "start_num": 12560,
- "end_num": 14407,
- "live_base_head": "8c8eeba9416cc49d15c359f78da14e38f8b3e48b (5h run 20261128T105658Z; H3 max #14401 verified from live files, RZ part-1 max #14401)",
- "generated": "2026-11-28 (RezFlix 5-hourly run 20261128T105658Z — merge of 1 new RZ title #14402 The Hunchback Soul of Paris (movie 2026, 3x SoftSub WEB-DL x264 480p 554 MB / 720p 935 MB / 1080p 1.8 GB, encoder ZarFilm); +1 trailer key movie:1480665; no completion; no manifest drift; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
+ "end_num": 14427,
+ "live_base_head": "ce5b5d4dbcc0c5a4bd12f5e2029ea257af10f777 (5h run 20261128T145731Z; H3 max #14425 verified from live files, RZ part-1 max #14407)",
+ "generated": "2026-11-28 (RezFlix 5-hourly run 20261128T145731Z — merge of 2 new RZ titles #14426 Dead Season (movie 2012, 2x SoftSub BluRay YIFY 720p 600 MB / 1080p 1.29 GB) + #14427 7 Dogs (movie 2026, 2x SoftSub WEBRip YTS 720p 1.10 GB / 1080p 2.27 GB); +2 trailer keys movie:114789 + movie:1316427; no completion; no manifest drift; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
  "counts": {
-  "total_titles": 640,
-  "movies": 59,
+  "total_titles": 642,
+  "movies": 61,
   "series": 581,
-  "total_links": 44221,
+  "total_links": 44227,
   "by_year": {
    "2024": 2,
-   "2026": 50,
+   "2026": 51,
    "2023": 2,
    "2025": 11,
    "2014": 3,
@@ -74,11 +74,12 @@
    "2010": 1,
    "1957": 1,
    "2022": 1,
-   "2016": 1
+   "2016": 1,
+   "2012": 1
   },
   "by_quality": {
-   "720p": 21518,
-   "1080p": 3615,
+   "720p": 21521,
+   "1080p": 3618,
    "540p": 292,
    "480p": 14391,
    "CAM 1080p": 117,
@@ -6949,7 +6950,7 @@
    "imdb": "tt36867663",
    "year": 2026,
    "num": 14105,
-   "links": 3,
+   "links": 5,
    "quality": "1080p,480p,720p",
    "rezflix_id": 36173,
    "identity_note": "TMDB+IMDb+OMDb agree (TMDB 2026-10-08 NZ drama, tt36867663; OMDb 'Big Girls Don't Cry' 2026, Paloma Schneideman, New Zealand; feed director Paloma Schneideman. Persian name دختران بزرگ گریه نمی‌کنند (feed description)."
@@ -7140,6 +7141,28 @@
    "quality": "1080p,720p",
    "rezflix_id": 36214,
    "identity_note": "Check-script resolved identity: TMDB 1078822 / tt32448429, years feed 2025 / TMDB 2025 / OMDb 2026 (OMDb lists the 2026 festival year; feed+TMDB agree on 2025); TMDB title 'Heads or Tails?', release 2025-10-02; origin FR/US/IT. Persian name شیر یا خط (feed description «نام پارسی فیلم»). Sizes from the feed حجم line («1 گیگابایت + 1.9 گیگابایت», quality line «720-----1080», in order): 1080p 1.9 GB, 720p 1 GB. Encoder YIFY from filename."
+  },
+  {
+   "title": "Dead Season",
+   "tmdb": 114789,
+   "imdb": "tt1650042",
+   "year": 2012,
+   "num": 14426,
+   "links": 2,
+   "quality": "1080p,720p",
+   "rezflix_id": 36215,
+   "identity_note": "Check-script resolved identity: TMDB 114789 / tt1650042, years feed 2012 / TMDB 2012 / OMDb 2012 (all three agree); TMDB title 'Dead Season', release 2012-09-16; origin US. Persian name فصل مرده (feed description «نام پارسی فیلم»). Sizes from the feed حجم line («600 مگابایت + 1.29 گیگابایت», quality line «720-----1080», in order): 1080p 1.29 GB, 720p 600 MB. Encoder YIFY from filename."
+  },
+  {
+   "title": "7 Dogs",
+   "tmdb": 1316427,
+   "imdb": "tt35512499",
+   "year": 2026,
+   "num": 14427,
+   "links": 2,
+   "quality": "1080p,720p",
+   "rezflix_id": 36216,
+   "identity_note": "Check-script resolved identity: TMDB 1316427 / tt35512499, years feed 2026 / TMDB 2026 / OMDb 2026 (all three agree); TMDB title '7 Dogs', release 2026-05-27; origin EG/SA. Persian name هفت سگ (feed description «نام پارسی فیلم»). Sizes from the feed حجم line («1.10 گیگابایت + 2.27 گیگابایت», quality line «720-----1080», in order): 1080p 2.27 GB, 720p 1.10 GB. Encoder YTS from filename."
   }
  ],
  "trailer_keys_added": [
@@ -7231,7 +7254,9 @@
   "movie:1368568",
   "movie:1720201",
   "movie:1480665",
-  "movie:1078822"
+  "movie:1078822",
+  "movie:114789",
+  "movie:1316427"
  ],
  "queued_titles": [
   {
@@ -7415,6 +7440,18 @@
     "WEB-DL 720p": 1
    },
    "note": "sources-check encode completion added rows to the RZ part + play index without updating rz-manifest.json; repaired from the live part diff (H3==play) with quality attribution from the live play rows"
+  },
+  {
+   "num": 14105,
+   "title": "Big Girls Dont Cry",
+   "imdb": "tt36867663",
+   "links_before": 3,
+   "links_after": 5,
+   "added_quality": {
+    "1080p": 1,
+    "720p": 1
+   },
+   "note": "parallel encode completion added rows to the RZ part + play index without updating rz-manifest.json; repaired from the live part diff (H3==play) with quality/subset attribution from the live play rows"
   }
  ]
 }
