@@ -253,6 +253,20 @@
   "part": "ao",
   "play": [
    {
+    "encoder": "Wikimedia Commons",
+    "episode": null,
+    "group": "NoSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://upload.wikimedia.org/wikipedia/commons/8/88/The_Traveler_1974_%28Iranian_Film%29.webm",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 1846084706,
+    "size_text": "1.72 GB"
+   },
+   {
     "encoder": "archive.org",
     "episode": null,
     "group": "NoSub",
