@@ -2,19 +2,19 @@
  "code": "RZ",
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
  "start_num": 12560,
- "end_num": 14402,
- "live_base_head": "c03b02b290bc4c013830a1e181da073969faa2cd (5h run 20261127T215705Z; H3 max #14401 verified from live files, RZ part-1 max #14401)",
- "generated": "2026-11-28 (RezFlix 5-hourly run 20261127T215705Z — merge of 1 new RZ title #14402 The Hunchback Soul of Paris (movie 2026, 3x SoftSub WEB-DL x264 480p 554 MB / 720p 935 MB / 1080p 1.8 GB, encoder ZarFilm); +1 trailer key movie:1480665; no completion; no manifest drift; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
+ "end_num": 14407,
+ "live_base_head": "8c8eeba9416cc49d15c359f78da14e38f8b3e48b (5h run 20261128T105658Z; H3 max #14401 verified from live files, RZ part-1 max #14401)",
+ "generated": "2026-11-28 (RezFlix 5-hourly run 20261128T105658Z — merge of 1 new RZ title #14402 The Hunchback Soul of Paris (movie 2026, 3x SoftSub WEB-DL x264 480p 554 MB / 720p 935 MB / 1080p 1.8 GB, encoder ZarFilm); +1 trailer key movie:1480665; no completion; no manifest drift; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
  "counts": {
-  "total_titles": 639,
-  "movies": 58,
+  "total_titles": 640,
+  "movies": 59,
   "series": 581,
-  "total_links": 44216,
+  "total_links": 44221,
   "by_year": {
    "2024": 2,
    "2026": 50,
    "2023": 2,
-   "2025": 10,
+   "2025": 11,
    "2014": 3,
    "1955": 2,
    "1960": 3,
@@ -77,16 +77,16 @@
    "2016": 1
   },
   "by_quality": {
-   "720p": 21517,
-   "1080p": 3614,
+   "720p": 21518,
+   "1080p": 3615,
    "540p": 292,
    "480p": 14391,
    "CAM 1080p": 117,
    "CAM 720p": 35,
    "Cam 1080p": 1,
-   "WEB-DL 1080p": 67,
-   "WEB-DL 720p": 67,
-   "WEB-DL 480p": 16,
+   "WEB-DL 1080p": 68,
+   "WEB-DL 720p": 68,
+   "WEB-DL 480p": 17,
    "720p x265": 1067,
    "544p": 140,
    "576p": 181,
@@ -7125,10 +7125,21 @@
    "imdb": "tt37267166",
    "year": 2026,
    "num": 14402,
-   "links": 3,
-   "quality": "1080p,480p,720p",
+   "links": 6,
+   "quality": "1080p,480p,720p,WEB-DL 1080p,WEB-DL 480p,WEB-DL 720p",
    "rezflix_id": 36211,
    "identity_note": "Check-script resolved identity: TMDB 1480665 / tt37267166, years feed 2026 / TMDB 2026 / OMDb 2026; OMDb title 'The Hunchback, Soul of Paris', France, director Jean-Francois Richet; TMDB release 2026-11-27. Persian name گوژپشت نوتردام روح پاریس (feed description «نام پارسی فیلم»). Sizes from the feed حجم line («554 + 935 مگابایت + 1.8 گیگابایت», quality line «480------720-----1080», in order): 1080p 1.8 GB, 480p 554 MB, 720p 935 MB. Encoder ZarFilm from filename."
+  },
+  {
+   "title": "Heads or Tails",
+   "tmdb": 1078822,
+   "imdb": "tt32448429",
+   "year": 2025,
+   "num": 14407,
+   "links": 2,
+   "quality": "1080p,720p",
+   "rezflix_id": 36214,
+   "identity_note": "Check-script resolved identity: TMDB 1078822 / tt32448429, years feed 2025 / TMDB 2025 / OMDb 2026 (OMDb lists the 2026 festival year; feed+TMDB agree on 2025); TMDB title 'Heads or Tails?', release 2025-10-02; origin FR/US/IT. Persian name شیر یا خط (feed description «نام پارسی فیلم»). Sizes from the feed حجم line («1 گیگابایت + 1.9 گیگابایت», quality line «720-----1080», in order): 1080p 1.9 GB, 720p 1 GB. Encoder YIFY from filename."
   }
  ],
  "trailer_keys_added": [
@@ -7219,7 +7230,8 @@
   "movie:1458352",
   "movie:1368568",
   "movie:1720201",
-  "movie:1480665"
+  "movie:1480665",
+  "movie:1078822"
  ],
  "queued_titles": [
   {
@@ -7390,6 +7402,19 @@
     "WEB-DL 720p 10bit x265": 4
    },
    "note": "sources-check F2M encode completion added rows to the RZ part + play index without updating rz-manifest.json; repaired from the live part diff (H3==play) with quality attribution from the live play rows"
+  },
+  {
+   "num": 14402,
+   "title": "The Hunchback Soul of Paris",
+   "imdb": "tt37267166",
+   "links_before": 3,
+   "links_after": 6,
+   "added_quality": {
+    "WEB-DL 1080p": 1,
+    "WEB-DL 480p": 1,
+    "WEB-DL 720p": 1
+   },
+   "note": "sources-check encode completion added rows to the RZ part + play index without updating rz-manifest.json; repaired from the live part diff (H3==play) with quality attribution from the live play rows"
   }
  ]
 }
