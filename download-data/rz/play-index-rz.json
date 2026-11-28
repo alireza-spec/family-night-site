@@ -613446,6 +613446,51 @@
   },
   "year": 2009
  },
+ "tt40311603": {
+  "imdb": "tt40311603",
+  "num": 14458,
+  "part": "rz",
+  "play": [
+   {
+    "encoder": "Simba",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Ghosts.The.Possession.Of.Button.House.2026.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "Simba",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.cdn.146.dl150m.info/film1/Ghosts.The.Possession.Of.Button.House.2026.720p.WEBRip.x264.AAC-YTS.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Ghosts: The Possession of Button House",
+  "tmdb_key": "movie:1643567",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
  "tt41149182": {
   "imdb": "tt41149182",
   "num": 14104,

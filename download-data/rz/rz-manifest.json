@@ -2,17 +2,17 @@
  "code": "RZ",
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
  "start_num": 12560,
- "end_num": 14457,
- "live_base_head": "669a9591e52c167c842de5119715482f797c8a24 (5h run 20261128T175700Z; H3 max #14456 verified from live files, RZ part-1 max #14429)",
- "generated": "2026-11-28 (RezFlix 5-hourly run 20261128T175700Z — merge of 1 new RZ series #14457 Summer Night (tv 2024, S01E01-E04 NoSub 480p + 720p VIU, 8 episodes); no teasers; no sizes (feed حجم lines ambiguous across episodes); no completion; no manifest drift; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
+ "end_num": 14458,
+ "live_base_head": "cc143ea6a6b84639ce8d9f5a56e2e8e59ddf9ef8 (5h run 20261128T195950Z; H3 max #14457 verified from live files, RZ part-1 max #14457)",
+ "generated": "2026-11-28 (RezFlix 5-hourly run 20261128T195950Z — merge of 1 new RZ movie #14458 Ghosts: The Possession of Button House (movie 2026, 720p + 1080p SoftSub WEBRip, 2 links); 1 teaser (trailer key movie:1643567); no sizes (none in the feed description); no completion; no manifest drift; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
  "counts": {
-  "total_titles": 645,
-  "movies": 61,
+  "total_titles": 646,
+  "movies": 62,
   "series": 584,
-  "total_links": 44298,
+  "total_links": 44300,
   "by_year": {
    "2024": 3,
-   "2026": 52,
+   "2026": 53,
    "2023": 2,
    "2025": 11,
    "2014": 3,
@@ -78,8 +78,8 @@
    "2012": 1
   },
   "by_quality": {
-   "720p": 21586,
-   "1080p": 3618,
+   "720p": 21587,
+   "1080p": 3619,
    "540p": 292,
    "480p": 14397,
    "CAM 1080p": 117,
@@ -7196,6 +7196,17 @@
    "quality": "480p,720p",
    "rezflix_id": 36210,
    "identity_note": "Check-script resolved identity: TMDB 237335 / tt30098460, years feed 2024 / TMDB 2024 / OMDb 2024 (all three agree); TMDB title 'Summer Night', first_air 2024-08-05, 1 season; origin TH. Persian name شب تابستانی (feed description «نام پارسی فیلم»). Feed حجم line «کیفیت 480 (250 مگابایت )» gives one size for one quality across 8 episodes — ambiguous per file, so no size_text/size_bytes (series precedent). Encoder RezFlix from filename."
+  },
+  {
+   "title": "Ghosts: The Possession of Button House",
+   "tmdb": 1643567,
+   "imdb": "tt40311603",
+   "year": 2026,
+   "num": 14458,
+   "links": 2,
+   "quality": "1080p,720p",
+   "rezflix_id": 36244,
+   "identity_note": "Parent-run resolved identity: TMDB 1643567 / tt40311603, years feed 2026 / TMDB 2026 / OMDb 2026 (all three agree); TMDB title 'Ghosts: The Possession of Button House', release_date 2026-10-23, origin GB, popularity 18.8509, votes 29, no fa poster. No sizes: the feed description carries no per-file size for this title — never guessed. Encoder Simba per task instruction (feed encoder field, trailing .simba token); generic encoder_of() would say YTS (7 Dogs precedent #14427)."
   }
  ],
  "trailer_keys_added": [
@@ -7289,7 +7300,8 @@
   "movie:1480665",
   "movie:1078822",
   "movie:114789",
-  "movie:1316427"
+  "movie:1316427",
+  "movie:1643567"
  ],
  "queued_titles": [
   {
