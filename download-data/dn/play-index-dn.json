@@ -405303,5 +405303,649 @@
    "url": null
   },
   "year": 2026
+ },
+ "tt3278540": {
+  "imdb": "tt3278540",
+  "num": 14412,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/A.Nice.Girl.Like.You.2020.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.EasyTV.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tci.229.giftmond.ir/FILM/A.Nice.Girl.Like.You.2020.720p.WEBRip.800MB.x264-GalaxyRG.EasyTV.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "A Nice Girl Like You",
+  "tmdb_key": "movie:718840",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2020
+ },
+ "tt4266638": {
+  "imdb": "tt4266638",
+  "num": 14413,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/Krisha.2015.720p.BluRay.x264.AAC.YTS.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Krisha",
+  "tmdb_key": "movie:323929",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2016
+ },
+ "tt16378164": {
+  "imdb": "tt16378164",
+  "num": 14414,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/The.Territory.2022.1080p.WEB-DL.x264.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.146.giftmond.ir/new%20film/The.Territory.2022.720p.WEB-DL.x264.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Territory",
+  "tmdb_key": "movie:913849",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2022
+ },
+ "tt11905536": {
+  "imdb": "tt11905536",
+  "num": 14415,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "HardSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.229.giftmond.ir/filmjaded/Gumraah.2023.480p.WebDL.HardSub.Golchindl.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "HardSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://peer.tci.229.giftmond.ir/filmjaded/Gumraah.2023.720p.WebDL.HardSub.Golchindl.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Gumraah",
+  "tmdb_key": "movie:974025",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2023
+ },
+ "tt9407558": {
+  "imdb": "tt9407558",
+  "num": 14416,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.124.giftmond.ir/film/Betrayal.2023.1080p.BluRay.YIFY.ZarFilm.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://peer.tct.124.giftmond.ir/film/Betrayal.2023.720p.BluRay.YIFY.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Betrayal",
+  "tmdb_key": "movie:1103015",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2023
+ },
+ "tt27554389": {
+  "imdb": "tt27554389",
+  "num": 14417,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://exchange.port.sn.giftmond.ir/film/Dont.Call.It.Mystery.The.Movie.2023.480p.WEB-DL.x264.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://exchange.port.sn.giftmond.ir/film/Dont.Call.It.Mystery.The.Movie.2023.720p.WEB-DL.x264.SoftSub.AvaMovie.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Don't Call It Mystery: The Movie",
+  "tmdb_key": "movie:1064669",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2023
+ },
+ "tt0172300": {
+  "imdb": "tt0172300",
+  "num": 14418,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive.google.dl175m.info/film/Daulat%20Ki%20Jung%201992.480p%20WEB-DL.FarsiSub.Bollywood1.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive.google.dl175m.info/film/Daulat%20Ki%20Jung%201992.720p%20WEB-DL.FarsiSub.Bollywood1.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Daulat Ki Jung",
+  "tmdb_key": "movie:159653",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1992
+ },
+ "tt42941113": {
+  "imdb": "tt42941113",
+  "num": 14419,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Land.Of.Wolves.2026.1080p.BluRay.x264.AAC5.1-YTS.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Land.Of.Wolves.2026.720p.BluRay.x264.AAC-YTS.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Land of Wolves",
+  "tmdb_key": "movie:1712326",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
+ "tt0118771": {
+  "imdb": "tt0118771",
+  "num": 14420,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/breakdown.1080.simba.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/breakdown.720.simba.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Breakdown",
+  "tmdb_key": "movie:2163",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 1997
+ },
+ "tt37161651": {
+  "imdb": "tt37161651",
+  "num": 14421,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "HardSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Chennai.Love.Story.2026.Telugu.1080p.WEBDL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "HardSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Chennai.Love.Story.2026.Telugu.480p.WEBDL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "HardSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/Chennai.Love.Story.2026.Telugu.720p.WEBDL.HardSub.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Chennai Love Story",
+  "tmdb_key": "movie:1443136",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
+ "tt2645092": {
+  "imdb": "tt2645092",
+  "num": 14422,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "HardSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/17875-tt2645092-480p-Hardsub-%5BAriaMedia%5D.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "HardSub",
+    "join_tier": 1,
+    "play_type": "hardsub",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/17875-tt2645092-720p-Hardsub-%5BAriaMedia%5D.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Government Woman",
+  "tmdb_key": "movie:171158",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2013
+ },
+ "tt4273562": {
+  "imdb": "tt4273562",
+  "num": 14423,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/%5B%40AnimeGateOfficial%5D%20YuGiOh%20The%20Dark%20Side%20of%20Dimensions%20-%20%281%29.1.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/%5B%40AnimeGateOfficial%5D%20YuGiOh%20The%20Dark%20Side%20of%20Dimensions%20-%20%281%29.mkv",
+    "playit_url": null,
+    "quality": "480p",
+    "quality_label": "480p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/%5B%40AnimeGateOfficial%5D%20YuGiOh%20The%20Dark%20Side%20of%20Dimensions%20-%20%281%29.0.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Yu-Gi-Oh!: The Dark Side of Dimensions",
+  "tmdb_key": "movie:366170",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2016
+ },
+ "tt36283691": {
+  "imdb": "tt36283691",
+  "num": 14424,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/The.Poet.And.The.Spy.2026.1080p.WEBRip.x264.AAC5.1-YTS.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/The.Poet.And.The.Spy.2026.720p.WEBRip.x264.AAC-YTS.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "The Poet and the Spy",
+  "tmdb_key": "movie:1549120",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2026
+ },
+ "tt4565954": {
+  "imdb": "tt4565954",
+  "num": 14425,
+  "part": "dn1",
+  "play": [
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/The.Penance.2025.1080p.WEB-DL.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   },
+   {
+    "encoder": "darknama",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "http://drive3.google.dl175m.info/new%20film/The.Penance.2025.720p.WEB-DL.SoftSub.simba.mkv",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": null,
+    "size_text": ""
+   }
+  ],
+  "title": "Penance",
+  "tmdb_key": "movie:1340367",
+  "type": "movie",
+  "video_mp4": {
+   "is_trailer": false,
+   "size_bytes": null,
+   "size_text": "",
+   "url": null
+  },
+  "year": 2025
  }
 }

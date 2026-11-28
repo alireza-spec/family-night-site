@@ -608663,6 +608663,34 @@
     "season": null,
     "size_bytes": 701497344,
     "size_text": "669 MB"
+   },
+   {
+    "encoder": "YIFY",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2026/Big.Girls.Don.t.Cry.2026/SUB/Big.Girls.Dont.Cry.2026.1080p.WEB-DL.YIFY.Farsi.Sub.Film2Media.mkv?v=324471175845",
+    "playit_url": null,
+    "quality": "1080p",
+    "quality_label": "1080p",
+    "season": null,
+    "size_bytes": 1765616517,
+    "size_text": "1.64 GB"
+   },
+   {
+    "encoder": "YIFY",
+    "episode": null,
+    "group": "SoftSub",
+    "join_tier": 1,
+    "play_type": "none",
+    "play_url": "https://bnrhd3fvb374s4bkwzxm54xf.abrtech.top/pnot/Movie/2026/Big.Girls.Don.t.Cry.2026/SUB/Big.Girls.Dont.Cry.2026.720p.WEB-DL.YIFY.Farsi.Sub.Film2Media.mkv?v=527870425927",
+    "playit_url": null,
+    "quality": "720p",
+    "quality_label": "720p",
+    "season": null,
+    "size_bytes": 949787150,
+    "size_text": "906 MB"
    }
   ]
  },
