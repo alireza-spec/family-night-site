@@ -2,17 +2,17 @@
  "code": "RZ",
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
  "start_num": 12560,
- "end_num": 14427,
- "live_base_head": "ce5b5d4dbcc0c5a4bd12f5e2029ea257af10f777 (5h run 20261128T145731Z; H3 max #14425 verified from live files, RZ part-1 max #14407)",
- "generated": "2026-11-28 (RezFlix 5-hourly run 20261128T145731Z — merge of 2 new RZ titles #14426 Dead Season (movie 2012, 2x SoftSub BluRay YIFY 720p 600 MB / 1080p 1.29 GB) + #14427 7 Dogs (movie 2026, 2x SoftSub WEBRip YTS 720p 1.10 GB / 1080p 2.27 GB); +2 trailer keys movie:114789 + movie:1316427; no completion; no manifest drift; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
+ "end_num": 14429,
+ "live_base_head": "0d9a573e8301ab1db2eecaf84ccfe9f650dc19ee (5h run 20261128T155719Z; H3 max #14427 verified from live files, RZ part-1 max #14427)",
+ "generated": "2026-11-28 (RezFlix 5-hourly run 20261128T155719Z — merge of 2 new RZ series #14428 Break Clause (tv 2026, S01E01-E06 HardSub 720p NextMovie) + #14429 Drain the Oceans (tv 2018, S01E01-S06E06 SoftSub 720p NextMovie, 55 episodes); no teasers; no sizes (feed حجم lines ambiguous across episodes); no completion; no manifest drift; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
  "counts": {
-  "total_titles": 642,
+  "total_titles": 644,
   "movies": 61,
-  "series": 581,
-  "total_links": 44227,
+  "series": 583,
+  "total_links": 44290,
   "by_year": {
    "2024": 2,
-   "2026": 51,
+   "2026": 52,
    "2023": 2,
    "2025": 11,
    "2014": 3,
@@ -59,7 +59,7 @@
    "1999": 12,
    "2000": 13,
    "2019": 2,
-   "2018": 1,
+   "2018": 2,
    "2021": 1,
    "2011": 1,
    "2001": 16,
@@ -78,10 +78,10 @@
    "2012": 1
   },
   "by_quality": {
-   "720p": 21521,
+   "720p": 21582,
    "1080p": 3618,
    "540p": 292,
-   "480p": 14391,
+   "480p": 14393,
    "CAM 1080p": 117,
    "CAM 720p": 35,
    "Cam 1080p": 1,
@@ -6950,7 +6950,7 @@
    "imdb": "tt36867663",
    "year": 2026,
    "num": 14105,
-   "links": 5,
+   "links": 6,
    "quality": "1080p,480p,720p",
    "rezflix_id": 36173,
    "identity_note": "TMDB+IMDb+OMDb agree (TMDB 2026-10-08 NZ drama, tt36867663; OMDb 'Big Girls Don't Cry' 2026, Paloma Schneideman, New Zealand; feed director Paloma Schneideman. Persian name دختران بزرگ گریه نمی‌کنند (feed description)."
@@ -7137,8 +7137,8 @@
    "imdb": "tt32448429",
    "year": 2025,
    "num": 14407,
-   "links": 2,
-   "quality": "1080p,720p",
+   "links": 3,
+   "quality": "1080p,480p,720p",
    "rezflix_id": 36214,
    "identity_note": "Check-script resolved identity: TMDB 1078822 / tt32448429, years feed 2025 / TMDB 2025 / OMDb 2026 (OMDb lists the 2026 festival year; feed+TMDB agree on 2025); TMDB title 'Heads or Tails?', release 2025-10-02; origin FR/US/IT. Persian name شیر یا خط (feed description «نام پارسی فیلم»). Sizes from the feed حجم line («1 گیگابایت + 1.9 گیگابایت», quality line «720-----1080», in order): 1080p 1.9 GB, 720p 1 GB. Encoder YIFY from filename."
   },
@@ -7163,6 +7163,28 @@
    "quality": "1080p,720p",
    "rezflix_id": 36216,
    "identity_note": "Check-script resolved identity: TMDB 1316427 / tt35512499, years feed 2026 / TMDB 2026 / OMDb 2026 (all three agree); TMDB title '7 Dogs', release 2026-05-27; origin EG/SA. Persian name هفت سگ (feed description «نام پارسی فیلم»). Sizes from the feed حجم line («1.10 گیگابایت + 2.27 گیگابایت», quality line «720-----1080», in order): 1080p 2.27 GB, 720p 1.10 GB. Encoder YTS from filename."
+  },
+  {
+   "title": "Break Clause",
+   "tmdb": 335591,
+   "imdb": "tt32750414",
+   "year": 2026,
+   "num": 14428,
+   "links": 6,
+   "quality": "720p",
+   "rezflix_id": 36187,
+   "identity_note": "Check-script resolved identity: TMDB 335591 / tt32750414, years feed 2026 / TMDB 2026 / OMDb 2024 (feed+TMDB agree on 2026; OMDb lists the 2024 festival year); TMDB title 'Break Clause', first_air 2026-10-01, 1 season; origin GB. Persian name شرط فسخ (feed description «نام پارسی فیلم»). Feed حجم line «کیفیت 720 (285 مگابایت )» gives one size for one quality across 6 episodes — ambiguous per file, so no size_text/size_bytes (series precedent). Encoder NextMovie from filename."
+  },
+  {
+   "title": "Drain the Oceans",
+   "tmdb": 37158,
+   "imdb": "tt8676618",
+   "year": 2018,
+   "num": 14429,
+   "links": 55,
+   "quality": "720p",
+   "rezflix_id": 36188,
+   "identity_note": "Check-script resolved identity: TMDB 37158 / tt8676618, years feed 2018 / TMDB 2018 / OMDb 2018 (all three agree); TMDB title 'Drain the Oceans', first_air 2018-05-28, 6 seasons; origin US. Persian name تخلیه اقیانوس‌ها (feed description «نام پارسی فیلم»). Feed حجم line «کیفیت 720 (500 مگابایت )» gives one size for one quality across 55 episodes — ambiguous per file, so no size_text/size_bytes (series precedent). Encoder NextMovie from filename."
   }
  ],
  "trailer_keys_added": [
@@ -7450,6 +7472,28 @@
    "added_quality": {
     "1080p": 1,
     "720p": 1
+   },
+   "note": "parallel encode completion added rows to the RZ part + play index without updating rz-manifest.json; repaired from the live part diff (H3==play) with quality/subset attribution from the live play rows"
+  },
+  {
+   "num": 14105,
+   "title": "Big Girls Dont Cry",
+   "imdb": "tt36867663",
+   "links_before": 5,
+   "links_after": 6,
+   "added_quality": {
+    "480p": 1
+   },
+   "note": "parallel encode completion added rows to the RZ part + play index without updating rz-manifest.json; repaired from the live part diff (H3==play) with quality/subset attribution from the live play rows"
+  },
+  {
+   "num": 14407,
+   "title": "Heads or Tails",
+   "imdb": "tt32448429",
+   "links_before": 2,
+   "links_after": 3,
+   "added_quality": {
+    "480p": 1
    },
    "note": "parallel encode completion added rows to the RZ part + play index without updating rz-manifest.json; repaired from the live part diff (H3==play) with quality/subset attribution from the live play rows"
   }
