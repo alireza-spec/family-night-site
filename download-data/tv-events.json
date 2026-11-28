@@ -1,189 +1,7 @@
 {
- "generated_at": "2026-11-28T02:37:48Z",
+ "generated_at": "2026-11-28T09:44:00Z",
  "date": "2026-11-28",
  "events": [
-  {
-   "id": "f360:2026112674",
-   "title": "کلمبوس کرو – اینتر میامی",
-   "comp": "ام‌ال‌اس",
-   "img": "https://static.football360.ir/nesta2/media/posts_stream/covers/%DA%A9%D8%A7%D9%88%D8%B1-%D9%BE%D8%AE%D8%B4-%D8%B2%D9%86%D8%AF%D9%87-%DA%A9%D9%84%D9%85%D8%A8%D9%88%D8%B3-%D8%A7%DB%8C%D9%86%D8%AA%D8%B1%D9%85%DB%8C%D8%A7%D9%85%DB%8C.jpg",
-   "alt": "کلمبوس کرو – اینتر میامی — ام‌ال‌اس",
-   "start": 1795827600000,
-   "dur": 120,
-   "end": 1795834800,
-   "src": "f360",
-   "code": 2026112674,
-   "get_hls_url": "https://www.aparatsport.com/adele/getHls2?stream_id=UDjdd41cD134B75",
-   "hls": null,
-   "hostLogo": "https://static.football360.ir/nesta2/media/uploads/teams/2023/06/13/uploads/teams/2023/06/13/577_thumb.png?width=72&q=100",
-   "guestLogo": "https://static.football360.ir/nesta2/media/uploads/teams/2023/06/13/uploads/teams/2023/06/13/239235_thumb.png?width=72&q=100",
-   "sportName": "فوتبال",
-   "servers": [
-    {
-     "key": "aparat",
-     "label": "سرور آپارات اسپورت",
-     "src": "f360",
-     "code": 2026112674,
-     "get_hls_url": "https://www.aparatsport.com/adele/getHls2?stream_id=UDjdd41cD134B75"
-    }
-   ],
-   "end_estimated": true
-  },
-  {
-   "id": "anten:188180",
-   "title": "کولومبوس – اینتر میامی",
-   "comp": "لیگ ستارگان آمریکا - MLS",
-   "img": "https://static.r1-edge-v2.s3mer.net/images/2026/8/16/D/ff6384bb-9c83-4d80-ab3f-a01b5cae8f88.jpg",
-   "alt": "کولومبوس – اینتر میامی — لیگ ستارگان آمریکا - MLS",
-   "start": 1795828200000,
-   "dur": 120,
-   "end": 1795835400,
-   "end_estimated": true,
-   "src": "anten",
-   "anten_id": 188180,
-   "embed_stream_id": 215642,
-   "urlaccess_hq": "https://api2.anten.ir/programs/215642/urlaccess/hq",
-   "urlaccess_lq": "https://api2.anten.ir/programs/215642/urlaccess/lq",
-   "servers": [
-    {
-     "key": "anten",
-     "label": "سرور آنتن",
-     "src": "anten",
-     "anten_id": 188180,
-     "embed_stream_id": 215642,
-     "urlaccess_hq": "https://api2.anten.ir/programs/215642/urlaccess/hq",
-     "urlaccess_lq": "https://api2.anten.ir/programs/215642/urlaccess/lq",
-     "embed": "https://www.anten.ir/iframe/215642"
-    }
-   ],
-   "hostLogo": "https://static.r1-edge-v2.s3mer.net/images/2023/12/9/B/fbbe9df1-be91-4104-a565-eac0734180a7.png",
-   "guestLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/a32f5ecb-a9d2-425d-80cd-64e529041e81.png",
-   "sportName": "فوتبال"
-  },
-  {
-   "id": "anten:188195",
-   "title": "بسکتبال: لس آنجلس لیکرز – سن آنتونیو اسپرز",
-   "comp": "بسکتبال NBA",
-   "img": "https://static.r1-edge-v2.s3mer.net/images/2026/10/13/B/81e66ca8-1c36-4e1c-8a8c-d8a5608c403b.jpg",
-   "alt": "بسکتبال: لس آنجلس لیکرز – سن آنتونیو اسپرز — بسکتبال NBA",
-   "start": 1795833900000,
-   "dur": 120,
-   "end": 1795841100,
-   "end_estimated": true,
-   "src": "anten",
-   "anten_id": 188195,
-   "embed_stream_id": 215657,
-   "urlaccess_hq": "https://api2.anten.ir/programs/215657/urlaccess/hq",
-   "urlaccess_lq": "https://api2.anten.ir/programs/215657/urlaccess/lq",
-   "servers": [
-    {
-     "key": "anten",
-     "label": "سرور آنتن",
-     "src": "anten",
-     "anten_id": 188195,
-     "embed_stream_id": 215657,
-     "urlaccess_hq": "https://api2.anten.ir/programs/215657/urlaccess/hq",
-     "urlaccess_lq": "https://api2.anten.ir/programs/215657/urlaccess/lq",
-     "embed": "https://www.anten.ir/iframe/215657"
-    }
-   ],
-   "hostLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/6bf79e32-f2cd-4c1d-acfc-2ca16d2d4350.png",
-   "guestLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/9391be43-e80c-4046-8c9c-34004dc92a02.png",
-   "sportName": "بسکتبال"
-  },
-  {
-   "id": "anten:188657",
-   "title": "کیوتو سانگا – سرزو اوزاکا",
-   "comp": "هفته 17 جی لیگ ژاپن",
-   "img": "https://static.r1-edge-v2.s3mer.net/images/2025/1/31/C/85148064-8a5f-4ddc-97a1-01af1fe2034d.jpg",
-   "alt": "کیوتو سانگا – سرزو اوزاکا — هفته 17 جی لیگ ژاپن",
-   "start": 1795842000000,
-   "dur": 120,
-   "end": 1795849200,
-   "end_estimated": true,
-   "src": "anten",
-   "anten_id": 188657,
-   "embed_stream_id": 216119,
-   "urlaccess_hq": "https://api2.anten.ir/programs/216119/urlaccess/hq",
-   "urlaccess_lq": "https://api2.anten.ir/programs/216119/urlaccess/lq",
-   "servers": [
-    {
-     "key": "anten",
-     "label": "سرور آنتن",
-     "src": "anten",
-     "anten_id": 188657,
-     "embed_stream_id": 216119,
-     "urlaccess_hq": "https://api2.anten.ir/programs/216119/urlaccess/hq",
-     "urlaccess_lq": "https://api2.anten.ir/programs/216119/urlaccess/lq",
-     "embed": "https://www.anten.ir/iframe/216119"
-    }
-   ],
-   "hostLogo": "https://static.r1-edge-v2.s3mer.net/images/2024/5/11/B/73fb0197-66d7-450a-be0f-b3c2fe65fa2b.png",
-   "guestLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/08832d47-77a0-40a5-897d-7444f48e6d65.png",
-   "sportName": "فوتبال"
-  },
-  {
-   "id": "anten:188191",
-   "title": "ماچیدا زلویا – توکیو وردی",
-   "comp": "هفته 17 جی لیگ ژاپن",
-   "img": "https://static.r1-edge-v2.s3mer.net/images/2025/1/31/C/85148064-8a5f-4ddc-97a1-01af1fe2034d.jpg",
-   "alt": "ماچیدا زلویا – توکیو وردی — هفته 17 جی لیگ ژاپن",
-   "start": 1795849200000,
-   "dur": 120,
-   "end": 1795856400,
-   "end_estimated": true,
-   "src": "anten",
-   "anten_id": 188191,
-   "embed_stream_id": 215653,
-   "urlaccess_hq": "https://api2.anten.ir/programs/215653/urlaccess/hq",
-   "urlaccess_lq": "https://api2.anten.ir/programs/215653/urlaccess/lq",
-   "servers": [
-    {
-     "key": "anten",
-     "label": "سرور آنتن",
-     "src": "anten",
-     "anten_id": 188191,
-     "embed_stream_id": 215653,
-     "urlaccess_hq": "https://api2.anten.ir/programs/215653/urlaccess/hq",
-     "urlaccess_lq": "https://api2.anten.ir/programs/215653/urlaccess/lq",
-     "embed": "https://www.anten.ir/iframe/215653"
-    }
-   ],
-   "hostLogo": "https://static.r1-edge-v2.s3mer.net/images/2024/5/14/B/84f92f59-298d-4dc6-9987-4c0b8cdbb50c.png",
-   "guestLogo": "https://static.r1-edge-v2.s3mer.net/images/2024/2/20/B/ce91df6b-2e80-4e56-8164-1ed1ff5dbbe5.png",
-   "sportName": "فوتبال"
-  },
-  {
-   "id": "anten:188658",
-   "title": "فوتسال: فینال فوتسال المپیاد کارکنان وزارت بهداشت",
-   "comp": "پخش اختصاصی باشگاه",
-   "img": "https://static.r1-edge-v2.s3mer.net/images/2025/2/14/C/776809c2-56be-4c8b-b065-099d725a5d70.jpg",
-   "alt": "فوتسال: فینال فوتسال المپیاد کارکنان وزارت بهداشت — پخش اختصاصی باشگاه",
-   "start": 1795851000000,
-   "dur": 120,
-   "end": 1795858200,
-   "end_estimated": true,
-   "src": "anten",
-   "anten_id": 188658,
-   "embed_stream_id": 216120,
-   "urlaccess_hq": "https://api2.anten.ir/programs/216120/urlaccess/hq",
-   "urlaccess_lq": "https://api2.anten.ir/programs/216120/urlaccess/lq",
-   "servers": [
-    {
-     "key": "anten",
-     "label": "سرور آنتن",
-     "src": "anten",
-     "anten_id": 188658,
-     "embed_stream_id": 216120,
-     "urlaccess_hq": "https://api2.anten.ir/programs/216120/urlaccess/hq",
-     "urlaccess_lq": "https://api2.anten.ir/programs/216120/urlaccess/lq",
-     "embed": "https://www.anten.ir/iframe/216120"
-    }
-   ],
-   "hostLogo": null,
-   "guestLogo": null,
-   "sportName": "فوتسال"
-  },
   {
    "id": "anten:188196",
    "title": "موتورسواری: موتو جی پی والنسیا – دور سوم تمرینی",
@@ -284,6 +102,37 @@
    "end_estimated": true
   },
   {
+   "id": "anten:188669",
+   "title": "تکواندو: مسابقات تکواندو جایزه بزرگ قزاقستان",
+   "comp": "تکواندو جایزه بزرگ قزاقستان",
+   "img": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/d527eeb4-b1c1-4279-876a-3582a0d9539a.jpg",
+   "alt": "تکواندو: مسابقات تکواندو جایزه بزرگ قزاقستان — تکواندو جایزه بزرگ قزاقستان",
+   "start": 1795860000000,
+   "dur": 120,
+   "end": 1795867200,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188669,
+   "embed_stream_id": 216131,
+   "urlaccess_hq": "https://api2.anten.ir/programs/216131/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/216131/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188669,
+     "embed_stream_id": 216131,
+     "urlaccess_hq": "https://api2.anten.ir/programs/216131/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/216131/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/216131"
+    }
+   ],
+   "hostLogo": null,
+   "guestLogo": null,
+   "sportName": "تکواندو"
+  },
+  {
    "id": "anten:188655",
    "title": "والیبال: سووالکی – بلچاتوف",
    "comp": "هفته 9 لیگ برتر والیبال لهستان",
@@ -315,10 +164,41 @@
    "sportName": "والیبال"
   },
   {
+   "id": "anten:188660",
+   "title": "تنیس: بریتانیا – اسپانیا",
+   "comp": "نیمه نهایی تنیس دیویس کاپ 2026",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/2022/11/21/A/92040bce-bf4f-40d8-b328-943d75a6fd4d.jpg",
+   "alt": "تنیس: بریتانیا – اسپانیا — نیمه نهایی تنیس دیویس کاپ 2026",
+   "start": 1795863600000,
+   "dur": 120,
+   "end": 1795870800,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188660,
+   "embed_stream_id": 216122,
+   "urlaccess_hq": "https://api2.anten.ir/programs/216122/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/216122/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188660,
+     "embed_stream_id": 216122,
+     "urlaccess_hq": "https://api2.anten.ir/programs/216122/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/216122/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/216122"
+    }
+   ],
+   "hostLogo": "https://static.r1-edge-v2.s3mer.net/images/2022/5/17/D/0e0650a7-1ed0-4465-89f1-548285bb94ae.png",
+   "guestLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/22839a42-29c4-4fb6-88e6-d778be598d25.png",
+   "sportName": "تنیس"
+  },
+  {
    "id": "f360:20261127174",
    "title": "فوتبال ساحلی: ایران – ژاپن",
    "comp": "فینال فوتبال ساحلی قهرمانی آسیا",
-   "img": "https://static.football360.ir/nesta2/media/posts_stream/covers/%DA%A9%D8%A7%D9%88%D8%B1-%D9%BE%D8%AE%D8%B4-%D8%B2%D9%86%D8%AF%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%DA%98%D8%A7%D9%BE%D9%86.jpg",
+   "img": "https://static.football360.ir/nesta2/media/posts_stream/covers/photo_2026-11-28_11-44-47.jpg",
    "alt": "فوتبال ساحلی: ایران – ژاپن — فینال فوتبال ساحلی قهرمانی آسیا",
    "start": 1795865400000,
    "dur": 60,
@@ -566,6 +446,16 @@
      "src": "f360",
      "code": 20261127182,
      "get_hls_url": "https://www.aparatsport.com/adele/getHls2?stream_id=0aD7903aCFA653A"
+    },
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 186618,
+     "embed_stream_id": 214080,
+     "urlaccess_hq": "https://api2.anten.ir/programs/214080/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/214080/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/214080"
     }
    ],
    "end_estimated": true
@@ -611,7 +501,7 @@
    "id": "f360:2026112754",
    "title": "هامبورگ – بایرن‌ مونیخ",
    "comp": "بوندسلیگای آلمان",
-   "img": "https://static.football360.ir/nesta2/media/posts_stream/covers/%DA%A9%D8%A7%D9%88%D8%B1_%D9%BE%D8%AE%D8%B4_%D8%B2%D9%86%D8%AF%D9%87_%D9%87%D8%A7%D9%85%D8%A8%D9%88%D8%B1%DA%AF_%D8%A8%D8%A7%DB%8C%D8%B1_%D9%86%D9%85%D9%88%D9%86%D8%AE%DB%8C.jpg",
+   "img": "https://static.football360.ir/nesta2/media/posts_stream/covers/photo_2026-11-28_11-45-24.jpg",
    "alt": "هامبورگ – بایرن‌ مونیخ — بوندسلیگای آلمان",
    "start": 1795876200000,
    "dur": 120,
@@ -676,6 +566,33 @@
    "sportName": "اتومبیل رانی"
   },
   {
+   "id": "f360:2026112753",
+   "title": "منچستر یونایتد – برنتفورد",
+   "comp": "لیگ برتر انگلیس",
+   "img": "https://static.football360.ir/nesta2/media/posts_stream/covers/photo_2026-11-28_11-45-10.jpg",
+   "alt": "منچستر یونایتد – برنتفورد — لیگ برتر انگلیس",
+   "start": 1795878000000,
+   "dur": 120,
+   "end": 1795885200,
+   "src": "f360",
+   "code": 2026112753,
+   "get_hls_url": "https://www.aparatsport.com/adele/getHls2?stream_id=Q7Y16917773F239",
+   "hls": null,
+   "hostLogo": "https://static.football360.ir/nesta2/media/uploads/teams/2021/11/24/26346_gsnCYW8.png?width=72&q=100",
+   "guestLogo": "https://static.football360.ir/nesta2/media/uploads/teams/2021/11/24/25138_XQlYAML.png?width=72&q=100",
+   "sportName": "فوتبال",
+   "servers": [
+    {
+     "key": "aparat",
+     "label": "سرور آپارات اسپورت",
+     "src": "f360",
+     "code": 2026112753,
+     "get_hls_url": "https://www.aparatsport.com/adele/getHls2?stream_id=Q7Y16917773F239"
+    }
+   ],
+   "end_estimated": true
+  },
+  {
    "id": "f360:2026112762",
    "title": "لیدز – کاونتری سیتی",
    "comp": "لیگ برتر انگلیس",
@@ -698,33 +615,6 @@
      "src": "f360",
      "code": 2026112762,
      "get_hls_url": "https://www.aparatsport.com/adele/getHls2?stream_id=QPTd235c2B95C42"
-    }
-   ],
-   "end_estimated": true
-  },
-  {
-   "id": "f360:2026112753",
-   "title": "منچستر یونایتد – برنتفورد",
-   "comp": "لیگ برتر انگلیس",
-   "img": "https://static.football360.ir/nesta2/media/posts_stream/covers/%DA%A9%D8%A7%D9%88%D8%B1_%D9%BE%D8%AE%D8%B4_%D8%B2%D9%86%D8%AF%D9%87_%D9%85%D9%86%DA%86%D8%B3%D8%AA%D8%B1%DB%8C%D9%88%D9%86%D8%A7%DB%8C%D8%AA%D8%AF_%D8%A8%D8%B1%D9%86%D8%AA%D9%81%D9%88%D8%B1%D8%AF.jpg",
-   "alt": "منچستر یونایتد – برنتفورد — لیگ برتر انگلیس",
-   "start": 1795878000000,
-   "dur": 120,
-   "end": 1795885200,
-   "src": "f360",
-   "code": 2026112753,
-   "get_hls_url": "https://www.aparatsport.com/adele/getHls2?stream_id=Q7Y16917773F239",
-   "hls": null,
-   "hostLogo": "https://static.football360.ir/nesta2/media/uploads/teams/2021/11/24/26346_gsnCYW8.png?width=72&q=100",
-   "guestLogo": "https://static.football360.ir/nesta2/media/uploads/teams/2021/11/24/25138_XQlYAML.png?width=72&q=100",
-   "sportName": "فوتبال",
-   "servers": [
-    {
-     "key": "aparat",
-     "label": "سرور آپارات اسپورت",
-     "src": "f360",
-     "code": 2026112753,
-     "get_hls_url": "https://www.aparatsport.com/adele/getHls2?stream_id=Q7Y16917773F239"
     }
    ],
    "end_estimated": true
@@ -823,6 +713,37 @@
    "sportName": "فوتبال"
   },
   {
+   "id": "anten:188667",
+   "title": "فوتسال: نیشکر دعبل خزاعی – فولاد خوزستان",
+   "comp": "پخش اختصاصی باشگاه",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/197177ae-33a0-47a8-9260-b4fe66aad891/197177ae-33a0-47a8-9260-b4fe66aad891.jpeg",
+   "alt": "فوتسال: نیشکر دعبل خزاعی – فولاد خوزستان — پخش اختصاصی باشگاه",
+   "start": 1795878000000,
+   "dur": 75,
+   "end": 1795882500,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188667,
+   "embed_stream_id": 216129,
+   "urlaccess_hq": "https://api2.anten.ir/programs/216129/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/216129/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188667,
+     "embed_stream_id": 216129,
+     "urlaccess_hq": "https://api2.anten.ir/programs/216129/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/216129/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/216129"
+    }
+   ],
+   "hostLogo": null,
+   "guestLogo": null,
+   "sportName": "فوتسال"
+  },
+  {
    "id": "anten:188169",
    "title": "مالاگا – بیلبائو",
    "comp": "هفته 14 لالیگا اسپانیا",
@@ -912,6 +833,37 @@
    "sportName": "فوتبال"
   },
   {
+   "id": "anten:188668",
+   "title": "فوتسال: نیشکر حکیم فارابی – امام خمینی",
+   "comp": "پخش اختصاصی باشگاه",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/51ee8e54-4e51-4e68-a3d8-54d1116073c6/51ee8e54-4e51-4e68-a3d8-54d1116073c6.jpeg",
+   "alt": "فوتسال: نیشکر حکیم فارابی – امام خمینی — پخش اختصاصی باشگاه",
+   "start": 1795884300000,
+   "dur": 75,
+   "end": 1795888800,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188668,
+   "embed_stream_id": 216130,
+   "urlaccess_hq": "https://api2.anten.ir/programs/216130/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/216130/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188668,
+     "embed_stream_id": 216130,
+     "urlaccess_hq": "https://api2.anten.ir/programs/216130/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/216130/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/216130"
+    }
+   ],
+   "hostLogo": null,
+   "guestLogo": null,
+   "sportName": "فوتسال"
+  },
+  {
    "id": "f360:2026112760",
    "title": "تورینو – لاتسیو",
    "comp": "سری آ ایتالیا",
@@ -997,33 +949,6 @@
    "end_estimated": true
   },
   {
-   "id": "f360:2026112780",
-   "title": "شارلوت – شیکاگو فایر",
-   "comp": "ام‌ال‌اس",
-   "img": "https://static.football360.ir/nesta2/media/posts_stream/covers/%DA%A9%D8%A7%D9%88%D8%B1-%D9%BE%D8%AE%D8%B4-%D8%B2%D9%86%D8%AF%D9%87-%D8%B4%D8%A7%D8%B1%D9%84%D9%88%D8%AA-%D8%B4%DB%8C%DA%A9%D8%A7%DA%AF%D9%88-%D9%81%D8%A7%DB%8C%D8%B1.jpg",
-   "alt": "شارلوت – شیکاگو فایر — ام‌ال‌اس",
-   "start": 1795887000000,
-   "dur": 120,
-   "end": 1795894200,
-   "src": "f360",
-   "code": 2026112780,
-   "get_hls_url": "https://www.aparatsport.com/adele/getHls2?stream_id=55Wa7480364D3B3",
-   "hls": null,
-   "hostLogo": "https://static.football360.ir/nesta2/media/uploads/teams/2023/06/13/uploads/teams/2023/06/13/260119_thumb.png?width=72&q=100",
-   "guestLogo": "https://static.football360.ir/nesta2/media/uploads/teams/2023/06/13/uploads/teams/2023/06/13/75_thumb.png?width=72&q=100",
-   "sportName": "فوتبال",
-   "servers": [
-    {
-     "key": "aparat",
-     "label": "سرور آپارات اسپورت",
-     "src": "f360",
-     "code": 2026112780,
-     "get_hls_url": "https://www.aparatsport.com/adele/getHls2?stream_id=55Wa7480364D3B3"
-    }
-   ],
-   "end_estimated": true
-  },
-  {
    "id": "f360:2026112752",
    "title": "الچه – اتلتیکو مادرید",
    "comp": "لالیگا اسپانیا",
@@ -1046,6 +971,33 @@
      "src": "f360",
      "code": 2026112752,
      "get_hls_url": "https://www.aparatsport.com/adele/getHls2?stream_id=9JMd841aE8D5827"
+    }
+   ],
+   "end_estimated": true
+  },
+  {
+   "id": "f360:2026112780",
+   "title": "شارلوت – شیکاگو فایر",
+   "comp": "ام‌ال‌اس",
+   "img": "https://static.football360.ir/nesta2/media/posts_stream/covers/%DA%A9%D8%A7%D9%88%D8%B1-%D9%BE%D8%AE%D8%B4-%D8%B2%D9%86%D8%AF%D9%87-%D8%B4%D8%A7%D8%B1%D9%84%D9%88%D8%AA-%D8%B4%DB%8C%DA%A9%D8%A7%DA%AF%D9%88-%D9%81%D8%A7%DB%8C%D8%B1.jpg",
+   "alt": "شارلوت – شیکاگو فایر — ام‌ال‌اس",
+   "start": 1795887000000,
+   "dur": 120,
+   "end": 1795894200,
+   "src": "f360",
+   "code": 2026112780,
+   "get_hls_url": "https://www.aparatsport.com/adele/getHls2?stream_id=55Wa7480364D3B3",
+   "hls": null,
+   "hostLogo": "https://static.football360.ir/nesta2/media/uploads/teams/2023/06/13/uploads/teams/2023/06/13/260119_thumb.png?width=72&q=100",
+   "guestLogo": "https://static.football360.ir/nesta2/media/uploads/teams/2023/06/13/uploads/teams/2023/06/13/75_thumb.png?width=72&q=100",
+   "sportName": "فوتبال",
+   "servers": [
+    {
+     "key": "aparat",
+     "label": "سرور آپارات اسپورت",
+     "src": "f360",
+     "code": 2026112780,
+     "get_hls_url": "https://www.aparatsport.com/adele/getHls2?stream_id=55Wa7480364D3B3"
     }
    ],
    "end_estimated": true
@@ -1304,7 +1256,7 @@
    "id": "f360:2026112761",
    "title": "اینتر – جنوا",
    "comp": "سری آ ایتالیا",
-   "img": "https://static.football360.ir/nesta2/media/posts_stream/covers/%DA%A9%D8%A7%D9%88%D8%B1-%D9%BE%D8%AE%D8%B4-%D8%B2%D9%86%D8%AF%D9%87-%D8%A7%DB%8C%D9%86%D8%AA%D8%B1-%D8%AC%D9%86%D9%88%D8%A7_8VA5eDo.jpg",
+   "img": "https://static.football360.ir/nesta2/media/posts_stream/covers/photo_2026-11-28_11-45-15.jpg",
    "alt": "اینتر – جنوا — سری آ ایتالیا",
    "start": 1795895100000,
    "dur": 120,
@@ -1396,6 +1348,43 @@
    "sportName": "فوتبال"
   },
   {
+   "id": "f360:2026112751",
+   "title": "رئال مادرید – آلاوس",
+   "comp": "لالیگا اسپانیا",
+   "img": "https://static.football360.ir/nesta2/media/posts_stream/covers/photo_2026-11-28_11-45-19.jpg",
+   "alt": "رئال مادرید – آلاوس — لالیگا اسپانیا",
+   "start": 1795896000000,
+   "dur": 120,
+   "end": 1795903200,
+   "src": "f360",
+   "code": 2026112751,
+   "get_hls_url": "https://www.aparatsport.com/adele/getHls2?stream_id=FwG0078773A79B0",
+   "hls": null,
+   "hostLogo": "https://static.football360.ir/nesta2/media/uploads/teams/2021/11/24/25461_Xld7c76.png?width=72&q=100",
+   "guestLogo": "https://static.football360.ir/nesta2/media/uploads/teams/2021/11/24/25347_toizX0s.png?width=72&q=100",
+   "sportName": "فوتبال",
+   "servers": [
+    {
+     "key": "aparat",
+     "label": "سرور آپارات اسپورت",
+     "src": "f360",
+     "code": 2026112751,
+     "get_hls_url": "https://www.aparatsport.com/adele/getHls2?stream_id=FwG0078773A79B0"
+    },
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188171,
+     "embed_stream_id": 215633,
+     "urlaccess_hq": "https://api2.anten.ir/programs/215633/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/215633/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/215633"
+    }
+   ],
+   "end_estimated": true
+  },
+  {
    "id": "f360:2026112785",
    "title": "پالمیراس – استودیانتس",
    "comp": "کوپا لیبرتادورس",
@@ -1428,43 +1417,6 @@
      "urlaccess_hq": "https://api2.anten.ir/programs/215644/urlaccess/hq",
      "urlaccess_lq": "https://api2.anten.ir/programs/215644/urlaccess/lq",
      "embed": "https://www.anten.ir/iframe/215644"
-    }
-   ],
-   "end_estimated": true
-  },
-  {
-   "id": "f360:2026112751",
-   "title": "رئال مادرید – آلاوس",
-   "comp": "لالیگا اسپانیا",
-   "img": "https://static.football360.ir/nesta2/media/posts_stream/covers/%DA%A9%D8%A7%D9%88%D8%B1-%D9%BE%D8%AE%D8%B4-%D8%B2%D9%86%D8%AF%D9%87-%D8%B1%D8%A6%D8%A7%D9%84-%D8%A2%D9%84%D8%A7%D8%A6%D8%B3.jpg",
-   "alt": "رئال مادرید – آلاوس — لالیگا اسپانیا",
-   "start": 1795896000000,
-   "dur": 120,
-   "end": 1795903200,
-   "src": "f360",
-   "code": 2026112751,
-   "get_hls_url": "https://www.aparatsport.com/adele/getHls2?stream_id=FwG0078773A79B0",
-   "hls": null,
-   "hostLogo": "https://static.football360.ir/nesta2/media/uploads/teams/2021/11/24/25461_Xld7c76.png?width=72&q=100",
-   "guestLogo": "https://static.football360.ir/nesta2/media/uploads/teams/2021/11/24/25347_toizX0s.png?width=72&q=100",
-   "sportName": "فوتبال",
-   "servers": [
-    {
-     "key": "aparat",
-     "label": "سرور آپارات اسپورت",
-     "src": "f360",
-     "code": 2026112751,
-     "get_hls_url": "https://www.aparatsport.com/adele/getHls2?stream_id=FwG0078773A79B0"
-    },
-    {
-     "key": "anten",
-     "label": "سرور آنتن",
-     "src": "anten",
-     "anten_id": 188171,
-     "embed_stream_id": 215633,
-     "urlaccess_hq": "https://api2.anten.ir/programs/215633/urlaccess/hq",
-     "urlaccess_lq": "https://api2.anten.ir/programs/215633/urlaccess/lq",
-     "embed": "https://www.anten.ir/iframe/215633"
     }
    ],
    "end_estimated": true
@@ -1563,34 +1515,65 @@
    "sportName": "بسکتبال"
   },
   {
-   "id": "anten:188224",
-   "title": "کاوازاکی – گامبا اوزاکا",
+   "id": "anten:188191",
+   "title": "ماچیدا زلویا – توکیو وردی",
    "comp": "هفته 17 جی لیگ ژاپن",
    "img": "https://static.r1-edge-v2.s3mer.net/images/2025/1/31/C/85148064-8a5f-4ddc-97a1-01af1fe2034d.jpg",
-   "alt": "کاوازاکی – گامبا اوزاکا — هفته 17 جی لیگ ژاپن",
-   "start": 1795932000000,
+   "alt": "ماچیدا زلویا – توکیو وردی — هفته 17 جی لیگ ژاپن",
+   "start": 1795935600000,
    "dur": 120,
-   "end": 1795939200,
+   "end": 1795942800,
    "end_estimated": true,
    "src": "anten",
-   "anten_id": 188224,
-   "embed_stream_id": 215686,
-   "urlaccess_hq": "https://api2.anten.ir/programs/215686/urlaccess/hq",
-   "urlaccess_lq": "https://api2.anten.ir/programs/215686/urlaccess/lq",
+   "anten_id": 188191,
+   "embed_stream_id": 215653,
+   "urlaccess_hq": "https://api2.anten.ir/programs/215653/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/215653/urlaccess/lq",
    "servers": [
     {
      "key": "anten",
      "label": "سرور آنتن",
      "src": "anten",
-     "anten_id": 188224,
-     "embed_stream_id": 215686,
-     "urlaccess_hq": "https://api2.anten.ir/programs/215686/urlaccess/hq",
-     "urlaccess_lq": "https://api2.anten.ir/programs/215686/urlaccess/lq",
-     "embed": "https://www.anten.ir/iframe/215686"
+     "anten_id": 188191,
+     "embed_stream_id": 215653,
+     "urlaccess_hq": "https://api2.anten.ir/programs/215653/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/215653/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/215653"
     }
    ],
-   "hostLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/0f5a11d8-64c4-497b-a1f9-4c605e4a75f3.png",
-   "guestLogo": "https://static.r1-edge-v2.s3mer.net/images/2023/7/21/B/49a2ee30-bdb5-4e12-8ca3-ac61068ef139.png",
+   "hostLogo": "https://static.r1-edge-v2.s3mer.net/images/2024/5/14/B/84f92f59-298d-4dc6-9987-4c0b8cdbb50c.png",
+   "guestLogo": "https://static.r1-edge-v2.s3mer.net/images/2024/2/20/B/ce91df6b-2e80-4e56-8164-1ed1ff5dbbe5.png",
+   "sportName": "فوتبال"
+  },
+  {
+   "id": "anten:188670",
+   "title": "جشنواره فرهنگی ورزشی کارکنان ایران خودرو",
+   "comp": "پخش اختصاصی باشگاه",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/7fa4cbc4-5ba2-49c5-9df3-54c3d629b491/7fa4cbc4-5ba2-49c5-9df3-54c3d629b491.jpeg",
+   "alt": "جشنواره فرهنگی ورزشی کارکنان ایران خودرو — پخش اختصاصی باشگاه",
+   "start": 1795937400000,
+   "dur": 120,
+   "end": 1795944600,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188670,
+   "embed_stream_id": 216132,
+   "urlaccess_hq": "https://api2.anten.ir/programs/216132/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/216132/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188670,
+     "embed_stream_id": 216132,
+     "urlaccess_hq": "https://api2.anten.ir/programs/216132/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/216132/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/216132"
+    }
+   ],
+   "hostLogo": null,
+   "guestLogo": null,
    "sportName": "فوتبال"
   },
   {
@@ -1625,6 +1608,37 @@
    "sportName": "بسکتبال"
   },
   {
+   "id": "anten:188662",
+   "title": "تکواندو: مسابقات تکواندو جایزه بزرگ قزاقستان",
+   "comp": "تکواندو جایزه بزرگ قزاقستان",
+   "img": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/d527eeb4-b1c1-4279-876a-3582a0d9539a.jpg",
+   "alt": "تکواندو: مسابقات تکواندو جایزه بزرگ قزاقستان — تکواندو جایزه بزرگ قزاقستان",
+   "start": 1795942800000,
+   "dur": 120,
+   "end": 1795950000,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188662,
+   "embed_stream_id": 216124,
+   "urlaccess_hq": "https://api2.anten.ir/programs/216124/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/216124/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188662,
+     "embed_stream_id": 216124,
+     "urlaccess_hq": "https://api2.anten.ir/programs/216124/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/216124/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/216124"
+    }
+   ],
+   "hostLogo": null,
+   "guestLogo": null,
+   "sportName": "تکواندو"
+  },
+  {
    "id": "anten:188235",
    "title": "موتورسواری: موتو 3 والنسیا – مسابقه اصلی",
    "comp": "موتورسواری",
@@ -1654,6 +1668,37 @@
    "hostLogo": null,
    "guestLogo": null,
    "sportName": "موتورسواری"
+  },
+  {
+   "id": "anten:188741",
+   "title": "هندبال: نفت امیدیه – سپاهان اصفهان",
+   "comp": "پخش اختصاصی باشگاه",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/2022/12/10/A/8cf18182-4346-43c7-b68a-e31fdda10bf3.jpg",
+   "alt": "هندبال: نفت امیدیه – سپاهان اصفهان — پخش اختصاصی باشگاه",
+   "start": 1795948200000,
+   "dur": 90,
+   "end": 1795953600,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188741,
+   "embed_stream_id": 216203,
+   "urlaccess_hq": "https://api2.anten.ir/programs/216203/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/216203/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188741,
+     "embed_stream_id": 216203,
+     "urlaccess_hq": "https://api2.anten.ir/programs/216203/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/216203/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/216203"
+    }
+   ],
+   "hostLogo": "https://static.r1-edge-v2.s3mer.net/images/2024/11/7/B/eb8eba6c-898b-4e29-952d-ef792e5ebce8.png",
+   "guestLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/8b8c9a06-cade-428d-8db9-59b28136166a.png",
+   "sportName": "هندبال"
   },
   {
    "id": "anten:188234",
@@ -1721,7 +1766,7 @@
    "id": "anten:188201",
    "title": "اورتون – لیورپول",
    "comp": "هفته 12 لیگ برتر انگلیس",
-   "img": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/0ed6924f-dae8-4828-bc87-fd0753885996.png",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/2026/11/28/A/3cd9f18a-89f5-4208-a723-28e07c64bc03.jpg",
    "alt": "اورتون – لیورپول — هفته 12 لیگ برتر انگلیس",
    "start": 1795953600000,
    "dur": 120,
@@ -1778,6 +1823,37 @@
    "hostLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/37c4d300-3333-4bc8-8831-2a84db8b4f86.png",
    "guestLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/d369c62d-8fa7-433f-bd92-f5ddceea05b6.png",
    "sportName": "فوتبال"
+  },
+  {
+   "id": "anten:188721",
+   "title": "هندبال: نیروی زمینی سبزوار – نام آوران مشهد",
+   "comp": "پخش اختصاصی باشگاه",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/2022/12/10/A/8cf18182-4346-43c7-b68a-e31fdda10bf3.jpg",
+   "alt": "هندبال: نیروی زمینی سبزوار – نام آوران مشهد — پخش اختصاصی باشگاه",
+   "start": 1795955400000,
+   "dur": 90,
+   "end": 1795960800,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188721,
+   "embed_stream_id": 216183,
+   "urlaccess_hq": "https://api2.anten.ir/programs/216183/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/216183/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188721,
+     "embed_stream_id": 216183,
+     "urlaccess_hq": "https://api2.anten.ir/programs/216183/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/216183/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/216183"
+    }
+   ],
+   "hostLogo": "https://static.r1-edge-v2.s3mer.net/images/2024/9/17/C/d98bf1f4-fdb0-4092-a7c1-91b6a4f7fe0c.png",
+   "guestLogo": "https://static.r1-edge-v2.s3mer.net/images/2026/11/8/B/fd4f2b76-ff68-4525-86ec-49db6d79bf34.png",
+   "sportName": "هندبال"
   },
   {
    "id": "anten:188207",
@@ -1840,6 +1916,68 @@
    "hostLogo": null,
    "guestLogo": null,
    "sportName": "موتورسواری"
+  },
+  {
+   "id": "anten:188663",
+   "title": "اسنوکر: اسنوکر نیل رابرتسون – لیام هایفیلد",
+   "comp": "اسنوکر قهرمانی بریتانیا",
+   "img": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/1bf9c19c-5346-45dc-b9a0-0af42fe7a61c.png",
+   "alt": "اسنوکر: اسنوکر نیل رابرتسون – لیام هایفیلد — اسنوکر قهرمانی بریتانیا",
+   "start": 1795957200000,
+   "dur": 120,
+   "end": 1795964400,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188663,
+   "embed_stream_id": 216125,
+   "urlaccess_hq": "https://api2.anten.ir/programs/216125/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/216125/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188663,
+     "embed_stream_id": 216125,
+     "urlaccess_hq": "https://api2.anten.ir/programs/216125/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/216125/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/216125"
+    }
+   ],
+   "hostLogo": null,
+   "guestLogo": null,
+   "sportName": "اسنوکر"
+  },
+  {
+   "id": "anten:188664",
+   "title": "اسنوکر: اسنوکر رونی سالیوان – جک لیسوفسکی",
+   "comp": "اسنوکر قهرمانی بریتانیا",
+   "img": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/1bf9c19c-5346-45dc-b9a0-0af42fe7a61c.png",
+   "alt": "اسنوکر: اسنوکر رونی سالیوان – جک لیسوفسکی — اسنوکر قهرمانی بریتانیا",
+   "start": 1795957200000,
+   "dur": 120,
+   "end": 1795964400,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188664,
+   "embed_stream_id": 216126,
+   "urlaccess_hq": "https://api2.anten.ir/programs/216126/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/216126/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188664,
+     "embed_stream_id": 216126,
+     "urlaccess_hq": "https://api2.anten.ir/programs/216126/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/216126/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/216126"
+    }
+   ],
+   "hostLogo": null,
+   "guestLogo": null,
+   "sportName": "اسنوکر"
   },
   {
    "id": "anten:188220",
@@ -2369,6 +2507,37 @@
    "sportName": "فوتبال"
   },
   {
+   "id": "anten:188665",
+   "title": "اسنوکر: اسنوکر جاد ترامپ – حسین وفایی",
+   "comp": "اسنوکر قهرمانی بریتانیا",
+   "img": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/1bf9c19c-5346-45dc-b9a0-0af42fe7a61c.png",
+   "alt": "اسنوکر: اسنوکر جاد ترامپ – حسین وفایی — اسنوکر قهرمانی بریتانیا",
+   "start": 1795978800000,
+   "dur": 120,
+   "end": 1795986000,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188665,
+   "embed_stream_id": 216127,
+   "urlaccess_hq": "https://api2.anten.ir/programs/216127/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/216127/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188665,
+     "embed_stream_id": 216127,
+     "urlaccess_hq": "https://api2.anten.ir/programs/216127/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/216127/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/216127"
+    }
+   ],
+   "hostLogo": null,
+   "guestLogo": null,
+   "sportName": "اسنوکر"
+  },
+  {
    "id": "anten:188217",
    "title": "کومو – یوونتوس",
    "comp": "هفته 13 سری آ ایتالیا",
@@ -2522,6 +2691,68 @@
    "hostLogo": "https://static.r1-edge-v2.s3mer.net/images/2024/10/27/A/0fb07652-0c6e-4581-bdc5-3db12664cb88.png",
    "guestLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/97c5092d-34fe-485a-a3a8-6edd2f0f3c29.png",
    "sportName": "بسکتبال"
+  },
+  {
+   "id": "anten:188671",
+   "title": "دیلمیان سیاهکل – مهدیه تبریز",
+   "comp": "پخش اختصاصی باشگاه",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/26cae6a3-45e8-4d3c-8bf3-48e7d46ec273/26cae6a3-45e8-4d3c-8bf3-48e7d46ec273.jpeg",
+   "alt": "دیلمیان سیاهکل – مهدیه تبریز — پخش اختصاصی باشگاه",
+   "start": 1796034300000,
+   "dur": 120,
+   "end": 1796041500,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188671,
+   "embed_stream_id": 216133,
+   "urlaccess_hq": "https://api2.anten.ir/programs/216133/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/216133/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188671,
+     "embed_stream_id": 216133,
+     "urlaccess_hq": "https://api2.anten.ir/programs/216133/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/216133/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/216133"
+    }
+   ],
+   "hostLogo": "https://static.r1-edge-v2.s3mer.net/images/2026/11/14/C/aad5926e-a056-41a8-8330-29ecb2ce3cd9.png",
+   "guestLogo": "https://static.r1-edge-v2.s3mer.net/images/2026/11/28/B/1cf99a6b-52cc-4639-bc69-052199a85106.png",
+   "sportName": "فوتبال"
+  },
+  {
+   "id": "anten:188672",
+   "title": "فوتسال: فینال مسابقات فوتسال دومین دوره المپیاد ورزشی دانشجویان دانشگاه تبریز",
+   "comp": "پخش اختصاصی باشگاه",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/2025/2/14/C/776809c2-56be-4c8b-b065-099d725a5d70.jpg",
+   "alt": "فوتسال: فینال مسابقات فوتسال دومین دوره المپیاد ورزشی دانشجویان دانشگاه تبریز — پخش اختصاصی باشگاه",
+   "start": 1796043720000,
+   "dur": 120,
+   "end": 1796050920,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188672,
+   "embed_stream_id": 216134,
+   "urlaccess_hq": "https://api2.anten.ir/programs/216134/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/216134/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188672,
+     "embed_stream_id": 216134,
+     "urlaccess_hq": "https://api2.anten.ir/programs/216134/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/216134/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/216134"
+    }
+   ],
+   "hostLogo": null,
+   "guestLogo": null,
+   "sportName": "فوتسال"
   },
   {
    "id": "anten:188242",
@@ -2801,6 +3032,223 @@
    "hostLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/717c0cfd-304f-416b-ab1a-78300bb1ce04.png",
    "guestLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/710947dc-d824-4035-9064-3c95e62e94dd.png",
    "sportName": "بسکتبال"
+  },
+  {
+   "id": "anten:188258",
+   "title": "جوهور دارالتعظیم مالزی – دائجئون سیتیزن",
+   "comp": "2026-27",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/2024/8/2/B/628ca60a-a910-45fb-9704-9314c586119a.jpg",
+   "alt": "جوهور دارالتعظیم مالزی – دائجئون سیتیزن — 2026-27",
+   "start": 1796127300000,
+   "dur": 120,
+   "end": 1796134500,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188258,
+   "embed_stream_id": 215720,
+   "urlaccess_hq": "https://api2.anten.ir/programs/215720/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/215720/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188258,
+     "embed_stream_id": 215720,
+     "urlaccess_hq": "https://api2.anten.ir/programs/215720/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/215720/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/215720"
+    }
+   ],
+   "hostLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/7e833fe2-ad57-4fdb-bbd4-b15e48c9519f.png",
+   "guestLogo": "https://static.r1-edge-v2.s3mer.net/images/2023/12/2/B/95fd4d00-b8a6-4ab4-b13e-e61ec08cccbd.png",
+   "sportName": "فوتبال"
+  },
+  {
+   "id": "anten:188249",
+   "title": "هولشتاین کیل – کلن",
+   "comp": "جام حذفی آلمان",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/2026/8/16/D/ff6384bb-9c83-4d80-ab3f-a01b5cae8f88.jpg",
+   "alt": "هولشتاین کیل – کلن — جام حذفی آلمان",
+   "start": 1796144400000,
+   "dur": 120,
+   "end": 1796151600,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188249,
+   "embed_stream_id": 215711,
+   "urlaccess_hq": "https://api2.anten.ir/programs/215711/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/215711/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188249,
+     "embed_stream_id": 215711,
+     "urlaccess_hq": "https://api2.anten.ir/programs/215711/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/215711/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/215711"
+    }
+   ],
+   "hostLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/3c7c0a09-798b-4217-ad74-0b8a58415cf1.png",
+   "guestLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/559ecb88-8eee-4833-b115-635c4b4a5f8a.png",
+   "sportName": "فوتبال"
+  },
+  {
+   "id": "anten:188250",
+   "title": "اشتوتگارت – دینامو درسدن",
+   "comp": "جام حذفی آلمان",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/2026/8/16/D/ff6384bb-9c83-4d80-ab3f-a01b5cae8f88.jpg",
+   "alt": "اشتوتگارت – دینامو درسدن — جام حذفی آلمان",
+   "start": 1796144400000,
+   "dur": 120,
+   "end": 1796151600,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188250,
+   "embed_stream_id": 215712,
+   "urlaccess_hq": "https://api2.anten.ir/programs/215712/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/215712/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188250,
+     "embed_stream_id": 215712,
+     "urlaccess_hq": "https://api2.anten.ir/programs/215712/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/215712/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/215712"
+    }
+   ],
+   "hostLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/425b8a74-a923-4be4-aced-f028062f4166.png",
+   "guestLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/4ff5b6fc-6e5d-4587-8e21-5c2326ce98b3.png",
+   "sportName": "فوتبال"
+  },
+  {
+   "id": "anten:188251",
+   "title": "بایرن مونیخ – هرتابرلین",
+   "comp": "جام حذفی آلمان",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/2026/8/16/D/ff6384bb-9c83-4d80-ab3f-a01b5cae8f88.jpg",
+   "alt": "بایرن مونیخ – هرتابرلین — جام حذفی آلمان",
+   "start": 1796154300000,
+   "dur": 120,
+   "end": 1796161500,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188251,
+   "embed_stream_id": 215713,
+   "urlaccess_hq": "https://api2.anten.ir/programs/215713/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/215713/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188251,
+     "embed_stream_id": 215713,
+     "urlaccess_hq": "https://api2.anten.ir/programs/215713/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/215713/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/215713"
+    }
+   ],
+   "hostLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/dd1e97a8-efcd-475a-8bd3-49fc44af3e79.png",
+   "guestLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/2235416f-3388-4277-bc8e-7f7cab3e3137.png",
+   "sportName": "فوتبال"
+  },
+  {
+   "id": "anten:188252",
+   "title": "مونشن گلادباخ – دارمشتات",
+   "comp": "جام حذفی آلمان",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/2026/8/16/D/ff6384bb-9c83-4d80-ab3f-a01b5cae8f88.jpg",
+   "alt": "مونشن گلادباخ – دارمشتات — جام حذفی آلمان",
+   "start": 1796154300000,
+   "dur": 120,
+   "end": 1796161500,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188252,
+   "embed_stream_id": 215714,
+   "urlaccess_hq": "https://api2.anten.ir/programs/215714/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/215714/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188252,
+     "embed_stream_id": 215714,
+     "urlaccess_hq": "https://api2.anten.ir/programs/215714/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/215714/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/215714"
+    }
+   ],
+   "hostLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/9afc651f-7383-4446-9077-52292fa8c27b.png",
+   "guestLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/208621ad-1bc2-4eef-a9ab-30ab24276a64.png",
+   "sportName": "فوتبال"
+  },
+  {
+   "id": "anten:188246",
+   "title": "کاونتری – ایپسویچ",
+   "comp": "هفته 13 لیگ برتر انگلیس",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/2026/8/16/D/ff6384bb-9c83-4d80-ab3f-a01b5cae8f88.jpg",
+   "alt": "کاونتری – ایپسویچ — هفته 13 لیگ برتر انگلیس",
+   "start": 1796155200000,
+   "dur": 120,
+   "end": 1796162400,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188246,
+   "embed_stream_id": 215708,
+   "urlaccess_hq": "https://api2.anten.ir/programs/215708/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/215708/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188246,
+     "embed_stream_id": 215708,
+     "urlaccess_hq": "https://api2.anten.ir/programs/215708/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/215708/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/215708"
+    }
+   ],
+   "hostLogo": "https://static.r1-edge-v2.s3mer.net/images/2022/7/30/C/e012de2a-3c73-43e6-9f03-2542fc0055b9.png",
+   "guestLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/c710ef28-ddb2-456c-a783-f2ce1ee3332a.png",
+   "sportName": "فوتبال"
+  },
+  {
+   "id": "anten:188248",
+   "title": "اینترمیلان – جنوا",
+   "comp": "یک هشتم نهایی جام حذفی ایتالیا",
+   "img": "https://static.r1-edge-v2.s3mer.net/images/2023/1/12/A/a637a146-43dd-4b96-961d-ed7db2169a50.jpg",
+   "alt": "اینترمیلان – جنوا — یک هشتم نهایی جام حذفی ایتالیا",
+   "start": 1796155200000,
+   "dur": 120,
+   "end": 1796162400,
+   "end_estimated": true,
+   "src": "anten",
+   "anten_id": 188248,
+   "embed_stream_id": 215710,
+   "urlaccess_hq": "https://api2.anten.ir/programs/215710/urlaccess/hq",
+   "urlaccess_lq": "https://api2.anten.ir/programs/215710/urlaccess/lq",
+   "servers": [
+    {
+     "key": "anten",
+     "label": "سرور آنتن",
+     "src": "anten",
+     "anten_id": 188248,
+     "embed_stream_id": 215710,
+     "urlaccess_hq": "https://api2.anten.ir/programs/215710/urlaccess/hq",
+     "urlaccess_lq": "https://api2.anten.ir/programs/215710/urlaccess/lq",
+     "embed": "https://www.anten.ir/iframe/215710"
+    }
+   ],
+   "hostLogo": "https://static.r1-edge-v2.s3mer.net/images/2021/4/21/C/4c3fb39a-2895-43f4-b449-9d9236f150b6.png",
+   "guestLogo": "https://fstatic.r1-edge-v2.s3mer.net/anten/ProgramImage/9daafb2f-dc85-4038-9fb7-15714d49920f.png",
+   "sportName": "فوتبال"
   }
  ]
 }
