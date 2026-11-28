@@ -2,16 +2,16 @@
  "code": "RZ",
  "source": "RezFlix APK API http://server-win-iran.info (poster feed + seasons, static mkv, no token/expiry in file URLs)",
  "start_num": 12560,
- "end_num": 14429,
- "live_base_head": "0d9a573e8301ab1db2eecaf84ccfe9f650dc19ee (5h run 20261128T155719Z; H3 max #14427 verified from live files, RZ part-1 max #14427)",
- "generated": "2026-11-28 (RezFlix 5-hourly run 20261128T155719Z — merge of 2 new RZ series #14428 Break Clause (tv 2026, S01E01-E06 HardSub 720p NextMovie) + #14429 Drain the Oceans (tv 2018, S01E01-S06E06 SoftSub 720p NextMovie, 55 episodes); no teasers; no sizes (feed حجم lines ambiguous across episodes); no completion; no manifest drift; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
+ "end_num": 14457,
+ "live_base_head": "669a9591e52c167c842de5119715482f797c8a24 (5h run 20261128T175700Z; H3 max #14456 verified from live files, RZ part-1 max #14429)",
+ "generated": "2026-11-28 (RezFlix 5-hourly run 20261128T175700Z — merge of 1 new RZ series #14457 Summer Night (tv 2024, S01E01-E04 NoSub 480p + 720p VIU, 8 episodes); no teasers; no sizes (feed حجم lines ambiguous across episodes); no completion; no manifest drift; cumulative base: 2026-11-22 RezFlix series full extraction, 2000s)",
  "counts": {
-  "total_titles": 644,
+  "total_titles": 645,
   "movies": 61,
-  "series": 583,
-  "total_links": 44290,
+  "series": 584,
+  "total_links": 44298,
   "by_year": {
-   "2024": 2,
+   "2024": 3,
    "2026": 52,
    "2023": 2,
    "2025": 11,
@@ -78,10 +78,10 @@
    "2012": 1
   },
   "by_quality": {
-   "720p": 21582,
+   "720p": 21586,
    "1080p": 3618,
    "540p": 292,
-   "480p": 14393,
+   "480p": 14397,
    "CAM 1080p": 117,
    "CAM 720p": 35,
    "Cam 1080p": 1,
@@ -7185,6 +7185,17 @@
    "quality": "720p",
    "rezflix_id": 36188,
    "identity_note": "Check-script resolved identity: TMDB 37158 / tt8676618, years feed 2018 / TMDB 2018 / OMDb 2018 (all three agree); TMDB title 'Drain the Oceans', first_air 2018-05-28, 6 seasons; origin US. Persian name تخلیه اقیانوس‌ها (feed description «نام پارسی فیلم»). Feed حجم line «کیفیت 720 (500 مگابایت )» gives one size for one quality across 55 episodes — ambiguous per file, so no size_text/size_bytes (series precedent). Encoder NextMovie from filename."
+  },
+  {
+   "title": "Summer Night",
+   "tmdb": 237335,
+   "imdb": "tt30098460",
+   "year": 2024,
+   "num": 14457,
+   "links": 8,
+   "quality": "480p,720p",
+   "rezflix_id": 36210,
+   "identity_note": "Check-script resolved identity: TMDB 237335 / tt30098460, years feed 2024 / TMDB 2024 / OMDb 2024 (all three agree); TMDB title 'Summer Night', first_air 2024-08-05, 1 season; origin TH. Persian name شب تابستانی (feed description «نام پارسی فیلم»). Feed حجم line «کیفیت 480 (250 مگابایت )» gives one size for one quality across 8 episodes — ambiguous per file, so no size_text/size_bytes (series precedent). Encoder RezFlix from filename."
   }
  ],
  "trailer_keys_added": [
